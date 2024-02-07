@@ -69,11 +69,11 @@ Partial Class Inicio
         '
         'btnStart
         '
-        Me.btnStart.Location = New System.Drawing.Point(409, 290)
+        Me.btnStart.Location = New System.Drawing.Point(380, 287)
         Me.btnStart.Name = "btnStart"
-        Me.btnStart.Size = New System.Drawing.Size(75, 23)
+        Me.btnStart.Size = New System.Drawing.Size(95, 23)
         Me.btnStart.TabIndex = 3
-        Me.btnStart.Text = "Button1"
+        Me.btnStart.Text = "Iniciar sesión"
         Me.btnStart.UseVisualStyleBackColor = True
         '
         'PictureBox1
