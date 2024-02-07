@@ -28,8 +28,8 @@ Partial Class Inicio
         Me.tbUsername = New System.Windows.Forms.TextBox()
         Me.tbPassword = New System.Windows.Forms.TextBox()
         Me.btnStart = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.showPassword = New System.Windows.Forms.PictureBox()
+        CType(Me.showPassword, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblUsername
@@ -76,22 +76,22 @@ Partial Class Inicio
         Me.btnStart.Text = "Iniciar sesión"
         Me.btnStart.UseVisualStyleBackColor = True
         '
-        'PictureBox1
+        'showPassword
         '
-        Me.PictureBox1.Image = Global.Repsol_2.My.Resources.Resources.eye
-        Me.PictureBox1.Location = New System.Drawing.Point(486, 245)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(25, 20)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 5
-        Me.PictureBox1.TabStop = False
+        Me.showPassword.Image = Global.Repsol_2.My.Resources.Resources.eye
+        Me.showPassword.Location = New System.Drawing.Point(349, 245)
+        Me.showPassword.Name = "showPassword"
+        Me.showPassword.Size = New System.Drawing.Size(25, 20)
+        Me.showPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.showPassword.TabIndex = 5
+        Me.showPassword.TabStop = False
         '
         'Inicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.showPassword)
         Me.Controls.Add(Me.btnStart)
         Me.Controls.Add(Me.tbPassword)
         Me.Controls.Add(Me.tbUsername)
@@ -99,7 +99,7 @@ Partial Class Inicio
         Me.Controls.Add(Me.lblUsername)
         Me.Name = "Inicio"
         Me.Text = "Inicio"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.showPassword, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -111,5 +111,5 @@ Partial Class Inicio
     Friend WithEvents tbUsername As TextBox
     Friend WithEvents tbPassword As TextBox
     Friend WithEvents btnStart As Button
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents showPassword As PictureBox
 End Class

@@ -1,19 +1,25 @@
 ﻿Public Class Inicio
+    Public Shared admin As Boolean = False
     Private Sub Inicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
-    Private Sub tbPassword_TextChanged(sender As Object, e As EventArgs) Handles tbPassword.TextChanged
-
-    End Sub
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-
+        admin = False
     End Sub
 
     Private Sub btnStart_Click(sender As Object, e As EventArgs) Handles btnStart.Click
+        'Programar validaciones.
+
+
+
         Me.Hide()
         Opciones.Show()
 
+    End Sub
+
+    Private Sub ShowPassword_Click(sender As Object, e As EventArgs) Handles showPassword.Click
+
+        If (tbPassword.PasswordChar = "") Then
+            tbPassword.PasswordChar = "*"
+        Else
+            tbPassword.PasswordChar = ""
+        End If
     End Sub
 End Class

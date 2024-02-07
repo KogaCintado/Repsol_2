@@ -44,7 +44,7 @@ Partial Class Opciones
         '
         'btnCRUD
         '
-        Me.btnCRUD.Location = New System.Drawing.Point(352, 175)
+        Me.btnCRUD.Location = New System.Drawing.Point(363, 175)
         Me.btnCRUD.Name = "btnCRUD"
         Me.btnCRUD.Size = New System.Drawing.Size(90, 60)
         Me.btnCRUD.TabIndex = 2
@@ -80,13 +80,13 @@ Partial Class Opciones
         'CerrarSesiónToolStripMenuItem
         '
         Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
-        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
         Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar sesión"
         '
         'CerrarElProgramaToolStripMenuItem
         '
         Me.CerrarElProgramaToolStripMenuItem.Name = "CerrarElProgramaToolStripMenuItem"
-        Me.CerrarElProgramaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CerrarElProgramaToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
         Me.CerrarElProgramaToolStripMenuItem.Text = "Cerrar el programa"
         '
         'Opciones
