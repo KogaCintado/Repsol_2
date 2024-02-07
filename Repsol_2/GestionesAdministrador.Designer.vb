@@ -31,8 +31,20 @@ Partial Class GestionesAdministrador
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.OpcionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VolverToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.btnModificarEmpleado = New System.Windows.Forms.Button()
+        Me.btnVerTodosEmpleados = New System.Windows.Forms.Button()
+        Me.btnSeleccionarUnEmpleado = New System.Windows.Forms.Button()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'FlowLayoutPanel1
@@ -111,14 +123,110 @@ Partial Class GestionesAdministrador
         'VolverToolStripMenuItem
         '
         Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
-        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(106, 22)
         Me.VolverToolStripMenuItem.Text = "Volver"
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.Button4)
+        Me.Panel1.Controls.Add(Me.btnModificarEmpleado)
+        Me.Panel1.Controls.Add(Me.btnVerTodosEmpleados)
+        Me.Panel1.Controls.Add(Me.btnSeleccionarUnEmpleado)
+        Me.Panel1.Location = New System.Drawing.Point(183, 81)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(196, 51)
+        Me.Panel1.TabIndex = 2
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(98, 25)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(94, 23)
+        Me.Button4.TabIndex = 3
+        Me.Button4.Text = "Eliminar Emp"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'btnModificarEmpleado
+        '
+        Me.btnModificarEmpleado.Location = New System.Drawing.Point(98, 0)
+        Me.btnModificarEmpleado.Name = "btnModificarEmpleado"
+        Me.btnModificarEmpleado.Size = New System.Drawing.Size(94, 23)
+        Me.btnModificarEmpleado.TabIndex = 2
+        Me.btnModificarEmpleado.Text = "Mod. Emp"
+        Me.btnModificarEmpleado.UseVisualStyleBackColor = True
+        '
+        'btnVerTodosEmpleados
+        '
+        Me.btnVerTodosEmpleados.Location = New System.Drawing.Point(3, 25)
+        Me.btnVerTodosEmpleados.Name = "btnVerTodosEmpleados"
+        Me.btnVerTodosEmpleados.Size = New System.Drawing.Size(89, 23)
+        Me.btnVerTodosEmpleados.TabIndex = 1
+        Me.btnVerTodosEmpleados.Text = "Ver Todos"
+        Me.btnVerTodosEmpleados.UseVisualStyleBackColor = True
+        '
+        'btnSeleccionarUnEmpleado
+        '
+        Me.btnSeleccionarUnEmpleado.Location = New System.Drawing.Point(3, 0)
+        Me.btnSeleccionarUnEmpleado.Name = "btnSeleccionarUnEmpleado"
+        Me.btnSeleccionarUnEmpleado.Size = New System.Drawing.Size(89, 23)
+        Me.btnSeleccionarUnEmpleado.TabIndex = 0
+        Me.btnSeleccionarUnEmpleado.Text = "Ver Empleado"
+        Me.btnSeleccionarUnEmpleado.UseVisualStyleBackColor = True
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.Button1)
+        Me.Panel2.Controls.Add(Me.Button2)
+        Me.Panel2.Controls.Add(Me.Button3)
+        Me.Panel2.Controls.Add(Me.Button5)
+        Me.Panel2.Location = New System.Drawing.Point(183, 138)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(196, 51)
+        Me.Panel2.TabIndex = 4
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(98, 25)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(94, 23)
+        Me.Button1.TabIndex = 3
+        Me.Button1.Text = "Eliminar Emp"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(98, 0)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(94, 23)
+        Me.Button2.TabIndex = 2
+        Me.Button2.Text = "Mod. Emp"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(3, 25)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(89, 23)
+        Me.Button3.TabIndex = 1
+        Me.Button3.Text = "Ver Todos"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(3, 0)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(89, 23)
+        Me.Button5.TabIndex = 0
+        Me.Button5.Text = "Ver Empleado"
+        Me.Button5.UseVisualStyleBackColor = True
         '
         'GestionesAdministrador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
@@ -127,6 +235,8 @@ Partial Class GestionesAdministrador
         Me.FlowLayoutPanel1.ResumeLayout(False)
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -141,4 +251,14 @@ Partial Class GestionesAdministrador
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents OpcionesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents VolverToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Button4 As Button
+    Friend WithEvents btnModificarEmpleado As Button
+    Friend WithEvents btnVerTodosEmpleados As Button
+    Friend WithEvents btnSeleccionarUnEmpleado As Button
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button5 As Button
 End Class
