@@ -104,6 +104,12 @@
     <Compile Include="Opciones.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TPV.Designer.vb">
+      <DependentUpon>TPV.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TPV.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Inicio.resx">
@@ -117,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Opciones.resx">
       <DependentUpon>Opciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TPV.resx">
+      <DependentUpon>TPV.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +146,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Go-back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Repsol_logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

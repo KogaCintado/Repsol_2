@@ -28,60 +28,77 @@ Partial Class Inicio
         Me.tbUsername = New System.Windows.Forms.TextBox()
         Me.tbPassword = New System.Windows.Forms.TextBox()
         Me.btnStart = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.showPassword = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.showPassword, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblUsername
         '
         Me.lblUsername.AutoSize = True
-        Me.lblUsername.Location = New System.Drawing.Point(259, 222)
+        Me.lblUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUsername.Location = New System.Drawing.Point(797, 475)
         Me.lblUsername.Name = "lblUsername"
-        Me.lblUsername.Size = New System.Drawing.Size(46, 13)
+        Me.lblUsername.Size = New System.Drawing.Size(68, 20)
         Me.lblUsername.TabIndex = 0
         Me.lblUsername.Text = "Usuario:"
         '
         'lblPassword
         '
         Me.lblPassword.AutoSize = True
-        Me.lblPassword.Location = New System.Drawing.Point(259, 248)
+        Me.lblPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPassword.Location = New System.Drawing.Point(769, 510)
         Me.lblPassword.Name = "lblPassword"
-        Me.lblPassword.Size = New System.Drawing.Size(64, 13)
+        Me.lblPassword.Size = New System.Drawing.Size(96, 20)
         Me.lblPassword.TabIndex = 1
         Me.lblPassword.Text = "Contraseña:"
         '
         'tbUsername
         '
-        Me.tbUsername.Location = New System.Drawing.Point(380, 219)
+        Me.tbUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbUsername.Location = New System.Drawing.Point(918, 472)
         Me.tbUsername.MaxLength = 10
         Me.tbUsername.Name = "tbUsername"
-        Me.tbUsername.Size = New System.Drawing.Size(100, 20)
+        Me.tbUsername.Size = New System.Drawing.Size(100, 26)
         Me.tbUsername.TabIndex = 1
         '
         'tbPassword
         '
-        Me.tbPassword.Location = New System.Drawing.Point(380, 245)
+        Me.tbPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbPassword.Location = New System.Drawing.Point(918, 504)
         Me.tbPassword.MaxLength = 10
         Me.tbPassword.Name = "tbPassword"
         Me.tbPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.tbPassword.Size = New System.Drawing.Size(100, 20)
+        Me.tbPassword.Size = New System.Drawing.Size(100, 26)
         Me.tbPassword.TabIndex = 2
         '
         'btnStart
         '
-        Me.btnStart.Location = New System.Drawing.Point(380, 287)
+        Me.btnStart.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnStart.Location = New System.Drawing.Point(906, 552)
         Me.btnStart.Name = "btnStart"
-        Me.btnStart.Size = New System.Drawing.Size(95, 23)
+        Me.btnStart.Size = New System.Drawing.Size(131, 37)
         Me.btnStart.TabIndex = 3
         Me.btnStart.Text = "Iniciar sesión"
         Me.btnStart.UseVisualStyleBackColor = True
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.Repsol_2.My.Resources.Resources.Repsol_logo
+        Me.PictureBox1.Location = New System.Drawing.Point(773, 258)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(400, 100)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 6
+        Me.PictureBox1.TabStop = False
+        '
         'showPassword
         '
         Me.showPassword.Image = Global.Repsol_2.My.Resources.Resources.eye
-        Me.showPassword.Location = New System.Drawing.Point(349, 245)
+        Me.showPassword.Location = New System.Drawing.Point(887, 504)
         Me.showPassword.Name = "showPassword"
-        Me.showPassword.Size = New System.Drawing.Size(25, 20)
+        Me.showPassword.Size = New System.Drawing.Size(26, 26)
         Me.showPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.showPassword.TabIndex = 5
         Me.showPassword.TabStop = False
@@ -90,7 +107,8 @@ Partial Class Inicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(1904, 1041)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.showPassword)
         Me.Controls.Add(Me.btnStart)
         Me.Controls.Add(Me.tbPassword)
@@ -99,6 +117,7 @@ Partial Class Inicio
         Me.Controls.Add(Me.lblUsername)
         Me.Name = "Inicio"
         Me.Text = "Inicio"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.showPassword, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -112,4 +131,5 @@ Partial Class Inicio
     Friend WithEvents tbPassword As TextBox
     Friend WithEvents btnStart As Button
     Friend WithEvents showPassword As PictureBox
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

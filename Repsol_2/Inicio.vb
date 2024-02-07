@@ -1,6 +1,8 @@
 ﻿Public Class Inicio
     Public Shared admin As Boolean = False
     Private Sub Inicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Maximize the window
+        Me.WindowState = FormWindowState.Maximized
         admin = False
     End Sub
 
@@ -21,5 +23,9 @@
         Else
             tbPassword.PasswordChar = ""
         End If
+    End Sub
+
+    Private Sub lblUsername_Click(sender As Object, e As EventArgs) Handles lblUsername.Click
+
     End Sub
 End Class
