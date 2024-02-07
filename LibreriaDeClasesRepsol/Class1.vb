@@ -36,7 +36,28 @@
             Return valido
         End Function
 
-
+        Public Function validarCaratcteres(ByVal nombre As String) As Boolean
+            Dim valido As Boolean = True
+            Dim caracteresProhibidos As String = "(){}[]!¡¿?*+-,.;:_=|@#~¬^`´¨ºª\%&$€£<>¡"
+            For i As Integer = 0 To caracteresProhibidos.Length - 1
+                If nombre.Contains(caracteresProhibidos(i)) Then
+                    valido = False
+                    Exit For
+                End If
+            Next
+            Return valido
+        End Function
+        Public Function validarCadracteres(ByVal nombre As String) As Boolean
+            Dim valido As Boolean = True
+            Dim caracteresProhibidos As String = "(){}[]!¡¿?*+-,.;:_=|@#~¬^`´¨ºª\%gggg&$€£<>¡"
+            For i As Integer = 0 To caracteresProhibidos.Length - 1
+                If nombre.Contains(caracteresProhibidos(i)) Then
+                    valido = False
+                    Exit For
+                End If
+            Next
+            Return valido
+        End Function
     End Class
 
 
