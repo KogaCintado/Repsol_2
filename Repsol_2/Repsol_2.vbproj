@@ -116,6 +116,12 @@
     <Compile Include="TPV.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Trabajar.Designer.vb">
+      <DependentUpon>Trabajar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Trabajar.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="GestionesAdministrador.resx">
@@ -135,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TPV.resx">
       <DependentUpon>TPV.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trabajar.resx">
+      <DependentUpon>Trabajar.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +167,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Repsol_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mapa.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

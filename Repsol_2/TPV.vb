@@ -18,7 +18,8 @@
 
     End Sub
 
-    Private Sub VolverToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VolverToolStripMenuItem.Click
-
+    Private Sub VolverToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles VolverToolStripMenuItem1.Click
+        Trabajar.Show()
+        Me.Close()
     End Sub
 End Class

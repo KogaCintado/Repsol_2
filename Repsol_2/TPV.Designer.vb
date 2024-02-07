@@ -24,7 +24,6 @@ Partial Class TPV
     Private Sub InitializeComponent()
         Me.lblUser = New System.Windows.Forms.Label()
         Me.lbNombreCategorias = New System.Windows.Forms.ListBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lblResultado = New System.Windows.Forms.Label()
         Me.lblTexto2 = New System.Windows.Forms.Label()
@@ -42,8 +41,9 @@ Partial Class TPV
         Me.VolverToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarAplicaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblUser
@@ -68,18 +68,8 @@ Partial Class TPV
         Me.lbNombreCategorias.Location = New System.Drawing.Point(661, 83)
         Me.lbNombreCategorias.MultiColumn = True
         Me.lbNombreCategorias.Name = "lbNombreCategorias"
-        Me.lbNombreCategorias.Size = New System.Drawing.Size(397, 25)
+        Me.lbNombreCategorias.Size = New System.Drawing.Size(391, 25)
         Me.lbNombreCategorias.TabIndex = 6
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.Repsol_2.My.Resources.Resources.Repsol_logo
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 45)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(160, 40)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 7
-        Me.PictureBox1.TabStop = False
         '
         'Label3
         '
@@ -226,7 +216,7 @@ Partial Class TPV
         'VolverToolStripMenuItem1
         '
         Me.VolverToolStripMenuItem1.Name = "VolverToolStripMenuItem1"
-        Me.VolverToolStripMenuItem1.Size = New System.Drawing.Size(180, 30)
+        Me.VolverToolStripMenuItem1.Size = New System.Drawing.Size(228, 30)
         Me.VolverToolStripMenuItem1.Text = "Volver"
         '
         'CerrarSesiónToolStripMenuItem
@@ -240,6 +230,16 @@ Partial Class TPV
         Me.CerrarAplicaciónToolStripMenuItem.Name = "CerrarAplicaciónToolStripMenuItem"
         Me.CerrarAplicaciónToolStripMenuItem.Size = New System.Drawing.Size(228, 30)
         Me.CerrarAplicaciónToolStripMenuItem.Text = "Cerrar aplicación"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.Repsol_2.My.Resources.Resources.Repsol_logo
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 45)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(160, 40)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 7
+        Me.PictureBox1.TabStop = False
         '
         'TPV
         '
@@ -265,9 +265,9 @@ Partial Class TPV
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "TPV"
         Me.Text = "TPV"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
