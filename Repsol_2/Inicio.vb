@@ -46,6 +46,7 @@
         Dim i As Boolean = ValidarCaracteres(tbPassword.Text)
 
         'abajo controlaremos la condicion de que en caso de que debuelva falso, se muestre un mensaje de error
+
         If i = False Then
             ErrorProvider1.SetError(tbPassword, "No se permiten caracteres especiales")
             tbPassword.Clear()
