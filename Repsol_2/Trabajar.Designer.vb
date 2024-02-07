@@ -65,24 +65,24 @@ Partial Class Trabajar
         'VolverToolStripMenuItem
         '
         Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
-        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
         Me.VolverToolStripMenuItem.Text = "Volver"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(170, 6)
         '
         'CerrarSesiónToolStripMenuItem
         '
         Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
-        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
         Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar sesión"
         '
         'CerrarAplicaciónToolStripMenuItem
         '
         Me.CerrarAplicaciónToolStripMenuItem.Name = "CerrarAplicaciónToolStripMenuItem"
-        Me.CerrarAplicaciónToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CerrarAplicaciónToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
         Me.CerrarAplicaciónToolStripMenuItem.Text = "Cerrar el programa"
         '
         'lblUser
@@ -97,6 +97,7 @@ Partial Class Trabajar
         '
         'PictureBox2
         '
+        Me.PictureBox2.Enabled = False
         Me.PictureBox2.Image = Global.Repsol_2.My.Resources.Resources.Mapa
         Me.PictureBox2.Location = New System.Drawing.Point(62, 113)
         Me.PictureBox2.Name = "PictureBox2"
@@ -117,7 +118,8 @@ Partial Class Trabajar
         '
         'pbManguera1
         '
-        Me.pbManguera1.BackColor = System.Drawing.Color.Transparent
+        Me.pbManguera1.BackColor = System.Drawing.SystemColors.Control
+        Me.pbManguera1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.pbManguera1.Location = New System.Drawing.Point(263, 522)
         Me.pbManguera1.Name = "pbManguera1"
         Me.pbManguera1.Size = New System.Drawing.Size(138, 261)
@@ -126,7 +128,8 @@ Partial Class Trabajar
         '
         'pbManguera2
         '
-        Me.pbManguera2.BackColor = System.Drawing.Color.Transparent
+        Me.pbManguera2.BackColor = System.Drawing.SystemColors.Control
+        Me.pbManguera2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.pbManguera2.Location = New System.Drawing.Point(407, 509)
         Me.pbManguera2.Name = "pbManguera2"
         Me.pbManguera2.Size = New System.Drawing.Size(111, 189)
@@ -135,7 +138,8 @@ Partial Class Trabajar
         '
         'pbManguera3
         '
-        Me.pbManguera3.BackColor = System.Drawing.Color.Transparent
+        Me.pbManguera3.BackColor = System.Drawing.SystemColors.Control
+        Me.pbManguera3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.pbManguera3.Location = New System.Drawing.Point(592, 583)
         Me.pbManguera3.Name = "pbManguera3"
         Me.pbManguera3.Size = New System.Drawing.Size(157, 287)
@@ -144,7 +148,8 @@ Partial Class Trabajar
         '
         'pbManguera4
         '
-        Me.pbManguera4.BackColor = System.Drawing.Color.Transparent
+        Me.pbManguera4.BackColor = System.Drawing.SystemColors.Control
+        Me.pbManguera4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.pbManguera4.Location = New System.Drawing.Point(771, 556)
         Me.pbManguera4.Name = "pbManguera4"
         Me.pbManguera4.Size = New System.Drawing.Size(130, 259)
@@ -166,14 +171,14 @@ Partial Class Trabajar
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
         Me.Controls.Add(Me.btnTienda)
-        Me.Controls.Add(Me.pbManguera4)
-        Me.Controls.Add(Me.pbManguera3)
-        Me.Controls.Add(Me.pbManguera2)
-        Me.Controls.Add(Me.pbManguera1)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.lblUser)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.pbManguera1)
+        Me.Controls.Add(Me.pbManguera2)
+        Me.Controls.Add(Me.pbManguera3)
+        Me.Controls.Add(Me.pbManguera4)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Trabajar"
         Me.Text = "Trabajar"
