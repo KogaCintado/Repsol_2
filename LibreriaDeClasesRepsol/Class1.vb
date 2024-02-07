@@ -16,7 +16,6 @@
         End Function
 
         'Esta funcion lo que hace es validar que la longitud de los campos (textbox) no sea superior a 10 caracteres
-
         Public Function validarLongitud(ByVal nombre As String) As Boolean
             Dim valido As Boolean = True
             If nombre.Length > 10 Then
