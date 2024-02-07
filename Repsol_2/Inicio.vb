@@ -20,8 +20,8 @@
     End Sub
 
     Private Sub ShowPassword_Click(sender As Object, e As EventArgs) Handles showPassword.Click
-
-        If (tbPassword.PasswordChar = "") Then
+        'Porque esto me da error
+        If (tbPassword.PasswordChar <> "*") Then
             tbPassword.PasswordChar = "*"
         Else
             tbPassword.PasswordChar = ""
@@ -67,7 +67,12 @@
         Return True
     End Function
 
+    Private Sub BORRAR(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        admin = True
+        ErrorProvider1.Clear()
+        ErrorProvider2.Clear()
 
-
-
+        Me.Hide()
+        Opciones.Show()
+    End Sub
 End Class

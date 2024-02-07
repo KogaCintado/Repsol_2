@@ -210,8 +210,8 @@ Partial Class TPV
         Me.VolverToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VolverToolStripMenuItem1, Me.CerrarSesiónToolStripMenuItem, Me.CerrarAplicaciónToolStripMenuItem})
         Me.VolverToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
-        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(61, 29)
-        Me.VolverToolStripMenuItem.Text = "Salir"
+        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(103, 29)
+        Me.VolverToolStripMenuItem.Text = "Opciones"
         '
         'VolverToolStripMenuItem1
         '

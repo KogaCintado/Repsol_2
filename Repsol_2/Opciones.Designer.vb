@@ -76,8 +76,8 @@ Partial Class Opciones
         Me.SalirDelProgramaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CerrarSesiónToolStripMenuItem, Me.CerrarElProgramaToolStripMenuItem})
         Me.SalirDelProgramaToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SalirDelProgramaToolStripMenuItem.Name = "SalirDelProgramaToolStripMenuItem"
-        Me.SalirDelProgramaToolStripMenuItem.Size = New System.Drawing.Size(61, 29)
-        Me.SalirDelProgramaToolStripMenuItem.Text = "Salir"
+        Me.SalirDelProgramaToolStripMenuItem.Size = New System.Drawing.Size(103, 29)
+        Me.SalirDelProgramaToolStripMenuItem.Text = "Opciones"
         '
         'CerrarSesiónToolStripMenuItem
         '
