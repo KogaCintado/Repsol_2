@@ -29,12 +29,14 @@ Partial Class Opciones
         Me.SalirDelProgramaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarElProgramaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.MenuStrip1.SuspendLayout()
+        Me.FlowLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnInformes
         '
-        Me.btnInformes.Location = New System.Drawing.Point(106, 175)
+        Me.btnInformes.Location = New System.Drawing.Point(3, 3)
         Me.btnInformes.Name = "btnInformes"
         Me.btnInformes.Size = New System.Drawing.Size(90, 60)
         Me.btnInformes.TabIndex = 0
@@ -44,17 +46,16 @@ Partial Class Opciones
         '
         'btnCRUD
         '
-        Me.btnCRUD.Location = New System.Drawing.Point(363, 175)
+        Me.btnCRUD.Location = New System.Drawing.Point(195, 3)
         Me.btnCRUD.Name = "btnCRUD"
         Me.btnCRUD.Size = New System.Drawing.Size(90, 60)
         Me.btnCRUD.TabIndex = 2
         Me.btnCRUD.Text = "CRUD"
         Me.btnCRUD.UseVisualStyleBackColor = True
-        Me.btnCRUD.Visible = False
         '
         'btnTrabajar
         '
-        Me.btnTrabajar.Location = New System.Drawing.Point(645, 175)
+        Me.btnTrabajar.Location = New System.Drawing.Point(99, 3)
         Me.btnTrabajar.Name = "btnTrabajar"
         Me.btnTrabajar.Size = New System.Drawing.Size(90, 60)
         Me.btnTrabajar.TabIndex = 3
@@ -89,20 +90,29 @@ Partial Class Opciones
         Me.CerrarElProgramaToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
         Me.CerrarElProgramaToolStripMenuItem.Text = "Cerrar el programa"
         '
+        'FlowLayoutPanel1
+        '
+        Me.FlowLayoutPanel1.Controls.Add(Me.btnInformes)
+        Me.FlowLayoutPanel1.Controls.Add(Me.btnTrabajar)
+        Me.FlowLayoutPanel1.Controls.Add(Me.btnCRUD)
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(512, 242)
+        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(292, 71)
+        Me.FlowLayoutPanel1.TabIndex = 6
+        '
         'Opciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
-        Me.Controls.Add(Me.btnTrabajar)
-        Me.Controls.Add(Me.btnCRUD)
-        Me.Controls.Add(Me.btnInformes)
+        Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Opciones"
         Me.Text = "Opciones"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        Me.FlowLayoutPanel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -115,4 +125,5 @@ Partial Class Opciones
     Friend WithEvents SalirDelProgramaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CerrarSesiónToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CerrarElProgramaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
 End Class

@@ -76,6 +76,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GestionesAdministrador.Designer.vb">
+      <DependentUpon>GestionesAdministrador.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GestionesAdministrador.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Inicio.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GestionesAdministrador.resx">
+      <DependentUpon>GestionesAdministrador.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.vb</DependentUpon>
     </EmbeddedResource>
