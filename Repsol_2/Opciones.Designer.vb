@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Opciones
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Opciones
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.btnInformes = New System.Windows.Forms.Button()
         Me.btnCRUD = New System.Windows.Forms.Button()
@@ -67,27 +67,28 @@ Partial Class Opciones
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SalirDelProgramaToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1904, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1904, 33)
         Me.MenuStrip1.TabIndex = 5
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'SalirDelProgramaToolStripMenuItem
         '
         Me.SalirDelProgramaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CerrarSesiónToolStripMenuItem, Me.CerrarElProgramaToolStripMenuItem})
+        Me.SalirDelProgramaToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SalirDelProgramaToolStripMenuItem.Name = "SalirDelProgramaToolStripMenuItem"
-        Me.SalirDelProgramaToolStripMenuItem.Size = New System.Drawing.Size(41, 20)
+        Me.SalirDelProgramaToolStripMenuItem.Size = New System.Drawing.Size(61, 29)
         Me.SalirDelProgramaToolStripMenuItem.Text = "Salir"
         '
         'CerrarSesiónToolStripMenuItem
         '
         Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
-        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(245, 30)
         Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar sesión"
         '
         'CerrarElProgramaToolStripMenuItem
         '
         Me.CerrarElProgramaToolStripMenuItem.Name = "CerrarElProgramaToolStripMenuItem"
-        Me.CerrarElProgramaToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.CerrarElProgramaToolStripMenuItem.Size = New System.Drawing.Size(245, 30)
         Me.CerrarElProgramaToolStripMenuItem.Text = "Cerrar el programa"
         '
         'FlowLayoutPanel1

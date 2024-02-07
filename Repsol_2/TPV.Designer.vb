@@ -35,14 +35,22 @@ Partial Class TPV
         Me.btnTarjeta = New System.Windows.Forms.Button()
         Me.btnEfectivo = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.ListBox2 = New System.Windows.Forms.ListBox()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.VolverToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VolverToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CerrarAplicaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblUser
         '
         Me.lblUser.AutoSize = True
         Me.lblUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblUser.Location = New System.Drawing.Point(178, 34)
+        Me.lblUser.Location = New System.Drawing.Point(178, 59)
         Me.lblUser.Name = "lblUser"
         Me.lblUser.Size = New System.Drawing.Size(171, 25)
         Me.lblUser.TabIndex = 5
@@ -52,22 +60,21 @@ Partial Class TPV
         '
         Me.lbNombreCategorias.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.lbNombreCategorias.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lbNombreCategorias.ColumnWidth = 140
+        Me.lbNombreCategorias.ColumnWidth = 130
         Me.lbNombreCategorias.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbNombreCategorias.FormattingEnabled = True
-        Me.lbNombreCategorias.IntegralHeight = False
         Me.lbNombreCategorias.ItemHeight = 25
         Me.lbNombreCategorias.Items.AddRange(New Object() {"Consumibles", "Bebidas", "Otros"})
-        Me.lbNombreCategorias.Location = New System.Drawing.Point(417, 64)
+        Me.lbNombreCategorias.Location = New System.Drawing.Point(661, 83)
         Me.lbNombreCategorias.MultiColumn = True
         Me.lbNombreCategorias.Name = "lbNombreCategorias"
-        Me.lbNombreCategorias.Size = New System.Drawing.Size(1123, 25)
+        Me.lbNombreCategorias.Size = New System.Drawing.Size(397, 25)
         Me.lbNombreCategorias.TabIndex = 6
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.Repsol_2.My.Resources.Resources.Repsol_logo
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 20)
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 45)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(160, 40)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -175,11 +182,72 @@ Partial Class TPV
         Me.btnEliminar.Text = "Eliminar producto"
         Me.btnEliminar.UseVisualStyleBackColor = True
         '
+        'ListBox1
+        '
+        Me.ListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.ListBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ListBox1.FormatString = "C2"
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.ItemHeight = 18
+        Me.ListBox1.Location = New System.Drawing.Point(934, 166)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.ListBox1.Size = New System.Drawing.Size(75, 468)
+        Me.ListBox1.TabIndex = 63
+        '
+        'ListBox2
+        '
+        Me.ListBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.ListBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ListBox2.FormattingEnabled = True
+        Me.ListBox2.ItemHeight = 18
+        Me.ListBox2.Location = New System.Drawing.Point(701, 166)
+        Me.ListBox2.Name = "ListBox2"
+        Me.ListBox2.Size = New System.Drawing.Size(237, 468)
+        Me.ListBox2.TabIndex = 62
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VolverToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(1904, 33)
+        Me.MenuStrip1.TabIndex = 64
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'VolverToolStripMenuItem
+        '
+        Me.VolverToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VolverToolStripMenuItem1, Me.CerrarSesiónToolStripMenuItem, Me.CerrarAplicaciónToolStripMenuItem})
+        Me.VolverToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
+        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(61, 29)
+        Me.VolverToolStripMenuItem.Text = "Salir"
+        '
+        'VolverToolStripMenuItem1
+        '
+        Me.VolverToolStripMenuItem1.Name = "VolverToolStripMenuItem1"
+        Me.VolverToolStripMenuItem1.Size = New System.Drawing.Size(180, 30)
+        Me.VolverToolStripMenuItem1.Text = "Volver"
+        '
+        'CerrarSesiónToolStripMenuItem
+        '
+        Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
+        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(228, 30)
+        Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar sesión"
+        '
+        'CerrarAplicaciónToolStripMenuItem
+        '
+        Me.CerrarAplicaciónToolStripMenuItem.Name = "CerrarAplicaciónToolStripMenuItem"
+        Me.CerrarAplicaciónToolStripMenuItem.Size = New System.Drawing.Size(228, 30)
+        Me.CerrarAplicaciónToolStripMenuItem.Text = "Cerrar aplicación"
+        '
         'TPV
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
+        Me.Controls.Add(Me.ListBox1)
+        Me.Controls.Add(Me.ListBox2)
         Me.Controls.Add(Me.btnLimpiar)
         Me.Controls.Add(Me.btnTarjeta)
         Me.Controls.Add(Me.btnEfectivo)
@@ -193,9 +261,13 @@ Partial Class TPV
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.lbNombreCategorias)
         Me.Controls.Add(Me.lblUser)
+        Me.Controls.Add(Me.MenuStrip1)
+        Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "TPV"
         Me.Text = "TPV"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -214,4 +286,11 @@ Partial Class TPV
     Friend WithEvents btnTarjeta As Button
     Friend WithEvents btnEfectivo As Button
     Friend WithEvents btnEliminar As Button
+    Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents ListBox2 As ListBox
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents VolverToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents VolverToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents CerrarSesiónToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CerrarAplicaciónToolStripMenuItem As ToolStripMenuItem
 End Class

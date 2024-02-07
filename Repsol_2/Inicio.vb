@@ -1,8 +1,10 @@
 ﻿Public Class Inicio
     Public Shared admin As Boolean = False
     Private Sub Inicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'Maximize the window
+        'Maximizamos la ventana
         Me.WindowState = FormWindowState.Maximized
+        'Ocultamos la password
+        tbPassword.PasswordChar = "*"
         admin = False
     End Sub
 
