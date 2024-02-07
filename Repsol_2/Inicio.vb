@@ -9,7 +9,8 @@
     Private Sub btnStart_Click(sender As Object, e As EventArgs) Handles btnStart.Click
         'Programar validaciones.
 
-
+        ErrorProvider1.Clear()
+        ErrorProvider2.Clear()
 
         Me.Hide()
         Opciones.Show()
