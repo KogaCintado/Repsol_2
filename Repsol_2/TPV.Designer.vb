@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class TPV
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class TPV
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.lblUser = New System.Windows.Forms.Label()
         Me.lbNombreCategorias = New System.Windows.Forms.ListBox()
@@ -34,8 +34,8 @@ Partial Class TPV
         Me.btnTarjeta = New System.Windows.Forms.Button()
         Me.btnEfectivo = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
-        Me.ListBox2 = New System.Windows.Forms.ListBox()
+        Me.lbPreciosTienda = New System.Windows.Forms.ListBox()
+        Me.lbProductosTienda = New System.Windows.Forms.ListBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.VolverToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VolverToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -172,29 +172,29 @@ Partial Class TPV
         Me.btnEliminar.Text = "Eliminar producto"
         Me.btnEliminar.UseVisualStyleBackColor = True
         '
-        'ListBox1
+        'lbPreciosTienda
         '
-        Me.ListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.ListBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ListBox1.FormatString = "C2"
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.ItemHeight = 18
-        Me.ListBox1.Location = New System.Drawing.Point(934, 166)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.ListBox1.Size = New System.Drawing.Size(75, 468)
-        Me.ListBox1.TabIndex = 63
+        Me.lbPreciosTienda.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.lbPreciosTienda.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbPreciosTienda.FormatString = "C2"
+        Me.lbPreciosTienda.FormattingEnabled = True
+        Me.lbPreciosTienda.ItemHeight = 18
+        Me.lbPreciosTienda.Location = New System.Drawing.Point(934, 166)
+        Me.lbPreciosTienda.Name = "lbPreciosTienda"
+        Me.lbPreciosTienda.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.lbPreciosTienda.Size = New System.Drawing.Size(75, 468)
+        Me.lbPreciosTienda.TabIndex = 63
         '
-        'ListBox2
+        'lbProductosTienda
         '
-        Me.ListBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.ListBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.ItemHeight = 18
-        Me.ListBox2.Location = New System.Drawing.Point(701, 166)
-        Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(237, 468)
-        Me.ListBox2.TabIndex = 62
+        Me.lbProductosTienda.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.lbProductosTienda.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbProductosTienda.FormattingEnabled = True
+        Me.lbProductosTienda.ItemHeight = 18
+        Me.lbProductosTienda.Location = New System.Drawing.Point(701, 166)
+        Me.lbProductosTienda.Name = "lbProductosTienda"
+        Me.lbProductosTienda.Size = New System.Drawing.Size(237, 468)
+        Me.lbProductosTienda.TabIndex = 62
         '
         'MenuStrip1
         '
@@ -246,8 +246,8 @@ Partial Class TPV
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
-        Me.Controls.Add(Me.ListBox1)
-        Me.Controls.Add(Me.ListBox2)
+        Me.Controls.Add(Me.lbPreciosTienda)
+        Me.Controls.Add(Me.lbProductosTienda)
         Me.Controls.Add(Me.btnLimpiar)
         Me.Controls.Add(Me.btnTarjeta)
         Me.Controls.Add(Me.btnEfectivo)
@@ -286,8 +286,8 @@ Partial Class TPV
     Friend WithEvents btnTarjeta As Button
     Friend WithEvents btnEfectivo As Button
     Friend WithEvents btnEliminar As Button
-    Friend WithEvents ListBox1 As ListBox
-    Friend WithEvents ListBox2 As ListBox
+    Friend WithEvents lbPreciosTienda As ListBox
+    Friend WithEvents lbProductosTienda As ListBox
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents VolverToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents VolverToolStripMenuItem1 As ToolStripMenuItem

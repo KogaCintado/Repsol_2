@@ -92,10 +92,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Gas.Designer.vb">
-      <DependentUpon>Gas.vb</DependentUpon>
+    <Compile Include="Gasolina.Designer.vb">
+      <DependentUpon>Gasolina.vb</DependentUpon>
     </Compile>
-    <Compile Include="Gas.vb">
+    <Compile Include="Gasolina.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GestionesAdministrador.Designer.vb">
@@ -151,6 +151,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Gasolina.resx">
+      <DependentUpon>Gasolina.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GestionesAdministrador.resx">
       <DependentUpon>GestionesAdministrador.vb</DependentUpon>
     </EmbeddedResource>

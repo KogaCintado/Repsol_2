@@ -5,13 +5,23 @@
     End Sub
 
     Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
+
         'Limpia los listbox lbNombreProductos y lbPrecios menos el primer elemento.
-        Dim box As String = lbNombreProductos.GetItemText(0)
-        lbNombreProductos.Items.Clear()
-        Dim box1 As String = lbPrecios.GetItemText(0)
-        lbPrecios.Items.Clear()
-        lbNombreProductos.Items.Add(box)
-        lbPrecios.Items.Add(box1)
+        If (lbNombreProductos.GetItemText(0) = "Gasolina") Then
+            Dim box As String = lbNombreProductos.GetItemText(0)
+            Dim box1 As String = lbPrecios.GetItemText(0)
+
+            lbNombreProductos.Items.Clear()
+            lbPrecios.Items.Clear()
+
+            lbNombreProductos.Items.Add(box)
+            lbPrecios.Items.Add(box1)
+        Else
+            lbNombreProductos.Items.Clear()
+            lbPrecios.Items.Clear()
+        End If
+
+
 
     End Sub
 
