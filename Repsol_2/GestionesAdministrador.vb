@@ -9,7 +9,9 @@ Public Class GestionesAdministrador
         ClientesDataGridView.Location = New Point(3000, 3000)
         panelBuscarEmpleado.Location = New Point(3000, 3000)
         panelBuscarCliente.Location = New Point(3000, 3000)
-
+        panelBuscarProducto.Location = New Point(3000, 3000)
+        panelBuscarGasolina.Location = New Point(3000, 3000)
+        panelBuscarProveedor.Location = New Point(3000, 3000)
 
         'Maximize the window
         Me.WindowState = FormWindowState.Maximized
@@ -35,6 +37,9 @@ Public Class GestionesAdministrador
         ProveedoresDataGridView.Location = New Point(3000, 3000)
         panelBuscarEmpleado.Location = New Point(3000, 3000)
         panelBuscarCliente.Location = New Point(3000, 3000)
+        panelBuscarProducto.Location = New Point(3000, 3000)
+        panelBuscarGasolina.Location = New Point(3000, 3000)
+        panelBuscarProveedor.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoDataGridDeEmpleados()
@@ -44,6 +49,9 @@ Public Class GestionesAdministrador
         ProveedoresDataGridView.Location = New Point(3000, 3000)
         panelBuscarEmpleado.Location = New Point(3000, 3000)
         panelBuscarCliente.Location = New Point(3000, 3000)
+        panelBuscarProducto.Location = New Point(3000, 3000)
+        panelBuscarGasolina.Location = New Point(3000, 3000)
+        panelBuscarProveedor.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoDataGridDeGasolinas()
@@ -53,6 +61,9 @@ Public Class GestionesAdministrador
         ProveedoresDataGridView.Location = New Point(3000, 3000)
         panelBuscarEmpleado.Location = New Point(3000, 3000)
         panelBuscarCliente.Location = New Point(3000, 3000)
+        panelBuscarProducto.Location = New Point(3000, 3000)
+        panelBuscarGasolina.Location = New Point(3000, 3000)
+        panelBuscarProveedor.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoDataGridDeProductos()
@@ -62,6 +73,9 @@ Public Class GestionesAdministrador
         ProveedoresDataGridView.Location = New Point(3000, 3000)
         panelBuscarEmpleado.Location = New Point(3000, 3000)
         panelBuscarCliente.Location = New Point(3000, 3000)
+        panelBuscarProducto.Location = New Point(3000, 3000)
+        panelBuscarGasolina.Location = New Point(3000, 3000)
+        panelBuscarProveedor.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoDataGridDeProveedores()
@@ -71,6 +85,69 @@ Public Class GestionesAdministrador
         ClientesDataGridView.Location = New Point(3000, 3000)
         panelBuscarEmpleado.Location = New Point(3000, 3000)
         panelBuscarCliente.Location = New Point(3000, 3000)
+        panelBuscarProducto.Location = New Point(3000, 3000)
+        panelBuscarGasolina.Location = New Point(3000, 3000)
+        panelBuscarProveedor.Location = New Point(3000, 3000)
+    End Sub
+
+    Private Sub invisivilizarTodosExceptoPanelBuscarEmpleado()
+        ProductosDataGridView.Location = New Point(3000, 3000)
+        EmpleadosDataGridView.Location = New Point(3000, 3000)
+        GasolinasDataGridView.Location = New Point(3000, 3000)
+        ClientesDataGridView.Location = New Point(3000, 3000)
+        ProveedoresDataGridView.Location = New Point(3000, 3000)
+        panelBuscarCliente.Location = New Point(3000, 3000)
+        panelBuscarProducto.Location = New Point(3000, 3000)
+        panelBuscarGasolina.Location = New Point(3000, 3000)
+        panelBuscarProveedor.Location = New Point(3000, 3000)
+    End Sub
+
+    Private Sub invisivilizarTodosExceptoPanelBuscarCliente()
+        ProductosDataGridView.Location = New Point(3000, 3000)
+        EmpleadosDataGridView.Location = New Point(3000, 3000)
+        GasolinasDataGridView.Location = New Point(3000, 3000)
+        ClientesDataGridView.Location = New Point(3000, 3000)
+        ProveedoresDataGridView.Location = New Point(3000, 3000)
+        panelBuscarEmpleado.Location = New Point(3000, 3000)
+        panelBuscarProducto.Location = New Point(3000, 3000)
+        panelBuscarGasolina.Location = New Point(3000, 3000)
+        panelBuscarProveedor.Location = New Point(3000, 3000)
+    End Sub
+
+    Private Sub invisivilizarTodosExceptoPanelBuscarProducto()
+        ProductosDataGridView.Location = New Point(3000, 3000)
+        EmpleadosDataGridView.Location = New Point(3000, 3000)
+        GasolinasDataGridView.Location = New Point(3000, 3000)
+        ClientesDataGridView.Location = New Point(3000, 3000)
+        ProveedoresDataGridView.Location = New Point(3000, 3000)
+        panelBuscarEmpleado.Location = New Point(3000, 3000)
+        panelBuscarCliente.Location = New Point(3000, 3000)
+        panelBuscarGasolina.Location = New Point(3000, 3000)
+        panelBuscarProveedor.Location = New Point(3000, 3000)
+    End Sub
+
+    Private Sub invisivilizarTodosExceptoPanelBuscarGasolina()
+        ProductosDataGridView.Location = New Point(3000, 3000)
+        EmpleadosDataGridView.Location = New Point(3000, 3000)
+        GasolinasDataGridView.Location = New Point(3000, 3000)
+        ClientesDataGridView.Location = New Point(3000, 3000)
+        ProveedoresDataGridView.Location = New Point(3000, 3000)
+        panelBuscarEmpleado.Location = New Point(3000, 3000)
+        panelBuscarCliente.Location = New Point(3000, 3000)
+        panelBuscarProducto.Location = New Point(3000, 3000)
+        panelBuscarProveedor.Location = New Point(3000, 3000)
+    End Sub
+
+    Private Sub invisivilizarTodosExceptoPanelBuscarProveedor()
+        ProductosDataGridView.Location = New Point(3000, 3000)
+        EmpleadosDataGridView.Location = New Point(3000, 3000)
+        GasolinasDataGridView.Location = New Point(3000, 3000)
+        ClientesDataGridView.Location = New Point(3000, 3000)
+        ProveedoresDataGridView.Location = New Point(3000, 3000)
+        panelBuscarEmpleado.Location = New Point(3000, 3000)
+        panelBuscarCliente.Location = New Point(3000, 3000)
+        panelBuscarProducto.Location = New Point(3000, 3000)
+        panelBuscarGasolina.Location = New Point(3000, 3000)
     End Sub
 
 
@@ -115,8 +192,26 @@ Public Class GestionesAdministrador
     End Sub
 
     Private Sub btnSeleccionarUnEmpleado_Click(sender As Object, e As EventArgs) Handles btnSeleccionarUnEmpleado.Click
-        panelBuscarEmpleado.Visible = True
+        invisivilizarTodosExceptoPanelBuscarEmpleado()
         panelBuscarEmpleado.Location = New Point(476, 81)
+    End Sub
+    Private Sub btnVerCliente_Click(sender As Object, e As EventArgs) Handles btnVerCliente.Click
+        invisivilizarTodosExceptoPanelBuscarCliente()
+        panelBuscarCliente.Location = New Point(476, 81)
+    End Sub
+
+    Private Sub btnVerProducto_Click(sender As Object, e As EventArgs) Handles btnVerProducto.Click
+        invisivilizarTodosExceptoPanelBuscarProducto()
+        panelBuscarProducto.Location = New Point(476, 81)
+    End Sub
+    Private Sub btnVerGasolina_Click(sender As Object, e As EventArgs) Handles btnVerGasolina.Click
+        invisivilizarTodosExceptoPanelBuscarGasolina()
+        panelBuscarGasolina.Location = New Point(476, 81)
+    End Sub
+
+    Private Sub btnVerProveedor_Click(sender As Object, e As EventArgs) Handles btnVerProveedor.Click
+        invisivilizarTodosExceptoPanelBuscarProveedor()
+        panelBuscarProveedor.Location = New Point(476, 81)
     End Sub
 
     Private Sub btnAccionBuscarEmpleado_Click(sender As Object, e As EventArgs) Handles btnAccionBuscarEmpleado.Click
@@ -220,6 +315,38 @@ Public Class GestionesAdministrador
         End If
     End Function
 
+
+    Private Sub btnAccionBuscarGasolina_Click(sender As Object, e As EventArgs) Handles btnAccionBuscarGasolina.Click
+        'En este boton lo que hacemos es buscar una Gasolina por su id
+        'Si el id no existe, mostramos un mensaje de error
+        'Si el id existe, mostramos los datos de la Gasolina
+        Dim idGasolina As Integer
+        idGasolina = tbIdGasolina.Text
+        Dim gasolina As DataRow
+        gasolina = BuscarGasolina(idGasolina)
+        If gasolina Is Nothing Then
+            MessageBox.Show("No existe una gasolina con ese id")
+        Else
+            tbNombreGasolina.Text = gasolina("Nombre")
+            tbPrecioGasolina.Text = gasolina("Precio")
+            tbCantidadGasolina.Text = gasolina("Cantidad")
+        End If
+    End Sub
+
+    Private Sub btnAccionBuscarProveedor_Click(sender As Object, e As EventArgs) Handles btnAccionBuscarProveedor.Click
+
+
+        Dim idProveedor As Integer
+        idProveedor = tbIdProveedor.Text
+        Dim proveedor As DataRow
+        proveedor = BuscarProveedor(idProveedor)
+        If proveedor Is Nothing Then
+            MessageBox.Show("No existe un proveedor con ese id")
+        Else
+            tbNombreProveedor.Text = proveedor("Nombre")
+        End If
+    End Sub
+
     Public Function BuscarCliente(id As Integer) As DataRow
         ' Crear una nueva instancia de la conexión a la base de datos
         ' Ensure that the server name, database name, and other connection properties are correct
@@ -290,6 +417,80 @@ Public Class GestionesAdministrador
         End If
     End Function
 
+    Public Function BuscarGasolina(id As Integer) As DataRow
+
+        ' Crear una nueva instancia de la conexión a la base de datos
+        ' Ensure that the server name, database name, and other connection properties are correct
+        Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
+
+        ' Crear una nueva instancia del comando SQL
+        Dim cmd As New OleDbCommand("SELECT * FROM Gasolinas WHERE id = @id", conn)
+
+        ' Añadir el parámetro al comando SQL
+        cmd.Parameters.AddWithValue("@id", id)
+
+        ' Crear una nueva instancia del adaptador de datos
+        Dim da As New OleDbDataAdapter(cmd)
+
+        ' Crear una nueva instancia del DataSet
+        Dim ds As New DataSet()
+
+        Try
+            ' Llenar el DataSet con los datos de la tabla Gasolinas
+            da.Fill(ds, "Gasolinas")
+        Catch ex As OleDbException
+            MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
+            Return Nothing
+        End Try
+
+        ' Comprobar si se encontró algún registro
+        If ds.Tables("Gasolinas").Rows.Count > 0 Then
+            ' Devolver la primera fila
+            Return ds.Tables("Gasolinas").Rows(0)
+        Else
+            ' Si no se encontró ningún registro, devolver Nothing
+            Return Nothing
+        End If
+    End Function
+
+    Public Function BuscarProveedor(id As Integer) As DataRow
+
+        ' Crear una nueva instancia de la conexión a la base de datos
+        ' Ensure that the server name, database name, and other connection properties are correct
+        Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
+
+        ' Crear una nueva instancia del comando SQL
+        Dim cmd As New OleDbCommand("SELECT * FROM Proveedores WHERE id = @id", conn)
+
+        ' Añadir el parámetro al comando SQL
+        cmd.Parameters.AddWithValue("@id", id)
+
+        ' Crear una nueva instancia del adaptador de datos
+        Dim da As New OleDbDataAdapter(cmd)
+
+        ' Crear una nueva instancia del DataSet
+        Dim ds As New DataSet()
+
+        Try
+            ' Llenar el DataSet con los datos de la tabla Proveedores
+            da.Fill(ds, "Proveedores")
+        Catch ex As OleDbException
+            MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
+            Return Nothing
+        End Try
+
+        ' Comprobar si se encontró algún registro
+        If ds.Tables("Proveedores").Rows.Count > 0 Then
+            ' Devolver la primera fila
+            Return ds.Tables("Proveedores").Rows(0)
+        Else
+            ' Si no se encontró ningún registro, devolver Nothing
+            Return Nothing
+        End If
+
+
+    End Function
+
 
     Private Sub btnGestionUsuarios_Click(sender As Object, e As EventArgs) Handles btnGestionUsuarios.Click
         'cada vez que demos click a este boton, mostraremos el panel
@@ -335,10 +536,5 @@ Public Class GestionesAdministrador
         panelOpcionesCrudClientes.Visible = False
         panelOpcionesCrudGasolina.Visible = False
         panelOpcionesCrudProveedores.Visible = True
-
-    End Sub
-
-    Private Sub btnVerCliente_Click(sender As Object, e As EventArgs) Handles btnVerCliente.Click
-        panelBuscarCliente.Location = New Point(476, 81)
     End Sub
 End Class

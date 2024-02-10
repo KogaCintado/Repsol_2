@@ -46,6 +46,12 @@ Partial Class GestionesAdministrador
         Dim ProveedorLabel As System.Windows.Forms.Label
         Dim GamaLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GestionesAdministrador))
+        Dim IdLabel3 As System.Windows.Forms.Label
+        Dim NombreLabel3 As System.Windows.Forms.Label
+        Dim CantidadLabel As System.Windows.Forms.Label
+        Dim PrecioLabel1 As System.Windows.Forms.Label
+        Dim IdLabel4 As System.Windows.Forms.Label
+        Dim NombreLabel4 As System.Windows.Forms.Label
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.btnGestionUsuarios = New System.Windows.Forms.Button()
         Me.btnGestionClientes = New System.Windows.Forms.Button()
@@ -159,13 +165,23 @@ Partial Class GestionesAdministrador
         Me.tbCorreoCliente = New System.Windows.Forms.TextBox()
         Me.FechaAltaClienteTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.tbAltaCliente = New System.Windows.Forms.TextBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.panelBuscarProducto = New System.Windows.Forms.Panel()
         Me.btnAccionBuscarProducto = New System.Windows.Forms.Button()
         Me.tbIdProducto = New System.Windows.Forms.TextBox()
         Me.tbNombreProducto = New System.Windows.Forms.TextBox()
         Me.tbPrecioProducto = New System.Windows.Forms.TextBox()
         Me.tbProveedorProducto = New System.Windows.Forms.TextBox()
         Me.tbGamaProducto = New System.Windows.Forms.TextBox()
+        Me.panelBuscarGasolina = New System.Windows.Forms.Panel()
+        Me.tbIdGasolina = New System.Windows.Forms.TextBox()
+        Me.tbNombreGasolina = New System.Windows.Forms.TextBox()
+        Me.tbCantidadGasolina = New System.Windows.Forms.TextBox()
+        Me.tbPrecioGasolina = New System.Windows.Forms.TextBox()
+        Me.btnAccionBuscarGasolina = New System.Windows.Forms.Button()
+        Me.panelBuscarProveedor = New System.Windows.Forms.Panel()
+        Me.tbIdProveedor = New System.Windows.Forms.TextBox()
+        Me.tbNombreProveedor = New System.Windows.Forms.TextBox()
+        Me.btnAccionBuscarProveedor = New System.Windows.Forms.Button()
         IdLabel = New System.Windows.Forms.Label()
         NombreLabel = New System.Windows.Forms.Label()
         Apellido_1Label = New System.Windows.Forms.Label()
@@ -188,6 +204,12 @@ Partial Class GestionesAdministrador
         PrecioLabel = New System.Windows.Forms.Label()
         ProveedorLabel = New System.Windows.Forms.Label()
         GamaLabel = New System.Windows.Forms.Label()
+        IdLabel3 = New System.Windows.Forms.Label()
+        NombreLabel3 = New System.Windows.Forms.Label()
+        CantidadLabel = New System.Windows.Forms.Label()
+        PrecioLabel1 = New System.Windows.Forms.Label()
+        IdLabel4 = New System.Windows.Forms.Label()
+        NombreLabel4 = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.panelOpcionesCrudUsuario.SuspendLayout()
@@ -210,7 +232,9 @@ Partial Class GestionesAdministrador
         CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelBuscarEmpleado.SuspendLayout()
         Me.panelBuscarCliente.SuspendLayout()
-        Me.Panel1.SuspendLayout()
+        Me.panelBuscarProducto.SuspendLayout()
+        Me.panelBuscarGasolina.SuspendLayout()
+        Me.panelBuscarProveedor.SuspendLayout()
         Me.SuspendLayout()
         '
         'IdLabel
@@ -1235,7 +1259,7 @@ Partial Class GestionesAdministrador
         Me.panelBuscarEmpleado.Controls.Add(Me.tbAdministradorEmpleado)
         Me.panelBuscarEmpleado.Controls.Add(CargoLabel)
         Me.panelBuscarEmpleado.Controls.Add(Me.tbCargoEmpleado)
-        Me.panelBuscarEmpleado.Location = New System.Drawing.Point(1014, 81)
+        Me.panelBuscarEmpleado.Location = New System.Drawing.Point(3000, 3000)
         Me.panelBuscarEmpleado.Name = "panelBuscarEmpleado"
         Me.panelBuscarEmpleado.Size = New System.Drawing.Size(200, 301)
         Me.panelBuscarEmpleado.TabIndex = 13
@@ -1259,7 +1283,7 @@ Partial Class GestionesAdministrador
         Me.panelBuscarCliente.Controls.Add(Me.FechaAltaClienteTimePicker)
         Me.panelBuscarCliente.Controls.Add(AltaLabel)
         Me.panelBuscarCliente.Controls.Add(Me.tbAltaCliente)
-        Me.panelBuscarCliente.Location = New System.Drawing.Point(1014, 388)
+        Me.panelBuscarCliente.Location = New System.Drawing.Point(3000, 3000)
         Me.panelBuscarCliente.Name = "panelBuscarCliente"
         Me.panelBuscarCliente.Size = New System.Drawing.Size(292, 301)
         Me.panelBuscarCliente.TabIndex = 14
@@ -1337,23 +1361,23 @@ Partial Class GestionesAdministrador
         Me.tbAltaCliente.Size = New System.Drawing.Size(200, 20)
         Me.tbAltaCliente.TabIndex = 15
         '
-        'Panel1
+        'panelBuscarProducto
         '
-        Me.Panel1.Controls.Add(Me.btnAccionBuscarProducto)
-        Me.Panel1.Controls.Add(IdLabel2)
-        Me.Panel1.Controls.Add(Me.tbIdProducto)
-        Me.Panel1.Controls.Add(NombreLabel2)
-        Me.Panel1.Controls.Add(Me.tbNombreProducto)
-        Me.Panel1.Controls.Add(PrecioLabel)
-        Me.Panel1.Controls.Add(Me.tbPrecioProducto)
-        Me.Panel1.Controls.Add(ProveedorLabel)
-        Me.Panel1.Controls.Add(Me.tbProveedorProducto)
-        Me.Panel1.Controls.Add(GamaLabel)
-        Me.Panel1.Controls.Add(Me.tbGamaProducto)
-        Me.Panel1.Location = New System.Drawing.Point(550, 76)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(208, 179)
-        Me.Panel1.TabIndex = 15
+        Me.panelBuscarProducto.Controls.Add(Me.btnAccionBuscarProducto)
+        Me.panelBuscarProducto.Controls.Add(IdLabel2)
+        Me.panelBuscarProducto.Controls.Add(Me.tbIdProducto)
+        Me.panelBuscarProducto.Controls.Add(NombreLabel2)
+        Me.panelBuscarProducto.Controls.Add(Me.tbNombreProducto)
+        Me.panelBuscarProducto.Controls.Add(PrecioLabel)
+        Me.panelBuscarProducto.Controls.Add(Me.tbPrecioProducto)
+        Me.panelBuscarProducto.Controls.Add(ProveedorLabel)
+        Me.panelBuscarProducto.Controls.Add(Me.tbProveedorProducto)
+        Me.panelBuscarProducto.Controls.Add(GamaLabel)
+        Me.panelBuscarProducto.Controls.Add(Me.tbGamaProducto)
+        Me.panelBuscarProducto.Location = New System.Drawing.Point(3000, 3000)
+        Me.panelBuscarProducto.Name = "panelBuscarProducto"
+        Me.panelBuscarProducto.Size = New System.Drawing.Size(208, 179)
+        Me.panelBuscarProducto.TabIndex = 15
         '
         'btnAccionBuscarProducto
         '
@@ -1404,13 +1428,163 @@ Partial Class GestionesAdministrador
         Me.tbGamaProducto.Size = New System.Drawing.Size(100, 20)
         Me.tbGamaProducto.TabIndex = 9
         '
+        'panelBuscarGasolina
+        '
+        Me.panelBuscarGasolina.Controls.Add(Me.btnAccionBuscarGasolina)
+        Me.panelBuscarGasolina.Controls.Add(IdLabel3)
+        Me.panelBuscarGasolina.Controls.Add(Me.tbIdGasolina)
+        Me.panelBuscarGasolina.Controls.Add(NombreLabel3)
+        Me.panelBuscarGasolina.Controls.Add(Me.tbNombreGasolina)
+        Me.panelBuscarGasolina.Controls.Add(CantidadLabel)
+        Me.panelBuscarGasolina.Controls.Add(Me.tbCantidadGasolina)
+        Me.panelBuscarGasolina.Controls.Add(PrecioLabel1)
+        Me.panelBuscarGasolina.Controls.Add(Me.tbPrecioGasolina)
+        Me.panelBuscarGasolina.Location = New System.Drawing.Point(3000, 3000)
+        Me.panelBuscarGasolina.Name = "panelBuscarGasolina"
+        Me.panelBuscarGasolina.Size = New System.Drawing.Size(174, 160)
+        Me.panelBuscarGasolina.TabIndex = 16
+        '
+        'IdLabel3
+        '
+        IdLabel3.AutoSize = True
+        IdLabel3.Location = New System.Drawing.Point(3, 20)
+        IdLabel3.Name = "IdLabel3"
+        IdLabel3.Size = New System.Drawing.Size(19, 13)
+        IdLabel3.TabIndex = 0
+        IdLabel3.Text = "Id:"
+        '
+        'tbIdGasolina
+        '
+        Me.tbIdGasolina.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.GasolinasBindingSource, "Id", True))
+        Me.tbIdGasolina.Location = New System.Drawing.Point(61, 17)
+        Me.tbIdGasolina.Name = "tbIdGasolina"
+        Me.tbIdGasolina.Size = New System.Drawing.Size(100, 20)
+        Me.tbIdGasolina.TabIndex = 1
+        '
+        'NombreLabel3
+        '
+        NombreLabel3.AutoSize = True
+        NombreLabel3.Location = New System.Drawing.Point(3, 46)
+        NombreLabel3.Name = "NombreLabel3"
+        NombreLabel3.Size = New System.Drawing.Size(47, 13)
+        NombreLabel3.TabIndex = 2
+        NombreLabel3.Text = "Nombre:"
+        '
+        'tbNombreGasolina
+        '
+        Me.tbNombreGasolina.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.GasolinasBindingSource, "Nombre", True))
+        Me.tbNombreGasolina.Location = New System.Drawing.Point(61, 43)
+        Me.tbNombreGasolina.Name = "tbNombreGasolina"
+        Me.tbNombreGasolina.Size = New System.Drawing.Size(100, 20)
+        Me.tbNombreGasolina.TabIndex = 3
+        '
+        'CantidadLabel
+        '
+        CantidadLabel.AutoSize = True
+        CantidadLabel.Location = New System.Drawing.Point(3, 72)
+        CantidadLabel.Name = "CantidadLabel"
+        CantidadLabel.Size = New System.Drawing.Size(52, 13)
+        CantidadLabel.TabIndex = 4
+        CantidadLabel.Text = "Cantidad:"
+        '
+        'tbCantidadGasolina
+        '
+        Me.tbCantidadGasolina.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.GasolinasBindingSource, "Cantidad", True))
+        Me.tbCantidadGasolina.Location = New System.Drawing.Point(61, 69)
+        Me.tbCantidadGasolina.Name = "tbCantidadGasolina"
+        Me.tbCantidadGasolina.Size = New System.Drawing.Size(100, 20)
+        Me.tbCantidadGasolina.TabIndex = 5
+        '
+        'PrecioLabel1
+        '
+        PrecioLabel1.AutoSize = True
+        PrecioLabel1.Location = New System.Drawing.Point(3, 98)
+        PrecioLabel1.Name = "PrecioLabel1"
+        PrecioLabel1.Size = New System.Drawing.Size(40, 13)
+        PrecioLabel1.TabIndex = 6
+        PrecioLabel1.Text = "Precio:"
+        '
+        'tbPrecioGasolina
+        '
+        Me.tbPrecioGasolina.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.GasolinasBindingSource, "Precio", True))
+        Me.tbPrecioGasolina.Location = New System.Drawing.Point(61, 95)
+        Me.tbPrecioGasolina.Name = "tbPrecioGasolina"
+        Me.tbPrecioGasolina.Size = New System.Drawing.Size(100, 20)
+        Me.tbPrecioGasolina.TabIndex = 7
+        '
+        'btnAccionBuscarGasolina
+        '
+        Me.btnAccionBuscarGasolina.Location = New System.Drawing.Point(61, 121)
+        Me.btnAccionBuscarGasolina.Name = "btnAccionBuscarGasolina"
+        Me.btnAccionBuscarGasolina.Size = New System.Drawing.Size(100, 23)
+        Me.btnAccionBuscarGasolina.TabIndex = 19
+        Me.btnAccionBuscarGasolina.Text = "Buscar"
+        Me.btnAccionBuscarGasolina.UseVisualStyleBackColor = True
+        '
+        'panelBuscarProveedor
+        '
+        Me.panelBuscarProveedor.Controls.Add(Me.btnAccionBuscarProveedor)
+        Me.panelBuscarProveedor.Controls.Add(IdLabel4)
+        Me.panelBuscarProveedor.Controls.Add(Me.tbIdProveedor)
+        Me.panelBuscarProveedor.Controls.Add(NombreLabel4)
+        Me.panelBuscarProveedor.Controls.Add(Me.tbNombreProveedor)
+        Me.panelBuscarProveedor.Location = New System.Drawing.Point(3000, 3000)
+        Me.panelBuscarProveedor.Name = "panelBuscarProveedor"
+        Me.panelBuscarProveedor.Size = New System.Drawing.Size(172, 91)
+        Me.panelBuscarProveedor.TabIndex = 17
+        '
+        'IdLabel4
+        '
+        IdLabel4.AutoSize = True
+        IdLabel4.Location = New System.Drawing.Point(2, 6)
+        IdLabel4.Name = "IdLabel4"
+        IdLabel4.Size = New System.Drawing.Size(19, 13)
+        IdLabel4.TabIndex = 0
+        IdLabel4.Text = "Id:"
+        '
+        'tbIdProveedor
+        '
+        Me.tbIdProveedor.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedoresBindingSource, "Id", True))
+        Me.tbIdProveedor.Location = New System.Drawing.Point(55, 3)
+        Me.tbIdProveedor.Name = "tbIdProveedor"
+        Me.tbIdProveedor.Size = New System.Drawing.Size(100, 20)
+        Me.tbIdProveedor.TabIndex = 1
+        '
+        'NombreLabel4
+        '
+        NombreLabel4.AutoSize = True
+        NombreLabel4.Location = New System.Drawing.Point(2, 32)
+        NombreLabel4.Name = "NombreLabel4"
+        NombreLabel4.Size = New System.Drawing.Size(47, 13)
+        NombreLabel4.TabIndex = 2
+        NombreLabel4.Text = "Nombre:"
+        '
+        'tbNombreProveedor
+        '
+        Me.tbNombreProveedor.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedoresBindingSource, "Nombre", True))
+        Me.tbNombreProveedor.Location = New System.Drawing.Point(55, 29)
+        Me.tbNombreProveedor.Name = "tbNombreProveedor"
+        Me.tbNombreProveedor.Size = New System.Drawing.Size(100, 20)
+        Me.tbNombreProveedor.TabIndex = 3
+        '
+        'btnAccionBuscarProveedor
+        '
+        Me.btnAccionBuscarProveedor.Location = New System.Drawing.Point(55, 55)
+        Me.btnAccionBuscarProveedor.Name = "btnAccionBuscarProveedor"
+        Me.btnAccionBuscarProveedor.Size = New System.Drawing.Size(100, 23)
+        Me.btnAccionBuscarProveedor.TabIndex = 19
+        Me.btnAccionBuscarProveedor.Text = "Buscar"
+        Me.btnAccionBuscarProveedor.UseVisualStyleBackColor = True
+        '
         'GestionesAdministrador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(1924, 1061)
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.panelBuscarProveedor)
+        Me.Controls.Add(Me.panelBuscarGasolina)
+        Me.Controls.Add(Me.panelBuscarProducto)
         Me.Controls.Add(Me.panelBuscarCliente)
         Me.Controls.Add(Me.panelBuscarEmpleado)
         Me.Controls.Add(Me.ProveedoresDataGridView)
@@ -1455,8 +1629,12 @@ Partial Class GestionesAdministrador
         Me.panelBuscarEmpleado.PerformLayout()
         Me.panelBuscarCliente.ResumeLayout(False)
         Me.panelBuscarCliente.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.panelBuscarProducto.ResumeLayout(False)
+        Me.panelBuscarProducto.PerformLayout()
+        Me.panelBuscarGasolina.ResumeLayout(False)
+        Me.panelBuscarGasolina.PerformLayout()
+        Me.panelBuscarProveedor.ResumeLayout(False)
+        Me.panelBuscarProveedor.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1575,11 +1753,21 @@ Partial Class GestionesAdministrador
     Friend WithEvents tbCorreoCliente As TextBox
     Friend WithEvents FechaAltaClienteTimePicker As DateTimePicker
     Friend WithEvents tbAltaCliente As TextBox
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents panelBuscarProducto As Panel
     Friend WithEvents btnAccionBuscarProducto As Button
     Friend WithEvents tbIdProducto As TextBox
     Friend WithEvents tbNombreProducto As TextBox
     Friend WithEvents tbPrecioProducto As TextBox
     Friend WithEvents tbProveedorProducto As TextBox
     Friend WithEvents tbGamaProducto As TextBox
+    Friend WithEvents panelBuscarGasolina As Panel
+    Friend WithEvents btnAccionBuscarGasolina As Button
+    Friend WithEvents tbIdGasolina As TextBox
+    Friend WithEvents tbNombreGasolina As TextBox
+    Friend WithEvents tbCantidadGasolina As TextBox
+    Friend WithEvents tbPrecioGasolina As TextBox
+    Friend WithEvents panelBuscarProveedor As Panel
+    Friend WithEvents btnAccionBuscarProveedor As Button
+    Friend WithEvents tbIdProveedor As TextBox
+    Friend WithEvents tbNombreProveedor As TextBox
 End Class
