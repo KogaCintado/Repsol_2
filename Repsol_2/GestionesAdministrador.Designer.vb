@@ -32,6 +32,19 @@ Partial Class GestionesAdministrador
         Dim ContraseñaLabel As System.Windows.Forms.Label
         Dim AdministradorLabel As System.Windows.Forms.Label
         Dim CargoLabel As System.Windows.Forms.Label
+        Dim IdLabel1 As System.Windows.Forms.Label
+        Dim NombreLabel1 As System.Windows.Forms.Label
+        Dim Apellido_1Label1 As System.Windows.Forms.Label
+        Dim Apellido_2Label1 As System.Windows.Forms.Label
+        Dim TelefonoLabel1 As System.Windows.Forms.Label
+        Dim CorreoLabel1 As System.Windows.Forms.Label
+        Dim FechaAltaLabel As System.Windows.Forms.Label
+        Dim AltaLabel As System.Windows.Forms.Label
+        Dim IdLabel2 As System.Windows.Forms.Label
+        Dim NombreLabel2 As System.Windows.Forms.Label
+        Dim PrecioLabel As System.Windows.Forms.Label
+        Dim ProveedorLabel As System.Windows.Forms.Label
+        Dim GamaLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GestionesAdministrador))
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.btnGestionUsuarios = New System.Windows.Forms.Button()
@@ -136,6 +149,23 @@ Partial Class GestionesAdministrador
         Me.GasolinasTableAdapter = New Repsol_2.Repsol_dbDataSetTableAdapters.GasolinasTableAdapter()
         Me.ProveedoresTableAdapter = New Repsol_2.Repsol_dbDataSetTableAdapters.ProveedoresTableAdapter()
         Me.panelBuscarEmpleado = New System.Windows.Forms.Panel()
+        Me.panelBuscarCliente = New System.Windows.Forms.Panel()
+        Me.btnAccionBuscarCliente = New System.Windows.Forms.Button()
+        Me.tbIdCliente = New System.Windows.Forms.TextBox()
+        Me.tbNombreCliente = New System.Windows.Forms.TextBox()
+        Me.tbApellido1Cliente = New System.Windows.Forms.TextBox()
+        Me.tbApellido2Cliente = New System.Windows.Forms.TextBox()
+        Me.tbTelefonoCliente = New System.Windows.Forms.TextBox()
+        Me.tbCorreoCliente = New System.Windows.Forms.TextBox()
+        Me.FechaAltaClienteTimePicker = New System.Windows.Forms.DateTimePicker()
+        Me.tbAltaCliente = New System.Windows.Forms.TextBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnAccionBuscarProducto = New System.Windows.Forms.Button()
+        Me.tbIdProducto = New System.Windows.Forms.TextBox()
+        Me.tbNombreProducto = New System.Windows.Forms.TextBox()
+        Me.tbPrecioProducto = New System.Windows.Forms.TextBox()
+        Me.tbProveedorProducto = New System.Windows.Forms.TextBox()
+        Me.tbGamaProducto = New System.Windows.Forms.TextBox()
         IdLabel = New System.Windows.Forms.Label()
         NombreLabel = New System.Windows.Forms.Label()
         Apellido_1Label = New System.Windows.Forms.Label()
@@ -145,6 +175,19 @@ Partial Class GestionesAdministrador
         ContraseñaLabel = New System.Windows.Forms.Label()
         AdministradorLabel = New System.Windows.Forms.Label()
         CargoLabel = New System.Windows.Forms.Label()
+        IdLabel1 = New System.Windows.Forms.Label()
+        NombreLabel1 = New System.Windows.Forms.Label()
+        Apellido_1Label1 = New System.Windows.Forms.Label()
+        Apellido_2Label1 = New System.Windows.Forms.Label()
+        TelefonoLabel1 = New System.Windows.Forms.Label()
+        CorreoLabel1 = New System.Windows.Forms.Label()
+        FechaAltaLabel = New System.Windows.Forms.Label()
+        AltaLabel = New System.Windows.Forms.Label()
+        IdLabel2 = New System.Windows.Forms.Label()
+        NombreLabel2 = New System.Windows.Forms.Label()
+        PrecioLabel = New System.Windows.Forms.Label()
+        ProveedorLabel = New System.Windows.Forms.Label()
+        GamaLabel = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.panelOpcionesCrudUsuario.SuspendLayout()
@@ -166,6 +209,8 @@ Partial Class GestionesAdministrador
         CType(Me.ProveedoresDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelBuscarEmpleado.SuspendLayout()
+        Me.panelBuscarCliente.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'IdLabel
@@ -248,6 +293,123 @@ Partial Class GestionesAdministrador
         CargoLabel.Size = New System.Drawing.Size(38, 13)
         CargoLabel.TabIndex = 16
         CargoLabel.Text = "Cargo:"
+        '
+        'IdLabel1
+        '
+        IdLabel1.AutoSize = True
+        IdLabel1.Location = New System.Drawing.Point(5, 34)
+        IdLabel1.Name = "IdLabel1"
+        IdLabel1.Size = New System.Drawing.Size(19, 13)
+        IdLabel1.TabIndex = 0
+        IdLabel1.Text = "Id:"
+        '
+        'NombreLabel1
+        '
+        NombreLabel1.AutoSize = True
+        NombreLabel1.Location = New System.Drawing.Point(5, 60)
+        NombreLabel1.Name = "NombreLabel1"
+        NombreLabel1.Size = New System.Drawing.Size(47, 13)
+        NombreLabel1.TabIndex = 2
+        NombreLabel1.Text = "Nombre:"
+        '
+        'Apellido_1Label1
+        '
+        Apellido_1Label1.AutoSize = True
+        Apellido_1Label1.Location = New System.Drawing.Point(5, 86)
+        Apellido_1Label1.Name = "Apellido_1Label1"
+        Apellido_1Label1.Size = New System.Drawing.Size(56, 13)
+        Apellido_1Label1.TabIndex = 4
+        Apellido_1Label1.Text = "Apellido 1:"
+        '
+        'Apellido_2Label1
+        '
+        Apellido_2Label1.AutoSize = True
+        Apellido_2Label1.Location = New System.Drawing.Point(5, 112)
+        Apellido_2Label1.Name = "Apellido_2Label1"
+        Apellido_2Label1.Size = New System.Drawing.Size(56, 13)
+        Apellido_2Label1.TabIndex = 6
+        Apellido_2Label1.Text = "Apellido 2:"
+        '
+        'TelefonoLabel1
+        '
+        TelefonoLabel1.AutoSize = True
+        TelefonoLabel1.Location = New System.Drawing.Point(5, 138)
+        TelefonoLabel1.Name = "TelefonoLabel1"
+        TelefonoLabel1.Size = New System.Drawing.Size(52, 13)
+        TelefonoLabel1.TabIndex = 8
+        TelefonoLabel1.Text = "Telefono:"
+        '
+        'CorreoLabel1
+        '
+        CorreoLabel1.AutoSize = True
+        CorreoLabel1.Location = New System.Drawing.Point(5, 164)
+        CorreoLabel1.Name = "CorreoLabel1"
+        CorreoLabel1.Size = New System.Drawing.Size(41, 13)
+        CorreoLabel1.TabIndex = 10
+        CorreoLabel1.Text = "Correo:"
+        '
+        'FechaAltaLabel
+        '
+        FechaAltaLabel.AutoSize = True
+        FechaAltaLabel.Location = New System.Drawing.Point(5, 191)
+        FechaAltaLabel.Name = "FechaAltaLabel"
+        FechaAltaLabel.Size = New System.Drawing.Size(61, 13)
+        FechaAltaLabel.TabIndex = 12
+        FechaAltaLabel.Text = "Fecha Alta:"
+        '
+        'AltaLabel
+        '
+        AltaLabel.AutoSize = True
+        AltaLabel.Location = New System.Drawing.Point(5, 216)
+        AltaLabel.Name = "AltaLabel"
+        AltaLabel.Size = New System.Drawing.Size(28, 13)
+        AltaLabel.TabIndex = 14
+        AltaLabel.Text = "Alta:"
+        '
+        'IdLabel2
+        '
+        IdLabel2.AutoSize = True
+        IdLabel2.Location = New System.Drawing.Point(8, 11)
+        IdLabel2.Name = "IdLabel2"
+        IdLabel2.Size = New System.Drawing.Size(19, 13)
+        IdLabel2.TabIndex = 0
+        IdLabel2.Text = "Id:"
+        '
+        'NombreLabel2
+        '
+        NombreLabel2.AutoSize = True
+        NombreLabel2.Location = New System.Drawing.Point(8, 37)
+        NombreLabel2.Name = "NombreLabel2"
+        NombreLabel2.Size = New System.Drawing.Size(47, 13)
+        NombreLabel2.TabIndex = 2
+        NombreLabel2.Text = "Nombre:"
+        '
+        'PrecioLabel
+        '
+        PrecioLabel.AutoSize = True
+        PrecioLabel.Location = New System.Drawing.Point(8, 63)
+        PrecioLabel.Name = "PrecioLabel"
+        PrecioLabel.Size = New System.Drawing.Size(40, 13)
+        PrecioLabel.TabIndex = 4
+        PrecioLabel.Text = "Precio:"
+        '
+        'ProveedorLabel
+        '
+        ProveedorLabel.AutoSize = True
+        ProveedorLabel.Location = New System.Drawing.Point(8, 89)
+        ProveedorLabel.Name = "ProveedorLabel"
+        ProveedorLabel.Size = New System.Drawing.Size(59, 13)
+        ProveedorLabel.TabIndex = 6
+        ProveedorLabel.Text = "Proveedor:"
+        '
+        'GamaLabel
+        '
+        GamaLabel.AutoSize = True
+        GamaLabel.Location = New System.Drawing.Point(8, 115)
+        GamaLabel.Name = "GamaLabel"
+        GamaLabel.Size = New System.Drawing.Size(38, 13)
+        GamaLabel.TabIndex = 8
+        GamaLabel.Text = "Gama:"
         '
         'FlowLayoutPanel1
         '
@@ -1073,17 +1235,183 @@ Partial Class GestionesAdministrador
         Me.panelBuscarEmpleado.Controls.Add(Me.tbAdministradorEmpleado)
         Me.panelBuscarEmpleado.Controls.Add(CargoLabel)
         Me.panelBuscarEmpleado.Controls.Add(Me.tbCargoEmpleado)
-        Me.panelBuscarEmpleado.Location = New System.Drawing.Point(595, 106)
+        Me.panelBuscarEmpleado.Location = New System.Drawing.Point(1014, 81)
         Me.panelBuscarEmpleado.Name = "panelBuscarEmpleado"
         Me.panelBuscarEmpleado.Size = New System.Drawing.Size(200, 301)
         Me.panelBuscarEmpleado.TabIndex = 13
+        '
+        'panelBuscarCliente
+        '
+        Me.panelBuscarCliente.Controls.Add(Me.btnAccionBuscarCliente)
+        Me.panelBuscarCliente.Controls.Add(IdLabel1)
+        Me.panelBuscarCliente.Controls.Add(Me.tbIdCliente)
+        Me.panelBuscarCliente.Controls.Add(NombreLabel1)
+        Me.panelBuscarCliente.Controls.Add(Me.tbNombreCliente)
+        Me.panelBuscarCliente.Controls.Add(Apellido_1Label1)
+        Me.panelBuscarCliente.Controls.Add(Me.tbApellido1Cliente)
+        Me.panelBuscarCliente.Controls.Add(Apellido_2Label1)
+        Me.panelBuscarCliente.Controls.Add(Me.tbApellido2Cliente)
+        Me.panelBuscarCliente.Controls.Add(TelefonoLabel1)
+        Me.panelBuscarCliente.Controls.Add(Me.tbTelefonoCliente)
+        Me.panelBuscarCliente.Controls.Add(CorreoLabel1)
+        Me.panelBuscarCliente.Controls.Add(Me.tbCorreoCliente)
+        Me.panelBuscarCliente.Controls.Add(FechaAltaLabel)
+        Me.panelBuscarCliente.Controls.Add(Me.FechaAltaClienteTimePicker)
+        Me.panelBuscarCliente.Controls.Add(AltaLabel)
+        Me.panelBuscarCliente.Controls.Add(Me.tbAltaCliente)
+        Me.panelBuscarCliente.Location = New System.Drawing.Point(1014, 388)
+        Me.panelBuscarCliente.Name = "panelBuscarCliente"
+        Me.panelBuscarCliente.Size = New System.Drawing.Size(292, 301)
+        Me.panelBuscarCliente.TabIndex = 14
+        '
+        'btnAccionBuscarCliente
+        '
+        Me.btnAccionBuscarCliente.Location = New System.Drawing.Point(108, 253)
+        Me.btnAccionBuscarCliente.Name = "btnAccionBuscarCliente"
+        Me.btnAccionBuscarCliente.Size = New System.Drawing.Size(100, 23)
+        Me.btnAccionBuscarCliente.TabIndex = 19
+        Me.btnAccionBuscarCliente.Text = "Buscar"
+        Me.btnAccionBuscarCliente.UseVisualStyleBackColor = True
+        '
+        'tbIdCliente
+        '
+        Me.tbIdCliente.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "Id", True))
+        Me.tbIdCliente.Location = New System.Drawing.Point(72, 31)
+        Me.tbIdCliente.Name = "tbIdCliente"
+        Me.tbIdCliente.Size = New System.Drawing.Size(200, 20)
+        Me.tbIdCliente.TabIndex = 1
+        '
+        'tbNombreCliente
+        '
+        Me.tbNombreCliente.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "Nombre", True))
+        Me.tbNombreCliente.Location = New System.Drawing.Point(72, 57)
+        Me.tbNombreCliente.Name = "tbNombreCliente"
+        Me.tbNombreCliente.Size = New System.Drawing.Size(200, 20)
+        Me.tbNombreCliente.TabIndex = 3
+        '
+        'tbApellido1Cliente
+        '
+        Me.tbApellido1Cliente.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "Apellido 1", True))
+        Me.tbApellido1Cliente.Location = New System.Drawing.Point(72, 83)
+        Me.tbApellido1Cliente.Name = "tbApellido1Cliente"
+        Me.tbApellido1Cliente.Size = New System.Drawing.Size(200, 20)
+        Me.tbApellido1Cliente.TabIndex = 5
+        '
+        'tbApellido2Cliente
+        '
+        Me.tbApellido2Cliente.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "Apellido 2", True))
+        Me.tbApellido2Cliente.Location = New System.Drawing.Point(72, 109)
+        Me.tbApellido2Cliente.Name = "tbApellido2Cliente"
+        Me.tbApellido2Cliente.Size = New System.Drawing.Size(200, 20)
+        Me.tbApellido2Cliente.TabIndex = 7
+        '
+        'tbTelefonoCliente
+        '
+        Me.tbTelefonoCliente.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "Telefono", True))
+        Me.tbTelefonoCliente.Location = New System.Drawing.Point(72, 135)
+        Me.tbTelefonoCliente.Name = "tbTelefonoCliente"
+        Me.tbTelefonoCliente.Size = New System.Drawing.Size(200, 20)
+        Me.tbTelefonoCliente.TabIndex = 9
+        '
+        'tbCorreoCliente
+        '
+        Me.tbCorreoCliente.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "Correo", True))
+        Me.tbCorreoCliente.Location = New System.Drawing.Point(72, 161)
+        Me.tbCorreoCliente.Name = "tbCorreoCliente"
+        Me.tbCorreoCliente.Size = New System.Drawing.Size(200, 20)
+        Me.tbCorreoCliente.TabIndex = 11
+        '
+        'FechaAltaClienteTimePicker
+        '
+        Me.FechaAltaClienteTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.ClientesBindingSource, "FechaAlta", True))
+        Me.FechaAltaClienteTimePicker.Location = New System.Drawing.Point(72, 187)
+        Me.FechaAltaClienteTimePicker.Name = "FechaAltaClienteTimePicker"
+        Me.FechaAltaClienteTimePicker.Size = New System.Drawing.Size(200, 20)
+        Me.FechaAltaClienteTimePicker.TabIndex = 13
+        '
+        'tbAltaCliente
+        '
+        Me.tbAltaCliente.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "Alta", True))
+        Me.tbAltaCliente.Location = New System.Drawing.Point(72, 213)
+        Me.tbAltaCliente.Name = "tbAltaCliente"
+        Me.tbAltaCliente.Size = New System.Drawing.Size(200, 20)
+        Me.tbAltaCliente.TabIndex = 15
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.btnAccionBuscarProducto)
+        Me.Panel1.Controls.Add(IdLabel2)
+        Me.Panel1.Controls.Add(Me.tbIdProducto)
+        Me.Panel1.Controls.Add(NombreLabel2)
+        Me.Panel1.Controls.Add(Me.tbNombreProducto)
+        Me.Panel1.Controls.Add(PrecioLabel)
+        Me.Panel1.Controls.Add(Me.tbPrecioProducto)
+        Me.Panel1.Controls.Add(ProveedorLabel)
+        Me.Panel1.Controls.Add(Me.tbProveedorProducto)
+        Me.Panel1.Controls.Add(GamaLabel)
+        Me.Panel1.Controls.Add(Me.tbGamaProducto)
+        Me.Panel1.Location = New System.Drawing.Point(550, 76)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(208, 179)
+        Me.Panel1.TabIndex = 15
+        '
+        'btnAccionBuscarProducto
+        '
+        Me.btnAccionBuscarProducto.Location = New System.Drawing.Point(73, 137)
+        Me.btnAccionBuscarProducto.Name = "btnAccionBuscarProducto"
+        Me.btnAccionBuscarProducto.Size = New System.Drawing.Size(100, 23)
+        Me.btnAccionBuscarProducto.TabIndex = 19
+        Me.btnAccionBuscarProducto.Text = "Buscar"
+        Me.btnAccionBuscarProducto.UseVisualStyleBackColor = True
+        '
+        'tbIdProducto
+        '
+        Me.tbIdProducto.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductosBindingSource, "Id", True))
+        Me.tbIdProducto.Location = New System.Drawing.Point(73, 8)
+        Me.tbIdProducto.Name = "tbIdProducto"
+        Me.tbIdProducto.Size = New System.Drawing.Size(100, 20)
+        Me.tbIdProducto.TabIndex = 1
+        '
+        'tbNombreProducto
+        '
+        Me.tbNombreProducto.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductosBindingSource, "Nombre", True))
+        Me.tbNombreProducto.Location = New System.Drawing.Point(73, 34)
+        Me.tbNombreProducto.Name = "tbNombreProducto"
+        Me.tbNombreProducto.Size = New System.Drawing.Size(100, 20)
+        Me.tbNombreProducto.TabIndex = 3
+        '
+        'tbPrecioProducto
+        '
+        Me.tbPrecioProducto.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductosBindingSource, "Precio", True))
+        Me.tbPrecioProducto.Location = New System.Drawing.Point(73, 60)
+        Me.tbPrecioProducto.Name = "tbPrecioProducto"
+        Me.tbPrecioProducto.Size = New System.Drawing.Size(100, 20)
+        Me.tbPrecioProducto.TabIndex = 5
+        '
+        'tbProveedorProducto
+        '
+        Me.tbProveedorProducto.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductosBindingSource, "Proveedor", True))
+        Me.tbProveedorProducto.Location = New System.Drawing.Point(73, 86)
+        Me.tbProveedorProducto.Name = "tbProveedorProducto"
+        Me.tbProveedorProducto.Size = New System.Drawing.Size(100, 20)
+        Me.tbProveedorProducto.TabIndex = 7
+        '
+        'tbGamaProducto
+        '
+        Me.tbGamaProducto.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductosBindingSource, "Gama", True))
+        Me.tbGamaProducto.Location = New System.Drawing.Point(73, 112)
+        Me.tbGamaProducto.Name = "tbGamaProducto"
+        Me.tbGamaProducto.Size = New System.Drawing.Size(100, 20)
+        Me.tbGamaProducto.TabIndex = 9
         '
         'GestionesAdministrador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1924, 1061)
+        Me.ClientSize = New System.Drawing.Size(1941, 1078)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.panelBuscarCliente)
         Me.Controls.Add(Me.panelBuscarEmpleado)
         Me.Controls.Add(Me.ProveedoresDataGridView)
         Me.Controls.Add(Me.GasolinasDataGridView)
@@ -1125,6 +1453,10 @@ Partial Class GestionesAdministrador
         CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelBuscarEmpleado.ResumeLayout(False)
         Me.panelBuscarEmpleado.PerformLayout()
+        Me.panelBuscarCliente.ResumeLayout(False)
+        Me.panelBuscarCliente.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1233,4 +1565,21 @@ Partial Class GestionesAdministrador
     Friend WithEvents tbAdministradorEmpleado As TextBox
     Friend WithEvents tbCargoEmpleado As TextBox
     Friend WithEvents panelBuscarEmpleado As Panel
+    Friend WithEvents panelBuscarCliente As Panel
+    Friend WithEvents btnAccionBuscarCliente As Button
+    Friend WithEvents tbIdCliente As TextBox
+    Friend WithEvents tbNombreCliente As TextBox
+    Friend WithEvents tbApellido1Cliente As TextBox
+    Friend WithEvents tbApellido2Cliente As TextBox
+    Friend WithEvents tbTelefonoCliente As TextBox
+    Friend WithEvents tbCorreoCliente As TextBox
+    Friend WithEvents FechaAltaClienteTimePicker As DateTimePicker
+    Friend WithEvents tbAltaCliente As TextBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents btnAccionBuscarProducto As Button
+    Friend WithEvents tbIdProducto As TextBox
+    Friend WithEvents tbNombreProducto As TextBox
+    Friend WithEvents tbPrecioProducto As TextBox
+    Friend WithEvents tbProveedorProducto As TextBox
+    Friend WithEvents tbGamaProducto As TextBox
 End Class
