@@ -23,7 +23,6 @@ Partial Class GestionesAdministrador
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GestionesAdministrador))
         Dim IdLabel As System.Windows.Forms.Label
         Dim NombreLabel As System.Windows.Forms.Label
         Dim Apellido_1Label As System.Windows.Forms.Label
@@ -33,6 +32,7 @@ Partial Class GestionesAdministrador
         Dim ContraseñaLabel As System.Windows.Forms.Label
         Dim AdministradorLabel As System.Windows.Forms.Label
         Dim CargoLabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GestionesAdministrador))
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.btnGestionUsuarios = New System.Windows.Forms.Button()
         Me.btnGestionClientes = New System.Windows.Forms.Button()
@@ -42,33 +42,35 @@ Partial Class GestionesAdministrador
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.OpcionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VolverToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.panelOpcionesCrudUsuario = New System.Windows.Forms.Panel()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.btnModificarEmpleado = New System.Windows.Forms.Button()
         Me.btnVerTodosEmpleados = New System.Windows.Forms.Button()
         Me.btnSeleccionarUnEmpleado = New System.Windows.Forms.Button()
-        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.panelOpcionesCrudClientes = New System.Windows.Forms.Panel()
         Me.btnEliminarCliente = New System.Windows.Forms.Button()
         Me.btnModificarCliente = New System.Windows.Forms.Button()
         Me.btnVerTodosClientes = New System.Windows.Forms.Button()
         Me.btnVerCliente = New System.Windows.Forms.Button()
-        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.panelOpcionesCrudProductos = New System.Windows.Forms.Panel()
         Me.btnEliminarProducto = New System.Windows.Forms.Button()
         Me.btnModificarProducto = New System.Windows.Forms.Button()
         Me.btnVerTodosProductos = New System.Windows.Forms.Button()
         Me.btnVerProducto = New System.Windows.Forms.Button()
-        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.panelOpcionesCrudGasolina = New System.Windows.Forms.Panel()
         Me.btnEliminarGas = New System.Windows.Forms.Button()
         Me.btnModificarGasolina = New System.Windows.Forms.Button()
         Me.btnVerTodasGasolinas = New System.Windows.Forms.Button()
         Me.btnVerGasolina = New System.Windows.Forms.Button()
-        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.panelOpcionesCrudProveedores = New System.Windows.Forms.Panel()
         Me.btnEliminarProveedor = New System.Windows.Forms.Button()
         Me.btnModificarProveedor = New System.Windows.Forms.Button()
         Me.btnVerTodosProveedores = New System.Windows.Forms.Button()
         Me.btnVerProveedor = New System.Windows.Forms.Button()
         Me.ProductosBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.ProductosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Repsol_dbDataSet = New Repsol_2.Repsol_dbDataSet()
         Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
@@ -81,10 +83,42 @@ Partial Class GestionesAdministrador
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.ProductosBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.ProductosDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EmpleadosDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EmpleadosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ClientesDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn21 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ClientesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GasolinasDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn23 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn24 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn25 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn26 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GasolinasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProveedoresDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn27 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn28 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProveedoresBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tbIdEmpleado = New System.Windows.Forms.TextBox()
         Me.tbNombreEmpleado = New System.Windows.Forms.TextBox()
         Me.tbApellido1Empleado = New System.Windows.Forms.TextBox()
@@ -95,40 +129,6 @@ Partial Class GestionesAdministrador
         Me.tbAdministradorEmpleado = New System.Windows.Forms.TextBox()
         Me.tbCargoEmpleado = New System.Windows.Forms.TextBox()
         Me.btnAccionBuscarEmpleado = New System.Windows.Forms.Button()
-        Me.EmpleadosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Repsol_dbDataSet = New Repsol_2.Repsol_dbDataSet()
-        Me.DataGridViewTextBoxColumn27 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn28 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ProveedoresBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataGridViewTextBoxColumn23 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn24 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn25 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn26 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.GasolinasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn21 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ClientesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ProductosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProductosTableAdapter = New Repsol_2.Repsol_dbDataSetTableAdapters.ProductosTableAdapter()
         Me.TableAdapterManager = New Repsol_2.Repsol_dbDataSetTableAdapters.TableAdapterManager()
         Me.EmpleadosTableAdapter = New Repsol_2.Repsol_dbDataSetTableAdapters.EmpleadosTableAdapter()
@@ -147,26 +147,107 @@ Partial Class GestionesAdministrador
         CargoLabel = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
-        Me.Panel3.SuspendLayout()
-        Me.Panel4.SuspendLayout()
-        Me.Panel5.SuspendLayout()
+        Me.panelOpcionesCrudUsuario.SuspendLayout()
+        Me.panelOpcionesCrudClientes.SuspendLayout()
+        Me.panelOpcionesCrudProductos.SuspendLayout()
+        Me.panelOpcionesCrudGasolina.SuspendLayout()
+        Me.panelOpcionesCrudProveedores.SuspendLayout()
         CType(Me.ProductosBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ProductosBindingNavigator.SuspendLayout()
+        CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Repsol_dbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductosDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmpleadosDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ClientesDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GasolinasDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ProveedoresDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmpleadosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Repsol_dbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GasolinasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ClientesDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GasolinasDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GasolinasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProveedoresDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelBuscarEmpleado.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'IdLabel
+        '
+        IdLabel.AutoSize = True
+        IdLabel.Location = New System.Drawing.Point(12, 31)
+        IdLabel.Name = "IdLabel"
+        IdLabel.Size = New System.Drawing.Size(19, 13)
+        IdLabel.TabIndex = 0
+        IdLabel.Text = "Id:"
+        '
+        'NombreLabel
+        '
+        NombreLabel.AutoSize = True
+        NombreLabel.Location = New System.Drawing.Point(12, 57)
+        NombreLabel.Name = "NombreLabel"
+        NombreLabel.Size = New System.Drawing.Size(47, 13)
+        NombreLabel.TabIndex = 2
+        NombreLabel.Text = "Nombre:"
+        '
+        'Apellido_1Label
+        '
+        Apellido_1Label.AutoSize = True
+        Apellido_1Label.Location = New System.Drawing.Point(12, 83)
+        Apellido_1Label.Name = "Apellido_1Label"
+        Apellido_1Label.Size = New System.Drawing.Size(56, 13)
+        Apellido_1Label.TabIndex = 4
+        Apellido_1Label.Text = "Apellido 1:"
+        '
+        'Apellido_2Label
+        '
+        Apellido_2Label.AutoSize = True
+        Apellido_2Label.Location = New System.Drawing.Point(12, 109)
+        Apellido_2Label.Name = "Apellido_2Label"
+        Apellido_2Label.Size = New System.Drawing.Size(56, 13)
+        Apellido_2Label.TabIndex = 6
+        Apellido_2Label.Text = "Apellido 2:"
+        '
+        'TelefonoLabel
+        '
+        TelefonoLabel.AutoSize = True
+        TelefonoLabel.Location = New System.Drawing.Point(12, 135)
+        TelefonoLabel.Name = "TelefonoLabel"
+        TelefonoLabel.Size = New System.Drawing.Size(52, 13)
+        TelefonoLabel.TabIndex = 8
+        TelefonoLabel.Text = "Telefono:"
+        '
+        'CorreoLabel
+        '
+        CorreoLabel.AutoSize = True
+        CorreoLabel.Location = New System.Drawing.Point(12, 161)
+        CorreoLabel.Name = "CorreoLabel"
+        CorreoLabel.Size = New System.Drawing.Size(41, 13)
+        CorreoLabel.TabIndex = 10
+        CorreoLabel.Text = "Correo:"
+        '
+        'ContraseñaLabel
+        '
+        ContraseñaLabel.AutoSize = True
+        ContraseñaLabel.Location = New System.Drawing.Point(12, 187)
+        ContraseñaLabel.Name = "ContraseñaLabel"
+        ContraseñaLabel.Size = New System.Drawing.Size(64, 13)
+        ContraseñaLabel.TabIndex = 12
+        ContraseñaLabel.Text = "Contraseña:"
+        '
+        'AdministradorLabel
+        '
+        AdministradorLabel.AutoSize = True
+        AdministradorLabel.Location = New System.Drawing.Point(12, 213)
+        AdministradorLabel.Name = "AdministradorLabel"
+        AdministradorLabel.Size = New System.Drawing.Size(73, 13)
+        AdministradorLabel.TabIndex = 14
+        AdministradorLabel.Text = "Administrador:"
+        '
+        'CargoLabel
+        '
+        CargoLabel.AutoSize = True
+        CargoLabel.Location = New System.Drawing.Point(12, 239)
+        CargoLabel.Name = "CargoLabel"
+        CargoLabel.Size = New System.Drawing.Size(38, 13)
+        CargoLabel.TabIndex = 16
+        CargoLabel.Text = "Cargo:"
         '
         'FlowLayoutPanel1
         '
@@ -247,16 +328,17 @@ Partial Class GestionesAdministrador
         Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(106, 22)
         Me.VolverToolStripMenuItem.Text = "Volver"
         '
-        'Panel1
+        'panelOpcionesCrudUsuario
         '
-        Me.Panel1.Controls.Add(Me.Button4)
-        Me.Panel1.Controls.Add(Me.btnModificarEmpleado)
-        Me.Panel1.Controls.Add(Me.btnVerTodosEmpleados)
-        Me.Panel1.Controls.Add(Me.btnSeleccionarUnEmpleado)
-        Me.Panel1.Location = New System.Drawing.Point(183, 81)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(196, 51)
-        Me.Panel1.TabIndex = 2
+        Me.panelOpcionesCrudUsuario.Controls.Add(Me.Button4)
+        Me.panelOpcionesCrudUsuario.Controls.Add(Me.btnModificarEmpleado)
+        Me.panelOpcionesCrudUsuario.Controls.Add(Me.btnVerTodosEmpleados)
+        Me.panelOpcionesCrudUsuario.Controls.Add(Me.btnSeleccionarUnEmpleado)
+        Me.panelOpcionesCrudUsuario.Location = New System.Drawing.Point(183, 81)
+        Me.panelOpcionesCrudUsuario.Name = "panelOpcionesCrudUsuario"
+        Me.panelOpcionesCrudUsuario.Size = New System.Drawing.Size(196, 51)
+        Me.panelOpcionesCrudUsuario.TabIndex = 2
+        Me.panelOpcionesCrudUsuario.Visible = False
         '
         'Button4
         '
@@ -294,16 +376,17 @@ Partial Class GestionesAdministrador
         Me.btnSeleccionarUnEmpleado.Text = "Ver Empleado"
         Me.btnSeleccionarUnEmpleado.UseVisualStyleBackColor = True
         '
-        'Panel2
+        'panelOpcionesCrudClientes
         '
-        Me.Panel2.Controls.Add(Me.btnEliminarCliente)
-        Me.Panel2.Controls.Add(Me.btnModificarCliente)
-        Me.Panel2.Controls.Add(Me.btnVerTodosClientes)
-        Me.Panel2.Controls.Add(Me.btnVerCliente)
-        Me.Panel2.Location = New System.Drawing.Point(183, 138)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(196, 51)
-        Me.Panel2.TabIndex = 4
+        Me.panelOpcionesCrudClientes.Controls.Add(Me.btnEliminarCliente)
+        Me.panelOpcionesCrudClientes.Controls.Add(Me.btnModificarCliente)
+        Me.panelOpcionesCrudClientes.Controls.Add(Me.btnVerTodosClientes)
+        Me.panelOpcionesCrudClientes.Controls.Add(Me.btnVerCliente)
+        Me.panelOpcionesCrudClientes.Location = New System.Drawing.Point(183, 138)
+        Me.panelOpcionesCrudClientes.Name = "panelOpcionesCrudClientes"
+        Me.panelOpcionesCrudClientes.Size = New System.Drawing.Size(196, 51)
+        Me.panelOpcionesCrudClientes.TabIndex = 4
+        Me.panelOpcionesCrudClientes.Visible = False
         '
         'btnEliminarCliente
         '
@@ -341,16 +424,17 @@ Partial Class GestionesAdministrador
         Me.btnVerCliente.Text = "Ver Cliente"
         Me.btnVerCliente.UseVisualStyleBackColor = True
         '
-        'Panel3
+        'panelOpcionesCrudProductos
         '
-        Me.Panel3.Controls.Add(Me.btnEliminarProducto)
-        Me.Panel3.Controls.Add(Me.btnModificarProducto)
-        Me.Panel3.Controls.Add(Me.btnVerTodosProductos)
-        Me.Panel3.Controls.Add(Me.btnVerProducto)
-        Me.Panel3.Location = New System.Drawing.Point(183, 195)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(196, 51)
-        Me.Panel3.TabIndex = 5
+        Me.panelOpcionesCrudProductos.Controls.Add(Me.btnEliminarProducto)
+        Me.panelOpcionesCrudProductos.Controls.Add(Me.btnModificarProducto)
+        Me.panelOpcionesCrudProductos.Controls.Add(Me.btnVerTodosProductos)
+        Me.panelOpcionesCrudProductos.Controls.Add(Me.btnVerProducto)
+        Me.panelOpcionesCrudProductos.Location = New System.Drawing.Point(183, 195)
+        Me.panelOpcionesCrudProductos.Name = "panelOpcionesCrudProductos"
+        Me.panelOpcionesCrudProductos.Size = New System.Drawing.Size(196, 51)
+        Me.panelOpcionesCrudProductos.TabIndex = 5
+        Me.panelOpcionesCrudProductos.Visible = False
         '
         'btnEliminarProducto
         '
@@ -388,16 +472,17 @@ Partial Class GestionesAdministrador
         Me.btnVerProducto.Text = "Ver Producto"
         Me.btnVerProducto.UseVisualStyleBackColor = True
         '
-        'Panel4
+        'panelOpcionesCrudGasolina
         '
-        Me.Panel4.Controls.Add(Me.btnEliminarGas)
-        Me.Panel4.Controls.Add(Me.btnModificarGasolina)
-        Me.Panel4.Controls.Add(Me.btnVerTodasGasolinas)
-        Me.Panel4.Controls.Add(Me.btnVerGasolina)
-        Me.Panel4.Location = New System.Drawing.Point(183, 252)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(196, 51)
-        Me.Panel4.TabIndex = 6
+        Me.panelOpcionesCrudGasolina.Controls.Add(Me.btnEliminarGas)
+        Me.panelOpcionesCrudGasolina.Controls.Add(Me.btnModificarGasolina)
+        Me.panelOpcionesCrudGasolina.Controls.Add(Me.btnVerTodasGasolinas)
+        Me.panelOpcionesCrudGasolina.Controls.Add(Me.btnVerGasolina)
+        Me.panelOpcionesCrudGasolina.Location = New System.Drawing.Point(183, 252)
+        Me.panelOpcionesCrudGasolina.Name = "panelOpcionesCrudGasolina"
+        Me.panelOpcionesCrudGasolina.Size = New System.Drawing.Size(196, 51)
+        Me.panelOpcionesCrudGasolina.TabIndex = 6
+        Me.panelOpcionesCrudGasolina.Visible = False
         '
         'btnEliminarGas
         '
@@ -435,16 +520,17 @@ Partial Class GestionesAdministrador
         Me.btnVerGasolina.Text = "Ver Gasolina"
         Me.btnVerGasolina.UseVisualStyleBackColor = True
         '
-        'Panel5
+        'panelOpcionesCrudProveedores
         '
-        Me.Panel5.Controls.Add(Me.btnEliminarProveedor)
-        Me.Panel5.Controls.Add(Me.btnModificarProveedor)
-        Me.Panel5.Controls.Add(Me.btnVerTodosProveedores)
-        Me.Panel5.Controls.Add(Me.btnVerProveedor)
-        Me.Panel5.Location = New System.Drawing.Point(183, 309)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(196, 51)
-        Me.Panel5.TabIndex = 7
+        Me.panelOpcionesCrudProveedores.Controls.Add(Me.btnEliminarProveedor)
+        Me.panelOpcionesCrudProveedores.Controls.Add(Me.btnModificarProveedor)
+        Me.panelOpcionesCrudProveedores.Controls.Add(Me.btnVerTodosProveedores)
+        Me.panelOpcionesCrudProveedores.Controls.Add(Me.btnVerProveedor)
+        Me.panelOpcionesCrudProveedores.Location = New System.Drawing.Point(183, 309)
+        Me.panelOpcionesCrudProveedores.Name = "panelOpcionesCrudProveedores"
+        Me.panelOpcionesCrudProveedores.Size = New System.Drawing.Size(196, 51)
+        Me.panelOpcionesCrudProveedores.TabIndex = 7
+        Me.panelOpcionesCrudProveedores.Visible = False
         '
         'btnEliminarProveedor
         '
@@ -508,6 +594,16 @@ Partial Class GestionesAdministrador
         Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
         Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorAddNewItem.Text = "Add new"
+        '
+        'ProductosBindingSource
+        '
+        Me.ProductosBindingSource.DataMember = "Productos"
+        Me.ProductosBindingSource.DataSource = Me.Repsol_dbDataSet
+        '
+        'Repsol_dbDataSet
+        '
+        Me.Repsol_dbDataSet.DataSetName = "Repsol_dbDataSet"
+        Me.Repsol_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'BindingNavigatorCountItem
         '
@@ -606,6 +702,36 @@ Partial Class GestionesAdministrador
         Me.ProductosDataGridView.TabIndex = 8
         Me.ProductosDataGridView.Visible = False
         '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "Id"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Id"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "Nombre"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Nombre"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Precio"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Precio"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "Proveedor"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Proveedor"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "Gama"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Gama"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
         'EmpleadosDataGridView
         '
         Me.EmpleadosDataGridView.AutoGenerateColumns = False
@@ -617,313 +743,6 @@ Partial Class GestionesAdministrador
         Me.EmpleadosDataGridView.Size = New System.Drawing.Size(944, 306)
         Me.EmpleadosDataGridView.TabIndex = 9
         Me.EmpleadosDataGridView.Visible = False
-        '
-        'ClientesDataGridView
-        '
-        Me.ClientesDataGridView.AutoGenerateColumns = False
-        Me.ClientesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ClientesDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn16, Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn18, Me.DataGridViewTextBoxColumn19, Me.DataGridViewTextBoxColumn20, Me.DataGridViewTextBoxColumn21, Me.DataGridViewTextBoxColumn22})
-        Me.ClientesDataGridView.DataSource = Me.ClientesBindingSource
-        Me.ClientesDataGridView.Location = New System.Drawing.Point(3000, 3000)
-        Me.ClientesDataGridView.Name = "ClientesDataGridView"
-        Me.ClientesDataGridView.Size = New System.Drawing.Size(842, 325)
-        Me.ClientesDataGridView.TabIndex = 10
-        Me.ClientesDataGridView.Visible = False
-        '
-        'GasolinasDataGridView
-        '
-        Me.GasolinasDataGridView.AutoGenerateColumns = False
-        Me.GasolinasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.GasolinasDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn23, Me.DataGridViewTextBoxColumn24, Me.DataGridViewTextBoxColumn25, Me.DataGridViewTextBoxColumn26})
-        Me.GasolinasDataGridView.DataSource = Me.GasolinasBindingSource
-        Me.GasolinasDataGridView.Location = New System.Drawing.Point(3000, 3000)
-        Me.GasolinasDataGridView.Name = "GasolinasDataGridView"
-        Me.GasolinasDataGridView.Size = New System.Drawing.Size(444, 251)
-        Me.GasolinasDataGridView.TabIndex = 11
-        Me.GasolinasDataGridView.Visible = False
-        '
-        'ProveedoresDataGridView
-        '
-        Me.ProveedoresDataGridView.AutoGenerateColumns = False
-        Me.ProveedoresDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ProveedoresDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn27, Me.DataGridViewTextBoxColumn28})
-        Me.ProveedoresDataGridView.DataSource = Me.ProveedoresBindingSource
-        Me.ProveedoresDataGridView.Location = New System.Drawing.Point(3000, 3000)
-        Me.ProveedoresDataGridView.Name = "ProveedoresDataGridView"
-        Me.ProveedoresDataGridView.Size = New System.Drawing.Size(243, 243)
-        Me.ProveedoresDataGridView.TabIndex = 12
-        Me.ProveedoresDataGridView.Visible = False
-        '
-        'IdLabel
-        '
-        IdLabel.AutoSize = True
-        IdLabel.Location = New System.Drawing.Point(12, 31)
-        IdLabel.Name = "IdLabel"
-        IdLabel.Size = New System.Drawing.Size(19, 13)
-        IdLabel.TabIndex = 0
-        IdLabel.Text = "Id:"
-        '
-        'tbIdEmpleado
-        '
-        Me.tbIdEmpleado.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "Id", True))
-        Me.tbIdEmpleado.Location = New System.Drawing.Point(91, 28)
-        Me.tbIdEmpleado.Name = "tbIdEmpleado"
-        Me.tbIdEmpleado.Size = New System.Drawing.Size(100, 20)
-        Me.tbIdEmpleado.TabIndex = 1
-        '
-        'NombreLabel
-        '
-        NombreLabel.AutoSize = True
-        NombreLabel.Location = New System.Drawing.Point(12, 57)
-        NombreLabel.Name = "NombreLabel"
-        NombreLabel.Size = New System.Drawing.Size(47, 13)
-        NombreLabel.TabIndex = 2
-        NombreLabel.Text = "Nombre:"
-        '
-        'tbNombreEmpleado
-        '
-        Me.tbNombreEmpleado.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "Nombre", True))
-        Me.tbNombreEmpleado.Location = New System.Drawing.Point(91, 54)
-        Me.tbNombreEmpleado.Name = "tbNombreEmpleado"
-        Me.tbNombreEmpleado.Size = New System.Drawing.Size(100, 20)
-        Me.tbNombreEmpleado.TabIndex = 3
-        '
-        'Apellido_1Label
-        '
-        Apellido_1Label.AutoSize = True
-        Apellido_1Label.Location = New System.Drawing.Point(12, 83)
-        Apellido_1Label.Name = "Apellido_1Label"
-        Apellido_1Label.Size = New System.Drawing.Size(56, 13)
-        Apellido_1Label.TabIndex = 4
-        Apellido_1Label.Text = "Apellido 1:"
-        '
-        'tbApellido1Empleado
-        '
-        Me.tbApellido1Empleado.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "Apellido 1", True))
-        Me.tbApellido1Empleado.Location = New System.Drawing.Point(91, 80)
-        Me.tbApellido1Empleado.Name = "tbApellido1Empleado"
-        Me.tbApellido1Empleado.Size = New System.Drawing.Size(100, 20)
-        Me.tbApellido1Empleado.TabIndex = 5
-        '
-        'Apellido_2Label
-        '
-        Apellido_2Label.AutoSize = True
-        Apellido_2Label.Location = New System.Drawing.Point(12, 109)
-        Apellido_2Label.Name = "Apellido_2Label"
-        Apellido_2Label.Size = New System.Drawing.Size(56, 13)
-        Apellido_2Label.TabIndex = 6
-        Apellido_2Label.Text = "Apellido 2:"
-        '
-        'tbApellido2Empleado
-        '
-        Me.tbApellido2Empleado.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "Apellido 2", True))
-        Me.tbApellido2Empleado.Location = New System.Drawing.Point(91, 106)
-        Me.tbApellido2Empleado.Name = "tbApellido2Empleado"
-        Me.tbApellido2Empleado.Size = New System.Drawing.Size(100, 20)
-        Me.tbApellido2Empleado.TabIndex = 7
-        '
-        'TelefonoLabel
-        '
-        TelefonoLabel.AutoSize = True
-        TelefonoLabel.Location = New System.Drawing.Point(12, 135)
-        TelefonoLabel.Name = "TelefonoLabel"
-        TelefonoLabel.Size = New System.Drawing.Size(52, 13)
-        TelefonoLabel.TabIndex = 8
-        TelefonoLabel.Text = "Telefono:"
-        '
-        'tbTelefonoEmpleado
-        '
-        Me.tbTelefonoEmpleado.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "Telefono", True))
-        Me.tbTelefonoEmpleado.Location = New System.Drawing.Point(91, 132)
-        Me.tbTelefonoEmpleado.Name = "tbTelefonoEmpleado"
-        Me.tbTelefonoEmpleado.Size = New System.Drawing.Size(100, 20)
-        Me.tbTelefonoEmpleado.TabIndex = 9
-        '
-        'CorreoLabel
-        '
-        CorreoLabel.AutoSize = True
-        CorreoLabel.Location = New System.Drawing.Point(12, 161)
-        CorreoLabel.Name = "CorreoLabel"
-        CorreoLabel.Size = New System.Drawing.Size(41, 13)
-        CorreoLabel.TabIndex = 10
-        CorreoLabel.Text = "Correo:"
-        '
-        'tbCorreoEmpleado
-        '
-        Me.tbCorreoEmpleado.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "Correo", True))
-        Me.tbCorreoEmpleado.Location = New System.Drawing.Point(91, 158)
-        Me.tbCorreoEmpleado.Name = "tbCorreoEmpleado"
-        Me.tbCorreoEmpleado.Size = New System.Drawing.Size(100, 20)
-        Me.tbCorreoEmpleado.TabIndex = 11
-        '
-        'ContraseñaLabel
-        '
-        ContraseñaLabel.AutoSize = True
-        ContraseñaLabel.Location = New System.Drawing.Point(12, 187)
-        ContraseñaLabel.Name = "ContraseñaLabel"
-        ContraseñaLabel.Size = New System.Drawing.Size(64, 13)
-        ContraseñaLabel.TabIndex = 12
-        ContraseñaLabel.Text = "Contraseña:"
-        '
-        'tbContraseñaEmpleado
-        '
-        Me.tbContraseñaEmpleado.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "Contraseña", True))
-        Me.tbContraseñaEmpleado.Location = New System.Drawing.Point(91, 184)
-        Me.tbContraseñaEmpleado.Name = "tbContraseñaEmpleado"
-        Me.tbContraseñaEmpleado.Size = New System.Drawing.Size(100, 20)
-        Me.tbContraseñaEmpleado.TabIndex = 13
-        '
-        'AdministradorLabel
-        '
-        AdministradorLabel.AutoSize = True
-        AdministradorLabel.Location = New System.Drawing.Point(12, 213)
-        AdministradorLabel.Name = "AdministradorLabel"
-        AdministradorLabel.Size = New System.Drawing.Size(73, 13)
-        AdministradorLabel.TabIndex = 14
-        AdministradorLabel.Text = "Administrador:"
-        '
-        'tbAdministradorEmpleado
-        '
-        Me.tbAdministradorEmpleado.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "Administrador", True))
-        Me.tbAdministradorEmpleado.Location = New System.Drawing.Point(91, 210)
-        Me.tbAdministradorEmpleado.Name = "tbAdministradorEmpleado"
-        Me.tbAdministradorEmpleado.Size = New System.Drawing.Size(100, 20)
-        Me.tbAdministradorEmpleado.TabIndex = 15
-        '
-        'CargoLabel
-        '
-        CargoLabel.AutoSize = True
-        CargoLabel.Location = New System.Drawing.Point(12, 239)
-        CargoLabel.Name = "CargoLabel"
-        CargoLabel.Size = New System.Drawing.Size(38, 13)
-        CargoLabel.TabIndex = 16
-        CargoLabel.Text = "Cargo:"
-        '
-        'tbCargoEmpleado
-        '
-        Me.tbCargoEmpleado.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "Cargo", True))
-        Me.tbCargoEmpleado.Location = New System.Drawing.Point(91, 236)
-        Me.tbCargoEmpleado.Name = "tbCargoEmpleado"
-        Me.tbCargoEmpleado.Size = New System.Drawing.Size(100, 20)
-        Me.tbCargoEmpleado.TabIndex = 17
-        '
-        'btnAccionBuscarEmpleado
-        '
-        Me.btnAccionBuscarEmpleado.Location = New System.Drawing.Point(91, 262)
-        Me.btnAccionBuscarEmpleado.Name = "btnAccionBuscarEmpleado"
-        Me.btnAccionBuscarEmpleado.Size = New System.Drawing.Size(100, 23)
-        Me.btnAccionBuscarEmpleado.TabIndex = 18
-        Me.btnAccionBuscarEmpleado.Text = "Buscar"
-        Me.btnAccionBuscarEmpleado.UseVisualStyleBackColor = True
-        '
-        'EmpleadosBindingSource
-        '
-        Me.EmpleadosBindingSource.DataMember = "Empleados"
-        Me.EmpleadosBindingSource.DataSource = Me.Repsol_dbDataSet
-        '
-        'Repsol_dbDataSet
-        '
-        Me.Repsol_dbDataSet.DataSetName = "Repsol_dbDataSet"
-        Me.Repsol_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'DataGridViewTextBoxColumn27
-        '
-        Me.DataGridViewTextBoxColumn27.DataPropertyName = "Id"
-        Me.DataGridViewTextBoxColumn27.HeaderText = "Id"
-        Me.DataGridViewTextBoxColumn27.Name = "DataGridViewTextBoxColumn27"
-        '
-        'DataGridViewTextBoxColumn28
-        '
-        Me.DataGridViewTextBoxColumn28.DataPropertyName = "Nombre"
-        Me.DataGridViewTextBoxColumn28.HeaderText = "Nombre"
-        Me.DataGridViewTextBoxColumn28.Name = "DataGridViewTextBoxColumn28"
-        '
-        'ProveedoresBindingSource
-        '
-        Me.ProveedoresBindingSource.DataMember = "Proveedores"
-        Me.ProveedoresBindingSource.DataSource = Me.Repsol_dbDataSet
-        '
-        'DataGridViewTextBoxColumn23
-        '
-        Me.DataGridViewTextBoxColumn23.DataPropertyName = "Id"
-        Me.DataGridViewTextBoxColumn23.HeaderText = "Id"
-        Me.DataGridViewTextBoxColumn23.Name = "DataGridViewTextBoxColumn23"
-        '
-        'DataGridViewTextBoxColumn24
-        '
-        Me.DataGridViewTextBoxColumn24.DataPropertyName = "Nombre"
-        Me.DataGridViewTextBoxColumn24.HeaderText = "Nombre"
-        Me.DataGridViewTextBoxColumn24.Name = "DataGridViewTextBoxColumn24"
-        '
-        'DataGridViewTextBoxColumn25
-        '
-        Me.DataGridViewTextBoxColumn25.DataPropertyName = "Cantidad"
-        Me.DataGridViewTextBoxColumn25.HeaderText = "Cantidad"
-        Me.DataGridViewTextBoxColumn25.Name = "DataGridViewTextBoxColumn25"
-        '
-        'DataGridViewTextBoxColumn26
-        '
-        Me.DataGridViewTextBoxColumn26.DataPropertyName = "Precio"
-        Me.DataGridViewTextBoxColumn26.HeaderText = "Precio"
-        Me.DataGridViewTextBoxColumn26.Name = "DataGridViewTextBoxColumn26"
-        '
-        'GasolinasBindingSource
-        '
-        Me.GasolinasBindingSource.DataMember = "Gasolinas"
-        Me.GasolinasBindingSource.DataSource = Me.Repsol_dbDataSet
-        '
-        'DataGridViewTextBoxColumn15
-        '
-        Me.DataGridViewTextBoxColumn15.DataPropertyName = "Id"
-        Me.DataGridViewTextBoxColumn15.HeaderText = "Id"
-        Me.DataGridViewTextBoxColumn15.Name = "DataGridViewTextBoxColumn15"
-        '
-        'DataGridViewTextBoxColumn16
-        '
-        Me.DataGridViewTextBoxColumn16.DataPropertyName = "Nombre"
-        Me.DataGridViewTextBoxColumn16.HeaderText = "Nombre"
-        Me.DataGridViewTextBoxColumn16.Name = "DataGridViewTextBoxColumn16"
-        '
-        'DataGridViewTextBoxColumn17
-        '
-        Me.DataGridViewTextBoxColumn17.DataPropertyName = "Apellido 1"
-        Me.DataGridViewTextBoxColumn17.HeaderText = "Apellido 1"
-        Me.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17"
-        '
-        'DataGridViewTextBoxColumn18
-        '
-        Me.DataGridViewTextBoxColumn18.DataPropertyName = "Apellido 2"
-        Me.DataGridViewTextBoxColumn18.HeaderText = "Apellido 2"
-        Me.DataGridViewTextBoxColumn18.Name = "DataGridViewTextBoxColumn18"
-        '
-        'DataGridViewTextBoxColumn19
-        '
-        Me.DataGridViewTextBoxColumn19.DataPropertyName = "Telefono"
-        Me.DataGridViewTextBoxColumn19.HeaderText = "Telefono"
-        Me.DataGridViewTextBoxColumn19.Name = "DataGridViewTextBoxColumn19"
-        '
-        'DataGridViewTextBoxColumn20
-        '
-        Me.DataGridViewTextBoxColumn20.DataPropertyName = "Correo"
-        Me.DataGridViewTextBoxColumn20.HeaderText = "Correo"
-        Me.DataGridViewTextBoxColumn20.Name = "DataGridViewTextBoxColumn20"
-        '
-        'DataGridViewTextBoxColumn21
-        '
-        Me.DataGridViewTextBoxColumn21.DataPropertyName = "FechaAlta"
-        Me.DataGridViewTextBoxColumn21.HeaderText = "FechaAlta"
-        Me.DataGridViewTextBoxColumn21.Name = "DataGridViewTextBoxColumn21"
-        '
-        'DataGridViewTextBoxColumn22
-        '
-        Me.DataGridViewTextBoxColumn22.DataPropertyName = "Alta"
-        Me.DataGridViewTextBoxColumn22.HeaderText = "Alta"
-        Me.DataGridViewTextBoxColumn22.Name = "DataGridViewTextBoxColumn22"
-        '
-        'ClientesBindingSource
-        '
-        Me.ClientesBindingSource.DataMember = "Clientes"
-        Me.ClientesBindingSource.DataSource = Me.Repsol_dbDataSet
         '
         'DataGridViewTextBoxColumn6
         '
@@ -979,40 +798,226 @@ Partial Class GestionesAdministrador
         Me.DataGridViewTextBoxColumn14.HeaderText = "Cargo"
         Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
         '
-        'DataGridViewTextBoxColumn1
+        'EmpleadosBindingSource
         '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "Id"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Id"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.EmpleadosBindingSource.DataMember = "Empleados"
+        Me.EmpleadosBindingSource.DataSource = Me.Repsol_dbDataSet
         '
-        'DataGridViewTextBoxColumn2
+        'ClientesDataGridView
         '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "Nombre"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Nombre"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.ClientesDataGridView.AutoGenerateColumns = False
+        Me.ClientesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.ClientesDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn16, Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn18, Me.DataGridViewTextBoxColumn19, Me.DataGridViewTextBoxColumn20, Me.DataGridViewTextBoxColumn21, Me.DataGridViewTextBoxColumn22})
+        Me.ClientesDataGridView.DataSource = Me.ClientesBindingSource
+        Me.ClientesDataGridView.Location = New System.Drawing.Point(3000, 3000)
+        Me.ClientesDataGridView.Name = "ClientesDataGridView"
+        Me.ClientesDataGridView.Size = New System.Drawing.Size(842, 325)
+        Me.ClientesDataGridView.TabIndex = 10
+        Me.ClientesDataGridView.Visible = False
         '
-        'DataGridViewTextBoxColumn3
+        'DataGridViewTextBoxColumn15
         '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Precio"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Precio"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn15.DataPropertyName = "Id"
+        Me.DataGridViewTextBoxColumn15.HeaderText = "Id"
+        Me.DataGridViewTextBoxColumn15.Name = "DataGridViewTextBoxColumn15"
         '
-        'DataGridViewTextBoxColumn4
+        'DataGridViewTextBoxColumn16
         '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "Proveedor"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Proveedor"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn16.DataPropertyName = "Nombre"
+        Me.DataGridViewTextBoxColumn16.HeaderText = "Nombre"
+        Me.DataGridViewTextBoxColumn16.Name = "DataGridViewTextBoxColumn16"
         '
-        'DataGridViewTextBoxColumn5
+        'DataGridViewTextBoxColumn17
         '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "Gama"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Gama"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.DataGridViewTextBoxColumn17.DataPropertyName = "Apellido 1"
+        Me.DataGridViewTextBoxColumn17.HeaderText = "Apellido 1"
+        Me.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17"
         '
-        'ProductosBindingSource
+        'DataGridViewTextBoxColumn18
         '
-        Me.ProductosBindingSource.DataMember = "Productos"
-        Me.ProductosBindingSource.DataSource = Me.Repsol_dbDataSet
+        Me.DataGridViewTextBoxColumn18.DataPropertyName = "Apellido 2"
+        Me.DataGridViewTextBoxColumn18.HeaderText = "Apellido 2"
+        Me.DataGridViewTextBoxColumn18.Name = "DataGridViewTextBoxColumn18"
+        '
+        'DataGridViewTextBoxColumn19
+        '
+        Me.DataGridViewTextBoxColumn19.DataPropertyName = "Telefono"
+        Me.DataGridViewTextBoxColumn19.HeaderText = "Telefono"
+        Me.DataGridViewTextBoxColumn19.Name = "DataGridViewTextBoxColumn19"
+        '
+        'DataGridViewTextBoxColumn20
+        '
+        Me.DataGridViewTextBoxColumn20.DataPropertyName = "Correo"
+        Me.DataGridViewTextBoxColumn20.HeaderText = "Correo"
+        Me.DataGridViewTextBoxColumn20.Name = "DataGridViewTextBoxColumn20"
+        '
+        'DataGridViewTextBoxColumn21
+        '
+        Me.DataGridViewTextBoxColumn21.DataPropertyName = "FechaAlta"
+        Me.DataGridViewTextBoxColumn21.HeaderText = "FechaAlta"
+        Me.DataGridViewTextBoxColumn21.Name = "DataGridViewTextBoxColumn21"
+        '
+        'DataGridViewTextBoxColumn22
+        '
+        Me.DataGridViewTextBoxColumn22.DataPropertyName = "Alta"
+        Me.DataGridViewTextBoxColumn22.HeaderText = "Alta"
+        Me.DataGridViewTextBoxColumn22.Name = "DataGridViewTextBoxColumn22"
+        '
+        'ClientesBindingSource
+        '
+        Me.ClientesBindingSource.DataMember = "Clientes"
+        Me.ClientesBindingSource.DataSource = Me.Repsol_dbDataSet
+        '
+        'GasolinasDataGridView
+        '
+        Me.GasolinasDataGridView.AutoGenerateColumns = False
+        Me.GasolinasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.GasolinasDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn23, Me.DataGridViewTextBoxColumn24, Me.DataGridViewTextBoxColumn25, Me.DataGridViewTextBoxColumn26})
+        Me.GasolinasDataGridView.DataSource = Me.GasolinasBindingSource
+        Me.GasolinasDataGridView.Location = New System.Drawing.Point(3000, 3000)
+        Me.GasolinasDataGridView.Name = "GasolinasDataGridView"
+        Me.GasolinasDataGridView.Size = New System.Drawing.Size(444, 251)
+        Me.GasolinasDataGridView.TabIndex = 11
+        Me.GasolinasDataGridView.Visible = False
+        '
+        'DataGridViewTextBoxColumn23
+        '
+        Me.DataGridViewTextBoxColumn23.DataPropertyName = "Id"
+        Me.DataGridViewTextBoxColumn23.HeaderText = "Id"
+        Me.DataGridViewTextBoxColumn23.Name = "DataGridViewTextBoxColumn23"
+        '
+        'DataGridViewTextBoxColumn24
+        '
+        Me.DataGridViewTextBoxColumn24.DataPropertyName = "Nombre"
+        Me.DataGridViewTextBoxColumn24.HeaderText = "Nombre"
+        Me.DataGridViewTextBoxColumn24.Name = "DataGridViewTextBoxColumn24"
+        '
+        'DataGridViewTextBoxColumn25
+        '
+        Me.DataGridViewTextBoxColumn25.DataPropertyName = "Cantidad"
+        Me.DataGridViewTextBoxColumn25.HeaderText = "Cantidad"
+        Me.DataGridViewTextBoxColumn25.Name = "DataGridViewTextBoxColumn25"
+        '
+        'DataGridViewTextBoxColumn26
+        '
+        Me.DataGridViewTextBoxColumn26.DataPropertyName = "Precio"
+        Me.DataGridViewTextBoxColumn26.HeaderText = "Precio"
+        Me.DataGridViewTextBoxColumn26.Name = "DataGridViewTextBoxColumn26"
+        '
+        'GasolinasBindingSource
+        '
+        Me.GasolinasBindingSource.DataMember = "Gasolinas"
+        Me.GasolinasBindingSource.DataSource = Me.Repsol_dbDataSet
+        '
+        'ProveedoresDataGridView
+        '
+        Me.ProveedoresDataGridView.AutoGenerateColumns = False
+        Me.ProveedoresDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.ProveedoresDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn27, Me.DataGridViewTextBoxColumn28})
+        Me.ProveedoresDataGridView.DataSource = Me.ProveedoresBindingSource
+        Me.ProveedoresDataGridView.Location = New System.Drawing.Point(3000, 3000)
+        Me.ProveedoresDataGridView.Name = "ProveedoresDataGridView"
+        Me.ProveedoresDataGridView.Size = New System.Drawing.Size(243, 243)
+        Me.ProveedoresDataGridView.TabIndex = 12
+        Me.ProveedoresDataGridView.Visible = False
+        '
+        'DataGridViewTextBoxColumn27
+        '
+        Me.DataGridViewTextBoxColumn27.DataPropertyName = "Id"
+        Me.DataGridViewTextBoxColumn27.HeaderText = "Id"
+        Me.DataGridViewTextBoxColumn27.Name = "DataGridViewTextBoxColumn27"
+        '
+        'DataGridViewTextBoxColumn28
+        '
+        Me.DataGridViewTextBoxColumn28.DataPropertyName = "Nombre"
+        Me.DataGridViewTextBoxColumn28.HeaderText = "Nombre"
+        Me.DataGridViewTextBoxColumn28.Name = "DataGridViewTextBoxColumn28"
+        '
+        'ProveedoresBindingSource
+        '
+        Me.ProveedoresBindingSource.DataMember = "Proveedores"
+        Me.ProveedoresBindingSource.DataSource = Me.Repsol_dbDataSet
+        '
+        'tbIdEmpleado
+        '
+        Me.tbIdEmpleado.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "Id", True))
+        Me.tbIdEmpleado.Location = New System.Drawing.Point(91, 28)
+        Me.tbIdEmpleado.Name = "tbIdEmpleado"
+        Me.tbIdEmpleado.Size = New System.Drawing.Size(100, 20)
+        Me.tbIdEmpleado.TabIndex = 1
+        '
+        'tbNombreEmpleado
+        '
+        Me.tbNombreEmpleado.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "Nombre", True))
+        Me.tbNombreEmpleado.Location = New System.Drawing.Point(91, 54)
+        Me.tbNombreEmpleado.Name = "tbNombreEmpleado"
+        Me.tbNombreEmpleado.Size = New System.Drawing.Size(100, 20)
+        Me.tbNombreEmpleado.TabIndex = 3
+        '
+        'tbApellido1Empleado
+        '
+        Me.tbApellido1Empleado.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "Apellido 1", True))
+        Me.tbApellido1Empleado.Location = New System.Drawing.Point(91, 80)
+        Me.tbApellido1Empleado.Name = "tbApellido1Empleado"
+        Me.tbApellido1Empleado.Size = New System.Drawing.Size(100, 20)
+        Me.tbApellido1Empleado.TabIndex = 5
+        '
+        'tbApellido2Empleado
+        '
+        Me.tbApellido2Empleado.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "Apellido 2", True))
+        Me.tbApellido2Empleado.Location = New System.Drawing.Point(91, 106)
+        Me.tbApellido2Empleado.Name = "tbApellido2Empleado"
+        Me.tbApellido2Empleado.Size = New System.Drawing.Size(100, 20)
+        Me.tbApellido2Empleado.TabIndex = 7
+        '
+        'tbTelefonoEmpleado
+        '
+        Me.tbTelefonoEmpleado.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "Telefono", True))
+        Me.tbTelefonoEmpleado.Location = New System.Drawing.Point(91, 132)
+        Me.tbTelefonoEmpleado.Name = "tbTelefonoEmpleado"
+        Me.tbTelefonoEmpleado.Size = New System.Drawing.Size(100, 20)
+        Me.tbTelefonoEmpleado.TabIndex = 9
+        '
+        'tbCorreoEmpleado
+        '
+        Me.tbCorreoEmpleado.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "Correo", True))
+        Me.tbCorreoEmpleado.Location = New System.Drawing.Point(91, 158)
+        Me.tbCorreoEmpleado.Name = "tbCorreoEmpleado"
+        Me.tbCorreoEmpleado.Size = New System.Drawing.Size(100, 20)
+        Me.tbCorreoEmpleado.TabIndex = 11
+        '
+        'tbContraseñaEmpleado
+        '
+        Me.tbContraseñaEmpleado.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "Contraseña", True))
+        Me.tbContraseñaEmpleado.Location = New System.Drawing.Point(91, 184)
+        Me.tbContraseñaEmpleado.Name = "tbContraseñaEmpleado"
+        Me.tbContraseñaEmpleado.Size = New System.Drawing.Size(100, 20)
+        Me.tbContraseñaEmpleado.TabIndex = 13
+        '
+        'tbAdministradorEmpleado
+        '
+        Me.tbAdministradorEmpleado.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "Administrador", True))
+        Me.tbAdministradorEmpleado.Location = New System.Drawing.Point(91, 210)
+        Me.tbAdministradorEmpleado.Name = "tbAdministradorEmpleado"
+        Me.tbAdministradorEmpleado.Size = New System.Drawing.Size(100, 20)
+        Me.tbAdministradorEmpleado.TabIndex = 15
+        '
+        'tbCargoEmpleado
+        '
+        Me.tbCargoEmpleado.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "Cargo", True))
+        Me.tbCargoEmpleado.Location = New System.Drawing.Point(91, 236)
+        Me.tbCargoEmpleado.Name = "tbCargoEmpleado"
+        Me.tbCargoEmpleado.Size = New System.Drawing.Size(100, 20)
+        Me.tbCargoEmpleado.TabIndex = 17
+        '
+        'btnAccionBuscarEmpleado
+        '
+        Me.btnAccionBuscarEmpleado.Location = New System.Drawing.Point(91, 262)
+        Me.btnAccionBuscarEmpleado.Name = "btnAccionBuscarEmpleado"
+        Me.btnAccionBuscarEmpleado.Size = New System.Drawing.Size(100, 23)
+        Me.btnAccionBuscarEmpleado.TabIndex = 18
+        Me.btnAccionBuscarEmpleado.Text = "Buscar"
+        Me.btnAccionBuscarEmpleado.UseVisualStyleBackColor = True
         '
         'ProductosTableAdapter
         '
@@ -1086,11 +1091,11 @@ Partial Class GestionesAdministrador
         Me.Controls.Add(Me.EmpleadosDataGridView)
         Me.Controls.Add(Me.ProductosDataGridView)
         Me.Controls.Add(Me.ProductosBindingNavigator)
-        Me.Controls.Add(Me.Panel5)
-        Me.Controls.Add(Me.Panel4)
-        Me.Controls.Add(Me.Panel3)
-        Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.panelOpcionesCrudProveedores)
+        Me.Controls.Add(Me.panelOpcionesCrudGasolina)
+        Me.Controls.Add(Me.panelOpcionesCrudProductos)
+        Me.Controls.Add(Me.panelOpcionesCrudClientes)
+        Me.Controls.Add(Me.panelOpcionesCrudUsuario)
         Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
@@ -1099,25 +1104,25 @@ Partial Class GestionesAdministrador
         Me.FlowLayoutPanel1.ResumeLayout(False)
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel4.ResumeLayout(False)
-        Me.Panel5.ResumeLayout(False)
+        Me.panelOpcionesCrudUsuario.ResumeLayout(False)
+        Me.panelOpcionesCrudClientes.ResumeLayout(False)
+        Me.panelOpcionesCrudProductos.ResumeLayout(False)
+        Me.panelOpcionesCrudGasolina.ResumeLayout(False)
+        Me.panelOpcionesCrudProveedores.ResumeLayout(False)
         CType(Me.ProductosBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ProductosBindingNavigator.ResumeLayout(False)
         Me.ProductosBindingNavigator.PerformLayout()
+        CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Repsol_dbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductosDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmpleadosDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ClientesDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GasolinasDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ProveedoresDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmpleadosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Repsol_dbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GasolinasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ClientesDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GasolinasDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GasolinasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProveedoresDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelBuscarEmpleado.ResumeLayout(False)
         Me.panelBuscarEmpleado.PerformLayout()
         Me.ResumeLayout(False)
@@ -1134,27 +1139,27 @@ Partial Class GestionesAdministrador
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents OpcionesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents VolverToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents panelOpcionesCrudUsuario As Panel
     Friend WithEvents Button4 As Button
     Friend WithEvents btnModificarEmpleado As Button
     Friend WithEvents btnVerTodosEmpleados As Button
     Friend WithEvents btnSeleccionarUnEmpleado As Button
-    Friend WithEvents Panel2 As Panel
+    Friend WithEvents panelOpcionesCrudClientes As Panel
     Friend WithEvents btnEliminarCliente As Button
     Friend WithEvents btnModificarCliente As Button
     Friend WithEvents btnVerTodosClientes As Button
     Friend WithEvents btnVerCliente As Button
-    Friend WithEvents Panel3 As Panel
+    Friend WithEvents panelOpcionesCrudProductos As Panel
     Friend WithEvents btnEliminarProducto As Button
     Friend WithEvents btnModificarProducto As Button
     Friend WithEvents btnVerTodosProductos As Button
     Friend WithEvents btnVerProducto As Button
-    Friend WithEvents Panel4 As Panel
+    Friend WithEvents panelOpcionesCrudGasolina As Panel
     Friend WithEvents btnEliminarGas As Button
     Friend WithEvents btnModificarGasolina As Button
     Friend WithEvents btnVerTodasGasolinas As Button
     Friend WithEvents btnVerGasolina As Button
-    Friend WithEvents Panel5 As Panel
+    Friend WithEvents panelOpcionesCrudProveedores As Panel
     Friend WithEvents btnEliminarProveedor As Button
     Friend WithEvents btnModificarProveedor As Button
     Friend WithEvents btnVerTodosProveedores As Button

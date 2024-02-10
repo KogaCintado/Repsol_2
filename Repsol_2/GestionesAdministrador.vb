@@ -1,4 +1,7 @@
-﻿Public Class GestionesAdministrador
+﻿Imports System.Data.OleDb
+Imports System.Data.SqlClient
+
+Public Class GestionesAdministrador
     Private Sub GestionesAdministrador_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'datagridviews a tomar por culo de forma guarra para que no se vean
         ProductosDataGridView.Location = New Point(3000, 3000)
@@ -117,18 +120,102 @@
         Dim idEmpleado As Integer
         idEmpleado = tbIdEmpleado.Text
         Dim empleado As DataRow
-        empleado = Repsol_dbDataSet.Empleados.BuscarEmpleado(tbIdEmpleado.Text)
+        empleado = BuscarEmpleado(idEmpleado)
         If empleado Is Nothing Then
             MessageBox.Show("No existe un empleado con ese id")
         Else
             tbNombreEmpleado.Text = empleado("Nombre")
-            tbApellido1Empleado.Text = empleado("Apellido1")
-            tbApellido2Empleado.Text = empleado("Apellido2")
+            tbApellido1Empleado.Text = empleado("Apellido 1")
+            tbApellido2Empleado.Text = empleado("Apellido 2")
             tbTelefonoEmpleado.Text = empleado("Telefono")
             tbCorreoEmpleado.Text = empleado("Correo")
             tbContraseñaEmpleado.Text = empleado("Contraseña")
             tbCargoEmpleado.Text = empleado("Cargo")
             tbAdministradorEmpleado.Text = empleado("Administrador")
         End If
+    End Sub
+
+
+
+    Public Function BuscarEmpleado(id As Integer) As DataRow
+        ' Crear una nueva instancia de la conexión a la base de datos
+        ' Ensure that the server name, database name, and other connection properties are correct
+        Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
+
+        ' Crear una nueva instancia del comando SQL
+        Dim cmd As New OleDbCommand("SELECT * FROM Empleados WHERE id = @id", conn)
+
+        ' Añadir el parámetro al comando SQL
+        cmd.Parameters.AddWithValue("@id", id)
+
+        ' Crear una nueva instancia del adaptador de datos
+        Dim da As New OleDbDataAdapter(cmd)
+
+        ' Crear una nueva instancia del DataSet
+        Dim ds As New DataSet()
+
+        Try
+            ' Llenar el DataSet con los datos de la tabla Empleados
+            da.Fill(ds, "Empleados")
+        Catch ex As OleDbException
+            MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
+            Return Nothing
+        End Try
+
+        ' Comprobar si se encontró algún registro
+        If ds.Tables("Empleados").Rows.Count > 0 Then
+            ' Devolver la primera fila
+            Return ds.Tables("Empleados").Rows(0)
+        Else
+            ' Si no se encontró ningún registro, devolver Nothing
+            Return Nothing
+        End If
+    End Function
+
+    Private Sub btnGestionUsuarios_Click(sender As Object, e As EventArgs) Handles btnGestionUsuarios.Click
+        'cada vez que demos click a este boton, mostraremos el panel
+        'y ocultaremos los demas paneles
+        panelOpcionesCrudUsuario.Visible = True
+        panelOpcionesCrudProductos.Visible = False
+        panelOpcionesCrudClientes.Visible = False
+        panelOpcionesCrudGasolina.Visible = False
+        panelOpcionesCrudProveedores.Visible = False
+    End Sub
+
+    Private Sub btnGestionClientes_Click(sender As Object, e As EventArgs) Handles btnGestionClientes.Click
+        'tendra el mismo comportamiento que el boton de gestion de usuarios
+        panelOpcionesCrudUsuario.Visible = False
+        panelOpcionesCrudProductos.Visible = False
+        panelOpcionesCrudClientes.Visible = True
+        panelOpcionesCrudGasolina.Visible = False
+        panelOpcionesCrudProveedores.Visible = False
+    End Sub
+
+    Private Sub btnGestionProductos_Click(sender As Object, e As EventArgs) Handles btnGestionProductos.Click
+        'tendra el mismo comportamiento que el boton de gestion de usuarios
+        panelOpcionesCrudUsuario.Visible = False
+        panelOpcionesCrudProductos.Visible = True
+        panelOpcionesCrudClientes.Visible = False
+        panelOpcionesCrudGasolina.Visible = False
+        panelOpcionesCrudProveedores.Visible = False
+    End Sub
+
+    Private Sub btnGestionGasolina_Click(sender As Object, e As EventArgs) Handles btnGestionGasolina.Click
+        'tendra el mismo comportamiento que el boton de gestion de usuarios
+        panelOpcionesCrudUsuario.Visible = False
+        panelOpcionesCrudProductos.Visible = False
+        panelOpcionesCrudClientes.Visible = False
+        panelOpcionesCrudGasolina.Visible = True
+        panelOpcionesCrudProveedores.Visible = False
+    End Sub
+
+    Private Sub btnGestionProveedores_Click(sender As Object, e As EventArgs) Handles btnGestionProveedores.Click
+        'tendra el mismo comportamiento que el boton de gestion de usuarios
+        panelOpcionesCrudUsuario.Visible = False
+        panelOpcionesCrudProductos.Visible = False
+        panelOpcionesCrudClientes.Visible = False
+        panelOpcionesCrudGasolina.Visible = False
+        panelOpcionesCrudProveedores.Visible = True
+
     End Sub
 End Class
