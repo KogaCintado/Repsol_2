@@ -201,35 +201,35 @@ Partial Class TPV
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VolverToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1904, 33)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1904, 24)
         Me.MenuStrip1.TabIndex = 64
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'VolverToolStripMenuItem
         '
         Me.VolverToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VolverToolStripMenuItem1, Me.CerrarSesiónToolStripMenuItem, Me.CerrarAplicaciónToolStripMenuItem})
-        Me.VolverToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.VolverToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
-        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(103, 29)
+        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(69, 20)
         Me.VolverToolStripMenuItem.Text = "Opciones"
         '
         'VolverToolStripMenuItem1
         '
         Me.VolverToolStripMenuItem1.Name = "VolverToolStripMenuItem1"
-        Me.VolverToolStripMenuItem1.Size = New System.Drawing.Size(228, 30)
+        Me.VolverToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.VolverToolStripMenuItem1.Text = "Volver"
         '
         'CerrarSesiónToolStripMenuItem
         '
         Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
-        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(228, 30)
+        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar sesión"
         '
         'CerrarAplicaciónToolStripMenuItem
         '
         Me.CerrarAplicaciónToolStripMenuItem.Name = "CerrarAplicaciónToolStripMenuItem"
-        Me.CerrarAplicaciónToolStripMenuItem.Size = New System.Drawing.Size(228, 30)
-        Me.CerrarAplicaciónToolStripMenuItem.Text = "Cerrar aplicación"
+        Me.CerrarAplicaciónToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CerrarAplicaciónToolStripMenuItem.Text = "Cerrar el programa"
         '
         'PictureBox1
         '

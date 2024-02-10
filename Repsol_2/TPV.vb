@@ -1,10 +1,7 @@
 ﻿Public Class TPV
-    Private Sub lblUser_Click(sender As Object, e As EventArgs) Handles lblUser.Click
-
-    End Sub
-
     Private Sub TPV_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        'Maximizamos la ventana
+        Me.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
@@ -22,4 +19,15 @@
         Trabajar.Show()
         Me.Close()
     End Sub
+    Private Sub CerrarSesiónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarSesiónToolStripMenuItem.Click
+        Inicio.Show()
+        Me.Close()
+    End Sub
+
+    'Cerramos el programa.
+    Private Sub CerrarElProgramaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarAplicaciónToolStripMenuItem.Click
+        Inicio.Close()
+    End Sub
+
+
 End Class

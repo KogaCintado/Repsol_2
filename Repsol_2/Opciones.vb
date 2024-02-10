@@ -1,6 +1,8 @@
 ﻿Public Class Opciones
 
     Private Sub Opciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Maximizamos la ventana
+        Me.WindowState = FormWindowState.Maximized
         'Se carga el formulario. Es necesario saber si es administrador o no.
         If Inicio.admin = True Then
             btnCRUD.Visible = True

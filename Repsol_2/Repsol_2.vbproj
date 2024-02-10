@@ -92,6 +92,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Gas.Designer.vb">
+      <DependentUpon>Gas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GestionesAdministrador.Designer.vb">
       <DependentUpon>GestionesAdministrador.vb</DependentUpon>
     </Compile>
