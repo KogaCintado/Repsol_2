@@ -137,9 +137,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Repsol_dbDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Repsol_dbDataSet.vb">
-      <DependentUpon>Repsol_dbDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="TPV.Designer.vb">
       <DependentUpon>TPV.vb</DependentUpon>
     </Compile>
@@ -213,11 +210,6 @@
     <None Include="Resources\Mapa.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Repsol_db.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
@@ -228,6 +220,11 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Repsol_db.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
