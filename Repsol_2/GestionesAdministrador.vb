@@ -180,7 +180,7 @@ Public Class GestionesAdministrador
             tbNombreProducto.Text = producto("Nombre")
             tbPrecioProducto.Text = producto("Precio")
             tbProveedorProducto.Text = producto("Proveedor")
-            GamaProducto = tbGamaProducto.Text
+            GamaProducto = try.parsetbGamaProducto.Text.
             GamaProducto = producto("Gama")
         End If
     End Sub
