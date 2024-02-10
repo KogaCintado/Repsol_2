@@ -186,7 +186,6 @@ Public Class GestionesAdministrador
         'Si el id no existe, mostramos un mensaje de error
         'Si el id existe, mostramos los datos del Producto
         Dim idProducto As Integer
-        Dim GamaProducto As Integer
         idProducto = tbIdProducto.Text
         Dim producto As DataRow
         producto = BuscarProducto(idProducto)
@@ -196,8 +195,12 @@ Public Class GestionesAdministrador
             tbNombreProducto.Text = producto("Nombre")
             tbPrecioProducto.Text = producto("Precio")
             tbProveedorProducto.Text = producto("Proveedor")
+<<<<<<< HEAD
             GamaProducto = tbGamaProducto.Text
             GamaProducto = producto("Gama")
+=======
+            tbGamaProducto.Text = producto("Gama")
+>>>>>>> La base de datos ya funciona de puta madre, he reescrito la base de datos y he utilizado un nuevo dataset, ahora ya deberia ir de locoss (por ahora)
         End If
     End Sub
 

@@ -221,6 +221,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <None Include="Resources\ajustar%281%29.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -228,6 +229,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\_31544953-d1d9-4b71-bd43-3bf205c.jpg" />
+=======
+    <Content Include="Repsol_db.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+>>>>>>> La base de datos ya funciona de puta madre, he reescrito la base de datos y he utilizado un nuevo dataset, ahora ya deberia ir de locoss (por ahora)
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

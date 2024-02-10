@@ -2840,6 +2840,7 @@ Partial Class GestionesAdministrador
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(1924, 1061)
+<<<<<<< HEAD
         Me.Controls.Add(Me.panelModificarProveedores)
         Me.Controls.Add(Me.panelModificarGasolina)
         Me.Controls.Add(Me.panelModificarProducto)
@@ -2858,6 +2859,9 @@ Partial Class GestionesAdministrador
         Me.Controls.Add(Me.panelBuscarProveedor)
         Me.Controls.Add(Me.panelBuscarGasolina)
         Me.Controls.Add(Me.panelBuscarProducto)
+=======
+        Me.Controls.Add(Me.Panel1)
+>>>>>>> La base de datos ya funciona de puta madre, he reescrito la base de datos y he utilizado un nuevo dataset, ahora ya deberia ir de locoss (por ahora)
         Me.Controls.Add(Me.panelBuscarCliente)
         Me.Controls.Add(Me.panelBuscarEmpleado)
         Me.Controls.Add(Me.ProveedoresDataGridView)
