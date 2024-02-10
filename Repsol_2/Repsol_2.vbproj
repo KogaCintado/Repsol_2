@@ -131,6 +131,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Repsol_dbDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Repsol_dbDataSet.vb">
+      <DependentUpon>Repsol_dbDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TPV.Designer.vb">
       <DependentUpon>TPV.vb</DependentUpon>
     </Compile>
