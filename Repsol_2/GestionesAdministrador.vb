@@ -12,6 +12,11 @@ Public Class GestionesAdministrador
         panelBuscarProducto.Location = New Point(3000, 3000)
         panelBuscarGasolina.Location = New Point(3000, 3000)
         panelBuscarProveedor.Location = New Point(3000, 3000)
+        panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarGasolina.Location = New Point(3000, 3000)
+        panelEliminarProducto.Location = New Point(3000, 3000)
+        panelEliminarClientes.Location = New Point(3000, 3000)
+        panelEliminarProveedores.Location = New Point(3000, 3000)
 
         'Maximize the window
         Me.WindowState = FormWindowState.Maximized
@@ -40,6 +45,11 @@ Public Class GestionesAdministrador
         panelBuscarProducto.Location = New Point(3000, 3000)
         panelBuscarGasolina.Location = New Point(3000, 3000)
         panelBuscarProveedor.Location = New Point(3000, 3000)
+        panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarProducto.Location = New Point(3000, 3000)
+        panelEliminarClientes.Location = New Point(3000, 3000)
+        panelEliminarProveedores.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoDataGridDeEmpleados()
@@ -52,6 +62,11 @@ Public Class GestionesAdministrador
         panelBuscarProducto.Location = New Point(3000, 3000)
         panelBuscarGasolina.Location = New Point(3000, 3000)
         panelBuscarProveedor.Location = New Point(3000, 3000)
+        panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarProducto.Location = New Point(3000, 3000)
+        panelEliminarClientes.Location = New Point(3000, 3000)
+        panelEliminarProveedores.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoDataGridDeGasolinas()
@@ -64,6 +79,11 @@ Public Class GestionesAdministrador
         panelBuscarProducto.Location = New Point(3000, 3000)
         panelBuscarGasolina.Location = New Point(3000, 3000)
         panelBuscarProveedor.Location = New Point(3000, 3000)
+        panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarProducto.Location = New Point(3000, 3000)
+        panelEliminarClientes.Location = New Point(3000, 3000)
+        panelEliminarProveedores.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoDataGridDeProductos()
@@ -76,6 +96,11 @@ Public Class GestionesAdministrador
         panelBuscarProducto.Location = New Point(3000, 3000)
         panelBuscarGasolina.Location = New Point(3000, 3000)
         panelBuscarProveedor.Location = New Point(3000, 3000)
+        panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarProducto.Location = New Point(3000, 3000)
+        panelEliminarClientes.Location = New Point(3000, 3000)
+        panelEliminarProveedores.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoDataGridDeProveedores()
@@ -88,6 +113,11 @@ Public Class GestionesAdministrador
         panelBuscarProducto.Location = New Point(3000, 3000)
         panelBuscarGasolina.Location = New Point(3000, 3000)
         panelBuscarProveedor.Location = New Point(3000, 3000)
+        panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarProducto.Location = New Point(3000, 3000)
+        panelEliminarClientes.Location = New Point(3000, 3000)
+        panelEliminarProveedores.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelBuscarEmpleado()
@@ -100,6 +130,11 @@ Public Class GestionesAdministrador
         panelBuscarProducto.Location = New Point(3000, 3000)
         panelBuscarGasolina.Location = New Point(3000, 3000)
         panelBuscarProveedor.Location = New Point(3000, 3000)
+        panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarProducto.Location = New Point(3000, 3000)
+        panelEliminarClientes.Location = New Point(3000, 3000)
+        panelEliminarProveedores.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelBuscarCliente()
@@ -112,6 +147,11 @@ Public Class GestionesAdministrador
         panelBuscarProducto.Location = New Point(3000, 3000)
         panelBuscarGasolina.Location = New Point(3000, 3000)
         panelBuscarProveedor.Location = New Point(3000, 3000)
+        panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarProducto.Location = New Point(3000, 3000)
+        panelEliminarClientes.Location = New Point(3000, 3000)
+        panelEliminarProveedores.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelBuscarProducto()
@@ -124,6 +164,11 @@ Public Class GestionesAdministrador
         panelBuscarCliente.Location = New Point(3000, 3000)
         panelBuscarGasolina.Location = New Point(3000, 3000)
         panelBuscarProveedor.Location = New Point(3000, 3000)
+        panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarProducto.Location = New Point(3000, 3000)
+        panelEliminarClientes.Location = New Point(3000, 3000)
+        panelEliminarProveedores.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelBuscarGasolina()
@@ -136,6 +181,11 @@ Public Class GestionesAdministrador
         panelBuscarCliente.Location = New Point(3000, 3000)
         panelBuscarProducto.Location = New Point(3000, 3000)
         panelBuscarProveedor.Location = New Point(3000, 3000)
+        panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarProducto.Location = New Point(3000, 3000)
+        panelEliminarClientes.Location = New Point(3000, 3000)
+        panelEliminarProveedores.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelBuscarProveedor()
@@ -148,6 +198,106 @@ Public Class GestionesAdministrador
         panelBuscarCliente.Location = New Point(3000, 3000)
         panelBuscarProducto.Location = New Point(3000, 3000)
         panelBuscarGasolina.Location = New Point(3000, 3000)
+        panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarProducto.Location = New Point(3000, 3000)
+        panelEliminarClientes.Location = New Point(3000, 3000)
+        panelEliminarProveedores.Location = New Point(3000, 3000)
+    End Sub
+
+    Private Sub invisivilizarTodosExceptoPanelEliminarEmpleado()
+
+        ProductosDataGridView.Location = New Point(3000, 3000)
+        EmpleadosDataGridView.Location = New Point(3000, 3000)
+        GasolinasDataGridView.Location = New Point(3000, 3000)
+        ClientesDataGridView.Location = New Point(3000, 3000)
+        ProveedoresDataGridView.Location = New Point(3000, 3000)
+        panelBuscarEmpleado.Location = New Point(3000, 3000)
+        panelBuscarCliente.Location = New Point(3000, 3000)
+        panelBuscarProducto.Location = New Point(3000, 3000)
+        panelBuscarGasolina.Location = New Point(3000, 3000)
+        panelBuscarProveedor.Location = New Point(3000, 3000)
+        panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarProducto.Location = New Point(3000, 3000)
+        panelEliminarClientes.Location = New Point(3000, 3000)
+        panelEliminarProveedores.Location = New Point(3000, 3000)
+
+    End Sub
+
+
+    Private Sub invisivilizarTodosExceptoPanelEliminarGasolina()
+
+        ProductosDataGridView.Location = New Point(3000, 3000)
+        EmpleadosDataGridView.Location = New Point(3000, 3000)
+        GasolinasDataGridView.Location = New Point(3000, 3000)
+        ClientesDataGridView.Location = New Point(3000, 3000)
+        ProveedoresDataGridView.Location = New Point(3000, 3000)
+        panelBuscarEmpleado.Location = New Point(3000, 3000)
+        panelBuscarCliente.Location = New Point(3000, 3000)
+        panelBuscarProducto.Location = New Point(3000, 3000)
+        panelBuscarGasolina.Location = New Point(3000, 3000)
+        panelBuscarProveedor.Location = New Point(3000, 3000)
+        panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarProducto.Location = New Point(3000, 3000)
+        panelEliminarProveedores.Location = New Point(3000, 3000)
+        panelEliminarClientes.Location = New Point(3000, 3000)
+        panelEliminarProveedores.Location = New Point(3000, 3000)
+
+    End Sub
+
+    Private Sub invisivilizarTodosExceptoPanelEliminarProducto()
+
+        ProductosDataGridView.Location = New Point(3000, 3000)
+        EmpleadosDataGridView.Location = New Point(3000, 3000)
+        GasolinasDataGridView.Location = New Point(3000, 3000)
+        ClientesDataGridView.Location = New Point(3000, 3000)
+        ProveedoresDataGridView.Location = New Point(3000, 3000)
+        panelBuscarEmpleado.Location = New Point(3000, 3000)
+        panelBuscarCliente.Location = New Point(3000, 3000)
+        panelBuscarProducto.Location = New Point(3000, 3000)
+        panelBuscarGasolina.Location = New Point(3000, 3000)
+        panelBuscarProveedor.Location = New Point(3000, 3000)
+        panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarGasolina.Location = New Point(3000, 3000)
+        panelEliminarProveedores.Location = New Point(3000, 3000)
+        panelEliminarClientes.Location = New Point(3000, 3000)
+
+    End Sub
+
+    Private Sub invisivilizarTodosExceptoPanelEliminarProveedor()
+        ProductosDataGridView.Location = New Point(3000, 3000)
+        EmpleadosDataGridView.Location = New Point(3000, 3000)
+        GasolinasDataGridView.Location = New Point(3000, 3000)
+        ClientesDataGridView.Location = New Point(3000, 3000)
+        ProveedoresDataGridView.Location = New Point(3000, 3000)
+        panelBuscarEmpleado.Location = New Point(3000, 3000)
+        panelBuscarCliente.Location = New Point(3000, 3000)
+        panelBuscarProducto.Location = New Point(3000, 3000)
+        panelBuscarGasolina.Location = New Point(3000, 3000)
+        panelBuscarProveedor.Location = New Point(3000, 3000)
+        panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarGasolina.Location = New Point(3000, 3000)
+        panelEliminarProducto.Location = New Point(3000, 3000)
+        panelEliminarClientes.Location = New Point(3000, 3000)
+
+    End Sub
+
+    Private Sub invisivilizarTodosExceptoPanelEliminarCliente()
+        ProductosDataGridView.Location = New Point(3000, 3000)
+        EmpleadosDataGridView.Location = New Point(3000, 3000)
+        GasolinasDataGridView.Location = New Point(3000, 3000)
+        ClientesDataGridView.Location = New Point(3000, 3000)
+        ProveedoresDataGridView.Location = New Point(3000, 3000)
+        panelBuscarEmpleado.Location = New Point(3000, 3000)
+        panelBuscarCliente.Location = New Point(3000, 3000)
+        panelBuscarProducto.Location = New Point(3000, 3000)
+        panelBuscarGasolina.Location = New Point(3000, 3000)
+        panelBuscarProveedor.Location = New Point(3000, 3000)
+        panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarGasolina.Location = New Point(3000, 3000)
+        panelEliminarProducto.Location = New Point(3000, 3000)
+        panelEliminarProveedores.Location = New Point(3000, 3000)
+
     End Sub
 
 
@@ -213,6 +363,37 @@ Public Class GestionesAdministrador
         invisivilizarTodosExceptoPanelBuscarProveedor()
         panelBuscarProveedor.Location = New Point(476, 81)
     End Sub
+
+    Private Sub btnEliminarEmpleado_Click(sender As Object, e As EventArgs) Handles btnEliminarEmpleado.Click
+        invisivilizarTodosExceptoPanelEliminarEmpleado()
+        panelEliminarEmpleado.Location = New Point(476, 81)
+    End Sub
+
+    Private Sub btnEliminarGas_Click(sender As Object, e As EventArgs) Handles btnEliminarGas.Click
+        invisivilizarTodosExceptoPanelEliminarGasolina()
+        panelEliminarGasolina.Location = New Point(476, 81)
+    End Sub
+
+    Private Sub btnEliminarProducto_Click(sender As Object, e As EventArgs) Handles btnEliminarProducto.Click
+        invisivilizarTodosExceptoPanelEliminarProducto()
+        panelEliminarProducto.Location = New Point(476, 81)
+    End Sub
+
+    Private Sub btnEliminarCliente_Click(sender As Object, e As EventArgs) Handles btnEliminarCliente.Click
+
+    End Sub
+
+    Private Sub btnEliminarProveedor_Click(sender As Object, e As EventArgs) Handles btnEliminarProveedor.Click
+
+    End Sub
+
+
+
+
+
+
+
+
 
     Private Sub btnAccionBuscarEmpleado_Click(sender As Object, e As EventArgs) Handles btnAccionBuscarEmpleado.Click
 
@@ -280,41 +461,6 @@ Public Class GestionesAdministrador
 
 
 
-    Public Function BuscarEmpleado(id As Integer) As DataRow
-        ' Crear una nueva instancia de la conexión a la base de datos
-        ' Ensure that the server name, database name, and other connection properties are correct
-        Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
-
-        ' Crear una nueva instancia del comando SQL
-        Dim cmd As New OleDbCommand("SELECT * FROM Empleados WHERE id = @id", conn)
-
-        ' Añadir el parámetro al comando SQL
-        cmd.Parameters.AddWithValue("@id", id)
-
-        ' Crear una nueva instancia del adaptador de datos
-        Dim da As New OleDbDataAdapter(cmd)
-
-        ' Crear una nueva instancia del DataSet
-        Dim ds As New DataSet()
-
-        Try
-            ' Llenar el DataSet con los datos de la tabla Empleados
-            da.Fill(ds, "Empleados")
-        Catch ex As OleDbException
-            MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
-            Return Nothing
-        End Try
-
-        ' Comprobar si se encontró algún registro
-        If ds.Tables("Empleados").Rows.Count > 0 Then
-            ' Devolver la primera fila
-            Return ds.Tables("Empleados").Rows(0)
-        Else
-            ' Si no se encontró ningún registro, devolver Nothing
-            Return Nothing
-        End If
-    End Function
-
 
     Private Sub btnAccionBuscarGasolina_Click(sender As Object, e As EventArgs) Handles btnAccionBuscarGasolina.Click
         'En este boton lo que hacemos es buscar una Gasolina por su id
@@ -345,6 +491,26 @@ Public Class GestionesAdministrador
         Else
             tbNombreProveedor.Text = proveedor("Nombre")
         End If
+    End Sub
+
+    Private Sub btnAccionModificarEmpleado_Click(sender As Object, e As EventArgs) Handles btnAccionModificarEmpleado.Click
+        modificarEmpleado(tbIdEmpleado.Text, tbNombreEmpleado.Text, tbApellido1Empleado.Text, tbApellido2Empleado.Text, tbTelefonoEmpleado.Text, tbCorreoEmpleado.Text, tbContraseñaEmpleado.Text, tbAdministradorEmpleado.Text, tbCargoEmpleado.Text)
+    End Sub
+    Private Sub btnAccionEliminarEmpleado_Click(sender As Object, e As EventArgs) Handles btnAccionEliminarEmpleado.Click
+        EliminarEmpleado(tbIdEmpleadoEliminar.Text)
+    End Sub
+    Private Sub btnAccionEliminarProducto_Click(sender As Object, e As EventArgs) Handles btnAccionEliminarProducto.Click
+        EliminarProducto(tbIdProductoEliminar.Text)
+    End Sub
+    Private Sub btnAccionEliminarGasolina_Click(sender As Object, e As EventArgs) Handles btnAccionEliminarGasolina.Click
+        EliminarGasolina(tbIdGasolinaEliminar.Text)
+    End Sub
+    Private Sub btnAccionEliminarProveedor_Click(sender As Object, e As EventArgs) Handles btnAccionEliminarProveedor.Click
+        EliminarProveedor(tbIdProveedorEliminar.Text)
+    End Sub
+
+    Private Sub btnAccionEliminarCliente_Click(sender As Object, e As EventArgs) Handles btnAccionEliminarCliente.Click
+        EliminarCliente(tbIdClienteEliminar.Text)
     End Sub
 
     Public Function BuscarCliente(id As Integer) As DataRow
@@ -382,6 +548,104 @@ Public Class GestionesAdministrador
         End If
     End Function
 
+    Public Sub EliminarCliente(id As Integer)
+
+        Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
+        Dim cmd As New OleDbCommand("DELETE FROM Clientes WHERE id = @id", conn)
+        cmd.Parameters.AddWithValue("@id", id)
+        Try
+            conn.Open()
+            cmd.ExecuteNonQuery()
+            MessageBox.Show("Cliente eliminado correctamente")
+        Catch ex As OleDbException
+            MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
+        Finally
+            conn.Close()
+        End Try
+
+    End Sub
+
+
+    Public Function BuscarEmpleado(id As Integer) As DataRow
+        ' Crear una nueva instancia de la conexión a la base de datos
+        ' Ensure that the server name, database name, and other connection properties are correct
+        Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
+
+        ' Crear una nueva instancia del comando SQL
+        Dim cmd As New OleDbCommand("SELECT * FROM Empleados WHERE id = @id", conn)
+
+        ' Añadir el parámetro al comando SQL
+        cmd.Parameters.AddWithValue("@id", id)
+
+        ' Crear una nueva instancia del adaptador de datos
+        Dim da As New OleDbDataAdapter(cmd)
+
+        ' Crear una nueva instancia del DataSet
+        Dim ds As New DataSet()
+
+        Try
+            ' Llenar el DataSet con los datos de la tabla Empleados
+            da.Fill(ds, "Empleados")
+        Catch ex As OleDbException
+            MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
+            Return Nothing
+        End Try
+
+        ' Comprobar si se encontró algún registro
+        If ds.Tables("Empleados").Rows.Count > 0 Then
+            ' Devolver la primera fila
+            Return ds.Tables("Empleados").Rows(0)
+        Else
+            ' Si no se encontró ningún registro, devolver Nothing
+            Return Nothing
+        End If
+    End Function
+
+    Public Sub modificarEmpleado(id As Integer, nombre As String, apellido1 As String, apellido2 As String, telefono As String, correo As String, contraseña As String, administrador As Integer, cargo As String)
+
+        Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
+
+        Dim cmd As New OleDbCommand("UPDATE Empleados SET Nombre = @nombre, [Apellido 1] = @apellido1, [Apellido 2] = @apellido2, Telefono = @telefono, Correo = @correo, Contraseña = @contraseña, Administrador = @administrador, Cargo = @cargo WHERE id = @id", conn)
+
+        cmd.Parameters.AddWithValue("@id", id)
+        cmd.Parameters.AddWithValue("@nombre", nombre)
+        cmd.Parameters.AddWithValue("@apellido1", apellido1)
+        cmd.Parameters.AddWithValue("@apellido2", apellido2)
+        cmd.Parameters.AddWithValue("@telefono", telefono)
+        cmd.Parameters.AddWithValue("@correo", correo)
+        cmd.Parameters.AddWithValue("@contraseña", contraseña)
+        cmd.Parameters.AddWithValue("@administrador", administrador)
+        cmd.Parameters.AddWithValue("@cargo", cargo)
+
+        Try
+            conn.Open()
+            cmd.ExecuteNonQuery()
+            MessageBox.Show("Empleado modificado correctamente")
+        Catch ex As OleDbException
+            MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
+        Finally
+            conn.Close()
+        End Try
+
+
+    End Sub
+
+
+    Public Sub EliminarEmpleado(id As Integer)
+        Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
+        Dim cmd As New OleDbCommand("DELETE FROM Empleados WHERE id = @id", conn)
+        cmd.Parameters.AddWithValue("@id", id)
+        Try
+            conn.Open()
+            cmd.ExecuteNonQuery()
+            MessageBox.Show("Empleado eliminado correctamente")
+        Catch ex As OleDbException
+            MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
+        Finally
+            conn.Close()
+        End Try
+    End Sub
+
     Public Function BuscarProducto(id As Integer) As DataRow
         ' Crear una nueva instancia de la conexión a la base de datos
         ' Ensure that the server name, database name, and other connection properties are correct
@@ -416,6 +680,21 @@ Public Class GestionesAdministrador
             Return Nothing
         End If
     End Function
+
+    Public Sub EliminarProducto(id As Integer)
+        Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
+        Dim cmd As New OleDbCommand("DELETE FROM Productos WHERE id = @id", conn)
+        cmd.Parameters.AddWithValue("@id", id)
+        Try
+            conn.Open()
+            cmd.ExecuteNonQuery()
+            MessageBox.Show("Producto eliminado correctamente")
+        Catch ex As OleDbException
+            MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
+        Finally
+            conn.Close()
+        End Try
+    End Sub
 
     Public Function BuscarGasolina(id As Integer) As DataRow
 
@@ -452,6 +731,21 @@ Public Class GestionesAdministrador
             Return Nothing
         End If
     End Function
+
+    Public Sub EliminarGasolina(id As Integer)
+        Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
+        Dim cmd As New OleDbCommand("DELETE FROM Gasolinas WHERE id = @id", conn)
+        cmd.Parameters.AddWithValue("@id", id)
+        Try
+            conn.Open()
+            cmd.ExecuteNonQuery()
+            MessageBox.Show("Gasolina eliminada correctamente")
+        Catch ex As OleDbException
+            MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
+        Finally
+            conn.Close()
+        End Try
+    End Sub
 
     Public Function BuscarProveedor(id As Integer) As DataRow
 
@@ -491,6 +785,28 @@ Public Class GestionesAdministrador
 
     End Function
 
+    Public Sub EliminarProveedor(id As Integer)
+
+        Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
+        Dim cmd As New OleDbCommand("DELETE FROM Proveedores WHERE id = @id", conn)
+        cmd.Parameters.AddWithValue("@id", id)
+        Try
+            conn.Open()
+            cmd.ExecuteNonQuery()
+            MessageBox.Show("Proveedor eliminado correctamente")
+        Catch ex As OleDbException
+            MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
+        Finally
+            conn.Close()
+        End Try
+
+    End Sub
+
+
+
+    '---------------------------------------------------------------------------------------------------------------------------
+    '--------------------------------Zona de control de visibilidad de los paneles de la izquierda------------------------------
+    '---------------------------------------------------------------------------------------------------------------------------
 
     Private Sub btnGestionUsuarios_Click(sender As Object, e As EventArgs) Handles btnGestionUsuarios.Click
         'cada vez que demos click a este boton, mostraremos el panel
@@ -537,4 +853,6 @@ Public Class GestionesAdministrador
         panelOpcionesCrudGasolina.Visible = False
         panelOpcionesCrudProveedores.Visible = True
     End Sub
+
+
 End Class

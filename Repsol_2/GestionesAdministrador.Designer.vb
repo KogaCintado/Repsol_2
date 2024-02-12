@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class GestionesAdministrador
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class GestionesAdministrador
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim IdLabel As System.Windows.Forms.Label
@@ -45,13 +45,13 @@ Partial Class GestionesAdministrador
         Dim PrecioLabel As System.Windows.Forms.Label
         Dim ProveedorLabel As System.Windows.Forms.Label
         Dim GamaLabel As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GestionesAdministrador))
         Dim IdLabel3 As System.Windows.Forms.Label
         Dim NombreLabel3 As System.Windows.Forms.Label
         Dim CantidadLabel As System.Windows.Forms.Label
         Dim PrecioLabel1 As System.Windows.Forms.Label
         Dim IdLabel4 As System.Windows.Forms.Label
         Dim NombreLabel4 As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GestionesAdministrador))
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.btnGestionUsuarios = New System.Windows.Forms.Button()
         Me.btnGestionClientes = New System.Windows.Forms.Button()
@@ -62,7 +62,7 @@ Partial Class GestionesAdministrador
         Me.OpcionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VolverToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.panelOpcionesCrudUsuario = New System.Windows.Forms.Panel()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.btnEliminarEmpleado = New System.Windows.Forms.Button()
         Me.btnModificarEmpleado = New System.Windows.Forms.Button()
         Me.btnVerTodosEmpleados = New System.Windows.Forms.Button()
         Me.btnSeleccionarUnEmpleado = New System.Windows.Forms.Button()
@@ -86,21 +86,8 @@ Partial Class GestionesAdministrador
         Me.btnModificarProveedor = New System.Windows.Forms.Button()
         Me.btnVerTodosProveedores = New System.Windows.Forms.Button()
         Me.btnVerProveedor = New System.Windows.Forms.Button()
-        Me.ProductosBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
         Me.ProductosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Repsol_dbDataSet = New Repsol_2.Repsol_dbDataSet()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ProductosBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.ProductosDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -155,6 +142,7 @@ Partial Class GestionesAdministrador
         Me.GasolinasTableAdapter = New Repsol_2.Repsol_dbDataSetTableAdapters.GasolinasTableAdapter()
         Me.ProveedoresTableAdapter = New Repsol_2.Repsol_dbDataSetTableAdapters.ProveedoresTableAdapter()
         Me.panelBuscarEmpleado = New System.Windows.Forms.Panel()
+        Me.btnAccionModificarEmpleado = New System.Windows.Forms.Button()
         Me.panelBuscarCliente = New System.Windows.Forms.Panel()
         Me.btnAccionBuscarCliente = New System.Windows.Forms.Button()
         Me.tbIdCliente = New System.Windows.Forms.TextBox()
@@ -173,15 +161,48 @@ Partial Class GestionesAdministrador
         Me.tbProveedorProducto = New System.Windows.Forms.TextBox()
         Me.tbGamaProducto = New System.Windows.Forms.TextBox()
         Me.panelBuscarGasolina = New System.Windows.Forms.Panel()
+        Me.btnAccionBuscarGasolina = New System.Windows.Forms.Button()
         Me.tbIdGasolina = New System.Windows.Forms.TextBox()
         Me.tbNombreGasolina = New System.Windows.Forms.TextBox()
         Me.tbCantidadGasolina = New System.Windows.Forms.TextBox()
         Me.tbPrecioGasolina = New System.Windows.Forms.TextBox()
-        Me.btnAccionBuscarGasolina = New System.Windows.Forms.Button()
         Me.panelBuscarProveedor = New System.Windows.Forms.Panel()
+        Me.btnAccionBuscarProveedor = New System.Windows.Forms.Button()
         Me.tbIdProveedor = New System.Windows.Forms.TextBox()
         Me.tbNombreProveedor = New System.Windows.Forms.TextBox()
-        Me.btnAccionBuscarProveedor = New System.Windows.Forms.Button()
+        Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
+        Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
+        Me.ProductosBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
+        Me.ProductosBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.panelEliminarEmpleado = New System.Windows.Forms.Panel()
+        Me.lblIdEliminar = New System.Windows.Forms.Label()
+        Me.btnAccionEliminarEmpleado = New System.Windows.Forms.Button()
+        Me.tbIdEmpleadoEliminar = New System.Windows.Forms.TextBox()
+        Me.panelEliminarProducto = New System.Windows.Forms.Panel()
+        Me.lblIdProductoEliminar = New System.Windows.Forms.Label()
+        Me.btnAccionEliminarProducto = New System.Windows.Forms.Button()
+        Me.tbIdProductoEliminar = New System.Windows.Forms.TextBox()
+        Me.panelEliminarGasolina = New System.Windows.Forms.Panel()
+        Me.lblEliminarGasolina = New System.Windows.Forms.Label()
+        Me.btnAccionEliminarGasolina = New System.Windows.Forms.Button()
+        Me.tbIdGasolinaEliminar = New System.Windows.Forms.TextBox()
+        Me.panelEliminarProveedores = New System.Windows.Forms.Panel()
+        Me.lblIdProveedorEliminar = New System.Windows.Forms.Label()
+        Me.btnAccionEliminarProveedor = New System.Windows.Forms.Button()
+        Me.tbIdProveedorEliminar = New System.Windows.Forms.TextBox()
+        Me.panelEliminarClientes = New System.Windows.Forms.Panel()
+        Me.lblIdClienteEliminar = New System.Windows.Forms.Label()
+        Me.btnAccionEliminarCliente = New System.Windows.Forms.Button()
+        Me.tbIdClienteEliminar = New System.Windows.Forms.TextBox()
         IdLabel = New System.Windows.Forms.Label()
         NombreLabel = New System.Windows.Forms.Label()
         Apellido_1Label = New System.Windows.Forms.Label()
@@ -217,8 +238,6 @@ Partial Class GestionesAdministrador
         Me.panelOpcionesCrudProductos.SuspendLayout()
         Me.panelOpcionesCrudGasolina.SuspendLayout()
         Me.panelOpcionesCrudProveedores.SuspendLayout()
-        CType(Me.ProductosBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ProductosBindingNavigator.SuspendLayout()
         CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Repsol_dbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductosDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -235,6 +254,13 @@ Partial Class GestionesAdministrador
         Me.panelBuscarProducto.SuspendLayout()
         Me.panelBuscarGasolina.SuspendLayout()
         Me.panelBuscarProveedor.SuspendLayout()
+        CType(Me.ProductosBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ProductosBindingNavigator.SuspendLayout()
+        Me.panelEliminarEmpleado.SuspendLayout()
+        Me.panelEliminarProducto.SuspendLayout()
+        Me.panelEliminarGasolina.SuspendLayout()
+        Me.panelEliminarProveedores.SuspendLayout()
+        Me.panelEliminarClientes.SuspendLayout()
         Me.SuspendLayout()
         '
         'IdLabel
@@ -435,6 +461,60 @@ Partial Class GestionesAdministrador
         GamaLabel.TabIndex = 8
         GamaLabel.Text = "Gama:"
         '
+        'IdLabel3
+        '
+        IdLabel3.AutoSize = True
+        IdLabel3.Location = New System.Drawing.Point(3, 20)
+        IdLabel3.Name = "IdLabel3"
+        IdLabel3.Size = New System.Drawing.Size(19, 13)
+        IdLabel3.TabIndex = 0
+        IdLabel3.Text = "Id:"
+        '
+        'NombreLabel3
+        '
+        NombreLabel3.AutoSize = True
+        NombreLabel3.Location = New System.Drawing.Point(3, 46)
+        NombreLabel3.Name = "NombreLabel3"
+        NombreLabel3.Size = New System.Drawing.Size(47, 13)
+        NombreLabel3.TabIndex = 2
+        NombreLabel3.Text = "Nombre:"
+        '
+        'CantidadLabel
+        '
+        CantidadLabel.AutoSize = True
+        CantidadLabel.Location = New System.Drawing.Point(3, 72)
+        CantidadLabel.Name = "CantidadLabel"
+        CantidadLabel.Size = New System.Drawing.Size(52, 13)
+        CantidadLabel.TabIndex = 4
+        CantidadLabel.Text = "Cantidad:"
+        '
+        'PrecioLabel1
+        '
+        PrecioLabel1.AutoSize = True
+        PrecioLabel1.Location = New System.Drawing.Point(3, 98)
+        PrecioLabel1.Name = "PrecioLabel1"
+        PrecioLabel1.Size = New System.Drawing.Size(40, 13)
+        PrecioLabel1.TabIndex = 6
+        PrecioLabel1.Text = "Precio:"
+        '
+        'IdLabel4
+        '
+        IdLabel4.AutoSize = True
+        IdLabel4.Location = New System.Drawing.Point(2, 6)
+        IdLabel4.Name = "IdLabel4"
+        IdLabel4.Size = New System.Drawing.Size(19, 13)
+        IdLabel4.TabIndex = 0
+        IdLabel4.Text = "Id:"
+        '
+        'NombreLabel4
+        '
+        NombreLabel4.AutoSize = True
+        NombreLabel4.Location = New System.Drawing.Point(2, 32)
+        NombreLabel4.Name = "NombreLabel4"
+        NombreLabel4.Size = New System.Drawing.Size(47, 13)
+        NombreLabel4.TabIndex = 2
+        NombreLabel4.Text = "Nombre:"
+        '
         'FlowLayoutPanel1
         '
         Me.FlowLayoutPanel1.Controls.Add(Me.btnGestionUsuarios)
@@ -516,7 +596,7 @@ Partial Class GestionesAdministrador
         '
         'panelOpcionesCrudUsuario
         '
-        Me.panelOpcionesCrudUsuario.Controls.Add(Me.Button4)
+        Me.panelOpcionesCrudUsuario.Controls.Add(Me.btnEliminarEmpleado)
         Me.panelOpcionesCrudUsuario.Controls.Add(Me.btnModificarEmpleado)
         Me.panelOpcionesCrudUsuario.Controls.Add(Me.btnVerTodosEmpleados)
         Me.panelOpcionesCrudUsuario.Controls.Add(Me.btnSeleccionarUnEmpleado)
@@ -526,14 +606,14 @@ Partial Class GestionesAdministrador
         Me.panelOpcionesCrudUsuario.TabIndex = 2
         Me.panelOpcionesCrudUsuario.Visible = False
         '
-        'Button4
+        'btnEliminarEmpleado
         '
-        Me.Button4.Location = New System.Drawing.Point(98, 25)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(94, 23)
-        Me.Button4.TabIndex = 3
-        Me.Button4.Text = "Eliminar Emp"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.btnEliminarEmpleado.Location = New System.Drawing.Point(98, 25)
+        Me.btnEliminarEmpleado.Name = "btnEliminarEmpleado"
+        Me.btnEliminarEmpleado.Size = New System.Drawing.Size(94, 23)
+        Me.btnEliminarEmpleado.TabIndex = 3
+        Me.btnEliminarEmpleado.Text = "Eliminar Emp"
+        Me.btnEliminarEmpleado.UseVisualStyleBackColor = True
         '
         'btnModificarEmpleado
         '
@@ -754,33 +834,6 @@ Partial Class GestionesAdministrador
         Me.btnVerProveedor.Text = "Ver Proveedor"
         Me.btnVerProveedor.UseVisualStyleBackColor = True
         '
-        'ProductosBindingNavigator
-        '
-        Me.ProductosBindingNavigator.AddNewItem = Me.BindingNavigatorAddNewItem
-        Me.ProductosBindingNavigator.BindingSource = Me.ProductosBindingSource
-        Me.ProductosBindingNavigator.CountItem = Me.BindingNavigatorCountItem
-        Me.ProductosBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
-        Me.ProductosBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.ProductosBindingNavigatorSaveItem})
-        Me.ProductosBindingNavigator.Location = New System.Drawing.Point(0, 24)
-        Me.ProductosBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
-        Me.ProductosBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
-        Me.ProductosBindingNavigator.MoveNextItem = Me.BindingNavigatorMoveNextItem
-        Me.ProductosBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
-        Me.ProductosBindingNavigator.Name = "ProductosBindingNavigator"
-        Me.ProductosBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.ProductosBindingNavigator.Size = New System.Drawing.Size(3944, 25)
-        Me.ProductosBindingNavigator.TabIndex = 8
-        Me.ProductosBindingNavigator.Text = "BindingNavigator1"
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorAddNewItem.Text = "Add new"
-        '
         'ProductosBindingSource
         '
         Me.ProductosBindingSource.DataMember = "Productos"
@@ -790,91 +843,6 @@ Partial Class GestionesAdministrador
         '
         Me.Repsol_dbDataSet.DataSetName = "Repsol_dbDataSet"
         Me.Repsol_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 22)
-        Me.BindingNavigatorCountItem.Text = "of {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorDeleteItem.Text = "Delete"
-        '
-        'BindingNavigatorMoveFirstItem
-        '
-        Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
-        Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMoveFirstItem.Text = "Move first"
-        '
-        'BindingNavigatorMovePreviousItem
-        '
-        Me.BindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
-        Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMovePreviousItem.Text = "Move previous"
-        '
-        'BindingNavigatorSeparator
-        '
-        Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 25)
-        '
-        'BindingNavigatorPositionItem
-        '
-        Me.BindingNavigatorPositionItem.AccessibleName = "Position"
-        Me.BindingNavigatorPositionItem.AutoSize = False
-        Me.BindingNavigatorPositionItem.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
-        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 23)
-        Me.BindingNavigatorPositionItem.Text = "0"
-        Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
-        '
-        'BindingNavigatorSeparator1
-        '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
-        '
-        'BindingNavigatorMoveNextItem
-        '
-        Me.BindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
-        Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMoveNextItem.Text = "Move next"
-        '
-        'BindingNavigatorMoveLastItem
-        '
-        Me.BindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
-        Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMoveLastItem.Text = "Move last"
-        '
-        'BindingNavigatorSeparator2
-        '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
-        '
-        'ProductosBindingNavigatorSaveItem
-        '
-        Me.ProductosBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ProductosBindingNavigatorSaveItem.Image = CType(resources.GetObject("ProductosBindingNavigatorSaveItem.Image"), System.Drawing.Image)
-        Me.ProductosBindingNavigatorSaveItem.Name = "ProductosBindingNavigatorSaveItem"
-        Me.ProductosBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
-        Me.ProductosBindingNavigatorSaveItem.Text = "Save Data"
         '
         'ProductosDataGridView
         '
@@ -1240,6 +1208,7 @@ Partial Class GestionesAdministrador
         '
         'panelBuscarEmpleado
         '
+        Me.panelBuscarEmpleado.Controls.Add(Me.btnAccionModificarEmpleado)
         Me.panelBuscarEmpleado.Controls.Add(Me.btnAccionBuscarEmpleado)
         Me.panelBuscarEmpleado.Controls.Add(IdLabel)
         Me.panelBuscarEmpleado.Controls.Add(Me.tbIdEmpleado)
@@ -1263,6 +1232,15 @@ Partial Class GestionesAdministrador
         Me.panelBuscarEmpleado.Name = "panelBuscarEmpleado"
         Me.panelBuscarEmpleado.Size = New System.Drawing.Size(200, 301)
         Me.panelBuscarEmpleado.TabIndex = 13
+        '
+        'btnAccionModificarEmpleado
+        '
+        Me.btnAccionModificarEmpleado.Location = New System.Drawing.Point(3, 262)
+        Me.btnAccionModificarEmpleado.Name = "btnAccionModificarEmpleado"
+        Me.btnAccionModificarEmpleado.Size = New System.Drawing.Size(82, 23)
+        Me.btnAccionModificarEmpleado.TabIndex = 19
+        Me.btnAccionModificarEmpleado.Text = "Modificar"
+        Me.btnAccionModificarEmpleado.UseVisualStyleBackColor = True
         '
         'panelBuscarCliente
         '
@@ -1444,14 +1422,14 @@ Partial Class GestionesAdministrador
         Me.panelBuscarGasolina.Size = New System.Drawing.Size(174, 160)
         Me.panelBuscarGasolina.TabIndex = 16
         '
-        'IdLabel3
+        'btnAccionBuscarGasolina
         '
-        IdLabel3.AutoSize = True
-        IdLabel3.Location = New System.Drawing.Point(3, 20)
-        IdLabel3.Name = "IdLabel3"
-        IdLabel3.Size = New System.Drawing.Size(19, 13)
-        IdLabel3.TabIndex = 0
-        IdLabel3.Text = "Id:"
+        Me.btnAccionBuscarGasolina.Location = New System.Drawing.Point(61, 121)
+        Me.btnAccionBuscarGasolina.Name = "btnAccionBuscarGasolina"
+        Me.btnAccionBuscarGasolina.Size = New System.Drawing.Size(100, 23)
+        Me.btnAccionBuscarGasolina.TabIndex = 19
+        Me.btnAccionBuscarGasolina.Text = "Buscar"
+        Me.btnAccionBuscarGasolina.UseVisualStyleBackColor = True
         '
         'tbIdGasolina
         '
@@ -1461,15 +1439,6 @@ Partial Class GestionesAdministrador
         Me.tbIdGasolina.Size = New System.Drawing.Size(100, 20)
         Me.tbIdGasolina.TabIndex = 1
         '
-        'NombreLabel3
-        '
-        NombreLabel3.AutoSize = True
-        NombreLabel3.Location = New System.Drawing.Point(3, 46)
-        NombreLabel3.Name = "NombreLabel3"
-        NombreLabel3.Size = New System.Drawing.Size(47, 13)
-        NombreLabel3.TabIndex = 2
-        NombreLabel3.Text = "Nombre:"
-        '
         'tbNombreGasolina
         '
         Me.tbNombreGasolina.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.GasolinasBindingSource, "Nombre", True))
@@ -1477,15 +1446,6 @@ Partial Class GestionesAdministrador
         Me.tbNombreGasolina.Name = "tbNombreGasolina"
         Me.tbNombreGasolina.Size = New System.Drawing.Size(100, 20)
         Me.tbNombreGasolina.TabIndex = 3
-        '
-        'CantidadLabel
-        '
-        CantidadLabel.AutoSize = True
-        CantidadLabel.Location = New System.Drawing.Point(3, 72)
-        CantidadLabel.Name = "CantidadLabel"
-        CantidadLabel.Size = New System.Drawing.Size(52, 13)
-        CantidadLabel.TabIndex = 4
-        CantidadLabel.Text = "Cantidad:"
         '
         'tbCantidadGasolina
         '
@@ -1495,15 +1455,6 @@ Partial Class GestionesAdministrador
         Me.tbCantidadGasolina.Size = New System.Drawing.Size(100, 20)
         Me.tbCantidadGasolina.TabIndex = 5
         '
-        'PrecioLabel1
-        '
-        PrecioLabel1.AutoSize = True
-        PrecioLabel1.Location = New System.Drawing.Point(3, 98)
-        PrecioLabel1.Name = "PrecioLabel1"
-        PrecioLabel1.Size = New System.Drawing.Size(40, 13)
-        PrecioLabel1.TabIndex = 6
-        PrecioLabel1.Text = "Precio:"
-        '
         'tbPrecioGasolina
         '
         Me.tbPrecioGasolina.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.GasolinasBindingSource, "Precio", True))
@@ -1511,15 +1462,6 @@ Partial Class GestionesAdministrador
         Me.tbPrecioGasolina.Name = "tbPrecioGasolina"
         Me.tbPrecioGasolina.Size = New System.Drawing.Size(100, 20)
         Me.tbPrecioGasolina.TabIndex = 7
-        '
-        'btnAccionBuscarGasolina
-        '
-        Me.btnAccionBuscarGasolina.Location = New System.Drawing.Point(61, 121)
-        Me.btnAccionBuscarGasolina.Name = "btnAccionBuscarGasolina"
-        Me.btnAccionBuscarGasolina.Size = New System.Drawing.Size(100, 23)
-        Me.btnAccionBuscarGasolina.TabIndex = 19
-        Me.btnAccionBuscarGasolina.Text = "Buscar"
-        Me.btnAccionBuscarGasolina.UseVisualStyleBackColor = True
         '
         'panelBuscarProveedor
         '
@@ -1533,40 +1475,6 @@ Partial Class GestionesAdministrador
         Me.panelBuscarProveedor.Size = New System.Drawing.Size(172, 91)
         Me.panelBuscarProveedor.TabIndex = 17
         '
-        'IdLabel4
-        '
-        IdLabel4.AutoSize = True
-        IdLabel4.Location = New System.Drawing.Point(2, 6)
-        IdLabel4.Name = "IdLabel4"
-        IdLabel4.Size = New System.Drawing.Size(19, 13)
-        IdLabel4.TabIndex = 0
-        IdLabel4.Text = "Id:"
-        '
-        'tbIdProveedor
-        '
-        Me.tbIdProveedor.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedoresBindingSource, "Id", True))
-        Me.tbIdProveedor.Location = New System.Drawing.Point(55, 3)
-        Me.tbIdProveedor.Name = "tbIdProveedor"
-        Me.tbIdProveedor.Size = New System.Drawing.Size(100, 20)
-        Me.tbIdProveedor.TabIndex = 1
-        '
-        'NombreLabel4
-        '
-        NombreLabel4.AutoSize = True
-        NombreLabel4.Location = New System.Drawing.Point(2, 32)
-        NombreLabel4.Name = "NombreLabel4"
-        NombreLabel4.Size = New System.Drawing.Size(47, 13)
-        NombreLabel4.TabIndex = 2
-        NombreLabel4.Text = "Nombre:"
-        '
-        'tbNombreProveedor
-        '
-        Me.tbNombreProveedor.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedoresBindingSource, "Nombre", True))
-        Me.tbNombreProveedor.Location = New System.Drawing.Point(55, 29)
-        Me.tbNombreProveedor.Name = "tbNombreProveedor"
-        Me.tbNombreProveedor.Size = New System.Drawing.Size(100, 20)
-        Me.tbNombreProveedor.TabIndex = 3
-        '
         'btnAccionBuscarProveedor
         '
         Me.btnAccionBuscarProveedor.Location = New System.Drawing.Point(55, 55)
@@ -1576,12 +1484,325 @@ Partial Class GestionesAdministrador
         Me.btnAccionBuscarProveedor.Text = "Buscar"
         Me.btnAccionBuscarProveedor.UseVisualStyleBackColor = True
         '
+        'tbIdProveedor
+        '
+        Me.tbIdProveedor.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedoresBindingSource, "Id", True))
+        Me.tbIdProveedor.Location = New System.Drawing.Point(55, 3)
+        Me.tbIdProveedor.Name = "tbIdProveedor"
+        Me.tbIdProveedor.Size = New System.Drawing.Size(100, 20)
+        Me.tbIdProveedor.TabIndex = 1
+        '
+        'tbNombreProveedor
+        '
+        Me.tbNombreProveedor.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedoresBindingSource, "Nombre", True))
+        Me.tbNombreProveedor.Location = New System.Drawing.Point(55, 29)
+        Me.tbNombreProveedor.Name = "tbNombreProveedor"
+        Me.tbNombreProveedor.Size = New System.Drawing.Size(100, 20)
+        Me.tbNombreProveedor.TabIndex = 3
+        '
+        'BindingNavigatorMoveFirstItem
+        '
+        Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
+        Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorMoveFirstItem.Text = "Move first"
+        '
+        'BindingNavigatorMovePreviousItem
+        '
+        Me.BindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
+        Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorMovePreviousItem.Text = "Move previous"
+        '
+        'BindingNavigatorSeparator
+        '
+        Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 25)
+        '
+        'BindingNavigatorPositionItem
+        '
+        Me.BindingNavigatorPositionItem.AccessibleName = "Position"
+        Me.BindingNavigatorPositionItem.AutoSize = False
+        Me.BindingNavigatorPositionItem.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
+        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 23)
+        Me.BindingNavigatorPositionItem.Text = "0"
+        Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
+        '
+        'BindingNavigatorCountItem
+        '
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 22)
+        Me.BindingNavigatorCountItem.Text = "of {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
+        '
+        'BindingNavigatorSeparator1
+        '
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
+        '
+        'BindingNavigatorMoveNextItem
+        '
+        Me.BindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
+        Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorMoveNextItem.Text = "Move next"
+        '
+        'BindingNavigatorMoveLastItem
+        '
+        Me.BindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
+        Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorMoveLastItem.Text = "Move last"
+        '
+        'BindingNavigatorSeparator2
+        '
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
+        '
+        'BindingNavigatorAddNewItem
+        '
+        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorAddNewItem.Text = "Add new"
+        '
+        'BindingNavigatorDeleteItem
+        '
+        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
+        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorDeleteItem.Text = "Delete"
+        '
+        'ProductosBindingNavigatorSaveItem
+        '
+        Me.ProductosBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ProductosBindingNavigatorSaveItem.Image = CType(resources.GetObject("ProductosBindingNavigatorSaveItem.Image"), System.Drawing.Image)
+        Me.ProductosBindingNavigatorSaveItem.Name = "ProductosBindingNavigatorSaveItem"
+        Me.ProductosBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
+        Me.ProductosBindingNavigatorSaveItem.Text = "Save Data"
+        '
+        'ProductosBindingNavigator
+        '
+        Me.ProductosBindingNavigator.AddNewItem = Me.BindingNavigatorAddNewItem
+        Me.ProductosBindingNavigator.BindingSource = Me.ProductosBindingSource
+        Me.ProductosBindingNavigator.CountItem = Me.BindingNavigatorCountItem
+        Me.ProductosBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
+        Me.ProductosBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.ProductosBindingNavigatorSaveItem})
+        Me.ProductosBindingNavigator.Location = New System.Drawing.Point(0, 24)
+        Me.ProductosBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
+        Me.ProductosBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
+        Me.ProductosBindingNavigator.MoveNextItem = Me.BindingNavigatorMoveNextItem
+        Me.ProductosBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
+        Me.ProductosBindingNavigator.Name = "ProductosBindingNavigator"
+        Me.ProductosBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
+        Me.ProductosBindingNavigator.Size = New System.Drawing.Size(3944, 25)
+        Me.ProductosBindingNavigator.TabIndex = 8
+        Me.ProductosBindingNavigator.Text = "BindingNavigator1"
+        '
+        'panelEliminarEmpleado
+        '
+        Me.panelEliminarEmpleado.Controls.Add(Me.lblIdEliminar)
+        Me.panelEliminarEmpleado.Controls.Add(Me.btnAccionEliminarEmpleado)
+        Me.panelEliminarEmpleado.Controls.Add(Me.tbIdEmpleadoEliminar)
+        Me.panelEliminarEmpleado.Location = New System.Drawing.Point(3000, 3000)
+        Me.panelEliminarEmpleado.Name = "panelEliminarEmpleado"
+        Me.panelEliminarEmpleado.Size = New System.Drawing.Size(168, 80)
+        Me.panelEliminarEmpleado.TabIndex = 18
+        '
+        'lblIdEliminar
+        '
+        Me.lblIdEliminar.AutoSize = True
+        Me.lblIdEliminar.Location = New System.Drawing.Point(21, 23)
+        Me.lblIdEliminar.Name = "lblIdEliminar"
+        Me.lblIdEliminar.Size = New System.Drawing.Size(18, 13)
+        Me.lblIdEliminar.TabIndex = 19
+        Me.lblIdEliminar.Text = "id:"
+        '
+        'btnAccionEliminarEmpleado
+        '
+        Me.btnAccionEliminarEmpleado.Location = New System.Drawing.Point(45, 42)
+        Me.btnAccionEliminarEmpleado.Name = "btnAccionEliminarEmpleado"
+        Me.btnAccionEliminarEmpleado.Size = New System.Drawing.Size(100, 23)
+        Me.btnAccionEliminarEmpleado.TabIndex = 22
+        Me.btnAccionEliminarEmpleado.Text = "Eliminar"
+        Me.btnAccionEliminarEmpleado.UseVisualStyleBackColor = True
+        '
+        'tbIdEmpleadoEliminar
+        '
+        Me.tbIdEmpleadoEliminar.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "Id", True))
+        Me.tbIdEmpleadoEliminar.Location = New System.Drawing.Point(45, 16)
+        Me.tbIdEmpleadoEliminar.Name = "tbIdEmpleadoEliminar"
+        Me.tbIdEmpleadoEliminar.Size = New System.Drawing.Size(100, 20)
+        Me.tbIdEmpleadoEliminar.TabIndex = 21
+        '
+        'panelEliminarProducto
+        '
+        Me.panelEliminarProducto.Controls.Add(Me.lblIdProductoEliminar)
+        Me.panelEliminarProducto.Controls.Add(Me.btnAccionEliminarProducto)
+        Me.panelEliminarProducto.Controls.Add(Me.tbIdProductoEliminar)
+        Me.panelEliminarProducto.Location = New System.Drawing.Point(3000, 3000)
+        Me.panelEliminarProducto.Name = "panelEliminarProducto"
+        Me.panelEliminarProducto.Size = New System.Drawing.Size(168, 80)
+        Me.panelEliminarProducto.TabIndex = 23
+        '
+        'lblIdProductoEliminar
+        '
+        Me.lblIdProductoEliminar.AutoSize = True
+        Me.lblIdProductoEliminar.Location = New System.Drawing.Point(21, 23)
+        Me.lblIdProductoEliminar.Name = "lblIdProductoEliminar"
+        Me.lblIdProductoEliminar.Size = New System.Drawing.Size(18, 13)
+        Me.lblIdProductoEliminar.TabIndex = 19
+        Me.lblIdProductoEliminar.Text = "id:"
+        '
+        'btnAccionEliminarProducto
+        '
+        Me.btnAccionEliminarProducto.Location = New System.Drawing.Point(45, 42)
+        Me.btnAccionEliminarProducto.Name = "btnAccionEliminarProducto"
+        Me.btnAccionEliminarProducto.Size = New System.Drawing.Size(100, 23)
+        Me.btnAccionEliminarProducto.TabIndex = 22
+        Me.btnAccionEliminarProducto.Text = "Eliminar"
+        Me.btnAccionEliminarProducto.UseVisualStyleBackColor = True
+        '
+        'tbIdProductoEliminar
+        '
+        Me.tbIdProductoEliminar.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "Id", True))
+        Me.tbIdProductoEliminar.Location = New System.Drawing.Point(45, 16)
+        Me.tbIdProductoEliminar.Name = "tbIdProductoEliminar"
+        Me.tbIdProductoEliminar.Size = New System.Drawing.Size(100, 20)
+        Me.tbIdProductoEliminar.TabIndex = 21
+        '
+        'panelEliminarGasolina
+        '
+        Me.panelEliminarGasolina.Controls.Add(Me.lblEliminarGasolina)
+        Me.panelEliminarGasolina.Controls.Add(Me.btnAccionEliminarGasolina)
+        Me.panelEliminarGasolina.Controls.Add(Me.tbIdGasolinaEliminar)
+        Me.panelEliminarGasolina.Location = New System.Drawing.Point(3000, 3000)
+        Me.panelEliminarGasolina.Name = "panelEliminarGasolina"
+        Me.panelEliminarGasolina.Size = New System.Drawing.Size(168, 80)
+        Me.panelEliminarGasolina.TabIndex = 24
+        '
+        'lblEliminarGasolina
+        '
+        Me.lblEliminarGasolina.AutoSize = True
+        Me.lblEliminarGasolina.Location = New System.Drawing.Point(21, 23)
+        Me.lblEliminarGasolina.Name = "lblEliminarGasolina"
+        Me.lblEliminarGasolina.Size = New System.Drawing.Size(18, 13)
+        Me.lblEliminarGasolina.TabIndex = 19
+        Me.lblEliminarGasolina.Text = "id:"
+        '
+        'btnAccionEliminarGasolina
+        '
+        Me.btnAccionEliminarGasolina.Location = New System.Drawing.Point(45, 42)
+        Me.btnAccionEliminarGasolina.Name = "btnAccionEliminarGasolina"
+        Me.btnAccionEliminarGasolina.Size = New System.Drawing.Size(100, 23)
+        Me.btnAccionEliminarGasolina.TabIndex = 22
+        Me.btnAccionEliminarGasolina.Text = "Eliminar"
+        Me.btnAccionEliminarGasolina.UseVisualStyleBackColor = True
+        '
+        'tbIdGasolinaEliminar
+        '
+        Me.tbIdGasolinaEliminar.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "Id", True))
+        Me.tbIdGasolinaEliminar.Location = New System.Drawing.Point(45, 16)
+        Me.tbIdGasolinaEliminar.Name = "tbIdGasolinaEliminar"
+        Me.tbIdGasolinaEliminar.Size = New System.Drawing.Size(100, 20)
+        Me.tbIdGasolinaEliminar.TabIndex = 21
+        '
+        'panelEliminarProveedores
+        '
+        Me.panelEliminarProveedores.Controls.Add(Me.lblIdProveedorEliminar)
+        Me.panelEliminarProveedores.Controls.Add(Me.btnAccionEliminarProveedor)
+        Me.panelEliminarProveedores.Controls.Add(Me.tbIdProveedorEliminar)
+        Me.panelEliminarProveedores.Location = New System.Drawing.Point(524, 94)
+        Me.panelEliminarProveedores.Name = "panelEliminarProveedores"
+        Me.panelEliminarProveedores.Size = New System.Drawing.Size(168, 80)
+        Me.panelEliminarProveedores.TabIndex = 25
+        '
+        'lblIdProveedorEliminar
+        '
+        Me.lblIdProveedorEliminar.AutoSize = True
+        Me.lblIdProveedorEliminar.Location = New System.Drawing.Point(21, 23)
+        Me.lblIdProveedorEliminar.Name = "lblIdProveedorEliminar"
+        Me.lblIdProveedorEliminar.Size = New System.Drawing.Size(18, 13)
+        Me.lblIdProveedorEliminar.TabIndex = 19
+        Me.lblIdProveedorEliminar.Text = "id:"
+        '
+        'btnAccionEliminarProveedor
+        '
+        Me.btnAccionEliminarProveedor.Location = New System.Drawing.Point(45, 42)
+        Me.btnAccionEliminarProveedor.Name = "btnAccionEliminarProveedor"
+        Me.btnAccionEliminarProveedor.Size = New System.Drawing.Size(100, 23)
+        Me.btnAccionEliminarProveedor.TabIndex = 22
+        Me.btnAccionEliminarProveedor.Text = "Eliminar"
+        Me.btnAccionEliminarProveedor.UseVisualStyleBackColor = True
+        '
+        'tbIdProveedorEliminar
+        '
+        Me.tbIdProveedorEliminar.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "Id", True))
+        Me.tbIdProveedorEliminar.Location = New System.Drawing.Point(45, 16)
+        Me.tbIdProveedorEliminar.Name = "tbIdProveedorEliminar"
+        Me.tbIdProveedorEliminar.Size = New System.Drawing.Size(100, 20)
+        Me.tbIdProveedorEliminar.TabIndex = 21
+        '
+        'panelEliminarClientes
+        '
+        Me.panelEliminarClientes.Controls.Add(Me.lblIdClienteEliminar)
+        Me.panelEliminarClientes.Controls.Add(Me.btnAccionEliminarCliente)
+        Me.panelEliminarClientes.Controls.Add(Me.tbIdClienteEliminar)
+        Me.panelEliminarClientes.Location = New System.Drawing.Point(524, 252)
+        Me.panelEliminarClientes.Name = "panelEliminarClientes"
+        Me.panelEliminarClientes.Size = New System.Drawing.Size(168, 80)
+        Me.panelEliminarClientes.TabIndex = 25
+        '
+        'lblIdClienteEliminar
+        '
+        Me.lblIdClienteEliminar.AutoSize = True
+        Me.lblIdClienteEliminar.Location = New System.Drawing.Point(21, 23)
+        Me.lblIdClienteEliminar.Name = "lblIdClienteEliminar"
+        Me.lblIdClienteEliminar.Size = New System.Drawing.Size(18, 13)
+        Me.lblIdClienteEliminar.TabIndex = 19
+        Me.lblIdClienteEliminar.Text = "id:"
+        '
+        'btnAccionEliminarCliente
+        '
+        Me.btnAccionEliminarCliente.Location = New System.Drawing.Point(45, 42)
+        Me.btnAccionEliminarCliente.Name = "btnAccionEliminarCliente"
+        Me.btnAccionEliminarCliente.Size = New System.Drawing.Size(100, 23)
+        Me.btnAccionEliminarCliente.TabIndex = 22
+        Me.btnAccionEliminarCliente.Text = "Eliminar"
+        Me.btnAccionEliminarCliente.UseVisualStyleBackColor = True
+        '
+        'tbIdClienteEliminar
+        '
+        Me.tbIdClienteEliminar.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "Id", True))
+        Me.tbIdClienteEliminar.Location = New System.Drawing.Point(45, 16)
+        Me.tbIdClienteEliminar.Name = "tbIdClienteEliminar"
+        Me.tbIdClienteEliminar.Size = New System.Drawing.Size(100, 20)
+        Me.tbIdClienteEliminar.TabIndex = 21
+        '
         'GestionesAdministrador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(1924, 1061)
+        Me.Controls.Add(Me.panelEliminarClientes)
+        Me.Controls.Add(Me.panelEliminarProveedores)
+        Me.Controls.Add(Me.panelEliminarGasolina)
+        Me.Controls.Add(Me.panelEliminarProducto)
+        Me.Controls.Add(Me.panelEliminarEmpleado)
         Me.Controls.Add(Me.panelBuscarProveedor)
         Me.Controls.Add(Me.panelBuscarGasolina)
         Me.Controls.Add(Me.panelBuscarProducto)
@@ -1611,9 +1832,6 @@ Partial Class GestionesAdministrador
         Me.panelOpcionesCrudProductos.ResumeLayout(False)
         Me.panelOpcionesCrudGasolina.ResumeLayout(False)
         Me.panelOpcionesCrudProveedores.ResumeLayout(False)
-        CType(Me.ProductosBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ProductosBindingNavigator.ResumeLayout(False)
-        Me.ProductosBindingNavigator.PerformLayout()
         CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Repsol_dbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductosDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1635,6 +1853,19 @@ Partial Class GestionesAdministrador
         Me.panelBuscarGasolina.PerformLayout()
         Me.panelBuscarProveedor.ResumeLayout(False)
         Me.panelBuscarProveedor.PerformLayout()
+        CType(Me.ProductosBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ProductosBindingNavigator.ResumeLayout(False)
+        Me.ProductosBindingNavigator.PerformLayout()
+        Me.panelEliminarEmpleado.ResumeLayout(False)
+        Me.panelEliminarEmpleado.PerformLayout()
+        Me.panelEliminarProducto.ResumeLayout(False)
+        Me.panelEliminarProducto.PerformLayout()
+        Me.panelEliminarGasolina.ResumeLayout(False)
+        Me.panelEliminarGasolina.PerformLayout()
+        Me.panelEliminarProveedores.ResumeLayout(False)
+        Me.panelEliminarProveedores.PerformLayout()
+        Me.panelEliminarClientes.ResumeLayout(False)
+        Me.panelEliminarClientes.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1650,7 +1881,7 @@ Partial Class GestionesAdministrador
     Friend WithEvents OpcionesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents VolverToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents panelOpcionesCrudUsuario As Panel
-    Friend WithEvents Button4 As Button
+    Friend WithEvents btnEliminarEmpleado As Button
     Friend WithEvents btnModificarEmpleado As Button
     Friend WithEvents btnVerTodosEmpleados As Button
     Friend WithEvents btnSeleccionarUnEmpleado As Button
@@ -1678,19 +1909,6 @@ Partial Class GestionesAdministrador
     Friend WithEvents ProductosBindingSource As BindingSource
     Friend WithEvents ProductosTableAdapter As Repsol_dbDataSetTableAdapters.ProductosTableAdapter
     Friend WithEvents TableAdapterManager As Repsol_dbDataSetTableAdapters.TableAdapterManager
-    Friend WithEvents ProductosBindingNavigator As BindingNavigator
-    Friend WithEvents BindingNavigatorAddNewItem As ToolStripButton
-    Friend WithEvents BindingNavigatorCountItem As ToolStripLabel
-    Friend WithEvents BindingNavigatorDeleteItem As ToolStripButton
-    Friend WithEvents BindingNavigatorMoveFirstItem As ToolStripButton
-    Friend WithEvents BindingNavigatorMovePreviousItem As ToolStripButton
-    Friend WithEvents BindingNavigatorSeparator As ToolStripSeparator
-    Friend WithEvents BindingNavigatorPositionItem As ToolStripTextBox
-    Friend WithEvents BindingNavigatorSeparator1 As ToolStripSeparator
-    Friend WithEvents BindingNavigatorMoveNextItem As ToolStripButton
-    Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
-    Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
-    Friend WithEvents ProductosBindingNavigatorSaveItem As ToolStripButton
     Friend WithEvents ProductosDataGridView As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
@@ -1770,4 +1988,38 @@ Partial Class GestionesAdministrador
     Friend WithEvents btnAccionBuscarProveedor As Button
     Friend WithEvents tbIdProveedor As TextBox
     Friend WithEvents tbNombreProveedor As TextBox
+    Friend WithEvents btnAccionModificarEmpleado As Button
+    Friend WithEvents BindingNavigatorMoveFirstItem As ToolStripButton
+    Friend WithEvents BindingNavigatorMovePreviousItem As ToolStripButton
+    Friend WithEvents BindingNavigatorSeparator As ToolStripSeparator
+    Friend WithEvents BindingNavigatorPositionItem As ToolStripTextBox
+    Friend WithEvents BindingNavigatorCountItem As ToolStripLabel
+    Friend WithEvents BindingNavigatorSeparator1 As ToolStripSeparator
+    Friend WithEvents BindingNavigatorMoveNextItem As ToolStripButton
+    Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
+    Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
+    Friend WithEvents BindingNavigatorAddNewItem As ToolStripButton
+    Friend WithEvents BindingNavigatorDeleteItem As ToolStripButton
+    Friend WithEvents ProductosBindingNavigatorSaveItem As ToolStripButton
+    Friend WithEvents ProductosBindingNavigator As BindingNavigator
+    Friend WithEvents panelEliminarEmpleado As Panel
+    Friend WithEvents btnAccionEliminarEmpleado As Button
+    Friend WithEvents tbIdEmpleadoEliminar As TextBox
+    Friend WithEvents lblIdEliminar As Label
+    Friend WithEvents panelEliminarProducto As Panel
+    Friend WithEvents lblIdProductoEliminar As Label
+    Friend WithEvents btnAccionEliminarProducto As Button
+    Friend WithEvents tbIdProductoEliminar As TextBox
+    Friend WithEvents panelEliminarGasolina As Panel
+    Friend WithEvents lblEliminarGasolina As Label
+    Friend WithEvents btnAccionEliminarGasolina As Button
+    Friend WithEvents tbIdGasolinaEliminar As TextBox
+    Friend WithEvents panelEliminarProveedores As Panel
+    Friend WithEvents lblIdProveedorEliminar As Label
+    Friend WithEvents btnAccionEliminarProveedor As Button
+    Friend WithEvents tbIdProveedorEliminar As TextBox
+    Friend WithEvents panelEliminarClientes As Panel
+    Friend WithEvents lblIdClienteEliminar As Label
+    Friend WithEvents btnAccionEliminarCliente As Button
+    Friend WithEvents tbIdClienteEliminar As TextBox
 End Class
