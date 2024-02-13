@@ -23,6 +23,6 @@
     End Sub
 
     Private Sub pbManguera_Click(sender As Object, e As EventArgs) Handles pbManguera1.Click, pbManguera2.Click, pbManguera3.Click, pbManguera4.Click
-        Gas.Show()
+        Gasolina.Show()
     End Sub
 End Class

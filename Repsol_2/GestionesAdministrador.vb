@@ -589,6 +589,10 @@ Public Class GestionesAdministrador
         Catch ex As OleDbException
             MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
             Return Nothing
+        Catch ex As InvalidOperationException
+            MessageBox.Show("Error connecting to the database. Please check your database connection settings. Make sure you install the correct database version.")
+            Inicio.Close()
+            Return Nothing
         End Try
 
         ' Comprobar si se encontró algún registro
