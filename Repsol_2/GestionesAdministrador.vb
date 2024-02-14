@@ -2,6 +2,9 @@
 Imports System.Data.SqlClient
 
 Public Class GestionesAdministrador
+
+    Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
+
     Private Sub GestionesAdministrador_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'datagridviews a tomar por culo de forma guarra para que no se vean
         ProductosDataGridView.Location = New Point(3000, 3000)
@@ -22,7 +25,7 @@ Public Class GestionesAdministrador
         Me.WindowState = FormWindowState.Maximized
     End Sub
 
-    Private Sub VolverToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VolverToolStripMenuItem.Click
+    Private Sub VolverToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Opciones.Show()
         Me.Hide()
     End Sub
@@ -302,39 +305,38 @@ Public Class GestionesAdministrador
 
 
     Private Sub btnVerTodosProductos_Click(sender As Object, e As EventArgs) Handles btnVerTodosProductos.Click
-        'TODO: This line of code loads data into the 'Repsol_dbDataSet.Productos' table. You can move, or remove it, as needed.
-        Me.ProductosTableAdapter.Fill(Me.Repsol_dbDataSet.Productos)
+        MostrarTodosProductos()
+        invisivilizarTodosExceptoDataGridDeProductos()
         ProductosDataGridView.Visible = True
         ProductosDataGridView.Location = New Point(476, 81)
     End Sub
 
     Private Sub btnVerTodosEmpleados_Click(sender As Object, e As EventArgs) Handles btnVerTodosEmpleados.Click
-        'TODO: This line of code loads data into the 'Repsol_dbDataSet.Empleados' table. You can move, or remove it, as needed.
-        Me.EmpleadosTableAdapter.Fill(Me.Repsol_dbDataSet.Empleados)
+        MostrarTodosEmpelados()
+        invisivilizarTodosExceptoDataGridDeEmpleados()
         EmpleadosDataGridView.Visible = True
         EmpleadosDataGridView.Location = New Point(476, 81)
     End Sub
 
     Private Sub btnVerTodosClientes_Click(sender As Object, e As EventArgs) Handles btnVerTodosClientes.Click
-        'TODO: This line of code loads data into the 'Repsol_dbDataSet.Clientes' table. You can move, or remove it, as needed.
-        Me.ClientesTableAdapter.Fill(Me.Repsol_dbDataSet.Clientes)
+        MostrarTodosClientes()
+        invisivilizarTodosExceptoDataGridDeClientes()
         ClientesDataGridView.Visible = True
         ClientesDataGridView.Location = New Point(476, 81)
     End Sub
 
     Private Sub btnVerTodasGasolinas_Click(sender As Object, e As EventArgs) Handles btnVerTodasGasolinas.Click
-        'TODO: This line of code loads data into the 'Repsol_dbDataSet.Gasolinas' table. You can move, or remove it, as needed.
-        Me.GasolinasTableAdapter.Fill(Me.Repsol_dbDataSet.Gasolinas)
+        MostrarTodasGasolinas()
+        invisivilizarTodosExceptoDataGridDeGasolinas()
         GasolinasDataGridView.Visible = True
         GasolinasDataGridView.Location = New Point(476, 81)
     End Sub
 
     Private Sub btnVerTodosProveedores_Click(sender As Object, e As EventArgs) Handles btnVerTodosProveedores.Click
-        'TODO: This line of code loads data into the 'Repsol_dbDataSet.Proveedores' table. You can move, or remove it, as needed.
-        Me.ProveedoresTableAdapter.Fill(Me.Repsol_dbDataSet.Proveedores)
+        MostrarTodosProveedores()
+        invisivilizarTodosExceptoDataGridDeProveedores()
         ProveedoresDataGridView.Visible = True
         ProveedoresDataGridView.Location = New Point(476, 81)
-        invisivilizarTodosExceptoDataGridDeProveedores()
     End Sub
 
     Private Sub btnSeleccionarUnEmpleado_Click(sender As Object, e As EventArgs) Handles btnSeleccionarUnEmpleado.Click
@@ -376,16 +378,14 @@ Public Class GestionesAdministrador
     End Sub
 
     Private Sub btnEliminarCliente_Click(sender As Object, e As EventArgs) Handles btnEliminarCliente.Click
-
+        invisivilizarTodosExceptoPanelEliminarCliente()
+        panelEliminarClientes.Location = New Point(476, 81)
     End Sub
 
     Private Sub btnEliminarProveedor_Click(sender As Object, e As EventArgs) Handles btnEliminarProveedor.Click
-
+        invisivilizarTodosExceptoPanelEliminarProveedor()
+        panelEliminarProveedores.Location = New Point(476, 81)
     End Sub
-
-
-
-
 
 
 
@@ -510,9 +510,6 @@ Public Class GestionesAdministrador
     End Sub
 
     Public Function BuscarCliente(id As Integer) As DataRow
-        ' Crear una nueva instancia de la conexión a la base de datos
-        ' Ensure that the server name, database name, and other connection properties are correct
-        Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
 
         ' Crear una nueva instancia del comando SQL
         Dim cmd As New OleDbCommand("SELECT * FROM Clientes WHERE id = @id", conn)
@@ -544,28 +541,7 @@ Public Class GestionesAdministrador
         End If
     End Function
 
-    Public Sub EliminarCliente(id As Integer)
-
-        Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
-        Dim cmd As New OleDbCommand("DELETE FROM Clientes WHERE id = @id", conn)
-        cmd.Parameters.AddWithValue("@id", id)
-        Try
-            conn.Open()
-            cmd.ExecuteNonQuery()
-            MessageBox.Show("Cliente eliminado correctamente")
-        Catch ex As OleDbException
-            MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
-        Finally
-            conn.Close()
-        End Try
-
-    End Sub
-
-
     Public Function BuscarEmpleado(id As Integer) As DataRow
-        ' Crear una nueva instancia de la conexión a la base de datos
-        ' Ensure that the server name, database name, and other connection properties are correct
-        Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
 
         ' Crear una nueva instancia del comando SQL
         Dim cmd As New OleDbCommand("SELECT * FROM Empleados WHERE id = @id", conn)
@@ -597,55 +573,7 @@ Public Class GestionesAdministrador
         End If
     End Function
 
-    Public Sub modificarEmpleado(id As Integer, nombre As String, apellido1 As String, apellido2 As String, telefono As String, correo As String, contraseña As String, administrador As Integer, cargo As String)
-
-        Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
-
-        Dim cmd As New OleDbCommand("UPDATE Empleados SET Nombre = @nombre, [Apellido 1] = @apellido1, [Apellido 2] = @apellido2, Telefono = @telefono, Correo = @correo, Contraseña = @contraseña, Administrador = @administrador, Cargo = @cargo WHERE id = @id", conn)
-
-        cmd.Parameters.AddWithValue("@id", id)
-        cmd.Parameters.AddWithValue("@nombre", nombre)
-        cmd.Parameters.AddWithValue("@apellido1", apellido1)
-        cmd.Parameters.AddWithValue("@apellido2", apellido2)
-        cmd.Parameters.AddWithValue("@telefono", telefono)
-        cmd.Parameters.AddWithValue("@correo", correo)
-        cmd.Parameters.AddWithValue("@contraseña", contraseña)
-        cmd.Parameters.AddWithValue("@administrador", administrador)
-        cmd.Parameters.AddWithValue("@cargo", cargo)
-
-        Try
-            conn.Open()
-            cmd.ExecuteNonQuery()
-            MessageBox.Show("Empleado modificado correctamente")
-        Catch ex As OleDbException
-            MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
-        Finally
-            conn.Close()
-        End Try
-
-
-    End Sub
-
-
-    Public Sub EliminarEmpleado(id As Integer)
-        Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
-        Dim cmd As New OleDbCommand("DELETE FROM Empleados WHERE id = @id", conn)
-        cmd.Parameters.AddWithValue("@id", id)
-        Try
-            conn.Open()
-            cmd.ExecuteNonQuery()
-            MessageBox.Show("Empleado eliminado correctamente")
-        Catch ex As OleDbException
-            MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
-        Finally
-            conn.Close()
-        End Try
-    End Sub
-
     Public Function BuscarProducto(id As Integer) As DataRow
-        ' Crear una nueva instancia de la conexión a la base de datos
-        ' Ensure that the server name, database name, and other connection properties are correct
-        Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
 
         ' Crear una nueva instancia del comando SQL
         Dim cmd As New OleDbCommand("SELECT * FROM Productos WHERE id = @id", conn)
@@ -677,26 +605,8 @@ Public Class GestionesAdministrador
         End If
     End Function
 
-    Public Sub EliminarProducto(id As Integer)
-        Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
-        Dim cmd As New OleDbCommand("DELETE FROM Productos WHERE id = @id", conn)
-        cmd.Parameters.AddWithValue("@id", id)
-        Try
-            conn.Open()
-            cmd.ExecuteNonQuery()
-            MessageBox.Show("Producto eliminado correctamente")
-        Catch ex As OleDbException
-            MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
-        Finally
-            conn.Close()
-        End Try
-    End Sub
 
     Public Function BuscarGasolina(id As Integer) As DataRow
-
-        ' Crear una nueva instancia de la conexión a la base de datos
-        ' Ensure that the server name, database name, and other connection properties are correct
-        Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
 
         ' Crear una nueva instancia del comando SQL
         Dim cmd As New OleDbCommand("SELECT * FROM Gasolinas WHERE id = @id", conn)
@@ -728,26 +638,8 @@ Public Class GestionesAdministrador
         End If
     End Function
 
-    Public Sub EliminarGasolina(id As Integer)
-        Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
-        Dim cmd As New OleDbCommand("DELETE FROM Gasolinas WHERE id = @id", conn)
-        cmd.Parameters.AddWithValue("@id", id)
-        Try
-            conn.Open()
-            cmd.ExecuteNonQuery()
-            MessageBox.Show("Gasolina eliminada correctamente")
-        Catch ex As OleDbException
-            MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
-        Finally
-            conn.Close()
-        End Try
-    End Sub
 
     Public Function BuscarProveedor(id As Integer) As DataRow
-
-        ' Crear una nueva instancia de la conexión a la base de datos
-        ' Ensure that the server name, database name, and other connection properties are correct
-        Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
 
         ' Crear una nueva instancia del comando SQL
         Dim cmd As New OleDbCommand("SELECT * FROM Proveedores WHERE id = @id", conn)
@@ -781,13 +673,149 @@ Public Class GestionesAdministrador
 
     End Function
 
-    Public Sub EliminarProveedor(id As Integer)
 
-        Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
-        Dim cmd As New OleDbCommand("DELETE FROM Proveedores WHERE id = @id", conn)
+
+    Private Sub MostrarTodosEmpelados()
+        Dim cmd As New OleDbCommand("SELECT * FROM Empleados", conn)
+        Dim da As New OleDbDataAdapter(cmd)
+        Dim dt As New DataTable()
+        da.Fill(dt)
+        EmpleadosDataGridView.DataSource = dt
+        EmpleadosDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+    End Sub
+
+    Private Sub MostrarTodosClientes()
+        Dim cmd As New OleDbCommand("Select * from Clientes", conn)
+        Dim da As New OleDbDataAdapter(cmd)
+        Dim dt As New DataTable()
+        da.Fill(dt)
+        ClientesDataGridView.DataSource = dt
+        ClientesDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
+    End Sub
+
+    Private Sub MostrarTodasGasolinas()
+        Dim cmd As New OleDbCommand("Select * from Gasolinas", conn)
+        Dim da As New OleDbDataAdapter(cmd)
+        Dim dt As New DataTable()
+        da.Fill(dt)
+        GasolinasDataGridView.DataSource = dt
+        GasolinasDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+    End Sub
+
+
+    Private Sub MostrarTodosProductos()
+        Dim cmd As New OleDbCommand("Select * from Productos", conn)
+        Dim da As New OleDbDataAdapter(cmd)
+        Dim dt As New DataTable()
+        da.Fill(dt)
+        ProductosDataGridView.DataSource = dt
+        ProductosDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+    End Sub
+
+    Private Sub MostrarTodosProveedores()
+        Dim cmd As New OleDbCommand("Select * from Proveedores", conn)
+        Dim da As New OleDbDataAdapter(cmd)
+        Dim dt As New DataTable()
+        da.Fill(dt)
+        ProveedoresDataGridView.DataSource = dt
+        ProveedoresDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+    End Sub
+
+
+    Public Sub modificarEmpleado(id As Integer, nombre As String, apellido1 As String, apellido2 As String, telefono As String, correo As String, contraseña As String, administrador As Integer, cargo As String)
+
+        Dim cmd As New OleDbCommand("UPDATE Empleados SET Nombre = @nombre, [Apellido 1] = @apellido1, [Apellido 2] = @apellido2, Telefono = @telefono, Correo = @correo, Contraseña = @contraseña, Administrador = @administrador, Cargo = @cargo WHERE id = @id", conn)
+
+        cmd.Parameters.AddWithValue("@id", id)
+        cmd.Parameters.AddWithValue("@nombre", nombre)
+        cmd.Parameters.AddWithValue("@apellido1", apellido1)
+        cmd.Parameters.AddWithValue("@apellido2", apellido2)
+        cmd.Parameters.AddWithValue("@telefono", telefono)
+        cmd.Parameters.AddWithValue("@correo", correo)
+        cmd.Parameters.AddWithValue("@contraseña", contraseña)
+        cmd.Parameters.AddWithValue("@administrador", administrador)
+        cmd.Parameters.AddWithValue("@cargo", cargo)
+
+        Try
+            conn.Open()
+            cmd.ExecuteNonQuery()
+            MessageBox.Show("Empleado modificado correctamente")
+        Catch ex As OleDbException
+            MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
+        Finally
+            conn.Close()
+        End Try
+
+
+    End Sub
+
+
+    Public Sub EliminarEmpleado(id As Integer)
+        Dim cmd As New OleDbCommand("DELETE FROM Empleados WHERE id = @id", conn)
         cmd.Parameters.AddWithValue("@id", id)
         Try
             conn.Open()
+            cmd.ExecuteNonQuery()
+            MessageBox.Show("Empleado eliminado correctamente")
+        Catch ex As OleDbException
+            MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
+        Finally
+            conn.Close()
+        End Try
+    End Sub
+
+    Public Sub EliminarCliente(id As Integer)
+        Dim cmd As New OleDbCommand("DELETE FROM Clientes WHERE id = @id", conn)
+        Try
+            conn.Open()
+            cmd.Parameters.AddWithValue("@id", id)
+            cmd.ExecuteNonQuery()
+            MessageBox.Show("Cliente eliminado correctamente")
+        Catch ex As OleDbException
+            MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
+        Finally
+            conn.Close()
+        End Try
+
+    End Sub
+
+    Public Sub EliminarProducto(id As Integer)
+        Dim cmd As New OleDbCommand("DELETE FROM Productos WHERE id = @id", conn)
+        Try
+            conn.Open()
+            cmd.Parameters.AddWithValue("@id", id)
+            cmd.ExecuteNonQuery()
+            MessageBox.Show("Producto eliminado correctamente")
+        Catch ex As OleDbException
+            MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
+        Finally
+            conn.Close()
+        End Try
+    End Sub
+
+
+
+    Public Sub EliminarGasolina(id As Integer)
+        Dim cmd As New OleDbCommand("DELETE FROM Gasolinas WHERE id = @id", conn)
+        Try
+            conn.Open()
+            cmd.Parameters.AddWithValue("@id", id)
+            cmd.ExecuteNonQuery()
+            MessageBox.Show("Gasolina eliminada correctamente")
+        Catch ex As OleDbException
+            MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
+        Finally
+            conn.Close()
+        End Try
+    End Sub
+
+
+
+    Public Sub EliminarProveedor(id As Integer)
+        Dim cmd As New OleDbCommand("DELETE FROM Proveedores WHERE id = @id", conn)
+        Try
+            conn.Open()
+            cmd.Parameters.AddWithValue("@id", id)
             cmd.ExecuteNonQuery()
             MessageBox.Show("Proveedor eliminado correctamente")
         Catch ex As OleDbException

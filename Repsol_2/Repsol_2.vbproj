@@ -39,7 +39,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>Repsol_2.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
-    <Prefer32Bit>true</Prefer32Bit>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -64,9 +64,6 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Biblioteca">
-      <HintPath>..\Biblioteca\Biblioteca\bin\Debug\Biblioteca.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.OleDb, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -95,12 +92,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Efectivo.Designer.vb">
-      <DependentUpon>Efectivo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Efectivo.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Gasolina.Designer.vb">
       <DependentUpon>Gasolina.vb</DependentUpon>
     </Compile>
@@ -155,9 +146,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Efectivo.resx">
-      <DependentUpon>Efectivo.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Gasolina.resx">
       <DependentUpon>Gasolina.vb</DependentUpon>
     </EmbeddedResource>
@@ -169,9 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Opciones.resx">
       <DependentUpon>Opciones.vb</DependentUpon>
@@ -219,21 +207,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-<<<<<<< HEAD
-    <None Include="Resources\ajustar%281%29.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\_6f51f18b-7d0f-4ca6-bf26-6b39c3e.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\_31544953-d1d9-4b71-bd43-3bf205c.jpg" />
-=======
-    <Content Include="Repsol_db.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
->>>>>>> La base de datos ya funciona de puta madre, he reescrito la base de datos y he utilizado un nuevo dataset, ahora ya deberia ir de locoss (por ahora)
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
