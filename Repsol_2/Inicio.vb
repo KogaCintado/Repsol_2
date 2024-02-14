@@ -41,6 +41,35 @@ Public Class Inicio
         End If
     End Sub
 
+    Private Sub btnIniciarAdmin_Click(sender As Object, e As EventArgs) Handles btnIniciarAdmin.Click
+
+        If (Not (String.IsNullOrEmpty(tbUsername.Text.Trim()))) And (Not (String.IsNullOrEmpty(tbPassword.Text.Trim()))) And (Not (String.IsNullOrEmpty(tbAdmin.Text.Trim()))) Then
+
+
+            If logginAdmin(tbUsername.Text.Trim(), tbPassword.Text.Trim(), tbAdmin.Text.Trim()) = True Then
+
+                MsgBox("Bienvenido Admin!")
+                admin = True
+                Me.Hide()
+                Opciones.Show()
+                ErrorProvider1.Clear()
+                ErrorProvider2.Clear()
+
+            Else
+                MsgBox("Usuario o contraseña incorrectos, intentelo de nuevo")
+                tbPassword.Clear()
+                tbUsername.Clear()
+            End If
+
+        Else
+            MsgBox("Introduce un usuario y contraseña")
+            tbPassword.Clear()
+            tbUsername.Clear()
+
+        End If
+
+    End Sub
+
     Private Sub ShowPassword_Click(sender As Object, e As EventArgs) Handles showPassword.Click
         'Porque esto me da error
         If (tbPassword.PasswordChar <> "*") Then
@@ -50,10 +79,6 @@ Public Class Inicio
         End If
     End Sub
 
-    Private Sub lblUsername_Click(sender As Object, e As EventArgs) Handles lblUsername.Click
-
-
-    End Sub
 
     Private Sub tbUsername_TextChanged(sender As Object, e As EventArgs) Handles tbUsername.TextChanged
 
@@ -104,7 +129,7 @@ Public Class Inicio
         Try
 
             conn.Open()
-            Dim cmd As New OleDbCommand("Select Nombre, Contraseña from Empleados where nombre = @nombre and contraseña = @contraseña", conn)
+            Dim cmd As New OleDbCommand("Select Nombre, Contraseña, Administrador from Empleados where nombre = @nombre and contraseña = @contraseña", conn)
 
             cmd.Parameters.AddWithValue("@nombre", nombre)
             cmd.Parameters.AddWithValue("@contraseña", contraseña)
@@ -133,6 +158,44 @@ Public Class Inicio
             conn.Close()
 
         End Try
+    End Function
+
+    Private Function logginAdmin(nombre As String, contraseña As String, administrador As Integer) As Boolean
+
+        Try
+
+            conn.Open()
+            Dim cmd As New OleDbCommand("Select Nombre, Contraseña, Administrador from Empleados where nombre = @nombre and contraseña = @contraseña and Administrador = @Administrador", conn)
+
+            cmd.Parameters.AddWithValue("@nombre", nombre)
+            cmd.Parameters.AddWithValue("@contraseña", contraseña)
+            cmd.Parameters.AddWithValue("Administrador", administrador)
+
+            Dim resultado As String = cmd.ExecuteScalar()
+
+            If (Not (String.IsNullOrEmpty(resultado))) Then
+
+                'variable publica
+                nombreFullLogin = resultado.ToString()
+                Return True
+
+
+            Else
+
+                Return False
+
+            End If
+
+        Catch ex As Exception
+            MsgBox("Algo fallo en el loggin: " & ex.Message)
+            Return False
+
+        Finally
+
+            conn.Close()
+
+        End Try
+
     End Function
 
 End Class
