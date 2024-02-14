@@ -778,7 +778,7 @@ Public Class GestionesAdministrador
             ' Llenar el DataSet con los datos de la tabla Clientes
             da.Fill(ds, "Clientes")
         Catch ex As OleDbException
-            MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
+            MessageBox.Show("Hubo un error conectando con la base de datos: " & ex.Message)
             Return Nothing
         End Try
 
@@ -810,10 +810,10 @@ Public Class GestionesAdministrador
             ' Llenar el DataSet con los datos de la tabla Empleados
             da.Fill(ds, "Empleados")
         Catch ex As OleDbException
-            MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
+            MessageBox.Show("Hubo un error conectando con la base de datos: " & ex.Message)
             Return Nothing
         Catch ex As InvalidOperationException
-            MessageBox.Show("Error connecting to the database. Please check your database connection settings. Make sure you install the correct database version.")
+            MessageBox.Show("Error introduzca bien los datos:" & ex.Message)
             Inicio.Close()
             Return Nothing
         End Try
@@ -846,7 +846,7 @@ Public Class GestionesAdministrador
             ' Llenar el DataSet con los datos de la tabla Productos
             da.Fill(ds, "Productos")
         Catch ex As OleDbException
-            MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
+            MessageBox.Show("Hubo un error con la conexion de la base de datos: " & ex.Message)
             Return Nothing
         End Try
 
@@ -879,7 +879,7 @@ Public Class GestionesAdministrador
             ' Llenar el DataSet con los datos de la tabla Gasolinas
             da.Fill(ds, "Gasolinas")
         Catch ex As OleDbException
-            MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
+            MessageBox.Show("Hubo un error con la base de datos: " & ex.Message)
             Return Nothing
         End Try
 
@@ -912,7 +912,7 @@ Public Class GestionesAdministrador
             ' Llenar el DataSet con los datos de la tabla Proveedores
             da.Fill(ds, "Proveedores")
         Catch ex As OleDbException
-            MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
+            MessageBox.Show("Hubo un error en la busqueda de la base de datos: " & ex.Message)
             Return Nothing
         End Try
 
@@ -997,7 +997,7 @@ Public Class GestionesAdministrador
                 MsgBox("El empleado: " & nombre & " se ha agregado correctamente")
             End Using
         Catch ex As Exception
-            MsgBox("la hemos cagado al hacer el insert primo" & ex.Message)
+            MsgBox("Hubo un error al agregar el empleado: " & ex.Message)
         Finally
             conn.Close()
         End Try
@@ -1112,7 +1112,7 @@ Public Class GestionesAdministrador
             cmd.ExecuteNonQuery()
             MessageBox.Show("Empleado eliminado correctamente")
         Catch ex As OleDbException
-            MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
+            MessageBox.Show("Hubo un error al eliminar al empleado: " & ex.Message)
         Finally
             conn.Close()
         End Try
@@ -1126,7 +1126,7 @@ Public Class GestionesAdministrador
             cmd.ExecuteNonQuery()
             MessageBox.Show("Cliente eliminado correctamente")
         Catch ex As OleDbException
-            MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
+            MessageBox.Show("Hubo un al eliminar el Cliente: " & ex.Message)
         Finally
             conn.Close()
         End Try
@@ -1141,7 +1141,7 @@ Public Class GestionesAdministrador
             cmd.ExecuteNonQuery()
             MessageBox.Show("Producto eliminado correctamente")
         Catch ex As OleDbException
-            MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
+            MessageBox.Show("Hubo un error al eliminar el producto: " & ex.Message)
         Finally
             conn.Close()
         End Try
@@ -1157,7 +1157,7 @@ Public Class GestionesAdministrador
             cmd.ExecuteNonQuery()
             MessageBox.Show("Gasolina eliminada correctamente")
         Catch ex As OleDbException
-            MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
+            MessageBox.Show("Hubo un error al eliminar la gasolina: " & ex.Message)
         Finally
             conn.Close()
         End Try

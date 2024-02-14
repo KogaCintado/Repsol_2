@@ -59,13 +59,14 @@ Public Class Inicio
                 MsgBox("Usuario o contraseña incorrectos, intentelo de nuevo")
                 tbPassword.Clear()
                 tbUsername.Clear()
+                tbAdmin.Clear()
             End If
 
         Else
             MsgBox("Introduce un usuario y contraseña")
             tbPassword.Clear()
             tbUsername.Clear()
-
+            tbAdmin.Clear()
         End If
 
     End Sub
@@ -141,7 +142,6 @@ Public Class Inicio
                 'variable publica
                 nombreFullLogin = resultado.ToString()
                 Return True
-
 
             Else
 
