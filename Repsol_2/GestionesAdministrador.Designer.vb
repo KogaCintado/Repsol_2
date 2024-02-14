@@ -2009,7 +2009,7 @@ Partial Class GestionesAdministrador
         Me.panelAgregarProveedor.Controls.Add(Me.tbIdProveedorAgregar)
         Me.panelAgregarProveedor.Controls.Add(Label28)
         Me.panelAgregarProveedor.Controls.Add(Me.tbNombreProveedorAgregar)
-        Me.panelAgregarProveedor.Location = New System.Drawing.Point(660, 291)
+        Me.panelAgregarProveedor.Location = New System.Drawing.Point(3000, 3000)
         Me.panelAgregarProveedor.Name = "panelAgregarProveedor"
         Me.panelAgregarProveedor.Size = New System.Drawing.Size(172, 91)
         Me.panelAgregarProveedor.TabIndex = 20
