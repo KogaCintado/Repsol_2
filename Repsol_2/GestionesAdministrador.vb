@@ -6,10 +6,12 @@ Public Class GestionesAdministrador
     Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
 
     Private Sub GestionesAdministrador_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'datagridviews a tomar por culo de forma guarra para que no se vean
+        'datagridviews y todo a tomar por culo de forma guarra para que no se vean
+        GasolinasDataGridView.Location = New Point(3000, 3000)
         ProductosDataGridView.Location = New Point(3000, 3000)
         EmpleadosDataGridView.Location = New Point(3000, 3000)
         ClientesDataGridView.Location = New Point(3000, 3000)
+        ProveedoresDataGridView.Location = New Point(3000, 3000)
         panelBuscarEmpleado.Location = New Point(3000, 3000)
         panelBuscarCliente.Location = New Point(3000, 3000)
         panelBuscarProducto.Location = New Point(3000, 3000)
@@ -20,6 +22,11 @@ Public Class GestionesAdministrador
         panelEliminarProducto.Location = New Point(3000, 3000)
         panelEliminarClientes.Location = New Point(3000, 3000)
         panelEliminarProveedores.Location = New Point(3000, 3000)
+        panelAgregarUsuario.Location = New Point(3000, 3000)
+        panelAgregarCliente.Location = New Point(3000, 3000)
+        panelAgregarProducto.Location = New Point(3000, 3000)
+        panelAgregarGasolina.Location = New Point(3000, 3000)
+        panelAgregarProveedor.Location = New Point(3000, 3000)
 
         'Maximize the window
         Me.WindowState = FormWindowState.Maximized
@@ -50,9 +57,15 @@ Public Class GestionesAdministrador
         panelBuscarProveedor.Location = New Point(3000, 3000)
         panelEliminarEmpleado.Location = New Point(3000, 3000)
         panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarGasolina.Location = New Point(3000, 3000)
         panelEliminarProducto.Location = New Point(3000, 3000)
         panelEliminarClientes.Location = New Point(3000, 3000)
         panelEliminarProveedores.Location = New Point(3000, 3000)
+        panelAgregarUsuario.Location = New Point(3000, 3000)
+        panelAgregarCliente.Location = New Point(3000, 3000)
+        panelAgregarProducto.Location = New Point(3000, 3000)
+        panelAgregarGasolina.Location = New Point(3000, 3000)
+        panelAgregarProveedor.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoDataGridDeEmpleados()
@@ -68,8 +81,14 @@ Public Class GestionesAdministrador
         panelEliminarEmpleado.Location = New Point(3000, 3000)
         panelEliminarEmpleado.Location = New Point(3000, 3000)
         panelEliminarProducto.Location = New Point(3000, 3000)
+        panelEliminarGasolina.Location = New Point(3000, 3000)
         panelEliminarClientes.Location = New Point(3000, 3000)
         panelEliminarProveedores.Location = New Point(3000, 3000)
+        panelAgregarUsuario.Location = New Point(3000, 3000)
+        panelAgregarCliente.Location = New Point(3000, 3000)
+        panelAgregarProducto.Location = New Point(3000, 3000)
+        panelAgregarGasolina.Location = New Point(3000, 3000)
+        panelAgregarProveedor.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoDataGridDeGasolinas()
@@ -84,9 +103,15 @@ Public Class GestionesAdministrador
         panelBuscarProveedor.Location = New Point(3000, 3000)
         panelEliminarEmpleado.Location = New Point(3000, 3000)
         panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarGasolina.Location = New Point(3000, 3000)
         panelEliminarProducto.Location = New Point(3000, 3000)
         panelEliminarClientes.Location = New Point(3000, 3000)
         panelEliminarProveedores.Location = New Point(3000, 3000)
+        panelAgregarUsuario.Location = New Point(3000, 3000)
+        panelAgregarCliente.Location = New Point(3000, 3000)
+        panelAgregarProducto.Location = New Point(3000, 3000)
+        panelAgregarGasolina.Location = New Point(3000, 3000)
+        panelAgregarProveedor.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoDataGridDeProductos()
@@ -101,9 +126,15 @@ Public Class GestionesAdministrador
         panelBuscarProveedor.Location = New Point(3000, 3000)
         panelEliminarEmpleado.Location = New Point(3000, 3000)
         panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarGasolina.Location = New Point(3000, 3000)
         panelEliminarProducto.Location = New Point(3000, 3000)
         panelEliminarClientes.Location = New Point(3000, 3000)
         panelEliminarProveedores.Location = New Point(3000, 3000)
+        panelAgregarUsuario.Location = New Point(3000, 3000)
+        panelAgregarCliente.Location = New Point(3000, 3000)
+        panelAgregarProducto.Location = New Point(3000, 3000)
+        panelAgregarGasolina.Location = New Point(3000, 3000)
+        panelAgregarProveedor.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoDataGridDeProveedores()
@@ -118,9 +149,15 @@ Public Class GestionesAdministrador
         panelBuscarProveedor.Location = New Point(3000, 3000)
         panelEliminarEmpleado.Location = New Point(3000, 3000)
         panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarGasolina.Location = New Point(3000, 3000)
         panelEliminarProducto.Location = New Point(3000, 3000)
         panelEliminarClientes.Location = New Point(3000, 3000)
         panelEliminarProveedores.Location = New Point(3000, 3000)
+        panelAgregarUsuario.Location = New Point(3000, 3000)
+        panelAgregarCliente.Location = New Point(3000, 3000)
+        panelAgregarProducto.Location = New Point(3000, 3000)
+        panelAgregarGasolina.Location = New Point(3000, 3000)
+        panelAgregarProveedor.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelBuscarEmpleado()
@@ -135,9 +172,15 @@ Public Class GestionesAdministrador
         panelBuscarProveedor.Location = New Point(3000, 3000)
         panelEliminarEmpleado.Location = New Point(3000, 3000)
         panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarGasolina.Location = New Point(3000, 3000)
         panelEliminarProducto.Location = New Point(3000, 3000)
         panelEliminarClientes.Location = New Point(3000, 3000)
         panelEliminarProveedores.Location = New Point(3000, 3000)
+        panelAgregarUsuario.Location = New Point(3000, 3000)
+        panelAgregarCliente.Location = New Point(3000, 3000)
+        panelAgregarProducto.Location = New Point(3000, 3000)
+        panelAgregarGasolina.Location = New Point(3000, 3000)
+        panelAgregarProveedor.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelBuscarCliente()
@@ -153,8 +196,14 @@ Public Class GestionesAdministrador
         panelEliminarEmpleado.Location = New Point(3000, 3000)
         panelEliminarEmpleado.Location = New Point(3000, 3000)
         panelEliminarProducto.Location = New Point(3000, 3000)
+        panelEliminarGasolina.Location = New Point(3000, 3000)
         panelEliminarClientes.Location = New Point(3000, 3000)
         panelEliminarProveedores.Location = New Point(3000, 3000)
+        panelAgregarUsuario.Location = New Point(3000, 3000)
+        panelAgregarCliente.Location = New Point(3000, 3000)
+        panelAgregarProducto.Location = New Point(3000, 3000)
+        panelAgregarGasolina.Location = New Point(3000, 3000)
+        panelAgregarProveedor.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelBuscarProducto()
@@ -169,29 +218,42 @@ Public Class GestionesAdministrador
         panelBuscarProveedor.Location = New Point(3000, 3000)
         panelEliminarEmpleado.Location = New Point(3000, 3000)
         panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarGasolina.Location = New Point(3000, 3000)
         panelEliminarProducto.Location = New Point(3000, 3000)
         panelEliminarClientes.Location = New Point(3000, 3000)
         panelEliminarProveedores.Location = New Point(3000, 3000)
+        panelAgregarUsuario.Location = New Point(3000, 3000)
+        panelAgregarCliente.Location = New Point(3000, 3000)
+        panelAgregarProducto.Location = New Point(3000, 3000)
+        panelAgregarGasolina.Location = New Point(3000, 3000)
+        panelAgregarProveedor.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelBuscarGasolina()
+        ProveedoresDataGridView.Location = New Point(3000, 3000)
         ProductosDataGridView.Location = New Point(3000, 3000)
         EmpleadosDataGridView.Location = New Point(3000, 3000)
         GasolinasDataGridView.Location = New Point(3000, 3000)
         ClientesDataGridView.Location = New Point(3000, 3000)
-        ProveedoresDataGridView.Location = New Point(3000, 3000)
+        ClientesDataGridView.Location = New Point(3000, 3000)
         panelBuscarEmpleado.Location = New Point(3000, 3000)
         panelBuscarCliente.Location = New Point(3000, 3000)
         panelBuscarProducto.Location = New Point(3000, 3000)
         panelBuscarProveedor.Location = New Point(3000, 3000)
         panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarGasolina.Location = New Point(3000, 3000)
         panelEliminarProducto.Location = New Point(3000, 3000)
         panelEliminarClientes.Location = New Point(3000, 3000)
         panelEliminarProveedores.Location = New Point(3000, 3000)
+        panelAgregarUsuario.Location = New Point(3000, 3000)
+        panelAgregarCliente.Location = New Point(3000, 3000)
+        panelAgregarProducto.Location = New Point(3000, 3000)
+        panelAgregarGasolina.Location = New Point(3000, 3000)
+        panelAgregarProveedor.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelBuscarProveedor()
+        ProveedoresDataGridView.Location = New Point(3000, 3000)
         ProductosDataGridView.Location = New Point(3000, 3000)
         EmpleadosDataGridView.Location = New Point(3000, 3000)
         GasolinasDataGridView.Location = New Point(3000, 3000)
@@ -204,12 +266,18 @@ Public Class GestionesAdministrador
         panelEliminarEmpleado.Location = New Point(3000, 3000)
         panelEliminarEmpleado.Location = New Point(3000, 3000)
         panelEliminarProducto.Location = New Point(3000, 3000)
+        panelEliminarGasolina.Location = New Point(3000, 3000)
         panelEliminarClientes.Location = New Point(3000, 3000)
         panelEliminarProveedores.Location = New Point(3000, 3000)
+        panelAgregarUsuario.Location = New Point(3000, 3000)
+        panelAgregarCliente.Location = New Point(3000, 3000)
+        panelAgregarProducto.Location = New Point(3000, 3000)
+        panelAgregarGasolina.Location = New Point(3000, 3000)
+        panelAgregarProveedor.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelEliminarEmpleado()
-
+        ProveedoresDataGridView.Location = New Point(3000, 3000)
         ProductosDataGridView.Location = New Point(3000, 3000)
         EmpleadosDataGridView.Location = New Point(3000, 3000)
         GasolinasDataGridView.Location = New Point(3000, 3000)
@@ -221,20 +289,25 @@ Public Class GestionesAdministrador
         panelBuscarGasolina.Location = New Point(3000, 3000)
         panelBuscarProveedor.Location = New Point(3000, 3000)
         panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarGasolina.Location = New Point(3000, 3000)
         panelEliminarProducto.Location = New Point(3000, 3000)
         panelEliminarClientes.Location = New Point(3000, 3000)
         panelEliminarProveedores.Location = New Point(3000, 3000)
+        panelAgregarUsuario.Location = New Point(3000, 3000)
+        panelAgregarCliente.Location = New Point(3000, 3000)
+        panelAgregarProducto.Location = New Point(3000, 3000)
+        panelAgregarGasolina.Location = New Point(3000, 3000)
+        panelAgregarProveedor.Location = New Point(3000, 3000)
 
     End Sub
 
 
     Private Sub invisivilizarTodosExceptoPanelEliminarGasolina()
-
+        ProveedoresDataGridView.Location = New Point(3000, 3000)
+        GasolinasDataGridView.Location = New Point(3000, 3000)
         ProductosDataGridView.Location = New Point(3000, 3000)
         EmpleadosDataGridView.Location = New Point(3000, 3000)
-        GasolinasDataGridView.Location = New Point(3000, 3000)
         ClientesDataGridView.Location = New Point(3000, 3000)
-        ProveedoresDataGridView.Location = New Point(3000, 3000)
         panelBuscarEmpleado.Location = New Point(3000, 3000)
         panelBuscarCliente.Location = New Point(3000, 3000)
         panelBuscarProducto.Location = New Point(3000, 3000)
@@ -242,19 +315,23 @@ Public Class GestionesAdministrador
         panelBuscarProveedor.Location = New Point(3000, 3000)
         panelEliminarEmpleado.Location = New Point(3000, 3000)
         panelEliminarProducto.Location = New Point(3000, 3000)
-        panelEliminarProveedores.Location = New Point(3000, 3000)
+        panelEliminarGasolina.Location = New Point(3000, 3000)
         panelEliminarClientes.Location = New Point(3000, 3000)
         panelEliminarProveedores.Location = New Point(3000, 3000)
+        panelAgregarUsuario.Location = New Point(3000, 3000)
+        panelAgregarCliente.Location = New Point(3000, 3000)
+        panelAgregarProducto.Location = New Point(3000, 3000)
+        panelAgregarGasolina.Location = New Point(3000, 3000)
+        panelAgregarProveedor.Location = New Point(3000, 3000)
 
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelEliminarProducto()
-
+        ProveedoresDataGridView.Location = New Point(3000, 3000)
+        GasolinasDataGridView.Location = New Point(3000, 3000)
         ProductosDataGridView.Location = New Point(3000, 3000)
         EmpleadosDataGridView.Location = New Point(3000, 3000)
-        GasolinasDataGridView.Location = New Point(3000, 3000)
         ClientesDataGridView.Location = New Point(3000, 3000)
-        ProveedoresDataGridView.Location = New Point(3000, 3000)
         panelBuscarEmpleado.Location = New Point(3000, 3000)
         panelBuscarCliente.Location = New Point(3000, 3000)
         panelBuscarProducto.Location = New Point(3000, 3000)
@@ -262,12 +339,18 @@ Public Class GestionesAdministrador
         panelBuscarProveedor.Location = New Point(3000, 3000)
         panelEliminarEmpleado.Location = New Point(3000, 3000)
         panelEliminarGasolina.Location = New Point(3000, 3000)
-        panelEliminarProveedores.Location = New Point(3000, 3000)
         panelEliminarClientes.Location = New Point(3000, 3000)
+        panelEliminarProveedores.Location = New Point(3000, 3000)
+        panelAgregarUsuario.Location = New Point(3000, 3000)
+        panelAgregarCliente.Location = New Point(3000, 3000)
+        panelAgregarProducto.Location = New Point(3000, 3000)
+        panelAgregarGasolina.Location = New Point(3000, 3000)
+        panelAgregarProveedor.Location = New Point(3000, 3000)
 
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelEliminarProveedor()
+        ProveedoresDataGridView.Location = New Point(3000, 3000)
         ProductosDataGridView.Location = New Point(3000, 3000)
         EmpleadosDataGridView.Location = New Point(3000, 3000)
         GasolinasDataGridView.Location = New Point(3000, 3000)
@@ -282,10 +365,16 @@ Public Class GestionesAdministrador
         panelEliminarGasolina.Location = New Point(3000, 3000)
         panelEliminarProducto.Location = New Point(3000, 3000)
         panelEliminarClientes.Location = New Point(3000, 3000)
+        panelAgregarUsuario.Location = New Point(3000, 3000)
+        panelAgregarCliente.Location = New Point(3000, 3000)
+        panelAgregarProducto.Location = New Point(3000, 3000)
+        panelAgregarGasolina.Location = New Point(3000, 3000)
+        panelAgregarProveedor.Location = New Point(3000, 3000)
 
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelEliminarCliente()
+        ProveedoresDataGridView.Location = New Point(3000, 3000)
         ProductosDataGridView.Location = New Point(3000, 3000)
         EmpleadosDataGridView.Location = New Point(3000, 3000)
         GasolinasDataGridView.Location = New Point(3000, 3000)
@@ -300,7 +389,121 @@ Public Class GestionesAdministrador
         panelEliminarGasolina.Location = New Point(3000, 3000)
         panelEliminarProducto.Location = New Point(3000, 3000)
         panelEliminarProveedores.Location = New Point(3000, 3000)
+        panelAgregarUsuario.Location = New Point(3000, 3000)
+        panelAgregarCliente.Location = New Point(3000, 3000)
+        panelAgregarProducto.Location = New Point(3000, 3000)
+        panelAgregarGasolina.Location = New Point(3000, 3000)
+        panelAgregarProveedor.Location = New Point(3000, 3000)
 
+    End Sub
+
+    Private Sub invisivilizarTodosExceptoPanelAgregarUsuario()
+        ProveedoresDataGridView.Location = New Point(3000, 3000)
+        GasolinasDataGridView.Location = New Point(3000, 3000)
+        ProductosDataGridView.Location = New Point(3000, 3000)
+        EmpleadosDataGridView.Location = New Point(3000, 3000)
+        ClientesDataGridView.Location = New Point(3000, 3000)
+        panelBuscarEmpleado.Location = New Point(3000, 3000)
+        panelBuscarCliente.Location = New Point(3000, 3000)
+        panelBuscarProducto.Location = New Point(3000, 3000)
+        panelBuscarGasolina.Location = New Point(3000, 3000)
+        panelBuscarProveedor.Location = New Point(3000, 3000)
+        panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarGasolina.Location = New Point(3000, 3000)
+        panelEliminarProducto.Location = New Point(3000, 3000)
+        panelEliminarClientes.Location = New Point(3000, 3000)
+        panelEliminarProveedores.Location = New Point(3000, 3000)
+        panelAgregarCliente.Location = New Point(3000, 3000)
+        panelAgregarProducto.Location = New Point(3000, 3000)
+        panelAgregarGasolina.Location = New Point(3000, 3000)
+        panelAgregarProveedor.Location = New Point(3000, 3000)
+    End Sub
+
+    Private Sub invisivilizarTodosExceptoPanelAgregarCliente()
+        ProveedoresDataGridView.Location = New Point(3000, 3000)
+        GasolinasDataGridView.Location = New Point(3000, 3000)
+        ProductosDataGridView.Location = New Point(3000, 3000)
+        EmpleadosDataGridView.Location = New Point(3000, 3000)
+        ClientesDataGridView.Location = New Point(3000, 3000)
+        panelBuscarEmpleado.Location = New Point(3000, 3000)
+        panelBuscarCliente.Location = New Point(3000, 3000)
+        panelBuscarProducto.Location = New Point(3000, 3000)
+        panelBuscarGasolina.Location = New Point(3000, 3000)
+        panelBuscarProveedor.Location = New Point(3000, 3000)
+        panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarGasolina.Location = New Point(3000, 3000)
+        panelEliminarProducto.Location = New Point(3000, 3000)
+        panelEliminarClientes.Location = New Point(3000, 3000)
+        panelEliminarProveedores.Location = New Point(3000, 3000)
+        panelAgregarUsuario.Location = New Point(3000, 3000)
+        panelAgregarProducto.Location = New Point(3000, 3000)
+        panelAgregarGasolina.Location = New Point(3000, 3000)
+        panelAgregarProveedor.Location = New Point(3000, 3000)
+    End Sub
+
+    Private Sub invisivilizarTodosExceptoPanelAgregarProducto()
+        ProveedoresDataGridView.Location = New Point(3000, 3000)
+        GasolinasDataGridView.Location = New Point(3000, 3000)
+        ProductosDataGridView.Location = New Point(3000, 3000)
+        EmpleadosDataGridView.Location = New Point(3000, 3000)
+        ClientesDataGridView.Location = New Point(3000, 3000)
+        panelBuscarEmpleado.Location = New Point(3000, 3000)
+        panelBuscarCliente.Location = New Point(3000, 3000)
+        panelBuscarProducto.Location = New Point(3000, 3000)
+        panelBuscarGasolina.Location = New Point(3000, 3000)
+        panelBuscarProveedor.Location = New Point(3000, 3000)
+        panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarGasolina.Location = New Point(3000, 3000)
+        panelEliminarProducto.Location = New Point(3000, 3000)
+        panelEliminarClientes.Location = New Point(3000, 3000)
+        panelEliminarProveedores.Location = New Point(3000, 3000)
+        panelAgregarUsuario.Location = New Point(3000, 3000)
+        panelAgregarCliente.Location = New Point(3000, 3000)
+        panelAgregarGasolina.Location = New Point(3000, 3000)
+        panelAgregarProveedor.Location = New Point(3000, 3000)
+    End Sub
+
+    Private Sub invisivilizarTodosExceptoPanelAgregarGasolina()
+        ProveedoresDataGridView.Location = New Point(3000, 3000)
+        GasolinasDataGridView.Location = New Point(3000, 3000)
+        ProductosDataGridView.Location = New Point(3000, 3000)
+        EmpleadosDataGridView.Location = New Point(3000, 3000)
+        ClientesDataGridView.Location = New Point(3000, 3000)
+        panelBuscarEmpleado.Location = New Point(3000, 3000)
+        panelBuscarCliente.Location = New Point(3000, 3000)
+        panelBuscarProducto.Location = New Point(3000, 3000)
+        panelBuscarGasolina.Location = New Point(3000, 3000)
+        panelBuscarProveedor.Location = New Point(3000, 3000)
+        panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarGasolina.Location = New Point(3000, 3000)
+        panelEliminarProducto.Location = New Point(3000, 3000)
+        panelEliminarClientes.Location = New Point(3000, 3000)
+        panelEliminarProveedores.Location = New Point(3000, 3000)
+        panelAgregarUsuario.Location = New Point(3000, 3000)
+        panelAgregarCliente.Location = New Point(3000, 3000)
+        panelAgregarProducto.Location = New Point(3000, 3000)
+        panelAgregarProveedor.Location = New Point(3000, 3000)
+    End Sub
+
+    Private Sub invisivilizarTodosExceptoPanelAgregarProveedor()
+        ProveedoresDataGridView.Location = New Point(3000, 3000)
+        ProductosDataGridView.Location = New Point(3000, 3000)
+        EmpleadosDataGridView.Location = New Point(3000, 3000)
+        ClientesDataGridView.Location = New Point(3000, 3000)
+        panelBuscarEmpleado.Location = New Point(3000, 3000)
+        panelBuscarCliente.Location = New Point(3000, 3000)
+        panelBuscarProducto.Location = New Point(3000, 3000)
+        panelBuscarGasolina.Location = New Point(3000, 3000)
+        panelBuscarProveedor.Location = New Point(3000, 3000)
+        panelEliminarEmpleado.Location = New Point(3000, 3000)
+        panelEliminarGasolina.Location = New Point(3000, 3000)
+        panelEliminarProducto.Location = New Point(3000, 3000)
+        panelEliminarClientes.Location = New Point(3000, 3000)
+        panelEliminarProveedores.Location = New Point(3000, 3000)
+        panelAgregarUsuario.Location = New Point(3000, 3000)
+        panelAgregarCliente.Location = New Point(3000, 3000)
+        panelAgregarProducto.Location = New Point(3000, 3000)
+        panelAgregarGasolina.Location = New Point(3000, 3000)
     End Sub
 
 
@@ -360,6 +563,32 @@ Public Class GestionesAdministrador
     Private Sub btnVerProveedor_Click(sender As Object, e As EventArgs) Handles btnVerProveedor.Click
         invisivilizarTodosExceptoPanelBuscarProveedor()
         panelBuscarProveedor.Location = New Point(476, 81)
+    End Sub
+
+
+    Private Sub btnAgregarUsuario_Click(sender As Object, e As EventArgs) Handles btnAgregarUsuario.Click
+        invisivilizarTodosExceptoPanelAgregarUsuario()
+        panelAgregarUsuario.Location = New Point(476, 81)
+    End Sub
+
+    Private Sub btnAgregarCliente_Click(sender As Object, e As EventArgs) Handles btnAgregarCliente.Click
+        invisivilizarTodosExceptoPanelAgregarCliente()
+        panelAgregarCliente.Location = New Point(476, 81)
+    End Sub
+
+    Private Sub btnAgregarProducto_Click(sender As Object, e As EventArgs) Handles btnAgregarProducto.Click
+        invisivilizarTodosExceptoPanelAgregarProducto()
+        panelAgregarProducto.Location = New Point(476, 81)
+    End Sub
+
+    Private Sub btnAgregarGasolina_Click(sender As Object, e As EventArgs) Handles btnAgregarGasolina.Click
+        invisivilizarTodosExceptoPanelAgregarGasolina()
+        panelAgregarGasolina.Location = New Point(476, 81)
+    End Sub
+
+    Private Sub btnAgregarProveedor_Click(sender As Object, e As EventArgs) Handles btnAgregarProveedor.Click
+        invisivilizarTodosExceptoPanelAgregarProveedor()
+        panelAgregarProveedor.Location = New Point(476, 81)
     End Sub
 
     Private Sub btnEliminarEmpleado_Click(sender As Object, e As EventArgs) Handles btnEliminarEmpleado.Click
@@ -489,8 +718,30 @@ Public Class GestionesAdministrador
         End If
     End Sub
 
+
+    Private Sub btnAccionAgregarUsuario_Click(sender As Object, e As EventArgs) Handles btnAccionAgregarUsuario.Click
+        AgregarEmpleado(tbIdEmpleadoAgregar.Text, tbNombreEmpleadoAgregar.Text, tbApellido1EmpleadoAgregar.Text, tbApellido2EmpleadoAgregar.Text,
+                        tbTelefonoEmpleadoAgregar.Text, tbCorreoEmpleadoAgregar.Text, tbContraseñaEmpleadoAgregar.Text, tbAdministradorEmpleadoAgregar.Text, tbCargoEmpleadoAgregar.Text)
+    End Sub
+
+    Private Sub btnAccionAgregarCliente_Click(sender As Object, e As EventArgs) Handles btnAccionAgregarCliente.Click
+        AgregarCliente(tbIdClienteAgregar.Text, tbNombreClienteAgregar.Text, tbApellido1ClienteAgregar.Text, tbApellido2ClienteAgregar.Text, tbTelefonoClienteAgregar.Text, tbCorreoClienteAgregar.Text, dtpFechaAltaClienteAgregar.Value.Date, tbAltaClienteAgregar.Text)
+    End Sub
+
+    Private Sub btnAccionAgregarProducto_Click(sender As Object, e As EventArgs) Handles btnAccionAgregarProducto.Click
+        AgregarProducto(tbIdProductoAgregar.Text, tbNombreProductoAgregar.Text, tbPrecioProductoAgregar.Text, tbProveedorProductoAgregar.Text, tbGamaProductoAgregar.Text)
+    End Sub
+
+    Private Sub btnAccionAgregarGasolina_Click(sender As Object, e As EventArgs) Handles btnAccionAgregarGasolina.Click
+        AgregarGasolina(tbIdGasolinaAgregar.Text, tbNombreGasolinaAgregar.Text, tbCantidadGasolinaAgregar.Text, tbPrecioGasolinaAgregar.Text)
+    End Sub
+
+    Private Sub btnAccionAgregarProveedor_Click(sender As Object, e As EventArgs) Handles btnAccionAgregarProveedor.Click
+        AgregarProveedor(tbIdProveedorAgregar.Text, tbNombreProveedorAgregar.Text)
+    End Sub
+
     Private Sub btnAccionModificarEmpleado_Click(sender As Object, e As EventArgs) Handles btnAccionModificarEmpleado.Click
-        modificarEmpleado(tbIdEmpleado.Text, tbNombreEmpleado.Text, tbApellido1Empleado.Text, tbApellido2Empleado.Text, tbTelefonoEmpleado.Text, tbCorreoEmpleado.Text, tbContraseñaEmpleado.Text, tbAdministradorEmpleado.Text, tbCargoEmpleado.Text)
+
     End Sub
     Private Sub btnAccionEliminarEmpleado_Click(sender As Object, e As EventArgs) Handles btnAccionEliminarEmpleado.Click
         EliminarEmpleado(tbIdEmpleadoEliminar.Text)
@@ -726,30 +977,129 @@ Public Class GestionesAdministrador
     End Sub
 
 
-    Public Sub modificarEmpleado(id As Integer, nombre As String, apellido1 As String, apellido2 As String, telefono As String, correo As String, contraseña As String, administrador As Integer, cargo As String)
-
-        Dim cmd As New OleDbCommand("UPDATE Empleados SET Nombre = @nombre, [Apellido 1] = @apellido1, [Apellido 2] = @apellido2, Telefono = @telefono, Correo = @correo, Contraseña = @contraseña, Administrador = @administrador, Cargo = @cargo WHERE id = @id", conn)
-
-        cmd.Parameters.AddWithValue("@id", id)
-        cmd.Parameters.AddWithValue("@nombre", nombre)
-        cmd.Parameters.AddWithValue("@apellido1", apellido1)
-        cmd.Parameters.AddWithValue("@apellido2", apellido2)
-        cmd.Parameters.AddWithValue("@telefono", telefono)
-        cmd.Parameters.AddWithValue("@correo", correo)
-        cmd.Parameters.AddWithValue("@contraseña", contraseña)
-        cmd.Parameters.AddWithValue("@administrador", administrador)
-        cmd.Parameters.AddWithValue("@cargo", cargo)
+    Public Sub AgregarEmpleado(id As Integer, nombre As String, apellido1 As String, apellido2 As String, telefono As String, correo As String, contraseña As String, administrador As Integer, cargo As String)
 
         Try
             conn.Open()
-            cmd.ExecuteNonQuery()
-            MessageBox.Show("Empleado modificado correctamente")
-        Catch ex As OleDbException
-            MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
+
+            Using cmd As New OleDbCommand("Insert into Empleados([id], [Nombre], [Apellido 1], [Apellido 2], [Telefono], [Correo], [Contraseña], [Administrador], [Cargo]) 
+            values (?, ?, ?, ?, ?, ?, ?, ?, ?)", conn)
+                cmd.Parameters.Add(New OleDbParameter("id", id))
+                cmd.Parameters.Add(New OleDbParameter("nombre", nombre))
+                cmd.Parameters.Add(New OleDbParameter("apellido1", apellido1))
+                cmd.Parameters.Add(New OleDbParameter("apellido2", apellido2))
+                cmd.Parameters.Add(New OleDbParameter("telefono", telefono))
+                cmd.Parameters.Add(New OleDbParameter("correo", correo))
+                cmd.Parameters.Add(New OleDbParameter("contraseña", contraseña))
+                cmd.Parameters.Add(New OleDbParameter("administrador", administrador))
+                cmd.Parameters.Add(New OleDbParameter("cargo", cargo))
+                cmd.ExecuteNonQuery()
+                MsgBox("El empleado: " & nombre & " se ha agregado correctamente")
+            End Using
+        Catch ex As Exception
+            MsgBox("la hemos cagado al hacer el insert primo" & ex.Message)
         Finally
             conn.Close()
         End Try
 
+
+
+
+    End Sub
+
+
+    Public Sub AgregarProducto(id As Integer, nombre As String, precio As Decimal, proveedor As Integer, gama As Integer)
+
+        Try
+
+            conn.Open()
+            Using cmd As New OleDbCommand("Insert into Productos([id],[Nombre],[Precio],[Proveedor],[Gama])
+                values(?,?,?,?,?)", conn)
+                cmd.Parameters.Add(New OleDbParameter("id", id))
+                cmd.Parameters.Add(New OleDbParameter("nombre", nombre))
+                cmd.Parameters.Add(New OleDbParameter("precio", precio))
+                cmd.Parameters.Add(New OleDbParameter("proveedor", proveedor))
+                cmd.Parameters.Add(New OleDbParameter("gama", gama))
+                cmd.ExecuteNonQuery()
+                MsgBox("Se agrego el producto " & nombre & " correctamente")
+            End Using
+
+        Catch ex As Exception
+            MsgBox("Hubo un error con la insercion del producto" & ex.Message)
+        Finally
+            conn.Close()
+        End Try
+
+    End Sub
+
+    Private Sub AgregarCliente(id As Integer, nombre As String, apellido1 As String, apellido2 As String, telefono As String, correo As String, fecha As Date, alta As Integer)
+
+        Try
+            conn.Open()
+            Using cmd As New OleDbCommand("Insert into Clientes([id],[Nombre],[Apellido 1],[Apellido 2],[Telefono],[Correo],[FechaAlta],[Alta])
+                values(?, ?, ?, ?, ?, ?, ?, ?)", conn)
+                cmd.Parameters.Add(New OleDbParameter("id", id))
+                cmd.Parameters.Add(New OleDbParameter("nombre", nombre))
+                cmd.Parameters.Add(New OleDbParameter("apellido1", apellido1))
+                cmd.Parameters.Add(New OleDbParameter("apellido2", apellido2))
+                cmd.Parameters.Add(New OleDbParameter("telefono", telefono))
+                cmd.Parameters.Add(New OleDbParameter("correo", correo))
+                cmd.Parameters.Add(New OleDbParameter("fechaAlta", fecha))
+                cmd.Parameters.Add(New OleDbParameter("alta", alta))
+                cmd.ExecuteNonQuery()
+                MsgBox("Se agrego el cliente: " & nombre)
+            End Using
+        Catch ex As Exception
+            MsgBox("Hubo un error a la hora de agregar el cliente: " & ex.Message)
+        Finally
+            conn.Close()
+        End Try
+
+    End Sub
+
+    Private Sub AgregarGasolina(id As Integer, nombre As String, cantidad As Decimal, precio As Decimal)
+
+        Try
+
+            conn.Open()
+
+            Using cmd As New OleDbCommand("Insert into Gasolinas([id],[Nombre],[Cantidad],[Precio])
+                Values(?, ?, ?, ?)", conn)
+
+                cmd.Parameters.Add(New OleDbParameter("id", id))
+                cmd.Parameters.Add(New OleDbParameter("nombre", nombre))
+                cmd.Parameters.Add(New OleDbParameter("cantidad", cantidad))
+                cmd.Parameters.Add(New OleDbParameter("precio", precio))
+                cmd.ExecuteNonQuery()
+                MsgBox("Se agrego correctamente la gasolina: " & nombre)
+            End Using
+        Catch ex As Exception
+            MsgBox("Hubo un error con la inserccion de la gasolina: " & ex.Message)
+        Finally
+            conn.Close()
+        End Try
+
+
+    End Sub
+
+    Private Sub AgregarProveedor(id As Integer, nombre As String)
+
+        Try
+
+            conn.Open()
+
+            Using cmd As New OleDbCommand("Insert into Proveedores([id], [Nombre]) Values(?, ?)", conn)
+
+                cmd.Parameters.Add(New OleDbParameter("id", id))
+                cmd.Parameters.Add(New OleDbParameter("nombre", nombre))
+                cmd.ExecuteNonQuery()
+                MsgBox("Se agrego el proveedor: " & nombre)
+            End Using
+        Catch ex As Exception
+            MsgBox("Hubo un error en la agregacion del proveedor: " & ex.Message)
+        Finally
+            conn.Close()
+        End Try
 
     End Sub
 
@@ -816,14 +1166,19 @@ Public Class GestionesAdministrador
 
 
     Public Sub EliminarProveedor(id As Integer)
-        Dim cmd As New OleDbCommand("DELETE FROM Proveedores WHERE id = @id", conn)
+        Dim cmd As New OleDbCommand("DELETE FROM Productos Where gama = @id", conn)
+        Dim cmd2 As New OleDbCommand("DELETE FROM Proveedores WHERE id = @id", conn)
         Try
             conn.Open()
+
             cmd.Parameters.AddWithValue("@id", id)
             cmd.ExecuteNonQuery()
+
+            cmd2.Parameters.AddWithValue("@id", id)
+            cmd2.ExecuteNonQuery()
             MessageBox.Show("Proveedor eliminado correctamente")
         Catch ex As OleDbException
-            MessageBox.Show("Error connecting to the database. Please check your database connection settings.")
+            MessageBox.Show("Error con la eliminacion del proveedor: " & ex.Message)
         Finally
             conn.Close()
         End Try
@@ -881,6 +1236,4 @@ Public Class GestionesAdministrador
         panelOpcionesCrudGasolina.Visible = False
         panelOpcionesCrudProveedores.Visible = True
     End Sub
-
-
 End Class
