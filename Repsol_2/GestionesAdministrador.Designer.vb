@@ -78,6 +78,34 @@ Partial Class GestionesAdministrador
         Dim Label26 As System.Windows.Forms.Label
         Dim Label27 As System.Windows.Forms.Label
         Dim Label28 As System.Windows.Forms.Label
+        Dim Label29 As System.Windows.Forms.Label
+        Dim Label30 As System.Windows.Forms.Label
+        Dim Label31 As System.Windows.Forms.Label
+        Dim Label32 As System.Windows.Forms.Label
+        Dim Label33 As System.Windows.Forms.Label
+        Dim Label34 As System.Windows.Forms.Label
+        Dim Label35 As System.Windows.Forms.Label
+        Dim Label36 As System.Windows.Forms.Label
+        Dim Label37 As System.Windows.Forms.Label
+        Dim Label38 As System.Windows.Forms.Label
+        Dim Label39 As System.Windows.Forms.Label
+        Dim Label40 As System.Windows.Forms.Label
+        Dim Label41 As System.Windows.Forms.Label
+        Dim Label42 As System.Windows.Forms.Label
+        Dim Label43 As System.Windows.Forms.Label
+        Dim Label44 As System.Windows.Forms.Label
+        Dim Label45 As System.Windows.Forms.Label
+        Dim Label46 As System.Windows.Forms.Label
+        Dim Label47 As System.Windows.Forms.Label
+        Dim Label48 As System.Windows.Forms.Label
+        Dim Label49 As System.Windows.Forms.Label
+        Dim Label50 As System.Windows.Forms.Label
+        Dim Label51 As System.Windows.Forms.Label
+        Dim Label52 As System.Windows.Forms.Label
+        Dim Label53 As System.Windows.Forms.Label
+        Dim Label54 As System.Windows.Forms.Label
+        Dim Label55 As System.Windows.Forms.Label
+        Dim Label56 As System.Windows.Forms.Label
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.btnGestionUsuarios = New System.Windows.Forms.Button()
         Me.btnGestionClientes = New System.Windows.Forms.Button()
@@ -130,7 +158,7 @@ Partial Class GestionesAdministrador
         Me.tbCargoEmpleado = New System.Windows.Forms.TextBox()
         Me.btnAccionBuscarEmpleado = New System.Windows.Forms.Button()
         Me.panelBuscarEmpleado = New System.Windows.Forms.Panel()
-        Me.btnAccionModificarEmpleado = New System.Windows.Forms.Button()
+        Me.btnDesaparecidoEnCombate = New System.Windows.Forms.Button()
         Me.panelBuscarCliente = New System.Windows.Forms.Panel()
         Me.btnAccionBuscarCliente = New System.Windows.Forms.Button()
         Me.tbIdCliente = New System.Windows.Forms.TextBox()
@@ -216,6 +244,44 @@ Partial Class GestionesAdministrador
         Me.btnAccionAgregarProveedor = New System.Windows.Forms.Button()
         Me.tbIdProveedorAgregar = New System.Windows.Forms.TextBox()
         Me.tbNombreProveedorAgregar = New System.Windows.Forms.TextBox()
+        Me.panelModificarEmpleado = New System.Windows.Forms.Panel()
+        Me.btnAccionModificarEmpleado = New System.Windows.Forms.Button()
+        Me.tbIdEmpleadoModificar = New System.Windows.Forms.TextBox()
+        Me.tbNombreEmpleadoModificar = New System.Windows.Forms.TextBox()
+        Me.tbApellido1EmpleadoModificar = New System.Windows.Forms.TextBox()
+        Me.tbApellido2EmpleadoModificar = New System.Windows.Forms.TextBox()
+        Me.tbTelefonoEmpleadoModificar = New System.Windows.Forms.TextBox()
+        Me.tbCorreoEmpleadoModificar = New System.Windows.Forms.TextBox()
+        Me.tbContraseñaEmpleadoModificar = New System.Windows.Forms.TextBox()
+        Me.tbAdministradorEmpleadoModificar = New System.Windows.Forms.TextBox()
+        Me.tbCargoEmpleadoModificar = New System.Windows.Forms.TextBox()
+        Me.panelModificarCliente = New System.Windows.Forms.Panel()
+        Me.btnAccionModificarCliente = New System.Windows.Forms.Button()
+        Me.tbIdClienteModificar = New System.Windows.Forms.TextBox()
+        Me.tbNombreClienteModificar = New System.Windows.Forms.TextBox()
+        Me.tbApellido1ClienteModificar = New System.Windows.Forms.TextBox()
+        Me.tbApellido2ClienteModificar = New System.Windows.Forms.TextBox()
+        Me.tbTelefonoClienteModificar = New System.Windows.Forms.TextBox()
+        Me.tbCorreoClienteModificar = New System.Windows.Forms.TextBox()
+        Me.dtmFechaAltaClienteModificar = New System.Windows.Forms.DateTimePicker()
+        Me.tbAltaClienteModificar = New System.Windows.Forms.TextBox()
+        Me.panelModificarProducto = New System.Windows.Forms.Panel()
+        Me.btnAccionModificarProducto = New System.Windows.Forms.Button()
+        Me.tbIdProductoModificar = New System.Windows.Forms.TextBox()
+        Me.tbNombreProductoModificar = New System.Windows.Forms.TextBox()
+        Me.tbPrecioProductoModificar = New System.Windows.Forms.TextBox()
+        Me.tbProveedorProductoModificar = New System.Windows.Forms.TextBox()
+        Me.tbGamaProductoModificar = New System.Windows.Forms.TextBox()
+        Me.panelModificarGasolina = New System.Windows.Forms.Panel()
+        Me.btnAccionModificarGasolina = New System.Windows.Forms.Button()
+        Me.tbIdGasolinaModificar = New System.Windows.Forms.TextBox()
+        Me.tbNombreGasolinaModificar = New System.Windows.Forms.TextBox()
+        Me.tbCantidadGasolinaModificar = New System.Windows.Forms.TextBox()
+        Me.tbPrecioGasolinaModificar = New System.Windows.Forms.TextBox()
+        Me.panelModificarProveedores = New System.Windows.Forms.Panel()
+        Me.btnAccionModificarProveedor = New System.Windows.Forms.Button()
+        Me.tbIdModificarProveedor = New System.Windows.Forms.TextBox()
+        Me.tbNombreProveedorModificar = New System.Windows.Forms.TextBox()
         IdLabel = New System.Windows.Forms.Label()
         NombreLabel = New System.Windows.Forms.Label()
         Apellido_1Label = New System.Windows.Forms.Label()
@@ -272,6 +338,34 @@ Partial Class GestionesAdministrador
         Label26 = New System.Windows.Forms.Label()
         Label27 = New System.Windows.Forms.Label()
         Label28 = New System.Windows.Forms.Label()
+        Label29 = New System.Windows.Forms.Label()
+        Label30 = New System.Windows.Forms.Label()
+        Label31 = New System.Windows.Forms.Label()
+        Label32 = New System.Windows.Forms.Label()
+        Label33 = New System.Windows.Forms.Label()
+        Label34 = New System.Windows.Forms.Label()
+        Label35 = New System.Windows.Forms.Label()
+        Label36 = New System.Windows.Forms.Label()
+        Label37 = New System.Windows.Forms.Label()
+        Label38 = New System.Windows.Forms.Label()
+        Label39 = New System.Windows.Forms.Label()
+        Label40 = New System.Windows.Forms.Label()
+        Label41 = New System.Windows.Forms.Label()
+        Label42 = New System.Windows.Forms.Label()
+        Label43 = New System.Windows.Forms.Label()
+        Label44 = New System.Windows.Forms.Label()
+        Label45 = New System.Windows.Forms.Label()
+        Label46 = New System.Windows.Forms.Label()
+        Label47 = New System.Windows.Forms.Label()
+        Label48 = New System.Windows.Forms.Label()
+        Label49 = New System.Windows.Forms.Label()
+        Label50 = New System.Windows.Forms.Label()
+        Label51 = New System.Windows.Forms.Label()
+        Label52 = New System.Windows.Forms.Label()
+        Label53 = New System.Windows.Forms.Label()
+        Label54 = New System.Windows.Forms.Label()
+        Label55 = New System.Windows.Forms.Label()
+        Label56 = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.panelOpcionesCrudUsuario.SuspendLayout()
         Me.panelOpcionesCrudClientes.SuspendLayout()
@@ -298,6 +392,11 @@ Partial Class GestionesAdministrador
         Me.panelAgregarProducto.SuspendLayout()
         Me.panelAgregarGasolina.SuspendLayout()
         Me.panelAgregarProveedor.SuspendLayout()
+        Me.panelModificarEmpleado.SuspendLayout()
+        Me.panelModificarCliente.SuspendLayout()
+        Me.panelModificarProducto.SuspendLayout()
+        Me.panelModificarGasolina.SuspendLayout()
+        Me.panelModificarProveedores.SuspendLayout()
         Me.SuspendLayout()
         '
         'IdLabel
@@ -786,6 +885,105 @@ Partial Class GestionesAdministrador
         Label26.TabIndex = 6
         Label26.Text = "Precio:"
         '
+        'Label27
+        '
+        Label27.AutoSize = True
+        Label27.Location = New System.Drawing.Point(2, 6)
+        Label27.Name = "Label27"
+        Label27.Size = New System.Drawing.Size(19, 13)
+        Label27.TabIndex = 0
+        Label27.Text = "Id:"
+        '
+        'Label28
+        '
+        Label28.AutoSize = True
+        Label28.Location = New System.Drawing.Point(2, 32)
+        Label28.Name = "Label28"
+        Label28.Size = New System.Drawing.Size(47, 13)
+        Label28.TabIndex = 2
+        Label28.Text = "Nombre:"
+        '
+        'Label29
+        '
+        Label29.AutoSize = True
+        Label29.Location = New System.Drawing.Point(12, 31)
+        Label29.Name = "Label29"
+        Label29.Size = New System.Drawing.Size(19, 13)
+        Label29.TabIndex = 0
+        Label29.Text = "Id:"
+        '
+        'Label30
+        '
+        Label30.AutoSize = True
+        Label30.Location = New System.Drawing.Point(12, 57)
+        Label30.Name = "Label30"
+        Label30.Size = New System.Drawing.Size(47, 13)
+        Label30.TabIndex = 2
+        Label30.Text = "Nombre:"
+        '
+        'Label31
+        '
+        Label31.AutoSize = True
+        Label31.Location = New System.Drawing.Point(12, 83)
+        Label31.Name = "Label31"
+        Label31.Size = New System.Drawing.Size(56, 13)
+        Label31.TabIndex = 4
+        Label31.Text = "Apellido 1:"
+        '
+        'Label32
+        '
+        Label32.AutoSize = True
+        Label32.Location = New System.Drawing.Point(12, 109)
+        Label32.Name = "Label32"
+        Label32.Size = New System.Drawing.Size(56, 13)
+        Label32.TabIndex = 6
+        Label32.Text = "Apellido 2:"
+        '
+        'Label33
+        '
+        Label33.AutoSize = True
+        Label33.Location = New System.Drawing.Point(12, 135)
+        Label33.Name = "Label33"
+        Label33.Size = New System.Drawing.Size(52, 13)
+        Label33.TabIndex = 8
+        Label33.Text = "Telefono:"
+        '
+        'Label34
+        '
+        Label34.AutoSize = True
+        Label34.Location = New System.Drawing.Point(12, 161)
+        Label34.Name = "Label34"
+        Label34.Size = New System.Drawing.Size(41, 13)
+        Label34.TabIndex = 10
+        Label34.Text = "Correo:"
+        '
+        'Label35
+        '
+        Label35.AutoSize = True
+        Label35.Location = New System.Drawing.Point(12, 187)
+        Label35.Name = "Label35"
+        Label35.Size = New System.Drawing.Size(64, 13)
+        Label35.TabIndex = 12
+        Label35.Text = "Contraseña:"
+        '
+        'Label36
+        '
+        Label36.AutoSize = True
+        Label36.Location = New System.Drawing.Point(12, 213)
+        Label36.Name = "Label36"
+        Label36.Size = New System.Drawing.Size(73, 13)
+        Label36.TabIndex = 14
+        Label36.Text = "Administrador:"
+        '
+        'Label37
+        '
+        Label37.AutoSize = True
+        Label37.Location = New System.Drawing.Point(12, 239)
+        Label37.Name = "Label37"
+        Label37.Size = New System.Drawing.Size(38, 13)
+        Label37.TabIndex = 16
+        Label37.Text = "Cargo:"
+        '
         'FlowLayoutPanel1
         '
         Me.FlowLayoutPanel1.Controls.Add(Me.btnGestionUsuarios)
@@ -1252,7 +1450,7 @@ Partial Class GestionesAdministrador
         '
         'panelBuscarEmpleado
         '
-        Me.panelBuscarEmpleado.Controls.Add(Me.btnAccionModificarEmpleado)
+        Me.panelBuscarEmpleado.Controls.Add(Me.btnDesaparecidoEnCombate)
         Me.panelBuscarEmpleado.Controls.Add(Me.btnAccionBuscarEmpleado)
         Me.panelBuscarEmpleado.Controls.Add(IdLabel)
         Me.panelBuscarEmpleado.Controls.Add(Me.tbIdEmpleado)
@@ -1277,14 +1475,14 @@ Partial Class GestionesAdministrador
         Me.panelBuscarEmpleado.Size = New System.Drawing.Size(200, 301)
         Me.panelBuscarEmpleado.TabIndex = 13
         '
-        'btnAccionModificarEmpleado
+        'btnDesaparecidoEnCombate
         '
-        Me.btnAccionModificarEmpleado.Location = New System.Drawing.Point(3, 262)
-        Me.btnAccionModificarEmpleado.Name = "btnAccionModificarEmpleado"
-        Me.btnAccionModificarEmpleado.Size = New System.Drawing.Size(82, 23)
-        Me.btnAccionModificarEmpleado.TabIndex = 19
-        Me.btnAccionModificarEmpleado.Text = "Modificar"
-        Me.btnAccionModificarEmpleado.UseVisualStyleBackColor = True
+        Me.btnDesaparecidoEnCombate.Location = New System.Drawing.Point(3000, 3000)
+        Me.btnDesaparecidoEnCombate.Name = "btnDesaparecidoEnCombate"
+        Me.btnDesaparecidoEnCombate.Size = New System.Drawing.Size(82, 23)
+        Me.btnDesaparecidoEnCombate.TabIndex = 19
+        Me.btnDesaparecidoEnCombate.Text = "Modificar"
+        Me.btnDesaparecidoEnCombate.UseVisualStyleBackColor = True
         '
         'panelBuscarCliente
         '
@@ -2023,30 +2221,12 @@ Partial Class GestionesAdministrador
         Me.btnAccionAgregarProveedor.Text = "Agregar"
         Me.btnAccionAgregarProveedor.UseVisualStyleBackColor = True
         '
-        'Label27
-        '
-        Label27.AutoSize = True
-        Label27.Location = New System.Drawing.Point(2, 6)
-        Label27.Name = "Label27"
-        Label27.Size = New System.Drawing.Size(19, 13)
-        Label27.TabIndex = 0
-        Label27.Text = "Id:"
-        '
         'tbIdProveedorAgregar
         '
         Me.tbIdProveedorAgregar.Location = New System.Drawing.Point(55, 3)
         Me.tbIdProveedorAgregar.Name = "tbIdProveedorAgregar"
         Me.tbIdProveedorAgregar.Size = New System.Drawing.Size(100, 20)
         Me.tbIdProveedorAgregar.TabIndex = 1
-        '
-        'Label28
-        '
-        Label28.AutoSize = True
-        Label28.Location = New System.Drawing.Point(2, 32)
-        Label28.Name = "Label28"
-        Label28.Size = New System.Drawing.Size(47, 13)
-        Label28.TabIndex = 2
-        Label28.Text = "Nombre:"
         '
         'tbNombreProveedorAgregar
         '
@@ -2055,12 +2235,525 @@ Partial Class GestionesAdministrador
         Me.tbNombreProveedorAgregar.Size = New System.Drawing.Size(100, 20)
         Me.tbNombreProveedorAgregar.TabIndex = 3
         '
+        'panelModificarEmpleado
+        '
+        Me.panelModificarEmpleado.Controls.Add(Me.btnAccionModificarEmpleado)
+        Me.panelModificarEmpleado.Controls.Add(Label29)
+        Me.panelModificarEmpleado.Controls.Add(Me.tbIdEmpleadoModificar)
+        Me.panelModificarEmpleado.Controls.Add(Label30)
+        Me.panelModificarEmpleado.Controls.Add(Me.tbNombreEmpleadoModificar)
+        Me.panelModificarEmpleado.Controls.Add(Label31)
+        Me.panelModificarEmpleado.Controls.Add(Me.tbApellido1EmpleadoModificar)
+        Me.panelModificarEmpleado.Controls.Add(Label32)
+        Me.panelModificarEmpleado.Controls.Add(Me.tbApellido2EmpleadoModificar)
+        Me.panelModificarEmpleado.Controls.Add(Label33)
+        Me.panelModificarEmpleado.Controls.Add(Me.tbTelefonoEmpleadoModificar)
+        Me.panelModificarEmpleado.Controls.Add(Label34)
+        Me.panelModificarEmpleado.Controls.Add(Me.tbCorreoEmpleadoModificar)
+        Me.panelModificarEmpleado.Controls.Add(Label35)
+        Me.panelModificarEmpleado.Controls.Add(Me.tbContraseñaEmpleadoModificar)
+        Me.panelModificarEmpleado.Controls.Add(Label36)
+        Me.panelModificarEmpleado.Controls.Add(Me.tbAdministradorEmpleadoModificar)
+        Me.panelModificarEmpleado.Controls.Add(Label37)
+        Me.panelModificarEmpleado.Controls.Add(Me.tbCargoEmpleadoModificar)
+        Me.panelModificarEmpleado.Location = New System.Drawing.Point(3000, 3000)
+        Me.panelModificarEmpleado.Name = "panelModificarEmpleado"
+        Me.panelModificarEmpleado.Size = New System.Drawing.Size(200, 301)
+        Me.panelModificarEmpleado.TabIndex = 21
+        '
+        'btnAccionModificarEmpleado
+        '
+        Me.btnAccionModificarEmpleado.Location = New System.Drawing.Point(91, 262)
+        Me.btnAccionModificarEmpleado.Name = "btnAccionModificarEmpleado"
+        Me.btnAccionModificarEmpleado.Size = New System.Drawing.Size(100, 23)
+        Me.btnAccionModificarEmpleado.TabIndex = 18
+        Me.btnAccionModificarEmpleado.Text = "Modificar"
+        Me.btnAccionModificarEmpleado.UseVisualStyleBackColor = True
+        '
+        'tbIdEmpleadoModificar
+        '
+        Me.tbIdEmpleadoModificar.Location = New System.Drawing.Point(91, 28)
+        Me.tbIdEmpleadoModificar.Name = "tbIdEmpleadoModificar"
+        Me.tbIdEmpleadoModificar.Size = New System.Drawing.Size(100, 20)
+        Me.tbIdEmpleadoModificar.TabIndex = 1
+        '
+        'tbNombreEmpleadoModificar
+        '
+        Me.tbNombreEmpleadoModificar.Location = New System.Drawing.Point(91, 54)
+        Me.tbNombreEmpleadoModificar.Name = "tbNombreEmpleadoModificar"
+        Me.tbNombreEmpleadoModificar.Size = New System.Drawing.Size(100, 20)
+        Me.tbNombreEmpleadoModificar.TabIndex = 3
+        '
+        'tbApellido1EmpleadoModificar
+        '
+        Me.tbApellido1EmpleadoModificar.Location = New System.Drawing.Point(91, 80)
+        Me.tbApellido1EmpleadoModificar.Name = "tbApellido1EmpleadoModificar"
+        Me.tbApellido1EmpleadoModificar.Size = New System.Drawing.Size(100, 20)
+        Me.tbApellido1EmpleadoModificar.TabIndex = 5
+        '
+        'tbApellido2EmpleadoModificar
+        '
+        Me.tbApellido2EmpleadoModificar.Location = New System.Drawing.Point(91, 106)
+        Me.tbApellido2EmpleadoModificar.Name = "tbApellido2EmpleadoModificar"
+        Me.tbApellido2EmpleadoModificar.Size = New System.Drawing.Size(100, 20)
+        Me.tbApellido2EmpleadoModificar.TabIndex = 7
+        '
+        'tbTelefonoEmpleadoModificar
+        '
+        Me.tbTelefonoEmpleadoModificar.Location = New System.Drawing.Point(91, 132)
+        Me.tbTelefonoEmpleadoModificar.Name = "tbTelefonoEmpleadoModificar"
+        Me.tbTelefonoEmpleadoModificar.Size = New System.Drawing.Size(100, 20)
+        Me.tbTelefonoEmpleadoModificar.TabIndex = 9
+        '
+        'tbCorreoEmpleadoModificar
+        '
+        Me.tbCorreoEmpleadoModificar.Location = New System.Drawing.Point(91, 158)
+        Me.tbCorreoEmpleadoModificar.Name = "tbCorreoEmpleadoModificar"
+        Me.tbCorreoEmpleadoModificar.Size = New System.Drawing.Size(100, 20)
+        Me.tbCorreoEmpleadoModificar.TabIndex = 11
+        '
+        'tbContraseñaEmpleadoModificar
+        '
+        Me.tbContraseñaEmpleadoModificar.Location = New System.Drawing.Point(91, 184)
+        Me.tbContraseñaEmpleadoModificar.Name = "tbContraseñaEmpleadoModificar"
+        Me.tbContraseñaEmpleadoModificar.Size = New System.Drawing.Size(100, 20)
+        Me.tbContraseñaEmpleadoModificar.TabIndex = 13
+        '
+        'tbAdministradorEmpleadoModificar
+        '
+        Me.tbAdministradorEmpleadoModificar.Location = New System.Drawing.Point(91, 210)
+        Me.tbAdministradorEmpleadoModificar.Name = "tbAdministradorEmpleadoModificar"
+        Me.tbAdministradorEmpleadoModificar.Size = New System.Drawing.Size(100, 20)
+        Me.tbAdministradorEmpleadoModificar.TabIndex = 15
+        '
+        'tbCargoEmpleadoModificar
+        '
+        Me.tbCargoEmpleadoModificar.Location = New System.Drawing.Point(91, 236)
+        Me.tbCargoEmpleadoModificar.Name = "tbCargoEmpleadoModificar"
+        Me.tbCargoEmpleadoModificar.Size = New System.Drawing.Size(100, 20)
+        Me.tbCargoEmpleadoModificar.TabIndex = 17
+        '
+        'panelModificarCliente
+        '
+        Me.panelModificarCliente.Controls.Add(Me.btnAccionModificarCliente)
+        Me.panelModificarCliente.Controls.Add(Label38)
+        Me.panelModificarCliente.Controls.Add(Me.tbIdClienteModificar)
+        Me.panelModificarCliente.Controls.Add(Label39)
+        Me.panelModificarCliente.Controls.Add(Me.tbNombreClienteModificar)
+        Me.panelModificarCliente.Controls.Add(Label40)
+        Me.panelModificarCliente.Controls.Add(Me.tbApellido1ClienteModificar)
+        Me.panelModificarCliente.Controls.Add(Label41)
+        Me.panelModificarCliente.Controls.Add(Me.tbApellido2ClienteModificar)
+        Me.panelModificarCliente.Controls.Add(Label42)
+        Me.panelModificarCliente.Controls.Add(Me.tbTelefonoClienteModificar)
+        Me.panelModificarCliente.Controls.Add(Label43)
+        Me.panelModificarCliente.Controls.Add(Me.tbCorreoClienteModificar)
+        Me.panelModificarCliente.Controls.Add(Label44)
+        Me.panelModificarCliente.Controls.Add(Me.dtmFechaAltaClienteModificar)
+        Me.panelModificarCliente.Controls.Add(Label45)
+        Me.panelModificarCliente.Controls.Add(Me.tbAltaClienteModificar)
+        Me.panelModificarCliente.Location = New System.Drawing.Point(3000, 3000)
+        Me.panelModificarCliente.Name = "panelModificarCliente"
+        Me.panelModificarCliente.Size = New System.Drawing.Size(292, 301)
+        Me.panelModificarCliente.TabIndex = 27
+        '
+        'btnAccionModificarCliente
+        '
+        Me.btnAccionModificarCliente.Location = New System.Drawing.Point(108, 253)
+        Me.btnAccionModificarCliente.Name = "btnAccionModificarCliente"
+        Me.btnAccionModificarCliente.Size = New System.Drawing.Size(100, 23)
+        Me.btnAccionModificarCliente.TabIndex = 19
+        Me.btnAccionModificarCliente.Text = "Agregar"
+        Me.btnAccionModificarCliente.UseVisualStyleBackColor = True
+        '
+        'Label38
+        '
+        Label38.AutoSize = True
+        Label38.Location = New System.Drawing.Point(5, 34)
+        Label38.Name = "Label38"
+        Label38.Size = New System.Drawing.Size(19, 13)
+        Label38.TabIndex = 0
+        Label38.Text = "Id:"
+        '
+        'tbIdClienteModificar
+        '
+        Me.tbIdClienteModificar.Location = New System.Drawing.Point(72, 31)
+        Me.tbIdClienteModificar.Name = "tbIdClienteModificar"
+        Me.tbIdClienteModificar.Size = New System.Drawing.Size(200, 20)
+        Me.tbIdClienteModificar.TabIndex = 1
+        '
+        'Label39
+        '
+        Label39.AutoSize = True
+        Label39.Location = New System.Drawing.Point(5, 60)
+        Label39.Name = "Label39"
+        Label39.Size = New System.Drawing.Size(47, 13)
+        Label39.TabIndex = 2
+        Label39.Text = "Nombre:"
+        '
+        'tbNombreClienteModificar
+        '
+        Me.tbNombreClienteModificar.Location = New System.Drawing.Point(72, 57)
+        Me.tbNombreClienteModificar.Name = "tbNombreClienteModificar"
+        Me.tbNombreClienteModificar.Size = New System.Drawing.Size(200, 20)
+        Me.tbNombreClienteModificar.TabIndex = 3
+        '
+        'Label40
+        '
+        Label40.AutoSize = True
+        Label40.Location = New System.Drawing.Point(5, 86)
+        Label40.Name = "Label40"
+        Label40.Size = New System.Drawing.Size(56, 13)
+        Label40.TabIndex = 4
+        Label40.Text = "Apellido 1:"
+        '
+        'tbApellido1ClienteModificar
+        '
+        Me.tbApellido1ClienteModificar.Location = New System.Drawing.Point(72, 83)
+        Me.tbApellido1ClienteModificar.Name = "tbApellido1ClienteModificar"
+        Me.tbApellido1ClienteModificar.Size = New System.Drawing.Size(200, 20)
+        Me.tbApellido1ClienteModificar.TabIndex = 5
+        '
+        'Label41
+        '
+        Label41.AutoSize = True
+        Label41.Location = New System.Drawing.Point(5, 112)
+        Label41.Name = "Label41"
+        Label41.Size = New System.Drawing.Size(56, 13)
+        Label41.TabIndex = 6
+        Label41.Text = "Apellido 2:"
+        '
+        'tbApellido2ClienteModificar
+        '
+        Me.tbApellido2ClienteModificar.Location = New System.Drawing.Point(72, 109)
+        Me.tbApellido2ClienteModificar.Name = "tbApellido2ClienteModificar"
+        Me.tbApellido2ClienteModificar.Size = New System.Drawing.Size(200, 20)
+        Me.tbApellido2ClienteModificar.TabIndex = 7
+        '
+        'Label42
+        '
+        Label42.AutoSize = True
+        Label42.Location = New System.Drawing.Point(5, 138)
+        Label42.Name = "Label42"
+        Label42.Size = New System.Drawing.Size(52, 13)
+        Label42.TabIndex = 8
+        Label42.Text = "Telefono:"
+        '
+        'tbTelefonoClienteModificar
+        '
+        Me.tbTelefonoClienteModificar.Location = New System.Drawing.Point(72, 135)
+        Me.tbTelefonoClienteModificar.Name = "tbTelefonoClienteModificar"
+        Me.tbTelefonoClienteModificar.Size = New System.Drawing.Size(200, 20)
+        Me.tbTelefonoClienteModificar.TabIndex = 9
+        '
+        'Label43
+        '
+        Label43.AutoSize = True
+        Label43.Location = New System.Drawing.Point(5, 164)
+        Label43.Name = "Label43"
+        Label43.Size = New System.Drawing.Size(41, 13)
+        Label43.TabIndex = 10
+        Label43.Text = "Correo:"
+        '
+        'tbCorreoClienteModificar
+        '
+        Me.tbCorreoClienteModificar.Location = New System.Drawing.Point(72, 161)
+        Me.tbCorreoClienteModificar.Name = "tbCorreoClienteModificar"
+        Me.tbCorreoClienteModificar.Size = New System.Drawing.Size(200, 20)
+        Me.tbCorreoClienteModificar.TabIndex = 11
+        '
+        'Label44
+        '
+        Label44.AutoSize = True
+        Label44.Location = New System.Drawing.Point(5, 191)
+        Label44.Name = "Label44"
+        Label44.Size = New System.Drawing.Size(61, 13)
+        Label44.TabIndex = 12
+        Label44.Text = "Fecha Alta:"
+        '
+        'dtmFechaAltaClienteModificar
+        '
+        Me.dtmFechaAltaClienteModificar.Location = New System.Drawing.Point(72, 187)
+        Me.dtmFechaAltaClienteModificar.Name = "dtmFechaAltaClienteModificar"
+        Me.dtmFechaAltaClienteModificar.Size = New System.Drawing.Size(200, 20)
+        Me.dtmFechaAltaClienteModificar.TabIndex = 13
+        '
+        'Label45
+        '
+        Label45.AutoSize = True
+        Label45.Location = New System.Drawing.Point(5, 216)
+        Label45.Name = "Label45"
+        Label45.Size = New System.Drawing.Size(28, 13)
+        Label45.TabIndex = 14
+        Label45.Text = "Alta:"
+        '
+        'tbAltaClienteModificar
+        '
+        Me.tbAltaClienteModificar.Location = New System.Drawing.Point(72, 213)
+        Me.tbAltaClienteModificar.Name = "tbAltaClienteModificar"
+        Me.tbAltaClienteModificar.Size = New System.Drawing.Size(200, 20)
+        Me.tbAltaClienteModificar.TabIndex = 15
+        '
+        'panelModificarProducto
+        '
+        Me.panelModificarProducto.Controls.Add(Me.btnAccionModificarProducto)
+        Me.panelModificarProducto.Controls.Add(Label46)
+        Me.panelModificarProducto.Controls.Add(Me.tbIdProductoModificar)
+        Me.panelModificarProducto.Controls.Add(Label47)
+        Me.panelModificarProducto.Controls.Add(Me.tbNombreProductoModificar)
+        Me.panelModificarProducto.Controls.Add(Label48)
+        Me.panelModificarProducto.Controls.Add(Me.tbPrecioProductoModificar)
+        Me.panelModificarProducto.Controls.Add(Label49)
+        Me.panelModificarProducto.Controls.Add(Me.tbProveedorProductoModificar)
+        Me.panelModificarProducto.Controls.Add(Label50)
+        Me.panelModificarProducto.Controls.Add(Me.tbGamaProductoModificar)
+        Me.panelModificarProducto.Location = New System.Drawing.Point(3000, 3000)
+        Me.panelModificarProducto.Name = "panelModificarProducto"
+        Me.panelModificarProducto.Size = New System.Drawing.Size(208, 179)
+        Me.panelModificarProducto.TabIndex = 28
+        '
+        'btnAccionModificarProducto
+        '
+        Me.btnAccionModificarProducto.Location = New System.Drawing.Point(73, 137)
+        Me.btnAccionModificarProducto.Name = "btnAccionModificarProducto"
+        Me.btnAccionModificarProducto.Size = New System.Drawing.Size(100, 23)
+        Me.btnAccionModificarProducto.TabIndex = 19
+        Me.btnAccionModificarProducto.Text = "Modificar"
+        Me.btnAccionModificarProducto.UseVisualStyleBackColor = True
+        '
+        'Label46
+        '
+        Label46.AutoSize = True
+        Label46.Location = New System.Drawing.Point(8, 11)
+        Label46.Name = "Label46"
+        Label46.Size = New System.Drawing.Size(19, 13)
+        Label46.TabIndex = 0
+        Label46.Text = "Id:"
+        '
+        'tbIdProductoModificar
+        '
+        Me.tbIdProductoModificar.Location = New System.Drawing.Point(73, 8)
+        Me.tbIdProductoModificar.Name = "tbIdProductoModificar"
+        Me.tbIdProductoModificar.Size = New System.Drawing.Size(100, 20)
+        Me.tbIdProductoModificar.TabIndex = 1
+        '
+        'Label47
+        '
+        Label47.AutoSize = True
+        Label47.Location = New System.Drawing.Point(8, 37)
+        Label47.Name = "Label47"
+        Label47.Size = New System.Drawing.Size(47, 13)
+        Label47.TabIndex = 2
+        Label47.Text = "Nombre:"
+        '
+        'tbNombreProductoModificar
+        '
+        Me.tbNombreProductoModificar.Location = New System.Drawing.Point(73, 34)
+        Me.tbNombreProductoModificar.Name = "tbNombreProductoModificar"
+        Me.tbNombreProductoModificar.Size = New System.Drawing.Size(100, 20)
+        Me.tbNombreProductoModificar.TabIndex = 3
+        '
+        'Label48
+        '
+        Label48.AutoSize = True
+        Label48.Location = New System.Drawing.Point(8, 63)
+        Label48.Name = "Label48"
+        Label48.Size = New System.Drawing.Size(40, 13)
+        Label48.TabIndex = 4
+        Label48.Text = "Precio:"
+        '
+        'tbPrecioProductoModificar
+        '
+        Me.tbPrecioProductoModificar.Location = New System.Drawing.Point(73, 60)
+        Me.tbPrecioProductoModificar.Name = "tbPrecioProductoModificar"
+        Me.tbPrecioProductoModificar.Size = New System.Drawing.Size(100, 20)
+        Me.tbPrecioProductoModificar.TabIndex = 5
+        '
+        'Label49
+        '
+        Label49.AutoSize = True
+        Label49.Location = New System.Drawing.Point(8, 89)
+        Label49.Name = "Label49"
+        Label49.Size = New System.Drawing.Size(59, 13)
+        Label49.TabIndex = 6
+        Label49.Text = "Proveedor:"
+        '
+        'tbProveedorProductoModificar
+        '
+        Me.tbProveedorProductoModificar.Location = New System.Drawing.Point(73, 86)
+        Me.tbProveedorProductoModificar.Name = "tbProveedorProductoModificar"
+        Me.tbProveedorProductoModificar.Size = New System.Drawing.Size(100, 20)
+        Me.tbProveedorProductoModificar.TabIndex = 7
+        '
+        'Label50
+        '
+        Label50.AutoSize = True
+        Label50.Location = New System.Drawing.Point(8, 115)
+        Label50.Name = "Label50"
+        Label50.Size = New System.Drawing.Size(38, 13)
+        Label50.TabIndex = 8
+        Label50.Text = "Gama:"
+        '
+        'tbGamaProductoModificar
+        '
+        Me.tbGamaProductoModificar.Location = New System.Drawing.Point(73, 112)
+        Me.tbGamaProductoModificar.Name = "tbGamaProductoModificar"
+        Me.tbGamaProductoModificar.Size = New System.Drawing.Size(100, 20)
+        Me.tbGamaProductoModificar.TabIndex = 9
+        '
+        'panelModificarGasolina
+        '
+        Me.panelModificarGasolina.Controls.Add(Me.btnAccionModificarGasolina)
+        Me.panelModificarGasolina.Controls.Add(Label51)
+        Me.panelModificarGasolina.Controls.Add(Me.tbIdGasolinaModificar)
+        Me.panelModificarGasolina.Controls.Add(Label52)
+        Me.panelModificarGasolina.Controls.Add(Me.tbNombreGasolinaModificar)
+        Me.panelModificarGasolina.Controls.Add(Label53)
+        Me.panelModificarGasolina.Controls.Add(Me.tbCantidadGasolinaModificar)
+        Me.panelModificarGasolina.Controls.Add(Label54)
+        Me.panelModificarGasolina.Controls.Add(Me.tbPrecioGasolinaModificar)
+        Me.panelModificarGasolina.Location = New System.Drawing.Point(3000, 3000)
+        Me.panelModificarGasolina.Name = "panelModificarGasolina"
+        Me.panelModificarGasolina.Size = New System.Drawing.Size(174, 160)
+        Me.panelModificarGasolina.TabIndex = 21
+        '
+        'btnAccionModificarGasolina
+        '
+        Me.btnAccionModificarGasolina.Location = New System.Drawing.Point(61, 121)
+        Me.btnAccionModificarGasolina.Name = "btnAccionModificarGasolina"
+        Me.btnAccionModificarGasolina.Size = New System.Drawing.Size(100, 23)
+        Me.btnAccionModificarGasolina.TabIndex = 19
+        Me.btnAccionModificarGasolina.Text = "Modificar"
+        Me.btnAccionModificarGasolina.UseVisualStyleBackColor = True
+        '
+        'Label51
+        '
+        Label51.AutoSize = True
+        Label51.Location = New System.Drawing.Point(3, 20)
+        Label51.Name = "Label51"
+        Label51.Size = New System.Drawing.Size(19, 13)
+        Label51.TabIndex = 0
+        Label51.Text = "Id:"
+        '
+        'tbIdGasolinaModificar
+        '
+        Me.tbIdGasolinaModificar.Location = New System.Drawing.Point(61, 17)
+        Me.tbIdGasolinaModificar.Name = "tbIdGasolinaModificar"
+        Me.tbIdGasolinaModificar.Size = New System.Drawing.Size(100, 20)
+        Me.tbIdGasolinaModificar.TabIndex = 1
+        '
+        'Label52
+        '
+        Label52.AutoSize = True
+        Label52.Location = New System.Drawing.Point(3, 46)
+        Label52.Name = "Label52"
+        Label52.Size = New System.Drawing.Size(47, 13)
+        Label52.TabIndex = 2
+        Label52.Text = "Nombre:"
+        '
+        'tbNombreGasolinaModificar
+        '
+        Me.tbNombreGasolinaModificar.Location = New System.Drawing.Point(61, 43)
+        Me.tbNombreGasolinaModificar.Name = "tbNombreGasolinaModificar"
+        Me.tbNombreGasolinaModificar.Size = New System.Drawing.Size(100, 20)
+        Me.tbNombreGasolinaModificar.TabIndex = 3
+        '
+        'Label53
+        '
+        Label53.AutoSize = True
+        Label53.Location = New System.Drawing.Point(3, 72)
+        Label53.Name = "Label53"
+        Label53.Size = New System.Drawing.Size(52, 13)
+        Label53.TabIndex = 4
+        Label53.Text = "Cantidad:"
+        '
+        'tbCantidadGasolinaModificar
+        '
+        Me.tbCantidadGasolinaModificar.Location = New System.Drawing.Point(61, 69)
+        Me.tbCantidadGasolinaModificar.Name = "tbCantidadGasolinaModificar"
+        Me.tbCantidadGasolinaModificar.Size = New System.Drawing.Size(100, 20)
+        Me.tbCantidadGasolinaModificar.TabIndex = 5
+        '
+        'Label54
+        '
+        Label54.AutoSize = True
+        Label54.Location = New System.Drawing.Point(3, 98)
+        Label54.Name = "Label54"
+        Label54.Size = New System.Drawing.Size(40, 13)
+        Label54.TabIndex = 6
+        Label54.Text = "Precio:"
+        '
+        'tbPrecioGasolinaModificar
+        '
+        Me.tbPrecioGasolinaModificar.Location = New System.Drawing.Point(61, 95)
+        Me.tbPrecioGasolinaModificar.Name = "tbPrecioGasolinaModificar"
+        Me.tbPrecioGasolinaModificar.Size = New System.Drawing.Size(100, 20)
+        Me.tbPrecioGasolinaModificar.TabIndex = 7
+        '
+        'panelModificarProveedores
+        '
+        Me.panelModificarProveedores.Controls.Add(Me.btnAccionModificarProveedor)
+        Me.panelModificarProveedores.Controls.Add(Label55)
+        Me.panelModificarProveedores.Controls.Add(Me.tbIdModificarProveedor)
+        Me.panelModificarProveedores.Controls.Add(Label56)
+        Me.panelModificarProveedores.Controls.Add(Me.tbNombreProveedorModificar)
+        Me.panelModificarProveedores.Location = New System.Drawing.Point(3000, 3000)
+        Me.panelModificarProveedores.Name = "panelModificarProveedores"
+        Me.panelModificarProveedores.Size = New System.Drawing.Size(172, 91)
+        Me.panelModificarProveedores.TabIndex = 21
+        '
+        'btnAccionModificarProveedor
+        '
+        Me.btnAccionModificarProveedor.Location = New System.Drawing.Point(55, 55)
+        Me.btnAccionModificarProveedor.Name = "btnAccionModificarProveedor"
+        Me.btnAccionModificarProveedor.Size = New System.Drawing.Size(100, 23)
+        Me.btnAccionModificarProveedor.TabIndex = 19
+        Me.btnAccionModificarProveedor.Text = "Agregar"
+        Me.btnAccionModificarProveedor.UseVisualStyleBackColor = True
+        '
+        'Label55
+        '
+        Label55.AutoSize = True
+        Label55.Location = New System.Drawing.Point(2, 6)
+        Label55.Name = "Label55"
+        Label55.Size = New System.Drawing.Size(19, 13)
+        Label55.TabIndex = 0
+        Label55.Text = "Id:"
+        '
+        'tbIdModificarProveedor
+        '
+        Me.tbIdModificarProveedor.Location = New System.Drawing.Point(55, 3)
+        Me.tbIdModificarProveedor.Name = "tbIdModificarProveedor"
+        Me.tbIdModificarProveedor.Size = New System.Drawing.Size(100, 20)
+        Me.tbIdModificarProveedor.TabIndex = 1
+        '
+        'Label56
+        '
+        Label56.AutoSize = True
+        Label56.Location = New System.Drawing.Point(2, 32)
+        Label56.Name = "Label56"
+        Label56.Size = New System.Drawing.Size(47, 13)
+        Label56.TabIndex = 2
+        Label56.Text = "Nombre:"
+        '
+        'tbNombreProveedorModificar
+        '
+        Me.tbNombreProveedorModificar.Location = New System.Drawing.Point(55, 29)
+        Me.tbNombreProveedorModificar.Name = "tbNombreProveedorModificar"
+        Me.tbNombreProveedorModificar.Size = New System.Drawing.Size(100, 20)
+        Me.tbNombreProveedorModificar.TabIndex = 3
+        '
         'GestionesAdministrador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(1924, 1061)
+        Me.Controls.Add(Me.panelModificarProveedores)
+        Me.Controls.Add(Me.panelModificarGasolina)
+        Me.Controls.Add(Me.panelModificarProducto)
+        Me.Controls.Add(Me.panelModificarCliente)
+        Me.Controls.Add(Me.panelModificarEmpleado)
         Me.Controls.Add(Me.panelAgregarProveedor)
         Me.Controls.Add(Me.panelAgregarGasolina)
         Me.Controls.Add(Me.panelAgregarProducto)
@@ -2130,6 +2823,16 @@ Partial Class GestionesAdministrador
         Me.panelAgregarGasolina.PerformLayout()
         Me.panelAgregarProveedor.ResumeLayout(False)
         Me.panelAgregarProveedor.PerformLayout()
+        Me.panelModificarEmpleado.ResumeLayout(False)
+        Me.panelModificarEmpleado.PerformLayout()
+        Me.panelModificarCliente.ResumeLayout(False)
+        Me.panelModificarCliente.PerformLayout()
+        Me.panelModificarProducto.ResumeLayout(False)
+        Me.panelModificarProducto.PerformLayout()
+        Me.panelModificarGasolina.ResumeLayout(False)
+        Me.panelModificarGasolina.PerformLayout()
+        Me.panelModificarProveedores.ResumeLayout(False)
+        Me.panelModificarProveedores.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2208,7 +2911,7 @@ Partial Class GestionesAdministrador
     Friend WithEvents btnAccionBuscarProveedor As Button
     Friend WithEvents tbIdProveedor As TextBox
     Friend WithEvents tbNombreProveedor As TextBox
-    Friend WithEvents btnAccionModificarEmpleado As Button
+    Friend WithEvents btnDesaparecidoEnCombate As Button
     Friend WithEvents panelEliminarEmpleado As Panel
     Friend WithEvents btnAccionEliminarEmpleado As Button
     Friend WithEvents tbIdEmpleadoEliminar As TextBox
@@ -2272,4 +2975,42 @@ Partial Class GestionesAdministrador
     Friend WithEvents btnAccionAgregarProveedor As Button
     Friend WithEvents tbIdProveedorAgregar As TextBox
     Friend WithEvents tbNombreProveedorAgregar As TextBox
+    Friend WithEvents panelModificarEmpleado As Panel
+    Friend WithEvents btnAccionModificarEmpleado As Button
+    Friend WithEvents tbIdEmpleadoModificar As TextBox
+    Friend WithEvents tbNombreEmpleadoModificar As TextBox
+    Friend WithEvents tbApellido1EmpleadoModificar As TextBox
+    Friend WithEvents tbApellido2EmpleadoModificar As TextBox
+    Friend WithEvents tbTelefonoEmpleadoModificar As TextBox
+    Friend WithEvents tbCorreoEmpleadoModificar As TextBox
+    Friend WithEvents tbContraseñaEmpleadoModificar As TextBox
+    Friend WithEvents tbAdministradorEmpleadoModificar As TextBox
+    Friend WithEvents tbCargoEmpleadoModificar As TextBox
+    Friend WithEvents panelModificarCliente As Panel
+    Friend WithEvents btnAccionModificarCliente As Button
+    Friend WithEvents tbIdClienteModificar As TextBox
+    Friend WithEvents tbNombreClienteModificar As TextBox
+    Friend WithEvents tbApellido1ClienteModificar As TextBox
+    Friend WithEvents tbApellido2ClienteModificar As TextBox
+    Friend WithEvents tbTelefonoClienteModificar As TextBox
+    Friend WithEvents tbCorreoClienteModificar As TextBox
+    Friend WithEvents dtmFechaAltaClienteModificar As DateTimePicker
+    Friend WithEvents tbAltaClienteModificar As TextBox
+    Friend WithEvents panelModificarProducto As Panel
+    Friend WithEvents btnAccionModificarProducto As Button
+    Friend WithEvents tbIdProductoModificar As TextBox
+    Friend WithEvents tbNombreProductoModificar As TextBox
+    Friend WithEvents tbPrecioProductoModificar As TextBox
+    Friend WithEvents tbProveedorProductoModificar As TextBox
+    Friend WithEvents tbGamaProductoModificar As TextBox
+    Friend WithEvents panelModificarGasolina As Panel
+    Friend WithEvents btnAccionModificarGasolina As Button
+    Friend WithEvents tbIdGasolinaModificar As TextBox
+    Friend WithEvents tbNombreGasolinaModificar As TextBox
+    Friend WithEvents tbCantidadGasolinaModificar As TextBox
+    Friend WithEvents tbPrecioGasolinaModificar As TextBox
+    Friend WithEvents panelModificarProveedores As Panel
+    Friend WithEvents btnAccionModificarProveedor As Button
+    Friend WithEvents tbIdModificarProveedor As TextBox
+    Friend WithEvents tbNombreProveedorModificar As TextBox
 End Class
