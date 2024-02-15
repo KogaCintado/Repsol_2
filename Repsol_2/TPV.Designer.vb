@@ -216,19 +216,19 @@ Partial Class TPV
         'VolverToolStripMenuItem1
         '
         Me.VolverToolStripMenuItem1.Name = "VolverToolStripMenuItem1"
-        Me.VolverToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.VolverToolStripMenuItem1.Size = New System.Drawing.Size(173, 22)
         Me.VolverToolStripMenuItem1.Text = "Volver"
         '
         'CerrarSesiónToolStripMenuItem
         '
         Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
-        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
         Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar sesión"
         '
         'CerrarAplicaciónToolStripMenuItem
         '
         Me.CerrarAplicaciónToolStripMenuItem.Name = "CerrarAplicaciónToolStripMenuItem"
-        Me.CerrarAplicaciónToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CerrarAplicaciónToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
         Me.CerrarAplicaciónToolStripMenuItem.Text = "Cerrar el programa"
         '
         'PictureBox1
