@@ -878,22 +878,26 @@ Public Class GestionesAdministrador
         'En este boton lo que hacemos es buscar un empleado por su id
         'Si el id no existe, mostramos un mensaje de error
         'Si el id existe, mostramos los datos del empleado
-        Dim idEmpleado As Integer
-        idEmpleado = tbIdEmpleado.Text
-        Dim empleado As DataRow
-        empleado = BuscarEmpleado(idEmpleado)
-        If empleado Is Nothing Then
-            MessageBox.Show("No existe un empleado con ese id")
-        Else
-            tbNombreEmpleado.Text = empleado("Nombre")
-            tbApellido1Empleado.Text = empleado("Apellido 1")
-            tbApellido2Empleado.Text = empleado("Apellido 2")
-            tbTelefonoEmpleado.Text = empleado("Telefono")
-            tbCorreoEmpleado.Text = empleado("Correo")
-            tbContraseñaEmpleado.Text = empleado("Contraseña")
-            tbCargoEmpleado.Text = empleado("Cargo")
-            tbAdministradorEmpleado.Text = empleado("Administrador")
-        End If
+        Try
+            Dim idEmpleado As Integer
+            idEmpleado = tbIdEmpleado.Text
+            Dim empleado As DataRow
+            empleado = BuscarEmpleado(idEmpleado)
+            If empleado Is Nothing Then
+                MessageBox.Show("No existe un empleado con ese id")
+            Else
+                tbNombreEmpleado.Text = empleado("Nombre")
+                tbApellido1Empleado.Text = empleado("Apellido 1")
+                tbApellido2Empleado.Text = empleado("Apellido 2")
+                tbTelefonoEmpleado.Text = empleado("Telefono")
+                tbCorreoEmpleado.Text = empleado("Correo")
+                tbContraseñaEmpleado.Text = empleado("Contraseña")
+                tbCargoEmpleado.Text = empleado("Cargo")
+                tbAdministradorEmpleado.Text = empleado("Administrador")
+            End If
+        Catch ex As Exception
+            MsgBox("Hubo un error con la busqueda del empleado, trate de introducir bien los datos : " & ex.Message)
+        End Try
     End Sub
 
     Private Sub btnAccionBuscarCliente_Click(sender As Object, e As EventArgs) Handles btnAccionBuscarCliente.Click
@@ -901,20 +905,24 @@ Public Class GestionesAdministrador
         'En este boton lo que hacemos es buscar un Cliente por su id
         'Si el id no existe, mostramos un mensaje de error
         'Si el id existe, mostramos los datos del Cliente
-        Dim idCliente As Integer
-        idCliente = tbIdCliente.Text
-        Dim cliente As DataRow
-        cliente = BuscarCliente(idCliente)
-        If cliente Is Nothing Then
-            MessageBox.Show("No existe un cliente con ese id")
-        Else
-            tbNombreCliente.Text = cliente("Nombre")
-            tbApellido1Cliente.Text = cliente("Apellido 1")
-            tbApellido2Cliente.Text = cliente("Apellido 2")
-            tbTelefonoCliente.Text = cliente("Telefono")
-            tbCorreoCliente.Text = cliente("Correo")
-            FechaAltaClienteTimePicker.Value = cliente("FechaAlta")
-        End If
+        Try
+            Dim idCliente As Integer
+            idCliente = tbIdCliente.Text
+            Dim cliente As DataRow
+            cliente = BuscarCliente(idCliente)
+            If cliente Is Nothing Then
+                MessageBox.Show("No existe un cliente con ese id")
+            Else
+                tbNombreCliente.Text = cliente("Nombre")
+                tbApellido1Cliente.Text = cliente("Apellido 1")
+                tbApellido2Cliente.Text = cliente("Apellido 2")
+                tbTelefonoCliente.Text = cliente("Telefono")
+                tbCorreoCliente.Text = cliente("Correo")
+                FechaAltaClienteTimePicker.Value = cliente("FechaAlta")
+            End If
+        Catch ex As Exception
+            MsgBox("Hubo un error con la busqueda del cliente, trate de introducir bien los datos : " & ex.Message)
+        End Try
 
 
     End Sub
@@ -923,18 +931,22 @@ Public Class GestionesAdministrador
         'En este boton lo que hacemos es buscar un Producto por su id
         'Si el id no existe, mostramos un mensaje de error
         'Si el id existe, mostramos los datos del Producto
-        Dim idProducto As Integer
-        idProducto = tbIdProducto.Text
-        Dim producto As DataRow
-        producto = BuscarProducto(idProducto)
-        If producto Is Nothing Then
-            MessageBox.Show("No existe un producto con ese id")
-        Else
-            tbNombreProducto.Text = producto("Nombre")
-            tbPrecioProducto.Text = producto("Precio")
-            tbProveedorProducto.Text = producto("Proveedor")
-            tbGamaProducto.Text = producto("Gama")
-        End If
+        Try
+            Dim idProducto As Integer
+            idProducto = tbIdProducto.Text
+            Dim producto As DataRow
+            producto = BuscarProducto(idProducto)
+            If producto Is Nothing Then
+                MessageBox.Show("No existe un producto con ese id")
+            Else
+                tbNombreProducto.Text = producto("Nombre")
+                tbPrecioProducto.Text = producto("Precio")
+                tbProveedorProducto.Text = producto("Proveedor")
+                tbGamaProducto.Text = producto("Gama")
+            End If
+        Catch ex As Exception
+            MsgBox("Hubo un error con la busqueda del producto, trate de introducir bien los datos : " & ex.Message)
+        End Try
     End Sub
 
 
@@ -944,31 +956,39 @@ Public Class GestionesAdministrador
         'En este boton lo que hacemos es buscar una Gasolina por su id
         'Si el id no existe, mostramos un mensaje de error
         'Si el id existe, mostramos los datos de la Gasolina
-        Dim idGasolina As Integer
-        idGasolina = tbIdGasolina.Text
-        Dim gasolina As DataRow
-        gasolina = BuscarGasolina(idGasolina)
-        If gasolina Is Nothing Then
-            MessageBox.Show("No existe una gasolina con ese id")
-        Else
-            tbNombreGasolina.Text = gasolina("Nombre")
-            tbPrecioGasolina.Text = gasolina("Precio")
-            tbCantidadGasolina.Text = gasolina("Cantidad")
-        End If
+        Try
+            Dim idGasolina As Integer
+            idGasolina = tbIdGasolina.Text
+            Dim gasolina As DataRow
+            gasolina = BuscarGasolina(idGasolina)
+            If gasolina Is Nothing Then
+                MessageBox.Show("No existe una gasolina con ese id")
+            Else
+                tbNombreGasolina.Text = gasolina("Nombre")
+                tbPrecioGasolina.Text = gasolina("Precio")
+                tbCantidadGasolina.Text = gasolina("Cantidad")
+            End If
+        Catch ex As Exception
+            MsgBox("Hubo un error en la busqueda de la gasolina, trate de introducir bien los datos: " & ex.Message)
+        End Try
     End Sub
 
     Private Sub btnAccionBuscarProveedor_Click(sender As Object, e As EventArgs) Handles btnAccionBuscarProveedor.Click
 
 
-        Dim idProveedor As Integer
-        idProveedor = tbIdProveedor.Text
-        Dim proveedor As DataRow
-        proveedor = BuscarProveedor(idProveedor)
-        If proveedor Is Nothing Then
-            MessageBox.Show("No existe un proveedor con ese id")
-        Else
-            tbNombreProveedor.Text = proveedor("Nombre")
-        End If
+        Try
+            Dim idProveedor As Integer
+            idProveedor = tbIdProveedor.Text
+            Dim proveedor As DataRow
+            proveedor = BuscarProveedor(idProveedor)
+            If proveedor Is Nothing Then
+                MessageBox.Show("No existe un proveedor con ese id")
+            Else
+                tbNombreProveedor.Text = proveedor("Nombre")
+            End If
+        Catch ex As Exception
+            MsgBox("Hubo un error en la busqueda del proveedor, trate de introducir bien los datos: " & ex.Message)
+        End Try
     End Sub
 
 
@@ -1203,49 +1223,69 @@ Public Class GestionesAdministrador
 
 
     Private Sub MostrarTodosEmpelados()
-        Dim cmd As New OleDbCommand("SELECT * FROM Empleados", conn)
-        Dim da As New OleDbDataAdapter(cmd)
-        Dim dt As New DataTable()
-        da.Fill(dt)
-        EmpleadosDataGridView.DataSource = dt
-        EmpleadosDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        Try
+            Dim cmd As New OleDbCommand("SELECT * FROM Empleados", conn)
+            Dim da As New OleDbDataAdapter(cmd)
+            Dim dt As New DataTable()
+            da.Fill(dt)
+            EmpleadosDataGridView.DataSource = dt
+            EmpleadosDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        Catch ex As Exception
+            MsgBox("Hubo un error al tratar de mostrar la tabla de empleados: " & ex.Message)
+        End Try
     End Sub
 
     Private Sub MostrarTodosClientes()
-        Dim cmd As New OleDbCommand("Select * from Clientes", conn)
-        Dim da As New OleDbDataAdapter(cmd)
-        Dim dt As New DataTable()
-        da.Fill(dt)
-        ClientesDataGridView.DataSource = dt
-        ClientesDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
+        Try
+            Dim cmd As New OleDbCommand("Select * from Clientes", conn)
+            Dim da As New OleDbDataAdapter(cmd)
+            Dim dt As New DataTable()
+            da.Fill(dt)
+            ClientesDataGridView.DataSource = dt
+            ClientesDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
+        Catch ex As Exception
+            MsgBox("Hubo un error al tratar de mostrar la tabla de clientes: " & ex.Message)
+        End Try
     End Sub
 
     Private Sub MostrarTodasGasolinas()
-        Dim cmd As New OleDbCommand("Select * from Gasolinas", conn)
-        Dim da As New OleDbDataAdapter(cmd)
-        Dim dt As New DataTable()
-        da.Fill(dt)
-        GasolinasDataGridView.DataSource = dt
-        GasolinasDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        Try
+            Dim cmd As New OleDbCommand("Select * from Gasolinas", conn)
+            Dim da As New OleDbDataAdapter(cmd)
+            Dim dt As New DataTable()
+            da.Fill(dt)
+            GasolinasDataGridView.DataSource = dt
+            GasolinasDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        Catch ex As Exception
+            MsgBox("Hubo un error al tratar de mostrar la tabla de gasolinas: " & ex.Message)
+        End Try
     End Sub
 
 
     Private Sub MostrarTodosProductos()
-        Dim cmd As New OleDbCommand("Select * from Productos", conn)
-        Dim da As New OleDbDataAdapter(cmd)
-        Dim dt As New DataTable()
-        da.Fill(dt)
-        ProductosDataGridView.DataSource = dt
-        ProductosDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        Try
+            Dim cmd As New OleDbCommand("Select * from Productos", conn)
+            Dim da As New OleDbDataAdapter(cmd)
+            Dim dt As New DataTable()
+            da.Fill(dt)
+            ProductosDataGridView.DataSource = dt
+            ProductosDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        Catch ex As Exception
+            MsgBox("Hubo un error al tratar de mostrar la tabla de productos: " & ex.Message)
+        End Try
     End Sub
 
     Private Sub MostrarTodosProveedores()
-        Dim cmd As New OleDbCommand("Select * from Proveedores", conn)
-        Dim da As New OleDbDataAdapter(cmd)
-        Dim dt As New DataTable()
-        da.Fill(dt)
-        ProveedoresDataGridView.DataSource = dt
-        ProveedoresDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        Try
+            Dim cmd As New OleDbCommand("Select * from Proveedores", conn)
+            Dim da As New OleDbDataAdapter(cmd)
+            Dim dt As New DataTable()
+            da.Fill(dt)
+            ProveedoresDataGridView.DataSource = dt
+            ProveedoresDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        Catch ex As Exception
+            MsgBox("Hubo un error al tratar de mostrar la tabla de proveedores: " & ex.Message)
+        End Try
     End Sub
 
 
@@ -1265,8 +1305,13 @@ Public Class GestionesAdministrador
                 cmd.Parameters.Add(New OleDbParameter("contraseña", contraseña))
                 cmd.Parameters.Add(New OleDbParameter("administrador", administrador))
                 cmd.Parameters.Add(New OleDbParameter("cargo", cargo))
-                cmd.ExecuteNonQuery()
-                MsgBox("El empleado: " & nombre & " se ha agregado correctamente")
+                If Not administrador = 2 Then
+                    cmd.ExecuteNonQuery()
+                    MsgBox("El empleado: " & nombre & " se ha agregado correctamente")
+                Else
+                    MsgBox("No se permiten crear jefes, solo administradores y trabajadores")
+                End If
+
             End Using
         Catch ex As Exception
             MsgBox("Hubo un error al agregar el empleado: " & ex.Message)
@@ -1383,7 +1428,22 @@ Public Class GestionesAdministrador
     Private Sub ModificarUsuario(id As Integer, nombre As String, apellido1 As String, apellido2 As String, telefono As String, correo As String, contraseña As String, cargo As String, administrador As Integer)
 
         Try
+            Dim comprobar As Boolean = False
             conn.Open()
+
+            Using cmd0 As New OleDbCommand("Select Administrador from Empleados where id = @id", conn)
+                cmd0.Parameters.AddWithValue("@id", id)
+
+                Dim reader As OleDbDataReader = cmd0.ExecuteReader()
+                If reader.HasRows() Then
+                    While reader.Read()
+                        If reader("Administrador").ToString() = 2 Then
+                            comprobar = True
+                        End If
+                    End While
+                End If
+
+            End Using
 
             Using cmd As New OleDbCommand("Update Empleados set Nombre = ?, [Apellido 1] = ?,
             [Apellido 2] = ?, Telefono = ?, Correo = ?, Contraseña = ?, Cargo = ?, Administrador = ?
@@ -1399,8 +1459,12 @@ Public Class GestionesAdministrador
                 cmd.Parameters.Add(New OleDbParameter("administrador", administrador))
                 cmd.Parameters.Add(New OleDbParameter("id", id))
 
-                cmd.ExecuteNonQuery()
-                MsgBox("Usuario actualizado con exito")
+                If comprobar = True Then
+                    MsgBox("No se pudo hacer la Modificacion ya que el Jefe no se puede modificar")
+                Else
+                    cmd.ExecuteNonQuery()
+                    MsgBox("Usuario actualizado con exito")
+                End If
 
             End Using
 
@@ -1522,12 +1586,32 @@ Public Class GestionesAdministrador
 
 
     Public Sub EliminarEmpleado(id As Integer)
-        Dim cmd As New OleDbCommand("DELETE FROM Empleados WHERE id = @id", conn)
-        cmd.Parameters.AddWithValue("@id", id)
         Try
+            Dim comprobar As Boolean = False
             conn.Open()
-            cmd.ExecuteNonQuery()
-            MessageBox.Show("Empleado eliminado correctamente")
+            Using cmd0 As New OleDbCommand("Select Administrador from Empleados where id = @id", conn)
+                cmd0.Parameters.AddWithValue("@id", id)
+
+                Dim reader As OleDbDataReader = cmd0.ExecuteReader()
+                If reader.HasRows() Then
+                    While reader.Read()
+                        If reader("Administrador").ToString() = 2 Then
+                            comprobar = True
+                        End If
+                    End While
+                End If
+
+            End Using
+
+            Dim cmd As New OleDbCommand("DELETE FROM Empleados WHERE id = @id", conn)
+            cmd.Parameters.AddWithValue("@id", id)
+
+            If comprobar = True Then
+                MsgBox("No se puede hacer la eliminacion ya que se trata del jefe")
+            Else
+                cmd.ExecuteNonQuery()
+                MessageBox.Show("Empleado eliminado correctamente")
+            End If
         Catch ex As OleDbException
             MessageBox.Show("Hubo un error al eliminar al empleado: " & ex.Message)
         Finally
@@ -1652,5 +1736,10 @@ Public Class GestionesAdministrador
         panelOpcionesCrudClientes.Visible = False
         panelOpcionesCrudGasolina.Visible = False
         panelOpcionesCrudProveedores.Visible = True
+    End Sub
+
+    Private Sub VolverToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles VolverToolStripMenuItem.Click
+        Me.Hide()
+        Opciones.Show()
     End Sub
 End Class

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Inicio
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Inicio
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.lblUsername = New System.Windows.Forms.Label()
@@ -34,9 +34,6 @@ Partial Class Inicio
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ErrorProvider2 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.btnIniciarAdmin = New System.Windows.Forms.Button()
-        Me.tbAdmin = New System.Windows.Forms.TextBox()
-        Me.lblAdmin = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.showPassword, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -86,7 +83,7 @@ Partial Class Inicio
         'btnStart
         '
         Me.btnStart.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnStart.Location = New System.Drawing.Point(907, 596)
+        Me.btnStart.Location = New System.Drawing.Point(900, 536)
         Me.btnStart.Name = "btnStart"
         Me.btnStart.Size = New System.Drawing.Size(131, 37)
         Me.btnStart.TabIndex = 3
@@ -130,43 +127,11 @@ Partial Class Inicio
         Me.PictureBox2.TabIndex = 7
         Me.PictureBox2.TabStop = False
         '
-        'btnIniciarAdmin
-        '
-        Me.btnIniciarAdmin.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnIniciarAdmin.Location = New System.Drawing.Point(907, 639)
-        Me.btnIniciarAdmin.Name = "btnIniciarAdmin"
-        Me.btnIniciarAdmin.Size = New System.Drawing.Size(131, 37)
-        Me.btnIniciarAdmin.TabIndex = 8
-        Me.btnIniciarAdmin.Text = "Admin"
-        Me.btnIniciarAdmin.UseVisualStyleBackColor = True
-        '
-        'tbAdmin
-        '
-        Me.tbAdmin.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbAdmin.Location = New System.Drawing.Point(918, 536)
-        Me.tbAdmin.MaxLength = 10
-        Me.tbAdmin.Name = "tbAdmin"
-        Me.tbAdmin.Size = New System.Drawing.Size(100, 26)
-        Me.tbAdmin.TabIndex = 10
-        '
-        'lblAdmin
-        '
-        Me.lblAdmin.AutoSize = True
-        Me.lblAdmin.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAdmin.Location = New System.Drawing.Point(797, 539)
-        Me.lblAdmin.Name = "lblAdmin"
-        Me.lblAdmin.Size = New System.Drawing.Size(68, 20)
-        Me.lblAdmin.TabIndex = 9
-        Me.lblAdmin.Text = "Usuario:"
-        '
         'Inicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
-        Me.Controls.Add(Me.tbAdmin)
-        Me.Controls.Add(Me.lblAdmin)
-        Me.Controls.Add(Me.btnIniciarAdmin)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.showPassword)
@@ -198,7 +163,4 @@ Partial Class Inicio
     Friend WithEvents ErrorProvider1 As ErrorProvider
     Friend WithEvents ErrorProvider2 As ErrorProvider
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents btnIniciarAdmin As Button
-    Friend WithEvents tbAdmin As TextBox
-    Friend WithEvents lblAdmin As Label
 End Class

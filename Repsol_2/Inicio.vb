@@ -2,7 +2,6 @@
 Public Class Inicio
     Public Shared admin As Boolean = False
     Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
-    Dim nombreFullLogin As String
     Private Sub Inicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Maximizamos la ventana
         Me.WindowState = FormWindowState.Maximized
@@ -41,35 +40,7 @@ Public Class Inicio
         End If
     End Sub
 
-    Private Sub btnIniciarAdmin_Click(sender As Object, e As EventArgs) Handles btnIniciarAdmin.Click
 
-        If (Not (String.IsNullOrEmpty(tbUsername.Text.Trim()))) And (Not (String.IsNullOrEmpty(tbPassword.Text.Trim()))) And (Not (String.IsNullOrEmpty(tbAdmin.Text.Trim()))) Then
-
-
-            If logginAdmin(tbUsername.Text.Trim(), tbPassword.Text.Trim(), tbAdmin.Text.Trim()) = True Then
-
-                MsgBox("Bienvenido Admin!")
-                admin = True
-                Me.Hide()
-                Opciones.Show()
-                ErrorProvider1.Clear()
-                ErrorProvider2.Clear()
-
-            Else
-                MsgBox("Usuario o contraseña incorrectos, intentelo de nuevo")
-                tbPassword.Clear()
-                tbUsername.Clear()
-                tbAdmin.Clear()
-            End If
-
-        Else
-            MsgBox("Introduce un usuario y contraseña")
-            tbPassword.Clear()
-            tbUsername.Clear()
-            tbAdmin.Clear()
-        End If
-
-    End Sub
 
     Private Sub ShowPassword_Click(sender As Object, e As EventArgs) Handles showPassword.Click
         'Porque esto me da error
@@ -130,72 +101,42 @@ Public Class Inicio
         Try
 
             conn.Open()
-            Dim cmd As New OleDbCommand("Select Nombre, Contraseña, Administrador from Empleados where nombre = @nombre and contraseña = @contraseña", conn)
 
-            cmd.Parameters.AddWithValue("@nombre", nombre)
-            cmd.Parameters.AddWithValue("@contraseña", contraseña)
-
-            Dim resultado As String = cmd.ExecuteScalar()
-
-            If (Not (String.IsNullOrEmpty(resultado))) Then
-
-                'variable publica
-                nombreFullLogin = resultado.ToString()
-                Return True
-
-            Else
-
-                Return False
-
-            End If
-
-        Catch ex As Exception
-            MsgBox("Algo fallo en el loggin: " & ex.Message)
-            Return False
-
-        Finally
-
-            conn.Close()
-
-        End Try
-    End Function
-
-    Private Function logginAdmin(nombre As String, contraseña As String, administrador As Integer) As Boolean
-
-        Try
-
-            conn.Open()
-            Dim cmd As New OleDbCommand("Select Nombre, Contraseña, Administrador from Empleados where nombre = @nombre and contraseña = @contraseña and Administrador = @Administrador", conn)
-
-            cmd.Parameters.AddWithValue("@nombre", nombre)
-            cmd.Parameters.AddWithValue("@contraseña", contraseña)
-            cmd.Parameters.AddWithValue("Administrador", administrador)
-
-            Dim resultado As String = cmd.ExecuteScalar()
-
-            If (Not (String.IsNullOrEmpty(resultado))) Then
-
-                'variable publica
-                nombreFullLogin = resultado.ToString()
-                Return True
+            Using cmd As New OleDbCommand("Select Nombre, Contraseña, Administrador from Empleados where nombre = @nombre and contraseña = @contraseña", conn)
 
 
-            Else
+                cmd.Parameters.AddWithValue("@nombre", nombre)
+                cmd.Parameters.AddWithValue("@contraseña", contraseña)
 
-                Return False
+                Dim reader As OleDbDataReader = cmd.ExecuteReader()
 
-            End If
+                If reader.HasRows Then
+                    While reader.Read()
+                        If reader("Administrador").ToString() = 1 Or reader("Administrador").ToString() = 2 Then
+                            admin = True
+                            MsgBox("Ha iniciado como administrador")
+                        End If
+                    End While
+                    Return True
+
+                Else
+                    MsgBox("No Se pudo iniciar Sesion: Credenciales Incorrectas")
+                    admin = False
+                    Return False
+                End If
+
+            End Using
 
         Catch ex As Exception
-            MsgBox("Algo fallo en el loggin: " & ex.Message)
+            MsgBox("Hubo un error con el inicio de sesion: " & ex.Message)
             Return False
-
         Finally
-
             conn.Close()
-
         End Try
 
+
     End Function
+
+
 
 End Class

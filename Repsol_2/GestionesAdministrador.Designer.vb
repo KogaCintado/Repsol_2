@@ -282,6 +282,9 @@ Partial Class GestionesAdministrador
         Me.btnAccionModificarProveedor = New System.Windows.Forms.Button()
         Me.tbIdModificarProveedor = New System.Windows.Forms.TextBox()
         Me.tbNombreProveedorModificar = New System.Windows.Forms.TextBox()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.OpcionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VolverToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         IdLabel = New System.Windows.Forms.Label()
         NombreLabel = New System.Windows.Forms.Label()
         Apellido_1Label = New System.Windows.Forms.Label()
@@ -397,6 +400,7 @@ Partial Class GestionesAdministrador
         Me.panelModificarProducto.SuspendLayout()
         Me.panelModificarGasolina.SuspendLayout()
         Me.panelModificarProveedores.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'IdLabel
@@ -983,6 +987,177 @@ Partial Class GestionesAdministrador
         Label37.Size = New System.Drawing.Size(38, 13)
         Label37.TabIndex = 16
         Label37.Text = "Cargo:"
+        '
+        'Label38
+        '
+        Label38.AutoSize = True
+        Label38.Location = New System.Drawing.Point(5, 34)
+        Label38.Name = "Label38"
+        Label38.Size = New System.Drawing.Size(19, 13)
+        Label38.TabIndex = 0
+        Label38.Text = "Id:"
+        '
+        'Label39
+        '
+        Label39.AutoSize = True
+        Label39.Location = New System.Drawing.Point(5, 60)
+        Label39.Name = "Label39"
+        Label39.Size = New System.Drawing.Size(47, 13)
+        Label39.TabIndex = 2
+        Label39.Text = "Nombre:"
+        '
+        'Label40
+        '
+        Label40.AutoSize = True
+        Label40.Location = New System.Drawing.Point(5, 86)
+        Label40.Name = "Label40"
+        Label40.Size = New System.Drawing.Size(56, 13)
+        Label40.TabIndex = 4
+        Label40.Text = "Apellido 1:"
+        '
+        'Label41
+        '
+        Label41.AutoSize = True
+        Label41.Location = New System.Drawing.Point(5, 112)
+        Label41.Name = "Label41"
+        Label41.Size = New System.Drawing.Size(56, 13)
+        Label41.TabIndex = 6
+        Label41.Text = "Apellido 2:"
+        '
+        'Label42
+        '
+        Label42.AutoSize = True
+        Label42.Location = New System.Drawing.Point(5, 138)
+        Label42.Name = "Label42"
+        Label42.Size = New System.Drawing.Size(52, 13)
+        Label42.TabIndex = 8
+        Label42.Text = "Telefono:"
+        '
+        'Label43
+        '
+        Label43.AutoSize = True
+        Label43.Location = New System.Drawing.Point(5, 164)
+        Label43.Name = "Label43"
+        Label43.Size = New System.Drawing.Size(41, 13)
+        Label43.TabIndex = 10
+        Label43.Text = "Correo:"
+        '
+        'Label44
+        '
+        Label44.AutoSize = True
+        Label44.Location = New System.Drawing.Point(5, 191)
+        Label44.Name = "Label44"
+        Label44.Size = New System.Drawing.Size(61, 13)
+        Label44.TabIndex = 12
+        Label44.Text = "Fecha Alta:"
+        '
+        'Label45
+        '
+        Label45.AutoSize = True
+        Label45.Location = New System.Drawing.Point(5, 216)
+        Label45.Name = "Label45"
+        Label45.Size = New System.Drawing.Size(28, 13)
+        Label45.TabIndex = 14
+        Label45.Text = "Alta:"
+        '
+        'Label46
+        '
+        Label46.AutoSize = True
+        Label46.Location = New System.Drawing.Point(8, 11)
+        Label46.Name = "Label46"
+        Label46.Size = New System.Drawing.Size(19, 13)
+        Label46.TabIndex = 0
+        Label46.Text = "Id:"
+        '
+        'Label47
+        '
+        Label47.AutoSize = True
+        Label47.Location = New System.Drawing.Point(8, 37)
+        Label47.Name = "Label47"
+        Label47.Size = New System.Drawing.Size(47, 13)
+        Label47.TabIndex = 2
+        Label47.Text = "Nombre:"
+        '
+        'Label48
+        '
+        Label48.AutoSize = True
+        Label48.Location = New System.Drawing.Point(8, 63)
+        Label48.Name = "Label48"
+        Label48.Size = New System.Drawing.Size(40, 13)
+        Label48.TabIndex = 4
+        Label48.Text = "Precio:"
+        '
+        'Label49
+        '
+        Label49.AutoSize = True
+        Label49.Location = New System.Drawing.Point(8, 89)
+        Label49.Name = "Label49"
+        Label49.Size = New System.Drawing.Size(59, 13)
+        Label49.TabIndex = 6
+        Label49.Text = "Proveedor:"
+        '
+        'Label50
+        '
+        Label50.AutoSize = True
+        Label50.Location = New System.Drawing.Point(8, 115)
+        Label50.Name = "Label50"
+        Label50.Size = New System.Drawing.Size(38, 13)
+        Label50.TabIndex = 8
+        Label50.Text = "Gama:"
+        '
+        'Label51
+        '
+        Label51.AutoSize = True
+        Label51.Location = New System.Drawing.Point(3, 20)
+        Label51.Name = "Label51"
+        Label51.Size = New System.Drawing.Size(19, 13)
+        Label51.TabIndex = 0
+        Label51.Text = "Id:"
+        '
+        'Label52
+        '
+        Label52.AutoSize = True
+        Label52.Location = New System.Drawing.Point(3, 46)
+        Label52.Name = "Label52"
+        Label52.Size = New System.Drawing.Size(47, 13)
+        Label52.TabIndex = 2
+        Label52.Text = "Nombre:"
+        '
+        'Label53
+        '
+        Label53.AutoSize = True
+        Label53.Location = New System.Drawing.Point(3, 72)
+        Label53.Name = "Label53"
+        Label53.Size = New System.Drawing.Size(52, 13)
+        Label53.TabIndex = 4
+        Label53.Text = "Cantidad:"
+        '
+        'Label54
+        '
+        Label54.AutoSize = True
+        Label54.Location = New System.Drawing.Point(3, 98)
+        Label54.Name = "Label54"
+        Label54.Size = New System.Drawing.Size(40, 13)
+        Label54.TabIndex = 6
+        Label54.Text = "Precio:"
+        '
+        'Label55
+        '
+        Label55.AutoSize = True
+        Label55.Location = New System.Drawing.Point(2, 6)
+        Label55.Name = "Label55"
+        Label55.Size = New System.Drawing.Size(19, 13)
+        Label55.TabIndex = 0
+        Label55.Text = "Id:"
+        '
+        'Label56
+        '
+        Label56.AutoSize = True
+        Label56.Location = New System.Drawing.Point(2, 32)
+        Label56.Name = "Label56"
+        Label56.Size = New System.Drawing.Size(47, 13)
+        Label56.TabIndex = 2
+        Label56.Text = "Nombre:"
         '
         'FlowLayoutPanel1
         '
@@ -2366,30 +2541,12 @@ Partial Class GestionesAdministrador
         Me.btnAccionModificarCliente.Text = "Agregar"
         Me.btnAccionModificarCliente.UseVisualStyleBackColor = True
         '
-        'Label38
-        '
-        Label38.AutoSize = True
-        Label38.Location = New System.Drawing.Point(5, 34)
-        Label38.Name = "Label38"
-        Label38.Size = New System.Drawing.Size(19, 13)
-        Label38.TabIndex = 0
-        Label38.Text = "Id:"
-        '
         'tbIdClienteModificar
         '
         Me.tbIdClienteModificar.Location = New System.Drawing.Point(72, 31)
         Me.tbIdClienteModificar.Name = "tbIdClienteModificar"
         Me.tbIdClienteModificar.Size = New System.Drawing.Size(200, 20)
         Me.tbIdClienteModificar.TabIndex = 1
-        '
-        'Label39
-        '
-        Label39.AutoSize = True
-        Label39.Location = New System.Drawing.Point(5, 60)
-        Label39.Name = "Label39"
-        Label39.Size = New System.Drawing.Size(47, 13)
-        Label39.TabIndex = 2
-        Label39.Text = "Nombre:"
         '
         'tbNombreClienteModificar
         '
@@ -2398,30 +2555,12 @@ Partial Class GestionesAdministrador
         Me.tbNombreClienteModificar.Size = New System.Drawing.Size(200, 20)
         Me.tbNombreClienteModificar.TabIndex = 3
         '
-        'Label40
-        '
-        Label40.AutoSize = True
-        Label40.Location = New System.Drawing.Point(5, 86)
-        Label40.Name = "Label40"
-        Label40.Size = New System.Drawing.Size(56, 13)
-        Label40.TabIndex = 4
-        Label40.Text = "Apellido 1:"
-        '
         'tbApellido1ClienteModificar
         '
         Me.tbApellido1ClienteModificar.Location = New System.Drawing.Point(72, 83)
         Me.tbApellido1ClienteModificar.Name = "tbApellido1ClienteModificar"
         Me.tbApellido1ClienteModificar.Size = New System.Drawing.Size(200, 20)
         Me.tbApellido1ClienteModificar.TabIndex = 5
-        '
-        'Label41
-        '
-        Label41.AutoSize = True
-        Label41.Location = New System.Drawing.Point(5, 112)
-        Label41.Name = "Label41"
-        Label41.Size = New System.Drawing.Size(56, 13)
-        Label41.TabIndex = 6
-        Label41.Text = "Apellido 2:"
         '
         'tbApellido2ClienteModificar
         '
@@ -2430,30 +2569,12 @@ Partial Class GestionesAdministrador
         Me.tbApellido2ClienteModificar.Size = New System.Drawing.Size(200, 20)
         Me.tbApellido2ClienteModificar.TabIndex = 7
         '
-        'Label42
-        '
-        Label42.AutoSize = True
-        Label42.Location = New System.Drawing.Point(5, 138)
-        Label42.Name = "Label42"
-        Label42.Size = New System.Drawing.Size(52, 13)
-        Label42.TabIndex = 8
-        Label42.Text = "Telefono:"
-        '
         'tbTelefonoClienteModificar
         '
         Me.tbTelefonoClienteModificar.Location = New System.Drawing.Point(72, 135)
         Me.tbTelefonoClienteModificar.Name = "tbTelefonoClienteModificar"
         Me.tbTelefonoClienteModificar.Size = New System.Drawing.Size(200, 20)
         Me.tbTelefonoClienteModificar.TabIndex = 9
-        '
-        'Label43
-        '
-        Label43.AutoSize = True
-        Label43.Location = New System.Drawing.Point(5, 164)
-        Label43.Name = "Label43"
-        Label43.Size = New System.Drawing.Size(41, 13)
-        Label43.TabIndex = 10
-        Label43.Text = "Correo:"
         '
         'tbCorreoClienteModificar
         '
@@ -2462,30 +2583,12 @@ Partial Class GestionesAdministrador
         Me.tbCorreoClienteModificar.Size = New System.Drawing.Size(200, 20)
         Me.tbCorreoClienteModificar.TabIndex = 11
         '
-        'Label44
-        '
-        Label44.AutoSize = True
-        Label44.Location = New System.Drawing.Point(5, 191)
-        Label44.Name = "Label44"
-        Label44.Size = New System.Drawing.Size(61, 13)
-        Label44.TabIndex = 12
-        Label44.Text = "Fecha Alta:"
-        '
         'dtmFechaAltaClienteModificar
         '
         Me.dtmFechaAltaClienteModificar.Location = New System.Drawing.Point(72, 187)
         Me.dtmFechaAltaClienteModificar.Name = "dtmFechaAltaClienteModificar"
         Me.dtmFechaAltaClienteModificar.Size = New System.Drawing.Size(200, 20)
         Me.dtmFechaAltaClienteModificar.TabIndex = 13
-        '
-        'Label45
-        '
-        Label45.AutoSize = True
-        Label45.Location = New System.Drawing.Point(5, 216)
-        Label45.Name = "Label45"
-        Label45.Size = New System.Drawing.Size(28, 13)
-        Label45.TabIndex = 14
-        Label45.Text = "Alta:"
         '
         'tbAltaClienteModificar
         '
@@ -2521,30 +2624,12 @@ Partial Class GestionesAdministrador
         Me.btnAccionModificarProducto.Text = "Modificar"
         Me.btnAccionModificarProducto.UseVisualStyleBackColor = True
         '
-        'Label46
-        '
-        Label46.AutoSize = True
-        Label46.Location = New System.Drawing.Point(8, 11)
-        Label46.Name = "Label46"
-        Label46.Size = New System.Drawing.Size(19, 13)
-        Label46.TabIndex = 0
-        Label46.Text = "Id:"
-        '
         'tbIdProductoModificar
         '
         Me.tbIdProductoModificar.Location = New System.Drawing.Point(73, 8)
         Me.tbIdProductoModificar.Name = "tbIdProductoModificar"
         Me.tbIdProductoModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbIdProductoModificar.TabIndex = 1
-        '
-        'Label47
-        '
-        Label47.AutoSize = True
-        Label47.Location = New System.Drawing.Point(8, 37)
-        Label47.Name = "Label47"
-        Label47.Size = New System.Drawing.Size(47, 13)
-        Label47.TabIndex = 2
-        Label47.Text = "Nombre:"
         '
         'tbNombreProductoModificar
         '
@@ -2553,15 +2638,6 @@ Partial Class GestionesAdministrador
         Me.tbNombreProductoModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbNombreProductoModificar.TabIndex = 3
         '
-        'Label48
-        '
-        Label48.AutoSize = True
-        Label48.Location = New System.Drawing.Point(8, 63)
-        Label48.Name = "Label48"
-        Label48.Size = New System.Drawing.Size(40, 13)
-        Label48.TabIndex = 4
-        Label48.Text = "Precio:"
-        '
         'tbPrecioProductoModificar
         '
         Me.tbPrecioProductoModificar.Location = New System.Drawing.Point(73, 60)
@@ -2569,30 +2645,12 @@ Partial Class GestionesAdministrador
         Me.tbPrecioProductoModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbPrecioProductoModificar.TabIndex = 5
         '
-        'Label49
-        '
-        Label49.AutoSize = True
-        Label49.Location = New System.Drawing.Point(8, 89)
-        Label49.Name = "Label49"
-        Label49.Size = New System.Drawing.Size(59, 13)
-        Label49.TabIndex = 6
-        Label49.Text = "Proveedor:"
-        '
         'tbProveedorProductoModificar
         '
         Me.tbProveedorProductoModificar.Location = New System.Drawing.Point(73, 86)
         Me.tbProveedorProductoModificar.Name = "tbProveedorProductoModificar"
         Me.tbProveedorProductoModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbProveedorProductoModificar.TabIndex = 7
-        '
-        'Label50
-        '
-        Label50.AutoSize = True
-        Label50.Location = New System.Drawing.Point(8, 115)
-        Label50.Name = "Label50"
-        Label50.Size = New System.Drawing.Size(38, 13)
-        Label50.TabIndex = 8
-        Label50.Text = "Gama:"
         '
         'tbGamaProductoModificar
         '
@@ -2626,30 +2684,12 @@ Partial Class GestionesAdministrador
         Me.btnAccionModificarGasolina.Text = "Modificar"
         Me.btnAccionModificarGasolina.UseVisualStyleBackColor = True
         '
-        'Label51
-        '
-        Label51.AutoSize = True
-        Label51.Location = New System.Drawing.Point(3, 20)
-        Label51.Name = "Label51"
-        Label51.Size = New System.Drawing.Size(19, 13)
-        Label51.TabIndex = 0
-        Label51.Text = "Id:"
-        '
         'tbIdGasolinaModificar
         '
         Me.tbIdGasolinaModificar.Location = New System.Drawing.Point(61, 17)
         Me.tbIdGasolinaModificar.Name = "tbIdGasolinaModificar"
         Me.tbIdGasolinaModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbIdGasolinaModificar.TabIndex = 1
-        '
-        'Label52
-        '
-        Label52.AutoSize = True
-        Label52.Location = New System.Drawing.Point(3, 46)
-        Label52.Name = "Label52"
-        Label52.Size = New System.Drawing.Size(47, 13)
-        Label52.TabIndex = 2
-        Label52.Text = "Nombre:"
         '
         'tbNombreGasolinaModificar
         '
@@ -2658,30 +2698,12 @@ Partial Class GestionesAdministrador
         Me.tbNombreGasolinaModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbNombreGasolinaModificar.TabIndex = 3
         '
-        'Label53
-        '
-        Label53.AutoSize = True
-        Label53.Location = New System.Drawing.Point(3, 72)
-        Label53.Name = "Label53"
-        Label53.Size = New System.Drawing.Size(52, 13)
-        Label53.TabIndex = 4
-        Label53.Text = "Cantidad:"
-        '
         'tbCantidadGasolinaModificar
         '
         Me.tbCantidadGasolinaModificar.Location = New System.Drawing.Point(61, 69)
         Me.tbCantidadGasolinaModificar.Name = "tbCantidadGasolinaModificar"
         Me.tbCantidadGasolinaModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbCantidadGasolinaModificar.TabIndex = 5
-        '
-        'Label54
-        '
-        Label54.AutoSize = True
-        Label54.Location = New System.Drawing.Point(3, 98)
-        Label54.Name = "Label54"
-        Label54.Size = New System.Drawing.Size(40, 13)
-        Label54.TabIndex = 6
-        Label54.Text = "Precio:"
         '
         'tbPrecioGasolinaModificar
         '
@@ -2711,15 +2733,6 @@ Partial Class GestionesAdministrador
         Me.btnAccionModificarProveedor.Text = "Agregar"
         Me.btnAccionModificarProveedor.UseVisualStyleBackColor = True
         '
-        'Label55
-        '
-        Label55.AutoSize = True
-        Label55.Location = New System.Drawing.Point(2, 6)
-        Label55.Name = "Label55"
-        Label55.Size = New System.Drawing.Size(19, 13)
-        Label55.TabIndex = 0
-        Label55.Text = "Id:"
-        '
         'tbIdModificarProveedor
         '
         Me.tbIdModificarProveedor.Location = New System.Drawing.Point(55, 3)
@@ -2727,21 +2740,34 @@ Partial Class GestionesAdministrador
         Me.tbIdModificarProveedor.Size = New System.Drawing.Size(100, 20)
         Me.tbIdModificarProveedor.TabIndex = 1
         '
-        'Label56
-        '
-        Label56.AutoSize = True
-        Label56.Location = New System.Drawing.Point(2, 32)
-        Label56.Name = "Label56"
-        Label56.Size = New System.Drawing.Size(47, 13)
-        Label56.TabIndex = 2
-        Label56.Text = "Nombre:"
-        '
         'tbNombreProveedorModificar
         '
         Me.tbNombreProveedorModificar.Location = New System.Drawing.Point(55, 29)
         Me.tbNombreProveedorModificar.Name = "tbNombreProveedorModificar"
         Me.tbNombreProveedorModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbNombreProveedorModificar.TabIndex = 3
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpcionesToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(3944, 24)
+        Me.MenuStrip1.TabIndex = 29
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'OpcionesToolStripMenuItem
+        '
+        Me.OpcionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VolverToolStripMenuItem})
+        Me.OpcionesToolStripMenuItem.Name = "OpcionesToolStripMenuItem"
+        Me.OpcionesToolStripMenuItem.Size = New System.Drawing.Size(69, 20)
+        Me.OpcionesToolStripMenuItem.Text = "Opciones"
+        '
+        'VolverToolStripMenuItem
+        '
+        Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
+        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.VolverToolStripMenuItem.Text = "Volver"
         '
         'GestionesAdministrador
         '
@@ -2780,6 +2806,8 @@ Partial Class GestionesAdministrador
         Me.Controls.Add(Me.panelOpcionesCrudClientes)
         Me.Controls.Add(Me.panelOpcionesCrudUsuario)
         Me.Controls.Add(Me.FlowLayoutPanel1)
+        Me.Controls.Add(Me.MenuStrip1)
+        Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "GestionesAdministrador"
         Me.Text = "GestionesAdministrador"
         Me.FlowLayoutPanel1.ResumeLayout(False)
@@ -2833,7 +2861,10 @@ Partial Class GestionesAdministrador
         Me.panelModificarGasolina.PerformLayout()
         Me.panelModificarProveedores.ResumeLayout(False)
         Me.panelModificarProveedores.PerformLayout()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -3013,4 +3044,7 @@ Partial Class GestionesAdministrador
     Friend WithEvents btnAccionModificarProveedor As Button
     Friend WithEvents tbIdModificarProveedor As TextBox
     Friend WithEvents tbNombreProveedorModificar As TextBox
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents OpcionesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents VolverToolStripMenuItem As ToolStripMenuItem
 End Class
