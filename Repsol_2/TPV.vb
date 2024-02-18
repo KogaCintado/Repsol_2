@@ -24,6 +24,7 @@ Public Class TPV
             lbNombreProductos.Items.Clear()
             lbPrecios.Items.Clear()
         End If
+        actualizarPrecio()
 
 
 
@@ -43,59 +44,102 @@ Public Class TPV
         Inicio.Close()
     End Sub
 
-    Private Sub lbNombreProductos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbNombreProductos.SelectedIndexChanged
 
-    End Sub
-
-    Private Sub lbPrecios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbPrecios.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub lbProductosTienda_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbProductosTienda.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub lbPreciosTienda_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbPreciosTienda.SelectedIndexChanged
-
-    End Sub
 
     Private Sub lbNombreCategorias_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbNombreCategorias.SelectedIndexChanged
 
         If lbNombreCategorias.SelectedIndex = 0 Then
-            lbNombreProductos.Items.Clear()
-            lbPrecios.Items.Clear()
             CargarConsumibles()
+            Return
         End If
 
         If lbNombreCategorias.SelectedIndex = 1 Then
-            lbNombreProductos.Items.Clear()
-            lbPrecios.Items.Clear()
             CargarBebidas()
+            Return
         End If
 
         If lbNombreCategorias.SelectedIndex = 2 Then
-            lbNombreProductos.Items.Clear()
-            lbPrecios.Items.Clear()
             CargarOtros()
         End If
 
     End Sub
 
+
+
+    'Crea un nuevo pedido.
+    Public Sub nuevoPedido()
+        lbPrecios.Items.Clear()
+        lbNombreProductos.Items.Clear()
+        lblResultado.Text = "0,00"
+    End Sub
+
+    'Elimina un producto de la lista de pedidos
+    Private Sub eliminarDeLista(selectedIndex As Integer)
+        lbNombreProductos.Items.RemoveAt(selectedIndex)
+        lbPrecios.Items.RemoveAt(selectedIndex)
+    End Sub
+    'hazme un sub para que, cuando se clickee un producto ya seleccionado en una listbox, añada el producto a otra listbox
+    'y que añada el precio del producto a otra listbox
+    'y que sume el precio del producto a un label que muestre el precio total de la compra
+    Private Sub lbProductosTienda_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbProductosTienda.Click, lbPreciosTienda.Click
+        If (sender.SelectedItem Is Nothing) Then
+            Return
+            'Or TypeOf (sender.SelectedItem) Is DataRowView
+        End If
+        'If (producto = "" Or precio = "") Then
+        '    Return
+        'End If
+
+        lbNombreProductos.Items.Add(lbProductosTienda.GetItemText(lbProductosTienda.SelectedIndex))
+        lbPrecios.Items.Add(lbPreciosTienda.GetItemText(lbPreciosTienda.SelectedIndex))
+
+        actualizarPrecio()
+    End Sub
+    'Actualiza el precio total del pedido.
+    Private Sub actualizarPrecio()
+        Dim box As Decimal = 0.00
+        For Each precio In lbPrecios.Items
+            box += precio
+        Next
+        lblResultado.Text = box.ToString("F")
+
+    End Sub
+
+    'Elimina un producto de la lista de pedidos
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        If (lbNombreProductos.SelectedItem IsNot Nothing) Then
+            lbNombreProductos.Items.Remove(lbNombreProductos.SelectedIndex)
+            lbPrecios.Items.Remove(lbNombreProductos.SelectedIndex)
+        End If
 
+        actualizarPrecio()
     End Sub
 
-    Private Sub btnTarjeta_Click(sender As Object, e As EventArgs) Handles btnTarjeta.Click
-
+    'Con este procedimiento, nos aseguramos de seleccionar producto y su precio a la vez en los listBox.
+    Private Sub lbNombreProductos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbNombreProductos.SelectedIndexChanged, lbPrecios.SelectedIndexChanged
+        Dim a = sender.SelectedIndex
+        lbPrecios.SelectedIndex = a
+        lbNombreProductos.SelectedIndex = a
     End Sub
 
-    Private Sub btnEfectivo_Click(sender As Object, e As EventArgs) Handles btnEfectivo.Click
 
+    'REVISAR!!!!!!!!!!!!!!!!!!
+    Private Sub btnEfectivo_Click_1(sender As Object, e As EventArgs) Handles btnEfectivo.Click
+        Dim total As Double = Convert.ToDouble(lblResultado.Text)
+        Dim pago As Double = Convert.ToDouble(InputBox("Introduce el dinero que te han dado"))
+
+        If pago < total Then
+            MsgBox("El dinero introducido es insuficiente")
+        Else
+            MsgBox("El cambio es de " & (pago - total) & " euros")
+        End If
     End Sub
 
-    Private Sub lblResultado_Click(sender As Object, e As EventArgs) Handles lblResultado.Click
-
+    Private Sub btnTarjeta_Click_1(sender As Object, e As EventArgs) Handles btnTarjeta.Click
+        MsgBox("Pago realizado con tarjeta")
     End Sub
+    'REVISAR!!!!!!!!!!!!!!!!!!
+
 
 
 
@@ -163,6 +207,4 @@ Public Class TPV
         lbPreciosTienda.DisplayMember = "Precio"
 
     End Sub
-
-
 End Class
