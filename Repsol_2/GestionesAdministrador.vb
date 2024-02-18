@@ -1519,14 +1519,48 @@ Public Class GestionesAdministrador
 
             conn.Open()
 
-            Using cmd As New OleDbCommand("Update Productos set nombre = ?, precio = ?, proveedor = ?, gama = ? where id = ?", conn)
-                cmd.Parameters.Add(New OleDbParameter("nombre", nombre))
-                cmd.Parameters.Add(New OleDbParameter("precio", precio))
-                cmd.Parameters.Add(New OleDbParameter("proveedor", proveedor))
-                cmd.Parameters.Add(New OleDbParameter("gama", gama))
-                cmd.Parameters.Add(New OleDbParameter("id", id))
-                cmd.ExecuteNonQuery()
-                MsgBox("Se ha actualizado el producto correctamente")
+            Dim comprobar As Boolean = False
+            Using cmd0 As New OleDbCommand("Select id from Proveedores where id = @id", conn)
+                cmd0.Parameters.AddWithValue("@id", proveedor)
+
+                Dim reader As OleDbDataReader = cmd0.ExecuteReader()
+                If reader.HasRows() Then
+                    While reader.Read()
+                        If reader("id").ToString() = proveedor Then
+                            comprobar = True
+                        End If
+                    End While
+                End If
+
+            End Using
+
+            Dim comprobar2 As Boolean = False
+            Using cmd1 As New OleDbCommand("Select id from Gamas where id = @id", conn)
+                cmd1.Parameters.AddWithValue("@id", gama)
+
+                Dim reader As OleDbDataReader = cmd1.ExecuteReader()
+                If reader.HasRows() Then
+                    While reader.Read()
+                        If reader("id").ToString() = gama Then
+                            comprobar2 = True
+                        End If
+                    End While
+                End If
+
+            End Using
+
+            Using cmd As New OleDbCommand("Update Productos set nombre = @nombre, precio = @precio, proveedor = @proveedor, gama = @gama where id = @id", conn)
+                cmd.Parameters.AddWithValue("@nombre", nombre)
+                cmd.Parameters.AddWithValue("@precio", precio)
+                cmd.Parameters.AddWithValue("@proveedor", proveedor)
+                cmd.Parameters.AddWithValue("@gama", gama)
+                cmd.Parameters.AddWithValue("@id", id)
+                If comprobar = True And comprobar2 = True Then
+                    cmd.ExecuteNonQuery()
+                    MsgBox("Se ha actualizado el producto correctamente")
+                Else
+                    MsgBox("No se pudo hacer la modificacion, no existe o la gama o el proveedor")
+                End If
             End Using
 
         Catch ex As Exception
@@ -1587,8 +1621,8 @@ Public Class GestionesAdministrador
 
     Public Sub EliminarEmpleado(id As Integer)
         Try
-            Dim comprobar As Boolean = False
             conn.Open()
+            Dim comprobar As Boolean = False
             Using cmd0 As New OleDbCommand("Select Administrador from Empleados where id = @id", conn)
                 cmd0.Parameters.AddWithValue("@id", id)
 

@@ -2190,7 +2190,7 @@ Partial Class GestionesAdministrador
         Me.panelAgregarCliente.Controls.Add(Me.dtpFechaAltaClienteAgregar)
         Me.panelAgregarCliente.Controls.Add(Label17)
         Me.panelAgregarCliente.Controls.Add(Me.tbAltaClienteAgregar)
-        Me.panelAgregarCliente.Location = New System.Drawing.Point(3000, 3000)
+        Me.panelAgregarCliente.Location = New System.Drawing.Point(701, 181)
         Me.panelAgregarCliente.Name = "panelAgregarCliente"
         Me.panelAgregarCliente.Size = New System.Drawing.Size(292, 301)
         Me.panelAgregarCliente.TabIndex = 26
@@ -2207,6 +2207,7 @@ Partial Class GestionesAdministrador
         'tbIdClienteAgregar
         '
         Me.tbIdClienteAgregar.Location = New System.Drawing.Point(72, 31)
+        Me.tbIdClienteAgregar.MaxLength = 6
         Me.tbIdClienteAgregar.Name = "tbIdClienteAgregar"
         Me.tbIdClienteAgregar.Size = New System.Drawing.Size(200, 20)
         Me.tbIdClienteAgregar.TabIndex = 1
@@ -2214,6 +2215,7 @@ Partial Class GestionesAdministrador
         'tbNombreClienteAgregar
         '
         Me.tbNombreClienteAgregar.Location = New System.Drawing.Point(72, 57)
+        Me.tbNombreClienteAgregar.MaxLength = 10
         Me.tbNombreClienteAgregar.Name = "tbNombreClienteAgregar"
         Me.tbNombreClienteAgregar.Size = New System.Drawing.Size(200, 20)
         Me.tbNombreClienteAgregar.TabIndex = 3
@@ -2221,6 +2223,7 @@ Partial Class GestionesAdministrador
         'tbApellido1ClienteAgregar
         '
         Me.tbApellido1ClienteAgregar.Location = New System.Drawing.Point(72, 83)
+        Me.tbApellido1ClienteAgregar.MaxLength = 10
         Me.tbApellido1ClienteAgregar.Name = "tbApellido1ClienteAgregar"
         Me.tbApellido1ClienteAgregar.Size = New System.Drawing.Size(200, 20)
         Me.tbApellido1ClienteAgregar.TabIndex = 5
@@ -2228,6 +2231,7 @@ Partial Class GestionesAdministrador
         'tbApellido2ClienteAgregar
         '
         Me.tbApellido2ClienteAgregar.Location = New System.Drawing.Point(72, 109)
+        Me.tbApellido2ClienteAgregar.MaxLength = 10
         Me.tbApellido2ClienteAgregar.Name = "tbApellido2ClienteAgregar"
         Me.tbApellido2ClienteAgregar.Size = New System.Drawing.Size(200, 20)
         Me.tbApellido2ClienteAgregar.TabIndex = 7
@@ -2235,13 +2239,16 @@ Partial Class GestionesAdministrador
         'tbTelefonoClienteAgregar
         '
         Me.tbTelefonoClienteAgregar.Location = New System.Drawing.Point(72, 135)
+        Me.tbTelefonoClienteAgregar.MaxLength = 12
         Me.tbTelefonoClienteAgregar.Name = "tbTelefonoClienteAgregar"
         Me.tbTelefonoClienteAgregar.Size = New System.Drawing.Size(200, 20)
         Me.tbTelefonoClienteAgregar.TabIndex = 9
+        Me.tbTelefonoClienteAgregar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'tbCorreoClienteAgregar
         '
         Me.tbCorreoClienteAgregar.Location = New System.Drawing.Point(72, 161)
+        Me.tbCorreoClienteAgregar.MaxLength = 30
         Me.tbCorreoClienteAgregar.Name = "tbCorreoClienteAgregar"
         Me.tbCorreoClienteAgregar.Size = New System.Drawing.Size(200, 20)
         Me.tbCorreoClienteAgregar.TabIndex = 11
@@ -2256,6 +2263,7 @@ Partial Class GestionesAdministrador
         'tbAltaClienteAgregar
         '
         Me.tbAltaClienteAgregar.Location = New System.Drawing.Point(72, 213)
+        Me.tbAltaClienteAgregar.MaxLength = 1
         Me.tbAltaClienteAgregar.Name = "tbAltaClienteAgregar"
         Me.tbAltaClienteAgregar.Size = New System.Drawing.Size(200, 20)
         Me.tbAltaClienteAgregar.TabIndex = 15
@@ -2766,7 +2774,7 @@ Partial Class GestionesAdministrador
         'VolverToolStripMenuItem
         '
         Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
-        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(106, 22)
         Me.VolverToolStripMenuItem.Text = "Volver"
         '
         'GestionesAdministrador
