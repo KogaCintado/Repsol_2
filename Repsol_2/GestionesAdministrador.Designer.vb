@@ -2190,7 +2190,7 @@ Partial Class GestionesAdministrador
         Me.panelAgregarCliente.Controls.Add(Me.dtpFechaAltaClienteAgregar)
         Me.panelAgregarCliente.Controls.Add(Label17)
         Me.panelAgregarCliente.Controls.Add(Me.tbAltaClienteAgregar)
-        Me.panelAgregarCliente.Location = New System.Drawing.Point(701, 181)
+        Me.panelAgregarCliente.Location = New System.Drawing.Point(3000, 3000)
         Me.panelAgregarCliente.Name = "panelAgregarCliente"
         Me.panelAgregarCliente.Size = New System.Drawing.Size(292, 301)
         Me.panelAgregarCliente.TabIndex = 26
