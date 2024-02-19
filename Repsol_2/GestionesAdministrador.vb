@@ -6,6 +6,7 @@ Public Class GestionesAdministrador
 
     Private Sub GestionesAdministrador_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'datagridviews y todo a tomar por culo de forma guarra para que no se vean
+        panelModificarCliente.Location = New Point(3000, 3000)
         GasolinasDataGridView.Location = New Point(3000, 3000)
         ProductosDataGridView.Location = New Point(3000, 3000)
         EmpleadosDataGridView.Location = New Point(3000, 3000)
@@ -42,6 +43,7 @@ Public Class GestionesAdministrador
     End Sub
 
     Private Sub invisivilizarTodosExceptoDataGridDeClientes()
+        panelModificarCliente.Location = New Point(3000, 3000)
         ProductosDataGridView.Location = New Point(3000, 3000)
         EmpleadosDataGridView.Location = New Point(3000, 3000)
         GasolinasDataGridView.Location = New Point(3000, 3000)
@@ -95,6 +97,7 @@ Public Class GestionesAdministrador
         panelModificarProducto.Location = New Point(3000, 3000)
         panelModificarGasolina.Location = New Point(3000, 3000)
         panelModificarProveedores.Location = New Point(3000, 3000)
+        panelModificarCliente.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoDataGridDeGasolinas()
@@ -123,6 +126,7 @@ Public Class GestionesAdministrador
         panelModificarProducto.Location = New Point(3000, 3000)
         panelModificarGasolina.Location = New Point(3000, 3000)
         panelModificarProveedores.Location = New Point(3000, 3000)
+        panelModificarCliente.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoDataGridDeProductos()
@@ -151,6 +155,7 @@ Public Class GestionesAdministrador
         panelModificarProducto.Location = New Point(3000, 3000)
         panelModificarGasolina.Location = New Point(3000, 3000)
         panelModificarProveedores.Location = New Point(3000, 3000)
+        panelModificarCliente.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoDataGridDeProveedores()
@@ -179,6 +184,7 @@ Public Class GestionesAdministrador
         panelModificarProducto.Location = New Point(3000, 3000)
         panelModificarGasolina.Location = New Point(3000, 3000)
         panelModificarProveedores.Location = New Point(3000, 3000)
+        panelModificarCliente.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelBuscarEmpleado()
@@ -207,6 +213,7 @@ Public Class GestionesAdministrador
         panelModificarProducto.Location = New Point(3000, 3000)
         panelModificarGasolina.Location = New Point(3000, 3000)
         panelModificarProveedores.Location = New Point(3000, 3000)
+        panelModificarCliente.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelBuscarCliente()
@@ -235,6 +242,7 @@ Public Class GestionesAdministrador
         panelModificarProducto.Location = New Point(3000, 3000)
         panelModificarGasolina.Location = New Point(3000, 3000)
         panelModificarProveedores.Location = New Point(3000, 3000)
+        panelModificarCliente.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelBuscarProducto()
@@ -263,6 +271,7 @@ Public Class GestionesAdministrador
         panelModificarProducto.Location = New Point(3000, 3000)
         panelModificarGasolina.Location = New Point(3000, 3000)
         panelModificarProveedores.Location = New Point(3000, 3000)
+        panelModificarCliente.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelBuscarGasolina()
@@ -291,6 +300,7 @@ Public Class GestionesAdministrador
         panelModificarProducto.Location = New Point(3000, 3000)
         panelModificarGasolina.Location = New Point(3000, 3000)
         panelModificarProveedores.Location = New Point(3000, 3000)
+        panelModificarCliente.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelBuscarProveedor()
@@ -320,6 +330,7 @@ Public Class GestionesAdministrador
         panelModificarProducto.Location = New Point(3000, 3000)
         panelModificarGasolina.Location = New Point(3000, 3000)
         panelModificarProveedores.Location = New Point(3000, 3000)
+        panelModificarCliente.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelEliminarEmpleado()
@@ -349,6 +360,7 @@ Public Class GestionesAdministrador
         panelModificarProducto.Location = New Point(3000, 3000)
         panelModificarGasolina.Location = New Point(3000, 3000)
         panelModificarProveedores.Location = New Point(3000, 3000)
+        panelModificarCliente.Location = New Point(3000, 3000)
 
     End Sub
 
@@ -379,6 +391,7 @@ Public Class GestionesAdministrador
         panelModificarProducto.Location = New Point(3000, 3000)
         panelModificarGasolina.Location = New Point(3000, 3000)
         panelModificarProveedores.Location = New Point(3000, 3000)
+        panelModificarCliente.Location = New Point(3000, 3000)
 
     End Sub
 
@@ -407,6 +420,7 @@ Public Class GestionesAdministrador
         panelModificarProducto.Location = New Point(3000, 3000)
         panelModificarGasolina.Location = New Point(3000, 3000)
         panelModificarProveedores.Location = New Point(3000, 3000)
+        panelModificarCliente.Location = New Point(3000, 3000)
 
     End Sub
 
@@ -436,6 +450,7 @@ Public Class GestionesAdministrador
         panelModificarProducto.Location = New Point(3000, 3000)
         panelModificarGasolina.Location = New Point(3000, 3000)
         panelModificarProveedores.Location = New Point(3000, 3000)
+        panelModificarCliente.Location = New Point(3000, 3000)
 
     End Sub
 
@@ -465,6 +480,7 @@ Public Class GestionesAdministrador
         panelModificarProducto.Location = New Point(3000, 3000)
         panelModificarGasolina.Location = New Point(3000, 3000)
         panelModificarProveedores.Location = New Point(3000, 3000)
+        panelModificarCliente.Location = New Point(3000, 3000)
 
     End Sub
 
@@ -493,6 +509,7 @@ Public Class GestionesAdministrador
         panelModificarProducto.Location = New Point(3000, 3000)
         panelModificarGasolina.Location = New Point(3000, 3000)
         panelModificarProveedores.Location = New Point(3000, 3000)
+        panelModificarCliente.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelAgregarCliente()
@@ -520,6 +537,7 @@ Public Class GestionesAdministrador
         panelModificarProducto.Location = New Point(3000, 3000)
         panelModificarGasolina.Location = New Point(3000, 3000)
         panelModificarProveedores.Location = New Point(3000, 3000)
+        panelModificarCliente.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelAgregarProducto()
@@ -547,6 +565,7 @@ Public Class GestionesAdministrador
         panelModificarProducto.Location = New Point(3000, 3000)
         panelModificarGasolina.Location = New Point(3000, 3000)
         panelModificarProveedores.Location = New Point(3000, 3000)
+        panelModificarCliente.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelAgregarGasolina()
@@ -574,6 +593,7 @@ Public Class GestionesAdministrador
         panelModificarProducto.Location = New Point(3000, 3000)
         panelModificarGasolina.Location = New Point(3000, 3000)
         panelModificarProveedores.Location = New Point(3000, 3000)
+        panelModificarCliente.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelAgregarProveedor()
@@ -601,6 +621,7 @@ Public Class GestionesAdministrador
         panelModificarProducto.Location = New Point(3000, 3000)
         panelModificarGasolina.Location = New Point(3000, 3000)
         panelModificarProveedores.Location = New Point(3000, 3000)
+        panelModificarCliente.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelModificarEmpleado()
@@ -628,6 +649,7 @@ Public Class GestionesAdministrador
         panelModificarProducto.Location = New Point(3000, 3000)
         panelModificarGasolina.Location = New Point(3000, 3000)
         panelModificarProveedores.Location = New Point(3000, 3000)
+        panelModificarCliente.Location = New Point(3000, 3000)
     End Sub
 
 
@@ -682,6 +704,7 @@ Public Class GestionesAdministrador
         panelModificarEmpleado.Location = New Point(3000, 3000)
         panelModificarGasolina.Location = New Point(3000, 3000)
         panelModificarProveedores.Location = New Point(3000, 3000)
+        panelModificarCliente.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelModificarGasolinas()
@@ -707,6 +730,7 @@ Public Class GestionesAdministrador
         panelAgregarProveedor.Location = New Point(3000, 3000)
         panelModificarEmpleado.Location = New Point(3000, 3000)
         panelModificarProveedores.Location = New Point(3000, 3000)
+        panelModificarCliente.Location = New Point(3000, 3000)
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelModificarProveedor()
@@ -731,6 +755,7 @@ Public Class GestionesAdministrador
         panelAgregarGasolina.Location = New Point(3000, 3000)
         panelAgregarProveedor.Location = New Point(3000, 3000)
         panelModificarEmpleado.Location = New Point(3000, 3000)
+        panelModificarCliente.Location = New Point(3000, 3000)
     End Sub
 
 
@@ -878,26 +903,34 @@ Public Class GestionesAdministrador
         'En este boton lo que hacemos es buscar un empleado por su id
         'Si el id no existe, mostramos un mensaje de error
         'Si el id existe, mostramos los datos del empleado
-        Try
-            Dim idEmpleado As Integer
-            idEmpleado = tbIdEmpleado.Text
-            Dim empleado As DataRow
-            empleado = BuscarEmpleado(idEmpleado)
-            If empleado Is Nothing Then
-                MessageBox.Show("No existe un empleado con ese id")
-            Else
-                tbNombreEmpleado.Text = empleado("Nombre")
-                tbApellido1Empleado.Text = empleado("Apellido 1")
-                tbApellido2Empleado.Text = empleado("Apellido 2")
-                tbTelefonoEmpleado.Text = empleado("Telefono")
-                tbCorreoEmpleado.Text = empleado("Correo")
-                tbContraseñaEmpleado.Text = empleado("Contraseña")
-                tbCargoEmpleado.Text = empleado("Cargo")
-                tbAdministradorEmpleado.Text = empleado("Administrador")
-            End If
-        Catch ex As Exception
-            MsgBox("Hubo un error con la busqueda del empleado, trate de introducir bien los datos : " & ex.Message)
-        End Try
+        Dim validado As Boolean = validarIDs(tbIdEmpleado, tbIdEmpleado.Text)
+
+        If validado = True Then
+            MessageBox.Show("El id introducido no es valido")
+        Else
+            Try
+                Dim idEmpleado As Integer
+                idEmpleado = tbIdEmpleado.Text
+                Dim empleado As DataRow
+                empleado = BuscarEmpleado(idEmpleado)
+                If empleado Is Nothing Then
+                    MessageBox.Show("No existe un empleado con ese id")
+                Else
+                    tbNombreEmpleado.Text = empleado("Nombre")
+                    tbApellido1Empleado.Text = empleado("Apellido 1")
+                    tbApellido2Empleado.Text = empleado("Apellido 2")
+                    tbTelefonoEmpleado.Text = empleado("Telefono")
+                    tbCorreoEmpleado.Text = empleado("Correo")
+                    tbContraseñaEmpleado.Text = empleado("Contraseña")
+                    tbAdministradorEmpleado.Text = empleado("Administrador")
+                    tbCargoEmpleado.Text = empleado("Cargo")
+                End If
+            Catch ex As Exception
+                MsgBox("Hubo un error con la busqueda del empleado, trate de introducir bien los datos : " & ex.Message)
+            End Try
+        End If
+
+
     End Sub
 
     Private Sub btnAccionBuscarCliente_Click(sender As Object, e As EventArgs) Handles btnAccionBuscarCliente.Click
@@ -905,24 +938,29 @@ Public Class GestionesAdministrador
         'En este boton lo que hacemos es buscar un Cliente por su id
         'Si el id no existe, mostramos un mensaje de error
         'Si el id existe, mostramos los datos del Cliente
-        Try
-            Dim idCliente As Integer
-            idCliente = tbIdCliente.Text
-            Dim cliente As DataRow
-            cliente = BuscarCliente(idCliente)
-            If cliente Is Nothing Then
-                MessageBox.Show("No existe un cliente con ese id")
-            Else
-                tbNombreCliente.Text = cliente("Nombre")
-                tbApellido1Cliente.Text = cliente("Apellido 1")
-                tbApellido2Cliente.Text = cliente("Apellido 2")
-                tbTelefonoCliente.Text = cliente("Telefono")
-                tbCorreoCliente.Text = cliente("Correo")
-                FechaAltaClienteTimePicker.Value = cliente("FechaAlta")
-            End If
-        Catch ex As Exception
-            MsgBox("Hubo un error con la busqueda del cliente, trate de introducir bien los datos : " & ex.Message)
-        End Try
+        Dim validado As Boolean = validarIDs(tbIdCliente, tbIdCliente.Text)
+        If validado = True Then
+            MessageBox.Show("El id introducido no es valido")
+        Else
+            Try
+                Dim idCliente As Integer
+                idCliente = tbIdCliente.Text
+                Dim cliente As DataRow
+                cliente = BuscarCliente(idCliente)
+                If cliente Is Nothing Then
+                    MessageBox.Show("No existe un cliente con ese id")
+                Else
+                    tbNombreCliente.Text = cliente("Nombre")
+                    tbApellido1Cliente.Text = cliente("Apellido 1")
+                    tbApellido2Cliente.Text = cliente("Apellido 2")
+                    tbTelefonoCliente.Text = cliente("Telefono")
+                    tbCorreoCliente.Text = cliente("Correo")
+                    FechaAltaClienteTimePicker.Value = cliente("FechaAlta")
+                End If
+            Catch ex As Exception
+                MsgBox("Hubo un error con la busqueda del cliente, trate de introducir bien los datos : " & ex.Message)
+            End Try
+        End If
 
 
     End Sub
@@ -931,22 +969,27 @@ Public Class GestionesAdministrador
         'En este boton lo que hacemos es buscar un Producto por su id
         'Si el id no existe, mostramos un mensaje de error
         'Si el id existe, mostramos los datos del Producto
-        Try
-            Dim idProducto As Integer
-            idProducto = tbIdProducto.Text
-            Dim producto As DataRow
-            producto = BuscarProducto(idProducto)
-            If producto Is Nothing Then
-                MessageBox.Show("No existe un producto con ese id")
-            Else
-                tbNombreProducto.Text = producto("Nombre")
-                tbPrecioProducto.Text = producto("Precio")
-                tbProveedorProducto.Text = producto("Proveedor")
-                tbGamaProducto.Text = producto("Gama")
-            End If
-        Catch ex As Exception
-            MsgBox("Hubo un error con la busqueda del producto, trate de introducir bien los datos : " & ex.Message)
-        End Try
+        Dim validado As Boolean = validarIDs(tbIdProducto, tbIdProducto.Text)
+        If validado = True Then
+            MessageBox.Show("El id introducido no es valido")
+        Else
+            Try
+                Dim idProducto As Integer
+                idProducto = tbIdProducto.Text
+                Dim producto As DataRow
+                producto = BuscarProducto(idProducto)
+                If producto Is Nothing Then
+                    MessageBox.Show("No existe un producto con ese id")
+                Else
+                    tbNombreProducto.Text = producto("Nombre")
+                    tbPrecioProducto.Text = producto("Precio")
+                    tbProveedorProducto.Text = producto("Proveedor")
+                    tbGamaProducto.Text = producto("Gama")
+                End If
+            Catch ex As Exception
+                MsgBox("Hubo un error con la busqueda del producto, trate de introducir bien los datos : " & ex.Message)
+            End Try
+        End If
     End Sub
 
 
@@ -976,19 +1019,24 @@ Public Class GestionesAdministrador
     Private Sub btnAccionBuscarProveedor_Click(sender As Object, e As EventArgs) Handles btnAccionBuscarProveedor.Click
 
 
-        Try
-            Dim idProveedor As Integer
-            idProveedor = tbIdProveedor.Text
-            Dim proveedor As DataRow
-            proveedor = BuscarProveedor(idProveedor)
-            If proveedor Is Nothing Then
-                MessageBox.Show("No existe un proveedor con ese id")
-            Else
-                tbNombreProveedor.Text = proveedor("Nombre")
-            End If
-        Catch ex As Exception
-            MsgBox("Hubo un error en la busqueda del proveedor, trate de introducir bien los datos: " & ex.Message)
-        End Try
+        Dim validado As Boolean = validarIDs(tbIdProveedor, tbIdProveedor.Text)
+        If validado = True Then
+            MessageBox.Show("El id introducido no es valido")
+        Else
+            Try
+                Dim idProveedor As Integer
+                idProveedor = tbIdProveedor.Text
+                Dim proveedor As DataRow
+                proveedor = BuscarProveedor(idProveedor)
+                If proveedor Is Nothing Then
+                    MessageBox.Show("No existe un proveedor con ese id")
+                Else
+                    tbNombreProveedor.Text = proveedor("Nombre")
+                End If
+            Catch ex As Exception
+                MsgBox("Hubo un error en la busqueda del proveedor, trate de introducir bien los datos: " & ex.Message)
+            End Try
+        End If
     End Sub
 
 
@@ -1782,77 +1830,93 @@ Public Class GestionesAdministrador
     '--------------------------------Zona de validaciones de los textbox-----------------------------------------------------
     '------------------------------------------------------------------------------------------------------------------------
 
-    Private Sub validarIDs(tb As TextBox)
+    Private Function validarIDs(tb As TextBox, str As String) As Boolean
 
-        If tb.Text = "" Then
+        If str = "" Then
             MsgBox("El campo de ID no puede estar vacio")
-        ElseIf Not IsNumeric(tb.Text) Then
+            Return True
+        ElseIf Not IsNumeric(str) Then
             MsgBox("El campo de ID solo puede contener numeros")
             tb.Clear()
+            Return True
+        Else
+            Return False
         End If
-    End Sub
+    End Function
 
-    Private Sub validarTelefonos(tb As TextBox)
+    Private Function validarTelefonos(tb As TextBox, str As String) As Boolean
         'en este metodo validamos que el texbox de telefono no este vacio. aparte
         'de que solo puede tener un prefijo (+) y numeros. En caso de que tenga mas de un (+)
         'o letras, mostraremos un mensaje de error. Para ello utilizaremos una lista con caracteres permitidos
         Dim permitidos As New List(Of Char) From {"+", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
         Dim comprobar As Boolean = False
-        If tb.Text = "" Then
+        If str = "" Then
             MsgBox("El campo de telefono no puede estar vacio")
+            Return True
         Else
-            For i As Integer = 0 To tb.Text.Length - 1
-                If Not permitidos.Contains(tb.Text(i)) Then
+            For i As Integer = 0 To str.Length - 1
+                If Not permitidos.Contains(str(i)) Then
                     comprobar = True
                 End If
             Next
             If comprobar = True Then
                 MsgBox("El campo de telefono solo puede contener numeros y el prefijo (+)")
                 tb.Clear()
+                Return True
+            Else
+                Return False
             End If
         End If
-    End Sub
+    End Function
 
-    Private Sub validarCorreos(tb As TextBox)
+    Private Function validarCorreos(tb As TextBox, str As String) As Boolean
         'en este metodo validamos que el texbox de correo no este vacio. aparte
         'de que solo puede tener un @ y un punto. En caso de que tenga mas de un @
         'o mas de un punto, mostraremos un mensaje de error. Para ello utilizaremos una lista con caracteres permitidos
         Dim permitidos As New List(Of Char) From {"@", "."}
         Dim comprobar As Boolean = False
-        If tb.Text = "" Then
+        If str = "" Then
             MsgBox("El campo de correo no puede estar vacio")
+            Return True
         Else
-            For i As Integer = 0 To tb.Text.Length - 1
-                If Not permitidos.Contains(tb.Text(i)) Then
+            For i As Integer = 0 To str.Length - 1
+                If Not permitidos.Contains(str(i)) Then
                     comprobar = True
                 End If
             Next
             If comprobar = True Then
                 MsgBox("El campo de correo solo puede contener un @ y un punto")
                 tb.Clear()
+                Return True
+            Else
+                Return False
             End If
         End If
-    End Sub
+    End Function
 
-    Private Sub validarContraseñas(tb As TextBox)
+    Private Function validarContraseñas(tb As TextBox, str As String) As Boolean
         'en este metodo validamos que el texbox de contraseña no este vacio. aparte
         'de que solo puede tener letras y numeros. En caso de que tenga caracteres especiales
         'mostraremos un mensaje de error. Para ello utilizaremos una lista con caracteres permitidos
         Dim permitidos As New List(Of Char) From {"!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\", "]", "^", "_", "{", "|", "}", "~"}
         Dim comprobar As Boolean = False
-        If tb.Text = "" Then
+        If str = "" Then
             MsgBox("El campo de contraseña no puede estar vacio")
+            Return True
         Else
-            For i As Integer = 0 To tb.Text.Length - 1
-                If permitidos.Contains(tb.Text(i)) Then
+            For i As Integer = 0 To str.Length - 1
+                If permitidos.Contains(str(i)) Then
                     comprobar = True
                 End If
             Next
             If comprobar = True Then
                 MsgBox("El campo de contraseña no puede contener caracteres especiales")
                 tb.Clear()
+                Return True
+            Else
+                Return False
             End If
         End If
-    End Sub
+    End Function
 
 End Class
