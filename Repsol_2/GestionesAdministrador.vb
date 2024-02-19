@@ -2027,6 +2027,39 @@ Public Class GestionesAdministrador
         End If
     End Function
 
+
+
+    Private Function validarCantidad(tb As TextBox, str As String) As Boolean
+        Dim contadorComas As Integer = 0
+        Dim contadorPuntos As Integer = 0
+        If str = "" Then
+            MsgBox("El campo no puede estar vacio")
+            Return True
+        ElseIf Not IsNumeric(str) Then
+            MsgBox("Solo son permitidos caracteres Numericos en la cantidad")
+            tb.Clear()
+            Return True
+
+        End If
+
+        For i As Integer = 0 To str.Length - 1
+            If str(i) = "," Then
+                contadorComas += 1
+            ElseIf str(i) = "." Then
+                contadorPuntos += 1
+            End If
+        Next
+
+        If contadorComas > 1 Or contadorPuntos > 1 Or (contadorComas = 1 And contadorPuntos = 1) Then
+            MsgBox("Cantidad de comas o de puntos incorrecto")
+            tb.Clear()
+            Return False
+        Else
+            Return True
+        End If
+
+    End Function
+
     Private Function validarPrecio(tb As TextBox, str As String) As Boolean
         'en esta funcion lo que hacemos es comprobar si tiene mas de un punto o mas de una coma o si tiene letras
         'o si tiene un punto y una coma. En caso de que tenga mas de uno de estos caracteres o una combinacion de ellos
@@ -2038,6 +2071,10 @@ Public Class GestionesAdministrador
         If str = "" Then
             MsgBox("El campo de precio no puede estar vacio")
             Return True
+        ElseIf Not IsNumeric(str) Then
+            MsgBox("El campo precio debe de ser numerico")
+            tb.Clear()
+            Return True
         Else
             For i As Integer = 0 To str.Length - 1
                 If str(i) = "." Then
@@ -2047,8 +2084,12 @@ Public Class GestionesAdministrador
                 End If
             Next
             If contadorPuntos > 1 Or contadorComas > 1 Then
+                MsgBox("Error, dentro del campo hay mas de un punto o una coma")
+                tb.Clear()
                 comprobar = True
             ElseIf contadorPuntos = 1 And contadorComas = 1 Then
+                MsgBox("No se puede meter dentro del campo un punto y una coma a la vez")
+                tb.Clear()
                 comprobar = True
             Else
                 comprobar = False
@@ -2088,23 +2129,6 @@ Public Class GestionesAdministrador
         End Try
 
     End Function
-
-    Private Function validarCantidad(tb As TextBox, str As String) As Boolean
-        'en esta funcion vamos a validar que la cantidad sea un numero entero
-        'y que no este vacio. En caso de que no sea un numero entero o este vacio
-        'mostraremos un mensaje de error
-        If str = "" Then
-            MsgBox("El campo de cantidad no puede estar vacio")
-            Return True
-        ElseIf Not IsNumeric(str) Then
-            MsgBox("El campo de cantidad solo puede contener numeros")
-            tb.Clear()
-            Return True
-        Else
-            Return False
-        End If
-    End Function
-
     Private Function validarNombreEmpresa(tb As TextBox, str As String) As Boolean
         'en esta funcion solamente validaremos que no este vacio el campo de nombre de la empresa
         If str = "" Then
