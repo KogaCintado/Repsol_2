@@ -1,4 +1,5 @@
 ﻿Imports System.Data.OleDb
+Imports System.Drawing.Printing
 Public Class TPV
 
     Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
@@ -90,8 +91,8 @@ Public Class TPV
         '    Return
         'End If
 
-        lbNombreProductos.Items.Add(lbProductosTienda.GetItemText(lbProductosTienda.SelectedIndex))
-        lbPrecios.Items.Add(lbPreciosTienda.GetItemText(lbPreciosTienda.SelectedIndex))
+        lbNombreProductos.Items.Add(lbProductosTienda.GetItemText(lbProductosTienda.SelectedItem))
+        lbPrecios.Items.Add(lbPreciosTienda.GetItemText(lbPreciosTienda.SelectedItem))
 
         actualizarPrecio()
     End Sub
@@ -124,19 +125,39 @@ Public Class TPV
 
 
     'REVISAR!!!!!!!!!!!!!!!!!!
-    Private Sub btnEfectivo_Click_1(sender As Object, e As EventArgs) Handles btnEfectivo.Click
-        Dim total As Double = Convert.ToDouble(lblResultado.Text)
-        Dim pago As Double = Convert.ToDouble(InputBox("Introduce el dinero que te han dado"))
-
-        If pago < total Then
-            MsgBox("El dinero introducido es insuficiente")
-        Else
-            MsgBox("El cambio es de " & (pago - total) & " euros")
+    'Procedimiento que te muestra el formulario Efectivo, siempre y cuando un pedido tenga datos, y no supere los 5000 euros.
+    Private Sub btnEfectivo_Click(sender As Object, e As EventArgs) Handles btnEfectivo.Click
+        If (lblResultado.Text = "0,00") Then
+            Return
+        ElseIf (CSng(lblResultado.Text) >= 5000) Then
+            MsgBox("Para pedidos superiores a 5.000 euros, use la tarjeta.")
+            Return
         End If
+        Efectivo.ShowDialog()
+        Efectivo.lblPrecioInicial.Text = lblResultado.Text
     End Sub
 
-    Private Sub btnTarjeta_Click_1(sender As Object, e As EventArgs) Handles btnTarjeta.Click
-        MsgBox("Pago realizado con tarjeta")
+    'Procedimiento asignado a un botón que, al seleccionarlo, Hace la tarea de simular conexión con un datáfono, guarda el pedido e imprime el ticket.
+    Private Sub btnTarjeta_Click(sender As Object, e As EventArgs) Handles btnTarjeta.Click
+        If (lblResultado.Text = "0,00") Then
+            Return
+        End If
+        MsgBox("Acerque la tarjeta al datáfono", , "Pago")
+
+        'Dim caja As New Archivos.HacerCaja
+        'caja.CajaTemporal(Single.Parse(lblResultado.Text), Single.Parse("0,00"), lblUser.Text)
+
+
+        'quiero imprimir el ticket usando printdocument
+
+
+
+        'Dim printDoc As New PrintDocument
+        ''asignamos el método de evento para cada página a imprimir
+        'Dim a As New Ticket
+        'AddHandler printDoc.PrintPage, AddressOf a.TicketTarjeta
+        ''indicamos que queremos imprimir
+        'printDoc.Print()
     End Sub
     'REVISAR!!!!!!!!!!!!!!!!!!
 
