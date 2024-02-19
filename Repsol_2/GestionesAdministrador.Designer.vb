@@ -2104,7 +2104,7 @@ Partial Class GestionesAdministrador
         Me.panelAgregarUsuario.Controls.Add(Me.tbAdministradorEmpleadoAgregar)
         Me.panelAgregarUsuario.Controls.Add(Label9)
         Me.panelAgregarUsuario.Controls.Add(Me.tbCargoEmpleadoAgregar)
-        Me.panelAgregarUsuario.Location = New System.Drawing.Point(400, 400)
+        Me.panelAgregarUsuario.Location = New System.Drawing.Point(3000, 3000)
         Me.panelAgregarUsuario.Name = "panelAgregarUsuario"
         Me.panelAgregarUsuario.Size = New System.Drawing.Size(200, 301)
         Me.panelAgregarUsuario.TabIndex = 20
@@ -2469,7 +2469,7 @@ Partial Class GestionesAdministrador
         Me.panelModificarEmpleado.Controls.Add(Me.tbAdministradorEmpleadoModificar)
         Me.panelModificarEmpleado.Controls.Add(Label37)
         Me.panelModificarEmpleado.Controls.Add(Me.tbCargoEmpleadoModificar)
-        Me.panelModificarEmpleado.Location = New System.Drawing.Point(681, 400)
+        Me.panelModificarEmpleado.Location = New System.Drawing.Point(3000, 3000)
         Me.panelModificarEmpleado.Name = "panelModificarEmpleado"
         Me.panelModificarEmpleado.Size = New System.Drawing.Size(200, 301)
         Me.panelModificarEmpleado.TabIndex = 21
