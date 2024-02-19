@@ -1554,6 +1554,7 @@ Partial Class GestionesAdministrador
         'tbIdEmpleado
         '
         Me.tbIdEmpleado.Location = New System.Drawing.Point(91, 28)
+        Me.tbIdEmpleado.MaxLength = 3
         Me.tbIdEmpleado.Name = "tbIdEmpleado"
         Me.tbIdEmpleado.Size = New System.Drawing.Size(100, 20)
         Me.tbIdEmpleado.TabIndex = 1
@@ -1695,6 +1696,7 @@ Partial Class GestionesAdministrador
         'tbIdCliente
         '
         Me.tbIdCliente.Location = New System.Drawing.Point(72, 31)
+        Me.tbIdCliente.MaxLength = 6
         Me.tbIdCliente.Name = "tbIdCliente"
         Me.tbIdCliente.Size = New System.Drawing.Size(200, 20)
         Me.tbIdCliente.TabIndex = 1
@@ -1778,6 +1780,7 @@ Partial Class GestionesAdministrador
         'tbIdProducto
         '
         Me.tbIdProducto.Location = New System.Drawing.Point(73, 8)
+        Me.tbIdProducto.MaxLength = 4
         Me.tbIdProducto.Name = "tbIdProducto"
         Me.tbIdProducto.Size = New System.Drawing.Size(100, 20)
         Me.tbIdProducto.TabIndex = 1
@@ -1838,6 +1841,7 @@ Partial Class GestionesAdministrador
         'tbIdGasolina
         '
         Me.tbIdGasolina.Location = New System.Drawing.Point(61, 17)
+        Me.tbIdGasolina.MaxLength = 3
         Me.tbIdGasolina.Name = "tbIdGasolina"
         Me.tbIdGasolina.Size = New System.Drawing.Size(100, 20)
         Me.tbIdGasolina.TabIndex = 1
@@ -1887,6 +1891,7 @@ Partial Class GestionesAdministrador
         'tbIdProveedor
         '
         Me.tbIdProveedor.Location = New System.Drawing.Point(55, 3)
+        Me.tbIdProveedor.MaxLength = 2
         Me.tbIdProveedor.Name = "tbIdProveedor"
         Me.tbIdProveedor.Size = New System.Drawing.Size(100, 20)
         Me.tbIdProveedor.TabIndex = 1
@@ -1929,6 +1934,7 @@ Partial Class GestionesAdministrador
         'tbIdEmpleadoEliminar
         '
         Me.tbIdEmpleadoEliminar.Location = New System.Drawing.Point(45, 16)
+        Me.tbIdEmpleadoEliminar.MaxLength = 3
         Me.tbIdEmpleadoEliminar.Name = "tbIdEmpleadoEliminar"
         Me.tbIdEmpleadoEliminar.Size = New System.Drawing.Size(100, 20)
         Me.tbIdEmpleadoEliminar.TabIndex = 21
@@ -1964,6 +1970,7 @@ Partial Class GestionesAdministrador
         'tbIdProductoEliminar
         '
         Me.tbIdProductoEliminar.Location = New System.Drawing.Point(45, 16)
+        Me.tbIdProductoEliminar.MaxLength = 4
         Me.tbIdProductoEliminar.Name = "tbIdProductoEliminar"
         Me.tbIdProductoEliminar.Size = New System.Drawing.Size(100, 20)
         Me.tbIdProductoEliminar.TabIndex = 21
@@ -1999,6 +2006,7 @@ Partial Class GestionesAdministrador
         'tbIdGasolinaEliminar
         '
         Me.tbIdGasolinaEliminar.Location = New System.Drawing.Point(45, 16)
+        Me.tbIdGasolinaEliminar.MaxLength = 2
         Me.tbIdGasolinaEliminar.Name = "tbIdGasolinaEliminar"
         Me.tbIdGasolinaEliminar.Size = New System.Drawing.Size(100, 20)
         Me.tbIdGasolinaEliminar.TabIndex = 21
@@ -2034,6 +2042,7 @@ Partial Class GestionesAdministrador
         'tbIdProveedorEliminar
         '
         Me.tbIdProveedorEliminar.Location = New System.Drawing.Point(45, 16)
+        Me.tbIdProveedorEliminar.MaxLength = 2
         Me.tbIdProveedorEliminar.Name = "tbIdProveedorEliminar"
         Me.tbIdProveedorEliminar.Size = New System.Drawing.Size(100, 20)
         Me.tbIdProveedorEliminar.TabIndex = 21
@@ -2069,6 +2078,7 @@ Partial Class GestionesAdministrador
         'tbIdClienteEliminar
         '
         Me.tbIdClienteEliminar.Location = New System.Drawing.Point(45, 16)
+        Me.tbIdClienteEliminar.MaxLength = 6
         Me.tbIdClienteEliminar.Name = "tbIdClienteEliminar"
         Me.tbIdClienteEliminar.Size = New System.Drawing.Size(100, 20)
         Me.tbIdClienteEliminar.TabIndex = 21
@@ -2094,7 +2104,7 @@ Partial Class GestionesAdministrador
         Me.panelAgregarUsuario.Controls.Add(Me.tbAdministradorEmpleadoAgregar)
         Me.panelAgregarUsuario.Controls.Add(Label9)
         Me.panelAgregarUsuario.Controls.Add(Me.tbCargoEmpleadoAgregar)
-        Me.panelAgregarUsuario.Location = New System.Drawing.Point(3000, 3000)
+        Me.panelAgregarUsuario.Location = New System.Drawing.Point(400, 400)
         Me.panelAgregarUsuario.Name = "panelAgregarUsuario"
         Me.panelAgregarUsuario.Size = New System.Drawing.Size(200, 301)
         Me.panelAgregarUsuario.TabIndex = 20
@@ -2111,6 +2121,7 @@ Partial Class GestionesAdministrador
         'tbIdEmpleadoAgregar
         '
         Me.tbIdEmpleadoAgregar.Location = New System.Drawing.Point(91, 28)
+        Me.tbIdEmpleadoAgregar.MaxLength = 3
         Me.tbIdEmpleadoAgregar.Name = "tbIdEmpleadoAgregar"
         Me.tbIdEmpleadoAgregar.Size = New System.Drawing.Size(100, 20)
         Me.tbIdEmpleadoAgregar.TabIndex = 1
@@ -2118,6 +2129,7 @@ Partial Class GestionesAdministrador
         'tbNombreEmpleadoAgregar
         '
         Me.tbNombreEmpleadoAgregar.Location = New System.Drawing.Point(91, 54)
+        Me.tbNombreEmpleadoAgregar.MaxLength = 20
         Me.tbNombreEmpleadoAgregar.Name = "tbNombreEmpleadoAgregar"
         Me.tbNombreEmpleadoAgregar.Size = New System.Drawing.Size(100, 20)
         Me.tbNombreEmpleadoAgregar.TabIndex = 3
@@ -2125,6 +2137,7 @@ Partial Class GestionesAdministrador
         'tbApellido1EmpleadoAgregar
         '
         Me.tbApellido1EmpleadoAgregar.Location = New System.Drawing.Point(91, 80)
+        Me.tbApellido1EmpleadoAgregar.MaxLength = 20
         Me.tbApellido1EmpleadoAgregar.Name = "tbApellido1EmpleadoAgregar"
         Me.tbApellido1EmpleadoAgregar.Size = New System.Drawing.Size(100, 20)
         Me.tbApellido1EmpleadoAgregar.TabIndex = 5
@@ -2132,6 +2145,7 @@ Partial Class GestionesAdministrador
         'tbApellido2EmpleadoAgregar
         '
         Me.tbApellido2EmpleadoAgregar.Location = New System.Drawing.Point(91, 106)
+        Me.tbApellido2EmpleadoAgregar.MaxLength = 20
         Me.tbApellido2EmpleadoAgregar.Name = "tbApellido2EmpleadoAgregar"
         Me.tbApellido2EmpleadoAgregar.Size = New System.Drawing.Size(100, 20)
         Me.tbApellido2EmpleadoAgregar.TabIndex = 7
@@ -2139,6 +2153,7 @@ Partial Class GestionesAdministrador
         'tbTelefonoEmpleadoAgregar
         '
         Me.tbTelefonoEmpleadoAgregar.Location = New System.Drawing.Point(91, 132)
+        Me.tbTelefonoEmpleadoAgregar.MaxLength = 12
         Me.tbTelefonoEmpleadoAgregar.Name = "tbTelefonoEmpleadoAgregar"
         Me.tbTelefonoEmpleadoAgregar.Size = New System.Drawing.Size(100, 20)
         Me.tbTelefonoEmpleadoAgregar.TabIndex = 9
@@ -2146,6 +2161,7 @@ Partial Class GestionesAdministrador
         'tbCorreoEmpleadoAgregar
         '
         Me.tbCorreoEmpleadoAgregar.Location = New System.Drawing.Point(91, 158)
+        Me.tbCorreoEmpleadoAgregar.MaxLength = 35
         Me.tbCorreoEmpleadoAgregar.Name = "tbCorreoEmpleadoAgregar"
         Me.tbCorreoEmpleadoAgregar.Size = New System.Drawing.Size(100, 20)
         Me.tbCorreoEmpleadoAgregar.TabIndex = 11
@@ -2153,6 +2169,7 @@ Partial Class GestionesAdministrador
         'tbContraseñaEmpleadoAgregar
         '
         Me.tbContraseñaEmpleadoAgregar.Location = New System.Drawing.Point(91, 184)
+        Me.tbContraseñaEmpleadoAgregar.MaxLength = 10
         Me.tbContraseñaEmpleadoAgregar.Name = "tbContraseñaEmpleadoAgregar"
         Me.tbContraseñaEmpleadoAgregar.Size = New System.Drawing.Size(100, 20)
         Me.tbContraseñaEmpleadoAgregar.TabIndex = 13
@@ -2160,6 +2177,7 @@ Partial Class GestionesAdministrador
         'tbAdministradorEmpleadoAgregar
         '
         Me.tbAdministradorEmpleadoAgregar.Location = New System.Drawing.Point(91, 210)
+        Me.tbAdministradorEmpleadoAgregar.MaxLength = 1
         Me.tbAdministradorEmpleadoAgregar.Name = "tbAdministradorEmpleadoAgregar"
         Me.tbAdministradorEmpleadoAgregar.Size = New System.Drawing.Size(100, 20)
         Me.tbAdministradorEmpleadoAgregar.TabIndex = 15
@@ -2167,6 +2185,7 @@ Partial Class GestionesAdministrador
         'tbCargoEmpleadoAgregar
         '
         Me.tbCargoEmpleadoAgregar.Location = New System.Drawing.Point(91, 236)
+        Me.tbCargoEmpleadoAgregar.MaxLength = 15
         Me.tbCargoEmpleadoAgregar.Name = "tbCargoEmpleadoAgregar"
         Me.tbCargoEmpleadoAgregar.Size = New System.Drawing.Size(100, 20)
         Me.tbCargoEmpleadoAgregar.TabIndex = 17
@@ -2298,6 +2317,7 @@ Partial Class GestionesAdministrador
         'tbIdProductoAgregar
         '
         Me.tbIdProductoAgregar.Location = New System.Drawing.Point(73, 8)
+        Me.tbIdProductoAgregar.MaxLength = 4
         Me.tbIdProductoAgregar.Name = "tbIdProductoAgregar"
         Me.tbIdProductoAgregar.Size = New System.Drawing.Size(100, 20)
         Me.tbIdProductoAgregar.TabIndex = 1
@@ -2305,6 +2325,7 @@ Partial Class GestionesAdministrador
         'tbNombreProductoAgregar
         '
         Me.tbNombreProductoAgregar.Location = New System.Drawing.Point(73, 34)
+        Me.tbNombreProductoAgregar.MaxLength = 25
         Me.tbNombreProductoAgregar.Name = "tbNombreProductoAgregar"
         Me.tbNombreProductoAgregar.Size = New System.Drawing.Size(100, 20)
         Me.tbNombreProductoAgregar.TabIndex = 3
@@ -2312,6 +2333,7 @@ Partial Class GestionesAdministrador
         'tbPrecioProductoAgregar
         '
         Me.tbPrecioProductoAgregar.Location = New System.Drawing.Point(73, 60)
+        Me.tbPrecioProductoAgregar.MaxLength = 5
         Me.tbPrecioProductoAgregar.Name = "tbPrecioProductoAgregar"
         Me.tbPrecioProductoAgregar.Size = New System.Drawing.Size(100, 20)
         Me.tbPrecioProductoAgregar.TabIndex = 5
@@ -2319,6 +2341,7 @@ Partial Class GestionesAdministrador
         'tbProveedorProductoAgregar
         '
         Me.tbProveedorProductoAgregar.Location = New System.Drawing.Point(73, 86)
+        Me.tbProveedorProductoAgregar.MaxLength = 2
         Me.tbProveedorProductoAgregar.Name = "tbProveedorProductoAgregar"
         Me.tbProveedorProductoAgregar.Size = New System.Drawing.Size(100, 20)
         Me.tbProveedorProductoAgregar.TabIndex = 7
@@ -2326,6 +2349,7 @@ Partial Class GestionesAdministrador
         'tbGamaProductoAgregar
         '
         Me.tbGamaProductoAgregar.Location = New System.Drawing.Point(73, 112)
+        Me.tbGamaProductoAgregar.MaxLength = 1
         Me.tbGamaProductoAgregar.Name = "tbGamaProductoAgregar"
         Me.tbGamaProductoAgregar.Size = New System.Drawing.Size(100, 20)
         Me.tbGamaProductoAgregar.TabIndex = 9
@@ -2358,6 +2382,7 @@ Partial Class GestionesAdministrador
         'tbIdGasolinaAgregar
         '
         Me.tbIdGasolinaAgregar.Location = New System.Drawing.Point(61, 17)
+        Me.tbIdGasolinaAgregar.MaxLength = 3
         Me.tbIdGasolinaAgregar.Name = "tbIdGasolinaAgregar"
         Me.tbIdGasolinaAgregar.Size = New System.Drawing.Size(100, 20)
         Me.tbIdGasolinaAgregar.TabIndex = 1
@@ -2365,6 +2390,7 @@ Partial Class GestionesAdministrador
         'tbNombreGasolinaAgregar
         '
         Me.tbNombreGasolinaAgregar.Location = New System.Drawing.Point(61, 43)
+        Me.tbNombreGasolinaAgregar.MaxLength = 15
         Me.tbNombreGasolinaAgregar.Name = "tbNombreGasolinaAgregar"
         Me.tbNombreGasolinaAgregar.Size = New System.Drawing.Size(100, 20)
         Me.tbNombreGasolinaAgregar.TabIndex = 3
@@ -2372,6 +2398,7 @@ Partial Class GestionesAdministrador
         'tbCantidadGasolinaAgregar
         '
         Me.tbCantidadGasolinaAgregar.Location = New System.Drawing.Point(61, 69)
+        Me.tbCantidadGasolinaAgregar.MaxLength = 5
         Me.tbCantidadGasolinaAgregar.Name = "tbCantidadGasolinaAgregar"
         Me.tbCantidadGasolinaAgregar.Size = New System.Drawing.Size(100, 20)
         Me.tbCantidadGasolinaAgregar.TabIndex = 5
@@ -2379,6 +2406,7 @@ Partial Class GestionesAdministrador
         'tbPrecioGasolinaAgregar
         '
         Me.tbPrecioGasolinaAgregar.Location = New System.Drawing.Point(61, 95)
+        Me.tbPrecioGasolinaAgregar.MaxLength = 6
         Me.tbPrecioGasolinaAgregar.Name = "tbPrecioGasolinaAgregar"
         Me.tbPrecioGasolinaAgregar.Size = New System.Drawing.Size(100, 20)
         Me.tbPrecioGasolinaAgregar.TabIndex = 7
@@ -2407,6 +2435,7 @@ Partial Class GestionesAdministrador
         'tbIdProveedorAgregar
         '
         Me.tbIdProveedorAgregar.Location = New System.Drawing.Point(55, 3)
+        Me.tbIdProveedorAgregar.MaxLength = 2
         Me.tbIdProveedorAgregar.Name = "tbIdProveedorAgregar"
         Me.tbIdProveedorAgregar.Size = New System.Drawing.Size(100, 20)
         Me.tbIdProveedorAgregar.TabIndex = 1
@@ -2414,6 +2443,7 @@ Partial Class GestionesAdministrador
         'tbNombreProveedorAgregar
         '
         Me.tbNombreProveedorAgregar.Location = New System.Drawing.Point(55, 29)
+        Me.tbNombreProveedorAgregar.MaxLength = 15
         Me.tbNombreProveedorAgregar.Name = "tbNombreProveedorAgregar"
         Me.tbNombreProveedorAgregar.Size = New System.Drawing.Size(100, 20)
         Me.tbNombreProveedorAgregar.TabIndex = 3
@@ -2439,7 +2469,7 @@ Partial Class GestionesAdministrador
         Me.panelModificarEmpleado.Controls.Add(Me.tbAdministradorEmpleadoModificar)
         Me.panelModificarEmpleado.Controls.Add(Label37)
         Me.panelModificarEmpleado.Controls.Add(Me.tbCargoEmpleadoModificar)
-        Me.panelModificarEmpleado.Location = New System.Drawing.Point(3000, 3000)
+        Me.panelModificarEmpleado.Location = New System.Drawing.Point(681, 400)
         Me.panelModificarEmpleado.Name = "panelModificarEmpleado"
         Me.panelModificarEmpleado.Size = New System.Drawing.Size(200, 301)
         Me.panelModificarEmpleado.TabIndex = 21
@@ -2456,6 +2486,7 @@ Partial Class GestionesAdministrador
         'tbIdEmpleadoModificar
         '
         Me.tbIdEmpleadoModificar.Location = New System.Drawing.Point(91, 28)
+        Me.tbIdEmpleadoModificar.MaxLength = 3
         Me.tbIdEmpleadoModificar.Name = "tbIdEmpleadoModificar"
         Me.tbIdEmpleadoModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbIdEmpleadoModificar.TabIndex = 1
@@ -2463,6 +2494,7 @@ Partial Class GestionesAdministrador
         'tbNombreEmpleadoModificar
         '
         Me.tbNombreEmpleadoModificar.Location = New System.Drawing.Point(91, 54)
+        Me.tbNombreEmpleadoModificar.MaxLength = 20
         Me.tbNombreEmpleadoModificar.Name = "tbNombreEmpleadoModificar"
         Me.tbNombreEmpleadoModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbNombreEmpleadoModificar.TabIndex = 3
@@ -2470,6 +2502,7 @@ Partial Class GestionesAdministrador
         'tbApellido1EmpleadoModificar
         '
         Me.tbApellido1EmpleadoModificar.Location = New System.Drawing.Point(91, 80)
+        Me.tbApellido1EmpleadoModificar.MaxLength = 20
         Me.tbApellido1EmpleadoModificar.Name = "tbApellido1EmpleadoModificar"
         Me.tbApellido1EmpleadoModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbApellido1EmpleadoModificar.TabIndex = 5
@@ -2477,6 +2510,7 @@ Partial Class GestionesAdministrador
         'tbApellido2EmpleadoModificar
         '
         Me.tbApellido2EmpleadoModificar.Location = New System.Drawing.Point(91, 106)
+        Me.tbApellido2EmpleadoModificar.MaxLength = 20
         Me.tbApellido2EmpleadoModificar.Name = "tbApellido2EmpleadoModificar"
         Me.tbApellido2EmpleadoModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbApellido2EmpleadoModificar.TabIndex = 7
@@ -2484,6 +2518,7 @@ Partial Class GestionesAdministrador
         'tbTelefonoEmpleadoModificar
         '
         Me.tbTelefonoEmpleadoModificar.Location = New System.Drawing.Point(91, 132)
+        Me.tbTelefonoEmpleadoModificar.MaxLength = 12
         Me.tbTelefonoEmpleadoModificar.Name = "tbTelefonoEmpleadoModificar"
         Me.tbTelefonoEmpleadoModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbTelefonoEmpleadoModificar.TabIndex = 9
@@ -2491,6 +2526,7 @@ Partial Class GestionesAdministrador
         'tbCorreoEmpleadoModificar
         '
         Me.tbCorreoEmpleadoModificar.Location = New System.Drawing.Point(91, 158)
+        Me.tbCorreoEmpleadoModificar.MaxLength = 35
         Me.tbCorreoEmpleadoModificar.Name = "tbCorreoEmpleadoModificar"
         Me.tbCorreoEmpleadoModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbCorreoEmpleadoModificar.TabIndex = 11
@@ -2498,6 +2534,7 @@ Partial Class GestionesAdministrador
         'tbContraseñaEmpleadoModificar
         '
         Me.tbContraseñaEmpleadoModificar.Location = New System.Drawing.Point(91, 184)
+        Me.tbContraseñaEmpleadoModificar.MaxLength = 10
         Me.tbContraseñaEmpleadoModificar.Name = "tbContraseñaEmpleadoModificar"
         Me.tbContraseñaEmpleadoModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbContraseñaEmpleadoModificar.TabIndex = 13
@@ -2505,6 +2542,7 @@ Partial Class GestionesAdministrador
         'tbAdministradorEmpleadoModificar
         '
         Me.tbAdministradorEmpleadoModificar.Location = New System.Drawing.Point(91, 210)
+        Me.tbAdministradorEmpleadoModificar.MaxLength = 1
         Me.tbAdministradorEmpleadoModificar.Name = "tbAdministradorEmpleadoModificar"
         Me.tbAdministradorEmpleadoModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbAdministradorEmpleadoModificar.TabIndex = 15
@@ -2512,6 +2550,7 @@ Partial Class GestionesAdministrador
         'tbCargoEmpleadoModificar
         '
         Me.tbCargoEmpleadoModificar.Location = New System.Drawing.Point(91, 236)
+        Me.tbCargoEmpleadoModificar.MaxLength = 15
         Me.tbCargoEmpleadoModificar.Name = "tbCargoEmpleadoModificar"
         Me.tbCargoEmpleadoModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbCargoEmpleadoModificar.TabIndex = 17
@@ -2552,6 +2591,7 @@ Partial Class GestionesAdministrador
         'tbIdClienteModificar
         '
         Me.tbIdClienteModificar.Location = New System.Drawing.Point(72, 31)
+        Me.tbIdClienteModificar.MaxLength = 6
         Me.tbIdClienteModificar.Name = "tbIdClienteModificar"
         Me.tbIdClienteModificar.Size = New System.Drawing.Size(200, 20)
         Me.tbIdClienteModificar.TabIndex = 1
@@ -2559,6 +2599,7 @@ Partial Class GestionesAdministrador
         'tbNombreClienteModificar
         '
         Me.tbNombreClienteModificar.Location = New System.Drawing.Point(72, 57)
+        Me.tbNombreClienteModificar.MaxLength = 10
         Me.tbNombreClienteModificar.Name = "tbNombreClienteModificar"
         Me.tbNombreClienteModificar.Size = New System.Drawing.Size(200, 20)
         Me.tbNombreClienteModificar.TabIndex = 3
@@ -2566,6 +2607,7 @@ Partial Class GestionesAdministrador
         'tbApellido1ClienteModificar
         '
         Me.tbApellido1ClienteModificar.Location = New System.Drawing.Point(72, 83)
+        Me.tbApellido1ClienteModificar.MaxLength = 10
         Me.tbApellido1ClienteModificar.Name = "tbApellido1ClienteModificar"
         Me.tbApellido1ClienteModificar.Size = New System.Drawing.Size(200, 20)
         Me.tbApellido1ClienteModificar.TabIndex = 5
@@ -2573,6 +2615,7 @@ Partial Class GestionesAdministrador
         'tbApellido2ClienteModificar
         '
         Me.tbApellido2ClienteModificar.Location = New System.Drawing.Point(72, 109)
+        Me.tbApellido2ClienteModificar.MaxLength = 10
         Me.tbApellido2ClienteModificar.Name = "tbApellido2ClienteModificar"
         Me.tbApellido2ClienteModificar.Size = New System.Drawing.Size(200, 20)
         Me.tbApellido2ClienteModificar.TabIndex = 7
@@ -2580,6 +2623,7 @@ Partial Class GestionesAdministrador
         'tbTelefonoClienteModificar
         '
         Me.tbTelefonoClienteModificar.Location = New System.Drawing.Point(72, 135)
+        Me.tbTelefonoClienteModificar.MaxLength = 12
         Me.tbTelefonoClienteModificar.Name = "tbTelefonoClienteModificar"
         Me.tbTelefonoClienteModificar.Size = New System.Drawing.Size(200, 20)
         Me.tbTelefonoClienteModificar.TabIndex = 9
@@ -2587,6 +2631,7 @@ Partial Class GestionesAdministrador
         'tbCorreoClienteModificar
         '
         Me.tbCorreoClienteModificar.Location = New System.Drawing.Point(72, 161)
+        Me.tbCorreoClienteModificar.MaxLength = 30
         Me.tbCorreoClienteModificar.Name = "tbCorreoClienteModificar"
         Me.tbCorreoClienteModificar.Size = New System.Drawing.Size(200, 20)
         Me.tbCorreoClienteModificar.TabIndex = 11
@@ -2601,6 +2646,7 @@ Partial Class GestionesAdministrador
         'tbAltaClienteModificar
         '
         Me.tbAltaClienteModificar.Location = New System.Drawing.Point(72, 213)
+        Me.tbAltaClienteModificar.MaxLength = 1
         Me.tbAltaClienteModificar.Name = "tbAltaClienteModificar"
         Me.tbAltaClienteModificar.Size = New System.Drawing.Size(200, 20)
         Me.tbAltaClienteModificar.TabIndex = 15
@@ -2635,6 +2681,7 @@ Partial Class GestionesAdministrador
         'tbIdProductoModificar
         '
         Me.tbIdProductoModificar.Location = New System.Drawing.Point(73, 8)
+        Me.tbIdProductoModificar.MaxLength = 4
         Me.tbIdProductoModificar.Name = "tbIdProductoModificar"
         Me.tbIdProductoModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbIdProductoModificar.TabIndex = 1
@@ -2642,6 +2689,7 @@ Partial Class GestionesAdministrador
         'tbNombreProductoModificar
         '
         Me.tbNombreProductoModificar.Location = New System.Drawing.Point(73, 34)
+        Me.tbNombreProductoModificar.MaxLength = 25
         Me.tbNombreProductoModificar.Name = "tbNombreProductoModificar"
         Me.tbNombreProductoModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbNombreProductoModificar.TabIndex = 3
@@ -2649,6 +2697,7 @@ Partial Class GestionesAdministrador
         'tbPrecioProductoModificar
         '
         Me.tbPrecioProductoModificar.Location = New System.Drawing.Point(73, 60)
+        Me.tbPrecioProductoModificar.MaxLength = 5
         Me.tbPrecioProductoModificar.Name = "tbPrecioProductoModificar"
         Me.tbPrecioProductoModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbPrecioProductoModificar.TabIndex = 5
@@ -2656,6 +2705,7 @@ Partial Class GestionesAdministrador
         'tbProveedorProductoModificar
         '
         Me.tbProveedorProductoModificar.Location = New System.Drawing.Point(73, 86)
+        Me.tbProveedorProductoModificar.MaxLength = 2
         Me.tbProveedorProductoModificar.Name = "tbProveedorProductoModificar"
         Me.tbProveedorProductoModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbProveedorProductoModificar.TabIndex = 7
@@ -2663,6 +2713,7 @@ Partial Class GestionesAdministrador
         'tbGamaProductoModificar
         '
         Me.tbGamaProductoModificar.Location = New System.Drawing.Point(73, 112)
+        Me.tbGamaProductoModificar.MaxLength = 1
         Me.tbGamaProductoModificar.Name = "tbGamaProductoModificar"
         Me.tbGamaProductoModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbGamaProductoModificar.TabIndex = 9
@@ -2695,6 +2746,7 @@ Partial Class GestionesAdministrador
         'tbIdGasolinaModificar
         '
         Me.tbIdGasolinaModificar.Location = New System.Drawing.Point(61, 17)
+        Me.tbIdGasolinaModificar.MaxLength = 3
         Me.tbIdGasolinaModificar.Name = "tbIdGasolinaModificar"
         Me.tbIdGasolinaModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbIdGasolinaModificar.TabIndex = 1
@@ -2702,6 +2754,7 @@ Partial Class GestionesAdministrador
         'tbNombreGasolinaModificar
         '
         Me.tbNombreGasolinaModificar.Location = New System.Drawing.Point(61, 43)
+        Me.tbNombreGasolinaModificar.MaxLength = 15
         Me.tbNombreGasolinaModificar.Name = "tbNombreGasolinaModificar"
         Me.tbNombreGasolinaModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbNombreGasolinaModificar.TabIndex = 3
@@ -2709,6 +2762,7 @@ Partial Class GestionesAdministrador
         'tbCantidadGasolinaModificar
         '
         Me.tbCantidadGasolinaModificar.Location = New System.Drawing.Point(61, 69)
+        Me.tbCantidadGasolinaModificar.MaxLength = 5
         Me.tbCantidadGasolinaModificar.Name = "tbCantidadGasolinaModificar"
         Me.tbCantidadGasolinaModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbCantidadGasolinaModificar.TabIndex = 5
@@ -2716,6 +2770,7 @@ Partial Class GestionesAdministrador
         'tbPrecioGasolinaModificar
         '
         Me.tbPrecioGasolinaModificar.Location = New System.Drawing.Point(61, 95)
+        Me.tbPrecioGasolinaModificar.MaxLength = 6
         Me.tbPrecioGasolinaModificar.Name = "tbPrecioGasolinaModificar"
         Me.tbPrecioGasolinaModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbPrecioGasolinaModificar.TabIndex = 7
@@ -2744,6 +2799,7 @@ Partial Class GestionesAdministrador
         'tbIdModificarProveedor
         '
         Me.tbIdModificarProveedor.Location = New System.Drawing.Point(55, 3)
+        Me.tbIdModificarProveedor.MaxLength = 2
         Me.tbIdModificarProveedor.Name = "tbIdModificarProveedor"
         Me.tbIdModificarProveedor.Size = New System.Drawing.Size(100, 20)
         Me.tbIdModificarProveedor.TabIndex = 1
@@ -2751,6 +2807,7 @@ Partial Class GestionesAdministrador
         'tbNombreProveedorModificar
         '
         Me.tbNombreProveedorModificar.Location = New System.Drawing.Point(55, 29)
+        Me.tbNombreProveedorModificar.MaxLength = 15
         Me.tbNombreProveedorModificar.Name = "tbNombreProveedorModificar"
         Me.tbNombreProveedorModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbNombreProveedorModificar.TabIndex = 3

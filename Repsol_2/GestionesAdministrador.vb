@@ -1776,4 +1776,83 @@ Public Class GestionesAdministrador
         Me.Hide()
         Opciones.Show()
     End Sub
+
+
+    '------------------------------------------------------------------------------------------------------------------------
+    '--------------------------------Zona de validaciones de los textbox-----------------------------------------------------
+    '------------------------------------------------------------------------------------------------------------------------
+
+    Private Sub validarIDs(tb As TextBox)
+
+        If tb.Text = "" Then
+            MsgBox("El campo de ID no puede estar vacio")
+        ElseIf Not IsNumeric(tb.Text) Then
+            MsgBox("El campo de ID solo puede contener numeros")
+            tb.Clear()
+        End If
+    End Sub
+
+    Private Sub validarTelefonos(tb As TextBox)
+        'en este metodo validamos que el texbox de telefono no este vacio. aparte
+        'de que solo puede tener un prefijo (+) y numeros. En caso de que tenga mas de un (+)
+        'o letras, mostraremos un mensaje de error. Para ello utilizaremos una lista con caracteres permitidos
+        Dim permitidos As New List(Of Char) From {"+", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
+        Dim comprobar As Boolean = False
+        If tb.Text = "" Then
+            MsgBox("El campo de telefono no puede estar vacio")
+        Else
+            For i As Integer = 0 To tb.Text.Length - 1
+                If Not permitidos.Contains(tb.Text(i)) Then
+                    comprobar = True
+                End If
+            Next
+            If comprobar = True Then
+                MsgBox("El campo de telefono solo puede contener numeros y el prefijo (+)")
+                tb.Clear()
+            End If
+        End If
+    End Sub
+
+    Private Sub validarCorreos(tb As TextBox)
+        'en este metodo validamos que el texbox de correo no este vacio. aparte
+        'de que solo puede tener un @ y un punto. En caso de que tenga mas de un @
+        'o mas de un punto, mostraremos un mensaje de error. Para ello utilizaremos una lista con caracteres permitidos
+        Dim permitidos As New List(Of Char) From {"@", "."}
+        Dim comprobar As Boolean = False
+        If tb.Text = "" Then
+            MsgBox("El campo de correo no puede estar vacio")
+        Else
+            For i As Integer = 0 To tb.Text.Length - 1
+                If Not permitidos.Contains(tb.Text(i)) Then
+                    comprobar = True
+                End If
+            Next
+            If comprobar = True Then
+                MsgBox("El campo de correo solo puede contener un @ y un punto")
+                tb.Clear()
+            End If
+        End If
+    End Sub
+
+    Private Sub validarContraseñas(tb As TextBox)
+        'en este metodo validamos que el texbox de contraseña no este vacio. aparte
+        'de que solo puede tener letras y numeros. En caso de que tenga caracteres especiales
+        'mostraremos un mensaje de error. Para ello utilizaremos una lista con caracteres permitidos
+        Dim permitidos As New List(Of Char) From {"!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\", "]", "^", "_", "{", "|", "}", "~"}
+        Dim comprobar As Boolean = False
+        If tb.Text = "" Then
+            MsgBox("El campo de contraseña no puede estar vacio")
+        Else
+            For i As Integer = 0 To tb.Text.Length - 1
+                If permitidos.Contains(tb.Text(i)) Then
+                    comprobar = True
+                End If
+            Next
+            If comprobar = True Then
+                MsgBox("El campo de contraseña no puede contener caracteres especiales")
+                tb.Clear()
+            End If
+        End If
+    End Sub
+
 End Class
