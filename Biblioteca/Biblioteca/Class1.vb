@@ -1,4 +1,6 @@
-﻿Imports System.Drawing.Printing
+﻿Imports System.Drawing
+Imports System.Drawing.Printing
+Imports System.Windows.Forms
 
 Namespace validaciones
 
@@ -24,6 +26,19 @@ Namespace validaciones
                 valido = False
             End If
             Return valido
+        End Function
+
+        ''' <summary>
+        ''' Comprueba si el texto está dentro de la longitud permitida
+        ''' </summary>
+        ''' <param name="objetoConTexto">Objeto con parámetro TextLength, como un TextBox o un Label</param>
+        ''' <param name="longitudMaxima">Máxima longitud permitida del texto</param>
+        ''' <returns>Verdadero si es la longitud máxima</returns>
+        Public Function IsMaxLength(ByRef objetoConTexto As Object, ByVal longitudMaxima As Integer) As Boolean
+            If objetoConTexto.TextLength = longitudMaxima Then
+                Return True
+            End If
+            Return False
         End Function
     End Class
 
@@ -56,16 +71,57 @@ End Class
 
 'Clase para imprimir ticket, tiene dos procedimientos, uno por método de pago.
 Public Class Ticket
-    Public Sub TicketTarjeta(ByVal sender As Object, ByVal ev As PrintPageEventArgs)
+    Private printDocument As New PrintDocument()
+
+    Dim resultado, user As String
+    Dim nombreProductos, precioProductos As ListBox
+
+    Dim precioInicial, dinero, devolver As String
+
+
+    Public Sub ImprimirTicketEfectivo(user As String, resultado As String, nombreProductos As ListBox, precioProductos As ListBox, precioInicial As String, dinero As String, devolver As String)
+        AddHandler printDocument.PrintPage, AddressOf TicketEfectivo
+        Me.user = user
+        Me.resultado = resultado
+        Me.nombreProductos = nombreProductos
+        Me.precioProductos = precioProductos
+        Me.precioInicial = precioInicial
+        Me.dinero = dinero
+        Me.devolver = devolver
+
+        ' Puedes personalizar las configuraciones de impresión aquí
+        Dim printerSettings As New PrinterSettings()
+        printDocument.PrinterSettings = printerSettings
+
+        ' Inicia la impresión
+        printDocument.Print()
+    End Sub
+
+    Public Sub ImprimirTicketTarjeta(user As String, resultado As String, nombreProductos As ListBox, precioProductos As ListBox)
+        Me.user = user
+        Me.resultado = resultado
+        Me.nombreProductos = nombreProductos
+        Me.precioProductos = precioProductos
+        AddHandler printDocument.PrintPage, AddressOf TicketTarjeta
+
+        ' Puedes personalizar las configuraciones de impresión aquí
+        Dim printerSettings As New PrinterSettings()
+        printDocument.PrinterSettings = printerSettings
+
+        ' Inicia la impresión
+        printDocument.Print()
+        printDocument.Print()
+    End Sub
+    Private Sub TicketTarjeta(ByVal sender As Object, ByVal ev As PrintPageEventArgs)
         Try
             Dim x, y, w As Integer
             Dim precioSinIva, dif As Single
-            precioSinIva = CSng(TPV.lblResultado.Text).ToString("N2") * 0.9
-            dif = CSng(TPV.lblResultado.Text).ToString("N2") - precioSinIva
+            precioSinIva = CSng(resultado).ToString("N2") * 0.9
+            dif = CSng(resultado).ToString("N2") - precioSinIva
             x = 160
             w = 220
             y = 240
-            ev.Graphics.DrawImage(My.Resources.logo, x + 40, 120, 230, 100)
+            ev.Graphics.DrawImage(My.Resources.Repsol_logo, x + 40, 120, 230, 100)
             ev.Graphics.DrawString("Villalba 23", New Font("Arial", 8, FontStyle.Regular), Brushes.Black, w + 55, y)
             y = y + 20
             ev.Graphics.DrawString("28008 Madrid", New Font("Arial", 8, FontStyle.Regular), Brushes.Black, w + 60, y)
@@ -82,17 +138,17 @@ Public Class Ticket
             y = y + 20
             ev.Graphics.DrawString("----------------------------------------------------", New Font("Arial", 13, FontStyle.Italic), Brushes.Black, x, y)
             y = y + 20
-            For a = 0 To TPV.lbNombreProductos.Items.Count - 1
+            For a = 0 To nombreProductos.Items.Count - 1
                 ev.Graphics.DrawString("ñ", New Font("Arial", 8, FontStyle.Regular), Brushes.Black, w - 40, y)
-                ev.Graphics.DrawString(TPV.lbNombreProductos.Items.Item(a), New Font("Arial", 8, FontStyle.Regular), Brushes.Black, w, y)
-                ev.Graphics.DrawString(TPV.lbPrecios.Items.Item(a), New Font("Arial", 8, FontStyle.Regular), Brushes.Black, w + 160, y)
-                ev.Graphics.DrawString(CSng(TPV.lbPrecios.Items.Item(a) * 1).ToString("N2"), New Font("Arial", 8, FontStyle.Regular), Brushes.Black, w + 200, y)
+                ev.Graphics.DrawString(nombreProductos.Items.Item(a), New Font("Arial", 8, FontStyle.Regular), Brushes.Black, w, y)
+                ev.Graphics.DrawString(precioProductos.Items.Item(a), New Font("Arial", 8, FontStyle.Regular), Brushes.Black, w + 160, y)
+                ev.Graphics.DrawString(CSng(precioProductos.Items.Item(a) * 1).ToString("N2"), New Font("Arial", 8, FontStyle.Regular), Brushes.Black, w + 200, y)
                 y = y + 20
             Next
             ev.Graphics.DrawString("----------------------------------------------------", New Font("Arial", 13, FontStyle.Regular), Brushes.Black, x, y)
             y = y + 20
 
-            ev.Graphics.DrawString("TOTAL: " + CSng(TPV.lblResultado.Text).ToString("N2") + " €", New Font("Arial", 14, FontStyle.Bold), Brushes.Black, w + 80, y)
+            ev.Graphics.DrawString("TOTAL: " + CSng(resultado).ToString("N2") + " €", New Font("Arial", 14, FontStyle.Bold), Brushes.Black, w + 80, y)
             y = y + 25
             ev.Graphics.DrawString("IVA INCLUIDO", New Font("Arial", 6, FontStyle.Regular), Brushes.Black, w + 170, y)
             y = y + 20
@@ -113,9 +169,9 @@ Public Class Ticket
             ev.Graphics.DrawString("ES12 3456 7890 12 123456789", New Font("Arial", 9, FontStyle.Regular), Brushes.Black, w, y)
             y = y + 20
             ev.Graphics.DrawString("ENTREGA: ", New Font("Arial", 10, FontStyle.Regular), Brushes.Black, w, y)
-            ev.Graphics.DrawString(CSng(TPV.lblResultado.Text).ToString("N2"), New Font("Arial", 10, FontStyle.Regular), Brushes.Black, 380, y)
+            ev.Graphics.DrawString(CSng(resultado).ToString("N2"), New Font("Arial", 10, FontStyle.Regular), Brushes.Black, 380, y)
             y = y + 20
-            ev.Graphics.DrawString("Le atendió: " & TPV.lblUser.Text, New Font("Arial", 10, FontStyle.Regular), Brushes.Black, w + 40, y)
+            ev.Graphics.DrawString("Le atendió: " & user, New Font("Arial", 10, FontStyle.Regular), Brushes.Black, w + 40, y)
             y = y + 20
             ev.Graphics.DrawString("----------------------------------------------------", New Font("Arial", 13, FontStyle.Italic), Brushes.Black, x, y)
             y = y + 20
@@ -129,20 +185,20 @@ Public Class Ticket
             ev.HasMorePages = False
         Catch ex As Exception
             MsgBox("Ha ocurrido un error al imprimir el ticket. Vuelva a intentarlo más tarde.", 16, "Error al imprimir el ticket")
-            Dim errado As New Errores
-            errado.GuardarDatos(ex, "Print ticket tarjeta")
+            Dim archivo As New Archivo
+            archivo.GuardarError(ex, "Print ticket tarjeta")
         End Try
     End Sub
-    Public Sub TicketEfectivo(ByVal sender As Object, ByVal ev As PrintPageEventArgs)
+    Private Sub TicketEfectivo(ByVal sender As Object, ByVal ev As PrintPageEventArgs)
         Try
             Dim x, y, w As Integer
             Dim precioSinIva, dif As Single
-            precioSinIva = CSng(TPV.lblResultado.Text).ToString("N2") * 0.9
-            dif = CSng(TPV.lblResultado.Text).ToString("N2") - precioSinIva
+            precioSinIva = CSng(resultado).ToString("N2") * 0.9
+            dif = CSng(resultado).ToString("N2") - precioSinIva
             x = 160
             w = 220
             y = 240
-            ev.Graphics.DrawImage(My.Resources.logo, x + 40, 120, 230, 100)
+            ev.Graphics.DrawImage(My.Resources.Repsol_logo, x + 40, 120, 230, 100)
             ev.Graphics.DrawString("Calle Princesa 7", New Font("Arial", 8, FontStyle.Regular), Brushes.Black, w + 55, y)
             y = y + 20
             ev.Graphics.DrawString("28008 Madrid", New Font("Arial", 8, FontStyle.Regular), Brushes.Black, w + 60, y)
@@ -159,17 +215,17 @@ Public Class Ticket
             y = y + 20
             ev.Graphics.DrawString("----------------------------------------------------", New Font("Arial", 13, FontStyle.Italic), Brushes.Black, x, y)
             y = y + 20
-            For a = 0 To TPV.lbNombreProductos.Items.Count - 1
+            For a = 0 To nombreProductos.Items.Count - 1
                 ev.Graphics.DrawString("ñ", New Font("Arial", 8, FontStyle.Regular), Brushes.Black, w - 40, y)
-                ev.Graphics.DrawString(TPV.lbNombreProductos.Items.Item(a), New Font("Arial", 8, FontStyle.Regular), Brushes.Black, w, y)
-                ev.Graphics.DrawString(TPV.lbPrecios.Items.Item(a), New Font("Arial", 8, FontStyle.Regular), Brushes.Black, w + 160, y)
-                ev.Graphics.DrawString(CSng(TPV.lbPrecios.Items.Item(a) * 1).ToString("N2"), New Font("Arial", 8, FontStyle.Regular), Brushes.Black, w + 200, y)
+                ev.Graphics.DrawString(nombreProductos.Items.Item(a), New Font("Arial", 8, FontStyle.Regular), Brushes.Black, w, y)
+                ev.Graphics.DrawString(precioProductos.Items.Item(a), New Font("Arial", 8, FontStyle.Regular), Brushes.Black, w + 160, y)
+                ev.Graphics.DrawString(CSng(precioProductos.Items.Item(a) * 1).ToString("N2"), New Font("Arial", 8, FontStyle.Regular), Brushes.Black, w + 200, y)
                 y = y + 20
             Next
             ev.Graphics.DrawString("----------------------------------------------------", New Font("Arial", 13, FontStyle.Regular), Brushes.Black, x, y)
             y = y + 20
 
-            ev.Graphics.DrawString("TOTAL: " + CSng(TPV.lblResultado.Text).ToString("N2") + " €", New Font("Arial", 14, FontStyle.Bold), Brushes.Black, w + 80, y)
+            ev.Graphics.DrawString("TOTAL: " + CSng(resultado).ToString("N2") + " €", New Font("Arial", 14, FontStyle.Bold), Brushes.Black, w + 80, y)
             y = y + 25
             ev.Graphics.DrawString("IVA INCLUIDO", New Font("Arial", 6, FontStyle.Regular), Brushes.Black, w + 170, y)
             y = y + 20
@@ -186,15 +242,15 @@ Public Class Ticket
             ev.Graphics.DrawString("Forma de pago:", New Font("Arial", 8, FontStyle.Regular), Brushes.Black, w + 60, y)
             y = y + 20
             ev.Graphics.DrawString("EFECTIVO", New Font("Arial", 10, FontStyle.Regular), Brushes.Black, w, y)
-            ev.Graphics.DrawString(Efectivo.lblPrecioInicial.Text, New Font("Arial", 10, FontStyle.Regular), Brushes.Black, 380, y)
+            ev.Graphics.DrawString(precioInicial, New Font("Arial", 10, FontStyle.Regular), Brushes.Black, 380, y)
             y = y + 20
             ev.Graphics.DrawString("ENTREGA:", New Font("Arial", 10, FontStyle.Regular), Brushes.Black, w, y)
-            ev.Graphics.DrawString(CSng(Efectivo.tbDinero.Text).ToString("N2"), New Font("Arial", 10, FontStyle.Regular), Brushes.Black, 380, y)
+            ev.Graphics.DrawString(CSng(dinero).ToString("N2"), New Font("Arial", 10, FontStyle.Regular), Brushes.Black, 380, y)
             y = y + 20
             ev.Graphics.DrawString("DEVOLUCIÓN:", New Font("Arial", 10, FontStyle.Regular), Brushes.Black, w, y)
-            ev.Graphics.DrawString(CSng(Efectivo.lblDevolver.Text).ToString("N2"), New Font("Arial", 10, FontStyle.Regular), Brushes.Black, 380, y)
+            ev.Graphics.DrawString(CSng(devolver).ToString("N2"), New Font("Arial", 10, FontStyle.Regular), Brushes.Black, 380, y)
             y = y + 40
-            ev.Graphics.DrawString("Le atendió: " & TPV.lblUser.Text, New Font("Arial", 10, FontStyle.Regular), Brushes.Black, w + 40, y)
+            ev.Graphics.DrawString("Le atendió: " & user, New Font("Arial", 10, FontStyle.Regular), Brushes.Black, w + 40, y)
             y = y + 20
             ev.Graphics.DrawString("----------------------------------------------------", New Font("Arial", 13, FontStyle.Italic), Brushes.Black, x, y)
             y = y + 20
@@ -205,11 +261,19 @@ Public Class Ticket
             ev.Graphics.DrawString("HASTA RETIRAR SU PRODUCTO", New Font("Arial", 10, FontStyle.Bold), Brushes.Black, w - 20, y)
             y = y + 20
             ev.Graphics.DrawString("GRACIAS POR SU VISITA", New Font("Arial", 10, FontStyle.Bold), Brushes.Black, w + 15, y)
+
+            ev.Graphics.DrawString("-----------------------------------------------------", New Font("Arial", 13, FontStyle.Italic), Brushes.Black, x, y)
+            ev.Graphics.DrawString("------------------------FIRMA------------------------", New Font("Arial", 13, FontStyle.Italic), Brushes.Black, x, y)
+            ev.Graphics.DrawString("-----------------------------------------------------", New Font("Arial", 13, FontStyle.Italic), Brushes.Black, x, y)
+            y = y + 20
+            y = y + 20
+            y = y + 20
+            ev.HasMorePages = False
             ev.HasMorePages = False
         Catch ex As Exception
             MsgBox("Ha ocurrido un error al imprimir el ticket. Vuelva a intentarlo más tarde.", 16, "Error al imprimir el ticket")
-            Dim errado As New Errores
-            errado.GuardarDatos(ex, "Print ticket")
+            Dim archivo As New Archivo
+            archivo.GuardarError(ex, "Print ticket")
         End Try
     End Sub
 End Class

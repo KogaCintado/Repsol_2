@@ -1,6 +1,6 @@
 ﻿Imports System.Drawing.Printing
-Imports System.Net.Mime.MediaTypeNames
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+Imports Biblioteca
 
 Public Class Efectivo
 
@@ -19,12 +19,11 @@ Public Class Efectivo
             'Dim a As Single = Math.Abs(Single.Parse(lblDevolver.Text.TrimEnd("€")))
             'caja.CajaTemporal(Single.Parse(tbDinero.Text), a, TPV.lblUser.Text)
 
-            Dim printDoc As New PrintDocument
-            'asignamos el método de evento para cada página a imprimir
+
             Dim ticket As New Ticket()
-            AddHandler printDoc.PrintPage, AddressOf ticket.TicketEfectivo
-            'indicamos que queremos imprimir
-            printDoc.Print()
+
+            ticket.ImprimirTicketEfectivo(TPV.lblUser.Text, TPV.lblResultado.Text, TPV.lbNombreProductos, TPV.lbPrecios, lblPrecioInicial.Text, tbDinero.Text, lblDevolver.Text)
+
 
             TPV.nuevoPedido()
             TPV.Show()
@@ -93,7 +92,7 @@ Public Class Efectivo
 
     'Valida los datos.
     Private Function MaxLongitudYValidar() As Boolean
-        Dim validarTexto As New Texto
+        Dim validarTexto As New validaciones.validacionNombreyContra
         'Comprueba si está vacío el texto y si está lleno
         If tbDinero.Text = "0,00" Then
             tbDinero.Clear()
