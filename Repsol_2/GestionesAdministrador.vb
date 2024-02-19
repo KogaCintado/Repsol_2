@@ -5,34 +5,14 @@ Public Class GestionesAdministrador
     Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
 
     Private Sub GestionesAdministrador_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'datagridviews y todo a tomar por culo de forma guarra para que no se vean
-        panelModificarCliente.Location = New Point(3000, 3000)
-        GasolinasDataGridView.Location = New Point(3000, 3000)
-        ProductosDataGridView.Location = New Point(3000, 3000)
-        EmpleadosDataGridView.Location = New Point(3000, 3000)
-        ClientesDataGridView.Location = New Point(3000, 3000)
-        ProveedoresDataGridView.Location = New Point(3000, 3000)
-        panelBuscarEmpleado.Location = New Point(3000, 3000)
-        panelBuscarCliente.Location = New Point(3000, 3000)
-        panelBuscarProducto.Location = New Point(3000, 3000)
-        panelBuscarGasolina.Location = New Point(3000, 3000)
-        panelBuscarProveedor.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarGasolina.Location = New Point(3000, 3000)
-        panelEliminarProducto.Location = New Point(3000, 3000)
-        panelEliminarClientes.Location = New Point(3000, 3000)
-        panelEliminarProveedores.Location = New Point(3000, 3000)
-        panelAgregarUsuario.Location = New Point(3000, 3000)
-        panelAgregarCliente.Location = New Point(3000, 3000)
-        panelAgregarProducto.Location = New Point(3000, 3000)
-        panelAgregarGasolina.Location = New Point(3000, 3000)
-        panelAgregarProveedor.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarProducto.Location = New Point(3000, 3000)
-        panelModificarGasolina.Location = New Point(3000, 3000)
-        panelModificarProveedores.Location = New Point(3000, 3000)
-
+        Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
+        For Each panel As Panel In paneles
+            panel.Location = New Point(3000, 3000)
+        Next
+        Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
+        For Each datagrid As DataGridView In datagrids
+            datagrid.Location = New Point(3000, 3000)
+        Next
         'Maximize the window
         Me.WindowState = FormWindowState.Maximized
     End Sub
@@ -43,719 +23,287 @@ Public Class GestionesAdministrador
     End Sub
 
     Private Sub invisivilizarTodosExceptoDataGridDeClientes()
-        panelModificarCliente.Location = New Point(3000, 3000)
-        ProductosDataGridView.Location = New Point(3000, 3000)
-        EmpleadosDataGridView.Location = New Point(3000, 3000)
-        GasolinasDataGridView.Location = New Point(3000, 3000)
-        ProveedoresDataGridView.Location = New Point(3000, 3000)
-        panelBuscarEmpleado.Location = New Point(3000, 3000)
-        panelBuscarCliente.Location = New Point(3000, 3000)
-        panelBuscarProducto.Location = New Point(3000, 3000)
-        panelBuscarGasolina.Location = New Point(3000, 3000)
-        panelBuscarProveedor.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarGasolina.Location = New Point(3000, 3000)
-        panelEliminarProducto.Location = New Point(3000, 3000)
-        panelEliminarClientes.Location = New Point(3000, 3000)
-        panelEliminarProveedores.Location = New Point(3000, 3000)
-        panelAgregarUsuario.Location = New Point(3000, 3000)
-        panelAgregarCliente.Location = New Point(3000, 3000)
-        panelAgregarProducto.Location = New Point(3000, 3000)
-        panelAgregarGasolina.Location = New Point(3000, 3000)
-        panelAgregarProveedor.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarProducto.Location = New Point(3000, 3000)
-        panelModificarGasolina.Location = New Point(3000, 3000)
-        panelModificarProveedores.Location = New Point(3000, 3000)
+
+        Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
+        For Each panel As Panel In paneles
+            panel.Location = New Point(3000, 3000)
+        Next
+        Dim datagrids As New List(Of DataGridView) From {EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
+        For Each datagrid As DataGridView In datagrids
+            datagrid.Location = New Point(3000, 3000)
+        Next
+
     End Sub
 
     Private Sub invisivilizarTodosExceptoDataGridDeEmpleados()
-        ProductosDataGridView.Location = New Point(3000, 3000)
-        ClientesDataGridView.Location = New Point(3000, 3000)
-        GasolinasDataGridView.Location = New Point(3000, 3000)
-        ProveedoresDataGridView.Location = New Point(3000, 3000)
-        panelBuscarEmpleado.Location = New Point(3000, 3000)
-        panelBuscarCliente.Location = New Point(3000, 3000)
-        panelBuscarProducto.Location = New Point(3000, 3000)
-        panelBuscarGasolina.Location = New Point(3000, 3000)
-        panelBuscarProveedor.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarProducto.Location = New Point(3000, 3000)
-        panelEliminarGasolina.Location = New Point(3000, 3000)
-        panelEliminarClientes.Location = New Point(3000, 3000)
-        panelEliminarProveedores.Location = New Point(3000, 3000)
-        panelAgregarUsuario.Location = New Point(3000, 3000)
-        panelAgregarCliente.Location = New Point(3000, 3000)
-        panelAgregarProducto.Location = New Point(3000, 3000)
-        panelAgregarGasolina.Location = New Point(3000, 3000)
-        panelAgregarProveedor.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarProducto.Location = New Point(3000, 3000)
-        panelModificarGasolina.Location = New Point(3000, 3000)
-        panelModificarProveedores.Location = New Point(3000, 3000)
-        panelModificarCliente.Location = New Point(3000, 3000)
+        Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
+        For Each panel As Panel In paneles
+            panel.Location = New Point(3000, 3000)
+        Next
+        Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
+        For Each datagrid As DataGridView In datagrids
+            datagrid.Location = New Point(3000, 3000)
+        Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoDataGridDeGasolinas()
-        ProductosDataGridView.Location = New Point(3000, 3000)
-        EmpleadosDataGridView.Location = New Point(3000, 3000)
-        ClientesDataGridView.Location = New Point(3000, 3000)
-        ProveedoresDataGridView.Location = New Point(3000, 3000)
-        panelBuscarEmpleado.Location = New Point(3000, 3000)
-        panelBuscarCliente.Location = New Point(3000, 3000)
-        panelBuscarProducto.Location = New Point(3000, 3000)
-        panelBuscarGasolina.Location = New Point(3000, 3000)
-        panelBuscarProveedor.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarGasolina.Location = New Point(3000, 3000)
-        panelEliminarProducto.Location = New Point(3000, 3000)
-        panelEliminarClientes.Location = New Point(3000, 3000)
-        panelEliminarProveedores.Location = New Point(3000, 3000)
-        panelAgregarUsuario.Location = New Point(3000, 3000)
-        panelAgregarCliente.Location = New Point(3000, 3000)
-        panelAgregarProducto.Location = New Point(3000, 3000)
-        panelAgregarGasolina.Location = New Point(3000, 3000)
-        panelAgregarProveedor.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarProducto.Location = New Point(3000, 3000)
-        panelModificarGasolina.Location = New Point(3000, 3000)
-        panelModificarProveedores.Location = New Point(3000, 3000)
-        panelModificarCliente.Location = New Point(3000, 3000)
+        Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
+        For Each panel As Panel In paneles
+            panel.Location = New Point(3000, 3000)
+        Next
+        Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, ProductosDataGridView, ProveedoresDataGridView}
+        For Each datagrid As DataGridView In datagrids
+            datagrid.Location = New Point(3000, 3000)
+        Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoDataGridDeProductos()
-        EmpleadosDataGridView.Location = New Point(3000, 3000)
-        ClientesDataGridView.Location = New Point(3000, 3000)
-        GasolinasDataGridView.Location = New Point(3000, 3000)
-        ProveedoresDataGridView.Location = New Point(3000, 3000)
-        panelBuscarEmpleado.Location = New Point(3000, 3000)
-        panelBuscarCliente.Location = New Point(3000, 3000)
-        panelBuscarProducto.Location = New Point(3000, 3000)
-        panelBuscarGasolina.Location = New Point(3000, 3000)
-        panelBuscarProveedor.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarGasolina.Location = New Point(3000, 3000)
-        panelEliminarProducto.Location = New Point(3000, 3000)
-        panelEliminarClientes.Location = New Point(3000, 3000)
-        panelEliminarProveedores.Location = New Point(3000, 3000)
-        panelAgregarUsuario.Location = New Point(3000, 3000)
-        panelAgregarCliente.Location = New Point(3000, 3000)
-        panelAgregarProducto.Location = New Point(3000, 3000)
-        panelAgregarGasolina.Location = New Point(3000, 3000)
-        panelAgregarProveedor.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarProducto.Location = New Point(3000, 3000)
-        panelModificarGasolina.Location = New Point(3000, 3000)
-        panelModificarProveedores.Location = New Point(3000, 3000)
-        panelModificarCliente.Location = New Point(3000, 3000)
+        Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
+        For Each panel As Panel In paneles
+            panel.Location = New Point(3000, 3000)
+        Next
+        Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, ProductosDataGridView, ProveedoresDataGridView}
+        For Each datagrid As DataGridView In datagrids
+            datagrid.Location = New Point(3000, 3000)
+        Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoDataGridDeProveedores()
-        ProductosDataGridView.Location = New Point(3000, 3000)
-        EmpleadosDataGridView.Location = New Point(3000, 3000)
-        GasolinasDataGridView.Location = New Point(3000, 3000)
-        ClientesDataGridView.Location = New Point(3000, 3000)
-        panelBuscarEmpleado.Location = New Point(3000, 3000)
-        panelBuscarCliente.Location = New Point(3000, 3000)
-        panelBuscarProducto.Location = New Point(3000, 3000)
-        panelBuscarGasolina.Location = New Point(3000, 3000)
-        panelBuscarProveedor.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarGasolina.Location = New Point(3000, 3000)
-        panelEliminarProducto.Location = New Point(3000, 3000)
-        panelEliminarClientes.Location = New Point(3000, 3000)
-        panelEliminarProveedores.Location = New Point(3000, 3000)
-        panelAgregarUsuario.Location = New Point(3000, 3000)
-        panelAgregarCliente.Location = New Point(3000, 3000)
-        panelAgregarProducto.Location = New Point(3000, 3000)
-        panelAgregarGasolina.Location = New Point(3000, 3000)
-        panelAgregarProveedor.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarProducto.Location = New Point(3000, 3000)
-        panelModificarGasolina.Location = New Point(3000, 3000)
-        panelModificarProveedores.Location = New Point(3000, 3000)
-        panelModificarCliente.Location = New Point(3000, 3000)
+        Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
+        For Each panel As Panel In paneles
+            panel.Location = New Point(3000, 3000)
+        Next
+        Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProveedoresDataGridView}
+        For Each datagrid As DataGridView In datagrids
+            datagrid.Location = New Point(3000, 3000)
+        Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelBuscarEmpleado()
-        ProductosDataGridView.Location = New Point(3000, 3000)
-        EmpleadosDataGridView.Location = New Point(3000, 3000)
-        GasolinasDataGridView.Location = New Point(3000, 3000)
-        ClientesDataGridView.Location = New Point(3000, 3000)
-        ProveedoresDataGridView.Location = New Point(3000, 3000)
-        panelBuscarCliente.Location = New Point(3000, 3000)
-        panelBuscarProducto.Location = New Point(3000, 3000)
-        panelBuscarGasolina.Location = New Point(3000, 3000)
-        panelBuscarProveedor.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarGasolina.Location = New Point(3000, 3000)
-        panelEliminarProducto.Location = New Point(3000, 3000)
-        panelEliminarClientes.Location = New Point(3000, 3000)
-        panelEliminarProveedores.Location = New Point(3000, 3000)
-        panelAgregarUsuario.Location = New Point(3000, 3000)
-        panelAgregarCliente.Location = New Point(3000, 3000)
-        panelAgregarProducto.Location = New Point(3000, 3000)
-        panelAgregarGasolina.Location = New Point(3000, 3000)
-        panelAgregarProveedor.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarProducto.Location = New Point(3000, 3000)
-        panelModificarGasolina.Location = New Point(3000, 3000)
-        panelModificarProveedores.Location = New Point(3000, 3000)
-        panelModificarCliente.Location = New Point(3000, 3000)
+        Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
+        For Each panel As Panel In paneles
+            panel.Location = New Point(3000, 3000)
+        Next
+        Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
+        For Each datagrid As DataGridView In datagrids
+            datagrid.Location = New Point(3000, 3000)
+        Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelBuscarCliente()
-        ProductosDataGridView.Location = New Point(3000, 3000)
-        EmpleadosDataGridView.Location = New Point(3000, 3000)
-        GasolinasDataGridView.Location = New Point(3000, 3000)
-        ClientesDataGridView.Location = New Point(3000, 3000)
-        ProveedoresDataGridView.Location = New Point(3000, 3000)
-        panelBuscarEmpleado.Location = New Point(3000, 3000)
-        panelBuscarProducto.Location = New Point(3000, 3000)
-        panelBuscarGasolina.Location = New Point(3000, 3000)
-        panelBuscarProveedor.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarProducto.Location = New Point(3000, 3000)
-        panelEliminarGasolina.Location = New Point(3000, 3000)
-        panelEliminarClientes.Location = New Point(3000, 3000)
-        panelEliminarProveedores.Location = New Point(3000, 3000)
-        panelAgregarUsuario.Location = New Point(3000, 3000)
-        panelAgregarCliente.Location = New Point(3000, 3000)
-        panelAgregarProducto.Location = New Point(3000, 3000)
-        panelAgregarGasolina.Location = New Point(3000, 3000)
-        panelAgregarProveedor.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarProducto.Location = New Point(3000, 3000)
-        panelModificarGasolina.Location = New Point(3000, 3000)
-        panelModificarProveedores.Location = New Point(3000, 3000)
-        panelModificarCliente.Location = New Point(3000, 3000)
+        Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
+        For Each panel As Panel In paneles
+            panel.Location = New Point(3000, 3000)
+        Next
+        Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
+        For Each datagrid As DataGridView In datagrids
+            datagrid.Location = New Point(3000, 3000)
+        Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelBuscarProducto()
-        ProductosDataGridView.Location = New Point(3000, 3000)
-        EmpleadosDataGridView.Location = New Point(3000, 3000)
-        GasolinasDataGridView.Location = New Point(3000, 3000)
-        ClientesDataGridView.Location = New Point(3000, 3000)
-        ProveedoresDataGridView.Location = New Point(3000, 3000)
-        panelBuscarEmpleado.Location = New Point(3000, 3000)
-        panelBuscarCliente.Location = New Point(3000, 3000)
-        panelBuscarGasolina.Location = New Point(3000, 3000)
-        panelBuscarProveedor.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarGasolina.Location = New Point(3000, 3000)
-        panelEliminarProducto.Location = New Point(3000, 3000)
-        panelEliminarClientes.Location = New Point(3000, 3000)
-        panelEliminarProveedores.Location = New Point(3000, 3000)
-        panelAgregarUsuario.Location = New Point(3000, 3000)
-        panelAgregarCliente.Location = New Point(3000, 3000)
-        panelAgregarProducto.Location = New Point(3000, 3000)
-        panelAgregarGasolina.Location = New Point(3000, 3000)
-        panelAgregarProveedor.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarProducto.Location = New Point(3000, 3000)
-        panelModificarGasolina.Location = New Point(3000, 3000)
-        panelModificarProveedores.Location = New Point(3000, 3000)
-        panelModificarCliente.Location = New Point(3000, 3000)
+        Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
+        For Each panel As Panel In paneles
+            panel.Location = New Point(3000, 3000)
+        Next
+        Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
+        For Each datagrid As DataGridView In datagrids
+            datagrid.Location = New Point(3000, 3000)
+        Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelBuscarGasolina()
-        ProveedoresDataGridView.Location = New Point(3000, 3000)
-        ProductosDataGridView.Location = New Point(3000, 3000)
-        EmpleadosDataGridView.Location = New Point(3000, 3000)
-        GasolinasDataGridView.Location = New Point(3000, 3000)
-        ClientesDataGridView.Location = New Point(3000, 3000)
-        ClientesDataGridView.Location = New Point(3000, 3000)
-        panelBuscarEmpleado.Location = New Point(3000, 3000)
-        panelBuscarCliente.Location = New Point(3000, 3000)
-        panelBuscarProducto.Location = New Point(3000, 3000)
-        panelBuscarProveedor.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarGasolina.Location = New Point(3000, 3000)
-        panelEliminarProducto.Location = New Point(3000, 3000)
-        panelEliminarClientes.Location = New Point(3000, 3000)
-        panelEliminarProveedores.Location = New Point(3000, 3000)
-        panelAgregarUsuario.Location = New Point(3000, 3000)
-        panelAgregarCliente.Location = New Point(3000, 3000)
-        panelAgregarProducto.Location = New Point(3000, 3000)
-        panelAgregarGasolina.Location = New Point(3000, 3000)
-        panelAgregarProveedor.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarProducto.Location = New Point(3000, 3000)
-        panelModificarGasolina.Location = New Point(3000, 3000)
-        panelModificarProveedores.Location = New Point(3000, 3000)
-        panelModificarCliente.Location = New Point(3000, 3000)
+        Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
+        For Each panel As Panel In paneles
+            panel.Location = New Point(3000, 3000)
+        Next
+        Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
+        For Each datagrid As DataGridView In datagrids
+            datagrid.Location = New Point(3000, 3000)
+        Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelBuscarProveedor()
-        ProveedoresDataGridView.Location = New Point(3000, 3000)
-        ProductosDataGridView.Location = New Point(3000, 3000)
-        EmpleadosDataGridView.Location = New Point(3000, 3000)
-        GasolinasDataGridView.Location = New Point(3000, 3000)
-        ClientesDataGridView.Location = New Point(3000, 3000)
-        ProveedoresDataGridView.Location = New Point(3000, 3000)
-        panelBuscarEmpleado.Location = New Point(3000, 3000)
-        panelBuscarCliente.Location = New Point(3000, 3000)
-        panelBuscarProducto.Location = New Point(3000, 3000)
-        panelBuscarGasolina.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarProducto.Location = New Point(3000, 3000)
-        panelEliminarGasolina.Location = New Point(3000, 3000)
-        panelEliminarClientes.Location = New Point(3000, 3000)
-        panelEliminarProveedores.Location = New Point(3000, 3000)
-        panelAgregarUsuario.Location = New Point(3000, 3000)
-        panelAgregarCliente.Location = New Point(3000, 3000)
-        panelAgregarProducto.Location = New Point(3000, 3000)
-        panelAgregarGasolina.Location = New Point(3000, 3000)
-        panelAgregarProveedor.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarProducto.Location = New Point(3000, 3000)
-        panelModificarGasolina.Location = New Point(3000, 3000)
-        panelModificarProveedores.Location = New Point(3000, 3000)
-        panelModificarCliente.Location = New Point(3000, 3000)
+        Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
+        For Each panel As Panel In paneles
+            panel.Location = New Point(3000, 3000)
+        Next
+        Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
+        For Each datagrid As DataGridView In datagrids
+            datagrid.Location = New Point(3000, 3000)
+        Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelEliminarEmpleado()
-        ProveedoresDataGridView.Location = New Point(3000, 3000)
-        ProductosDataGridView.Location = New Point(3000, 3000)
-        EmpleadosDataGridView.Location = New Point(3000, 3000)
-        GasolinasDataGridView.Location = New Point(3000, 3000)
-        ClientesDataGridView.Location = New Point(3000, 3000)
-        ProveedoresDataGridView.Location = New Point(3000, 3000)
-        panelBuscarEmpleado.Location = New Point(3000, 3000)
-        panelBuscarCliente.Location = New Point(3000, 3000)
-        panelBuscarProducto.Location = New Point(3000, 3000)
-        panelBuscarGasolina.Location = New Point(3000, 3000)
-        panelBuscarProveedor.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarGasolina.Location = New Point(3000, 3000)
-        panelEliminarProducto.Location = New Point(3000, 3000)
-        panelEliminarClientes.Location = New Point(3000, 3000)
-        panelEliminarProveedores.Location = New Point(3000, 3000)
-        panelAgregarUsuario.Location = New Point(3000, 3000)
-        panelAgregarCliente.Location = New Point(3000, 3000)
-        panelAgregarProducto.Location = New Point(3000, 3000)
-        panelAgregarGasolina.Location = New Point(3000, 3000)
-        panelAgregarProveedor.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarProducto.Location = New Point(3000, 3000)
-        panelModificarGasolina.Location = New Point(3000, 3000)
-        panelModificarProveedores.Location = New Point(3000, 3000)
-        panelModificarCliente.Location = New Point(3000, 3000)
+        Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
+        For Each panel As Panel In paneles
+            panel.Location = New Point(3000, 3000)
+        Next
+        Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
+        For Each datagrid As DataGridView In datagrids
+            datagrid.Location = New Point(3000, 3000)
+        Next
 
     End Sub
 
 
     Private Sub invisivilizarTodosExceptoPanelEliminarGasolina()
-        ProveedoresDataGridView.Location = New Point(3000, 3000)
-        GasolinasDataGridView.Location = New Point(3000, 3000)
-        ProductosDataGridView.Location = New Point(3000, 3000)
-        EmpleadosDataGridView.Location = New Point(3000, 3000)
-        ClientesDataGridView.Location = New Point(3000, 3000)
-        panelBuscarEmpleado.Location = New Point(3000, 3000)
-        panelBuscarCliente.Location = New Point(3000, 3000)
-        panelBuscarProducto.Location = New Point(3000, 3000)
-        panelBuscarGasolina.Location = New Point(3000, 3000)
-        panelBuscarProveedor.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarProducto.Location = New Point(3000, 3000)
-        panelEliminarGasolina.Location = New Point(3000, 3000)
-        panelEliminarClientes.Location = New Point(3000, 3000)
-        panelEliminarProveedores.Location = New Point(3000, 3000)
-        panelAgregarUsuario.Location = New Point(3000, 3000)
-        panelAgregarCliente.Location = New Point(3000, 3000)
-        panelAgregarProducto.Location = New Point(3000, 3000)
-        panelAgregarGasolina.Location = New Point(3000, 3000)
-        panelAgregarProveedor.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarProducto.Location = New Point(3000, 3000)
-        panelModificarGasolina.Location = New Point(3000, 3000)
-        panelModificarProveedores.Location = New Point(3000, 3000)
-        panelModificarCliente.Location = New Point(3000, 3000)
+        Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
+        For Each panel As Panel In paneles
+            panel.Location = New Point(3000, 3000)
+        Next
+        Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
+        For Each datagrid As DataGridView In datagrids
+            datagrid.Location = New Point(3000, 3000)
+        Next
 
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelEliminarProducto()
-        ProveedoresDataGridView.Location = New Point(3000, 3000)
-        GasolinasDataGridView.Location = New Point(3000, 3000)
-        ProductosDataGridView.Location = New Point(3000, 3000)
-        EmpleadosDataGridView.Location = New Point(3000, 3000)
-        ClientesDataGridView.Location = New Point(3000, 3000)
-        panelBuscarEmpleado.Location = New Point(3000, 3000)
-        panelBuscarCliente.Location = New Point(3000, 3000)
-        panelBuscarProducto.Location = New Point(3000, 3000)
-        panelBuscarGasolina.Location = New Point(3000, 3000)
-        panelBuscarProveedor.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarGasolina.Location = New Point(3000, 3000)
-        panelEliminarClientes.Location = New Point(3000, 3000)
-        panelEliminarProveedores.Location = New Point(3000, 3000)
-        panelAgregarUsuario.Location = New Point(3000, 3000)
-        panelAgregarCliente.Location = New Point(3000, 3000)
-        panelAgregarProducto.Location = New Point(3000, 3000)
-        panelAgregarGasolina.Location = New Point(3000, 3000)
-        panelAgregarProveedor.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarProducto.Location = New Point(3000, 3000)
-        panelModificarGasolina.Location = New Point(3000, 3000)
-        panelModificarProveedores.Location = New Point(3000, 3000)
-        panelModificarCliente.Location = New Point(3000, 3000)
+        Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
+        For Each panel As Panel In paneles
+            panel.Location = New Point(3000, 3000)
+        Next
+        Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
+        For Each datagrid As DataGridView In datagrids
+            datagrid.Location = New Point(3000, 3000)
+        Next
 
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelEliminarProveedor()
-        ProveedoresDataGridView.Location = New Point(3000, 3000)
-        ProductosDataGridView.Location = New Point(3000, 3000)
-        EmpleadosDataGridView.Location = New Point(3000, 3000)
-        GasolinasDataGridView.Location = New Point(3000, 3000)
-        ClientesDataGridView.Location = New Point(3000, 3000)
-        ProveedoresDataGridView.Location = New Point(3000, 3000)
-        panelBuscarEmpleado.Location = New Point(3000, 3000)
-        panelBuscarCliente.Location = New Point(3000, 3000)
-        panelBuscarProducto.Location = New Point(3000, 3000)
-        panelBuscarGasolina.Location = New Point(3000, 3000)
-        panelBuscarProveedor.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarGasolina.Location = New Point(3000, 3000)
-        panelEliminarProducto.Location = New Point(3000, 3000)
-        panelEliminarClientes.Location = New Point(3000, 3000)
-        panelAgregarUsuario.Location = New Point(3000, 3000)
-        panelAgregarCliente.Location = New Point(3000, 3000)
-        panelAgregarProducto.Location = New Point(3000, 3000)
-        panelAgregarGasolina.Location = New Point(3000, 3000)
-        panelAgregarProveedor.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarProducto.Location = New Point(3000, 3000)
-        panelModificarGasolina.Location = New Point(3000, 3000)
-        panelModificarProveedores.Location = New Point(3000, 3000)
-        panelModificarCliente.Location = New Point(3000, 3000)
+        Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
+        For Each panel As Panel In paneles
+            panel.Location = New Point(3000, 3000)
+        Next
+        Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
+        For Each datagrid As DataGridView In datagrids
+            datagrid.Location = New Point(3000, 3000)
+        Next
 
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelEliminarCliente()
-        ProveedoresDataGridView.Location = New Point(3000, 3000)
-        ProductosDataGridView.Location = New Point(3000, 3000)
-        EmpleadosDataGridView.Location = New Point(3000, 3000)
-        GasolinasDataGridView.Location = New Point(3000, 3000)
-        ClientesDataGridView.Location = New Point(3000, 3000)
-        ProveedoresDataGridView.Location = New Point(3000, 3000)
-        panelBuscarEmpleado.Location = New Point(3000, 3000)
-        panelBuscarCliente.Location = New Point(3000, 3000)
-        panelBuscarProducto.Location = New Point(3000, 3000)
-        panelBuscarGasolina.Location = New Point(3000, 3000)
-        panelBuscarProveedor.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarGasolina.Location = New Point(3000, 3000)
-        panelEliminarProducto.Location = New Point(3000, 3000)
-        panelEliminarProveedores.Location = New Point(3000, 3000)
-        panelAgregarUsuario.Location = New Point(3000, 3000)
-        panelAgregarCliente.Location = New Point(3000, 3000)
-        panelAgregarProducto.Location = New Point(3000, 3000)
-        panelAgregarGasolina.Location = New Point(3000, 3000)
-        panelAgregarProveedor.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarProducto.Location = New Point(3000, 3000)
-        panelModificarGasolina.Location = New Point(3000, 3000)
-        panelModificarProveedores.Location = New Point(3000, 3000)
-        panelModificarCliente.Location = New Point(3000, 3000)
+        Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
+        For Each panel As Panel In paneles
+            panel.Location = New Point(3000, 3000)
+        Next
+        Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
+        For Each datagrid As DataGridView In datagrids
+            datagrid.Location = New Point(3000, 3000)
+        Next
 
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelAgregarUsuario()
-        ProveedoresDataGridView.Location = New Point(3000, 3000)
-        GasolinasDataGridView.Location = New Point(3000, 3000)
-        ProductosDataGridView.Location = New Point(3000, 3000)
-        EmpleadosDataGridView.Location = New Point(3000, 3000)
-        ClientesDataGridView.Location = New Point(3000, 3000)
-        panelBuscarEmpleado.Location = New Point(3000, 3000)
-        panelBuscarCliente.Location = New Point(3000, 3000)
-        panelBuscarProducto.Location = New Point(3000, 3000)
-        panelBuscarGasolina.Location = New Point(3000, 3000)
-        panelBuscarProveedor.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarGasolina.Location = New Point(3000, 3000)
-        panelEliminarProducto.Location = New Point(3000, 3000)
-        panelEliminarClientes.Location = New Point(3000, 3000)
-        panelEliminarProveedores.Location = New Point(3000, 3000)
-        panelAgregarCliente.Location = New Point(3000, 3000)
-        panelAgregarProducto.Location = New Point(3000, 3000)
-        panelAgregarGasolina.Location = New Point(3000, 3000)
-        panelAgregarProveedor.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarProducto.Location = New Point(3000, 3000)
-        panelModificarGasolina.Location = New Point(3000, 3000)
-        panelModificarProveedores.Location = New Point(3000, 3000)
-        panelModificarCliente.Location = New Point(3000, 3000)
+        Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
+        For Each panel As Panel In paneles
+            panel.Location = New Point(3000, 3000)
+        Next
+        Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
+        For Each datagrid As DataGridView In datagrids
+            datagrid.Location = New Point(3000, 3000)
+        Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelAgregarCliente()
-        ProveedoresDataGridView.Location = New Point(3000, 3000)
-        GasolinasDataGridView.Location = New Point(3000, 3000)
-        ProductosDataGridView.Location = New Point(3000, 3000)
-        EmpleadosDataGridView.Location = New Point(3000, 3000)
-        ClientesDataGridView.Location = New Point(3000, 3000)
-        panelBuscarEmpleado.Location = New Point(3000, 3000)
-        panelBuscarCliente.Location = New Point(3000, 3000)
-        panelBuscarProducto.Location = New Point(3000, 3000)
-        panelBuscarGasolina.Location = New Point(3000, 3000)
-        panelBuscarProveedor.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarGasolina.Location = New Point(3000, 3000)
-        panelEliminarProducto.Location = New Point(3000, 3000)
-        panelEliminarClientes.Location = New Point(3000, 3000)
-        panelEliminarProveedores.Location = New Point(3000, 3000)
-        panelAgregarUsuario.Location = New Point(3000, 3000)
-        panelAgregarProducto.Location = New Point(3000, 3000)
-        panelAgregarGasolina.Location = New Point(3000, 3000)
-        panelAgregarProveedor.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarProducto.Location = New Point(3000, 3000)
-        panelModificarGasolina.Location = New Point(3000, 3000)
-        panelModificarProveedores.Location = New Point(3000, 3000)
-        panelModificarCliente.Location = New Point(3000, 3000)
+        Dim paneles As New List(Of Panel) From {panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
+        For Each panel As Panel In paneles
+            panel.Location = New Point(3000, 3000)
+        Next
+        Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
+        For Each datagrid As DataGridView In datagrids
+            datagrid.Location = New Point(3000, 3000)
+        Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelAgregarProducto()
-        ProveedoresDataGridView.Location = New Point(3000, 3000)
-        GasolinasDataGridView.Location = New Point(3000, 3000)
-        ProductosDataGridView.Location = New Point(3000, 3000)
-        EmpleadosDataGridView.Location = New Point(3000, 3000)
-        ClientesDataGridView.Location = New Point(3000, 3000)
-        panelBuscarEmpleado.Location = New Point(3000, 3000)
-        panelBuscarCliente.Location = New Point(3000, 3000)
-        panelBuscarProducto.Location = New Point(3000, 3000)
-        panelBuscarGasolina.Location = New Point(3000, 3000)
-        panelBuscarProveedor.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarGasolina.Location = New Point(3000, 3000)
-        panelEliminarProducto.Location = New Point(3000, 3000)
-        panelEliminarClientes.Location = New Point(3000, 3000)
-        panelEliminarProveedores.Location = New Point(3000, 3000)
-        panelAgregarUsuario.Location = New Point(3000, 3000)
-        panelAgregarCliente.Location = New Point(3000, 3000)
-        panelAgregarGasolina.Location = New Point(3000, 3000)
-        panelAgregarProveedor.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarProducto.Location = New Point(3000, 3000)
-        panelModificarGasolina.Location = New Point(3000, 3000)
-        panelModificarProveedores.Location = New Point(3000, 3000)
-        panelModificarCliente.Location = New Point(3000, 3000)
+        Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
+        For Each panel As Panel In paneles
+            panel.Location = New Point(3000, 3000)
+        Next
+        Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
+        For Each datagrid As DataGridView In datagrids
+            datagrid.Location = New Point(3000, 3000)
+        Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelAgregarGasolina()
-        ProveedoresDataGridView.Location = New Point(3000, 3000)
-        GasolinasDataGridView.Location = New Point(3000, 3000)
-        ProductosDataGridView.Location = New Point(3000, 3000)
-        EmpleadosDataGridView.Location = New Point(3000, 3000)
-        ClientesDataGridView.Location = New Point(3000, 3000)
-        panelBuscarEmpleado.Location = New Point(3000, 3000)
-        panelBuscarCliente.Location = New Point(3000, 3000)
-        panelBuscarProducto.Location = New Point(3000, 3000)
-        panelBuscarGasolina.Location = New Point(3000, 3000)
-        panelBuscarProveedor.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarGasolina.Location = New Point(3000, 3000)
-        panelEliminarProducto.Location = New Point(3000, 3000)
-        panelEliminarClientes.Location = New Point(3000, 3000)
-        panelEliminarProveedores.Location = New Point(3000, 3000)
-        panelAgregarUsuario.Location = New Point(3000, 3000)
-        panelAgregarCliente.Location = New Point(3000, 3000)
-        panelAgregarProducto.Location = New Point(3000, 3000)
-        panelAgregarProveedor.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarProducto.Location = New Point(3000, 3000)
-        panelModificarGasolina.Location = New Point(3000, 3000)
-        panelModificarProveedores.Location = New Point(3000, 3000)
-        panelModificarCliente.Location = New Point(3000, 3000)
+        Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
+        For Each panel As Panel In paneles
+            panel.Location = New Point(3000, 3000)
+        Next
+        Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
+        For Each datagrid As DataGridView In datagrids
+            datagrid.Location = New Point(3000, 3000)
+        Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelAgregarProveedor()
-        GasolinasDataGridView.Location = New Point(3000, 3000)
-        ProveedoresDataGridView.Location = New Point(3000, 3000)
-        ProductosDataGridView.Location = New Point(3000, 3000)
-        EmpleadosDataGridView.Location = New Point(3000, 3000)
-        ClientesDataGridView.Location = New Point(3000, 3000)
-        panelBuscarEmpleado.Location = New Point(3000, 3000)
-        panelBuscarCliente.Location = New Point(3000, 3000)
-        panelBuscarProducto.Location = New Point(3000, 3000)
-        panelBuscarGasolina.Location = New Point(3000, 3000)
-        panelBuscarProveedor.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarGasolina.Location = New Point(3000, 3000)
-        panelEliminarProducto.Location = New Point(3000, 3000)
-        panelEliminarClientes.Location = New Point(3000, 3000)
-        panelEliminarProveedores.Location = New Point(3000, 3000)
-        panelAgregarUsuario.Location = New Point(3000, 3000)
-        panelAgregarCliente.Location = New Point(3000, 3000)
-        panelAgregarProducto.Location = New Point(3000, 3000)
-        panelAgregarGasolina.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarProducto.Location = New Point(3000, 3000)
-        panelModificarGasolina.Location = New Point(3000, 3000)
-        panelModificarProveedores.Location = New Point(3000, 3000)
-        panelModificarCliente.Location = New Point(3000, 3000)
+        Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
+        For Each panel As Panel In paneles
+            panel.Location = New Point(3000, 3000)
+        Next
+        Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
+        For Each datagrid As DataGridView In datagrids
+            datagrid.Location = New Point(3000, 3000)
+        Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelModificarEmpleado()
-        GasolinasDataGridView.Location = New Point(3000, 3000)
-        ProveedoresDataGridView.Location = New Point(3000, 3000)
-        ProductosDataGridView.Location = New Point(3000, 3000)
-        EmpleadosDataGridView.Location = New Point(3000, 3000)
-        ClientesDataGridView.Location = New Point(3000, 3000)
-        panelBuscarEmpleado.Location = New Point(3000, 3000)
-        panelBuscarCliente.Location = New Point(3000, 3000)
-        panelBuscarProducto.Location = New Point(3000, 3000)
-        panelBuscarGasolina.Location = New Point(3000, 3000)
-        panelBuscarProveedor.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarGasolina.Location = New Point(3000, 3000)
-        panelEliminarProducto.Location = New Point(3000, 3000)
-        panelEliminarClientes.Location = New Point(3000, 3000)
-        panelEliminarProveedores.Location = New Point(3000, 3000)
-        panelAgregarUsuario.Location = New Point(3000, 3000)
-        panelAgregarCliente.Location = New Point(3000, 3000)
-        panelAgregarProducto.Location = New Point(3000, 3000)
-        panelAgregarGasolina.Location = New Point(3000, 3000)
-        panelAgregarProveedor.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarProducto.Location = New Point(3000, 3000)
-        panelModificarGasolina.Location = New Point(3000, 3000)
-        panelModificarProveedores.Location = New Point(3000, 3000)
-        panelModificarCliente.Location = New Point(3000, 3000)
+        Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
+        For Each panel As Panel In paneles
+            panel.Location = New Point(3000, 3000)
+        Next
+        Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
+        For Each datagrid As DataGridView In datagrids
+            datagrid.Location = New Point(3000, 3000)
+        Next
     End Sub
 
 
     Private Sub invisivilizarTodosExceptoPanelModificarCliente()
-        GasolinasDataGridView.Location = New Point(3000, 3000)
-        ProveedoresDataGridView.Location = New Point(3000, 3000)
-        ProductosDataGridView.Location = New Point(3000, 3000)
-        EmpleadosDataGridView.Location = New Point(3000, 3000)
-        ClientesDataGridView.Location = New Point(3000, 3000)
-        panelBuscarEmpleado.Location = New Point(3000, 3000)
-        panelBuscarCliente.Location = New Point(3000, 3000)
-        panelBuscarProducto.Location = New Point(3000, 3000)
-        panelBuscarGasolina.Location = New Point(3000, 3000)
-        panelBuscarProveedor.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarGasolina.Location = New Point(3000, 3000)
-        panelEliminarProducto.Location = New Point(3000, 3000)
-        panelEliminarClientes.Location = New Point(3000, 3000)
-        panelEliminarProveedores.Location = New Point(3000, 3000)
-        panelAgregarUsuario.Location = New Point(3000, 3000)
-        panelAgregarCliente.Location = New Point(3000, 3000)
-        panelAgregarProducto.Location = New Point(3000, 3000)
-        panelAgregarGasolina.Location = New Point(3000, 3000)
-        panelAgregarProveedor.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarProducto.Location = New Point(3000, 3000)
-        panelModificarGasolina.Location = New Point(3000, 3000)
-        panelModificarProveedores.Location = New Point(3000, 3000)
+        Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
+        For Each panel As Panel In paneles
+            panel.Location = New Point(3000, 3000)
+        Next
+        Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
+        For Each datagrid As DataGridView In datagrids
+            datagrid.Location = New Point(3000, 3000)
+        Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelModificarProductos()
-        GasolinasDataGridView.Location = New Point(3000, 3000)
-        ProveedoresDataGridView.Location = New Point(3000, 3000)
-        ProductosDataGridView.Location = New Point(3000, 3000)
-        EmpleadosDataGridView.Location = New Point(3000, 3000)
-        ClientesDataGridView.Location = New Point(3000, 3000)
-        panelBuscarEmpleado.Location = New Point(3000, 3000)
-        panelBuscarCliente.Location = New Point(3000, 3000)
-        panelBuscarProducto.Location = New Point(3000, 3000)
-        panelBuscarGasolina.Location = New Point(3000, 3000)
-        panelBuscarProveedor.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarGasolina.Location = New Point(3000, 3000)
-        panelEliminarProducto.Location = New Point(3000, 3000)
-        panelEliminarClientes.Location = New Point(3000, 3000)
-        panelEliminarProveedores.Location = New Point(3000, 3000)
-        panelAgregarUsuario.Location = New Point(3000, 3000)
-        panelAgregarCliente.Location = New Point(3000, 3000)
-        panelAgregarProducto.Location = New Point(3000, 3000)
-        panelAgregarGasolina.Location = New Point(3000, 3000)
-        panelAgregarProveedor.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarGasolina.Location = New Point(3000, 3000)
-        panelModificarProveedores.Location = New Point(3000, 3000)
-        panelModificarCliente.Location = New Point(3000, 3000)
+        Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProveedores}
+        For Each panel As Panel In paneles
+            panel.Location = New Point(3000, 3000)
+        Next
+        Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
+        For Each datagrid As DataGridView In datagrids
+            datagrid.Location = New Point(3000, 3000)
+        Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelModificarGasolinas()
-        GasolinasDataGridView.Location = New Point(3000, 3000)
-        ProveedoresDataGridView.Location = New Point(3000, 3000)
-        ProductosDataGridView.Location = New Point(3000, 3000)
-        EmpleadosDataGridView.Location = New Point(3000, 3000)
-        ClientesDataGridView.Location = New Point(3000, 3000)
-        panelBuscarEmpleado.Location = New Point(3000, 3000)
-        panelBuscarCliente.Location = New Point(3000, 3000)
-        panelBuscarProducto.Location = New Point(3000, 3000)
-        panelBuscarGasolina.Location = New Point(3000, 3000)
-        panelBuscarProveedor.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarGasolina.Location = New Point(3000, 3000)
-        panelEliminarProducto.Location = New Point(3000, 3000)
-        panelEliminarClientes.Location = New Point(3000, 3000)
-        panelEliminarProveedores.Location = New Point(3000, 3000)
-        panelAgregarUsuario.Location = New Point(3000, 3000)
-        panelAgregarCliente.Location = New Point(3000, 3000)
-        panelAgregarProducto.Location = New Point(3000, 3000)
-        panelAgregarGasolina.Location = New Point(3000, 3000)
-        panelAgregarProveedor.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarProveedores.Location = New Point(3000, 3000)
-        panelModificarCliente.Location = New Point(3000, 3000)
+        Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarProducto, panelModificarProveedores}
+        For Each panel As Panel In paneles
+            panel.Location = New Point(3000, 3000)
+        Next
+        Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
+        For Each datagrid As DataGridView In datagrids
+            datagrid.Location = New Point(3000, 3000)
+        Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelModificarProveedor()
-        GasolinasDataGridView.Location = New Point(3000, 3000)
-        ProveedoresDataGridView.Location = New Point(3000, 3000)
-        ProductosDataGridView.Location = New Point(3000, 3000)
-        EmpleadosDataGridView.Location = New Point(3000, 3000)
-        ClientesDataGridView.Location = New Point(3000, 3000)
-        panelBuscarEmpleado.Location = New Point(3000, 3000)
-        panelBuscarCliente.Location = New Point(3000, 3000)
-        panelBuscarProducto.Location = New Point(3000, 3000)
-        panelBuscarGasolina.Location = New Point(3000, 3000)
-        panelBuscarProveedor.Location = New Point(3000, 3000)
-        panelEliminarEmpleado.Location = New Point(3000, 3000)
-        panelEliminarGasolina.Location = New Point(3000, 3000)
-        panelEliminarProducto.Location = New Point(3000, 3000)
-        panelEliminarClientes.Location = New Point(3000, 3000)
-        panelEliminarProveedores.Location = New Point(3000, 3000)
-        panelAgregarUsuario.Location = New Point(3000, 3000)
-        panelAgregarCliente.Location = New Point(3000, 3000)
-        panelAgregarProducto.Location = New Point(3000, 3000)
-        panelAgregarGasolina.Location = New Point(3000, 3000)
-        panelAgregarProveedor.Location = New Point(3000, 3000)
-        panelModificarEmpleado.Location = New Point(3000, 3000)
-        panelModificarCliente.Location = New Point(3000, 3000)
+        Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto}
+        For Each panel As Panel In paneles
+            panel.Location = New Point(3000, 3000)
+        Next
+        Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
+        For Each datagrid As DataGridView In datagrids
+            datagrid.Location = New Point(3000, 3000)
+        Next
     End Sub
 
 
