@@ -161,8 +161,8 @@ Partial Class Gasolina
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
-        Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.btnDieselE10)
         Me.Controls.Add(Me.btnDieselE)
         Me.Controls.Add(Me.btnGas98)

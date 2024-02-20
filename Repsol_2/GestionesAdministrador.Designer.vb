@@ -180,7 +180,7 @@ Partial Class GestionesAdministrador
         Me.panelOpcionesCrudGasolina.SuspendLayout()
         Me.panelOpcionesCrudProveedores.SuspendLayout()
         CType(Me.ProductosDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmpleadosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+
         CType(Me.EmpleadosDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClientesDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GasolinasDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1349,7 +1349,7 @@ Partial Class GestionesAdministrador
         Me.panelOpcionesCrudGasolina.ResumeLayout(False)
         Me.panelOpcionesCrudProveedores.ResumeLayout(False)
         CType(Me.ProductosDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmpleadosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+
         CType(Me.EmpleadosDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClientesDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GasolinasDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
