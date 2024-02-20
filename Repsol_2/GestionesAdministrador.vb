@@ -74,7 +74,7 @@ Public Class GestionesAdministrador
             panel.Location = New Point(1920, 1080)
             panel.Visible = False
         Next
-        Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, ProductosDataGridView, ProveedoresDataGridView}
+        Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
         For Each datagrid As DataGridView In datagrids
             datagrid.Location = New Point(1920, 1080)
             datagrid.Visible = False
@@ -363,6 +363,7 @@ Public Class GestionesAdministrador
 
 
     Private Sub btnVerTodosProductos_Click(sender As Object, e As EventArgs) Handles btnVerTodosProductos.Click
+        falseoProgressBar()
         MostrarTodosProductos()
         invisivilizarTodosExceptoDataGridDeProductos()
         ProductosDataGridView.Visible = True
@@ -370,6 +371,7 @@ Public Class GestionesAdministrador
     End Sub
 
     Private Sub btnVerTodosEmpleados_Click(sender As Object, e As EventArgs) Handles btnVerTodosEmpleados.Click
+        falseoProgressBar()
         MostrarTodosEmpelados()
         invisivilizarTodosExceptoDataGridDeEmpleados()
         EmpleadosDataGridView.Visible = True
@@ -377,6 +379,7 @@ Public Class GestionesAdministrador
     End Sub
 
     Private Sub btnVerTodosClientes_Click(sender As Object, e As EventArgs) Handles btnVerTodosClientes.Click
+        falseoProgressBar()
         MostrarTodosClientes()
         invisivilizarTodosExceptoDataGridDeClientes()
         ClientesDataGridView.Visible = True
@@ -384,6 +387,7 @@ Public Class GestionesAdministrador
     End Sub
 
     Private Sub btnVerTodasGasolinas_Click(sender As Object, e As EventArgs) Handles btnVerTodasGasolinas.Click
+        falseoProgressBar()
         MostrarTodasGasolinas()
         invisivilizarTodosExceptoDataGridDeGasolinas()
         GasolinasDataGridView.Visible = True
@@ -391,6 +395,7 @@ Public Class GestionesAdministrador
     End Sub
 
     Private Sub btnVerTodosProveedores_Click(sender As Object, e As EventArgs) Handles btnVerTodosProveedores.Click
+        falseoProgressBar()
         MostrarTodosProveedores()
         invisivilizarTodosExceptoDataGridDeProveedores()
         ProveedoresDataGridView.Visible = True
@@ -530,6 +535,7 @@ Public Class GestionesAdministrador
 
         If validado = False Then
             Try
+                falseoProgressBar()
                 Dim idEmpleado As Integer
                 idEmpleado = tbIdEmpleado.Text
                 Dim empleado As DataRow
@@ -562,6 +568,7 @@ Public Class GestionesAdministrador
         Dim validado As Boolean = validarIDs(tbIdCliente, tbIdCliente.Text)
         If validado = False Then
             Try
+                falseoProgressBar()
                 Dim idCliente As Integer
                 idCliente = tbIdCliente.Text
                 Dim cliente As DataRow
@@ -591,6 +598,7 @@ Public Class GestionesAdministrador
         Dim validado As Boolean = validarIDs(tbIdProducto, tbIdProducto.Text)
         If validado = False Then
             Try
+                falseoProgressBar()
                 Dim idProducto As Integer
                 idProducto = tbIdProducto.Text
                 Dim producto As DataRow
@@ -619,6 +627,7 @@ Public Class GestionesAdministrador
         Dim validado As Boolean = validarIDs(tbIdGasolina, tbIdGasolina.Text)
         If validado = False Then
             Try
+                falseoProgressBar()
                 Dim idGasolina As Integer
                 idGasolina = tbIdGasolina.Text
                 Dim gasolina As DataRow
@@ -644,6 +653,7 @@ Public Class GestionesAdministrador
             MessageBox.Show("El id introducido no es valido")
         Else
             Try
+                falseoProgressBar()
                 Dim idProveedor As Integer
                 idProveedor = tbIdProveedor.Text
                 Dim proveedor As DataRow
@@ -671,6 +681,7 @@ Public Class GestionesAdministrador
         Dim validacion7 As Boolean = validarNOmbreYApellidos(tbApellido2EmpleadoAgregar, tbApellido2EmpleadoAgregar.Text)
 
         If validacion1 = False And validacion2 = False And validacion3 = False And validacion4 = False And validacion5 = False And validacion6 = False And validacion7 = False Then
+            falseoProgressBar()
             AgregarEmpleado(tbIdEmpleadoAgregar.Text, tbNombreEmpleadoAgregar.Text, tbApellido1EmpleadoAgregar.Text, tbApellido2EmpleadoAgregar.Text,
                         tbTelefonoEmpleadoAgregar.Text, tbCorreoEmpleadoAgregar.Text, tbContraseñaEmpleadoAgregar.Text, tbAdministradorEmpleadoAgregar.Text, tbCargoEmpleadoAgregar.Text)
         End If
@@ -687,6 +698,7 @@ Public Class GestionesAdministrador
         Dim validacion8 As Boolean = validarAlta(tbAltaClienteAgregar, tbAltaClienteAgregar.Text)
 
         If validacion1 = False And validacion2 = False And validacion3 = False And validacion5 = False And validacion6 = False And validacion7 = False And validacion8 = False Then
+            falseoProgressBar()
             AgregarCliente(tbIdClienteAgregar.Text, tbNombreClienteAgregar.Text, tbApellido1ClienteAgregar.Text, tbApellido2ClienteAgregar.Text, tbTelefonoClienteAgregar.Text, tbCorreoClienteAgregar.Text, dtpFechaAltaClienteAgregar.Value.Date, tbAltaClienteAgregar.Text)
         End If
     End Sub
@@ -697,6 +709,7 @@ Public Class GestionesAdministrador
         Dim validacion3 As Boolean = validarGama(tbGamaProductoAgregar, tbGamaProductoAgregar.Text)
 
         If validacion1 = False And validacion2 = False And validacion3 = False Then
+            falseoProgressBar()
             AgregarProducto(tbIdProductoAgregar.Text, tbNombreProductoAgregar.Text, tbPrecioProductoAgregar.Text, tbProveedorProductoAgregar.Text, tbGamaProductoAgregar.Text)
         End If
     End Sub
@@ -706,6 +719,7 @@ Public Class GestionesAdministrador
         Dim validacion2 As Boolean = validarPrecio(tbPrecioGasolinaAgregar, tbPrecioGasolinaAgregar.Text)
         Dim validacion3 As Boolean = validarCantidad(tbCantidadGasolinaAgregar, tbCantidadGasolinaAgregar.Text)
         If validacion1 = False And validacion2 = False And validacion3 = False Then
+            falseoProgressBar()
             AgregarGasolina(tbIdGasolinaAgregar.Text, tbNombreGasolinaAgregar.Text, tbCantidadGasolinaAgregar.Text, tbPrecioGasolinaAgregar.Text)
         End If
     End Sub
@@ -714,6 +728,7 @@ Public Class GestionesAdministrador
         Dim validacion1 As Boolean = validarIDs(tbIdProveedorAgregar, tbIdProveedorAgregar.Text)
         Dim validacion2 As Boolean = validarNombreEmpresa(tbNombreProveedorAgregar, tbNombreProveedorAgregar.Text)
         If validacion1 = False And validacion2 = False Then
+            falseoProgressBar()
             AgregarProveedor(tbIdProveedorAgregar.Text, tbNombreProveedorAgregar.Text)
         End If
     End Sub
@@ -728,7 +743,7 @@ Public Class GestionesAdministrador
         Dim validacion6 As Boolean = validarNOmbreYApellidos(tbApellido1EmpleadoModificar, tbApellido1EmpleadoModificar.Text)
         Dim validacion7 As Boolean = validarNOmbreYApellidos(tbApellido2EmpleadoModificar, tbApellido2EmpleadoModificar.Text)
         If validacion1 = False And validacion2 = False And validacion3 = False And validacion4 = False And validacion5 = False And validacion6 = False And validacion7 = False Then
-
+            falseoProgressBar()
             ModificarUsuario(tbIdEmpleadoModificar.Text, tbNombreEmpleadoModificar.Text, tbApellido1EmpleadoModificar.Text, tbApellido2EmpleadoModificar.Text, tbTelefonoEmpleadoModificar.Text, tbCorreoEmpleadoModificar.Text,
                         tbContraseñaEmpleadoModificar.Text, tbCargoEmpleadoModificar.Text, tbAdministradorEmpleadoModificar.Text)
         End If
@@ -744,7 +759,7 @@ Public Class GestionesAdministrador
         Dim validacion7 As Boolean = validarNOmbreYApellidos(tbApellido2ClienteModificar, tbApellido2ClienteModificar.Text)
         Dim validacion8 As Boolean = validarAlta(tbAltaClienteModificar, tbAltaClienteModificar.Text)
         If validacion1 = False And validacion2 = False And validacion3 = False And validacion5 = False And validacion6 = False And validacion7 = False Then
-
+            falseoProgressBar()
             ModificarCliente(tbIdClienteModificar.Text, tbNombreClienteModificar.Text, tbApellido1ClienteModificar.Text, tbApellido2ClienteModificar.Text, tbTelefonoClienteModificar.Text,
             tbCorreoClienteModificar.Text, dtmFechaAltaClienteModificar.Value.Date, tbAltaClienteModificar.Text)
         End If
@@ -756,6 +771,7 @@ Public Class GestionesAdministrador
         Dim validacion2 As Boolean = validarPrecio(tbPrecioProductoModificar, tbPrecioProductoModificar.Text)
         Dim validacion3 As Boolean = validarGama(tbGamaProductoModificar, tbGamaProductoModificar.Text)
         If validacion1 = False And validacion2 = False And validacion3 = False Then
+            falseoProgressBar()
             ModificarProductos(tbIdProductoModificar.Text, tbNombreProductoModificar.Text, tbPrecioProductoModificar.Text, tbProveedorProductoModificar.Text, tbGamaProductoModificar.Text)
         End If
     End Sub
@@ -763,9 +779,10 @@ Public Class GestionesAdministrador
     Private Sub btnAccionModificarGasolina_Click(sender As Object, e As EventArgs) Handles btnAccionModificarGasolina.Click
 
         Dim validacion1 As Boolean = validarIDs(tbIdGasolinaModificar, tbIdGasolinaModificar.Text)
-        Dim validacion2 As Boolean = validarPrecio(tbPrecioGasolinaModificar, tbPrecioGasolinaModificar.Text)
-        Dim validacion3 As Boolean = validarCantidad(tbCantidadGasolinaModificar, tbCantidadGasolinaModificar.Text)
+        Dim validacion2 As Boolean = validarCantidad(tbCantidadGasolinaModificar, tbCantidadGasolinaModificar.Text)
+        Dim validacion3 As Boolean = validarPrecio(tbPrecioGasolinaModificar, tbPrecioGasolinaModificar.Text)
         If validacion1 = False And validacion2 = False And validacion3 = False Then
+            falseoProgressBar()
             ModificarGasolina(tbIdGasolinaModificar.Text, tbNombreGasolinaModificar.Text, tbCantidadGasolinaModificar.Text, tbPrecioGasolinaModificar.Text)
         End If
     End Sub
@@ -774,6 +791,7 @@ Public Class GestionesAdministrador
         Dim validacion1 As Boolean = validarIDs(tbIdModificarProveedor, tbIdModificarProveedor.Text)
         Dim validacion2 As Boolean = validarNombreEmpresa(tbNombreProveedorModificar, tbNombreProveedorModificar.Text)
         If validacion1 = False And validacion2 = False Then
+            falseoProgressBar()
             ModificarProveedores(tbIdModificarProveedor.Text, tbNombreProveedorModificar.Text)
         End If
     End Sub
@@ -781,24 +799,28 @@ Public Class GestionesAdministrador
     Private Sub btnAccionEliminarEmpleado_Click(sender As Object, e As EventArgs) Handles btnAccionEliminarEmpleado.Click
         Dim validacion1 As Boolean = validarIDs(tbIdEmpleadoEliminar, tbIdEmpleadoEliminar.Text)
         If validacion1 = False Then
+            falseoProgressBar()
             EliminarEmpleado(tbIdEmpleadoEliminar.Text)
         End If
     End Sub
     Private Sub btnAccionEliminarProducto_Click(sender As Object, e As EventArgs) Handles btnAccionEliminarProducto.Click
         Dim validacion1 As Boolean = validarIDs(tbIdProductoEliminar, tbIdProductoEliminar.Text)
         If validacion1 = False Then
+            falseoProgressBar()
             EliminarProducto(tbIdProductoEliminar.Text)
         End If
     End Sub
     Private Sub btnAccionEliminarGasolina_Click(sender As Object, e As EventArgs) Handles btnAccionEliminarGasolina.Click
         Dim validacion1 As Boolean = validarIDs(tbIdGasolinaEliminar, tbIdGasolinaEliminar.Text)
         If validacion1 = False Then
+            falseoProgressBar()
             EliminarGasolina(tbIdGasolinaEliminar.Text)
         End If
     End Sub
     Private Sub btnAccionEliminarProveedor_Click(sender As Object, e As EventArgs) Handles btnAccionEliminarProveedor.Click
         Dim validacion1 As Boolean = validarIDs(tbIdProveedorEliminar, tbIdProveedorEliminar.Text)
         If validacion1 = False Then
+            falseoProgressBar()
             EliminarProveedor(tbIdProveedorEliminar.Text)
         End If
     End Sub
@@ -806,6 +828,7 @@ Public Class GestionesAdministrador
     Private Sub btnAccionEliminarCliente_Click(sender As Object, e As EventArgs) Handles btnAccionEliminarCliente.Click
         Dim validacion1 As Boolean = validarIDs(tbIdClienteEliminar, tbIdClienteEliminar.Text)
         If validacion1 = False Then
+            falseoProgressBar()
             EliminarCliente(tbIdClienteEliminar.Text)
         End If
     End Sub
@@ -1083,7 +1106,7 @@ Public Class GestionesAdministrador
     End Sub
 
 
-    Public Sub AgregarProducto(id As Integer, nombre As String, precio As Decimal, proveedor As Integer, gama As Integer)
+    Public Sub AgregarProducto(id As Integer, nombre As String, precio As Single, proveedor As Integer, gama As Integer)
 
         Try
 
@@ -1132,7 +1155,7 @@ Public Class GestionesAdministrador
 
     End Sub
 
-    Private Sub AgregarGasolina(id As Integer, nombre As String, cantidad As Decimal, precio As Decimal)
+    Private Sub AgregarGasolina(id As Integer, nombre As String, cantidad As Integer, precio As Single)
 
         Try
 
@@ -1271,7 +1294,7 @@ Public Class GestionesAdministrador
     End Sub
 
 
-    Private Sub ModificarProductos(id As Integer, nombre As String, precio As Decimal, proveedor As Integer, gama As Integer)
+    Private Sub ModificarProductos(id As Integer, nombre As String, precio As Single, proveedor As Integer, gama As Integer)
 
         Try
 
@@ -1334,7 +1357,7 @@ Public Class GestionesAdministrador
 
 
 
-    Private Sub ModificarGasolina(id As Integer, nombre As String, cantidad As Integer, precio As Decimal)
+    Private Sub ModificarGasolina(id As Integer, nombre As String, cantidad As Integer, precio As Single)
 
         Try
 
@@ -1582,22 +1605,20 @@ Public Class GestionesAdministrador
     Private Function validarCorreos(tb As TextBox, str As String) As Boolean
         'en este metodo validamos que el texbox de correo no este vacio. aparte
         'de que solo puede tener un @ y un punto. En caso de que tenga mas de un @
-        'o mas de un punto, mostraremos un mensaje de error.
-        Dim contadorArrobas As Integer = 0
-        Dim contadorPuntos As Integer = 0
+        'o mas de un punto, mostraremos un mensaje de error. Para ello utilizaremos una lista con caracteres permitidos
+        Dim permitidos As New List(Of Char) From {"@", "."}
+        Dim comprobar As Boolean = False
         If str = "" Then
             MsgBox("El campo de correo no puede estar vacio")
             Return True
         Else
             For i As Integer = 0 To str.Length - 1
-                If str(i) = "@" Then
-                    contadorArrobas += 1
-                ElseIf str(i) = "." Then
-                    contadorPuntos += 1
+                If Not permitidos.Contains(str(i)) Then
+                    comprobar = True
                 End If
             Next
-            If contadorPuntos > 1 Or contadorArrobas > 1 Or contadorPuntos <= 0 Or contadorArrobas <= 0 Then
-                MsgBox("El campo de correo debe contener un @ y un punto")
+            If comprobar = True Then
+                MsgBox("El campo de correo solo puede contener un @ y un punto")
                 tb.Clear()
                 Return True
             Else
@@ -1680,9 +1701,9 @@ Public Class GestionesAdministrador
         If contadorComas > 0 Or contadorPuntos > 0 Or (contadorComas = 1 And contadorPuntos = 1) Then
             MsgBox("No se pueden agregar ni comas ni puntos")
             tb.Clear()
-            Return False
-        Else
             Return True
+        Else
+            Return False
         End If
 
     End Function
@@ -1691,7 +1712,6 @@ Public Class GestionesAdministrador
         'en esta funcion lo que hacemos es comprobar si tiene mas de un punto o mas de una coma o si tiene letras
         'o si tiene un punto y una coma. En caso de que tenga mas de uno de estos caracteres o una combinacion de ellos
         'mostraremos un mensaje de error
-        Dim comprobar As Boolean = False
         Dim contadorPuntos As Integer = 0
         Dim contadorComas As Integer = 0
 
@@ -1713,17 +1733,16 @@ Public Class GestionesAdministrador
             If contadorPuntos > 1 Or contadorComas > 1 Then
                 MsgBox("Error, dentro del campo hay mas de un punto o una coma")
                 tb.Clear()
-                comprobar = True
+                Return True
             ElseIf contadorPuntos = 1 And contadorComas = 1 Then
                 MsgBox("No se puede meter dentro del campo un punto y una coma a la vez")
                 tb.Clear()
-                comprobar = True
+                Return True
             Else
-                comprobar = False
+                Return False
             End If
 
         End If
-        Return comprobar
     End Function
 
     Private Function validarGama(tb As TextBox, str As String) As Boolean
@@ -1784,5 +1803,19 @@ Public Class GestionesAdministrador
     End Function
 
 
+    Private Sub falseoProgressBar()
+        ToolStripProgressBar1.Value = 0
+        Timer1.Enabled = True
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+
+        If ToolStripProgressBar1.Value < ToolStripProgressBar1.Maximum - 1 Then
+            ToolStripProgressBar1.Value += 50
+        Else
+            Timer1.Enabled = False
+        End If
+
+    End Sub
 
 End Class
