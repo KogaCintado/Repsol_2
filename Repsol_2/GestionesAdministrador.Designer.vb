@@ -22,6 +22,7 @@ Partial Class GestionesAdministrador
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim IdLabel As System.Windows.Forms.Label
         Dim NombreLabel As System.Windows.Forms.Label
         Dim Apellido_1Label As System.Windows.Forms.Label
@@ -288,6 +289,7 @@ Partial Class GestionesAdministrador
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripProgressBar1 = New System.Windows.Forms.ToolStripProgressBar()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         IdLabel = New System.Windows.Forms.Label()
         NombreLabel = New System.Windows.Forms.Label()
         Apellido_1Label = New System.Windows.Forms.Label()
@@ -2863,7 +2865,7 @@ Partial Class GestionesAdministrador
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1924, 1061)
+        Me.ClientSize = New System.Drawing.Size(1941, 1078)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.panelModificarProveedores)
         Me.Controls.Add(Me.panelModificarGasolina)
@@ -3142,4 +3144,5 @@ Partial Class GestionesAdministrador
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
     Friend WithEvents ToolStripProgressBar1 As ToolStripProgressBar
+    Friend WithEvents Timer1 As Timer
 End Class
