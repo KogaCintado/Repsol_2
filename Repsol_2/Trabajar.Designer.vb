@@ -170,8 +170,8 @@ Partial Class Trabajar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
-        Me.Controls.Add(Me.btnTienda)
         Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.btnTienda)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.lblUser)
         Me.Controls.Add(Me.MenuStrip1)
