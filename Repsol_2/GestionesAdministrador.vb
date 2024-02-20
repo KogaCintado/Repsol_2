@@ -7,14 +7,18 @@ Public Class GestionesAdministrador
     Private Sub GestionesAdministrador_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
         For Each panel As Panel In paneles
-            panel.Location = New Point(3000, 3000)
+            panel.Location = New Point(1920, 1080)
+            panel.Visible = False
         Next
         Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
         For Each datagrid As DataGridView In datagrids
-            datagrid.Location = New Point(3000, 3000)
+            datagrid.Location = New Point(1920, 1080)
+            datagrid.Visible = False
         Next
         'Maximize the window
         Me.WindowState = FormWindowState.Maximized
+
+        ToolStripStatusLabel1.Text = Now.ToString("dd/MM/yy")
     End Sub
 
     Private Sub VolverToolStripMenuItem_Click(sender As Object, e As EventArgs)
@@ -26,11 +30,13 @@ Public Class GestionesAdministrador
 
         Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
         For Each panel As Panel In paneles
-            panel.Location = New Point(3000, 3000)
+            panel.Location = New Point(1920, 1080)
+            panel.Visible = False
         Next
         Dim datagrids As New List(Of DataGridView) From {EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
         For Each datagrid As DataGridView In datagrids
-            datagrid.Location = New Point(3000, 3000)
+            datagrid.Location = New Point(1920, 1080)
+            datagrid.Visible = False
         Next
 
     End Sub
@@ -38,123 +44,146 @@ Public Class GestionesAdministrador
     Private Sub invisivilizarTodosExceptoDataGridDeEmpleados()
         Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
         For Each panel As Panel In paneles
-            panel.Location = New Point(3000, 3000)
+            panel.Location = New Point(1920, 1080)
+            panel.Visible = False
+
         Next
         Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
         For Each datagrid As DataGridView In datagrids
-            datagrid.Location = New Point(3000, 3000)
+            datagrid.Location = New Point(1920, 1080)
+            datagrid.Visible = False
         Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoDataGridDeGasolinas()
         Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
         For Each panel As Panel In paneles
-            panel.Location = New Point(3000, 3000)
+            panel.Location = New Point(1920, 1080)
+            panel.Visible = False
         Next
         Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, ProductosDataGridView, ProveedoresDataGridView}
         For Each datagrid As DataGridView In datagrids
-            datagrid.Location = New Point(3000, 3000)
+            datagrid.Location = New Point(1920, 1080)
+            datagrid.Visible = False
         Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoDataGridDeProductos()
         Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
         For Each panel As Panel In paneles
-            panel.Location = New Point(3000, 3000)
+            panel.Location = New Point(1920, 1080)
+            panel.Visible = False
         Next
         Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, ProductosDataGridView, ProveedoresDataGridView}
         For Each datagrid As DataGridView In datagrids
-            datagrid.Location = New Point(3000, 3000)
+            datagrid.Location = New Point(1920, 1080)
+            datagrid.Visible = False
         Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoDataGridDeProveedores()
         Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
         For Each panel As Panel In paneles
-            panel.Location = New Point(3000, 3000)
+            panel.Location = New Point(1920, 1080)
+            panel.Visible = False
         Next
         Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProveedoresDataGridView}
         For Each datagrid As DataGridView In datagrids
-            datagrid.Location = New Point(3000, 3000)
+            datagrid.Location = New Point(1920, 1080)
+            datagrid.Visible = False
+
         Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelBuscarEmpleado()
         Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
         For Each panel As Panel In paneles
-            panel.Location = New Point(3000, 3000)
+            panel.Location = New Point(1920, 1080)
+            panel.Visible = False
         Next
         Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
         For Each datagrid As DataGridView In datagrids
-            datagrid.Location = New Point(3000, 3000)
+            datagrid.Location = New Point(1920, 1080)
+            datagrid.Visible = False
         Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelBuscarCliente()
         Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
         For Each panel As Panel In paneles
-            panel.Location = New Point(3000, 3000)
+            panel.Location = New Point(1920, 1080)
+            panel.Visible = False
         Next
         Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
         For Each datagrid As DataGridView In datagrids
-            datagrid.Location = New Point(3000, 3000)
+            datagrid.Location = New Point(1920, 1080)
+            datagrid.Visible = False
         Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelBuscarProducto()
         Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
         For Each panel As Panel In paneles
-            panel.Location = New Point(3000, 3000)
+            panel.Location = New Point(1920, 1080)
+            panel.Visible = False
         Next
         Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
         For Each datagrid As DataGridView In datagrids
-            datagrid.Location = New Point(3000, 3000)
+            datagrid.Location = New Point(1920, 1080)
+            datagrid.Visible = False
         Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelBuscarGasolina()
         Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
         For Each panel As Panel In paneles
-            panel.Location = New Point(3000, 3000)
+            panel.Location = New Point(1920, 1080)
+            panel.Visible = False
         Next
         Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
         For Each datagrid As DataGridView In datagrids
-            datagrid.Location = New Point(3000, 3000)
+            datagrid.Location = New Point(1920, 1080)
+            datagrid.Visible = False
         Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelBuscarProveedor()
         Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
         For Each panel As Panel In paneles
-            panel.Location = New Point(3000, 3000)
+            panel.Location = New Point(1920, 1080)
+            panel.Visible = False
         Next
         Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
         For Each datagrid As DataGridView In datagrids
-            datagrid.Location = New Point(3000, 3000)
+            datagrid.Location = New Point(1920, 1080)
+            datagrid.Visible = False
         Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelEliminarEmpleado()
         Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
         For Each panel As Panel In paneles
-            panel.Location = New Point(3000, 3000)
+            panel.Location = New Point(1920, 1080)
+            panel.Visible = False
         Next
         Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
         For Each datagrid As DataGridView In datagrids
-            datagrid.Location = New Point(3000, 3000)
+            datagrid.Location = New Point(1920, 1080)
+            datagrid.Visible = False
         Next
 
     End Sub
 
-
     Private Sub invisivilizarTodosExceptoPanelEliminarGasolina()
         Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
         For Each panel As Panel In paneles
-            panel.Location = New Point(3000, 3000)
+            panel.Location = New Point(1920, 1080)
+            panel.Visible = False
         Next
         Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
         For Each datagrid As DataGridView In datagrids
-            datagrid.Location = New Point(3000, 3000)
+            datagrid.Location = New Point(1920, 1080)
+            datagrid.Visible = False
         Next
 
     End Sub
@@ -162,11 +191,13 @@ Public Class GestionesAdministrador
     Private Sub invisivilizarTodosExceptoPanelEliminarProducto()
         Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
         For Each panel As Panel In paneles
-            panel.Location = New Point(3000, 3000)
+            panel.Location = New Point(1920, 1080)
+            panel.Visible = False
         Next
         Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
         For Each datagrid As DataGridView In datagrids
-            datagrid.Location = New Point(3000, 3000)
+            datagrid.Location = New Point(1920, 1080)
+            datagrid.Visible = False
         Next
 
     End Sub
@@ -174,11 +205,13 @@ Public Class GestionesAdministrador
     Private Sub invisivilizarTodosExceptoPanelEliminarProveedor()
         Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
         For Each panel As Panel In paneles
-            panel.Location = New Point(3000, 3000)
+            panel.Location = New Point(1920, 1080)
+            panel.Visible = False
         Next
         Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
         For Each datagrid As DataGridView In datagrids
-            datagrid.Location = New Point(3000, 3000)
+            datagrid.Location = New Point(1920, 1080)
+            datagrid.Visible = False
         Next
 
     End Sub
@@ -186,11 +219,13 @@ Public Class GestionesAdministrador
     Private Sub invisivilizarTodosExceptoPanelEliminarCliente()
         Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
         For Each panel As Panel In paneles
-            panel.Location = New Point(3000, 3000)
+            panel.Location = New Point(1920, 1080)
+            panel.Visible = False
         Next
         Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
         For Each datagrid As DataGridView In datagrids
-            datagrid.Location = New Point(3000, 3000)
+            datagrid.Location = New Point(1920, 1080)
+            datagrid.Visible = False
         Next
 
     End Sub
@@ -198,66 +233,78 @@ Public Class GestionesAdministrador
     Private Sub invisivilizarTodosExceptoPanelAgregarUsuario()
         Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
         For Each panel As Panel In paneles
-            panel.Location = New Point(3000, 3000)
+            panel.Location = New Point(1920, 1080)
+            panel.Visible = False
         Next
         Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
         For Each datagrid As DataGridView In datagrids
-            datagrid.Location = New Point(3000, 3000)
+            datagrid.Location = New Point(1920, 1080)
+            datagrid.Visible = False
         Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelAgregarCliente()
         Dim paneles As New List(Of Panel) From {panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
         For Each panel As Panel In paneles
-            panel.Location = New Point(3000, 3000)
+            panel.Location = New Point(1920, 1080)
+            panel.Visible = False
         Next
         Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
         For Each datagrid As DataGridView In datagrids
-            datagrid.Location = New Point(3000, 3000)
+            datagrid.Location = New Point(1920, 1080)
+            datagrid.Visible = False
         Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelAgregarProducto()
         Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
         For Each panel As Panel In paneles
-            panel.Location = New Point(3000, 3000)
+            panel.Location = New Point(1920, 1080)
+            panel.Visible = False
         Next
         Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
         For Each datagrid As DataGridView In datagrids
-            datagrid.Location = New Point(3000, 3000)
+            datagrid.Location = New Point(1920, 1080)
+            datagrid.Visible = False
         Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelAgregarGasolina()
         Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
         For Each panel As Panel In paneles
-            panel.Location = New Point(3000, 3000)
+            panel.Location = New Point(1920, 1080)
+            panel.Visible = False
         Next
         Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
         For Each datagrid As DataGridView In datagrids
-            datagrid.Location = New Point(3000, 3000)
+            datagrid.Location = New Point(1920, 1080)
+            datagrid.Visible = False
         Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelAgregarProveedor()
         Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
         For Each panel As Panel In paneles
-            panel.Location = New Point(3000, 3000)
+            panel.Location = New Point(1920, 1080)
+            panel.Visible = False
         Next
         Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
         For Each datagrid As DataGridView In datagrids
-            datagrid.Location = New Point(3000, 3000)
+            datagrid.Location = New Point(1920, 1080)
+            datagrid.Visible = False
         Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelModificarEmpleado()
         Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
         For Each panel As Panel In paneles
-            panel.Location = New Point(3000, 3000)
+            panel.Location = New Point(1920, 1080)
+            panel.Visible = False
         Next
         Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
         For Each datagrid As DataGridView In datagrids
-            datagrid.Location = New Point(3000, 3000)
+            datagrid.Location = New Point(1920, 1080)
+            datagrid.Visible = False
         Next
     End Sub
 
@@ -265,44 +312,52 @@ Public Class GestionesAdministrador
     Private Sub invisivilizarTodosExceptoPanelModificarCliente()
         Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
         For Each panel As Panel In paneles
-            panel.Location = New Point(3000, 3000)
+            panel.Location = New Point(1920, 1080)
+            panel.Visible = False
         Next
         Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
         For Each datagrid As DataGridView In datagrids
-            datagrid.Location = New Point(3000, 3000)
+            datagrid.Location = New Point(1920, 1080)
+            datagrid.Visible = False
         Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelModificarProductos()
         Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProveedores}
         For Each panel As Panel In paneles
-            panel.Location = New Point(3000, 3000)
+            panel.Location = New Point(1920, 1080)
+            panel.Visible = False
         Next
         Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
         For Each datagrid As DataGridView In datagrids
-            datagrid.Location = New Point(3000, 3000)
+            datagrid.Location = New Point(1920, 1080)
+            datagrid.Visible = False
         Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelModificarGasolinas()
         Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarProducto, panelModificarProveedores}
         For Each panel As Panel In paneles
-            panel.Location = New Point(3000, 3000)
+            panel.Location = New Point(1920, 1080)
+            panel.Visible = False
         Next
         Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
         For Each datagrid As DataGridView In datagrids
-            datagrid.Location = New Point(3000, 3000)
+            datagrid.Location = New Point(1920, 1080)
+            datagrid.Visible = False
         Next
     End Sub
 
     Private Sub invisivilizarTodosExceptoPanelModificarProveedor()
         Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto}
         For Each panel As Panel In paneles
-            panel.Location = New Point(3000, 3000)
+            panel.Location = New Point(1920, 1080)
+            panel.Visible = False
         Next
         Dim datagrids As New List(Of DataGridView) From {ClientesDataGridView, EmpleadosDataGridView, GasolinasDataGridView, ProductosDataGridView, ProveedoresDataGridView}
         For Each datagrid As DataGridView In datagrids
-            datagrid.Location = New Point(3000, 3000)
+            datagrid.Location = New Point(1920, 1080)
+            datagrid.Visible = False
         Next
     End Sub
 
@@ -344,101 +399,121 @@ Public Class GestionesAdministrador
 
     Private Sub btnSeleccionarUnEmpleado_Click(sender As Object, e As EventArgs) Handles btnSeleccionarUnEmpleado.Click
         invisivilizarTodosExceptoPanelBuscarEmpleado()
+        panelBuscarEmpleado.Visible = True
         panelBuscarEmpleado.Location = New Point(476, 81)
     End Sub
     Private Sub btnVerCliente_Click(sender As Object, e As EventArgs) Handles btnVerCliente.Click
         invisivilizarTodosExceptoPanelBuscarCliente()
+        panelBuscarCliente.Visible = True
         panelBuscarCliente.Location = New Point(476, 81)
     End Sub
 
     Private Sub btnVerProducto_Click(sender As Object, e As EventArgs) Handles btnVerProducto.Click
         invisivilizarTodosExceptoPanelBuscarProducto()
+        panelBuscarProducto.Visible = True
         panelBuscarProducto.Location = New Point(476, 81)
     End Sub
     Private Sub btnVerGasolina_Click(sender As Object, e As EventArgs) Handles btnVerGasolina.Click
         invisivilizarTodosExceptoPanelBuscarGasolina()
+        panelBuscarGasolina.Visible = True
         panelBuscarGasolina.Location = New Point(476, 81)
     End Sub
 
     Private Sub btnVerProveedor_Click(sender As Object, e As EventArgs) Handles btnVerProveedor.Click
         invisivilizarTodosExceptoPanelBuscarProveedor()
+        panelBuscarProveedor.Visible = True
         panelBuscarProveedor.Location = New Point(476, 81)
     End Sub
 
 
     Private Sub btnAgregarUsuario_Click(sender As Object, e As EventArgs) Handles btnAgregarUsuario.Click
         invisivilizarTodosExceptoPanelAgregarUsuario()
+        panelAgregarUsuario.Visible = True
         panelAgregarUsuario.Location = New Point(476, 81)
     End Sub
 
     Private Sub btnAgregarCliente_Click(sender As Object, e As EventArgs) Handles btnAgregarCliente.Click
         invisivilizarTodosExceptoPanelAgregarCliente()
+        panelAgregarCliente.Visible = True
         panelAgregarCliente.Location = New Point(476, 81)
     End Sub
 
     Private Sub btnAgregarProducto_Click(sender As Object, e As EventArgs) Handles btnAgregarProducto.Click
         invisivilizarTodosExceptoPanelAgregarProducto()
+        panelAgregarProducto.Visible = True
         panelAgregarProducto.Location = New Point(476, 81)
     End Sub
 
     Private Sub btnAgregarGasolina_Click(sender As Object, e As EventArgs) Handles btnAgregarGasolina.Click
         invisivilizarTodosExceptoPanelAgregarGasolina()
+        panelAgregarGasolina.Visible = True
         panelAgregarGasolina.Location = New Point(476, 81)
     End Sub
 
     Private Sub btnAgregarProveedor_Click(sender As Object, e As EventArgs) Handles btnAgregarProveedor.Click
         invisivilizarTodosExceptoPanelAgregarProveedor()
+        panelAgregarProveedor.Visible = True
         panelAgregarProveedor.Location = New Point(476, 81)
     End Sub
 
 
     Private Sub btnModificarEmpleado_Click(sender As Object, e As EventArgs) Handles btnModificarEmpleado.Click
         invisivilizarTodosExceptoPanelModificarEmpleado()
+        panelModificarEmpleado.Visible = True
         panelModificarEmpleado.Location = New Point(476, 81)
     End Sub
 
     Private Sub btnModificarCliente_Click(sender As Object, e As EventArgs) Handles btnModificarCliente.Click
         invisivilizarTodosExceptoPanelModificarCliente()
+        panelModificarCliente.Visible = True
         panelModificarCliente.Location = New Point(476, 81)
     End Sub
 
     Private Sub btnModificarProducto_Click(sender As Object, e As EventArgs) Handles btnModificarProducto.Click
         invisivilizarTodosExceptoPanelModificarProductos()
+        panelModificarProducto.Visible = True
         panelModificarProducto.Location = New Point(476, 81)
     End Sub
 
     Private Sub btnModificarGasolina_Click(sender As Object, e As EventArgs) Handles btnModificarGasolina.Click
         invisivilizarTodosExceptoPanelModificarGasolinas()
+        panelModificarGasolina.Visible = True
         panelModificarGasolina.Location = New Point(476, 81)
     End Sub
 
     Private Sub btnModificarProveedor_Click(sender As Object, e As EventArgs) Handles btnModificarProveedor.Click
         invisivilizarTodosExceptoPanelModificarProveedor()
+        panelModificarProveedores.Visible = True
         panelModificarProveedores.Location = New Point(476, 81)
     End Sub
 
     Private Sub btnEliminarEmpleado_Click(sender As Object, e As EventArgs) Handles btnEliminarEmpleado.Click
         invisivilizarTodosExceptoPanelEliminarEmpleado()
+        panelEliminarEmpleado.Visible = True
         panelEliminarEmpleado.Location = New Point(476, 81)
     End Sub
 
     Private Sub btnEliminarGas_Click(sender As Object, e As EventArgs) Handles btnEliminarGas.Click
         invisivilizarTodosExceptoPanelEliminarGasolina()
+        panelEliminarGasolina.Visible = True
         panelEliminarGasolina.Location = New Point(476, 81)
     End Sub
 
     Private Sub btnEliminarProducto_Click(sender As Object, e As EventArgs) Handles btnEliminarProducto.Click
         invisivilizarTodosExceptoPanelEliminarProducto()
+        panelEliminarProducto.Visible = True
         panelEliminarProducto.Location = New Point(476, 81)
     End Sub
 
     Private Sub btnEliminarCliente_Click(sender As Object, e As EventArgs) Handles btnEliminarCliente.Click
         invisivilizarTodosExceptoPanelEliminarCliente()
+        panelEliminarClientes.Visible = True
         panelEliminarClientes.Location = New Point(476, 81)
     End Sub
 
     Private Sub btnEliminarProveedor_Click(sender As Object, e As EventArgs) Handles btnEliminarProveedor.Click
         invisivilizarTodosExceptoPanelEliminarProveedor()
+        panelEliminarProveedores.Visible = True
         panelEliminarProveedores.Location = New Point(476, 81)
     End Sub
 
@@ -1704,6 +1779,45 @@ Public Class GestionesAdministrador
             Return False
         End If
 
+    End Function
+
+    Private Function validarGasolinaRestante(id As Integer) As Boolean
+
+        Try
+            Dim gasolinaAValidar As DataRow
+            conn.Open()
+            Using cmd As New OleDbCommand("Select cantidad from Gasolinas where id = @id", conn)
+
+                Dim da As New OleDbDataAdapter(cmd)
+                Dim ds As New DataSet()
+                da.Fill(ds)
+
+                If ds.Tables("Gasolinas").Rows.Count > 0 Then
+
+                    gasolinaAValidar = ds.Tables("Gasolinas").Rows(0)
+
+                    If gasolinaAValidar("Cantidad").ToString() < 100 Then
+                        Return False
+                    Else
+                        Return True
+                    End If
+
+                Else
+
+                    MsgBox("Error, no se ha encontrado una gasolina")
+                    Return False
+
+                End If
+
+            End Using
+        Catch ex As Exception
+
+            MsgBox("Hubo un error a la hora de realizar la operacion en la base de datos: " & ex.Message)
+            Return False
+
+        Finally
+            conn.Close()
+        End Try
 
     End Function
 
