@@ -223,5 +223,11 @@
   <ItemGroup>
     <None Include="Resources\ajustar%281%29.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_6f51f18b-7d0f-4ca6-bf26-6b39c3e.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_31544953-d1d9-4b71-bd43-3bf205c.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
