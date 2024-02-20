@@ -609,8 +609,9 @@ Public Class GestionesAdministrador
         Dim validacion5 As Boolean = validarNOmbreYApellidos(tbNombreEmpleadoAgregar, tbNombreEmpleadoAgregar.Text)
         Dim validacion6 As Boolean = validarNOmbreYApellidos(tbApellido1EmpleadoAgregar, tbApellido1EmpleadoAgregar.Text)
         Dim validacion7 As Boolean = validarNOmbreYApellidos(tbApellido2EmpleadoAgregar, tbApellido2EmpleadoAgregar.Text)
+        Dim validacion8 As Boolean = validarAlta(tbAltaClienteAgregar, tbAltaClienteAgregar.Text)
 
-        If validacion1 = False And validacion2 = False And validacion3 = False And validacion5 = False And validacion6 = False And validacion7 = False Then
+        If validacion1 = False And validacion2 = False And validacion3 = False And validacion5 = False And validacion6 = False And validacion7 = False And validacion8 = False Then
             AgregarCliente(tbIdClienteAgregar.Text, tbNombreClienteAgregar.Text, tbApellido1ClienteAgregar.Text, tbApellido2ClienteAgregar.Text, tbTelefonoClienteAgregar.Text, tbCorreoClienteAgregar.Text, dtpFechaAltaClienteAgregar.Value.Date, tbAltaClienteAgregar.Text)
         End If
     End Sub
@@ -666,6 +667,7 @@ Public Class GestionesAdministrador
         Dim validacion5 As Boolean = validarNOmbreYApellidos(tbNombreClienteModificar, tbNombreClienteModificar.Text)
         Dim validacion6 As Boolean = validarNOmbreYApellidos(tbApellido1ClienteModificar, tbApellido1ClienteModificar.Text)
         Dim validacion7 As Boolean = validarNOmbreYApellidos(tbApellido2ClienteModificar, tbApellido2ClienteModificar.Text)
+        Dim validacion8 As Boolean = validarAlta(tbAltaClienteModificar, tbAltaClienteModificar.Text)
         If validacion1 = False And validacion2 = False And validacion3 = False And validacion5 = False And validacion6 = False And validacion7 = False Then
 
             ModificarCliente(tbIdClienteModificar.Text, tbNombreClienteModificar.Text, tbApellido1ClienteModificar.Text, tbApellido2ClienteModificar.Text, tbTelefonoClienteModificar.Text,
@@ -1598,8 +1600,8 @@ Public Class GestionesAdministrador
             End If
         Next
 
-        If contadorComas > 1 Or contadorPuntos > 1 Or (contadorComas = 1 And contadorPuntos = 1) Then
-            MsgBox("Cantidad de comas o de puntos incorrecto")
+        If contadorComas > 0 Or contadorPuntos > 0 Or (contadorComas = 1 And contadorPuntos = 1) Then
+            MsgBox("No se pueden agregar ni comas ni puntos")
             tb.Clear()
             Return False
         Else
@@ -1686,4 +1688,23 @@ Public Class GestionesAdministrador
             Return False
         End If
     End Function
+
+    Private Function validarAlta(tb As TextBox, str As String) As Boolean
+
+        If str = "" Then
+            MsgBox("El campo de altas no puede estar vacio")
+            Return True
+        ElseIf ((Not str = 1) Or (Not str = 0)) Then
+            MsgBox("Los valores del alta deben ser o 1 o 0")
+            Return True
+        ElseIf (Not IsNumeric(str)) Then
+            MsgBox("Debe de ser numerico el valor del alta.")
+            Return True
+        Else
+            Return False
+        End If
+
+
+    End Function
+
 End Class
