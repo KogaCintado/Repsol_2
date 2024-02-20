@@ -1582,20 +1582,22 @@ Public Class GestionesAdministrador
     Private Function validarCorreos(tb As TextBox, str As String) As Boolean
         'en este metodo validamos que el texbox de correo no este vacio. aparte
         'de que solo puede tener un @ y un punto. En caso de que tenga mas de un @
-        'o mas de un punto, mostraremos un mensaje de error. Para ello utilizaremos una lista con caracteres permitidos
-        Dim permitidos As New List(Of Char) From {"@", "."}
-        Dim comprobar As Boolean = False
+        'o mas de un punto, mostraremos un mensaje de error.
+        Dim contadorArrobas As Integer = 0
+        Dim contadorPuntos As Integer = 0
         If str = "" Then
             MsgBox("El campo de correo no puede estar vacio")
             Return True
         Else
             For i As Integer = 0 To str.Length - 1
-                If Not permitidos.Contains(str(i)) Then
-                    comprobar = True
+                If str(i) = "@" Then
+                    contadorArrobas += 1
+                ElseIf str(i) = "." Then
+                    contadorPuntos += 1
                 End If
             Next
-            If comprobar = True Then
-                MsgBox("El campo de correo solo puede contener un @ y un punto")
+            If contadorPuntos > 1 Or contadorArrobas > 1 Or contadorPuntos <= 0 Or contadorArrobas <= 0 Then
+                MsgBox("El campo de correo debe contener un @ y un punto")
                 tb.Clear()
                 Return True
             Else
@@ -1778,46 +1780,6 @@ Public Class GestionesAdministrador
         Else
             Return False
         End If
-
-    End Function
-
-    Private Function validarGasolinaRestante(id As Integer) As Boolean
-
-        Try
-            Dim gasolinaAValidar As DataRow
-            conn.Open()
-            Using cmd As New OleDbCommand("Select cantidad from Gasolinas where id = @id", conn)
-
-                Dim da As New OleDbDataAdapter(cmd)
-                Dim ds As New DataSet()
-                da.Fill(ds)
-
-                If ds.Tables("Gasolinas").Rows.Count > 0 Then
-
-                    gasolinaAValidar = ds.Tables("Gasolinas").Rows(0)
-
-                    If gasolinaAValidar("Cantidad").ToString() < 100 Then
-                        Return False
-                    Else
-                        Return True
-                    End If
-
-                Else
-
-                    MsgBox("Error, no se ha encontrado una gasolina")
-                    Return False
-
-                End If
-
-            End Using
-        Catch ex As Exception
-
-            MsgBox("Hubo un error a la hora de realizar la operacion en la base de datos: " & ex.Message)
-            Return False
-
-        Finally
-            conn.Close()
-        End Try
 
     End Function
 
