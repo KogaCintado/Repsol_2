@@ -152,13 +152,13 @@ Public Class TPV
             Return
         End If
 
-        Dim codTarjeta As String = InputBox("Acerque la tarjeta al datáfono", "Pago", "")
-        'MsgBox("Acerque la tarjeta al datáfono", , "Pago")
+        InputBox("Acerque la tarjeta al datáfono", "Pago", "")
+        MsgBox("Acerque la tarjeta al datáfono", , "Pago")
 
         'Dim caja As New Archivos.HacerCaja
         'caja.CajaTemporal(Single.Parse(lblResultado.Text), Single.Parse("0,00"), lblUser.Text)
         Dim a As New Ticket
-        a.ImprimirTicketTarjeta(lblUser.Text, codTarjeta, lblResultado.Text, lbNombreProductos, lbPrecios)
+        a.ImprimirTicketTarjeta(lblUser.Text, lblResultado.Text, lbNombreProductos, lbPrecios)
     End Sub
     'REVISAR!!!!!!!!!!!!!!!!!!
 

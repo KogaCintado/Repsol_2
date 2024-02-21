@@ -15,11 +15,6 @@ Public Class Gasolina
         listaDeImagenes.Add(My.Resources.llegada2)
         listaDeImagenes.Add(My.Resources.gasolinas)
 
-        'agregamos los botones a la lista
-        botones.Add(btnGas95)
-        botones.Add(btnGas98)
-        botones.Add(btnDieselE)
-        botones.Add(btnDieselE10)
         ' Asigna el ImageList al PictureBox
         PictureBox1.Image = listaDeImagenes(0)
 

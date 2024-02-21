@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Gasolina
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,10 +20,11 @@ Partial Class Gasolina
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Gasolina))
+        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
@@ -32,17 +33,17 @@ Partial Class Gasolina
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblPrecioGasAcumulado = New System.Windows.Forms.Label()
         Me.lblPrecioGas = New System.Windows.Forms.Label()
-        Me.btnGas95 = New System.Windows.Forms.Button()
-        Me.btnGas98 = New System.Windows.Forms.Button()
-        Me.btnDieselE = New System.Windows.Forms.Button()
-        Me.btnDieselE10 = New System.Windows.Forms.Button()
-        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
+        'ImageList1
+        '
+        Me.ImageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit
+        Me.ImageList1.ImageSize = New System.Drawing.Size(16, 16)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+        '
         'PictureBox1
         '
-        Me.PictureBox1.Enabled = False
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(210, 5)
         Me.PictureBox1.Name = "PictureBox1"
@@ -113,49 +114,6 @@ Partial Class Gasolina
         Me.lblPrecioGas.TabIndex = 6
         Me.lblPrecioGas.Text = "BORRARTEXTo"
         '
-        'btnGas95
-        '
-        Me.btnGas95.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnGas95.Location = New System.Drawing.Point(226, 37)
-        Me.btnGas95.Name = "btnGas95"
-        Me.btnGas95.Size = New System.Drawing.Size(349, 768)
-        Me.btnGas95.TabIndex = 7
-        Me.btnGas95.UseVisualStyleBackColor = True
-        '
-        'btnGas98
-        '
-        Me.btnGas98.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnGas98.Location = New System.Drawing.Point(604, 37)
-        Me.btnGas98.Name = "btnGas98"
-        Me.btnGas98.Size = New System.Drawing.Size(349, 768)
-        Me.btnGas98.TabIndex = 8
-        Me.btnGas98.UseVisualStyleBackColor = True
-        '
-        'btnDieselE
-        '
-        Me.btnDieselE.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnDieselE.Location = New System.Drawing.Point(971, 37)
-        Me.btnDieselE.Name = "btnDieselE"
-        Me.btnDieselE.Size = New System.Drawing.Size(349, 768)
-        Me.btnDieselE.TabIndex = 9
-        Me.btnDieselE.UseVisualStyleBackColor = True
-        '
-        'btnDieselE10
-        '
-        Me.btnDieselE10.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnDieselE10.Location = New System.Drawing.Point(1346, 37)
-        Me.btnDieselE10.Name = "btnDieselE10"
-        Me.btnDieselE10.Size = New System.Drawing.Size(349, 768)
-        Me.btnDieselE10.TabIndex = 10
-        Me.btnDieselE10.UseVisualStyleBackColor = True
-        '
-        'ProgressBar1
-        '
-        Me.ProgressBar1.Location = New System.Drawing.Point(1310, 827)
-        Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(400, 30)
-        Me.ProgressBar1.TabIndex = 11
-        '
         'Gasolina
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -172,7 +130,7 @@ Partial Class Gasolina
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.lblNombreGas)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.btnGas95)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Name = "Gasolina"
         Me.Text = "Gasolina"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -182,6 +140,7 @@ Partial Class Gasolina
     End Sub
 
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents ImageList1 As ImageList
     Friend WithEvents Label1 As Label
     Friend WithEvents Timer1 As Timer
     Friend WithEvents lblNombreGas As Label
@@ -189,9 +148,4 @@ Partial Class Gasolina
     Friend WithEvents Label2 As Label
     Friend WithEvents lblPrecioGasAcumulado As Label
     Friend WithEvents lblPrecioGas As Label
-    Friend WithEvents btnGas95 As Button
-    Friend WithEvents btnGas98 As Button
-    Friend WithEvents btnDieselE As Button
-    Friend WithEvents btnDieselE10 As Button
-    Friend WithEvents ProgressBar1 As ProgressBar
 End Class

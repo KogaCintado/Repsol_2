@@ -1,5 +1,4 @@
 ﻿Imports System.Data.OleDb
-Imports Biblioteca
 Public Class Inicio
     Public Shared admin As Boolean = False
     Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
@@ -130,8 +129,6 @@ Public Class Inicio
 
         Catch ex As Exception
             MsgBox("Hubo un error con el inicio de sesion: " & ex.Message)
-            Dim guardar As New Archivo
-            guardar.GuardarError(ex, "inicio, loggin")
             Return False
         Finally
             conn.Close()
