@@ -2,6 +2,7 @@
     Private Sub Trabajar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Maximizamos la ventana
         Me.WindowState = FormWindowState.Maximized
+        Me.lblUser.Text = Inicio.tbUsername.Text
     End Sub
     Private Sub VolverToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VolverToolStripMenuItem.Click
         Opciones.Show()

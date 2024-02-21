@@ -64,6 +64,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Biblioteca">
+      <HintPath>..\Biblioteca\Biblioteca\bin\Debug\Biblioteca.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.OleDb, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -92,6 +95,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Efectivo.Designer.vb">
+      <DependentUpon>Efectivo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Efectivo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Gasolina.Designer.vb">
       <DependentUpon>Gasolina.vb</DependentUpon>
     </Compile>
@@ -146,6 +155,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Efectivo.resx">
+      <DependentUpon>Efectivo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gasolina.resx">
       <DependentUpon>Gasolina.vb</DependentUpon>
     </EmbeddedResource>
@@ -207,6 +219,15 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_6f51f18b-7d0f-4ca6-bf26-6b39c3e.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_31544953-d1d9-4b71-bd43-3bf205c.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ajustar%281%29.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

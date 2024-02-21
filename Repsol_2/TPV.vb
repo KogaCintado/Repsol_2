@@ -1,4 +1,8 @@
-﻿Imports System.Data.OleDb
+﻿Imports System.ComponentModel
+Imports System.Data.OleDb
+Imports System.Drawing.Printing
+Imports Biblioteca
+
 Public Class TPV
 
     Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
@@ -6,6 +10,9 @@ Public Class TPV
     Private Sub TPV_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Maximizamos la ventana
         Me.WindowState = FormWindowState.Maximized
+
+        'Cargamos el nombre del usuario
+        lblUser.Text = Inicio.tbUsername.Text
     End Sub
 
     Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
@@ -78,20 +85,23 @@ Public Class TPV
         lbNombreProductos.Items.RemoveAt(selectedIndex)
         lbPrecios.Items.RemoveAt(selectedIndex)
     End Sub
+
     'hazme un sub para que, cuando se clickee un producto ya seleccionado en una listbox, añada el producto a otra listbox
     'y que añada el precio del producto a otra listbox
     'y que sume el precio del producto a un label que muestre el precio total de la compra
     Private Sub lbProductosTienda_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbProductosTienda.Click, lbPreciosTienda.Click
+        'sender.selectedIndex =
+
         If (sender.SelectedItem Is Nothing) Then
             Return
             'Or TypeOf (sender.SelectedItem) Is DataRowView
         End If
-        'If (producto = "" Or precio = "") Then
-        '    Return
-        'End If
+        Dim a = sender.SelectedIndex
+        lbPreciosTienda.SelectedIndex = a
+        lbProductosTienda.SelectedIndex = a
 
-        lbNombreProductos.Items.Add(lbProductosTienda.GetItemText(lbProductosTienda.SelectedIndex))
-        lbPrecios.Items.Add(lbPreciosTienda.GetItemText(lbPreciosTienda.SelectedIndex))
+        lbNombreProductos.Items.Add(lbProductosTienda.GetItemText(lbProductosTienda.SelectedItem))
+        lbPrecios.Items.Add(lbPreciosTienda.GetItemText(lbPreciosTienda.SelectedItem))
 
         actualizarPrecio()
     End Sub
@@ -124,19 +134,31 @@ Public Class TPV
 
 
     'REVISAR!!!!!!!!!!!!!!!!!!
-    Private Sub btnEfectivo_Click_1(sender As Object, e As EventArgs) Handles btnEfectivo.Click
-        Dim total As Double = Convert.ToDouble(lblResultado.Text)
-        Dim pago As Double = Convert.ToDouble(InputBox("Introduce el dinero que te han dado"))
-
-        If pago < total Then
-            MsgBox("El dinero introducido es insuficiente")
-        Else
-            MsgBox("El cambio es de " & (pago - total) & " euros")
+    'Procedimiento que te muestra el formulario Efectivo, siempre y cuando un pedido tenga datos, y no supere los 5000 euros.
+    Private Sub btnEfectivo_Click(sender As Object, e As EventArgs) Handles btnEfectivo.Click
+        If (lblResultado.Text = "0,00") Then
+            Return
+        ElseIf (CSng(lblResultado.Text) >= 5000) Then
+            MsgBox("Para pedidos superiores a 5.000 euros, use la tarjeta.")
+            Return
         End If
+        Efectivo.ShowDialog()
+        Efectivo.lblPrecioInicial.Text = lblResultado.Text
     End Sub
 
-    Private Sub btnTarjeta_Click_1(sender As Object, e As EventArgs) Handles btnTarjeta.Click
-        MsgBox("Pago realizado con tarjeta")
+    'Procedimiento asignado a un botón que, al seleccionarlo, Hace la tarea de simular conexión con un datáfono, guarda el pedido e imprime el ticket.
+    Private Sub btnTarjeta_Click(sender As Object, e As EventArgs) Handles btnTarjeta.Click
+        If (lblResultado.Text = "0,00") Then
+            Return
+        End If
+
+        Dim tarjeta As String = InputBox("Acerque la tarjeta al datáfono", "Pago", "")
+        MsgBox("Acerque la tarjeta al datáfono", , "Pago")
+
+        'Dim caja As New Archivos.HacerCaja
+        'caja.CajaTemporal(Single.Parse(lblResultado.Text), Single.Parse("0,00"), lblUser.Text)
+        Dim a As New Ticket
+        a.ImprimirTicketTarjeta(lblUser.Text, tarjeta, lblResultado.Text, lbNombreProductos, lbPrecios)
     End Sub
     'REVISAR!!!!!!!!!!!!!!!!!!
 
@@ -168,6 +190,8 @@ Public Class TPV
             lbPreciosTienda.DisplayMember = "Precio"
         Catch ex As Exception
             MsgBox("Hubo un error con la carga de los productos de la tienda" & ex.Message)
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "TPV, CargarBebidas")
         End Try
 
     End Sub
@@ -189,6 +213,8 @@ Public Class TPV
             lbPreciosTienda.DisplayMember = "Precio"
         Catch ex As Exception
             MsgBox("Hubo un error con la carga de los productos de la tienda" & ex.Message)
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "TPV, CargarConsumibles")
         End Try
 
     End Sub
@@ -198,13 +224,18 @@ Public Class TPV
         Dim cmd As New OleDbCommand("Select * from Productos where Gama >= 3 order by id", conn)
         Dim da As New OleDbDataAdapter(cmd)
         Dim dt As New DataTable()
+        Try
+            da.Fill(dt)
+            lbProductosTienda.DataSource = dt
+            lbProductosTienda.DisplayMember = "Nombre"
 
-        da.Fill(dt)
-        lbProductosTienda.DataSource = dt
-        lbProductosTienda.DisplayMember = "Nombre"
-
-        lbPreciosTienda.DataSource = dt
-        lbPreciosTienda.DisplayMember = "Precio"
+            lbPreciosTienda.DataSource = dt
+            lbPreciosTienda.DisplayMember = "Precio"
+        Catch ex As Exception
+            MsgBox("Hubo un error con la carga de los productos de la tienda" & ex.Message)
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "TPV, CargarOtros")
+        End Try
 
     End Sub
 End Class
