@@ -126,24 +126,6 @@
     <Compile Include="Informes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InformesClientes.Designer.vb">
-      <DependentUpon>InformesClientes.vb</DependentUpon>
-    </Compile>
-    <Compile Include="InformesClientes.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InformesEmpleados.Designer.vb">
-      <DependentUpon>InformesEmpleados.vb</DependentUpon>
-    </Compile>
-    <Compile Include="InformesEmpleados.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InformesProductos.Designer.vb">
-      <DependentUpon>InformesProductos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="InformesProductos.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Inicio.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +153,35 @@
     </Compile>
     <Compile Include="Opciones.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportesClientes.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reportesClientes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportesEmpleados.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reportesEmpleados.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportesGasolina.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reportesGasolina.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportesProductos.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reportesProductos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Repsol_dbDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Repsol_dbDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="TarjetaRepsol.Designer.vb">
       <DependentUpon>TarjetaRepsol.vb</DependentUpon>
@@ -204,15 +215,6 @@
     <EmbeddedResource Include="Informes.resx">
       <DependentUpon>Informes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InformesClientes.resx">
-      <DependentUpon>InformesClientes.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InformesEmpleados.resx">
-      <DependentUpon>InformesEmpleados.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InformesProductos.resx">
-      <DependentUpon>InformesProductos.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.vb</DependentUpon>
     </EmbeddedResource>
@@ -224,6 +226,22 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Opciones.resx">
       <DependentUpon>Opciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportesClientes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>reportesClientes.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportesEmpleados.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>reportesEmpleados.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportesGasolina.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>reportesGasolina.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportesProductos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>reportesProductos.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="TarjetaRepsol.resx">
       <DependentUpon>TarjetaRepsol.vb</DependentUpon>
@@ -249,6 +267,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Repsol_dbDataSet.xsc">
+      <DependentUpon>Repsol_dbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Repsol_dbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Repsol_dbDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Repsol_dbDataSet.xss">
+      <DependentUpon>Repsol_dbDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\eye.png" />
   </ItemGroup>
   <ItemGroup>

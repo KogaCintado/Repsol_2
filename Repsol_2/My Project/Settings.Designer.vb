@@ -63,6 +63,17 @@ Namespace My
                 Return CType(Me("Repsol_dbConnectionString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\bin\Debug\Repsol_db"& _ 
+            ".accdb")>  _
+        Public ReadOnly Property Repsol_dbConnectionString1() As String
+            Get
+                Return CType(Me("Repsol_dbConnectionString1"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 
