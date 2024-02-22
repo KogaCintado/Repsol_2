@@ -22,6 +22,14 @@ Partial Class TPV
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim IdLabel1 As System.Windows.Forms.Label
+        Dim NombreLabel1 As System.Windows.Forms.Label
+        Dim Apellido_1Label1 As System.Windows.Forms.Label
+        Dim Apellido_2Label1 As System.Windows.Forms.Label
+        Dim TelefonoLabel1 As System.Windows.Forms.Label
+        Dim CorreoLabel1 As System.Windows.Forms.Label
+        Dim FechaAltaLabel As System.Windows.Forms.Label
+        Dim AltaLabel As System.Windows.Forms.Label
         Me.lblUser = New System.Windows.Forms.Label()
         Me.lbNombreCategorias = New System.Windows.Forms.ListBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -42,8 +50,32 @@ Partial Class TPV
         Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarAplicaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.panelCliente = New System.Windows.Forms.Panel()
+        Me.btnAccionBuscarCliente = New System.Windows.Forms.Button()
+        Me.tbIdCliente = New System.Windows.Forms.TextBox()
+        Me.tbNombreCliente = New System.Windows.Forms.TextBox()
+        Me.tbApellido1Cliente = New System.Windows.Forms.TextBox()
+        Me.tbApellido2Cliente = New System.Windows.Forms.TextBox()
+        Me.tbTelefonoCliente = New System.Windows.Forms.TextBox()
+        Me.tbCorreoCliente = New System.Windows.Forms.TextBox()
+        Me.FechaAltaClienteTimePicker = New System.Windows.Forms.DateTimePicker()
+        Me.tbAltaCliente = New System.Windows.Forms.TextBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnEsCliente = New System.Windows.Forms.Button()
+        Me.btnCrearCliente = New System.Windows.Forms.Button()
+        IdLabel1 = New System.Windows.Forms.Label()
+        NombreLabel1 = New System.Windows.Forms.Label()
+        Apellido_1Label1 = New System.Windows.Forms.Label()
+        Apellido_2Label1 = New System.Windows.Forms.Label()
+        TelefonoLabel1 = New System.Windows.Forms.Label()
+        CorreoLabel1 = New System.Windows.Forms.Label()
+        FechaAltaLabel = New System.Windows.Forms.Label()
+        AltaLabel = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.panelCliente.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblUser
@@ -241,11 +273,212 @@ Partial Class TPV
         Me.PictureBox1.TabIndex = 7
         Me.PictureBox1.TabStop = False
         '
+        'panelCliente
+        '
+        Me.panelCliente.Controls.Add(Me.btnAccionBuscarCliente)
+        Me.panelCliente.Controls.Add(IdLabel1)
+        Me.panelCliente.Controls.Add(Me.tbIdCliente)
+        Me.panelCliente.Controls.Add(NombreLabel1)
+        Me.panelCliente.Controls.Add(Me.tbNombreCliente)
+        Me.panelCliente.Controls.Add(Apellido_1Label1)
+        Me.panelCliente.Controls.Add(Me.tbApellido1Cliente)
+        Me.panelCliente.Controls.Add(Apellido_2Label1)
+        Me.panelCliente.Controls.Add(Me.tbApellido2Cliente)
+        Me.panelCliente.Controls.Add(TelefonoLabel1)
+        Me.panelCliente.Controls.Add(Me.tbTelefonoCliente)
+        Me.panelCliente.Controls.Add(CorreoLabel1)
+        Me.panelCliente.Controls.Add(Me.tbCorreoCliente)
+        Me.panelCliente.Controls.Add(FechaAltaLabel)
+        Me.panelCliente.Controls.Add(Me.FechaAltaClienteTimePicker)
+        Me.panelCliente.Controls.Add(AltaLabel)
+        Me.panelCliente.Controls.Add(Me.tbAltaCliente)
+        Me.panelCliente.Location = New System.Drawing.Point(1476, 399)
+        Me.panelCliente.Name = "panelCliente"
+        Me.panelCliente.Size = New System.Drawing.Size(292, 301)
+        Me.panelCliente.TabIndex = 65
+        '
+        'btnAccionBuscarCliente
+        '
+        Me.btnAccionBuscarCliente.Location = New System.Drawing.Point(108, 253)
+        Me.btnAccionBuscarCliente.Name = "btnAccionBuscarCliente"
+        Me.btnAccionBuscarCliente.Size = New System.Drawing.Size(100, 23)
+        Me.btnAccionBuscarCliente.TabIndex = 19
+        Me.btnAccionBuscarCliente.Text = "Buscar"
+        Me.btnAccionBuscarCliente.UseVisualStyleBackColor = True
+        '
+        'IdLabel1
+        '
+        IdLabel1.AutoSize = True
+        IdLabel1.Location = New System.Drawing.Point(5, 34)
+        IdLabel1.Name = "IdLabel1"
+        IdLabel1.Size = New System.Drawing.Size(19, 13)
+        IdLabel1.TabIndex = 0
+        IdLabel1.Text = "Id:"
+        '
+        'tbIdCliente
+        '
+        Me.tbIdCliente.Location = New System.Drawing.Point(72, 31)
+        Me.tbIdCliente.MaxLength = 6
+        Me.tbIdCliente.Name = "tbIdCliente"
+        Me.tbIdCliente.Size = New System.Drawing.Size(200, 20)
+        Me.tbIdCliente.TabIndex = 1
+        '
+        'NombreLabel1
+        '
+        NombreLabel1.AutoSize = True
+        NombreLabel1.Location = New System.Drawing.Point(5, 60)
+        NombreLabel1.Name = "NombreLabel1"
+        NombreLabel1.Size = New System.Drawing.Size(47, 13)
+        NombreLabel1.TabIndex = 2
+        NombreLabel1.Text = "Nombre:"
+        '
+        'tbNombreCliente
+        '
+        Me.tbNombreCliente.Location = New System.Drawing.Point(72, 57)
+        Me.tbNombreCliente.Name = "tbNombreCliente"
+        Me.tbNombreCliente.Size = New System.Drawing.Size(200, 20)
+        Me.tbNombreCliente.TabIndex = 3
+        '
+        'Apellido_1Label1
+        '
+        Apellido_1Label1.AutoSize = True
+        Apellido_1Label1.Location = New System.Drawing.Point(5, 86)
+        Apellido_1Label1.Name = "Apellido_1Label1"
+        Apellido_1Label1.Size = New System.Drawing.Size(56, 13)
+        Apellido_1Label1.TabIndex = 4
+        Apellido_1Label1.Text = "Apellido 1:"
+        '
+        'tbApellido1Cliente
+        '
+        Me.tbApellido1Cliente.Location = New System.Drawing.Point(72, 83)
+        Me.tbApellido1Cliente.Name = "tbApellido1Cliente"
+        Me.tbApellido1Cliente.Size = New System.Drawing.Size(200, 20)
+        Me.tbApellido1Cliente.TabIndex = 5
+        '
+        'Apellido_2Label1
+        '
+        Apellido_2Label1.AutoSize = True
+        Apellido_2Label1.Location = New System.Drawing.Point(5, 112)
+        Apellido_2Label1.Name = "Apellido_2Label1"
+        Apellido_2Label1.Size = New System.Drawing.Size(56, 13)
+        Apellido_2Label1.TabIndex = 6
+        Apellido_2Label1.Text = "Apellido 2:"
+        '
+        'tbApellido2Cliente
+        '
+        Me.tbApellido2Cliente.Location = New System.Drawing.Point(72, 109)
+        Me.tbApellido2Cliente.Name = "tbApellido2Cliente"
+        Me.tbApellido2Cliente.Size = New System.Drawing.Size(200, 20)
+        Me.tbApellido2Cliente.TabIndex = 7
+        '
+        'TelefonoLabel1
+        '
+        TelefonoLabel1.AutoSize = True
+        TelefonoLabel1.Location = New System.Drawing.Point(5, 138)
+        TelefonoLabel1.Name = "TelefonoLabel1"
+        TelefonoLabel1.Size = New System.Drawing.Size(52, 13)
+        TelefonoLabel1.TabIndex = 8
+        TelefonoLabel1.Text = "Telefono:"
+        '
+        'tbTelefonoCliente
+        '
+        Me.tbTelefonoCliente.Location = New System.Drawing.Point(72, 135)
+        Me.tbTelefonoCliente.Name = "tbTelefonoCliente"
+        Me.tbTelefonoCliente.Size = New System.Drawing.Size(200, 20)
+        Me.tbTelefonoCliente.TabIndex = 9
+        '
+        'CorreoLabel1
+        '
+        CorreoLabel1.AutoSize = True
+        CorreoLabel1.Location = New System.Drawing.Point(5, 164)
+        CorreoLabel1.Name = "CorreoLabel1"
+        CorreoLabel1.Size = New System.Drawing.Size(41, 13)
+        CorreoLabel1.TabIndex = 10
+        CorreoLabel1.Text = "Correo:"
+        '
+        'tbCorreoCliente
+        '
+        Me.tbCorreoCliente.Location = New System.Drawing.Point(72, 161)
+        Me.tbCorreoCliente.Name = "tbCorreoCliente"
+        Me.tbCorreoCliente.Size = New System.Drawing.Size(200, 20)
+        Me.tbCorreoCliente.TabIndex = 11
+        '
+        'FechaAltaLabel
+        '
+        FechaAltaLabel.AutoSize = True
+        FechaAltaLabel.Location = New System.Drawing.Point(5, 191)
+        FechaAltaLabel.Name = "FechaAltaLabel"
+        FechaAltaLabel.Size = New System.Drawing.Size(61, 13)
+        FechaAltaLabel.TabIndex = 12
+        FechaAltaLabel.Text = "Fecha Alta:"
+        '
+        'FechaAltaClienteTimePicker
+        '
+        Me.FechaAltaClienteTimePicker.Location = New System.Drawing.Point(72, 187)
+        Me.FechaAltaClienteTimePicker.Name = "FechaAltaClienteTimePicker"
+        Me.FechaAltaClienteTimePicker.Size = New System.Drawing.Size(200, 20)
+        Me.FechaAltaClienteTimePicker.TabIndex = 13
+        '
+        'AltaLabel
+        '
+        AltaLabel.AutoSize = True
+        AltaLabel.Location = New System.Drawing.Point(5, 216)
+        AltaLabel.Name = "AltaLabel"
+        AltaLabel.Size = New System.Drawing.Size(28, 13)
+        AltaLabel.TabIndex = 14
+        AltaLabel.Text = "Alta:"
+        '
+        'tbAltaCliente
+        '
+        Me.tbAltaCliente.Location = New System.Drawing.Point(72, 213)
+        Me.tbAltaCliente.Name = "tbAltaCliente"
+        Me.tbAltaCliente.Size = New System.Drawing.Size(200, 20)
+        Me.tbAltaCliente.TabIndex = 15
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.btnCrearCliente)
+        Me.Panel1.Controls.Add(Me.btnEsCliente)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Location = New System.Drawing.Point(1498, 128)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(250, 138)
+        Me.Panel1.TabIndex = 66
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(61, 11)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(118, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "¿Tiene Tarjeta Repsol?"
+        '
+        'btnEsCliente
+        '
+        Me.btnEsCliente.Location = New System.Drawing.Point(22, 62)
+        Me.btnEsCliente.Name = "btnEsCliente"
+        Me.btnEsCliente.Size = New System.Drawing.Size(75, 46)
+        Me.btnEsCliente.TabIndex = 1
+        Me.btnEsCliente.Text = "Sí"
+        Me.btnEsCliente.UseVisualStyleBackColor = True
+        '
+        'btnCrearCliente
+        '
+        Me.btnCrearCliente.Location = New System.Drawing.Point(120, 62)
+        Me.btnCrearCliente.Name = "btnCrearCliente"
+        Me.btnCrearCliente.Size = New System.Drawing.Size(110, 46)
+        Me.btnCrearCliente.TabIndex = 2
+        Me.btnCrearCliente.Text = "No, deseo crearla."
+        Me.btnCrearCliente.UseVisualStyleBackColor = True
+        '
         'TPV
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.panelCliente)
         Me.Controls.Add(Me.lbPreciosTienda)
         Me.Controls.Add(Me.lbProductosTienda)
         Me.Controls.Add(Me.btnLimpiar)
@@ -268,6 +501,10 @@ Partial Class TPV
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.panelCliente.ResumeLayout(False)
+        Me.panelCliente.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -293,4 +530,18 @@ Partial Class TPV
     Friend WithEvents VolverToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents CerrarSesiónToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CerrarAplicaciónToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents panelCliente As Panel
+    Friend WithEvents btnAccionBuscarCliente As Button
+    Friend WithEvents tbIdCliente As TextBox
+    Friend WithEvents tbNombreCliente As TextBox
+    Friend WithEvents tbApellido1Cliente As TextBox
+    Friend WithEvents tbApellido2Cliente As TextBox
+    Friend WithEvents tbTelefonoCliente As TextBox
+    Friend WithEvents tbCorreoCliente As TextBox
+    Friend WithEvents FechaAltaClienteTimePicker As DateTimePicker
+    Friend WithEvents tbAltaCliente As TextBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents btnCrearCliente As Button
+    Friend WithEvents btnEsCliente As Button
+    Friend WithEvents Label1 As Label
 End Class
