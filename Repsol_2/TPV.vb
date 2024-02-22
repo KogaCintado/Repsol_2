@@ -176,6 +176,74 @@ Public Class TPV
         a.ImprimirTicketTarjeta(lblUser.Text, tarjeta, lblResultado.Text, lbNombreProductos, lbPrecios)
     End Sub
 
+    Private Sub btnEsCliente_Click(sender As Object, e As EventArgs) Handles btnEsCliente.Click
+        PanelIsCliente.Visible = False
+        tbNombreCliente.Enabled = False
+        tbApellido1Cliente.Enabled = False
+        tbApellido2Cliente.Enabled = False
+        tbTelefonoCliente.Enabled = False
+        tbCorreoCliente.Enabled = False
+
+        btnAccionBuscarCliente.Text = "Buscar"
+        panelCosasCliente.Visible = True
+    End Sub
+
+    Private Sub btnCrearCliente_Click(sender As Object, e As EventArgs) Handles btnCrearCliente.Click
+        PanelIsCliente.Visible = False
+        tbNombreCliente.Enabled = True
+        tbApellido1Cliente.Enabled = True
+        tbApellido2Cliente.Enabled = True
+        tbTelefonoCliente.Enabled = True
+        tbCorreoCliente.Enabled = True
+
+        btnAccionBuscarCliente.Text = "Crear"
+        panelCosasCliente.Visible = True
+    End Sub
+
+    Private Sub btnAccionBuscarCliente_Click(sender As Object, e As EventArgs) Handles btnAccionBuscarCliente.Click
+        If (btnAccionBuscarCliente.Text = "Buscar") Then
+            'En este boton lo que hacemos es buscar un Cliente por su id
+            'Si el id no existe, mostramos un mensaje de error
+            'Si el id existe, mostramos los datos del Cliente
+            Dim validado As Boolean = GestionesAdministrador.validarIDs(tbIdCliente, tbIdCliente.Text)
+            If validado = False Then
+                Try
+
+                    Dim idCliente As Integer
+                    idCliente = tbIdCliente.Text
+                    Dim cliente As DataRow
+                    cliente = GestionesAdministrador.BuscarCliente(idCliente)
+                    If cliente Is Nothing Then
+                        MessageBox.Show("No existe un cliente con ese id")
+                    Else
+                        tbNombreCliente.Text = cliente("Nombre")
+                        tbApellido1Cliente.Text = cliente("Apellido 1")
+                        tbApellido2Cliente.Text = cliente("Apellido 2")
+                        tbTelefonoCliente.Text = cliente("Telefono")
+                        tbCorreoCliente.Text = cliente("Correo")
+                        FechaAltaClienteTimePicker.Value = cliente("FechaAlta")
+                    End If
+                Catch ex As Exception
+                    MsgBox("Hubo un error con la busqueda del cliente, trate de introducir bien los datos")
+                    Dim guardar As New Archivo
+                    guardar.GuardarError(ex, "TPV, btnAccionBuscarCliente_Click")
+                End Try
+            End If
+        End If
+    End Sub
+
+
+    Private Sub LinkLabelRepsol_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabelRepsol.LinkClicked
+        Dim urlRepsol As String = "https://www.repsol.com/"
+        ' Abre el navegador web predeterminado con la URL
+        Process.Start(urlRepsol)
+    End Sub
+
+    Private Sub LinkLblCondiciones_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLblCondiciones.LinkClicked
+        Dim urlRepsol As String = "https://www.repsol.com/es/pie-de-pagina/politica-de-privacidad/index.cshtml"
+        ' Abre el navegador web predeterminado con la URL
+        Process.Start(urlRepsol)
+    End Sub
 
     '-----------------------------------------------------------------------------------------------------------------------------------------
     '--------------------------------------------Espacio para métodos de base de datos--------------------------------------------------------
@@ -250,45 +318,5 @@ Public Class TPV
 
     End Sub
 
-    Private Sub btnEsCliente_Click(sender As Object, e As EventArgs) Handles btnEsCliente.Click
-        PanelIsCliente.Visible = False
-        tbNombreCliente.Enabled = False
-        tbApellido1Cliente.Enabled = False
-        tbApellido2Cliente.Enabled = False
-        tbTelefonoCliente.Enabled = False
-        tbCorreoCliente.Enabled = False
 
-        btnAccionBuscarCliente.Text = "Buscar"
-        panelCosasCliente.Visible = True
-    End Sub
-
-    Private Sub btnCrearCliente_Click(sender As Object, e As EventArgs) Handles btnCrearCliente.Click
-        PanelIsCliente.Visible = False
-        tbNombreCliente.Enabled = True
-        tbApellido1Cliente.Enabled = True
-        tbApellido2Cliente.Enabled = True
-        tbTelefonoCliente.Enabled = True
-        tbCorreoCliente.Enabled = True
-
-        btnAccionBuscarCliente.Text = "Crear"
-        panelCosasCliente.Visible = True
-    End Sub
-
-    Private Sub btnAccionBuscarCliente_Click(sender As Object, e As EventArgs) Handles btnAccionBuscarCliente.Click
-        If (btnAccionBuscarCliente.Text = "Buscar") Then
-
-        End If
-    End Sub
-
-    Private Sub LinkLabelRepsol_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabelRepsol.LinkClicked
-        Dim urlRepsol As String = "https://www.repsol.com/"
-        ' Abre el navegador web predeterminado con la URL
-        Process.Start(urlRepsol)
-    End Sub
-
-    Private Sub LinkLblCondiciones_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLblCondiciones.LinkClicked
-        Dim urlRepsol As String = "https://www.repsol.com/es/pie-de-pagina/politica-de-privacidad/index.cshtml"
-        ' Abre el navegador web predeterminado con la URL
-        Process.Start(urlRepsol)
-    End Sub
 End Class

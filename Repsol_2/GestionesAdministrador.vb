@@ -1563,7 +1563,7 @@ Public Class GestionesAdministrador
     '--------------------------------Zona de validaciones de los textbox-----------------------------------------------------
     '------------------------------------------------------------------------------------------------------------------------
 
-    Private Function validarIDs(tb As TextBox, str As String) As Boolean
+    Public Function validarIDs(tb As TextBox, str As String) As Boolean
 
         If str = "" Then
             MsgBox("El campo de ID no puede estar vacio")
@@ -1577,7 +1577,7 @@ Public Class GestionesAdministrador
         End If
     End Function
 
-    Private Function validarTelefonos(tb As TextBox, str As String) As Boolean
+    Public Function validarTelefonos(tb As TextBox, str As String) As Boolean
         'en este metodo validamos que el texbox de telefono no este vacio. aparte
         'de que solo puede tener un prefijo (+) y numeros. En caso de que tenga mas de un (+)
         'o letras, mostraremos un mensaje de error. Para ello utilizaremos una lista con caracteres permitidos
@@ -1602,7 +1602,7 @@ Public Class GestionesAdministrador
         End If
     End Function
 
-    Private Function validarCorreos(tb As TextBox, str As String) As Boolean
+    Public Function validarCorreos(tb As TextBox, str As String) As Boolean
         'en este metodo validamos que el texbox de correo no este vacio. aparte
         'de que solo puede tener un @ y un punto. En caso de que tenga mas de un @
         'o mas de un punto, mostraremos un mensaje de error. Para ello utilizaremos una lista con caracteres permitidos
@@ -1627,7 +1627,7 @@ Public Class GestionesAdministrador
         End If
     End Function
 
-    Private Function validarContraseñas(tb As TextBox, str As String) As Boolean
+    Public Function validarContraseñas(tb As TextBox, str As String) As Boolean
         'en este metodo validamos que el texbox de contraseña no este vacio. aparte
         'de que solo puede tener letras y numeros. En caso de que tenga caracteres especiales
         'mostraremos un mensaje de error. Para ello utilizaremos una lista con caracteres permitidos
@@ -1652,7 +1652,7 @@ Public Class GestionesAdministrador
         End If
     End Function
 
-    Private Function validarNOmbreYApellidos(tb As TextBox, str As String) As Boolean
+    Public Function validarNOmbreYApellidos(tb As TextBox, str As String) As Boolean
 
         Dim permitidos As New List(Of Char) From {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}
         Dim comprobar As Boolean = False
