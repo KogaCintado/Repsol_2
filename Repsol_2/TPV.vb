@@ -106,8 +106,12 @@ Public Class TPV
         actualizarPrecio()
     End Sub
     'Actualiza el precio total del pedido.
-    Private Sub actualizarPrecio()
+    Public Sub actualizarPrecio()
         Dim box As Decimal = 0.00
+        If (lbPrecios.Items.Count = 0) Then
+            lblResultado.Text = "0,00"
+            Return
+        End If
         For Each precio In lbPrecios.Items
             box += precio
         Next
@@ -117,7 +121,7 @@ Public Class TPV
 
     'Elimina un producto de la lista de pedidos
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        If (lbNombreProductos.SelectedItem IsNot Nothing) Then
+        If (lbNombreProductos.SelectedItem IsNot Nothing OrElse lbNombreProductos.SelectedItem IsNot "Gasolina") Then
             lbNombreProductos.Items.Remove(lbNombreProductos.SelectedIndex)
             lbPrecios.Items.Remove(lbNombreProductos.SelectedIndex)
         End If
@@ -133,7 +137,6 @@ Public Class TPV
     End Sub
 
 
-    'REVISAR!!!!!!!!!!!!!!!!!!
     'Procedimiento que te muestra el formulario Efectivo, siempre y cuando un pedido tenga datos, y no supere los 5000 euros.
     Private Sub btnEfectivo_Click(sender As Object, e As EventArgs) Handles btnEfectivo.Click
         If (lblResultado.Text = "0,00") Then
@@ -153,21 +156,19 @@ Public Class TPV
         End If
 
         Dim tarjeta As String = InputBox("Acerque la tarjeta al datáfono", "Pago", "")
-        MsgBox("Acerque la tarjeta al datáfono", , "Pago")
+        If tarjeta.Length = 0 Then
+            Return
+        End If
 
         'Dim caja As New Archivos.HacerCaja
         'caja.CajaTemporal(Single.Parse(lblResultado.Text), Single.Parse("0,00"), lblUser.Text)
         Dim a As New Ticket
         a.ImprimirTicketTarjeta(lblUser.Text, tarjeta, lblResultado.Text, lbNombreProductos, lbPrecios)
     End Sub
-    'REVISAR!!!!!!!!!!!!!!!!!!
-
-
-
 
 
     '-----------------------------------------------------------------------------------------------------------------------------------------
-    '--------------------------------------------Espacio para metodos de base de datos--------------------------------------------------------
+    '--------------------------------------------Espacio para métodos de base de datos--------------------------------------------------------
     '-----------------------------------------------------------------------------------------------------------------------------------------
 
 

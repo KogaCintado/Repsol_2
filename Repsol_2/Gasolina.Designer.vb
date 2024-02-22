@@ -37,6 +37,7 @@ Partial Class Gasolina
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.btnGas95 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.lblGasEchado = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -156,11 +157,22 @@ Partial Class Gasolina
         Me.PictureBox1.TabIndex = 12
         Me.PictureBox1.TabStop = False
         '
+        'lblGasEchado
+        '
+        Me.lblGasEchado.AutoSize = True
+        Me.lblGasEchado.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblGasEchado.Location = New System.Drawing.Point(1443, 901)
+        Me.lblGasEchado.Name = "lblGasEchado"
+        Me.lblGasEchado.Size = New System.Drawing.Size(119, 18)
+        Me.lblGasEchado.TabIndex = 24
+        Me.lblGasEchado.Text = "BORRARTEXTo"
+        '
         'Gasolina
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
+        Me.Controls.Add(Me.lblGasEchado)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnGas95)
         Me.Controls.Add(Me.ProgressBar1)
@@ -194,4 +206,5 @@ Partial Class Gasolina
     Friend WithEvents Label1 As Label
     Friend WithEvents Timer1 As Timer
     Friend WithEvents btnGas95 As Button
+    Friend WithEvents lblGasEchado As Label
 End Class

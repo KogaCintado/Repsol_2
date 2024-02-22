@@ -63,7 +63,14 @@ Public Class Archivo
 
     'Guarda los datos en un fichero.
     Public Function GuardarDatosEnArchivo(ruta As String, texto As String) As Boolean
-        My.Computer.FileSystem.WriteAllText(ruta, Now.ToString + " " + texto + vbCrLf, True)
+        Try
+            My.Computer.FileSystem.WriteAllText(ruta, Now.ToString + " " + texto + vbCrLf, True)
+            Return True
+        Catch ex As Exception
+            MsgBox("Ha ocurrido un error al guardar los datos en el archivo. Vuelva a intentarlo más tarde.", 16, "Error al guardar los datos")
+            'GuardarError(ex, "GuardarDatosEnArchivo")
+        End Try
+
         Return False
     End Function
 End Class
@@ -79,6 +86,7 @@ Public Class Ticket
 
 
     Public Sub ImprimirTicketEfectivo(user As String, resultado As String, nombreProductos As ListBox, precioProductos As ListBox, dinero As String, devolver As String)
+        printDocument As New PrintDocument()
         AddHandler printDocument.PrintPage, AddressOf TicketEfectivo
         Me.user = user
         Me.resultado = resultado
@@ -101,15 +109,23 @@ Public Class Ticket
         Me.tarjeta = tarjeta
         Me.nombreProductos = nombreProductos
         Me.precioProductos = precioProductos
-        AddHandler printDocument.PrintPage, AddressOf TicketTarjeta
+        printDocument
+        Try
+            For i As Integer = 1 To 2
+                printDocument As New PrintDocument()
+                AddHandler printDocument.PrintPage, AddressOf TicketTarjeta
+                ' Puedes personalizar las configuraciones de impresión aquí
+                Dim printerSettings As New PrinterSettings()
+                printDocument.PrinterSettings = printerSettings
+                ' Inicia la impresión
+                printDocument.Print()
+            Next
 
-        ' Puedes personalizar las configuraciones de impresión aquí
-        Dim printerSettings As New PrinterSettings()
-        printDocument.PrinterSettings = printerSettings
-
-        ' Inicia la impresión
-        printDocument.Print()
-        printDocument.Print()
+        Catch ex As Exception
+            MsgBox("Ha ocurrido un error al imprimir el ticket. Vuelva a intentarlo más tarde.", 16, "Error al imprimir el ticket")
+            Dim archivo As New Archivo
+            archivo.GuardarError(ex, "Print ticket tarjeta")
+        End Try
     End Sub
     Private Sub TicketTarjeta(ByVal sender As Object, ByVal ev As PrintPageEventArgs)
         Try
@@ -181,6 +197,13 @@ Public Class Ticket
             ev.Graphics.DrawString("HASTA RETIRAR SU PRODUCTO", New Font("Arial", 10, FontStyle.Bold), Brushes.Black, w - 20, y)
             y = y + 20
             ev.Graphics.DrawString("GRACIAS POR SU VISITA", New Font("Arial", 10, FontStyle.Bold), Brushes.Black, w + 15, y)
+            y = y + 20
+            ev.Graphics.DrawString("-----------------------------------------------------", New Font("Arial", 13, FontStyle.Italic), Brushes.Black, x, y)
+            y = y + 20
+            ev.Graphics.DrawString("------------------------FIRMA------------------------", New Font("Arial", 13, FontStyle.Italic), Brushes.Black, x, y)
+            y = y + 20
+            ev.Graphics.DrawString("-----------------------------------------------------", New Font("Arial", 13, FontStyle.Italic), Brushes.Black, x, y)
+            y = y + 100
             ev.HasMorePages = False
         Catch ex As Exception
             MsgBox("Ha ocurrido un error al imprimir el ticket. Vuelva a intentarlo más tarde.", 16, "Error al imprimir el ticket")
@@ -260,13 +283,7 @@ Public Class Ticket
             ev.Graphics.DrawString("HASTA RETIRAR SU PRODUCTO", New Font("Arial", 10, FontStyle.Bold), Brushes.Black, w - 20, y)
             y = y + 20
             ev.Graphics.DrawString("GRACIAS POR SU VISITA", New Font("Arial", 10, FontStyle.Bold), Brushes.Black, w + 15, y)
-            y = y + 20
-            ev.Graphics.DrawString("-----------------------------------------------------", New Font("Arial", 13, FontStyle.Italic), Brushes.Black, x, y)
-            y = y + 20
-            ev.Graphics.DrawString("------------------------FIRMA------------------------", New Font("Arial", 13, FontStyle.Italic), Brushes.Black, x, y)
-            y = y + 20
-            ev.Graphics.DrawString("-----------------------------------------------------", New Font("Arial", 13, FontStyle.Italic), Brushes.Black, x, y)
-            y = y + 100
+
             ev.HasMorePages = False
         Catch ex As Exception
             MsgBox("Ha ocurrido un error al imprimir el ticket. Vuelva a intentarlo más tarde.", 16, "Error al imprimir el ticket")
