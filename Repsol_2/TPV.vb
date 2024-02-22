@@ -13,14 +13,17 @@ Public Class TPV
 
         'Cargamos el nombre del usuario
         lblUser.Text = Inicio.tbUsername.Text
+
+        PanelIsCliente.Visible = True
+        panelCosasCliente.Visible = False
     End Sub
 
     Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
 
         'Limpia los listbox lbNombreProductos y lbPrecios menos el primer elemento.
-        If (lbNombreProductos.GetItemText(0) = "Gasolina") Then
-            Dim box As String = lbNombreProductos.GetItemText(0)
-            Dim box1 As String = lbPrecios.GetItemText(0)
+        If (lbNombreProductos.Items.Item(0) = "Gasolina") Then
+            Dim box As String = lbNombreProductos.Items.Item(0)
+            Dim box1 As String = lbPrecios.Items.Item(0)
 
             lbNombreProductos.Items.Clear()
             lbPrecios.Items.Clear()
@@ -121,10 +124,17 @@ Public Class TPV
 
     'Elimina un producto de la lista de pedidos
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        If (lbNombreProductos.SelectedItem IsNot Nothing OrElse lbNombreProductos.SelectedItem IsNot "Gasolina") Then
-            lbNombreProductos.Items.Remove(lbNombreProductos.SelectedIndex)
-            lbPrecios.Items.Remove(lbNombreProductos.SelectedIndex)
+        If (lbNombreProductos.SelectedItem Is Nothing) Then
+            Return
         End If
+        If (lbNombreProductos.SelectedItem.ToString = "Gasolina") Then
+            MsgBox("No se puede eliminar la gasolina del pedido.")
+            Return
+        End If
+
+
+        lbNombreProductos.Items.Remove(lbNombreProductos.SelectedItem)
+        lbPrecios.Items.Remove(lbPrecios.Items.Item(lbNombreProductos.SelectedItem))
 
         actualizarPrecio()
     End Sub
@@ -238,5 +248,47 @@ Public Class TPV
             guardar.GuardarError(ex, "TPV, CargarOtros")
         End Try
 
+    End Sub
+
+    Private Sub btnEsCliente_Click(sender As Object, e As EventArgs) Handles btnEsCliente.Click
+        PanelIsCliente.Visible = False
+        tbNombreCliente.Enabled = False
+        tbApellido1Cliente.Enabled = False
+        tbApellido2Cliente.Enabled = False
+        tbTelefonoCliente.Enabled = False
+        tbCorreoCliente.Enabled = False
+
+        btnAccionBuscarCliente.Text = "Buscar"
+        panelCosasCliente.Visible = True
+    End Sub
+
+    Private Sub btnCrearCliente_Click(sender As Object, e As EventArgs) Handles btnCrearCliente.Click
+        PanelIsCliente.Visible = False
+        tbNombreCliente.Enabled = True
+        tbApellido1Cliente.Enabled = True
+        tbApellido2Cliente.Enabled = True
+        tbTelefonoCliente.Enabled = True
+        tbCorreoCliente.Enabled = True
+
+        btnAccionBuscarCliente.Text = "Crear"
+        panelCosasCliente.Visible = True
+    End Sub
+
+    Private Sub btnAccionBuscarCliente_Click(sender As Object, e As EventArgs) Handles btnAccionBuscarCliente.Click
+        If (btnAccionBuscarCliente.Text = "Buscar") Then
+
+        End If
+    End Sub
+
+    Private Sub LinkLabelRepsol_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabelRepsol.LinkClicked
+        Dim urlRepsol As String = "https://www.repsol.com/"
+        ' Abre el navegador web predeterminado con la URL
+        Process.Start(urlRepsol)
+    End Sub
+
+    Private Sub LinkLblCondiciones_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLblCondiciones.LinkClicked
+        Dim urlRepsol As String = "https://www.repsol.com/es/pie-de-pagina/politica-de-privacidad/index.cshtml"
+        ' Abre el navegador web predeterminado con la URL
+        Process.Start(urlRepsol)
     End Sub
 End Class

@@ -86,7 +86,7 @@ Public Class Ticket
 
 
     Public Sub ImprimirTicketEfectivo(user As String, resultado As String, nombreProductos As ListBox, precioProductos As ListBox, dinero As String, devolver As String)
-        printDocument As New PrintDocument()
+        printDocument = New PrintDocument()
         AddHandler printDocument.PrintPage, AddressOf TicketEfectivo
         Me.user = user
         Me.resultado = resultado
@@ -109,10 +109,10 @@ Public Class Ticket
         Me.tarjeta = tarjeta
         Me.nombreProductos = nombreProductos
         Me.precioProductos = precioProductos
-        printDocument
+
         Try
             For i As Integer = 1 To 2
-                printDocument As New PrintDocument()
+                printDocument = New PrintDocument()
                 AddHandler printDocument.PrintPage, AddressOf TicketTarjeta
                 ' Puedes personalizar las configuraciones de impresión aquí
                 Dim printerSettings As New PrinterSettings()
