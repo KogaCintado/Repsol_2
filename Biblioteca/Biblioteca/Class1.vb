@@ -109,6 +109,7 @@ Public Class Ticket
         Me.tarjeta = tarjeta
         Me.nombreProductos = nombreProductos
         Me.precioProductos = precioProductos
+
         Try
             For i As Integer = 1 To 2
                 printDocument = New PrintDocument()

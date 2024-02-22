@@ -147,6 +147,12 @@
     <Compile Include="Opciones.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TarjetaRepsol.Designer.vb">
+      <DependentUpon>TarjetaRepsol.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TarjetaRepsol.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="TPV.Designer.vb">
       <DependentUpon>TPV.vb</DependentUpon>
     </Compile>
@@ -184,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Opciones.resx">
       <DependentUpon>Opciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TarjetaRepsol.resx">
+      <DependentUpon>TarjetaRepsol.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TPV.resx">
       <DependentUpon>TPV.vb</DependentUpon>
@@ -237,6 +246,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ajustar%281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconoRepsol.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

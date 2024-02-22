@@ -23,22 +23,24 @@ Partial Class Inicio
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Inicio))
         Me.lblUsername = New System.Windows.Forms.Label()
         Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
         Me.lblPassword = New System.Windows.Forms.Label()
         Me.tbUsername = New System.Windows.Forms.TextBox()
         Me.tbPassword = New System.Windows.Forms.TextBox()
         Me.btnStart = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.showPassword = New System.Windows.Forms.PictureBox()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ErrorProvider2 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.NotifyIconLogo = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.showPassword, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.showPassword = New System.Windows.Forms.PictureBox()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.showPassword, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblUsername
@@ -90,6 +92,30 @@ Partial Class Inicio
         Me.btnStart.Text = "Iniciar sesión"
         Me.btnStart.UseVisualStyleBackColor = True
         '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
+        '
+        'ErrorProvider2
+        '
+        Me.ErrorProvider2.ContainerControl = Me
+        '
+        'NotifyIconLogo
+        '
+        Me.NotifyIconLogo.BalloonTipTitle = "EjecutarTPV"
+        Me.NotifyIconLogo.Icon = CType(resources.GetObject("NotifyIconLogo.Icon"), System.Drawing.Icon)
+        Me.NotifyIconLogo.Text = "Repsol"
+        Me.NotifyIconLogo.Visible = True
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.Repsol_2.My.Resources.Resources.eye
+        Me.PictureBox2.Location = New System.Drawing.Point(115, 175)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(405, 365)
+        Me.PictureBox2.TabIndex = 7
+        Me.PictureBox2.TabStop = False
+        '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.Repsol_2.My.Resources.Resources.Repsol_logo
@@ -110,23 +136,6 @@ Partial Class Inicio
         Me.showPassword.TabIndex = 5
         Me.showPassword.TabStop = False
         '
-        'ErrorProvider1
-        '
-        Me.ErrorProvider1.ContainerControl = Me
-        '
-        'ErrorProvider2
-        '
-        Me.ErrorProvider2.ContainerControl = Me
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.Repsol_2.My.Resources.Resources.eye
-        Me.PictureBox2.Location = New System.Drawing.Point(115, 175)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(405, 365)
-        Me.PictureBox2.TabIndex = 7
-        Me.PictureBox2.TabStop = False
-        '
         'Inicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -142,11 +151,11 @@ Partial Class Inicio
         Me.Controls.Add(Me.lblUsername)
         Me.Name = "Inicio"
         Me.Text = "Inicio"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.showPassword, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ErrorProvider2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.showPassword, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -163,4 +172,5 @@ Partial Class Inicio
     Friend WithEvents ErrorProvider1 As ErrorProvider
     Friend WithEvents ErrorProvider2 As ErrorProvider
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents NotifyIconLogo As NotifyIcon
 End Class

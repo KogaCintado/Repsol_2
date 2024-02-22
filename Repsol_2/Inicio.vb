@@ -1,4 +1,5 @@
 ﻿Imports System.Data.OleDb
+Imports Biblioteca
 Public Class Inicio
     Public Shared admin As Boolean = False
     Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
@@ -12,7 +13,7 @@ Public Class Inicio
 
     Private Sub btnStart_Click(sender As Object, e As EventArgs) Handles btnStart.Click
         'Programar validaciones.
-
+        Dim archivo As New Archivo
 
 
         If (Not (String.IsNullOrEmpty(tbUsername.Text.Trim()))) And (Not (String.IsNullOrEmpty(tbPassword.Text.Trim()))) Then
@@ -26,8 +27,11 @@ Public Class Inicio
                 ErrorProvider1.Clear()
                 ErrorProvider2.Clear()
 
+                archivo.GuardarDatosEnArchivo("config/logs.txt", "El usuario " & tbUsername.Text & " ha iniciado sesion")
+
             Else
                 MsgBox("Usuario o contraseña incorrectos, intentelo de nuevo")
+                archivo.GuardarDatosEnArchivo("config/logs.txt", "INTENTO inicio de sesión. " & " Usuario: " & tbUsername.Text & ", contraseña: " & tbPassword.Text)
                 tbPassword.Clear()
                 tbUsername.Clear()
             End If
@@ -138,5 +142,14 @@ Public Class Inicio
     End Function
 
 
+    Private Sub NotifyIconLogo_MouseClick(sender As Object, e As MouseEventArgs) Handles NotifyIconLogo.MouseClick
+        Me.Show()
+        Gasolina.Close()
+        GestionesAdministrador.Close()
+        Efectivo.Close()
+        Opciones.Close()
+        Trabajar.Close()
+        TPV.Close()
 
+    End Sub
 End Class

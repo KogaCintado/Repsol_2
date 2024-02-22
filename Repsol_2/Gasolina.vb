@@ -6,11 +6,14 @@ Public Class Gasolina
     Dim listaDeImagenes As New List(Of Image)()
     Dim botones As New List(Of Button)()
     Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
-    Dim flag As Boolean = False
+    Dim flag As Boolean = True
 
     Dim precioGasolinaActual, precioGasolinaAcumulado As Single
 
     Private Sub Gasolina_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Maximizamos la ventana
+        Me.WindowState = FormWindowState.Maximized
+
         ProgressBar1.Visible = False
         lblPrecioGasAcumulado.Visible = False
         lblPrecioGas.Visible = False
@@ -58,11 +61,11 @@ Public Class Gasolina
         'Si la gasolina no está disponible, se muestra un mensaje de error.
         'Relaciona el botón con el id de la gasolina en la base de datos.
         'Rellena los datos de la gasolina en el formulario de repostaje.
-        If Not (flag) Then
+        If (flag) Then
             For Each boton In botones
                 If boton Is sender Then
                     boton.Enabled = True
-                    flag = True
+                    flag = False
 
                     Dim id As Integer
 
@@ -83,27 +86,29 @@ Public Class Gasolina
                         ProgressBar1.Visible = True
                         Dim gasolina As DataRow = BuscarGasolina(id)
                         precioGasolinaActual = gasolina("precio")
-                        precioGasolinaAcumulado = precioGasolinaActual
+                        precioGasolinaAcumulado = 0
                         lblNombreGas.Text = gasolina("nombre")
                         lblPrecioGas.Text = precioGasolinaActual & " €/L"
-                        lblPrecioGasAcumulado.Text = precioGasolinaAcumulado & " €"
+                        lblPrecioGasAcumulado.Text = precioGasolinaActual & " €"
                         lblPrecioGasAcumulado.Visible = True
                         lblPrecioGas.Visible = True
                         lblNombreGas.Visible = True
                         lblGasEchado.Visible = True
                     Else
                         MsgBox("No hay suficiente gasolina en el depósito.")
+                        Return
                     End If
                 Else
                     boton.Enabled = False
                 End If
             Next
         End If
+
         If (ProgressBar1.Value = 0) Then
             MsgBox("No hay suficiente gasolina en el depósito.")
         Else
             ProgressBar1.Value -= 1
-            precioGasolinaAcumulado += precioGasolinaActual * (100 - ProgressBar1.Value)
+            precioGasolinaAcumulado += precioGasolinaActual
             lblPrecioGasAcumulado.Text = (precioGasolinaAcumulado) & " €"
             lblGasEchado.Text = (100 - ProgressBar1.Value) & "/100 L"
         End If
@@ -116,6 +121,20 @@ Public Class Gasolina
             boton.Enabled = bool
         Next
 
+    End Sub
+    Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
+        If (ProgressBar1.Visible = False) Then
+            TPV.Show()
+            Trabajar.Close()
+            Me.Close()
+        Else
+            TPV.Show()
+            TPV.lbNombreProductos.Items.Add("Gasolina")
+            TPV.lbPrecios.Items.Add("€ " + precioGasolinaAcumulado.ToString("F"))
+            TPV.actualizarPrecio()
+            Trabajar.Close()
+            Me.Close()
+        End If
     End Sub
 
 
@@ -186,18 +205,5 @@ Public Class Gasolina
         End If
     End Function
 
-    Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
-        If (ProgressBar1.Visible = False) Then
-            TPV.Show()
-            Trabajar.Close()
-            Me.Close()
-        Else
-            TPV.Show()
-            TPV.lbNombreProductos.Items.Add("Gasolina")
-            TPV.lbPrecios.Items.Add(precioGasolinaAcumulado)
-            TPV.actualizarPrecio()
-            Trabajar.Close()
-            Me.Close()
-        End If
-    End Sub
+
 End Class
