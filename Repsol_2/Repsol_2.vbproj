@@ -229,5 +229,8 @@
   <ItemGroup>
     <None Include="Resources\ajustar%281%29.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconoRepsol.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

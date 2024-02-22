@@ -11,6 +11,9 @@ Public Class Gasolina
     Dim precioGasolinaActual, precioGasolinaAcumulado As Single
 
     Private Sub Gasolina_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Maximizamos la ventana
+        Me.WindowState = FormWindowState.Maximized
+
         ProgressBar1.Visible = False
         lblPrecioGasAcumulado.Visible = False
         lblPrecioGas.Visible = False
