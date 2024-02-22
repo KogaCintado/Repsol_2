@@ -4,6 +4,9 @@ Public Class GestionesAdministrador
 
     Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
 
+
+
+
     Private Sub GestionesAdministrador_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
         For Each panel As Panel In paneles
@@ -25,6 +28,7 @@ Public Class GestionesAdministrador
         Opciones.Show()
         Me.Hide()
     End Sub
+
 
     Private Sub invisivilizarTodosExceptoDataGridDeClientes()
 
