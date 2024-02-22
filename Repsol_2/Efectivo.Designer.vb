@@ -22,6 +22,7 @@ Partial Class Efectivo
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Efectivo))
         Me.Label3 = New System.Windows.Forms.Label()
         Me.ButtonComma = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -284,6 +285,7 @@ Partial Class Efectivo
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.tbDinero)
         Me.Controls.Add(Me.Label2)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Efectivo"
         Me.Text = "Efectivo"
         Me.ResumeLayout(False)

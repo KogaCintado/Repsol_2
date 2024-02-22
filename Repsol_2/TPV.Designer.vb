@@ -29,6 +29,7 @@ Partial Class TPV
         Dim TelefonoLabel1 As System.Windows.Forms.Label
         Dim CorreoLabel1 As System.Windows.Forms.Label
         Dim FechaAltaLabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TPV))
         Me.lblUser = New System.Windows.Forms.Label()
         Me.lbNombreCategorias = New System.Windows.Forms.ListBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -504,6 +505,7 @@ Partial Class TPV
         Me.Controls.Add(Me.lbNombreCategorias)
         Me.Controls.Add(Me.lblUser)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "TPV"
         Me.Text = "TPV"

@@ -13,7 +13,8 @@
         End If
     End Sub
     Private Sub BtnInformes_Click(sender As Object, e As EventArgs) Handles btnInformes.Click
-
+        Informes.Show()
+        Me.Hide()
     End Sub
 
     Private Sub BtnCRUD_Click(sender As Object, e As EventArgs) Handles btnCRUD.Click

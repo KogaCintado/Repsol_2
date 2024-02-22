@@ -107,6 +107,7 @@ Partial Class GestionesAdministrador
         Dim Label54 As System.Windows.Forms.Label
         Dim Label55 As System.Windows.Forms.Label
         Dim Label56 As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GestionesAdministrador))
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.btnGestionUsuarios = New System.Windows.Forms.Button()
         Me.btnGestionClientes = New System.Windows.Forms.Button()
@@ -2860,12 +2861,15 @@ Partial Class GestionesAdministrador
         Me.ToolStripProgressBar1.Name = "ToolStripProgressBar1"
         Me.ToolStripProgressBar1.Size = New System.Drawing.Size(100, 16)
         '
+        'Timer1
+        '
+        '
         'GestionesAdministrador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1941, 1078)
+        Me.ClientSize = New System.Drawing.Size(1924, 1061)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.panelModificarProveedores)
         Me.Controls.Add(Me.panelModificarGasolina)
@@ -2899,6 +2903,7 @@ Partial Class GestionesAdministrador
         Me.Controls.Add(Me.panelOpcionesCrudUsuario)
         Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "GestionesAdministrador"
         Me.Text = "GestionesAdministrador"

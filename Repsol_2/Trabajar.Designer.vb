@@ -22,6 +22,7 @@ Partial Class Trabajar
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Trabajar))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VolverToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -179,6 +180,7 @@ Partial Class Trabajar
         Me.Controls.Add(Me.pbManguera2)
         Me.Controls.Add(Me.pbManguera3)
         Me.Controls.Add(Me.pbManguera4)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Trabajar"
         Me.Text = "Trabajar"

@@ -149,6 +149,7 @@ Partial Class Inicio
         Me.Controls.Add(Me.tbUsername)
         Me.Controls.Add(Me.lblPassword)
         Me.Controls.Add(Me.lblUsername)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Inicio"
         Me.Text = "Inicio"
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()

@@ -22,6 +22,7 @@ Partial Class Opciones
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Opciones))
         Me.btnInformes = New System.Windows.Forms.Button()
         Me.btnCRUD = New System.Windows.Forms.Button()
         Me.btnTrabajar = New System.Windows.Forms.Button()
@@ -82,13 +83,13 @@ Partial Class Opciones
         'CerrarSesiónToolStripMenuItem
         '
         Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
-        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
         Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar sesión"
         '
         'CerrarElProgramaToolStripMenuItem
         '
         Me.CerrarElProgramaToolStripMenuItem.Name = "CerrarElProgramaToolStripMenuItem"
-        Me.CerrarElProgramaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CerrarElProgramaToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
         Me.CerrarElProgramaToolStripMenuItem.Text = "Cerrar el programa"
         '
         'FlowLayoutPanel1
@@ -108,6 +109,7 @@ Partial Class Opciones
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
         Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Opciones"
         Me.Text = "Opciones"

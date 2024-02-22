@@ -185,6 +185,7 @@ Partial Class Gasolina
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.lblNombreGas)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Gasolina"
         Me.Text = "Gasolina"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
