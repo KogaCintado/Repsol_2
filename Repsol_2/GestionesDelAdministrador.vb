@@ -15,39 +15,59 @@ Public Class GestionesDelAdministrador
     'zona de funciones varias-----------
     '-----------------------------------
     Private Sub invisibilizarTodos()
-        Dim paneles = New List(Of Panel)({panelEmpleado, panelCliente, panelGasolina, panelProductos, panelProveedor})
-        For Each p As Panel In paneles
-            p.Location = New Point(1920, 1080)
-            p.Visible = False
-        Next
+        Try
+            Dim paneles = New List(Of Panel)({panelEmpleado, panelCliente, panelGasolina, panelProductos, panelProveedor})
+            For Each p As Panel In paneles
+                p.Location = New Point(1920, 1080)
+                p.Visible = False
+            Next
+        Catch ex As Exception
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "CRUD")
+        End Try
     End Sub
 
     Private Sub invisibilizarTodosExcepto(pn As Panel)
-        Dim paneles = New List(Of Panel)({panelEmpleado, panelCliente, panelGasolina, panelProductos, panelProveedor})
-        For Each pan As Panel In paneles
-            If Not pan Is pn Then
-                pan.Location = New Point(1920, 1080)
-                pan.Visible = False
-            Else
-                pan.Location = New Point(250, 30)
-                pan.Visible = True
-            End If
-        Next
+        Try
+            Dim paneles = New List(Of Panel)({panelEmpleado, panelCliente, panelGasolina, panelProductos, panelProveedor})
+            For Each pan As Panel In paneles
+                If Not pan Is pn Then
+                    pan.Location = New Point(1920, 1080)
+                    pan.Visible = False
+                Else
+                    pan.Location = New Point(250, 30)
+                    pan.Visible = True
+                End If
+            Next
+        Catch ex As Exception
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "CRUD")
+        End Try
 
     End Sub
 
     Private Sub falseoProgressBar()
-        ToolStripProgressBar1.Value = 0
-        Timer1.Enabled = True
+        Try
+            ToolStripProgressBar1.Value = 0
+            Timer1.Enabled = True
+        Catch ex As Exception
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "CRUD")
+        End Try
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
 
-        If ToolStripProgressBar1.Value < ToolStripProgressBar1.Maximum - 1 Then
-            ToolStripProgressBar1.Value += 50
-        Else
-            Timer1.Enabled = False
-        End If
+        Try
+            If ToolStripProgressBar1.Value < ToolStripProgressBar1.Maximum - 1 Then
+                ToolStripProgressBar1.Value += 50
+            Else
+                Timer1.Enabled = False
+            End If
+        Catch ex As Exception
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "CRUD")
+        End Try
 
     End Sub
 
@@ -1060,44 +1080,69 @@ Public Class GestionesDelAdministrador
     'zona funciones de limpieza--------------
     '----------------------------------------
     Private Sub limpiarEmpleado()
-        tbIdEmpleado.Clear()
-        tbNombreEmpleado.Clear()
-        tbApellido1Empleado.Clear()
-        tbApellido2Empleado.Clear()
-        tbTelefonoEmpleado.Clear()
-        tbCorreoEmpleado.Clear()
-        tbAdministradorEmpleado.Clear()
-        tbCargoEmpleado.Clear()
-        tbContraseñaEmpleado.Clear()
+        Try
+            tbIdEmpleado.Clear()
+            tbNombreEmpleado.Clear()
+            tbApellido1Empleado.Clear()
+            tbApellido2Empleado.Clear()
+            tbTelefonoEmpleado.Clear()
+            tbCorreoEmpleado.Clear()
+            tbAdministradorEmpleado.Clear()
+            tbCargoEmpleado.Clear()
+            tbContraseñaEmpleado.Clear()
+        Catch ex As Exception
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "CRUD")
+        End Try
     End Sub
 
     Private Sub limpiarCliente()
-        tbIdCliente.Clear()
-        tbNombreCliente.Clear()
-        tbApellido1Cliente.Clear()
-        tbApellido2Cliente.Clear()
-        tbTelefonoCliente.Clear()
-        tbCorreoCliente.Clear()
-        tbAltaCliente.Clear()
+        Try
+            tbIdCliente.Clear()
+            tbNombreCliente.Clear()
+            tbApellido1Cliente.Clear()
+            tbApellido2Cliente.Clear()
+            tbTelefonoCliente.Clear()
+            tbCorreoCliente.Clear()
+            tbAltaCliente.Clear()
+        Catch ex As Exception
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "CRUD")
+        End Try
     End Sub
 
     Private Sub limpiarProducto()
-        tbIdProducto.Clear()
-        tbNombreProducto.Clear()
-        tbPrecioProducto.Clear()
-        tbGamaProducto.Clear()
-        tbProveedorProducto.Clear()
+        Try
+            tbIdProducto.Clear()
+            tbNombreProducto.Clear()
+            tbPrecioProducto.Clear()
+            tbGamaProducto.Clear()
+            tbProveedorProducto.Clear()
+        Catch ex As Exception
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "CRUD")
+        End Try
     End Sub
 
     Private Sub limpiarProveedor()
-        tbIdProveedor.Clear()
-        tbNombreProveedor.Clear()
+        Try
+            tbIdProveedor.Clear()
+            tbNombreProveedor.Clear()
+        Catch ex As Exception
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "CRUD")
+        End Try
     End Sub
 
     Private Sub limpiarGasolina()
-        tbIdGasolina.Clear()
-        tbNombreGasolina.Clear()
-        tbPrecioGasolina.Clear()
-        tbCantidadGasolina.Clear()
+        Try
+            tbIdGasolina.Clear()
+            tbNombreGasolina.Clear()
+            tbPrecioGasolina.Clear()
+            tbCantidadGasolina.Clear()
+        Catch ex As Exception
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "CRUD")
+        End Try
     End Sub
 End Class
