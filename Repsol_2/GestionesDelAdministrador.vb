@@ -3,7 +3,7 @@ Imports Biblioteca
 Public Class GestionesDelAdministrador
 
     Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
-
+    Dim validaciones As New Biblioteca.validacionesCrud
     Private Sub GestionesDelAdministrador_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim paneles = New List(Of Panel)({panelEmpleado, panelCliente, panelGasolina, panelProductos, panelProveedor})
         'Maximize the window
@@ -1196,9 +1196,9 @@ Public Class GestionesDelAdministrador
     End Sub
 
     Private Sub btnModificarProducto_Click(sender As Object, e As EventArgs) Handles btnModificarProducto.Click
-        Dim validacion1 As Boolean = validarIDs(tbIdProducto, tbIdProducto.Text)
-        Dim validacion2 As Boolean = validarPrecio(tbPrecioProducto, tbPrecioProducto.Text)
-        Dim validacion3 As Boolean = validarGama(tbGamaProducto, tbGamaProducto.Text)
+        Dim validacion1 As Boolean = validaciones.validarIDs(tbIdProducto, tbIdProducto.Text)
+        Dim validacion2 As Boolean = validaciones.validarPrecio(tbPrecioProducto, tbPrecioProducto.Text)
+        Dim validacion3 As Boolean = validaciones.validarGama(tbGamaProducto, tbGamaProducto.Text)
         If validacion1 = False And validacion2 = False And validacion3 = False Then
             falseoProgressBar()
             ModificarProductos(tbIdProducto.Text, tbNombreProducto.Text, tbPrecioProducto.Text, tbProveedorProducto.Text, tbGamaProducto.Text)
@@ -1220,9 +1220,9 @@ Public Class GestionesDelAdministrador
     End Sub
 
     Private Sub btnModificarGasolina_Click(sender As Object, e As EventArgs) Handles btnModificarGasolina.Click
-        Dim validacion1 As Boolean = validarIDs(tbIdGasolina, tbIdGasolina.Text)
-        Dim validacion2 As Boolean = validarCantidad(tbCantidadGasolina, tbCantidadGasolina.Text)
-        Dim validacion3 As Boolean = validarPrecio(tbPrecioGasolina, tbPrecioGasolina.Text)
+        Dim validacion1 As Boolean = validaciones.validarIDs(tbIdGasolina, tbIdGasolina.Text)
+        Dim validacion2 As Boolean = validaciones.validarCantidad(tbCantidadGasolina, tbCantidadGasolina.Text)
+        Dim validacion3 As Boolean = validaciones.validarPrecio(tbPrecioGasolina, tbPrecioGasolina.Text)
         If validacion1 = False And validacion2 = False And validacion3 = False Then
             falseoProgressBar()
             ModificarGasolina(tbIdGasolina.Text, tbNombreGasolina.Text, tbCantidadGasolina.Text, tbPrecioGasolina.Text)
@@ -1236,8 +1236,11 @@ Public Class GestionesDelAdministrador
     End Sub
 
     Private Sub btnAgregarProveedor_Click(sender As Object, e As EventArgs) Handles btnAgregarProveedor.Click
-        Dim validacion1 As Boolean = validarIDs(tbIdProveedor, tbIdProveedor.Text)
-        Dim validacion2 As Boolean = validarNombreEmpresa(tbNombreProveedor, tbNombreProveedor.Text)
+
+
+
+        Dim validacion1 As Boolean = validaciones.validarIDs(tbIdProveedor, tbIdProveedor.Text)
+        Dim validacion2 As Boolean = validaciones.validarNombreEmpresa(tbNombreProveedor, tbNombreProveedor.Text)
         If validacion1 = False And validacion2 = False Then
             falseoProgressBar()
             AgregarProveedor(tbIdProveedor.Text, tbNombreProveedor.Text)
@@ -1246,8 +1249,8 @@ Public Class GestionesDelAdministrador
     End Sub
 
     Private Sub btnModificarProveedor_Click(sender As Object, e As EventArgs) Handles btnModificarProveedor.Click
-        Dim validacion1 As Boolean = validarIDs(tbIdProveedor, tbIdProveedor.Text)
-        Dim validacion2 As Boolean = validarNombreEmpresa(tbNombreProveedor, tbNombreProveedor.Text)
+        Dim validacion1 As Boolean = validaciones.validarIDs(tbIdProveedor, tbIdProveedor.Text)
+        Dim validacion2 As Boolean = validaciones.validarNombreEmpresa(tbNombreProveedor, tbNombreProveedor.Text)
         If validacion1 = False And validacion2 = False Then
             falseoProgressBar()
             ModificarProveedores(tbIdProveedor.Text, tbNombreProveedor.Text)
@@ -1256,7 +1259,7 @@ Public Class GestionesDelAdministrador
     End Sub
 
     Private Sub btnEliminarProveedor_Click(sender As Object, e As EventArgs) Handles btnEliminarProveedor.Click
-        Dim validacion1 As Boolean = validarIDs(tbIdProveedor, tbIdProveedor.Text)
+        Dim validacion1 As Boolean = validaciones.validarIDs(tbIdProveedor, tbIdProveedor.Text)
         If validacion1 = False Then
             falseoProgressBar()
             EliminarProveedor(tbIdProveedor.Text)
