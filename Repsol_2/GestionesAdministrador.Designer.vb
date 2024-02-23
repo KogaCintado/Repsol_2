@@ -2335,7 +2335,7 @@ Partial Class GestionesAdministrador
         'tbNombreProductoAgregar
         '
         Me.tbNombreProductoAgregar.Location = New System.Drawing.Point(73, 34)
-        Me.tbNombreProductoAgregar.MaxLength = 25
+        Me.tbNombreProductoAgregar.MaxLength = 12
         Me.tbNombreProductoAgregar.Name = "tbNombreProductoAgregar"
         Me.tbNombreProductoAgregar.Size = New System.Drawing.Size(100, 20)
         Me.tbNombreProductoAgregar.TabIndex = 3
@@ -2701,7 +2701,7 @@ Partial Class GestionesAdministrador
         'tbNombreProductoModificar
         '
         Me.tbNombreProductoModificar.Location = New System.Drawing.Point(73, 34)
-        Me.tbNombreProductoModificar.MaxLength = 25
+        Me.tbNombreProductoModificar.MaxLength = 12
         Me.tbNombreProductoModificar.Name = "tbNombreProductoModificar"
         Me.tbNombreProductoModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbNombreProductoModificar.TabIndex = 3
