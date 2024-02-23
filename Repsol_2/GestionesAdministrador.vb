@@ -1668,28 +1668,50 @@ Public Class GestionesAdministrador
         End If
     End Function
 
+    'Public Function validarCorreos(tb As TextBox, str As String) As Boolean
+    '    'en este metodo validamos que el texbox de correo no este vacio. aparte
+    '    'de que solo puede tener un @ y un punto. En caso de que tenga mas de un @
+    '    'o mas de un punto, mostraremos un mensaje de error. Para ello utilizaremos una lista con caracteres permitidos
+    '    Dim permitidos As New List(Of Char) From {"@", "."}
+    '    Dim comprobar As Boolean = False
+    '    If str = "" Then
+    '        MsgBox("El campo de correo no puede estar vacio")
+    '        Return True
+    '    Else
+    '        For i As Integer = 0 To str.Length - 1
+    '            If Not permitidos.Contains(str(i)) Then
+    '                comprobar = True
+    '            End If
+    '        Next
+    '        If comprobar = True Then
+    '            MsgBox("El campo de correo solo puede contener un @ y un punto")
+    '            tb.Clear()
+    '            Return True
+    '        Else
+    '            Return False
+    '        End If
+    '    End If
+    'End Function
+
+
     Public Function validarCorreos(tb As TextBox, str As String) As Boolean
-        'en este metodo validamos que el texbox de correo no este vacio. aparte
-        'de que solo puede tener un @ y un punto. En caso de que tenga mas de un @
-        'o mas de un punto, mostraremos un mensaje de error. Para ello utilizaremos una lista con caracteres permitidos
-        Dim permitidos As New List(Of Char) From {"@", "."}
-        Dim comprobar As Boolean = False
-        If str = "" Then
-            MsgBox("El campo de correo no puede estar vacio")
+
+        Dim contadorpuntos As Integer = 0
+        Dim contadorArrobas As Integer = 0
+
+        For i As Integer = 0 To str.Length - 1
+            If str(i) = "." Then
+                contadorpuntos += 1
+            ElseIf str(i) = "@" Then
+                contadorArrobas += 1
+            End If
+        Next
+        If contadorArrobas < 1 Or contadorpuntos < 1 Then
+            MsgBox("El correo introducido tiene mas de un punto o de una coma, vuelva a introducirlo")
+            tb.Clear()
             Return True
         Else
-            For i As Integer = 0 To str.Length - 1
-                If Not permitidos.Contains(str(i)) Then
-                    comprobar = True
-                End If
-            Next
-            If comprobar = True Then
-                MsgBox("El campo de correo solo puede contener un @ y un punto")
-                tb.Clear()
-                Return True
-            Else
-                Return False
-            End If
+            Return False
         End If
     End Function
 
