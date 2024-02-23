@@ -51,6 +51,7 @@ Partial Class GestionesDelAdministrador
         Dim PrecioLabel1 As System.Windows.Forms.Label
         Dim IdLabel4 As System.Windows.Forms.Label
         Dim NombreLabel4 As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GestionesDelAdministrador))
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripProgressBar1 = New System.Windows.Forms.ToolStripProgressBar()
@@ -103,27 +104,27 @@ Partial Class GestionesDelAdministrador
         Me.tbProveedorProducto = New System.Windows.Forms.TextBox()
         Me.tbGamaProducto = New System.Windows.Forms.TextBox()
         Me.panelGasolina = New System.Windows.Forms.Panel()
+        Me.btnModificarGasolina = New System.Windows.Forms.Button()
+        Me.GasolinasDatagrid = New System.Windows.Forms.DataGridView()
         Me.btnBuscarGasolina = New System.Windows.Forms.Button()
         Me.tbIdGasolina = New System.Windows.Forms.TextBox()
         Me.tbNombreGasolina = New System.Windows.Forms.TextBox()
         Me.tbCantidadGasolina = New System.Windows.Forms.TextBox()
         Me.tbPrecioGasolina = New System.Windows.Forms.TextBox()
-        Me.GasolinasDatagrid = New System.Windows.Forms.DataGridView()
-        Me.btnModificarGasolina = New System.Windows.Forms.Button()
         Me.panelProveedor = New System.Windows.Forms.Panel()
+        Me.btnEliminarProveedor = New System.Windows.Forms.Button()
+        Me.btnModificarProveedor = New System.Windows.Forms.Button()
+        Me.btnAgregarProveedor = New System.Windows.Forms.Button()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.btnBuscarProveedor = New System.Windows.Forms.Button()
         Me.tbIdProveedor = New System.Windows.Forms.TextBox()
         Me.tbNombreProveedor = New System.Windows.Forms.TextBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.btnAgregarProveedor = New System.Windows.Forms.Button()
-        Me.btnEliminarProveedor = New System.Windows.Forms.Button()
-        Me.btnModificarProveedor = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.OpcionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VolverToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.CerrarSesionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarProgramaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         IdLabel = New System.Windows.Forms.Label()
         NombreLabel = New System.Windows.Forms.Label()
         Apellido_1Label = New System.Windows.Forms.Label()
@@ -364,6 +365,60 @@ Partial Class GestionesDelAdministrador
         GamaLabel.Size = New System.Drawing.Size(38, 13)
         GamaLabel.TabIndex = 8
         GamaLabel.Text = "Gama:"
+        '
+        'IdLabel3
+        '
+        IdLabel3.AutoSize = True
+        IdLabel3.Location = New System.Drawing.Point(3, 20)
+        IdLabel3.Name = "IdLabel3"
+        IdLabel3.Size = New System.Drawing.Size(19, 13)
+        IdLabel3.TabIndex = 0
+        IdLabel3.Text = "Id:"
+        '
+        'NombreLabel3
+        '
+        NombreLabel3.AutoSize = True
+        NombreLabel3.Location = New System.Drawing.Point(3, 46)
+        NombreLabel3.Name = "NombreLabel3"
+        NombreLabel3.Size = New System.Drawing.Size(47, 13)
+        NombreLabel3.TabIndex = 2
+        NombreLabel3.Text = "Nombre:"
+        '
+        'CantidadLabel
+        '
+        CantidadLabel.AutoSize = True
+        CantidadLabel.Location = New System.Drawing.Point(3, 72)
+        CantidadLabel.Name = "CantidadLabel"
+        CantidadLabel.Size = New System.Drawing.Size(52, 13)
+        CantidadLabel.TabIndex = 4
+        CantidadLabel.Text = "Cantidad:"
+        '
+        'PrecioLabel1
+        '
+        PrecioLabel1.AutoSize = True
+        PrecioLabel1.Location = New System.Drawing.Point(3, 98)
+        PrecioLabel1.Name = "PrecioLabel1"
+        PrecioLabel1.Size = New System.Drawing.Size(40, 13)
+        PrecioLabel1.TabIndex = 6
+        PrecioLabel1.Text = "Precio:"
+        '
+        'IdLabel4
+        '
+        IdLabel4.AutoSize = True
+        IdLabel4.Location = New System.Drawing.Point(2, 32)
+        IdLabel4.Name = "IdLabel4"
+        IdLabel4.Size = New System.Drawing.Size(19, 13)
+        IdLabel4.TabIndex = 0
+        IdLabel4.Text = "Id:"
+        '
+        'NombreLabel4
+        '
+        NombreLabel4.AutoSize = True
+        NombreLabel4.Location = New System.Drawing.Point(2, 58)
+        NombreLabel4.Name = "NombreLabel4"
+        NombreLabel4.Size = New System.Drawing.Size(47, 13)
+        NombreLabel4.TabIndex = 2
+        NombreLabel4.Text = "Nombre:"
         '
         'StatusStrip1
         '
@@ -860,82 +915,14 @@ Partial Class GestionesDelAdministrador
         Me.panelGasolina.Size = New System.Drawing.Size(772, 197)
         Me.panelGasolina.TabIndex = 17
         '
-        'btnBuscarGasolina
+        'btnModificarGasolina
         '
-        Me.btnBuscarGasolina.Location = New System.Drawing.Point(29, 121)
-        Me.btnBuscarGasolina.Name = "btnBuscarGasolina"
-        Me.btnBuscarGasolina.Size = New System.Drawing.Size(63, 23)
-        Me.btnBuscarGasolina.TabIndex = 19
-        Me.btnBuscarGasolina.Text = "Buscar"
-        Me.btnBuscarGasolina.UseVisualStyleBackColor = True
-        '
-        'IdLabel3
-        '
-        IdLabel3.AutoSize = True
-        IdLabel3.Location = New System.Drawing.Point(3, 20)
-        IdLabel3.Name = "IdLabel3"
-        IdLabel3.Size = New System.Drawing.Size(19, 13)
-        IdLabel3.TabIndex = 0
-        IdLabel3.Text = "Id:"
-        '
-        'tbIdGasolina
-        '
-        Me.tbIdGasolina.Location = New System.Drawing.Point(61, 17)
-        Me.tbIdGasolina.MaxLength = 1
-        Me.tbIdGasolina.Name = "tbIdGasolina"
-        Me.tbIdGasolina.Size = New System.Drawing.Size(100, 20)
-        Me.tbIdGasolina.TabIndex = 1
-        '
-        'NombreLabel3
-        '
-        NombreLabel3.AutoSize = True
-        NombreLabel3.Location = New System.Drawing.Point(3, 46)
-        NombreLabel3.Name = "NombreLabel3"
-        NombreLabel3.Size = New System.Drawing.Size(47, 13)
-        NombreLabel3.TabIndex = 2
-        NombreLabel3.Text = "Nombre:"
-        '
-        'tbNombreGasolina
-        '
-        Me.tbNombreGasolina.Location = New System.Drawing.Point(61, 43)
-        Me.tbNombreGasolina.MaxLength = 12
-        Me.tbNombreGasolina.Name = "tbNombreGasolina"
-        Me.tbNombreGasolina.Size = New System.Drawing.Size(100, 20)
-        Me.tbNombreGasolina.TabIndex = 3
-        '
-        'CantidadLabel
-        '
-        CantidadLabel.AutoSize = True
-        CantidadLabel.Location = New System.Drawing.Point(3, 72)
-        CantidadLabel.Name = "CantidadLabel"
-        CantidadLabel.Size = New System.Drawing.Size(52, 13)
-        CantidadLabel.TabIndex = 4
-        CantidadLabel.Text = "Cantidad:"
-        '
-        'tbCantidadGasolina
-        '
-        Me.tbCantidadGasolina.Location = New System.Drawing.Point(61, 69)
-        Me.tbCantidadGasolina.MaxLength = 5
-        Me.tbCantidadGasolina.Name = "tbCantidadGasolina"
-        Me.tbCantidadGasolina.Size = New System.Drawing.Size(100, 20)
-        Me.tbCantidadGasolina.TabIndex = 5
-        '
-        'PrecioLabel1
-        '
-        PrecioLabel1.AutoSize = True
-        PrecioLabel1.Location = New System.Drawing.Point(3, 98)
-        PrecioLabel1.Name = "PrecioLabel1"
-        PrecioLabel1.Size = New System.Drawing.Size(40, 13)
-        PrecioLabel1.TabIndex = 6
-        PrecioLabel1.Text = "Precio:"
-        '
-        'tbPrecioGasolina
-        '
-        Me.tbPrecioGasolina.Location = New System.Drawing.Point(61, 95)
-        Me.tbPrecioGasolina.MaxLength = 6
-        Me.tbPrecioGasolina.Name = "tbPrecioGasolina"
-        Me.tbPrecioGasolina.Size = New System.Drawing.Size(100, 20)
-        Me.tbPrecioGasolina.TabIndex = 7
+        Me.btnModificarGasolina.Location = New System.Drawing.Point(98, 121)
+        Me.btnModificarGasolina.Name = "btnModificarGasolina"
+        Me.btnModificarGasolina.Size = New System.Drawing.Size(63, 23)
+        Me.btnModificarGasolina.TabIndex = 21
+        Me.btnModificarGasolina.Text = "Modificar"
+        Me.btnModificarGasolina.UseVisualStyleBackColor = True
         '
         'GasolinasDatagrid
         '
@@ -945,14 +932,46 @@ Partial Class GestionesDelAdministrador
         Me.GasolinasDatagrid.Size = New System.Drawing.Size(561, 150)
         Me.GasolinasDatagrid.TabIndex = 20
         '
-        'btnModificarGasolina
+        'btnBuscarGasolina
         '
-        Me.btnModificarGasolina.Location = New System.Drawing.Point(98, 121)
-        Me.btnModificarGasolina.Name = "btnModificarGasolina"
-        Me.btnModificarGasolina.Size = New System.Drawing.Size(63, 23)
-        Me.btnModificarGasolina.TabIndex = 21
-        Me.btnModificarGasolina.Text = "Modificar"
-        Me.btnModificarGasolina.UseVisualStyleBackColor = True
+        Me.btnBuscarGasolina.Location = New System.Drawing.Point(29, 121)
+        Me.btnBuscarGasolina.Name = "btnBuscarGasolina"
+        Me.btnBuscarGasolina.Size = New System.Drawing.Size(63, 23)
+        Me.btnBuscarGasolina.TabIndex = 19
+        Me.btnBuscarGasolina.Text = "Buscar"
+        Me.btnBuscarGasolina.UseVisualStyleBackColor = True
+        '
+        'tbIdGasolina
+        '
+        Me.tbIdGasolina.Location = New System.Drawing.Point(61, 17)
+        Me.tbIdGasolina.MaxLength = 1
+        Me.tbIdGasolina.Name = "tbIdGasolina"
+        Me.tbIdGasolina.Size = New System.Drawing.Size(100, 20)
+        Me.tbIdGasolina.TabIndex = 1
+        '
+        'tbNombreGasolina
+        '
+        Me.tbNombreGasolina.Location = New System.Drawing.Point(61, 43)
+        Me.tbNombreGasolina.MaxLength = 12
+        Me.tbNombreGasolina.Name = "tbNombreGasolina"
+        Me.tbNombreGasolina.Size = New System.Drawing.Size(100, 20)
+        Me.tbNombreGasolina.TabIndex = 3
+        '
+        'tbCantidadGasolina
+        '
+        Me.tbCantidadGasolina.Location = New System.Drawing.Point(61, 69)
+        Me.tbCantidadGasolina.MaxLength = 5
+        Me.tbCantidadGasolina.Name = "tbCantidadGasolina"
+        Me.tbCantidadGasolina.Size = New System.Drawing.Size(100, 20)
+        Me.tbCantidadGasolina.TabIndex = 5
+        '
+        'tbPrecioGasolina
+        '
+        Me.tbPrecioGasolina.Location = New System.Drawing.Point(61, 95)
+        Me.tbPrecioGasolina.MaxLength = 6
+        Me.tbPrecioGasolina.Name = "tbPrecioGasolina"
+        Me.tbPrecioGasolina.Size = New System.Drawing.Size(100, 20)
+        Me.tbPrecioGasolina.TabIndex = 7
         '
         'panelProveedor
         '
@@ -969,66 +988,6 @@ Partial Class GestionesDelAdministrador
         Me.panelProveedor.Name = "panelProveedor"
         Me.panelProveedor.Size = New System.Drawing.Size(779, 212)
         Me.panelProveedor.TabIndex = 18
-        '
-        'btnBuscarProveedor
-        '
-        Me.btnBuscarProveedor.Location = New System.Drawing.Point(18, 81)
-        Me.btnBuscarProveedor.Name = "btnBuscarProveedor"
-        Me.btnBuscarProveedor.Size = New System.Drawing.Size(60, 23)
-        Me.btnBuscarProveedor.TabIndex = 19
-        Me.btnBuscarProveedor.Text = "Buscar"
-        Me.btnBuscarProveedor.UseVisualStyleBackColor = True
-        '
-        'IdLabel4
-        '
-        IdLabel4.AutoSize = True
-        IdLabel4.Location = New System.Drawing.Point(2, 32)
-        IdLabel4.Name = "IdLabel4"
-        IdLabel4.Size = New System.Drawing.Size(19, 13)
-        IdLabel4.TabIndex = 0
-        IdLabel4.Text = "Id:"
-        '
-        'tbIdProveedor
-        '
-        Me.tbIdProveedor.Location = New System.Drawing.Point(55, 29)
-        Me.tbIdProveedor.MaxLength = 2
-        Me.tbIdProveedor.Name = "tbIdProveedor"
-        Me.tbIdProveedor.Size = New System.Drawing.Size(100, 20)
-        Me.tbIdProveedor.TabIndex = 1
-        '
-        'NombreLabel4
-        '
-        NombreLabel4.AutoSize = True
-        NombreLabel4.Location = New System.Drawing.Point(2, 58)
-        NombreLabel4.Name = "NombreLabel4"
-        NombreLabel4.Size = New System.Drawing.Size(47, 13)
-        NombreLabel4.TabIndex = 2
-        NombreLabel4.Text = "Nombre:"
-        '
-        'tbNombreProveedor
-        '
-        Me.tbNombreProveedor.Location = New System.Drawing.Point(55, 55)
-        Me.tbNombreProveedor.MaxLength = 12
-        Me.tbNombreProveedor.Name = "tbNombreProveedor"
-        Me.tbNombreProveedor.Size = New System.Drawing.Size(100, 20)
-        Me.tbNombreProveedor.TabIndex = 3
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(161, 3)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(615, 201)
-        Me.DataGridView1.TabIndex = 20
-        '
-        'btnAgregarProveedor
-        '
-        Me.btnAgregarProveedor.Location = New System.Drawing.Point(84, 81)
-        Me.btnAgregarProveedor.Name = "btnAgregarProveedor"
-        Me.btnAgregarProveedor.Size = New System.Drawing.Size(60, 23)
-        Me.btnAgregarProveedor.TabIndex = 21
-        Me.btnAgregarProveedor.Text = "Agregar"
-        Me.btnAgregarProveedor.UseVisualStyleBackColor = True
         '
         'btnEliminarProveedor
         '
@@ -1047,6 +1006,48 @@ Partial Class GestionesDelAdministrador
         Me.btnModificarProveedor.TabIndex = 22
         Me.btnModificarProveedor.Text = "Modificar"
         Me.btnModificarProveedor.UseVisualStyleBackColor = True
+        '
+        'btnAgregarProveedor
+        '
+        Me.btnAgregarProveedor.Location = New System.Drawing.Point(84, 81)
+        Me.btnAgregarProveedor.Name = "btnAgregarProveedor"
+        Me.btnAgregarProveedor.Size = New System.Drawing.Size(60, 23)
+        Me.btnAgregarProveedor.TabIndex = 21
+        Me.btnAgregarProveedor.Text = "Agregar"
+        Me.btnAgregarProveedor.UseVisualStyleBackColor = True
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(161, 3)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(615, 201)
+        Me.DataGridView1.TabIndex = 20
+        '
+        'btnBuscarProveedor
+        '
+        Me.btnBuscarProveedor.Location = New System.Drawing.Point(18, 81)
+        Me.btnBuscarProveedor.Name = "btnBuscarProveedor"
+        Me.btnBuscarProveedor.Size = New System.Drawing.Size(60, 23)
+        Me.btnBuscarProveedor.TabIndex = 19
+        Me.btnBuscarProveedor.Text = "Buscar"
+        Me.btnBuscarProveedor.UseVisualStyleBackColor = True
+        '
+        'tbIdProveedor
+        '
+        Me.tbIdProveedor.Location = New System.Drawing.Point(55, 29)
+        Me.tbIdProveedor.MaxLength = 2
+        Me.tbIdProveedor.Name = "tbIdProveedor"
+        Me.tbIdProveedor.Size = New System.Drawing.Size(100, 20)
+        Me.tbIdProveedor.TabIndex = 1
+        '
+        'tbNombreProveedor
+        '
+        Me.tbNombreProveedor.Location = New System.Drawing.Point(55, 55)
+        Me.tbNombreProveedor.MaxLength = 12
+        Me.tbNombreProveedor.Name = "tbNombreProveedor"
+        Me.tbNombreProveedor.Size = New System.Drawing.Size(100, 20)
+        Me.tbNombreProveedor.TabIndex = 3
         '
         'MenuStrip1
         '
@@ -1067,25 +1068,25 @@ Partial Class GestionesDelAdministrador
         'VolverToolStripMenuItem
         '
         Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
-        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
         Me.VolverToolStripMenuItem.Text = "Volver"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(158, 6)
         '
         'CerrarSesionToolStripMenuItem
         '
         Me.CerrarSesionToolStripMenuItem.Name = "CerrarSesionToolStripMenuItem"
-        Me.CerrarSesionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CerrarSesionToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
         Me.CerrarSesionToolStripMenuItem.Text = "Cerrar Sesion"
         '
         'CerrarProgramaToolStripMenuItem
         '
         Me.CerrarProgramaToolStripMenuItem.Name = "CerrarProgramaToolStripMenuItem"
-        Me.CerrarProgramaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CerrarProgramaToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
         Me.CerrarProgramaToolStripMenuItem.Text = "Cerrar Programa"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(177, 6)
         '
         'GestionesDelAdministrador
         '
@@ -1100,6 +1101,7 @@ Partial Class GestionesDelAdministrador
         Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "GestionesDelAdministrador"
         Me.Text = "GestionesDelAdministrador"

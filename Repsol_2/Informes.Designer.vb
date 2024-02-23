@@ -85,7 +85,7 @@ Partial Class Informes
         '
         'btnInformesEmpleados
         '
-        Me.btnInformesEmpleados.Location = New System.Drawing.Point(12, 71)
+        Me.btnInformesEmpleados.Location = New System.Drawing.Point(12, 107)
         Me.btnInformesEmpleados.Name = "btnInformesEmpleados"
         Me.btnInformesEmpleados.Size = New System.Drawing.Size(178, 23)
         Me.btnInformesEmpleados.TabIndex = 3
@@ -94,7 +94,7 @@ Partial Class Informes
         '
         'btnInformesClientes
         '
-        Me.btnInformesClientes.Location = New System.Drawing.Point(12, 100)
+        Me.btnInformesClientes.Location = New System.Drawing.Point(12, 136)
         Me.btnInformesClientes.Name = "btnInformesClientes"
         Me.btnInformesClientes.Size = New System.Drawing.Size(178, 23)
         Me.btnInformesClientes.TabIndex = 4
@@ -103,7 +103,7 @@ Partial Class Informes
         '
         'btnInformesProductos
         '
-        Me.btnInformesProductos.Location = New System.Drawing.Point(12, 129)
+        Me.btnInformesProductos.Location = New System.Drawing.Point(12, 165)
         Me.btnInformesProductos.Name = "btnInformesProductos"
         Me.btnInformesProductos.Size = New System.Drawing.Size(178, 23)
         Me.btnInformesProductos.TabIndex = 5
@@ -112,7 +112,7 @@ Partial Class Informes
         '
         'btnInformesGasolinas
         '
-        Me.btnInformesGasolinas.Location = New System.Drawing.Point(12, 158)
+        Me.btnInformesGasolinas.Location = New System.Drawing.Point(12, 194)
         Me.btnInformesGasolinas.Name = "btnInformesGasolinas"
         Me.btnInformesGasolinas.Size = New System.Drawing.Size(178, 23)
         Me.btnInformesGasolinas.TabIndex = 6
@@ -121,7 +121,7 @@ Partial Class Informes
         '
         'btnInformeProveedores
         '
-        Me.btnInformeProveedores.Location = New System.Drawing.Point(12, 187)
+        Me.btnInformeProveedores.Location = New System.Drawing.Point(12, 223)
         Me.btnInformeProveedores.Name = "btnInformeProveedores"
         Me.btnInformeProveedores.Size = New System.Drawing.Size(178, 23)
         Me.btnInformeProveedores.TabIndex = 7
@@ -130,7 +130,7 @@ Partial Class Informes
         '
         'btnInformeGamas
         '
-        Me.btnInformeGamas.Location = New System.Drawing.Point(12, 216)
+        Me.btnInformeGamas.Location = New System.Drawing.Point(12, 252)
         Me.btnInformeGamas.Name = "btnInformeGamas"
         Me.btnInformeGamas.Size = New System.Drawing.Size(178, 23)
         Me.btnInformeGamas.TabIndex = 8
