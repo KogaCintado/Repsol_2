@@ -164,7 +164,7 @@ Public Class Informes
     End Sub
 
     Private Sub btnInformeGamas_Click(sender As Object, e As EventArgs) Handles btnInformeGamas.Click
-
+        verDatosGamas()
     End Sub
 
     Private Sub VolevrToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VolevrToolStripMenuItem.Click
