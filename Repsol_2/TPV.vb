@@ -16,6 +16,7 @@ Public Class TPV
 
         PanelIsCliente.Visible = True
         panelCosasCliente.Visible = False
+        panelSocioDesc.Visible = False
     End Sub
 
     Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
@@ -119,7 +120,7 @@ Public Class TPV
             box += precio
         Next
         lblResultado.Text = box.ToString("F")
-        lblDescSocio.Text = (box * 0, 98).ToString("F")
+        lblDescSocio.Text = (box * 0.98).ToString("F")
 
     End Sub
 
@@ -192,6 +193,7 @@ Public Class TPV
 
     Private Sub btnEsCliente_Click(sender As Object, e As EventArgs) Handles btnEsCliente.Click
         PanelIsCliente.Visible = False
+        tbIdCliente.Enabled = True
         tbNombreCliente.Enabled = False
         tbApellido1Cliente.Enabled = False
         tbApellido2Cliente.Enabled = False
@@ -206,6 +208,7 @@ Public Class TPV
     Private Sub btnCrearCliente_Click(sender As Object, e As EventArgs) Handles btnCrearCliente.Click
         FechaAltaClienteTimePicker.Value = Date.Now
         PanelIsCliente.Visible = False
+        tbIdCliente.Enabled = False
         tbNombreCliente.Enabled = True
         tbApellido1Cliente.Enabled = True
         tbApellido2Cliente.Enabled = True
@@ -252,34 +255,40 @@ Public Class TPV
             'En este boton lo que hacemos es crear un Cliente
             'Si el id ya existe, mostramos un mensaje de error
             'Si el id no existe, creamos el Cliente
-            Dim validacion1 As Boolean = GestionesAdministrador.validarIDs(tbIdCliente, tbIdCliente.Text)
+            'Dim validacion1 As Boolean = GestionesAdministrador.validarIDs(tbIdCliente, tbIdCliente.Text)
             Dim validacion2 As Boolean = GestionesAdministrador.validarCorreos(tbCorreoCliente, tbCorreoCliente.Text)
             Dim validacion3 As Boolean = GestionesAdministrador.validarTelefonos(tbTelefonoCliente, tbTelefonoCliente.Text)
             Dim validacion5 As Boolean = GestionesAdministrador.validarNOmbreYApellidos(tbNombreCliente, tbNombreCliente.Text)
             Dim validacion6 As Boolean = GestionesAdministrador.validarNOmbreYApellidos(tbApellido1Cliente, tbApellido1Cliente.Text)
             Dim validacion7 As Boolean = GestionesAdministrador.validarNOmbreYApellidos(tbApellido2Cliente, tbApellido2Cliente.Text)
-            If validacion1 = False And validacion2 = False And validacion3 = False And validacion5 = False And validacion6 = False And validacion7 = False Then
+            If validacion2 = False And validacion3 = False And validacion5 = False And validacion6 = False And validacion7 = False Then
                 Dim validado As Boolean = True
 
                 If validado Then
                     Try
                         Dim idCliente As Integer
-                        idCliente = tbIdCliente.Text
+
                         Dim cliente As DataRow
-                        cliente = GestionesAdministrador.BuscarCliente(idCliente)
-                        If cliente Is Nothing Then
-                            Dim nombre As String = tbNombreCliente.Text
-                            Dim apellido1 As String = tbApellido1Cliente.Text
-                            Dim apellido2 As String = tbApellido2Cliente.Text
-                            Dim telefono As String = tbTelefonoCliente.Text
-                            Dim correo As String = tbCorreoCliente.Text
-                            Dim fechaAlta As Date = FechaAltaClienteTimePicker.Value
-                            AgregarCliente(nombre, apellido1, apellido2, telefono, correo, fechaAlta)
-                            MessageBox.Show("Cliente creado con éxito")
-                            panelSocioDesc.Visible = True
-                        Else
-                            MessageBox.Show("Ya existe un cliente con ese id")
-                        End If
+
+
+                        Dim nombre As String = tbNombreCliente.Text
+                        Dim apellido1 As String = tbApellido1Cliente.Text
+                        Dim apellido2 As String = tbApellido2Cliente.Text
+                        Dim telefono As String = tbTelefonoCliente.Text
+                        Dim correo As String = tbCorreoCliente.Text
+                        Dim fechaAlta As Date = FechaAltaClienteTimePicker.Value.Date
+                        idCliente = AgregarCliente(nombre, apellido1, apellido2, telefono, correo, fechaAlta)
+
+                        MessageBox.Show("Cliente creado con éxito")
+                        panelSocioDesc.Visible = True
+
+                        TarjetaRepsol.lblId.Text = idCliente
+                        TarjetaRepsol.lblName.Text = nombre
+                        TarjetaRepsol.lblApellido1.Text = apellido1
+                        TarjetaRepsol.lblApellido2.Text = apellido2
+                        TarjetaRepsol.lblFechaAlta.Text = fechaAlta
+                        TarjetaRepsol.Imprimir()
+
                     Catch ex As Exception
                         MsgBox("Hubo un error con la creación del cliente, trate de introducir bien los datos")
                         Dim guardar As New Archivo
@@ -376,7 +385,7 @@ Public Class TPV
 
     End Sub
 
-    Private Sub AgregarCliente(nombre As String, apellido1 As String, apellido2 As String, telefono As String, correo As String, fecha As Date)
+    Private Function AgregarCliente(nombre As String, apellido1 As String, apellido2 As String, telefono As String, correo As String, fecha As Date) As Integer
         Dim id As Integer
         Try
             conn.Open()
@@ -384,11 +393,13 @@ Public Class TPV
                 cmd.Parameters.Add(New OleDbParameter(“id”, id))
 
                 id = Integer.Parse(cmd.ExecuteScalar().ToString())
-
+                id += 1
+                MessageBox.Show(id)
             End Using
+            conn.Close()
+            conn.Open()
 
-
-            Using cmd As New OleDbCommand("Insert into Clientes([id],[Nombre],[Apellido 1],[Apellido 2],[Telefono],[Correo],[FechaAlta],1)
+            Using cmd As New OleDbCommand("Insert into Clientes([id],[Nombre],[Apellido 1],[Apellido 2],[Telefono],[Correo],[FechaAlta],[Alta])
                 values(?, ?, ?, ?, ?, ?, ?, ?)", conn)
                 cmd.Parameters.Add(New OleDbParameter("id", id))
                 cmd.Parameters.Add(New OleDbParameter("nombre", nombre))
@@ -397,16 +408,21 @@ Public Class TPV
                 cmd.Parameters.Add(New OleDbParameter("telefono", telefono))
                 cmd.Parameters.Add(New OleDbParameter("correo", correo))
                 cmd.Parameters.Add(New OleDbParameter("fechaAlta", fecha))
-                cmd.ExecuteNonQuery()
+                cmd.Parameters.Add(New OleDbParameter("alta", 1))
+                If cmd.ExecuteNonQuery() < 1 Then
+                    Throw New Exception("Error en la conexión con la base de datos.")
+                End If
                 MsgBox("Se agrego el cliente: " & nombre)
+                Return id
             End Using
         Catch ex As Exception
             MsgBox("Hubo un error a la hora de agregar el cliente: " & ex.Message)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "TPV, Agregar Cliente")
+            Return -1
         Finally
             conn.Close()
         End Try
 
-    End Sub
+    End Function
 End Class
