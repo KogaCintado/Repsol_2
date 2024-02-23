@@ -1,4 +1,5 @@
 ﻿Imports System.Data.OleDb
+Imports Biblioteca
 Public Class Informes
 
     Private Sub Informes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -24,7 +25,9 @@ Public Class Informes
                 CrystalReportViewer1.ReportSource = reporte
             End Using
         Catch ex As Exception
-            MsgBox("Hubo un error cargando el informe: " & ex.Message)
+            MsgBox("Hubo un error con la carga del informe")
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "Informes, verDatosEmpleados()")
         Finally
             conn.Close()
         End Try
@@ -44,7 +47,9 @@ Public Class Informes
                 CrystalReportViewer1.ReportSource = reporte
             End Using
         Catch ex As Exception
-            MsgBox("Hubo un error cargando el informe: " & ex.Message)
+            MsgBox("Hubo un error con la carga del informe")
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "Informes, verDatosClientes()")
         Finally
             conn.Close()
         End Try
@@ -64,7 +69,9 @@ Public Class Informes
                 CrystalReportViewer1.ReportSource = reporte
             End Using
         Catch ex As Exception
-            MsgBox("Hubo un error cargando el informe: " & ex.Message)
+            MsgBox("Hubo un error con la carga del informe")
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "Informes, verDatosProductos()")
         Finally
             conn.Close()
         End Try
@@ -84,7 +91,53 @@ Public Class Informes
                 CrystalReportViewer1.ReportSource = reporte
             End Using
         Catch ex As Exception
-            MsgBox("Hubo un error cargando el informe: " & ex.Message)
+            MsgBox("Hubo un error con la carga del informe")
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "Informes, verDatosGasolinas()")
+        Finally
+            conn.Close()
+        End Try
+    End Sub
+
+    Private Sub verDatosProveedores()
+        Try
+            conn.Open()
+
+            Using cmd As New OleDbCommand("Select * from Proveedores", conn)
+                Dim da As New OleDbDataAdapter(cmd)
+                Dim dt As New DataTable()
+                da.Fill(dt)
+                Dim reporte As New reportesProveedores
+                reporte.Database.Tables("Proveedores").SetDataSource(dt)
+                CrystalReportViewer1.ReportSource = Nothing
+                CrystalReportViewer1.ReportSource = reporte
+            End Using
+        Catch ex As Exception
+            MsgBox("Hubo un error con la carga del informe")
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "Informes, verDatosProveedores()")
+        Finally
+            conn.Close()
+        End Try
+    End Sub
+
+    Private Sub verDatosGamas()
+        Try
+            conn.Open()
+
+            Using cmd As New OleDbCommand("Select * from Gamas", conn)
+                Dim da As New OleDbDataAdapter(cmd)
+                Dim dt As New DataTable()
+                da.Fill(dt)
+                Dim reporte As New reportesGamas
+                reporte.Database.Tables("Gamas").SetDataSource(dt)
+                CrystalReportViewer1.ReportSource = Nothing
+                CrystalReportViewer1.ReportSource = reporte
+            End Using
+        Catch ex As Exception
+            MsgBox("Hubo un error con la carga del informe")
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "Informes, verDatosGamas()")
         Finally
             conn.Close()
         End Try
@@ -104,6 +157,14 @@ Public Class Informes
 
     Private Sub btnInformesGasolinas_Click(sender As Object, e As EventArgs) Handles btnInformesGasolinas.Click
         verDatosGasolinas()
+    End Sub
+
+    Private Sub btnInformeProveedores_Click(sender As Object, e As EventArgs) Handles btnInformeProveedores.Click
+        verDatosProveedores()
+    End Sub
+
+    Private Sub btnInformeGamas_Click(sender As Object, e As EventArgs) Handles btnInformeGamas.Click
+
     End Sub
 
     Private Sub VolevrToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VolevrToolStripMenuItem.Click

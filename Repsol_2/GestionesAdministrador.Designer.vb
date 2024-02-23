@@ -1418,6 +1418,7 @@ Partial Class GestionesAdministrador
         Me.btnAgregarGasolina.TabIndex = 27
         Me.btnAgregarGasolina.Text = "Agregar Gasolina"
         Me.btnAgregarGasolina.UseVisualStyleBackColor = True
+        Me.btnAgregarGasolina.Visible = False
         '
         'btnEliminarGas
         '
@@ -1427,6 +1428,7 @@ Partial Class GestionesAdministrador
         Me.btnEliminarGas.TabIndex = 3
         Me.btnEliminarGas.Text = "Eliminar Gas"
         Me.btnEliminarGas.UseVisualStyleBackColor = True
+        Me.btnEliminarGas.Visible = False
         '
         'btnModificarGasolina
         '

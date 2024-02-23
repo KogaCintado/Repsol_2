@@ -33,6 +33,8 @@ Partial Class Informes
         Me.btnInformesClientes = New System.Windows.Forms.Button()
         Me.btnInformesProductos = New System.Windows.Forms.Button()
         Me.btnInformesGasolinas = New System.Windows.Forms.Button()
+        Me.btnInformeProveedores = New System.Windows.Forms.Button()
+        Me.btnInformeGamas = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -117,11 +119,31 @@ Partial Class Informes
         Me.btnInformesGasolinas.Text = "Ejecutar Informe Gasolinas"
         Me.btnInformesGasolinas.UseVisualStyleBackColor = True
         '
+        'btnInformeProveedores
+        '
+        Me.btnInformeProveedores.Location = New System.Drawing.Point(12, 187)
+        Me.btnInformeProveedores.Name = "btnInformeProveedores"
+        Me.btnInformeProveedores.Size = New System.Drawing.Size(178, 23)
+        Me.btnInformeProveedores.TabIndex = 7
+        Me.btnInformeProveedores.Text = "Ejecutar Informe Proveedores"
+        Me.btnInformeProveedores.UseVisualStyleBackColor = True
+        '
+        'btnInformeGamas
+        '
+        Me.btnInformeGamas.Location = New System.Drawing.Point(12, 216)
+        Me.btnInformeGamas.Name = "btnInformeGamas"
+        Me.btnInformeGamas.Size = New System.Drawing.Size(178, 23)
+        Me.btnInformeGamas.TabIndex = 8
+        Me.btnInformeGamas.Text = "Ejecutar Informe Gamas"
+        Me.btnInformeGamas.UseVisualStyleBackColor = True
+        '
         'Informes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
+        Me.Controls.Add(Me.btnInformeGamas)
+        Me.Controls.Add(Me.btnInformeProveedores)
         Me.Controls.Add(Me.btnInformesGasolinas)
         Me.Controls.Add(Me.btnInformesProductos)
         Me.Controls.Add(Me.btnInformesClientes)
@@ -148,4 +170,6 @@ Partial Class Informes
     Friend WithEvents btnInformesClientes As Button
     Friend WithEvents btnInformesProductos As Button
     Friend WithEvents btnInformesGasolinas As Button
+    Friend WithEvents btnInformeProveedores As Button
+    Friend WithEvents btnInformeGamas As Button
 End Class
