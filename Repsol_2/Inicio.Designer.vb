@@ -33,12 +33,10 @@ Partial Class Inicio
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ErrorProvider2 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.NotifyIconLogo = New System.Windows.Forms.NotifyIcon(Me.components)
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.showPassword = New System.Windows.Forms.PictureBox()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.showPassword, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -107,15 +105,6 @@ Partial Class Inicio
         Me.NotifyIconLogo.Text = "Repsol"
         Me.NotifyIconLogo.Visible = True
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.Repsol_2.My.Resources.Resources.eye
-        Me.PictureBox2.Location = New System.Drawing.Point(115, 175)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(405, 365)
-        Me.PictureBox2.TabIndex = 7
-        Me.PictureBox2.TabStop = False
-        '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.Repsol_2.My.Resources.Resources.Repsol_logo
@@ -141,7 +130,6 @@ Partial Class Inicio
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
-        Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.showPassword)
         Me.Controls.Add(Me.btnStart)
@@ -154,7 +142,6 @@ Partial Class Inicio
         Me.Text = "Inicio"
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ErrorProvider2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.showPassword, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -172,6 +159,5 @@ Partial Class Inicio
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents ErrorProvider1 As ErrorProvider
     Friend WithEvents ErrorProvider2 As ErrorProvider
-    Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents NotifyIconLogo As NotifyIcon
 End Class

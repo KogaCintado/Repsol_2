@@ -87,15 +87,6 @@ Public Class Inicio
         Return True
     End Function
 
-    Private Sub BORRAR(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        admin = True
-        ErrorProvider1.Clear()
-        ErrorProvider2.Clear()
-
-        Me.Hide()
-        Opciones.Show()
-    End Sub
-
 
     Private Function loggin(nombre As String, contraseña As String) As Boolean
 

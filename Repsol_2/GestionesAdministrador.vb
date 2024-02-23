@@ -1360,6 +1360,8 @@ Public Class GestionesAdministrador
             Dim comprobar As Boolean = False
             Dim prov As DataRow = BuscarProveedor(proveedor)
             If Not prov Is Nothing Then
+                comprobar = False
+            Else
                 comprobar = True
             End If
 
@@ -1380,13 +1382,21 @@ Public Class GestionesAdministrador
 
             End Using
 
+            Dim comprobar3 As Boolean = False
+            Dim prod As DataRow = BuscarProducto(id)
+            If prod Is Nothing Then
+                comprobar3 = False
+            Else
+                comprobar3 = True
+            End If
+
             Using cmd As New OleDbCommand("Update Productos set nombre = @nombre, precio = @precio, proveedor = @proveedor, gama = @gama where id = @id", conn)
                 cmd.Parameters.AddWithValue("@nombre", nombre)
                 cmd.Parameters.AddWithValue("@precio", precio)
                 cmd.Parameters.AddWithValue("@proveedor", proveedor)
                 cmd.Parameters.AddWithValue("@gama", gama)
                 cmd.Parameters.AddWithValue("@id", id)
-                If comprobar = True And comprobar2 = True Then
+                If comprobar = True And comprobar2 = True And comprobar3 = True Then
                     cmd.ExecuteNonQuery()
                     MessageBox.Show("El producto se actualizo correctamente", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Else
