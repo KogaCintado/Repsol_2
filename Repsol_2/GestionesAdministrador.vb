@@ -1456,7 +1456,6 @@ Public Class GestionesAdministrador
         End Try
     End Sub
 
-
     Public Sub EliminarEmpleado(id As Integer)
         Try
             conn.Open()
