@@ -31,6 +31,7 @@ Partial Class Opciones
         Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarElProgramaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
@@ -47,7 +48,7 @@ Partial Class Opciones
         '
         'btnCRUD
         '
-        Me.btnCRUD.Location = New System.Drawing.Point(195, 3)
+        Me.btnCRUD.Location = New System.Drawing.Point(3, 69)
         Me.btnCRUD.Name = "btnCRUD"
         Me.btnCRUD.Size = New System.Drawing.Size(90, 60)
         Me.btnCRUD.TabIndex = 2
@@ -96,11 +97,21 @@ Partial Class Opciones
         '
         Me.FlowLayoutPanel1.Controls.Add(Me.btnInformes)
         Me.FlowLayoutPanel1.Controls.Add(Me.btnTrabajar)
+        Me.FlowLayoutPanel1.Controls.Add(Me.Button1)
         Me.FlowLayoutPanel1.Controls.Add(Me.btnCRUD)
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(512, 242)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(292, 71)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(292, 144)
         Me.FlowLayoutPanel1.TabIndex = 6
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(195, 3)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(90, 60)
+        Me.Button1.TabIndex = 3
+        Me.Button1.Text = "aaaa"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Opciones
         '
@@ -129,4 +140,5 @@ Partial Class Opciones
     Friend WithEvents CerrarSesiónToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CerrarElProgramaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents Button1 As Button
 End Class

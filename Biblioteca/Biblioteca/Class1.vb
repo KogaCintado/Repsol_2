@@ -1,6 +1,7 @@
 ﻿Imports System.Drawing
 Imports System.Drawing.Printing
 Imports System.Windows.Forms
+Imports System.Data.OleDb
 
 Namespace validaciones
 
@@ -291,4 +292,346 @@ Public Class Ticket
             archivo.GuardarError(ex, "Print ticket efectivo")
         End Try
     End Sub
+End Class
+
+Public Class validacionesCrud
+
+    Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
+
+
+    Public Function BuscarProveedor(id As Integer) As DataRow
+
+        ' Crear una nueva instancia del comando SQL
+        Dim cmd As New OleDbCommand("SELECT * FROM Proveedores WHERE id = @id", conn)
+
+        ' Añadir el parámetro al comando SQL
+        cmd.Parameters.AddWithValue("@id", id)
+
+        ' Crear una nueva instancia del adaptador de datos
+        Dim da As New OleDbDataAdapter(cmd)
+
+        ' Crear una nueva instancia del DataSet
+        Dim ds As New DataSet()
+
+        Try
+            ' Llenar el DataSet con los datos de la tabla Proveedores
+            da.Fill(ds, "Proveedores")
+        Catch ex As Exception
+            MessageBox.Show("Hubo un error en la busqueda del proveedor, trate de introducir bien los datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "GestionesAdministrador, BuscarProveedor()")
+            Return Nothing
+        End Try
+
+        ' Comprobar si se encontró algún registro
+        If ds.Tables("Proveedores").Rows.Count > 0 Then
+            ' Devolver la primera fila
+            Return ds.Tables("Proveedores").Rows(0)
+        Else
+            ' Si no se encontró ningún registro, devolver Nothing
+            Return Nothing
+        End If
+
+
+    End Function
+
+
+    Public Function validarIDs(tb As TextBox, str As String) As Boolean
+
+        If str = "" Then
+            MessageBox.Show("El campo id no puede estar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return True
+        ElseIf Not IsNumeric(str) Then
+            MessageBox.Show("El campo id solo puede contener numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            tb.Clear()
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
+    Public Function validarTelefonos(tb As TextBox, str As String) As Boolean
+        'en este metodo validamos que el texbox de telefono no este vacio. aparte
+        'de que solo puede tener un prefijo (+) y numeros. En caso de que tenga mas de un (+)
+        'o letras, mostraremos un mensaje de error. Para ello utilizaremos una lista con caracteres permitidos
+        Dim permitidos As New List(Of Char) From {"+", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
+        Dim contadormas As Integer = 0
+        Dim comprobar As Boolean = False
+        If str = "" Then
+            MessageBox.Show("El campo telefono no puede estar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return True
+        Else
+            For i As Integer = 0 To str.Length - 1
+                If str(i) = "+" Then
+                    contadormas += 1
+                End If
+
+                If (Not permitidos.Contains(str(i))) Or (contadormas > 1 Or contadormas = 0) Then
+                    comprobar = True
+                End If
+            Next
+            If comprobar = True Then
+                MessageBox.Show("El campo telefono solo puede tener simbolos numericos, y el prefijo (+) una vez", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                tb.Clear()
+                Return True
+            Else
+                Return False
+            End If
+        End If
+    End Function
+
+    Public Function validarAdministrador(tb As TextBox, num As String) As Boolean
+        If num = "" Then
+            MessageBox.Show("El campo administrador no puede estar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return True
+        ElseIf Not IsNumeric(num) Then
+            MessageBox.Show("El administrador debe de ser numerico", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return True
+        ElseIf num = "0" Then
+            Return False
+        ElseIf num = "1" Then
+            Return False
+        Else
+            MessageBox.Show("Solo estan permitidos en el campo altas 0 y 1", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            tb.Clear()
+            Return True
+        End If
+
+    End Function
+
+    Public Function validarCorreos(tb As TextBox, str As String) As Boolean
+
+        Dim contadorpuntos As Integer = 0
+        Dim contadorArrobas As Integer = 0
+
+        If str.StartsWith("@") Then
+            MessageBox.Show("Error, un correo electronico no puede empezar con un @", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            tb.Clear()
+            Return True
+        End If
+
+        For i As Integer = 0 To str.Length - 1
+            If str(i) = "." Then
+                contadorpuntos += 1
+            ElseIf str(i) = "@" Then
+                contadorArrobas += 1
+            End If
+        Next
+
+        If (contadorArrobas = 0 And contadorpuntos = 0) Or (contadorArrobas > 1 Or contadorpuntos > 1) Then
+            MessageBox.Show("Error, compruebe el numero de arrobas y puntos del correo", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            tb.Clear()
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
+    Public Function validarContraseñas(tb As TextBox, str As String) As Boolean
+        'en este metodo validamos que el texbox de contraseña no este vacio. aparte
+        'de que solo puede tener letras y numeros. En caso de que tenga caracteres especiales
+        'mostraremos un mensaje de error. Para ello utilizaremos una lista con caracteres permitidos
+        Dim permitidos As New List(Of Char) From {"!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\", "]", "^", "_", "{", "|", "}", "~"}
+        Dim comprobar As Boolean = False
+        If str = "" Then
+            MessageBox.Show("El campo contraseña no puede estar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return True
+        Else
+            For i As Integer = 0 To str.Length - 1
+                If permitidos.Contains(str(i)) Then
+                    comprobar = True
+                End If
+            Next
+            If comprobar = True Then
+                MessageBox.Show("El campo pruebas no puede tener caracteres especiales", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                tb.Clear()
+                Return True
+            Else
+                Return False
+            End If
+        End If
+    End Function
+
+    Public Function validarNOmbreYApellidos(tb As TextBox, str As String) As Boolean
+
+        Dim permitidos As New List(Of Char) From {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "á", "é", "í", "ó", "ú", "Á", "É", "Í", "Ó", "Ú"}
+        Dim comprobar As Boolean = False
+        If str = "" Then
+            MessageBox.Show("El campo no puede estar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return True
+        Else
+            For i As Integer = 0 To str.Length - 1
+                If Not permitidos.Contains(str(i)) Then
+                    comprobar = True
+                End If
+            Next
+            If comprobar = True Then
+                MessageBox.Show("El campo solo puede tener letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                tb.Clear()
+                Return True
+            Else
+                Return False
+            End If
+        End If
+    End Function
+
+
+
+    Private Function validarCantidad(tb As TextBox, str As String) As Boolean
+        Dim contadorComas As Integer = 0
+        Dim contadorPuntos As Integer = 0
+
+        If str = "" Then
+            MessageBox.Show("El campo no puede estar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return True
+        ElseIf Not IsNumeric(str) Then
+            MessageBox.Show("Solo son permitidos caracteres numericos en la cantidad", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            tb.Clear()
+            Return True
+        ElseIf str < 0 Then
+            MessageBox.Show("La cantidad no puede ser menor que 0", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return True
+        End If
+
+        For i As Integer = 0 To str.Length - 1
+            If str(i) = "," Then
+                contadorComas += 1
+            ElseIf str(i) = "." Then
+                contadorPuntos += 1
+            End If
+        Next
+
+        If contadorComas > 0 Or contadorPuntos > 0 Or (contadorComas = 1 And contadorPuntos = 1) Then
+            MessageBox.Show("No se pueden agregar ni comas ni puntos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            tb.Clear()
+            Return True
+        Else
+            Return False
+        End If
+
+    End Function
+
+    Private Function validarPrecio(tb As TextBox, str As String) As Boolean
+        'en esta funcion lo que hacemos es comprobar si tiene mas de un punto o mas de una coma o si tiene letras
+        'o si tiene un punto y una coma. En caso de que tenga mas de uno de estos caracteres o una combinacion de ellos
+        'mostraremos un mensaje de error
+        Dim contadorPuntos As Integer = 0
+        Dim contadorComas As Integer = 0
+
+        If str = "" Then
+            MessageBox.Show("El campo de precio no puede estar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return True
+        ElseIf Not IsNumeric(str) Then
+            MessageBox.Show("El campo debe de ser numerico", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            tb.Clear()
+            Return True
+
+        ElseIf str < 0 Then
+            MessageBox.Show("El precio no puede ser menor que 0", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return True
+        Else
+            For i As Integer = 0 To str.Length - 1
+                If str(i) = "." Then
+                    contadorPuntos += 1
+                ElseIf str(i) = "," Then
+                    contadorComas += 1
+                End If
+            Next
+            If contadorPuntos > 1 Or contadorComas > 1 Then
+                MessageBox.Show("Error, dentro del campo hay mas de un punto o de una coma", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                tb.Clear()
+                Return True
+            ElseIf contadorPuntos = 1 And contadorComas = 1 Then
+                MessageBox.Show("No se puede meter dentro del campo un punto o una coma a la vez", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                tb.Clear()
+                Return True
+            Else
+                Return False
+            End If
+
+        End If
+    End Function
+
+    Private Function validarGama(tb As TextBox, str As String) As Boolean
+
+        'en esta funcion vamos a validar que la gama (su id) este dentro de la tabla gamas.
+        'para ello vamos a hacer una consulta a la base de datos access utilizando comandos en olebd
+        'y si el id no existe, mostraremos un mensaje de error
+        Dim comprobar As Boolean = False
+        Try
+            Dim cmd As New OleDbCommand("Select id from Gamas where id = @id", conn)
+            cmd.Parameters.AddWithValue("@id", str)
+            conn.Open()
+            Dim reader As OleDbDataReader = cmd.ExecuteReader()
+            If reader.HasRows() Then
+                comprobar = True
+            End If
+            conn.Close()
+            If comprobar = False Then
+                MessageBox.Show("El id de la gama no existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                tb.Clear()
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Hubo un error de la validacion de la gama", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return True
+        Finally
+            conn.Close()
+        End Try
+
+    End Function
+    Public Function validarNombreEmpresa(tb As TextBox, str As String) As Boolean
+        'en esta funcion solamente validaremos que no este vacio el campo de nombre de la empresa
+        If str = "" Then
+            MessageBox.Show("El campo nombre no puede estar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
+    Public Function validarAlta(tb As TextBox, str As String) As Boolean
+
+        If str = "" Then
+            MessageBox.Show("El campo alta no puede estar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return True
+        ElseIf str = "0" Then
+            Return False
+        ElseIf str = "1" Then
+            Return False
+        Else
+            MessageBox.Show("Solo estan permitidos en el campo altas 0 y 1", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            tb.Clear()
+            Return True
+        End If
+
+    End Function
+
+    Public Function validarProveedor(tb As TextBox, prov As String)
+
+        Dim proveedor As DataRow
+
+        If prov = "" Then
+            MessageBox.Show("El campo proveedor no puede estar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return True
+        ElseIf Not IsNumeric(prov) Then
+            MessageBox.Show("El campo proveedor debe de ser numerico", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            tb.Clear()
+            Return True
+        End If
+
+        proveedor = BuscarProveedor(prov)
+        If proveedor Is Nothing Then
+            MessageBox.Show("El proveedor no existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            tb.Clear()
+            Return True
+        Else
+            Return False
+        End If
+
+    End Function
+
+
 End Class
