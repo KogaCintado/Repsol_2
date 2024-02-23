@@ -12,7 +12,7 @@ Public Class TPV
         Me.WindowState = FormWindowState.Maximized
 
         'Cargamos el nombre del usuario
-        lblUser.Text = Inicio.tbUsername.Text
+        lblUser.Text = Inicio.nombreEmp
 
         PanelIsCliente.Visible = True
         panelCosasCliente.Visible = False

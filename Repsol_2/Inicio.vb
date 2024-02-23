@@ -3,6 +3,8 @@ Imports Biblioteca
 Public Class Inicio
     Public Shared admin As Boolean = False
     Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
+    Public nombreEmp As String = "Empleado"
+
     Private Sub Inicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Maximizamos la ventana
         Me.WindowState = FormWindowState.Maximized
@@ -12,7 +14,6 @@ Public Class Inicio
     End Sub
 
     Private Sub btnStart_Click(sender As Object, e As EventArgs) Handles btnStart.Click
-        'Programar validaciones.
         Dim archivo As New Archivo
 
         If (Not (String.IsNullOrEmpty(tbUsername.Text.Trim()))) And (Not (String.IsNullOrEmpty(tbPassword.Text.Trim()))) Then
@@ -22,7 +23,6 @@ Public Class Inicio
                 Opciones.Show()
                 ErrorProvider1.Clear()
                 ErrorProvider2.Clear()
-
                 archivo.GuardarDatosEnArchivo("config/logs.txt", "El usuario " & tbUsername.Text & " ha iniciado sesion")
 
             Else
@@ -40,7 +40,6 @@ Public Class Inicio
     End Sub
 
     Private Sub ShowPassword_Click(sender As Object, e As EventArgs) Handles showPassword.Click
-        'Porque esto me da error
         If (tbPassword.PasswordChar <> "*") Then
             tbPassword.PasswordChar = "*"
         Else
@@ -53,7 +52,7 @@ Public Class Inicio
 
         Dim i As Boolean = ValidarCaracteres(tbUsername.Text)
 
-        'abajo controlaremos la condicion de que en caso de que debuelva falso, se muestre un mensaje de error
+        'Abajo controlaremos la condicion de que en caso de que debuelva falso, se muestre un mensaje de error
         If i = False Then
             ErrorProvider1.SetError(tbUsername, "No se permiten caracteres especiales")
             tbUsername.Clear()
@@ -64,7 +63,7 @@ Public Class Inicio
     Private Sub tbPassword_TextChanged(sender As Object, e As EventArgs) Handles tbPassword.TextChanged
         Dim i As Boolean = ValidarCaracteres(tbPassword.Text)
 
-        'abajo controlaremos la condicion de que en caso de que debuelva falso, se muestre un mensaje de error
+        'Abajo controlaremos la condicion de que en caso de que debuelva falso, se muestre un mensaje de error
 
         If i = False Then
             ErrorProvider1.SetError(tbPassword, "No se permiten caracteres especiales")
@@ -72,7 +71,7 @@ Public Class Inicio
         End If
     End Sub
 
-    'Funcion para validar caracteres especiales
+    'Función para validar caracteres especiales
     Public Function ValidarCaracteres(ByVal input As String) As Boolean
         Dim invalidCharacters As String = "() , . - ; : _ ¨ ´ { } [ ] + ` ^ * ? ¿ ¡ ' = / & % $ · "" ! | @ # ~ ¬ º ª \"
         For Each c As Char In invalidCharacters
@@ -102,10 +101,12 @@ Public Class Inicio
                     While reader.Read()
                         If reader("Administrador").ToString() = 1 Or reader("Administrador").ToString() = 2 Then
                             admin = True
+                            nombreEmp = tbUsername.Text
                             MessageBox.Show("Ha inciado como Administrador", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             tbUsername.Clear()
                             tbPassword.Clear()
                         ElseIf reader("Administrador").ToString() = 0 Then
+                            nombreEmp = tbUsername.Text
                             MessageBox.Show("Ha inciado como Empleado", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             tbUsername.Clear()
                             tbPassword.Clear()
