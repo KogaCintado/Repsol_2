@@ -350,8 +350,8 @@ Public Class GestionesDelAdministrador
             Dim da As New OleDbDataAdapter(cmd)
             Dim dt As New DataTable()
             da.Fill(dt)
-            'ProveedoresDataGridView.DataSource = dt
-            'ProveedoresDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+            ProveedorDataGrid.DataSource = dt
+            ProveedorDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         Catch ex As Exception
             MessageBox.Show("Hubo un error con la muestra de proveedores", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo

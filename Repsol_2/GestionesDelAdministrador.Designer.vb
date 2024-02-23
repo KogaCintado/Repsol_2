@@ -115,7 +115,7 @@ Partial Class GestionesDelAdministrador
         Me.btnEliminarProveedor = New System.Windows.Forms.Button()
         Me.btnModificarProveedor = New System.Windows.Forms.Button()
         Me.btnAgregarProveedor = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.ProveedorDataGrid = New System.Windows.Forms.DataGridView()
         Me.btnBuscarProveedor = New System.Windows.Forms.Button()
         Me.tbIdProveedor = New System.Windows.Forms.TextBox()
         Me.tbNombreProveedor = New System.Windows.Forms.TextBox()
@@ -164,7 +164,7 @@ Partial Class GestionesDelAdministrador
         Me.panelGasolina.SuspendLayout()
         CType(Me.GasolinasDatagrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelProveedor.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProveedorDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -978,7 +978,7 @@ Partial Class GestionesDelAdministrador
         Me.panelProveedor.Controls.Add(Me.btnEliminarProveedor)
         Me.panelProveedor.Controls.Add(Me.btnModificarProveedor)
         Me.panelProveedor.Controls.Add(Me.btnAgregarProveedor)
-        Me.panelProveedor.Controls.Add(Me.DataGridView1)
+        Me.panelProveedor.Controls.Add(Me.ProveedorDataGrid)
         Me.panelProveedor.Controls.Add(Me.btnBuscarProveedor)
         Me.panelProveedor.Controls.Add(IdLabel4)
         Me.panelProveedor.Controls.Add(Me.tbIdProveedor)
@@ -1016,13 +1016,13 @@ Partial Class GestionesDelAdministrador
         Me.btnAgregarProveedor.Text = "Agregar"
         Me.btnAgregarProveedor.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'ProveedorDataGrid
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(161, 3)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(615, 201)
-        Me.DataGridView1.TabIndex = 20
+        Me.ProveedorDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.ProveedorDataGrid.Location = New System.Drawing.Point(161, 3)
+        Me.ProveedorDataGrid.Name = "ProveedorDataGrid"
+        Me.ProveedorDataGrid.Size = New System.Drawing.Size(615, 201)
+        Me.ProveedorDataGrid.TabIndex = 20
         '
         'btnBuscarProveedor
         '
@@ -1122,7 +1122,7 @@ Partial Class GestionesDelAdministrador
         CType(Me.GasolinasDatagrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelProveedor.ResumeLayout(False)
         Me.panelProveedor.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProveedorDataGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
@@ -1196,7 +1196,7 @@ Partial Class GestionesDelAdministrador
     Friend WithEvents btnEliminarProveedor As Button
     Friend WithEvents btnModificarProveedor As Button
     Friend WithEvents btnAgregarProveedor As Button
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents ProveedorDataGrid As DataGridView
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents OpcionesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents VolverToolStripMenuItem As ToolStripMenuItem
