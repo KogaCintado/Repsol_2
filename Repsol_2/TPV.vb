@@ -17,27 +17,29 @@ Public Class TPV
         PanelIsCliente.Visible = True
         panelCosasCliente.Visible = False
         panelSocioDesc.Visible = False
+
     End Sub
 
     Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
+        Try
+            'Limpia los listbox lbNombreProductos y lbPrecios menos el primer elemento.
+            If (lbNombreProductos.Items.Item(0) = "Gasolina") Then
+                Dim box As String = lbNombreProductos.Items.Item(0)
+                Dim box1 As String = lbPrecios.Items.Item(0)
 
-        'Limpia los listbox lbNombreProductos y lbPrecios menos el primer elemento.
-        If (lbNombreProductos.Items.Item(0) = "Gasolina") Then
-            Dim box As String = lbNombreProductos.Items.Item(0)
-            Dim box1 As String = lbPrecios.Items.Item(0)
+                lbNombreProductos.Items.Clear()
+                lbPrecios.Items.Clear()
 
-            lbNombreProductos.Items.Clear()
-            lbPrecios.Items.Clear()
+                lbNombreProductos.Items.Add(box)
+                lbPrecios.Items.Add(box1)
+            Else
+                lbNombreProductos.Items.Clear()
+                lbPrecios.Items.Clear()
+            End If
+            actualizarPrecio()
+        Catch ex As Exception
 
-            lbNombreProductos.Items.Add(box)
-            lbPrecios.Items.Add(box1)
-        Else
-            lbNombreProductos.Items.Clear()
-            lbPrecios.Items.Clear()
-        End If
-        actualizarPrecio()
-
-
+        End Try
 
     End Sub
 
@@ -126,18 +128,21 @@ Public Class TPV
 
     'Elimina un producto de la lista de pedidos
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        If (lbNombreProductos.SelectedItem Is Nothing) Then
-            Return
-        End If
-        If (lbNombreProductos.SelectedItem.ToString = "Gasolina") Then
-            MsgBox("No se puede eliminar la gasolina del pedido.")
-            Return
-        End If
+        Try
+            If (lbNombreProductos.SelectedItem Is Nothing) Then
+                Return
+            End If
+            If (lbNombreProductos.SelectedItem.ToString = "Gasolina") Then
+                MsgBox("No se puede eliminar la gasolina del pedido.")
+                Return
+            End If
+            Dim index As Integer = lbNombreProductos.SelectedIndex
+            lbNombreProductos.Items.RemoveAt(index)
+            lbPrecios.Items.RemoveAt(index)
 
+        Catch ex As Exception
 
-        lbNombreProductos.Items.Remove(lbNombreProductos.SelectedItem)
-        lbPrecios.Items.Remove(lbPrecios.Items.Item(lbNombreProductos.SelectedItem))
-
+        End Try
         actualizarPrecio()
     End Sub
 
@@ -189,6 +194,9 @@ Public Class TPV
 
         Dim a As New Ticket
         a.ImprimirTicketTarjeta(lblUser.Text, tarjeta, total, lbNombreProductos, lbPrecios)
+
+        Me.Close()
+        Trabajar.Show()
     End Sub
 
     Private Sub btnEsCliente_Click(sender As Object, e As EventArgs) Handles btnEsCliente.Click

@@ -94,9 +94,6 @@ Public Class Gasolina
                         lblPrecioGas.Visible = True
                         lblNombreGas.Visible = True
                         lblGasEchado.Visible = True
-                    Else
-                        MsgBox("No hay suficiente gasolina en el depósito.")
-                        Return
                     End If
                 Else
                     boton.Enabled = False
