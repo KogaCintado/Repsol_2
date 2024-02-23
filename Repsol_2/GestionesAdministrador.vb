@@ -1739,14 +1739,21 @@ Public Class GestionesAdministrador
     '    End If
     'End Function
 
-    Public Function validarAdministrador(tb As TextBox, num As Integer) As Boolean
-
-        If num <> 1 Or num <> 0 Then
-            MessageBox.Show("Error, no ha introducido un valor correcto. Solo se admiten 1 para adminsitradores y 0 para empleados", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+    Public Function validarAdministrador(tb As TextBox, num As String) As Boolean
+        If num = "" Then
+            MessageBox.Show("El campo administrador no puede estar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return True
+        ElseIf Not IsNumeric(num) Then
+            MessageBox.Show("El administrador debe de ser numerico", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return True
+        ElseIf num = "0" Then
+            Return False
+        ElseIf num = "1" Then
+            Return False
+        Else
+            MessageBox.Show("Solo estan permitidos en el campo altas 0 y 1", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             tb.Clear()
             Return True
-        Else
-            Return False
         End If
 
     End Function

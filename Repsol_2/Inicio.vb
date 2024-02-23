@@ -15,9 +15,7 @@ Public Class Inicio
         'Programar validaciones.
         Dim archivo As New Archivo
 
-
         If (Not (String.IsNullOrEmpty(tbUsername.Text.Trim()))) And (Not (String.IsNullOrEmpty(tbPassword.Text.Trim()))) Then
-
 
             If loggin(tbUsername.Text.Trim(), tbPassword.Text.Trim()) = True Then
                 Me.Hide()
@@ -34,14 +32,12 @@ Public Class Inicio
             End If
 
         Else
-            MsgBox("Introduce un usuario y contraseña")
+            MessageBox.Show("Introduce usuario y contraseña", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             tbPassword.Clear()
             tbUsername.Clear()
 
         End If
     End Sub
-
-
 
     Private Sub ShowPassword_Click(sender As Object, e As EventArgs) Handles showPassword.Click
         'Porque esto me da error
@@ -106,11 +102,11 @@ Public Class Inicio
                     While reader.Read()
                         If reader("Administrador").ToString() = 1 Or reader("Administrador").ToString() = 2 Then
                             admin = True
-                            MsgBox("Ha iniciado como administrador")
+                            MessageBox.Show("Ha inciado como Administrador", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             tbUsername.Clear()
                             tbPassword.Clear()
                         ElseIf reader("Administrador").ToString() = 0 Then
-                            MsgBox("Ha iniciado como empleado")
+                            MessageBox.Show("Ha inciado como Empleado", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             tbUsername.Clear()
                             tbPassword.Clear()
                         End If
@@ -118,7 +114,7 @@ Public Class Inicio
                     Return True
 
                 Else
-                    MsgBox("No Se pudo iniciar Sesion: Credenciales Incorrectas")
+                    MessageBox.Show("No se pudo iniciar sesion: credenciales incorrectas", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                     admin = False
                     Return False
                 End If
@@ -126,7 +122,7 @@ Public Class Inicio
             End Using
 
         Catch ex As Exception
-            MsgBox("Hubo un error con el inicio de sesion: " & ex.Message)
+            MessageBox.Show("Hubo un error en el inicio de sesion", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Return False
         Finally
             conn.Close()
