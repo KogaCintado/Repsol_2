@@ -268,9 +268,6 @@ Public Class TPV
                     Try
                         Dim idCliente As Integer
 
-                        Dim cliente As DataRow
-
-
                         Dim nombre As String = tbNombreCliente.Text
                         Dim apellido1 As String = tbApellido1Cliente.Text
                         Dim apellido2 As String = tbApellido2Cliente.Text
@@ -279,7 +276,6 @@ Public Class TPV
                         Dim fechaAlta As Date = FechaAltaClienteTimePicker.Value.Date
                         idCliente = AgregarCliente(nombre, apellido1, apellido2, telefono, correo, fechaAlta)
 
-                        MessageBox.Show("Cliente creado con éxito")
                         panelSocioDesc.Visible = True
 
                         TarjetaRepsol.lblId.Text = idCliente
@@ -394,7 +390,6 @@ Public Class TPV
 
                 id = Integer.Parse(cmd.ExecuteScalar().ToString())
                 id += 1
-                MessageBox.Show(id)
             End Using
             conn.Close()
             conn.Open()

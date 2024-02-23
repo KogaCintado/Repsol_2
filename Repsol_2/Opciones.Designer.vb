@@ -40,7 +40,7 @@ Partial Class Opciones
         Me.btnInformes.Location = New System.Drawing.Point(3, 3)
         Me.btnInformes.Name = "btnInformes"
         Me.btnInformes.Size = New System.Drawing.Size(90, 60)
-        Me.btnInformes.TabIndex = 0
+        Me.btnInformes.TabIndex = 3
         Me.btnInformes.Text = "Informes"
         Me.btnInformes.UseVisualStyleBackColor = True
         Me.btnInformes.Visible = False
@@ -59,7 +59,7 @@ Partial Class Opciones
         Me.btnTrabajar.Location = New System.Drawing.Point(99, 3)
         Me.btnTrabajar.Name = "btnTrabajar"
         Me.btnTrabajar.Size = New System.Drawing.Size(90, 60)
-        Me.btnTrabajar.TabIndex = 3
+        Me.btnTrabajar.TabIndex = 1
         Me.btnTrabajar.Text = "Trabajar"
         Me.btnTrabajar.UseVisualStyleBackColor = True
         '
