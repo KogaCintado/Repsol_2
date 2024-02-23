@@ -55,23 +55,43 @@ Public Class GestionesDelAdministrador
     'zona botones maestros---------------
     '------------------------------------
     Private Sub btnGestionesEmpleado_Click(sender As Object, e As EventArgs) Handles btnGestionesEmpleado.Click
-        invisibilizarTodosExcepto(panelEmpleado)
+        Try
+            invisibilizarTodosExcepto(panelEmpleado)
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub btnGestionesClientes_Click(sender As Object, e As EventArgs) Handles btnGestionesClientes.Click
-        invisibilizarTodosExcepto(panelCliente)
+        Try
+            invisibilizarTodosExcepto(panelCliente)
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub btnGestionesProductos_Click(sender As Object, e As EventArgs) Handles btnGestionesProductos.Click
-        invisibilizarTodosExcepto(panelProductos)
+        Try
+            invisibilizarTodosExcepto(panelProductos)
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub btnGestionesGasolinas_Click(sender As Object, e As EventArgs) Handles btnGestionesGasolinas.Click
-        invisibilizarTodosExcepto(panelGasolina)
+        Try
+            invisibilizarTodosExcepto(panelGasolina)
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub btnGestionesProveedores_Click(sender As Object, e As EventArgs) Handles btnGestionesProveedores.Click
-        invisibilizarTodosExcepto(panelProveedor)
+        Try
+            invisibilizarTodosExcepto(panelProveedor)
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     'zona busquedas-----------------------
@@ -784,486 +804,258 @@ Public Class GestionesDelAdministrador
     End Sub
 
 
-    'zona validaciones-------------------
-    '------------------------------------
-    Public Function validarIDs(tb As TextBox, str As String) As Boolean
 
-        If str = "" Then
-            MessageBox.Show("El campo id no puede estar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return True
-        ElseIf Not IsNumeric(str) Then
-            MessageBox.Show("El campo id solo puede contener numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            tb.Clear()
-            Return True
-        Else
-            Return False
-        End If
-    End Function
-
-    Public Function validarTelefonos(tb As TextBox, str As String) As Boolean
-        'en este metodo validamos que el texbox de telefono no este vacio. aparte
-        'de que solo puede tener un prefijo (+) y numeros. En caso de que tenga mas de un (+)
-        'o letras, mostraremos un mensaje de error. Para ello utilizaremos una lista con caracteres permitidos
-        Dim permitidos As New List(Of Char) From {"+", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
-        Dim contadormas As Integer = 0
-        Dim comprobar As Boolean = False
-        If str = "" Then
-            MessageBox.Show("El campo telefono no puede estar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return True
-        Else
-            For i As Integer = 0 To str.Length - 1
-                If str(i) = "+" Then
-                    contadormas += 1
-                End If
-
-                If (Not permitidos.Contains(str(i))) Or (contadormas > 1 Or contadormas = 0) Then
-                    comprobar = True
-                End If
-            Next
-            If comprobar = True Then
-                MessageBox.Show("El campo telefono solo puede tener simbolos numericos, y el prefijo (+) una vez", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                tb.Clear()
-                Return True
-            Else
-                Return False
-            End If
-        End If
-    End Function
-
-    Public Function validarAdministrador(tb As TextBox, num As String) As Boolean
-        If num = "" Then
-            MessageBox.Show("El campo administrador no puede estar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return True
-        ElseIf Not IsNumeric(num) Then
-            MessageBox.Show("El administrador debe de ser numerico", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return True
-        ElseIf num = "0" Then
-            Return False
-        ElseIf num = "1" Then
-            Return False
-        Else
-            MessageBox.Show("Solo estan permitidos en el campo altas 0 y 1", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            tb.Clear()
-            Return True
-        End If
-
-    End Function
-
-    Public Function validarCorreos(tb As TextBox, str As String) As Boolean
-
-        Dim contadorpuntos As Integer = 0
-        Dim contadorArrobas As Integer = 0
-
-        If str.StartsWith("@") Then
-            MessageBox.Show("Error, un correo electronico no puede empezar con un @", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            tb.Clear()
-            Return True
-        End If
-
-        For i As Integer = 0 To str.Length - 1
-            If str(i) = "." Then
-                contadorpuntos += 1
-            ElseIf str(i) = "@" Then
-                contadorArrobas += 1
-            End If
-        Next
-
-        If (contadorArrobas = 0 And contadorpuntos = 0) Or (contadorArrobas > 1 Or contadorpuntos > 1) Then
-            MessageBox.Show("Error, compruebe el numero de arrobas y puntos del correo", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            tb.Clear()
-            Return True
-        Else
-            Return False
-        End If
-    End Function
-
-    Public Function validarContraseñas(tb As TextBox, str As String) As Boolean
-        'en este metodo validamos que el texbox de contraseña no este vacio. aparte
-        'de que solo puede tener letras y numeros. En caso de que tenga caracteres especiales
-        'mostraremos un mensaje de error. Para ello utilizaremos una lista con caracteres permitidos
-        Dim permitidos As New List(Of Char) From {"!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\", "]", "^", "_", "{", "|", "}", "~"}
-        Dim comprobar As Boolean = False
-        If str = "" Then
-            MessageBox.Show("El campo contraseña no puede estar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return True
-        Else
-            For i As Integer = 0 To str.Length - 1
-                If permitidos.Contains(str(i)) Then
-                    comprobar = True
-                End If
-            Next
-            If comprobar = True Then
-                MessageBox.Show("El campo pruebas no puede tener caracteres especiales", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                tb.Clear()
-                Return True
-            Else
-                Return False
-            End If
-        End If
-    End Function
-
-    Public Function validarNOmbreYApellidos(tb As TextBox, str As String) As Boolean
-
-        Dim permitidos As New List(Of Char) From {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "á", "é", "í", "ó", "ú", "Á", "É", "Í", "Ó", "Ú"}
-        Dim comprobar As Boolean = False
-        If str = "" Then
-            MessageBox.Show("El campo no puede estar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return True
-        Else
-            For i As Integer = 0 To str.Length - 1
-                If Not permitidos.Contains(str(i)) Then
-                    comprobar = True
-                End If
-            Next
-            If comprobar = True Then
-                MessageBox.Show("El campo solo puede tener letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                tb.Clear()
-                Return True
-            Else
-                Return False
-            End If
-        End If
-    End Function
-
-
-
-    Private Function validarCantidad(tb As TextBox, str As String) As Boolean
-        Dim contadorComas As Integer = 0
-        Dim contadorPuntos As Integer = 0
-
-        If str = "" Then
-            MessageBox.Show("El campo no puede estar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return True
-        ElseIf Not IsNumeric(str) Then
-            MessageBox.Show("Solo son permitidos caracteres numericos en la cantidad", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            tb.Clear()
-            Return True
-        ElseIf str < 0 Then
-            MessageBox.Show("La cantidad no puede ser menor que 0", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return True
-        End If
-
-        For i As Integer = 0 To str.Length - 1
-            If str(i) = "," Then
-                contadorComas += 1
-            ElseIf str(i) = "." Then
-                contadorPuntos += 1
-            End If
-        Next
-
-        If contadorComas > 0 Or contadorPuntos > 0 Or (contadorComas = 1 And contadorPuntos = 1) Then
-            MessageBox.Show("No se pueden agregar ni comas ni puntos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            tb.Clear()
-            Return True
-        Else
-            Return False
-        End If
-
-    End Function
-
-    Private Function validarPrecio(tb As TextBox, str As String) As Boolean
-        'en esta funcion lo que hacemos es comprobar si tiene mas de un punto o mas de una coma o si tiene letras
-        'o si tiene un punto y una coma. En caso de que tenga mas de uno de estos caracteres o una combinacion de ellos
-        'mostraremos un mensaje de error
-        Dim contadorPuntos As Integer = 0
-        Dim contadorComas As Integer = 0
-
-        If str = "" Then
-            MessageBox.Show("El campo de precio no puede estar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return True
-        ElseIf Not IsNumeric(str) Then
-            MessageBox.Show("El campo debe de ser numerico", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            tb.Clear()
-            Return True
-
-        ElseIf str < 0 Then
-            MessageBox.Show("El precio no puede ser menor que 0", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return True
-        Else
-            For i As Integer = 0 To str.Length - 1
-                If str(i) = "." Then
-                    contadorPuntos += 1
-                ElseIf str(i) = "," Then
-                    contadorComas += 1
-                End If
-            Next
-            If contadorPuntos > 1 Or contadorComas > 1 Then
-                MessageBox.Show("Error, dentro del campo hay mas de un punto o de una coma", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                tb.Clear()
-                Return True
-            ElseIf contadorPuntos = 1 And contadorComas = 1 Then
-                MessageBox.Show("No se puede meter dentro del campo un punto o una coma a la vez", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                tb.Clear()
-                Return True
-            Else
-                Return False
-            End If
-
-        End If
-    End Function
-
-    Private Function validarGama(tb As TextBox, str As String) As Boolean
-
-        'en esta funcion vamos a validar que la gama (su id) este dentro de la tabla gamas.
-        'para ello vamos a hacer una consulta a la base de datos access utilizando comandos en olebd
-        'y si el id no existe, mostraremos un mensaje de error
-        Dim comprobar As Boolean = False
-        Try
-            Dim cmd As New OleDbCommand("Select id from Gamas where id = @id", conn)
-            cmd.Parameters.AddWithValue("@id", str)
-            conn.Open()
-            Dim reader As OleDbDataReader = cmd.ExecuteReader()
-            If reader.HasRows() Then
-                comprobar = True
-            End If
-            conn.Close()
-            If comprobar = False Then
-                MessageBox.Show("El id de la gama no existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                tb.Clear()
-                Return True
-            Else
-                Return False
-            End If
-        Catch ex As Exception
-            MessageBox.Show("Hubo un error de la validacion de la gama", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return True
-        Finally
-            conn.Close()
-        End Try
-
-    End Function
-    Public Function validarNombreEmpresa(tb As TextBox, str As String) As Boolean
-        'en esta funcion solamente validaremos que no este vacio el campo de nombre de la empresa
-        If str = "" Then
-            MessageBox.Show("El campo nombre no puede estar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return True
-        Else
-            Return False
-        End If
-    End Function
-
-    Public Function validarAlta(tb As TextBox, str As String) As Boolean
-
-        If str = "" Then
-            MessageBox.Show("El campo alta no puede estar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return True
-        ElseIf str = "0" Then
-            Return False
-        ElseIf str = "1" Then
-            Return False
-        Else
-            MessageBox.Show("Solo estan permitidos en el campo altas 0 y 1", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            tb.Clear()
-            Return True
-        End If
-
-    End Function
-
-    Public Function validarProveedor(tb As TextBox, prov As String)
-
-        Dim proveedor As DataRow
-
-        If prov = "" Then
-            MessageBox.Show("El campo proveedor no puede estar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return True
-        ElseIf Not IsNumeric(prov) Then
-            MessageBox.Show("El campo proveedor debe de ser numerico", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            tb.Clear()
-            Return True
-        End If
-
-        proveedor = BuscarProveedor(prov)
-        If proveedor Is Nothing Then
-            MessageBox.Show("El proveedor no existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            tb.Clear()
-            Return True
-        Else
-            Return False
-        End If
-
-    End Function
     'zona botones de accion------------
     '----------------------------------
 
     Private Sub btnAgregarEmpleado_Click(sender As Object, e As EventArgs) Handles btnAgregarEmpleado.Click
-        Dim validacion1 As Boolean = validarIDs(tbIdEmpleado, tbIdEmpleado.Text)
-        Dim validacion2 As Boolean = validarCorreos(tbCorreoEmpleado, tbCorreoEmpleado.Text)
-        Dim validacion3 As Boolean = validarTelefonos(tbTelefonoEmpleado, tbTelefonoEmpleado.Text)
-        Dim validacion4 As Boolean = validarContraseñas(tbContraseñaEmpleado, tbContraseñaEmpleado.Text)
-        Dim validacion5 As Boolean = validarNOmbreYApellidos(tbNombreEmpleado, tbNombreEmpleado.Text)
-        Dim validacion6 As Boolean = validarNOmbreYApellidos(tbApellido1Empleado, tbApellido1Empleado.Text)
-        Dim validacion7 As Boolean = validarNOmbreYApellidos(tbApellido2Empleado, tbApellido2Empleado.Text)
-        Dim validacion8 As Boolean = validarAdministrador(tbAdministradorEmpleado, tbAdministradorEmpleado.Text)
+        Try
+            Dim validacion1 As Boolean = validaciones.validarIDs(tbIdEmpleado, tbIdEmpleado.Text)
+            Dim validacion2 As Boolean = validaciones.validarCorreos(tbCorreoEmpleado, tbCorreoEmpleado.Text)
+            Dim validacion3 As Boolean = validaciones.validarTelefonos(tbTelefonoEmpleado, tbTelefonoEmpleado.Text)
+            Dim validacion4 As Boolean = validaciones.validarContraseñas(tbContraseñaEmpleado, tbContraseñaEmpleado.Text)
+            Dim validacion5 As Boolean = validaciones.validarNOmbreYApellidos(tbNombreEmpleado, tbNombreEmpleado.Text)
+            Dim validacion6 As Boolean = validaciones.validarNOmbreYApellidos(tbApellido1Empleado, tbApellido1Empleado.Text)
+            Dim validacion7 As Boolean = validaciones.validarNOmbreYApellidos(tbApellido2Empleado, tbApellido2Empleado.Text)
+            Dim validacion8 As Boolean = validaciones.validarAdministrador(tbAdministradorEmpleado, tbAdministradorEmpleado.Text)
 
-        If validacion1 = False And validacion2 = False And validacion3 = False And validacion4 = False And validacion5 = False And validacion6 = False And validacion7 = False And validacion8 = False Then
-            falseoProgressBar()
-            AgregarEmpleado(tbIdEmpleado.Text, tbNombreEmpleado.Text, tbApellido1Empleado.Text, tbApellido2Empleado.Text,
-                        tbTelefonoEmpleado.Text, tbCorreoEmpleado.Text, tbContraseñaEmpleado.Text, tbAdministradorEmpleado.Text, tbCargoEmpleado.Text)
-            limpiarEmpleado()
-        End If
+            If validacion1 = False And validacion2 = False And validacion3 = False And validacion4 = False And validacion5 = False And validacion6 = False And validacion7 = False And validacion8 = False Then
+                falseoProgressBar()
+                AgregarEmpleado(tbIdEmpleado.Text, tbNombreEmpleado.Text, tbApellido1Empleado.Text, tbApellido2Empleado.Text,
+                            tbTelefonoEmpleado.Text, tbCorreoEmpleado.Text, tbContraseñaEmpleado.Text, tbAdministradorEmpleado.Text, tbCargoEmpleado.Text)
+                limpiarEmpleado()
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub btnModificarEmpleado_Click(sender As Object, e As EventArgs) Handles btnModificarEmpleado.Click
-        Dim validacion1 As Boolean = validarIDs(tbIdEmpleado, tbIdEmpleado.Text)
-        Dim validacion2 As Boolean = validarCorreos(tbCorreoEmpleado, tbCorreoEmpleado.Text)
-        Dim validacion3 As Boolean = validarTelefonos(tbTelefonoEmpleado, tbTelefonoEmpleado.Text)
-        Dim validacion4 As Boolean = validarContraseñas(tbContraseñaEmpleado, tbContraseñaEmpleado.Text)
-        Dim validacion5 As Boolean = validarNOmbreYApellidos(tbNombreEmpleado, tbNombreEmpleado.Text)
-        Dim validacion6 As Boolean = validarNOmbreYApellidos(tbApellido1Empleado, tbApellido1Empleado.Text)
-        Dim validacion7 As Boolean = validarNOmbreYApellidos(tbApellido2Empleado, tbApellido2Empleado.Text)
-        Dim validacion8 As Boolean = validarAdministrador(tbAdministradorEmpleado, tbAdministradorEmpleado.Text)
-        If validacion1 = False And validacion2 = False And validacion3 = False And validacion4 = False And validacion5 = False And validacion6 = False And validacion7 = False And validacion8 = False Then
-            falseoProgressBar()
-            ModificarEmpleado(tbIdEmpleado.Text, tbNombreEmpleado.Text, tbApellido1Empleado.Text, tbApellido2Empleado.Text, tbTelefonoEmpleado.Text, tbCorreoEmpleado.Text,
-                        tbContraseñaEmpleado.Text, tbCargoEmpleado.Text, tbAdministradorEmpleado.Text)
-            limpiarEmpleado()
-        End If
+        Try
+            Dim validacion1 As Boolean = validaciones.validarIDs(tbIdEmpleado, tbIdEmpleado.Text)
+            Dim validacion2 As Boolean = validaciones.validarCorreos(tbCorreoEmpleado, tbCorreoEmpleado.Text)
+            Dim validacion3 As Boolean = validaciones.validarTelefonos(tbTelefonoEmpleado, tbTelefonoEmpleado.Text)
+            Dim validacion4 As Boolean = validaciones.validarContraseñas(tbContraseñaEmpleado, tbContraseñaEmpleado.Text)
+            Dim validacion5 As Boolean = validaciones.validarNOmbreYApellidos(tbNombreEmpleado, tbNombreEmpleado.Text)
+            Dim validacion6 As Boolean = validaciones.validarNOmbreYApellidos(tbApellido1Empleado, tbApellido1Empleado.Text)
+            Dim validacion7 As Boolean = validaciones.validarNOmbreYApellidos(tbApellido2Empleado, tbApellido2Empleado.Text)
+            Dim validacion8 As Boolean = validaciones.validarAdministrador(tbAdministradorEmpleado, tbAdministradorEmpleado.Text)
+            If validacion1 = False And validacion2 = False And validacion3 = False And validacion4 = False And validacion5 = False And validacion6 = False And validacion7 = False And validacion8 = False Then
+                falseoProgressBar()
+                ModificarEmpleado(tbIdEmpleado.Text, tbNombreEmpleado.Text, tbApellido1Empleado.Text, tbApellido2Empleado.Text, tbTelefonoEmpleado.Text, tbCorreoEmpleado.Text,
+                            tbContraseñaEmpleado.Text, tbCargoEmpleado.Text, tbAdministradorEmpleado.Text)
+                limpiarEmpleado()
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub btnEliminarEmpleado_Click(sender As Object, e As EventArgs) Handles btnEliminarEmpleado.Click
-        Dim validacion1 As Boolean = validarIDs(tbIdEmpleado, tbIdEmpleado.Text)
-        If validacion1 = False Then
-            falseoProgressBar()
-            EliminarEmpleado(tbIdEmpleado.Text)
-        End If
+        Try
+            Dim validacion1 As Boolean = validaciones.validarIDs(tbIdEmpleado, tbIdEmpleado.Text)
+            If validacion1 = False Then
+                falseoProgressBar()
+                EliminarEmpleado(tbIdEmpleado.Text)
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub btnBuscarEmpleado_Click(sender As Object, e As EventArgs) Handles btnBuscarEmpleado.Click
-        falseoProgressBar()
-        MostrarTodosEmpleados()
+        Try
+            falseoProgressBar()
+            MostrarTodosEmpleados()
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub btnBuscarCliente_Click(sender As Object, e As EventArgs) Handles btnBuscarCliente.Click
-        falseoProgressBar()
-        MostrarTodosClientes()
+        Try
+            falseoProgressBar()
+            MostrarTodosClientes()
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub btnAgregarCliente_Click(sender As Object, e As EventArgs) Handles btnAgregarCliente.Click
-        Dim validacion1 As Boolean = validarIDs(tbIdCliente, tbIdCliente.Text)
-        Dim validacion2 As Boolean = validarCorreos(tbCorreoCliente, tbCorreoCliente.Text)
-        Dim validacion3 As Boolean = validarTelefonos(tbTelefonoCliente, tbTelefonoCliente.Text)
-        Dim validacion5 As Boolean = validarNOmbreYApellidos(tbNombreCliente, tbNombreCliente.Text)
-        Dim validacion6 As Boolean = validarNOmbreYApellidos(tbApellido1Cliente, tbApellido1Cliente.Text)
-        Dim validacion7 As Boolean = validarNOmbreYApellidos(tbApellido2Cliente, tbApellido2Cliente.Text)
-        Dim validacion8 As Boolean = validarAlta(tbAltaCliente, tbAltaCliente.Text)
+        Try
+            Dim validacion1 As Boolean = validaciones.validarIDs(tbIdCliente, tbIdCliente.Text)
+            Dim validacion2 As Boolean = validaciones.validarCorreos(tbCorreoCliente, tbCorreoCliente.Text)
+            Dim validacion3 As Boolean = validaciones.validarTelefonos(tbTelefonoCliente, tbTelefonoCliente.Text)
+            Dim validacion5 As Boolean = validaciones.validarNOmbreYApellidos(tbNombreCliente, tbNombreCliente.Text)
+            Dim validacion6 As Boolean = validaciones.validarNOmbreYApellidos(tbApellido1Cliente, tbApellido1Cliente.Text)
+            Dim validacion7 As Boolean = validaciones.validarNOmbreYApellidos(tbApellido2Cliente, tbApellido2Cliente.Text)
+            Dim validacion8 As Boolean = validaciones.validarAlta(tbAltaCliente, tbAltaCliente.Text)
 
-        If validacion1 = False And validacion2 = False And validacion3 = False And validacion5 = False And validacion6 = False And validacion7 = False And validacion8 = False Then
-            falseoProgressBar()
-            AgregarCliente(tbIdCliente.Text, tbNombreCliente.Text, tbApellido1Cliente.Text, tbApellido2Cliente.Text, tbTelefonoCliente.Text, tbCorreoCliente.Text, FechaAltaClienteTimePicker.Value.Date, tbAltaCliente.Text)
-            limpiarCliente()
-        End If
+            If validacion1 = False And validacion2 = False And validacion3 = False And validacion5 = False And validacion6 = False And validacion7 = False And validacion8 = False Then
+                falseoProgressBar()
+                AgregarCliente(tbIdCliente.Text, tbNombreCliente.Text, tbApellido1Cliente.Text, tbApellido2Cliente.Text, tbTelefonoCliente.Text, tbCorreoCliente.Text, FechaAltaClienteTimePicker.Value.Date, tbAltaCliente.Text)
+                limpiarCliente()
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub btnModificarCliente_Click(sender As Object, e As EventArgs) Handles btnModificarCliente.Click
-        Dim validacion1 As Boolean = validarIDs(tbIdCliente, tbIdCliente.Text)
-        Dim validacion2 As Boolean = validarCorreos(tbCorreoCliente, tbCorreoCliente.Text)
-        Dim validacion3 As Boolean = validarTelefonos(tbTelefonoCliente, tbTelefonoCliente.Text)
-        Dim validacion5 As Boolean = validarNOmbreYApellidos(tbNombreCliente, tbNombreCliente.Text)
-        Dim validacion6 As Boolean = validarNOmbreYApellidos(tbApellido1Cliente, tbApellido1Cliente.Text)
-        Dim validacion7 As Boolean = validarNOmbreYApellidos(tbApellido2Cliente, tbApellido2Cliente.Text)
-        Dim validacion8 As Boolean = validarAlta(tbAltaCliente, tbAltaCliente.Text)
-        If validacion1 = False And validacion2 = False And validacion3 = False And validacion5 = False And validacion6 = False And validacion7 = False And validacion8 = False Then
-            falseoProgressBar()
-            ModificarCliente(tbIdCliente.Text, tbNombreCliente.Text, tbApellido1Cliente.Text, tbApellido2Cliente.Text, tbTelefonoCliente.Text,
-            tbCorreoCliente.Text, FechaAltaClienteTimePicker.Value.Date, tbAltaCliente.Text)
-            limpiarCliente()
-        End If
+        Try
+            Dim validacion1 As Boolean = validaciones.validarIDs(tbIdCliente, tbIdCliente.Text)
+            Dim validacion2 As Boolean = validaciones.validarCorreos(tbCorreoCliente, tbCorreoCliente.Text)
+            Dim validacion3 As Boolean = validaciones.validarTelefonos(tbTelefonoCliente, tbTelefonoCliente.Text)
+            Dim validacion5 As Boolean = validaciones.validarNOmbreYApellidos(tbNombreCliente, tbNombreCliente.Text)
+            Dim validacion6 As Boolean = validaciones.validarNOmbreYApellidos(tbApellido1Cliente, tbApellido1Cliente.Text)
+            Dim validacion7 As Boolean = validaciones.validarNOmbreYApellidos(tbApellido2Cliente, tbApellido2Cliente.Text)
+            Dim validacion8 As Boolean = validaciones.validarAlta(tbAltaCliente, tbAltaCliente.Text)
+            If validacion1 = False And validacion2 = False And validacion3 = False And validacion5 = False And validacion6 = False And validacion7 = False And validacion8 = False Then
+                falseoProgressBar()
+                ModificarCliente(tbIdCliente.Text, tbNombreCliente.Text, tbApellido1Cliente.Text, tbApellido2Cliente.Text, tbTelefonoCliente.Text,
+                tbCorreoCliente.Text, FechaAltaClienteTimePicker.Value.Date, tbAltaCliente.Text)
+                limpiarCliente()
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub btnEliminarCliente_Click(sender As Object, e As EventArgs) Handles btnEliminarCliente.Click
-        Dim validacion1 As Boolean = validarIDs(tbIdCliente, tbIdCliente.Text)
-        If validacion1 = False Then
-            falseoProgressBar()
-            EliminarCliente(tbIdCliente.Text)
-        End If
+        Try
+            Dim validacion1 As Boolean = validaciones.validarIDs(tbIdCliente, tbIdCliente.Text)
+            If validacion1 = False Then
+                falseoProgressBar()
+                EliminarCliente(tbIdCliente.Text)
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub btnBuscarProducto_Click(sender As Object, e As EventArgs) Handles btnBuscarProducto.Click
-        falseoProgressBar()
-        MostrarTodosProductos()
+        Try
+            falseoProgressBar()
+            MostrarTodosProductos()
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub btnAgregarProducto_Click(sender As Object, e As EventArgs) Handles btnAgregarProducto.Click
-        Dim validacion1 As Boolean = validarIDs(tbGamaProducto, tbGamaProducto.Text)
-        Dim validacion2 As Boolean = validarPrecio(tbPrecioProducto, tbPrecioProducto.Text)
-        Dim validacion3 As Boolean = validarGama(tbGamaProducto, tbGamaProducto.Text)
-        Dim validacion4 As Boolean = validarProveedor(tbProveedorProducto, tbProveedorProducto.Text)
-        If validacion1 = False And validacion2 = False And validacion3 = False And validacion4 = False Then
-            falseoProgressBar()
-            AgregarProducto(tbIdProducto.Text, tbNombreProducto.Text, tbPrecioProducto.Text, tbProveedorProducto.Text, tbGamaProducto.Text)
-            limpiarProducto()
-        End If
+        Try
+            Dim validacion1 As Boolean = validaciones.validarIDs(tbGamaProducto, tbGamaProducto.Text)
+            Dim validacion2 As Boolean = validaciones.validarPrecio(tbPrecioProducto, tbPrecioProducto.Text)
+            Dim validacion3 As Boolean = validaciones.validarGama(tbGamaProducto, tbGamaProducto.Text)
+            Dim validacion4 As Boolean = validaciones.validarProveedor(tbProveedorProducto, tbProveedorProducto.Text)
+            If validacion1 = False And validacion2 = False And validacion3 = False And validacion4 = False Then
+                falseoProgressBar()
+                AgregarProducto(tbIdProducto.Text, tbNombreProducto.Text, tbPrecioProducto.Text, tbProveedorProducto.Text, tbGamaProducto.Text)
+                limpiarProducto()
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub btnModificarProducto_Click(sender As Object, e As EventArgs) Handles btnModificarProducto.Click
-        Dim validacion1 As Boolean = validaciones.validarIDs(tbIdProducto, tbIdProducto.Text)
-        Dim validacion2 As Boolean = validaciones.validarPrecio(tbPrecioProducto, tbPrecioProducto.Text)
-        Dim validacion3 As Boolean = validaciones.validarGama(tbGamaProducto, tbGamaProducto.Text)
-        If validacion1 = False And validacion2 = False And validacion3 = False Then
-            falseoProgressBar()
-            ModificarProductos(tbIdProducto.Text, tbNombreProducto.Text, tbPrecioProducto.Text, tbProveedorProducto.Text, tbGamaProducto.Text)
-            limpiarProducto()
-        End If
+        Try
+            Dim validacion1 As Boolean = validaciones.validarIDs(tbIdProducto, tbIdProducto.Text)
+            Dim validacion2 As Boolean = validaciones.validarPrecio(tbPrecioProducto, tbPrecioProducto.Text)
+            Dim validacion3 As Boolean = validaciones.validarGama(tbGamaProducto, tbGamaProducto.Text)
+            If validacion1 = False And validacion2 = False And validacion3 = False Then
+                falseoProgressBar()
+                ModificarProductos(tbIdProducto.Text, tbNombreProducto.Text, tbPrecioProducto.Text, tbProveedorProducto.Text, tbGamaProducto.Text)
+                limpiarProducto()
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub btnEliminarProducto_Click(sender As Object, e As EventArgs) Handles btnEliminarProducto.Click
-        Dim validacion1 As Boolean = validarIDs(tbIdProducto, tbIdProducto.Text)
-        If validacion1 = False Then
-            falseoProgressBar()
-            EliminarProducto(tbIdProducto.Text)
-        End If
+        Try
+            Dim validacion1 As Boolean = validaciones.validarIDs(tbIdProducto, tbIdProducto.Text)
+            If validacion1 = False Then
+                falseoProgressBar()
+                EliminarProducto(tbIdProducto.Text)
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub btnBuscarGasolina_Click(sender As Object, e As EventArgs) Handles btnBuscarGasolina.Click
-        falseoProgressBar()
-        MostrarTodasGasolinas()
+        Try
+            falseoProgressBar()
+            MostrarTodasGasolinas()
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub btnModificarGasolina_Click(sender As Object, e As EventArgs) Handles btnModificarGasolina.Click
-        Dim validacion1 As Boolean = validaciones.validarIDs(tbIdGasolina, tbIdGasolina.Text)
-        Dim validacion2 As Boolean = validaciones.validarCantidad(tbCantidadGasolina, tbCantidadGasolina.Text)
-        Dim validacion3 As Boolean = validaciones.validarPrecio(tbPrecioGasolina, tbPrecioGasolina.Text)
-        If validacion1 = False And validacion2 = False And validacion3 = False Then
-            falseoProgressBar()
-            ModificarGasolina(tbIdGasolina.Text, tbNombreGasolina.Text, tbCantidadGasolina.Text, tbPrecioGasolina.Text)
-            limpiarGasolina()
-        End If
+        Try
+            Dim validacion1 As Boolean = validaciones.validarIDs(tbIdGasolina, tbIdGasolina.Text)
+            Dim validacion2 As Boolean = validaciones.validarCantidad(tbCantidadGasolina, tbCantidadGasolina.Text)
+            Dim validacion3 As Boolean = validaciones.validarPrecio(tbPrecioGasolina, tbPrecioGasolina.Text)
+            If validacion1 = False And validacion2 = False And validacion3 = False Then
+                falseoProgressBar()
+                ModificarGasolina(tbIdGasolina.Text, tbNombreGasolina.Text, tbCantidadGasolina.Text, tbPrecioGasolina.Text)
+                limpiarGasolina()
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub btnBuscarProveedor_Click(sender As Object, e As EventArgs) Handles btnBuscarProveedor.Click
-        falseoProgressBar()
-        MostrarTodosProveedores()
+        Try
+            falseoProgressBar()
+            MostrarTodosProveedores()
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub btnAgregarProveedor_Click(sender As Object, e As EventArgs) Handles btnAgregarProveedor.Click
+        Try
+            Dim validacion1 As Boolean = validaciones.validarIDs(tbIdProveedor, tbIdProveedor.Text)
+            Dim validacion2 As Boolean = validaciones.validarNombreEmpresa(tbNombreProveedor, tbNombreProveedor.Text)
+            If validacion1 = False And validacion2 = False Then
+                falseoProgressBar()
+                AgregarProveedor(tbIdProveedor.Text, tbNombreProveedor.Text)
+                limpiarProveedor()
+            End If
+        Catch ex As Exception
 
-
-
-        Dim validacion1 As Boolean = validaciones.validarIDs(tbIdProveedor, tbIdProveedor.Text)
-        Dim validacion2 As Boolean = validaciones.validarNombreEmpresa(tbNombreProveedor, tbNombreProveedor.Text)
-        If validacion1 = False And validacion2 = False Then
-            falseoProgressBar()
-            AgregarProveedor(tbIdProveedor.Text, tbNombreProveedor.Text)
-            limpiarProveedor()
-        End If
+        End Try
     End Sub
 
     Private Sub btnModificarProveedor_Click(sender As Object, e As EventArgs) Handles btnModificarProveedor.Click
-        Dim validacion1 As Boolean = validaciones.validarIDs(tbIdProveedor, tbIdProveedor.Text)
-        Dim validacion2 As Boolean = validaciones.validarNombreEmpresa(tbNombreProveedor, tbNombreProveedor.Text)
-        If validacion1 = False And validacion2 = False Then
-            falseoProgressBar()
-            ModificarProveedores(tbIdProveedor.Text, tbNombreProveedor.Text)
-            limpiarProveedor()
-        End If
+        Try
+            Dim validacion1 As Boolean = validaciones.validarIDs(tbIdProveedor, tbIdProveedor.Text)
+            Dim validacion2 As Boolean = validaciones.validarNombreEmpresa(tbNombreProveedor, tbNombreProveedor.Text)
+            If validacion1 = False And validacion2 = False Then
+                falseoProgressBar()
+                ModificarProveedores(tbIdProveedor.Text, tbNombreProveedor.Text)
+                limpiarProveedor()
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub btnEliminarProveedor_Click(sender As Object, e As EventArgs) Handles btnEliminarProveedor.Click
-        Dim validacion1 As Boolean = validaciones.validarIDs(tbIdProveedor, tbIdProveedor.Text)
-        If validacion1 = False Then
-            falseoProgressBar()
-            EliminarProveedor(tbIdProveedor.Text)
-        End If
+        Try
+            Dim validacion1 As Boolean = validaciones.validarIDs(tbIdProveedor, tbIdProveedor.Text)
+            If validacion1 = False Then
+                falseoProgressBar()
+                EliminarProveedor(tbIdProveedor.Text)
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 
 
@@ -1282,13 +1074,8 @@ Public Class GestionesDelAdministrador
         Opciones.Show()
         Me.Close()
     End Sub
-
-
     'zona funciones de limpieza--------------
     '----------------------------------------
-
-
-
     Private Sub limpiarEmpleado()
         tbIdEmpleado.Clear()
         tbNombreEmpleado.Clear()

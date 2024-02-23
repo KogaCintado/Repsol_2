@@ -24,7 +24,6 @@ Partial Class Opciones
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Opciones))
         Me.btnInformes = New System.Windows.Forms.Button()
-        Me.btnCRUD = New System.Windows.Forms.Button()
         Me.btnTrabajar = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.SalirDelProgramaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -45,15 +44,6 @@ Partial Class Opciones
         Me.btnInformes.Text = "Informes"
         Me.btnInformes.UseVisualStyleBackColor = True
         Me.btnInformes.Visible = False
-        '
-        'btnCRUD
-        '
-        Me.btnCRUD.Location = New System.Drawing.Point(3, 69)
-        Me.btnCRUD.Name = "btnCRUD"
-        Me.btnCRUD.Size = New System.Drawing.Size(90, 60)
-        Me.btnCRUD.TabIndex = 2
-        Me.btnCRUD.Text = "CRUD"
-        Me.btnCRUD.UseVisualStyleBackColor = True
         '
         'btnTrabajar
         '
@@ -98,10 +88,9 @@ Partial Class Opciones
         Me.FlowLayoutPanel1.Controls.Add(Me.btnInformes)
         Me.FlowLayoutPanel1.Controls.Add(Me.btnTrabajar)
         Me.FlowLayoutPanel1.Controls.Add(Me.Button1)
-        Me.FlowLayoutPanel1.Controls.Add(Me.btnCRUD)
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(512, 242)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(292, 144)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(292, 70)
         Me.FlowLayoutPanel1.TabIndex = 6
         '
         'Button1
@@ -110,7 +99,7 @@ Partial Class Opciones
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(90, 60)
         Me.Button1.TabIndex = 3
-        Me.Button1.Text = "aaaa"
+        Me.Button1.Text = "Crud"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Opciones
@@ -133,7 +122,6 @@ Partial Class Opciones
     End Sub
 
     Friend WithEvents btnInformes As Button
-    Friend WithEvents btnCRUD As Button
     Friend WithEvents btnTrabajar As Button
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents SalirDelProgramaToolStripMenuItem As ToolStripMenuItem

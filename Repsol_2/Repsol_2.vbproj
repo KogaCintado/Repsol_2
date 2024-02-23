@@ -114,12 +114,6 @@
     <Compile Include="Gasolina.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GestionesAdministrador.Designer.vb">
-      <DependentUpon>GestionesAdministrador.vb</DependentUpon>
-    </Compile>
-    <Compile Include="GestionesAdministrador.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="GestionesDelAdministrador.Designer.vb">
       <DependentUpon>GestionesDelAdministrador.vb</DependentUpon>
     </Compile>
@@ -226,9 +220,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Gasolina.resx">
       <DependentUpon>Gasolina.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GestionesAdministrador.resx">
-      <DependentUpon>GestionesAdministrador.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionesDelAdministrador.resx">
       <DependentUpon>GestionesDelAdministrador.vb</DependentUpon>

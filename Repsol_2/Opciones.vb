@@ -17,7 +17,7 @@
         Me.Hide()
     End Sub
 
-    Private Sub BtnCRUD_Click(sender As Object, e As EventArgs) Handles btnCRUD.Click
+    Private Sub BtnCRUD_Click(sender As Object, e As EventArgs) 
         GestionesAdministrador.Show()
         Me.Hide()
 
