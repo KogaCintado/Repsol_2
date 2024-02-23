@@ -1883,7 +1883,7 @@ Partial Class GestionesAdministrador
         Me.panelBuscarProveedor.Controls.Add(Me.tbIdProveedor)
         Me.panelBuscarProveedor.Controls.Add(NombreLabel4)
         Me.panelBuscarProveedor.Controls.Add(Me.tbNombreProveedor)
-        Me.panelBuscarProveedor.Location = New System.Drawing.Point(3000, 3000)
+        Me.panelBuscarProveedor.Location = New System.Drawing.Point(548, 373)
         Me.panelBuscarProveedor.Name = "panelBuscarProveedor"
         Me.panelBuscarProveedor.Size = New System.Drawing.Size(172, 91)
         Me.panelBuscarProveedor.TabIndex = 17
