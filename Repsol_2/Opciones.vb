@@ -17,12 +17,6 @@
         Me.Hide()
     End Sub
 
-    Private Sub BtnCRUD_Click(sender As Object, e As EventArgs) 
-        GestionesAdministrador.Show()
-        Me.Hide()
-
-    End Sub
-
     Private Sub BtnTrabajar_Click(sender As Object, e As EventArgs) Handles btnTrabajar.Click
         Trabajar.Show()
         Me.Close()
@@ -38,7 +32,7 @@
         Inicio.Close()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub btnCRUD_Click_1(sender As Object, e As EventArgs) Handles btnCRUD.Click
         GestionesDelAdministrador.Show()
         Me.Hide()
     End Sub

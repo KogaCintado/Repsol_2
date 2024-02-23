@@ -14,7 +14,6 @@ Public Class GestionesDelAdministrador
     End Sub
     'zona de funciones varias-----------
     '-----------------------------------
-
     Private Sub invisibilizarTodos()
         Dim paneles = New List(Of Panel)({panelEmpleado, panelCliente, panelGasolina, panelProductos, panelProveedor})
         For Each p As Panel In paneles
@@ -58,7 +57,8 @@ Public Class GestionesDelAdministrador
         Try
             invisibilizarTodosExcepto(panelEmpleado)
         Catch ex As Exception
-
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "CRUD")
         End Try
     End Sub
 
@@ -66,7 +66,8 @@ Public Class GestionesDelAdministrador
         Try
             invisibilizarTodosExcepto(panelCliente)
         Catch ex As Exception
-
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "CRUD")
         End Try
     End Sub
 
@@ -74,7 +75,8 @@ Public Class GestionesDelAdministrador
         Try
             invisibilizarTodosExcepto(panelProductos)
         Catch ex As Exception
-
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "CRUD")
         End Try
     End Sub
 
@@ -82,7 +84,8 @@ Public Class GestionesDelAdministrador
         Try
             invisibilizarTodosExcepto(panelGasolina)
         Catch ex As Exception
-
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "CRUD")
         End Try
     End Sub
 
@@ -90,7 +93,8 @@ Public Class GestionesDelAdministrador
         Try
             invisibilizarTodosExcepto(panelProveedor)
         Catch ex As Exception
-
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "CRUD")
         End Try
     End Sub
 
@@ -325,7 +329,6 @@ Public Class GestionesDelAdministrador
         End Try
     End Sub
 
-
     Private Sub MostrarTodosProductos()
         Try
             Dim cmd As New OleDbCommand("Select * from Productos", conn)
@@ -356,14 +359,11 @@ Public Class GestionesDelAdministrador
         End Try
     End Sub
 
-
     'zona agregaciones----------------------
     '---------------------------------------
     Public Sub AgregarEmpleado(id As Integer, nombre As String, apellido1 As String, apellido2 As String, telefono As String, correo As String, contraseña As String, administrador As Integer, cargo As String)
-
         Try
             conn.Open()
-
             Using cmd As New OleDbCommand("Insert into Empleados([id], [Nombre], [Apellido 1], [Apellido 2], [Telefono], [Correo], [Contraseña], [Administrador], [Cargo]) 
             values (?, ?, ?, ?, ?, ?, ?, ?, ?)", conn)
                 cmd.Parameters.Add(New OleDbParameter("id", id))
@@ -381,7 +381,6 @@ Public Class GestionesDelAdministrador
                 Else
                     MessageBox.Show("No se permiten crear jefes, solamente administradores y trabajadores", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 End If
-
             End Using
         Catch ex As Exception
             MessageBox.Show("Hubo un error con la agregacion del empleado, trate de introducir los datos correctamente", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -393,9 +392,7 @@ Public Class GestionesDelAdministrador
     End Sub
 
     Public Sub AgregarProducto(id As Integer, nombre As String, precio As Single, proveedor As Integer, gama As Integer)
-
         Try
-
             conn.Open()
             Dim prov As DataRow = BuscarProveedor(proveedor)
             If prov Is Nothing Then
@@ -412,7 +409,6 @@ Public Class GestionesDelAdministrador
                     MsgBox("Se agrego el producto " & nombre & " correctamente")
                 End Using
             End If
-
         Catch ex As Exception
             MessageBox.Show("Hubo un error con la agregacion del producto, trate de introducir los datos correctamente", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
@@ -420,11 +416,9 @@ Public Class GestionesDelAdministrador
         Finally
             conn.Close()
         End Try
-
     End Sub
 
     Private Sub AgregarCliente(id As Integer, nombre As String, apellido1 As String, apellido2 As String, telefono As String, correo As String, fecha As Date, alta As Integer)
-
         Try
             conn.Open()
             Using cmd As New OleDbCommand("Insert into Clientes([id],[Nombre],[Apellido 1],[Apellido 2],[Telefono],[Correo],[FechaAlta],[Alta])
@@ -447,17 +441,12 @@ Public Class GestionesDelAdministrador
         Finally
             conn.Close()
         End Try
-
     End Sub
 
     Private Sub AgregarProveedor(id As Integer, nombre As String)
-
         Try
-
             conn.Open()
-
             Using cmd As New OleDbCommand("Insert into Proveedores([id], [Nombre]) Values(?, ?)", conn)
-
                 cmd.Parameters.Add(New OleDbParameter("id", id))
                 cmd.Parameters.Add(New OleDbParameter("nombre", nombre))
                 cmd.ExecuteNonQuery()
@@ -470,21 +459,17 @@ Public Class GestionesDelAdministrador
         Finally
             conn.Close()
         End Try
-
     End Sub
 
     'zona Modificaciones------------------------------
     '-------------------------------------------------
 
     Private Sub ModificarEmpleado(id As Integer, nombre As String, apellido1 As String, apellido2 As String, telefono As String, correo As String, contraseña As String, cargo As String, administrador As Integer)
-
         Try
             Dim comprobar As Boolean = False
             conn.Open()
-
             Using cmd0 As New OleDbCommand("Select Administrador from Empleados where id = @id", conn)
                 cmd0.Parameters.AddWithValue("@id", id)
-
                 Dim reader As OleDbDataReader = cmd0.ExecuteReader()
                 If reader.HasRows() Then
                     While reader.Read()
@@ -493,13 +478,10 @@ Public Class GestionesDelAdministrador
                         End If
                     End While
                 End If
-
             End Using
-
             Using cmd As New OleDbCommand("Update Empleados set Nombre = ?, [Apellido 1] = ?,
             [Apellido 2] = ?, Telefono = ?, Correo = ?, Contraseña = ?, Cargo = ?, Administrador = ?
             where id = ?", conn)
-
                 cmd.Parameters.Add(New OleDbParameter("nombre", nombre))
                 cmd.Parameters.Add(New OleDbParameter("apellido1", apellido1))
                 cmd.Parameters.Add(New OleDbParameter("apellido2", apellido2))
@@ -509,7 +491,6 @@ Public Class GestionesDelAdministrador
                 cmd.Parameters.Add(New OleDbParameter("cargo", cargo))
                 cmd.Parameters.Add(New OleDbParameter("administrador", administrador))
                 cmd.Parameters.Add(New OleDbParameter("id", id))
-
                 If comprobar = True Then
                     MessageBox.Show("No se pudo hacer la modificacion ya que el jefe no se puede modificar", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Else
@@ -525,12 +506,9 @@ Public Class GestionesDelAdministrador
             conn.Close()
         End Try
     End Sub
-
     Private Sub ModificarCliente(id As Integer, nombre As String, apellido1 As String, apellido2 As String, telefono As String, correo As String, fechaAlta As Date, alta As Integer)
-
         Try
             conn.Open()
-
             Dim cl As DataRow = BuscarCliente(id)
             If cl Is Nothing Then
                 MessageBox.Show("El cliente a actualizar no existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -553,22 +531,14 @@ Public Class GestionesDelAdministrador
             MessageBox.Show("Hubo un error con la actualizacion del cliente, trate de introducir bien los datos" & ex.Message, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "GestionesAdministrador, ModificarCliente()")
-
         Finally
-
             conn.Close()
-
         End Try
-
     End Sub
 
-
     Private Sub ModificarProductos(id As Integer, nombre As String, precio As Single, proveedor As Integer, gama As Integer)
-
         Try
-
             conn.Open()
-
             Dim comprobar As Boolean = False
             Dim prov As DataRow = BuscarProveedor(proveedor)
             If Not prov Is Nothing Then
@@ -628,13 +598,8 @@ Public Class GestionesDelAdministrador
 
     End Sub
 
-
-
-
     Private Sub ModificarGasolina(id As Integer, nombre As String, cantidad As Integer, precio As Single)
-
         Try
-
             conn.Open()
 
             Dim gas As DataRow = BuscarGasolina(id)
@@ -826,7 +791,8 @@ Public Class GestionesDelAdministrador
                 limpiarEmpleado()
             End If
         Catch ex As Exception
-
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "CRUD")
         End Try
     End Sub
 
@@ -847,7 +813,8 @@ Public Class GestionesDelAdministrador
                 limpiarEmpleado()
             End If
         Catch ex As Exception
-
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "CRUD")
         End Try
     End Sub
 
@@ -859,7 +826,8 @@ Public Class GestionesDelAdministrador
                 EliminarEmpleado(tbIdEmpleado.Text)
             End If
         Catch ex As Exception
-
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "CRUD")
         End Try
     End Sub
 
@@ -868,7 +836,8 @@ Public Class GestionesDelAdministrador
             falseoProgressBar()
             MostrarTodosEmpleados()
         Catch ex As Exception
-
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "CRUD")
         End Try
     End Sub
 
@@ -877,7 +846,8 @@ Public Class GestionesDelAdministrador
             falseoProgressBar()
             MostrarTodosClientes()
         Catch ex As Exception
-
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "CRUD")
         End Try
     End Sub
 
@@ -897,7 +867,8 @@ Public Class GestionesDelAdministrador
                 limpiarCliente()
             End If
         Catch ex As Exception
-
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "CRUD")
         End Try
     End Sub
 
@@ -917,7 +888,8 @@ Public Class GestionesDelAdministrador
                 limpiarCliente()
             End If
         Catch ex As Exception
-
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "CRUD")
         End Try
     End Sub
 
@@ -929,7 +901,8 @@ Public Class GestionesDelAdministrador
                 EliminarCliente(tbIdCliente.Text)
             End If
         Catch ex As Exception
-
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "CRUD")
         End Try
     End Sub
 
@@ -938,7 +911,8 @@ Public Class GestionesDelAdministrador
             falseoProgressBar()
             MostrarTodosProductos()
         Catch ex As Exception
-
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "CRUD")
         End Try
     End Sub
 
@@ -954,7 +928,8 @@ Public Class GestionesDelAdministrador
                 limpiarProducto()
             End If
         Catch ex As Exception
-
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "CRUD")
         End Try
     End Sub
 
@@ -969,7 +944,8 @@ Public Class GestionesDelAdministrador
                 limpiarProducto()
             End If
         Catch ex As Exception
-
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "CRUD")
         End Try
     End Sub
 
@@ -981,7 +957,8 @@ Public Class GestionesDelAdministrador
                 EliminarProducto(tbIdProducto.Text)
             End If
         Catch ex As Exception
-
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "CRUD")
         End Try
     End Sub
 
@@ -990,7 +967,8 @@ Public Class GestionesDelAdministrador
             falseoProgressBar()
             MostrarTodasGasolinas()
         Catch ex As Exception
-
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "CRUD")
         End Try
     End Sub
 
@@ -1005,7 +983,8 @@ Public Class GestionesDelAdministrador
                 limpiarGasolina()
             End If
         Catch ex As Exception
-
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "CRUD")
         End Try
     End Sub
 
@@ -1014,7 +993,8 @@ Public Class GestionesDelAdministrador
             falseoProgressBar()
             MostrarTodosProveedores()
         Catch ex As Exception
-
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "CRUD")
         End Try
     End Sub
 
@@ -1028,7 +1008,8 @@ Public Class GestionesDelAdministrador
                 limpiarProveedor()
             End If
         Catch ex As Exception
-
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "CRUD")
         End Try
     End Sub
 
@@ -1042,7 +1023,8 @@ Public Class GestionesDelAdministrador
                 limpiarProveedor()
             End If
         Catch ex As Exception
-
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "CRUD")
         End Try
     End Sub
 
@@ -1054,12 +1036,13 @@ Public Class GestionesDelAdministrador
                 EliminarProveedor(tbIdProveedor.Text)
             End If
         Catch ex As Exception
-
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "CRUD")
         End Try
     End Sub
 
-
-    'zona menusStrip
+    'zona menusStrip-------------
+    '----------------------------
 
     Private Sub CerrarSesionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarSesionToolStripMenuItem.Click
         Inicio.Show()
@@ -1117,5 +1100,4 @@ Public Class GestionesDelAdministrador
         tbPrecioGasolina.Clear()
         tbCantidadGasolina.Clear()
     End Sub
-
 End Class
