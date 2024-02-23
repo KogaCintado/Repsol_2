@@ -137,7 +137,7 @@ Public Class Inicio
         Me.Show()
 
         Gasolina.Close()
-        GestionesAdministrador.Close()
+        GestionesDelAdministrador.Close()
         Efectivo.Close()
         Opciones.Close()
         Trabajar.Close()
