@@ -477,7 +477,7 @@ Public Class validacionesCrud
 
 
 
-    Private Function validarCantidad(tb As TextBox, str As String) As Boolean
+    Public Function validarCantidad(tb As TextBox, str As String) As Boolean
         Dim contadorComas As Integer = 0
         Dim contadorPuntos As Integer = 0
 
@@ -511,7 +511,7 @@ Public Class validacionesCrud
 
     End Function
 
-    Private Function validarPrecio(tb As TextBox, str As String) As Boolean
+    Public Function validarPrecio(tb As TextBox, str As String) As Boolean
         'en esta funcion lo que hacemos es comprobar si tiene mas de un punto o mas de una coma o si tiene letras
         'o si tiene un punto y una coma. En caso de que tenga mas de uno de estos caracteres o una combinacion de ellos
         'mostraremos un mensaje de error
@@ -552,7 +552,7 @@ Public Class validacionesCrud
         End If
     End Function
 
-    Private Function validarGama(tb As TextBox, str As String) As Boolean
+    Public Function validarGama(tb As TextBox, str As String) As Boolean
 
         'en esta funcion vamos a validar que la gama (su id) este dentro de la tabla gamas.
         'para ello vamos a hacer una consulta a la base de datos access utilizando comandos en olebd

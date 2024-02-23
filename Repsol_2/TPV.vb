@@ -233,14 +233,15 @@ Public Class TPV
             'En este boton lo que hacemos es buscar un Cliente por su id
             'Si el id no existe, mostramos un mensaje de error
             'Si el id existe, mostramos los datos del Cliente
-            Dim validado As Boolean = GestionesAdministrador.validarIDs(tbIdCliente, tbIdCliente.Text)
+            Dim validaciones As New validacionesCrud
+            Dim validado As Boolean = validaciones.validarIDs(tbIdCliente, tbIdCliente.Text)
             If validado = False Then
                 Try
 
                     Dim idCliente As Integer
                     idCliente = tbIdCliente.Text
                     Dim cliente As DataRow
-                    cliente = GestionesAdministrador.BuscarCliente(idCliente)
+                    cliente = GestionesDelAdministrador.BuscarCliente(idCliente)
                     If cliente Is Nothing Then
                         MessageBox.Show("No existe un cliente con ese id")
                     Else
@@ -264,11 +265,12 @@ Public Class TPV
             'Si el id ya existe, mostramos un mensaje de error
             'Si el id no existe, creamos el Cliente
             'Dim validacion1 As Boolean = GestionesAdministrador.validarIDs(tbIdCliente, tbIdCliente.Text)
-            Dim validacion2 As Boolean = GestionesAdministrador.validarCorreos(tbCorreoCliente, tbCorreoCliente.Text)
-            Dim validacion3 As Boolean = GestionesAdministrador.validarTelefonos(tbTelefonoCliente, tbTelefonoCliente.Text)
-            Dim validacion5 As Boolean = GestionesAdministrador.validarNOmbreYApellidos(tbNombreCliente, tbNombreCliente.Text)
-            Dim validacion6 As Boolean = GestionesAdministrador.validarNOmbreYApellidos(tbApellido1Cliente, tbApellido1Cliente.Text)
-            Dim validacion7 As Boolean = GestionesAdministrador.validarNOmbreYApellidos(tbApellido2Cliente, tbApellido2Cliente.Text)
+            Dim validaciones As New validacionesCrud
+            Dim validacion2 As Boolean = validaciones.validarCorreos(tbCorreoCliente, tbCorreoCliente.Text)
+            Dim validacion3 As Boolean = validaciones.validarTelefonos(tbTelefonoCliente, tbTelefonoCliente.Text)
+            Dim validacion5 As Boolean = validaciones.validarNOmbreYApellidos(tbNombreCliente, tbNombreCliente.Text)
+            Dim validacion6 As Boolean = validaciones.validarNOmbreYApellidos(tbApellido1Cliente, tbApellido1Cliente.Text)
+            Dim validacion7 As Boolean = validaciones.validarNOmbreYApellidos(tbApellido2Cliente, tbApellido2Cliente.Text)
             If validacion2 = False And validacion3 = False And validacion5 = False And validacion6 = False And validacion7 = False Then
                 Dim validado As Boolean = True
 
