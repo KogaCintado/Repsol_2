@@ -65,6 +65,10 @@ Partial Class TPV
         Me.Label1 = New System.Windows.Forms.Label()
         Me.LinkLabelRepsol = New System.Windows.Forms.LinkLabel()
         Me.LinkLblCondiciones = New System.Windows.Forms.LinkLabel()
+        Me.lblSocioInfo = New System.Windows.Forms.Label()
+        Me.lblSocioEuro = New System.Windows.Forms.Label()
+        Me.lblDescSocio = New System.Windows.Forms.Label()
+        Me.panelSocioDesc = New System.Windows.Forms.Panel()
         IdLabel1 = New System.Windows.Forms.Label()
         NombreLabel1 = New System.Windows.Forms.Label()
         Apellido_1Label1 = New System.Windows.Forms.Label()
@@ -76,6 +80,7 @@ Partial Class TPV
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelCosasCliente.SuspendLayout()
         Me.PanelIsCliente.SuspendLayout()
+        Me.panelSocioDesc.SuspendLayout()
         Me.SuspendLayout()
         '
         'IdLabel1
@@ -422,6 +427,7 @@ Partial Class TPV
         Me.FechaAltaClienteTimePicker.Name = "FechaAltaClienteTimePicker"
         Me.FechaAltaClienteTimePicker.Size = New System.Drawing.Size(200, 20)
         Me.FechaAltaClienteTimePicker.TabIndex = 13
+        Me.FechaAltaClienteTimePicker.Value = New Date(2024, 2, 22, 23, 43, 9, 0)
         '
         'PanelIsCliente
         '
@@ -480,11 +486,53 @@ Partial Class TPV
         Me.LinkLblCondiciones.TabStop = True
         Me.LinkLblCondiciones.Text = "Términos y condiciones"
         '
+        'lblSocioInfo
+        '
+        Me.lblSocioInfo.AutoSize = True
+        Me.lblSocioInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSocioInfo.Location = New System.Drawing.Point(3, 14)
+        Me.lblSocioInfo.Name = "lblSocioInfo"
+        Me.lblSocioInfo.Size = New System.Drawing.Size(240, 18)
+        Me.lblSocioInfo.TabIndex = 69
+        Me.lblSocioInfo.Text = "Descuento de socio aplicado(-2%)."
+        '
+        'lblSocioEuro
+        '
+        Me.lblSocioEuro.AutoSize = True
+        Me.lblSocioEuro.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSocioEuro.Location = New System.Drawing.Point(322, 14)
+        Me.lblSocioEuro.Name = "lblSocioEuro"
+        Me.lblSocioEuro.Size = New System.Drawing.Size(18, 20)
+        Me.lblSocioEuro.TabIndex = 71
+        Me.lblSocioEuro.Text = "€"
+        '
+        'lblDescSocio
+        '
+        Me.lblDescSocio.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDescSocio.Location = New System.Drawing.Point(257, 14)
+        Me.lblDescSocio.Name = "lblDescSocio"
+        Me.lblDescSocio.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.lblDescSocio.Size = New System.Drawing.Size(67, 20)
+        Me.lblDescSocio.TabIndex = 70
+        Me.lblDescSocio.Text = "0,00"
+        Me.lblDescSocio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'panelSocioDesc
+        '
+        Me.panelSocioDesc.Controls.Add(Me.lblSocioInfo)
+        Me.panelSocioDesc.Controls.Add(Me.lblSocioEuro)
+        Me.panelSocioDesc.Controls.Add(Me.lblDescSocio)
+        Me.panelSocioDesc.Location = New System.Drawing.Point(22, 676)
+        Me.panelSocioDesc.Name = "panelSocioDesc"
+        Me.panelSocioDesc.Size = New System.Drawing.Size(350, 46)
+        Me.panelSocioDesc.TabIndex = 72
+        '
         'TPV
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
+        Me.Controls.Add(Me.panelSocioDesc)
         Me.Controls.Add(Me.LinkLblCondiciones)
         Me.Controls.Add(Me.LinkLabelRepsol)
         Me.Controls.Add(Me.PanelIsCliente)
@@ -516,6 +564,8 @@ Partial Class TPV
         Me.panelCosasCliente.PerformLayout()
         Me.PanelIsCliente.ResumeLayout(False)
         Me.PanelIsCliente.PerformLayout()
+        Me.panelSocioDesc.ResumeLayout(False)
+        Me.panelSocioDesc.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -556,4 +606,8 @@ Partial Class TPV
     Friend WithEvents Label1 As Label
     Friend WithEvents LinkLabelRepsol As LinkLabel
     Friend WithEvents LinkLblCondiciones As LinkLabel
+    Friend WithEvents lblSocioInfo As Label
+    Friend WithEvents lblSocioEuro As Label
+    Friend WithEvents lblDescSocio As Label
+    Friend WithEvents panelSocioDesc As Panel
 End Class

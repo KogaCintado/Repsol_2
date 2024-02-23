@@ -119,6 +119,7 @@ Public Class TPV
             box += precio
         Next
         lblResultado.Text = box.ToString("F")
+        lblDescSocio.Text = (box * 0, 98).ToString("F")
 
     End Sub
 
@@ -152,11 +153,17 @@ Public Class TPV
         If (lblResultado.Text = "0,00") Then
             Return
         ElseIf (CSng(lblResultado.Text) >= 5000) Then
-            MsgBox("Para pedidos superiores a 5.000 euros, use la tarjeta.")
+            MsgBox("Para pedidos grandes, use la tarjeta.")
             Return
         End If
+
         Efectivo.ShowDialog()
-        Efectivo.lblPrecioInicial.Text = lblResultado.Text
+        If (panelSocioDesc.Visible = True) Then
+            Efectivo.lblPrecioInicial.Text = lblDescSocio.Text
+        Else
+            Efectivo.lblPrecioInicial.Text = lblResultado.Text
+        End If
+
     End Sub
 
     'Procedimiento asignado a un botón que, al seleccionarlo, Hace la tarea de simular conexión con un datáfono, guarda el pedido e imprime el ticket.
@@ -170,10 +177,17 @@ Public Class TPV
             Return
         End If
 
+        Dim total As String
+        If (panelSocioDesc.Visible = True) Then
+            total = lblDescSocio.Text
+        Else
+            total = lblResultado.Text
+        End If
         'Dim caja As New Archivos.HacerCaja
         'caja.CajaTemporal(Single.Parse(lblResultado.Text), Single.Parse("0,00"), lblUser.Text)
+
         Dim a As New Ticket
-        a.ImprimirTicketTarjeta(lblUser.Text, tarjeta, lblResultado.Text, lbNombreProductos, lbPrecios)
+        a.ImprimirTicketTarjeta(lblUser.Text, tarjeta, total, lbNombreProductos, lbPrecios)
     End Sub
 
     Private Sub btnEsCliente_Click(sender As Object, e As EventArgs) Handles btnEsCliente.Click
@@ -184,11 +198,13 @@ Public Class TPV
         tbTelefonoCliente.Enabled = False
         tbCorreoCliente.Enabled = False
 
+        btnAccionBuscarCliente.Enabled = True
         btnAccionBuscarCliente.Text = "Buscar"
         panelCosasCliente.Visible = True
     End Sub
 
     Private Sub btnCrearCliente_Click(sender As Object, e As EventArgs) Handles btnCrearCliente.Click
+        FechaAltaClienteTimePicker.Value = Date.Now
         PanelIsCliente.Visible = False
         tbNombreCliente.Enabled = True
         tbApellido1Cliente.Enabled = True
@@ -196,6 +212,7 @@ Public Class TPV
         tbTelefonoCliente.Enabled = True
         tbCorreoCliente.Enabled = True
 
+        btnAccionBuscarCliente.Enabled = True
         btnAccionBuscarCliente.Text = "Crear"
         panelCosasCliente.Visible = True
     End Sub
@@ -216,18 +233,59 @@ Public Class TPV
                     If cliente Is Nothing Then
                         MessageBox.Show("No existe un cliente con ese id")
                     Else
+                        btnAccionBuscarCliente.Enabled = False
                         tbNombreCliente.Text = cliente("Nombre")
                         tbApellido1Cliente.Text = cliente("Apellido 1")
                         tbApellido2Cliente.Text = cliente("Apellido 2")
                         tbTelefonoCliente.Text = cliente("Telefono")
                         tbCorreoCliente.Text = cliente("Correo")
                         FechaAltaClienteTimePicker.Value = cliente("FechaAlta")
+                        panelSocioDesc.Visible = True
                     End If
                 Catch ex As Exception
                     MsgBox("Hubo un error con la busqueda del cliente, trate de introducir bien los datos")
                     Dim guardar As New Archivo
                     guardar.GuardarError(ex, "TPV, btnAccionBuscarCliente_Click")
                 End Try
+            End If
+        ElseIf (btnAccionBuscarCliente.Text = "Crear") Then
+            'En este boton lo que hacemos es crear un Cliente
+            'Si el id ya existe, mostramos un mensaje de error
+            'Si el id no existe, creamos el Cliente
+            Dim validacion1 As Boolean = GestionesAdministrador.validarIDs(tbIdCliente, tbIdCliente.Text)
+            Dim validacion2 As Boolean = GestionesAdministrador.validarCorreos(tbCorreoCliente, tbCorreoCliente.Text)
+            Dim validacion3 As Boolean = GestionesAdministrador.validarTelefonos(tbTelefonoCliente, tbTelefonoCliente.Text)
+            Dim validacion5 As Boolean = GestionesAdministrador.validarNOmbreYApellidos(tbNombreCliente, tbNombreCliente.Text)
+            Dim validacion6 As Boolean = GestionesAdministrador.validarNOmbreYApellidos(tbApellido1Cliente, tbApellido1Cliente.Text)
+            Dim validacion7 As Boolean = GestionesAdministrador.validarNOmbreYApellidos(tbApellido2Cliente, tbApellido2Cliente.Text)
+            If validacion1 = False And validacion2 = False And validacion3 = False And validacion5 = False And validacion6 = False And validacion7 = False Then
+                Dim validado As Boolean = True
+
+                If validado Then
+                    Try
+                        Dim idCliente As Integer
+                        idCliente = tbIdCliente.Text
+                        Dim cliente As DataRow
+                        cliente = GestionesAdministrador.BuscarCliente(idCliente)
+                        If cliente Is Nothing Then
+                            Dim nombre As String = tbNombreCliente.Text
+                            Dim apellido1 As String = tbApellido1Cliente.Text
+                            Dim apellido2 As String = tbApellido2Cliente.Text
+                            Dim telefono As String = tbTelefonoCliente.Text
+                            Dim correo As String = tbCorreoCliente.Text
+                            Dim fechaAlta As Date = FechaAltaClienteTimePicker.Value
+                            AgregarCliente(nombre, apellido1, apellido2, telefono, correo, fechaAlta)
+                            MessageBox.Show("Cliente creado con éxito")
+                            panelSocioDesc.Visible = True
+                        Else
+                            MessageBox.Show("Ya existe un cliente con ese id")
+                        End If
+                    Catch ex As Exception
+                        MsgBox("Hubo un error con la creación del cliente, trate de introducir bien los datos")
+                        Dim guardar As New Archivo
+                        guardar.GuardarError(ex, "TPV, btnAccionBuscarCliente_Click")
+                    End Try
+                End If
             End If
         End If
     End Sub
@@ -318,5 +376,37 @@ Public Class TPV
 
     End Sub
 
+    Private Sub AgregarCliente(nombre As String, apellido1 As String, apellido2 As String, telefono As String, correo As String, fecha As Date)
+        Dim id As Integer
+        Try
+            conn.Open()
+            Using cmd As New OleDbCommand("SELECT MAX(id) FROM clientes", conn)
+                cmd.Parameters.Add(New OleDbParameter(“id”, id))
 
+                id = Integer.Parse(cmd.ExecuteScalar().ToString())
+
+            End Using
+
+
+            Using cmd As New OleDbCommand("Insert into Clientes([id],[Nombre],[Apellido 1],[Apellido 2],[Telefono],[Correo],[FechaAlta],1)
+                values(?, ?, ?, ?, ?, ?, ?, ?)", conn)
+                cmd.Parameters.Add(New OleDbParameter("id", id))
+                cmd.Parameters.Add(New OleDbParameter("nombre", nombre))
+                cmd.Parameters.Add(New OleDbParameter("apellido1", apellido1))
+                cmd.Parameters.Add(New OleDbParameter("apellido2", apellido2))
+                cmd.Parameters.Add(New OleDbParameter("telefono", telefono))
+                cmd.Parameters.Add(New OleDbParameter("correo", correo))
+                cmd.Parameters.Add(New OleDbParameter("fechaAlta", fecha))
+                cmd.ExecuteNonQuery()
+                MsgBox("Se agrego el cliente: " & nombre)
+            End Using
+        Catch ex As Exception
+            MsgBox("Hubo un error a la hora de agregar el cliente: " & ex.Message)
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "TPV, Agregar Cliente")
+        Finally
+            conn.Close()
+        End Try
+
+    End Sub
 End Class

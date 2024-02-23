@@ -1842,7 +1842,7 @@ Public Class GestionesAdministrador
         End Try
 
     End Function
-    Private Function validarNombreEmpresa(tb As TextBox, str As String) As Boolean
+    Public Function validarNombreEmpresa(tb As TextBox, str As String) As Boolean
         'en esta funcion solamente validaremos que no este vacio el campo de nombre de la empresa
         If str = "" Then
             MsgBox("El campo de nombre no puede estar vacio")
@@ -1852,7 +1852,7 @@ Public Class GestionesAdministrador
         End If
     End Function
 
-    Private Function validarAlta(tb As TextBox, str As String) As Boolean
+    Public Function validarAlta(tb As TextBox, str As String) As Boolean
 
         If str = "" Then
             MsgBox("El campo de altas no puede estar vacio")
