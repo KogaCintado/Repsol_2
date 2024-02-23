@@ -42,4 +42,7 @@ Public Class TarjetaRepsol
         Next
     End Sub
 
+    Private Sub TarjetaRepsol_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
