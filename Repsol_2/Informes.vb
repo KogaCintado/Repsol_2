@@ -25,7 +25,7 @@ Public Class Informes
                 CrystalReportViewer1.ReportSource = reporte
             End Using
         Catch ex As Exception
-            MsgBox("Hubo un error con la carga del informe")
+            MessageBox.Show("Hubo un error en la carga del informe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "Informes, verDatosEmpleados()")
         Finally
@@ -47,7 +47,7 @@ Public Class Informes
                 CrystalReportViewer1.ReportSource = reporte
             End Using
         Catch ex As Exception
-            MsgBox("Hubo un error con la carga del informe")
+            MessageBox.Show("Hubo un error en la carga del informe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "Informes, verDatosClientes()")
         Finally
@@ -69,7 +69,7 @@ Public Class Informes
                 CrystalReportViewer1.ReportSource = reporte
             End Using
         Catch ex As Exception
-            MsgBox("Hubo un error con la carga del informe")
+            MessageBox.Show("Hubo un error en la carga del informe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "Informes, verDatosProductos()")
         Finally
@@ -91,7 +91,7 @@ Public Class Informes
                 CrystalReportViewer1.ReportSource = reporte
             End Using
         Catch ex As Exception
-            MsgBox("Hubo un error con la carga del informe")
+            MessageBox.Show("Hubo un error en la carga del informe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "Informes, verDatosGasolinas()")
         Finally
@@ -113,7 +113,7 @@ Public Class Informes
                 CrystalReportViewer1.ReportSource = reporte
             End Using
         Catch ex As Exception
-            MsgBox("Hubo un error con la carga del informe")
+            MessageBox.Show("Hubo un error en la carga del informe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "Informes, verDatosProveedores()")
         Finally
@@ -135,7 +135,7 @@ Public Class Informes
                 CrystalReportViewer1.ReportSource = reporte
             End Using
         Catch ex As Exception
-            MsgBox("Hubo un error con la carga del informe")
+            MessageBox.Show("Hubo un error en la carga del informe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "Informes, verDatosGamas()")
         Finally

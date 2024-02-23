@@ -20,8 +20,6 @@ Public Class Inicio
 
 
             If loggin(tbUsername.Text.Trim(), tbPassword.Text.Trim()) = True Then
-
-                MsgBox("Bienvenido!")
                 Me.Hide()
                 Opciones.Show()
                 ErrorProvider1.Clear()
@@ -30,7 +28,6 @@ Public Class Inicio
                 archivo.GuardarDatosEnArchivo("config/logs.txt", "El usuario " & tbUsername.Text & " ha iniciado sesion")
 
             Else
-                MsgBox("Usuario o contraseña incorrectos, intentelo de nuevo")
                 archivo.GuardarDatosEnArchivo("config/logs.txt", "INTENTO inicio de sesión. " & " Usuario: " & tbUsername.Text & ", contraseña: " & tbPassword.Text)
                 tbPassword.Clear()
                 tbUsername.Clear()
@@ -119,6 +116,12 @@ Public Class Inicio
                         If reader("Administrador").ToString() = 1 Or reader("Administrador").ToString() = 2 Then
                             admin = True
                             MsgBox("Ha iniciado como administrador")
+                            tbUsername.Clear()
+                            tbPassword.Clear()
+                        ElseIf reader("Administrador").ToString() = 0 Then
+                            MsgBox("Ha iniciado como empleado")
+                            tbUsername.Clear()
+                            tbPassword.Clear()
                         End If
                     End While
                     Return True

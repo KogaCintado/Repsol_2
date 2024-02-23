@@ -546,7 +546,7 @@ Public Class GestionesAdministrador
                 Dim empleado As DataRow
                 empleado = BuscarEmpleado(idEmpleado)
                 If empleado Is Nothing Then
-                    MessageBox.Show("No existe un empleado con ese id")
+                    MessageBox.Show("No existe un empleado con ese id", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Else
                     tbNombreEmpleado.Text = empleado("Nombre")
                     tbApellido1Empleado.Text = empleado("Apellido 1")
@@ -581,7 +581,7 @@ Public Class GestionesAdministrador
                 Dim cliente As DataRow
                 cliente = BuscarCliente(idCliente)
                 If cliente Is Nothing Then
-                    MessageBox.Show("No existe un cliente con ese id")
+                    MessageBox.Show("No existe un cliente con ese id", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Else
                     tbNombreCliente.Text = cliente("Nombre")
                     tbApellido1Cliente.Text = cliente("Apellido 1")
@@ -591,7 +591,6 @@ Public Class GestionesAdministrador
                     FechaAltaClienteTimePicker.Value = cliente("FechaAlta")
                 End If
             Catch ex As Exception
-                MsgBox("Hubo un error con la busqueda del cliente, trate de introducir bien los datos")
                 Dim guardar As New Archivo
                 guardar.GuardarError(ex, "GestionesAdministrador, btnAccionBuscarCliente_Click")
             End Try
@@ -613,7 +612,7 @@ Public Class GestionesAdministrador
                 Dim producto As DataRow
                 producto = BuscarProducto(idProducto)
                 If producto Is Nothing Then
-                    MessageBox.Show("No existe un producto con ese id")
+                    MessageBox.Show("No existe un producto con ese id", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Else
                     tbNombreProducto.Text = producto("Nombre")
                     tbPrecioProducto.Text = producto("Precio")
@@ -621,7 +620,6 @@ Public Class GestionesAdministrador
                     tbGamaProducto.Text = producto("Gama")
                 End If
             Catch ex As Exception
-                MsgBox("Hubo un error con la busqueda del producto, trate de introducir bien los datos")
                 Dim guardar As New Archivo
                 guardar.GuardarError(ex, "GestionesAdministrador, btnAccionBuscarProducto_Click")
             End Try
@@ -651,7 +649,7 @@ Public Class GestionesAdministrador
                     tbCantidadGasolina.Text = gasolina("Cantidad")
                 End If
             Catch ex As Exception
-                MsgBox("Hubo un error con la busqueda de la gasolina, trate de introducir bien los datos")
+                MessageBox.Show("Hubo un error en la busqueda de la gasolina, trate de introducir bien los datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Dim guardar As New Archivo
                 guardar.GuardarError(ex, "GestionesAdministrador, btnAccionBuscarGasolina_Click")
             End Try
@@ -672,12 +670,11 @@ Public Class GestionesAdministrador
                 Dim proveedor As DataRow
                 proveedor = BuscarProveedor(idProveedor)
                 If proveedor Is Nothing Then
-                    MessageBox.Show("No existe un proveedor con ese id")
+                    MessageBox.Show("No existe un proveedor con ese id", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Else
                     tbNombreProveedor.Text = proveedor("Nombre")
                 End If
             Catch ex As Exception
-                MsgBox("Hubo un error con la busqueda del proveedor, trate de introducir bien los datos")
                 Dim guardar As New Archivo
                 guardar.GuardarError(ex, "GestionesAdministrador, btnAccionBuscarProveedor_Click")
             End Try
@@ -694,8 +691,9 @@ Public Class GestionesAdministrador
         Dim validacion5 As Boolean = validarNOmbreYApellidos(tbNombreEmpleadoAgregar, tbNombreEmpleadoAgregar.Text)
         Dim validacion6 As Boolean = validarNOmbreYApellidos(tbApellido1EmpleadoAgregar, tbApellido1EmpleadoAgregar.Text)
         Dim validacion7 As Boolean = validarNOmbreYApellidos(tbApellido2EmpleadoAgregar, tbApellido2EmpleadoAgregar.Text)
+        Dim validacion8 As Boolean = validarAdministrador(tbAdministradorEmpleadoAgregar, tbAdministradorEmpleadoAgregar.Text)
 
-        If validacion1 = False And validacion2 = False And validacion3 = False And validacion4 = False And validacion5 = False And validacion6 = False And validacion7 = False Then
+        If validacion1 = False And validacion2 = False And validacion3 = False And validacion4 = False And validacion5 = False And validacion6 = False And validacion7 = False And validacion8 = False Then
             falseoProgressBar()
             AgregarEmpleado(tbIdEmpleadoAgregar.Text, tbNombreEmpleadoAgregar.Text, tbApellido1EmpleadoAgregar.Text, tbApellido2EmpleadoAgregar.Text,
                         tbTelefonoEmpleadoAgregar.Text, tbCorreoEmpleadoAgregar.Text, tbContraseñaEmpleadoAgregar.Text, tbAdministradorEmpleadoAgregar.Text, tbCargoEmpleadoAgregar.Text)
@@ -704,12 +702,12 @@ Public Class GestionesAdministrador
     End Sub
 
     Private Sub btnAccionAgregarCliente_Click(sender As Object, e As EventArgs) Handles btnAccionAgregarCliente.Click
-        Dim validacion1 As Boolean = validarIDs(tbIdEmpleadoAgregar, tbIdEmpleadoAgregar.Text)
-        Dim validacion2 As Boolean = validarCorreos(tbCorreoEmpleadoAgregar, tbCorreoEmpleadoAgregar.Text)
-        Dim validacion3 As Boolean = validarTelefonos(tbTelefonoEmpleadoAgregar, tbTelefonoEmpleadoAgregar.Text)
-        Dim validacion5 As Boolean = validarNOmbreYApellidos(tbNombreEmpleadoAgregar, tbNombreEmpleadoAgregar.Text)
-        Dim validacion6 As Boolean = validarNOmbreYApellidos(tbApellido1EmpleadoAgregar, tbApellido1EmpleadoAgregar.Text)
-        Dim validacion7 As Boolean = validarNOmbreYApellidos(tbApellido2EmpleadoAgregar, tbApellido2EmpleadoAgregar.Text)
+        Dim validacion1 As Boolean = validarIDs(tbIdClienteAgregar, tbIdClienteAgregar.Text)
+        Dim validacion2 As Boolean = validarCorreos(tbCorreoClienteAgregar, tbCorreoClienteAgregar.Text)
+        Dim validacion3 As Boolean = validarTelefonos(tbTelefonoClienteAgregar, tbTelefonoClienteAgregar.Text)
+        Dim validacion5 As Boolean = validarNOmbreYApellidos(tbNombreClienteAgregar, tbNombreClienteAgregar.Text)
+        Dim validacion6 As Boolean = validarNOmbreYApellidos(tbApellido1ClienteAgregar, tbApellido1ClienteAgregar.Text)
+        Dim validacion7 As Boolean = validarNOmbreYApellidos(tbApellido2ClienteAgregar, tbApellido2ClienteAgregar.Text)
         Dim validacion8 As Boolean = validarAlta(tbAltaClienteAgregar, tbAltaClienteAgregar.Text)
 
         If validacion1 = False And validacion2 = False And validacion3 = False And validacion5 = False And validacion6 = False And validacion7 = False And validacion8 = False Then
@@ -757,7 +755,8 @@ Public Class GestionesAdministrador
         Dim validacion5 As Boolean = validarNOmbreYApellidos(tbNombreEmpleadoModificar, tbNombreEmpleadoModificar.Text)
         Dim validacion6 As Boolean = validarNOmbreYApellidos(tbApellido1EmpleadoModificar, tbApellido1EmpleadoModificar.Text)
         Dim validacion7 As Boolean = validarNOmbreYApellidos(tbApellido2EmpleadoModificar, tbApellido2EmpleadoModificar.Text)
-        If validacion1 = False And validacion2 = False And validacion3 = False And validacion4 = False And validacion5 = False And validacion6 = False And validacion7 = False Then
+        Dim validacion8 As Boolean = validarAdministrador(tbAdministradorEmpleadoModificar, tbAdministradorEmpleadoModificar.Text)
+        If validacion1 = False And validacion2 = False And validacion3 = False And validacion4 = False And validacion5 = False And validacion6 = False And validacion7 = False And validacion8 = False Then
             falseoProgressBar()
             ModificarUsuario(tbIdEmpleadoModificar.Text, tbNombreEmpleadoModificar.Text, tbApellido1EmpleadoModificar.Text, tbApellido2EmpleadoModificar.Text, tbTelefonoEmpleadoModificar.Text, tbCorreoEmpleadoModificar.Text,
                         tbContraseñaEmpleadoModificar.Text, tbCargoEmpleadoModificar.Text, tbAdministradorEmpleadoModificar.Text)
@@ -773,7 +772,7 @@ Public Class GestionesAdministrador
         Dim validacion6 As Boolean = validarNOmbreYApellidos(tbApellido1ClienteModificar, tbApellido1ClienteModificar.Text)
         Dim validacion7 As Boolean = validarNOmbreYApellidos(tbApellido2ClienteModificar, tbApellido2ClienteModificar.Text)
         Dim validacion8 As Boolean = validarAlta(tbAltaClienteModificar, tbAltaClienteModificar.Text)
-        If validacion1 = False And validacion2 = False And validacion3 = False And validacion5 = False And validacion6 = False And validacion7 = False Then
+        If validacion1 = False And validacion2 = False And validacion3 = False And validacion5 = False And validacion6 = False And validacion7 = False And validacion8 = False Then
             falseoProgressBar()
             ModificarCliente(tbIdClienteModificar.Text, tbNombreClienteModificar.Text, tbApellido1ClienteModificar.Text, tbApellido2ClienteModificar.Text, tbTelefonoClienteModificar.Text,
             tbCorreoClienteModificar.Text, dtmFechaAltaClienteModificar.Value.Date, tbAltaClienteModificar.Text)
@@ -866,7 +865,7 @@ Public Class GestionesAdministrador
             ' Llenar el DataSet con los datos de la tabla Clientes
             da.Fill(ds, "Clientes")
         Catch ex As OleDbException
-            MsgBox("Hubo un error con la busqueda del Cliente, trate de introducir bien los datos")
+            MessageBox.Show("Hubo un error en la busqueda del cliente, trate de introducir bien los datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "GestionesAdministrador, BuscarCliente()")
             Return Nothing
@@ -905,7 +904,7 @@ Public Class GestionesAdministrador
             guardar.GuardarError(ex, "GestionesAdministrador, BuscarEmpleado()")
             Return Nothing
         Catch ex As InvalidOperationException
-            MsgBox("Hubo un error con la busqueda del Empleado, trate de introducir bien los datos")
+            MessageBox.Show("Hubo un error en la busqueda del empleado, trate de introducir bien los datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "GestionesAdministrador, BuscarEmpleado()")
             Inicio.Close()
@@ -940,7 +939,7 @@ Public Class GestionesAdministrador
             ' Llenar el DataSet con los datos de la tabla Productos
             da.Fill(ds, "Productos")
         Catch ex As Exception
-            MsgBox("Hubo un error con la busqueda del producto, trate de introducir bien los datos")
+            MessageBox.Show("Hubo un error en la busqueda de los productos, trate de introducir bien los datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "GestionesAdministrador, BuscarProducto()")
             Return Nothing
@@ -975,7 +974,7 @@ Public Class GestionesAdministrador
             ' Llenar el DataSet con los datos de la tabla Gasolinas
             da.Fill(ds, "Gasolinas")
         Catch ex As Exception
-            MsgBox("Hubo un error con la busqueda de la gasolina, trate de introducir bien los datos")
+            MessageBox.Show("Hubo un error en la busqueda de las gasolinas , introduzca correctamente los datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "GestionesAdministrador, BuscarGasolina()")
             Return Nothing
@@ -1010,7 +1009,7 @@ Public Class GestionesAdministrador
             ' Llenar el DataSet con los datos de la tabla Proveedores
             da.Fill(ds, "Proveedores")
         Catch ex As Exception
-            MsgBox("Hubo un error con la busqueda del proveedor, trate de introducir bien los datos")
+            MessageBox.Show("Hubo un error en la busqueda del proveedor, trate de introducir bien los datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "GestionesAdministrador, BuscarProveedor()")
             Return Nothing
@@ -1039,7 +1038,7 @@ Public Class GestionesAdministrador
             EmpleadosDataGridView.DataSource = dt
             EmpleadosDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         Catch ex As Exception
-            MsgBox("Hubo un error con la muestra de todos los usuarios")
+            MessageBox.Show("Hubo un error con la muestra de los empleados", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "GestionesAdministrador, MostrarTodosEmpleados()")
         End Try
@@ -1054,7 +1053,7 @@ Public Class GestionesAdministrador
             ClientesDataGridView.DataSource = dt
             ClientesDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
         Catch ex As Exception
-            MsgBox("Hubo un error con la muestra de los clientes")
+            MessageBox.Show("Hubo un error con la muestra de los clientes", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "GestionesAdministrador, MostrarTodosClientes()")
         End Try
@@ -1069,7 +1068,7 @@ Public Class GestionesAdministrador
             GasolinasDataGridView.DataSource = dt
             GasolinasDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         Catch ex As Exception
-            MsgBox("Hubo un error con la muestra de las gasolinas")
+            MessageBox.Show("Hubo un error con la muestra de las gasolinas", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "GestionesAdministrador, MostrarTodasGasolinas()")
         End Try
@@ -1085,7 +1084,7 @@ Public Class GestionesAdministrador
             ProductosDataGridView.DataSource = dt
             ProductosDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         Catch ex As Exception
-            MsgBox("Hubo un error con la muestra de los productos")
+            MessageBox.Show("Hubo un error con la muestra de los productos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "GestionesAdministrador, MostrarTodosProductos()")
         End Try
@@ -1100,7 +1099,7 @@ Public Class GestionesAdministrador
             ProveedoresDataGridView.DataSource = dt
             ProveedoresDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         Catch ex As Exception
-            MsgBox("Hubo un error con la muestra de los proveedores")
+            MessageBox.Show("Hubo un error con la muestra de proveedores", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "GestionesAdministrador, MostrarTodosProveedores()")
         End Try
@@ -1125,14 +1124,14 @@ Public Class GestionesAdministrador
                 cmd.Parameters.Add(New OleDbParameter("cargo", cargo))
                 If Not administrador = 2 Then
                     cmd.ExecuteNonQuery()
-                    MsgBox("El empleado: " & nombre & " se ha agregado correctamente")
+                    MessageBox.Show("El empleado se a creado correctamente", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Else
-                    MsgBox("No se permiten crear jefes, solo administradores y trabajadores")
+                    MessageBox.Show("No se permiten crear jefes, solamente administradores y trabajadores", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 End If
 
             End Using
         Catch ex As Exception
-            MsgBox("Hubo un error con la agregacion del empleado, trate de introducir bien los datos")
+            MessageBox.Show("Hubo un error con la agregacion del empleado, trate de introducir los datos correctamente", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "GestionesAdministrador, AgregarEmpleado()")
         Finally
@@ -1150,19 +1149,24 @@ Public Class GestionesAdministrador
         Try
 
             conn.Open()
-            Using cmd As New OleDbCommand("Insert into Productos([id],[Nombre],[Precio],[Proveedor],[Gama])
+            Dim prov As DataRow = BuscarProveedor(proveedor)
+            If prov Is Nothing Then
+                MessageBox.Show("El proveedor del producto a agregar no existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Else
+                Using cmd As New OleDbCommand("Insert into Productos([id],[Nombre],[Precio],[Proveedor],[Gama])
                 values(?,?,?,?,?)", conn)
-                cmd.Parameters.Add(New OleDbParameter("id", id))
-                cmd.Parameters.Add(New OleDbParameter("nombre", nombre))
-                cmd.Parameters.Add(New OleDbParameter("precio", precio))
-                cmd.Parameters.Add(New OleDbParameter("proveedor", proveedor))
-                cmd.Parameters.Add(New OleDbParameter("gama", gama))
-                cmd.ExecuteNonQuery()
-                MsgBox("Se agrego el producto " & nombre & " correctamente")
-            End Using
+                    cmd.Parameters.Add(New OleDbParameter("id", id))
+                    cmd.Parameters.Add(New OleDbParameter("nombre", nombre))
+                    cmd.Parameters.Add(New OleDbParameter("precio", precio))
+                    cmd.Parameters.Add(New OleDbParameter("proveedor", proveedor))
+                    cmd.Parameters.Add(New OleDbParameter("gama", gama))
+                    cmd.ExecuteNonQuery()
+                    MsgBox("Se agrego el producto " & nombre & " correctamente")
+                End Using
+            End If
 
         Catch ex As Exception
-            MsgBox("Hubo un error con la agregacion del producto, trate de introducir bien los datos")
+            MessageBox.Show("Hubo un error con la agregacion del producto, trate de introducir los datos correctamente", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "GestionesAdministrador, AgregarProducto()")
         Finally
@@ -1189,7 +1193,7 @@ Public Class GestionesAdministrador
                 MsgBox("Se agrego el cliente: " & nombre)
             End Using
         Catch ex As Exception
-            MsgBox("Hubo un error con la agregacion del Cliente, trate de introducir bien los datos")
+            MessageBox.Show("Hubo un error con la agregacion del cliente, trate de introducir los datos correctamente", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "GestionesAdministrador, AgregarCliente()")
         Finally
@@ -1212,10 +1216,10 @@ Public Class GestionesAdministrador
                 cmd.Parameters.Add(New OleDbParameter("cantidad", cantidad))
                 cmd.Parameters.Add(New OleDbParameter("precio", precio))
                 cmd.ExecuteNonQuery()
-                MsgBox("Se agrego correctamente la gasolina: " & nombre)
+                MessageBox.Show("La gasolina se agrego correctamente", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             End Using
         Catch ex As Exception
-            MsgBox("Hubo un error con la agregacion de la gasolina, trate de introducir bien los datos")
+            MessageBox.Show("Hubo un error con la agregacion de la gasolina, trate de introducir bien los datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "GestionesAdministrador, AgregarGasolina()")
         Finally
@@ -1239,7 +1243,7 @@ Public Class GestionesAdministrador
                 MsgBox("Se agrego el proveedor: " & nombre)
             End Using
         Catch ex As Exception
-            MsgBox("Hubo un error con la agregacion del proveedor, trate de introducir bien los datos")
+            MessageBox.Show("Hubo un error con la agregacion del proveedor, trate de introduir bien los datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "GestionesAdministrador, AgregarProveedor()")
         Finally
@@ -1288,7 +1292,7 @@ Public Class GestionesAdministrador
                 cmd.Parameters.Add(New OleDbParameter("id", id))
 
                 If comprobar = True Then
-                    MsgBox("No se pudo hacer la Modificacion ya que el Jefe no se puede modificar")
+                    MessageBox.Show("No se pudo hacer la modificacion ya que el jefe no se puede modificar", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Else
                     cmd.ExecuteNonQuery()
                     MsgBox("Usuario actualizado con exito")
@@ -1298,7 +1302,7 @@ Public Class GestionesAdministrador
 
         Catch ex As Exception
 
-            MsgBox("Hubo un error con la Modificacion del usuario, trate de introducir bien los datos")
+            MessageBox.Show("Hubo un error con la modificacion del Empleado, trate de introducir bien los datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "GestionesAdministrador, ModificarUsuario()")
 
@@ -1315,24 +1319,26 @@ Public Class GestionesAdministrador
         Try
             conn.Open()
 
-            Using cmd As New OleDbCommand("Update Clientes set Nombre = ?, [Apellido 1] = ?, [Apellido 2]  = ?
-                Telefono = ?, Correo = ?, FechaAlta = ?, Alta = ?", conn)
-                cmd.Parameters.Add(New OleDbParameter("nombre", nombre))
-                cmd.Parameters.Add(New OleDbParameter("apellido1", apellido1))
-                cmd.Parameters.Add(New OleDbParameter("apellido2", apellido2))
-                cmd.Parameters.Add(New OleDbParameter("telefono", telefono))
-                cmd.Parameters.Add(New OleDbParameter("correo", correo))
-                cmd.Parameters.Add(New OleDbParameter("fechaAlta", fechaAlta))
-                cmd.Parameters.Add(New OleDbParameter("alta", alta))
-                cmd.Parameters.Add(New OleDbParameter("id", id))
-                cmd.ExecuteNonQuery()
-                MsgBox("Se ha actualizado el cliente correctamente")
-            End Using
-
-
+            Dim cl As DataRow = BuscarCliente(id)
+            If cl Is Nothing Then
+                MessageBox.Show("El cliente a actualizar no existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Else
+                Using cmd As New OleDbCommand("Update Clientes set Nombre = ?, [Apellido 1] = ?, [Apellido 2]  = ?,
+                Telefono = ?, Correo = ?, FechaAlta = ?, Alta = ? where id = ?", conn)
+                    cmd.Parameters.Add(New OleDbParameter("nombre", nombre))
+                    cmd.Parameters.Add(New OleDbParameter("apellido1", apellido1))
+                    cmd.Parameters.Add(New OleDbParameter("apellido2", apellido2))
+                    cmd.Parameters.Add(New OleDbParameter("telefono", telefono))
+                    cmd.Parameters.Add(New OleDbParameter("correo", correo))
+                    cmd.Parameters.Add(New OleDbParameter("fechaAlta", fechaAlta))
+                    cmd.Parameters.Add(New OleDbParameter("alta", alta))
+                    cmd.Parameters.Add(New OleDbParameter("id", id))
+                    cmd.ExecuteNonQuery()
+                    MessageBox.Show("El cliente se actualizo correctamente", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                End Using
+            End If
         Catch ex As Exception
-
-            MsgBox("Hubo un error con la Modificacion del cliente, trate de introducir bien los datos")
+            MessageBox.Show("Hubo un error con la actualizacion del cliente, trate de introducir bien los datos" & ex.Message, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "GestionesAdministrador, ModificarCliente()")
 
@@ -1352,19 +1358,10 @@ Public Class GestionesAdministrador
             conn.Open()
 
             Dim comprobar As Boolean = False
-            Using cmd0 As New OleDbCommand("Select id from Proveedores where id = @id", conn)
-                cmd0.Parameters.AddWithValue("@id", proveedor)
-
-                Dim reader As OleDbDataReader = cmd0.ExecuteReader()
-                If reader.HasRows() Then
-                    While reader.Read()
-                        If reader("id").ToString() = proveedor Then
-                            comprobar = True
-                        End If
-                    End While
-                End If
-
-            End Using
+            Dim prov As DataRow = BuscarProveedor(proveedor)
+            If Not prov Is Nothing Then
+                comprobar = True
+            End If
 
             Dim comprobar2 As Boolean = False
             Using cmd1 As New OleDbCommand("Select id from Gamas where id = @id", conn)
@@ -1377,6 +1374,8 @@ Public Class GestionesAdministrador
                             comprobar2 = True
                         End If
                     End While
+                Else
+                    comprobar2 = False
                 End If
 
             End Using
@@ -1389,15 +1388,15 @@ Public Class GestionesAdministrador
                 cmd.Parameters.AddWithValue("@id", id)
                 If comprobar = True And comprobar2 = True Then
                     cmd.ExecuteNonQuery()
-                    MsgBox("Se ha actualizado el producto correctamente")
+                    MessageBox.Show("El producto se actualizo correctamente", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Else
-                    MsgBox("No se pudo hacer la modificacion, no existe o la gama o el proveedor")
+                    MessageBox.Show("No se pudo hacer la actualizacion del producto, verifique los datos introducidos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 End If
             End Using
 
         Catch ex As Exception
 
-            MsgBox("Hubo un error con la Modificacion del producto, trate de introducir bien los datos")
+            MessageBox.Show("Hubo un error con la modificacion del producto, introduzca bien los datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "GestionesAdministrador, ModificarProducto()")
 
@@ -1416,17 +1415,23 @@ Public Class GestionesAdministrador
 
             conn.Open()
 
-            Using cmd As New OleDbCommand("Update Gasolinas set nombre = ?, cantidad = ?, precio = ? where id = ?", conn)
+            Dim gas As DataRow = BuscarGasolina(id)
+            If gas Is Nothing Then
+                MessageBox.Show("La gasolina a modificar no existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Else
+                Using cmd As New OleDbCommand("Update Gasolinas set nombre = ?, cantidad = ?, precio = ? where id = ?", conn)
 
-                cmd.Parameters.Add(New OleDbParameter("nombre", nombre))
-                cmd.Parameters.Add(New OleDbParameter("cantidad", cantidad))
-                cmd.Parameters.Add(New OleDbParameter("precio", precio))
-                cmd.Parameters.Add(New OleDbParameter("id", id))
-                cmd.ExecuteNonQuery()
-                MsgBox("La gasolina se actualizo correctamente")
-            End Using
+                    cmd.Parameters.Add(New OleDbParameter("nombre", nombre))
+                    cmd.Parameters.Add(New OleDbParameter("cantidad", cantidad))
+                    cmd.Parameters.Add(New OleDbParameter("precio", precio))
+                    cmd.Parameters.Add(New OleDbParameter("id", id))
+                    cmd.ExecuteNonQuery()
+                    MessageBox.Show("La gasolina se actualizo correctamente", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                End Using
+            End If
+
         Catch ex As Exception
-            MsgBox("Hubo un error con la Modificacion de la gasolina, trate de introducir bien los datos")
+            MessageBox.Show("Hubo un error con la modificacion de la gasolina, introduzca bien los datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "GestionesAdministrador, ModificarGasolina()")
         Finally
@@ -1440,15 +1445,20 @@ Public Class GestionesAdministrador
         Try
 
             conn.Open()
-            Using cmd As New OleDbCommand("Update Proveedores set nombre = ? where id = ?", conn)
+            Dim prov As DataRow = BuscarProveedor(id)
+            If prov Is Nothing Then
+                MessageBox.Show("El proveedor a modificar no existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Else
+                Using cmd As New OleDbCommand("Update Proveedores set nombre = ? where id = ?", conn)
 
-                cmd.Parameters.Add(New OleDbParameter("nombre", nombre))
-                cmd.Parameters.Add(New OleDbParameter("id", id))
-                cmd.ExecuteNonQuery()
-                MsgBox("El proveedor se actualizo con exito")
-            End Using
+                    cmd.Parameters.Add(New OleDbParameter("nombre", nombre))
+                    cmd.Parameters.Add(New OleDbParameter("id", id))
+                    cmd.ExecuteNonQuery()
+                    MessageBox.Show("El proveedor se actualizo con exito", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                End Using
+            End If
         Catch ex As Exception
-            MsgBox("Hubo un error con la Modificacion del proveedor, trate de introducir bien los datos")
+            MessageBox.Show("Hubo un error a la hora modificar el proveedor, introduzca bien los datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "GestionesAdministrador, ModificarProveedor()")
         Finally
@@ -1459,32 +1469,37 @@ Public Class GestionesAdministrador
     Public Sub EliminarEmpleado(id As Integer)
         Try
             conn.Open()
-            Dim comprobar As Boolean = False
-            Using cmd0 As New OleDbCommand("Select Administrador from Empleados where id = @id", conn)
-                cmd0.Parameters.AddWithValue("@id", id)
-
-                Dim reader As OleDbDataReader = cmd0.ExecuteReader()
-                If reader.HasRows() Then
-                    While reader.Read()
-                        If reader("Administrador").ToString() = 2 Then
-                            comprobar = True
-                        End If
-                    End While
-                End If
-
-            End Using
-
-            Dim cmd As New OleDbCommand("DELETE FROM Empleados WHERE id = @id", conn)
-            cmd.Parameters.AddWithValue("@id", id)
-
-            If comprobar = True Then
-                MsgBox("No se puede hacer la eliminacion ya que se trata del jefe")
+            Dim empleado As DataRow = BuscarEmpleado(id)
+            If empleado Is Nothing Then
+                MessageBox.Show("El Empleado a eliminar no existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Else
-                cmd.ExecuteNonQuery()
-                MessageBox.Show("Empleado eliminado correctamente")
+                Dim comprobar As Boolean = False
+                Using cmd0 As New OleDbCommand("Select Administrador from Empleados where id = @id", conn)
+                    cmd0.Parameters.AddWithValue("@id", id)
+
+                    Dim reader As OleDbDataReader = cmd0.ExecuteReader()
+                    If reader.HasRows() Then
+                        While reader.Read()
+                            If reader("Administrador").ToString() = 2 Then
+                                comprobar = True
+                            End If
+                        End While
+                    End If
+
+                End Using
+
+                Dim cmd As New OleDbCommand("DELETE FROM Empleados WHERE id = @id", conn)
+                cmd.Parameters.AddWithValue("@id", id)
+
+                If comprobar = True Then
+                    MsgBox("No se puede hacer la eliminacion ya que se trata del jefe")
+                Else
+                    cmd.ExecuteNonQuery()
+                    MessageBox.Show("Empleado eliminado correctamente")
+                End If
             End If
         Catch ex As Exception
-            MsgBox("Hubo un error con la Eliminacion del empleado, trate de introducir bien los datos")
+            MessageBox.Show("Hubo un error a la hora de eliminar empleado, introduzca bien los datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "GestionesAdministrador, EliminarEmpleado()")
         Finally
@@ -1496,11 +1511,16 @@ Public Class GestionesAdministrador
         Dim cmd As New OleDbCommand("DELETE FROM Clientes WHERE id = @id", conn)
         Try
             conn.Open()
-            cmd.Parameters.AddWithValue("@id", id)
-            cmd.ExecuteNonQuery()
-            MessageBox.Show("Cliente eliminado correctamente")
+            Dim cliente As DataRow = BuscarCliente(id)
+            If cliente Is Nothing Then
+                MessageBox.Show("El cliente a eliminar no existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Else
+                cmd.Parameters.AddWithValue("@id", id)
+                cmd.ExecuteNonQuery()
+                MessageBox.Show("Cliente eliminado correctamente")
+            End If
         Catch ex As Exception
-            MsgBox("Hubo un error con la Eliminacion del Cliente, trate de introducir bien los datos")
+            MessageBox.Show("Hubo un error con la eliminacion del cliente", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "GestionesAdministrador, ElminarCliente()")
         Finally
@@ -1513,11 +1533,16 @@ Public Class GestionesAdministrador
         Dim cmd As New OleDbCommand("DELETE FROM Productos WHERE id = @id", conn)
         Try
             conn.Open()
-            cmd.Parameters.AddWithValue("@id", id)
-            cmd.ExecuteNonQuery()
-            MessageBox.Show("Producto eliminado correctamente")
+            Dim producto As DataRow = BuscarProducto(id)
+            If producto Is Nothing Then
+                MessageBox.Show("El producto a eliminar no existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Else
+                cmd.Parameters.AddWithValue("@id", id)
+                cmd.ExecuteNonQuery()
+                MessageBox.Show("Producto eliminado correctamente")
+            End If
         Catch ex As OleDbException
-            MsgBox("Hubo un error con la Eliminacion del producto, trate de introducir bien los datos")
+            MessageBox.Show("Hubo un error con la eliminacion del producto, introduzca bien los datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "GestionesAdministrador, EliminarProducto()")
         Finally
@@ -1534,8 +1559,8 @@ Public Class GestionesAdministrador
             cmd.Parameters.AddWithValue("@id", id)
             cmd.ExecuteNonQuery()
             MessageBox.Show("Gasolina eliminada correctamente")
-        Catch ex As OleDbException
-            MsgBox("Hubo un error con la Eliminacion de la gasolina, trate de introducir bien los datos")
+        Catch ex As Exception
+            MessageBox.Show("Hubo un error con la eliminacion de la gasolina, introduzca bien los datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "GestionesAdministrador, EliminarGasolina()")
         Finally
@@ -1551,14 +1576,20 @@ Public Class GestionesAdministrador
         Try
             conn.Open()
 
-            cmd.Parameters.AddWithValue("@id", id)
-            cmd.ExecuteNonQuery()
+            Dim proveedor As DataRow = BuscarProveedor(id)
+            If proveedor Is Nothing Then
+                MessageBox.Show("El proveedor a eliminar no existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Else
+                cmd.Parameters.AddWithValue("@id", id)
+                cmd.ExecuteNonQuery()
 
-            cmd2.Parameters.AddWithValue("@id", id)
-            cmd2.ExecuteNonQuery()
-            MessageBox.Show("Proveedor eliminado correctamente")
-        Catch ex As OleDbException
-            MsgBox("Hubo un error con la Eliminacion del empleado, trate de introducir bien los datos")
+                cmd2.Parameters.AddWithValue("@id", id)
+                cmd2.ExecuteNonQuery()
+                MessageBox.Show("Proveedor eliminado correctamente", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show("Hubo un error con la eliminacion del proveedor, introduzca bien los datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "GestionesAdministrador, EliminarProveedor()")
         Finally
@@ -1632,10 +1663,10 @@ Public Class GestionesAdministrador
     Public Function validarIDs(tb As TextBox, str As String) As Boolean
 
         If str = "" Then
-            MsgBox("El campo de ID no puede estar vacio")
+            MessageBox.Show("El campo id no puede estar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return True
         ElseIf Not IsNumeric(str) Then
-            MsgBox("El campo de ID solo puede contener numeros")
+            MessageBox.Show("El campo id solo puede contener numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             tb.Clear()
             Return True
         Else
@@ -1651,7 +1682,7 @@ Public Class GestionesAdministrador
         Dim contadormas As Integer = 0
         Dim comprobar As Boolean = False
         If str = "" Then
-            MsgBox("El campo de telefono no puede estar vacio")
+            MessageBox.Show("El campo telefono no puede estar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return True
         Else
             For i As Integer = 0 To str.Length - 1
@@ -1664,7 +1695,7 @@ Public Class GestionesAdministrador
                 End If
             Next
             If comprobar = True Then
-                MsgBox("El campo de telefono solo puede contener numeros y el prefijo (+), siendo este ultimo sola una vez")
+                MessageBox.Show("El campo telefono solo puede tener simbolos numericos, y el prefijo (+) una vez", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 tb.Clear()
                 Return True
             Else
@@ -1698,11 +1729,28 @@ Public Class GestionesAdministrador
     '    End If
     'End Function
 
+    Public Function validarAdministrador(tb As TextBox, num As Integer) As Boolean
+
+        If num <> 1 Or num <> 0 Then
+            MessageBox.Show("Error, no ha introducido un valor correcto. Solo se admiten 1 para adminsitradores y 0 para empleados", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            tb.Clear()
+            Return True
+        Else
+            Return False
+        End If
+
+    End Function
 
     Public Function validarCorreos(tb As TextBox, str As String) As Boolean
 
         Dim contadorpuntos As Integer = 0
         Dim contadorArrobas As Integer = 0
+
+        If str.StartsWith("@") Then
+            MessageBox.Show("Error, un correo electronico no puede empezar con un @", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            tb.Clear()
+            Return True
+        End If
 
         For i As Integer = 0 To str.Length - 1
             If str(i) = "." Then
@@ -1711,8 +1759,9 @@ Public Class GestionesAdministrador
                 contadorArrobas += 1
             End If
         Next
+
         If (contadorArrobas = 0 And contadorpuntos = 0) Or (contadorArrobas > 1 Or contadorpuntos > 1) Then
-            MsgBox("Error, Compruebe el numero de puntos y de arrobas del correo")
+            MessageBox.Show("Error, compruebe el numero de arrobas y puntos del correo", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             tb.Clear()
             Return True
         Else
@@ -1727,7 +1776,7 @@ Public Class GestionesAdministrador
         Dim permitidos As New List(Of Char) From {"!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\", "]", "^", "_", "{", "|", "}", "~"}
         Dim comprobar As Boolean = False
         If str = "" Then
-            MsgBox("El campo de contraseña no puede estar vacio")
+            MessageBox.Show("El campo contraseña no puede estar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return True
         Else
             For i As Integer = 0 To str.Length - 1
@@ -1736,7 +1785,7 @@ Public Class GestionesAdministrador
                 End If
             Next
             If comprobar = True Then
-                MsgBox("El campo de contraseña no puede contener caracteres especiales")
+                MessageBox.Show("El campo pruebas no puede tener caracteres especiales", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 tb.Clear()
                 Return True
             Else
@@ -1750,7 +1799,7 @@ Public Class GestionesAdministrador
         Dim permitidos As New List(Of Char) From {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "á", "é", "í", "ó", "ú", "Á", "É", "Í", "Ó", "Ú"}
         Dim comprobar As Boolean = False
         If str = "" Then
-            MsgBox("El campo no puede estar vacio")
+            MessageBox.Show("El campo no puede estar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return True
         Else
             For i As Integer = 0 To str.Length - 1
@@ -1759,7 +1808,7 @@ Public Class GestionesAdministrador
                 End If
             Next
             If comprobar = True Then
-                MsgBox("El campo solo puede contener letras")
+                MessageBox.Show("El campo solo puede tener letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 tb.Clear()
                 Return True
             Else
@@ -1773,14 +1822,17 @@ Public Class GestionesAdministrador
     Private Function validarCantidad(tb As TextBox, str As String) As Boolean
         Dim contadorComas As Integer = 0
         Dim contadorPuntos As Integer = 0
+
         If str = "" Then
-            MsgBox("El campo no puede estar vacio")
+            MessageBox.Show("El campo no puede estar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return True
         ElseIf Not IsNumeric(str) Then
-            MsgBox("Solo son permitidos caracteres Numericos en la cantidad")
+            MessageBox.Show("Solo son permitidos caracteres numericos en la cantidad", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             tb.Clear()
             Return True
-
+        ElseIf str < 0 Then
+            MessageBox.Show("La cantidad no puede ser menor que 0", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return True
         End If
 
         For i As Integer = 0 To str.Length - 1
@@ -1792,7 +1844,7 @@ Public Class GestionesAdministrador
         Next
 
         If contadorComas > 0 Or contadorPuntos > 0 Or (contadorComas = 1 And contadorPuntos = 1) Then
-            MsgBox("No se pueden agregar ni comas ni puntos")
+            MessageBox.Show("No se pueden agregar ni comas ni puntos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             tb.Clear()
             Return True
         Else
@@ -1809,11 +1861,15 @@ Public Class GestionesAdministrador
         Dim contadorComas As Integer = 0
 
         If str = "" Then
-            MsgBox("El campo de precio no puede estar vacio")
+            MessageBox.Show("El campo de precio no puede estar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return True
         ElseIf Not IsNumeric(str) Then
-            MsgBox("El campo precio debe de ser numerico")
+            MessageBox.Show("El campo debe de ser numerico", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             tb.Clear()
+            Return True
+
+        ElseIf str < 0 Then
+            MessageBox.Show("El precio no puede ser menor que 0", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return True
         Else
             For i As Integer = 0 To str.Length - 1
@@ -1824,11 +1880,11 @@ Public Class GestionesAdministrador
                 End If
             Next
             If contadorPuntos > 1 Or contadorComas > 1 Then
-                MsgBox("Error, dentro del campo hay mas de un punto o una coma")
+                MessageBox.Show("Error, dentro del campo hay mas de un punto o de una coma", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 tb.Clear()
                 Return True
             ElseIf contadorPuntos = 1 And contadorComas = 1 Then
-                MsgBox("No se puede meter dentro del campo un punto y una coma a la vez")
+                MessageBox.Show("No se puede meter dentro del campo un punto o una coma a la vez", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 tb.Clear()
                 Return True
             Else
@@ -1854,14 +1910,14 @@ Public Class GestionesAdministrador
             End If
             conn.Close()
             If comprobar = False Then
-                MsgBox("El id de la gama no existe")
+                MessageBox.Show("El id de la gama no existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 tb.Clear()
                 Return True
             Else
                 Return False
             End If
         Catch ex As Exception
-            MsgBox("Hubo un error con la validacion de la gama: " & ex.Message)
+            MessageBox.Show("Hubo un error de la validacion de la gama", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return True
         Finally
             conn.Close()
@@ -1871,7 +1927,7 @@ Public Class GestionesAdministrador
     Public Function validarNombreEmpresa(tb As TextBox, str As String) As Boolean
         'en esta funcion solamente validaremos que no este vacio el campo de nombre de la empresa
         If str = "" Then
-            MsgBox("El campo de nombre no puede estar vacio")
+            MessageBox.Show("El campo nombre no puede estar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return True
         Else
             Return False
@@ -1881,16 +1937,16 @@ Public Class GestionesAdministrador
     Public Function validarAlta(tb As TextBox, str As String) As Boolean
 
         If str = "" Then
-            MsgBox("El campo de altas no puede estar vacio")
+            MessageBox.Show("El campo alta no puede estar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return True
-        ElseIf ((Not str = 1) Or (Not str = 0)) Then
-            MsgBox("Los valores del alta deben ser o 1 o 0")
-            Return True
-        ElseIf (Not IsNumeric(str)) Then
-            MsgBox("Debe de ser numerico el valor del alta.")
-            Return True
-        Else
+        ElseIf str = "0" Then
             Return False
+        ElseIf str = "1" Then
+            Return False
+        Else
+            MessageBox.Show("Solo estan permitidos en el campo altas 0 y 1", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            tb.Clear()
+            Return True
         End If
 
     End Function
@@ -1903,10 +1959,10 @@ Public Class GestionesAdministrador
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
 
-        If ToolStripProgressBar1.Value < ToolStripProgressBar1.Maximum - 1 Then
+        If ToolStripProgressBar1.Value <ToolStripProgressBar1.Maximum - 1 Then
             ToolStripProgressBar1.Value += 50
         Else
-            Timer1.Enabled = False
+            Timer1.Enabled= False
         End If
 
     End Sub
