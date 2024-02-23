@@ -23,13 +23,13 @@ Partial Class TarjetaRepsol
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.lblFechaAlta = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblApellido1 = New System.Windows.Forms.Label()
+        Me.lblApellido2 = New System.Windows.Forms.Label()
         Me.lblId = New System.Windows.Forms.Label()
         Me.lblName = New System.Windows.Forms.Label()
-        Me.lblApellido2 = New System.Windows.Forms.Label()
-        Me.lblApellido1 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.lblFechaAlta = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -47,6 +47,57 @@ Partial Class TarjetaRepsol
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(377, 219)
         Me.Panel1.TabIndex = 0
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.SystemColors.Control
+        Me.PictureBox1.Image = Global.Repsol_2.My.Resources.Resources.Repsol_logo
+        Me.PictureBox1.Location = New System.Drawing.Point(40, 69)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(300, 92)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 4
+        Me.PictureBox1.TabStop = False
+        '
+        'lblFechaAlta
+        '
+        Me.lblFechaAlta.AutoSize = True
+        Me.lblFechaAlta.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFechaAlta.Location = New System.Drawing.Point(100, 179)
+        Me.lblFechaAlta.Name = "lblFechaAlta"
+        Me.lblFechaAlta.Size = New System.Drawing.Size(89, 15)
+        Me.lblFechaAlta.TabIndex = 3
+        Me.lblFechaAlta.Text = "Fecha_de_alta"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(10, 179)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(84, 15)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Fecha de alta:"
+        '
+        'lblApellido1
+        '
+        Me.lblApellido1.AutoSize = True
+        Me.lblApellido1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblApellido1.Location = New System.Drawing.Point(211, 37)
+        Me.lblApellido1.Name = "lblApellido1"
+        Me.lblApellido1.Size = New System.Drawing.Size(77, 15)
+        Me.lblApellido1.TabIndex = 1
+        Me.lblApellido1.Text = "0000000000"
+        '
+        'lblApellido2
+        '
+        Me.lblApellido2.AutoSize = True
+        Me.lblApellido2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblApellido2.Location = New System.Drawing.Point(284, 37)
+        Me.lblApellido2.Name = "lblApellido2"
+        Me.lblApellido2.Size = New System.Drawing.Size(77, 15)
+        Me.lblApellido2.TabIndex = 1
+        Me.lblApellido2.Text = "0000000000"
         '
         'lblId
         '
@@ -67,57 +118,6 @@ Partial Class TarjetaRepsol
         Me.lblName.Size = New System.Drawing.Size(77, 15)
         Me.lblName.TabIndex = 0
         Me.lblName.Text = "0000000000"
-        '
-        'lblApellido2
-        '
-        Me.lblApellido2.AutoSize = True
-        Me.lblApellido2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblApellido2.Location = New System.Drawing.Point(284, 37)
-        Me.lblApellido2.Name = "lblApellido2"
-        Me.lblApellido2.Size = New System.Drawing.Size(77, 15)
-        Me.lblApellido2.TabIndex = 1
-        Me.lblApellido2.Text = "0000000000"
-        '
-        'lblApellido1
-        '
-        Me.lblApellido1.AutoSize = True
-        Me.lblApellido1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblApellido1.Location = New System.Drawing.Point(211, 37)
-        Me.lblApellido1.Name = "lblApellido1"
-        Me.lblApellido1.Size = New System.Drawing.Size(77, 15)
-        Me.lblApellido1.TabIndex = 1
-        Me.lblApellido1.Text = "0000000000"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(10, 179)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(84, 15)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Fecha de alta:"
-        '
-        'lblFechaAlta
-        '
-        Me.lblFechaAlta.AutoSize = True
-        Me.lblFechaAlta.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFechaAlta.Location = New System.Drawing.Point(100, 179)
-        Me.lblFechaAlta.Name = "lblFechaAlta"
-        Me.lblFechaAlta.Size = New System.Drawing.Size(89, 15)
-        Me.lblFechaAlta.TabIndex = 3
-        Me.lblFechaAlta.Text = "Fecha_de_alta"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.SystemColors.Control
-        Me.PictureBox1.Image = Global.Repsol_2.My.Resources.Resources.Repsol_logo
-        Me.PictureBox1.Location = New System.Drawing.Point(40, 69)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(300, 92)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 4
-        Me.PictureBox1.TabStop = False
         '
         'TarjetaRepsol
         '

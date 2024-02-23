@@ -374,6 +374,7 @@ Partial Class TPV
         '
         'tbIdCliente
         '
+        Me.tbIdCliente.Enabled = False
         Me.tbIdCliente.Location = New System.Drawing.Point(72, 31)
         Me.tbIdCliente.MaxLength = 6
         Me.tbIdCliente.Name = "tbIdCliente"

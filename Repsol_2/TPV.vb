@@ -16,6 +16,7 @@ Public Class TPV
 
         PanelIsCliente.Visible = True
         panelCosasCliente.Visible = False
+        panelSocioDesc.Visible = False
     End Sub
 
     Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
@@ -119,7 +120,7 @@ Public Class TPV
             box += precio
         Next
         lblResultado.Text = box.ToString("F")
-        lblDescSocio.Text = (box * 0, 98).ToString("F")
+        lblDescSocio.Text = (box * 0.98).ToString("F")
 
     End Sub
 
@@ -192,6 +193,7 @@ Public Class TPV
 
     Private Sub btnEsCliente_Click(sender As Object, e As EventArgs) Handles btnEsCliente.Click
         PanelIsCliente.Visible = False
+        tbIdCliente.Enabled = True
         tbNombreCliente.Enabled = False
         tbApellido1Cliente.Enabled = False
         tbApellido2Cliente.Enabled = False
@@ -206,6 +208,7 @@ Public Class TPV
     Private Sub btnCrearCliente_Click(sender As Object, e As EventArgs) Handles btnCrearCliente.Click
         FechaAltaClienteTimePicker.Value = Date.Now
         PanelIsCliente.Visible = False
+        tbIdCliente.Enabled = False
         tbNombreCliente.Enabled = True
         tbApellido1Cliente.Enabled = True
         tbApellido2Cliente.Enabled = True
@@ -277,6 +280,13 @@ Public Class TPV
                             AgregarCliente(nombre, apellido1, apellido2, telefono, correo, fechaAlta)
                             MessageBox.Show("Cliente creado con éxito")
                             panelSocioDesc.Visible = True
+
+                            TarjetaRepsol.lblId.Text = idCliente
+                            TarjetaRepsol.lblName.Text = nombre
+                            TarjetaRepsol.lblApellido1.Text = apellido1
+                            TarjetaRepsol.lblApellido2.Text = apellido2
+                            TarjetaRepsol.lblFechaAlta.Text = fechaAlta
+                            TarjetaRepsol.Imprimir()
                         Else
                             MessageBox.Show("Ya existe un cliente con ese id")
                         End If
