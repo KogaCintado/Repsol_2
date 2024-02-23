@@ -1706,8 +1706,8 @@ Public Class GestionesAdministrador
                 contadorArrobas += 1
             End If
         Next
-        If contadorArrobas < 1 Or contadorpuntos < 1 Then
-            MsgBox("El correo introducido tiene mas de un punto o de una coma, vuelva a introducirlo")
+        If (contadorArrobas = 0 And contadorpuntos = 0) Or (contadorArrobas > 1 Or contadorpuntos > 1) Then
+            MsgBox("Error, Compruebe el numero de puntos y de arrobas del correo")
             tb.Clear()
             Return True
         Else

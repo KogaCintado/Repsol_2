@@ -166,6 +166,12 @@
       <DependentUpon>reportesEmpleados.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="reportesGamas.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reportesGamas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="reportesGasolina.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -176,6 +182,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>reportesProductos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportesProveedores.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reportesProveedores.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Repsol_dbDataSet.Designer.vb">
@@ -235,6 +247,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>reportesEmpleados.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="reportesGamas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>reportesGamas.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="reportesGasolina.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>reportesGasolina.vb</LastGenOutput>
@@ -242,6 +258,10 @@
     <EmbeddedResource Include="reportesProductos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>reportesProductos.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportesProveedores.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>reportesProveedores.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="TarjetaRepsol.resx">
       <DependentUpon>TarjetaRepsol.vb</DependentUpon>
