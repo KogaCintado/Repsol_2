@@ -720,8 +720,8 @@ Public Class GestionesAdministrador
         Dim validacion1 As Boolean = validarIDs(tbGamaProductoAgregar, tbGamaProductoAgregar.Text)
         Dim validacion2 As Boolean = validarPrecio(tbPrecioProductoAgregar, tbPrecioProductoAgregar.Text)
         Dim validacion3 As Boolean = validarGama(tbGamaProductoAgregar, tbGamaProductoAgregar.Text)
-
-        If validacion1 = False And validacion2 = False And validacion3 = False Then
+        Dim validacion4 As Boolean = validarProveedor(tbProveedorProductoAgregar, tbProveedorProductoAgregar.Text)
+        If validacion1 = False And validacion2 = False And validacion3 = False And validacion4 = False Then
             falseoProgressBar()
             AgregarProducto(tbIdProductoAgregar.Text, tbNombreProductoAgregar.Text, tbPrecioProductoAgregar.Text, tbProveedorProductoAgregar.Text, tbGamaProductoAgregar.Text)
         End If
@@ -1964,6 +1964,30 @@ Public Class GestionesAdministrador
             MessageBox.Show("Solo estan permitidos en el campo altas 0 y 1", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             tb.Clear()
             Return True
+        End If
+
+    End Function
+
+    Public Function validarProveedor(tb As TextBox, prov As String)
+
+        Dim proveedor As DataRow
+
+        If prov = "" Then
+            MessageBox.Show("El campo proveedor no puede estar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return True
+        ElseIf Not IsNumeric(prov) Then
+            MessageBox.Show("El campo proveedor debe de ser numerico", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            tb.Clear()
+            Return True
+        End If
+
+        proveedor = BuscarProveedor(prov)
+        If proveedor Is Nothing Then
+            MessageBox.Show("El proveedor no existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            tb.Clear()
+            Return True
+        Else
+            Return False
         End If
 
     End Function
