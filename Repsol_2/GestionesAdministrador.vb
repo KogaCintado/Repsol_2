@@ -1648,18 +1648,23 @@ Public Class GestionesAdministrador
         'de que solo puede tener un prefijo (+) y numeros. En caso de que tenga mas de un (+)
         'o letras, mostraremos un mensaje de error. Para ello utilizaremos una lista con caracteres permitidos
         Dim permitidos As New List(Of Char) From {"+", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
+        Dim contadormas As Integer = 0
         Dim comprobar As Boolean = False
         If str = "" Then
             MsgBox("El campo de telefono no puede estar vacio")
             Return True
         Else
             For i As Integer = 0 To str.Length - 1
-                If Not permitidos.Contains(str(i)) Then
+                If str(i) = "+" Then
+                    contadormas += 1
+                End If
+
+                If (Not permitidos.Contains(str(i))) Or (contadormas > 1 Or contadormas = 0) Then
                     comprobar = True
                 End If
             Next
             If comprobar = True Then
-                MsgBox("El campo de telefono solo puede contener numeros y el prefijo (+)")
+                MsgBox("El campo de telefono solo puede contener numeros y el prefijo (+), siendo este ultimo sola una vez")
                 tb.Clear()
                 Return True
             Else
