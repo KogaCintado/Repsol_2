@@ -1,6 +1,12 @@
 ﻿Imports System.Data.OleDb
 Public Class Informes
 
+    Private Sub Informes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Maximizamos la ventana
+        Me.WindowState = FormWindowState.Maximized
+    End Sub
+
+
     Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
 
 

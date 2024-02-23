@@ -55,19 +55,19 @@ Partial Class Informes
         'VolevrToolStripMenuItem
         '
         Me.VolevrToolStripMenuItem.Name = "VolevrToolStripMenuItem"
-        Me.VolevrToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.VolevrToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
         Me.VolevrToolStripMenuItem.Text = "Volver"
         '
         'CerrarSesionToolStripMenuItem
         '
         Me.CerrarSesionToolStripMenuItem.Name = "CerrarSesionToolStripMenuItem"
-        Me.CerrarSesionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CerrarSesionToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
         Me.CerrarSesionToolStripMenuItem.Text = "Cerrar Sesion"
         '
         'CerrarProgramaToolStripMenuItem
         '
         Me.CerrarProgramaToolStripMenuItem.Name = "CerrarProgramaToolStripMenuItem"
-        Me.CerrarProgramaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CerrarProgramaToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
         Me.CerrarProgramaToolStripMenuItem.Text = "Cerrar Programa"
         '
         'CrystalReportViewer1

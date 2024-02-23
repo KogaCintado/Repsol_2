@@ -1,11 +1,12 @@
 ﻿Imports System.Data.OleDb
+Imports Biblioteca
 
 Public Class GestionesAdministrador
 
+
+
+
     Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
-
-
-
 
     Private Sub GestionesAdministrador_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim paneles As New List(Of Panel) From {panelAgregarCliente, panelAgregarProducto, panelAgregarGasolina, panelAgregarProveedor, panelAgregarUsuario, panelBuscarCliente, panelBuscarEmpleado, panelBuscarGasolina, panelBuscarProducto, panelBuscarProveedor, panelEliminarClientes, panelEliminarEmpleado, panelEliminarGasolina, panelEliminarProducto, panelEliminarProveedores, panelModificarCliente, panelModificarEmpleado, panelModificarGasolina, panelModificarProducto, panelModificarProveedores}
@@ -557,7 +558,9 @@ Public Class GestionesAdministrador
                     tbCargoEmpleado.Text = empleado("Cargo")
                 End If
             Catch ex As Exception
-                MsgBox("Hubo un error con la busqueda del empleado, trate de introducir bien los datos : " & ex.Message)
+                MsgBox("Hubo un error con la busqueda del empleado, trate de introducir bien los datos")
+                Dim guardar As New Archivo
+                guardar.GuardarError(ex, "GestionesAdministrador, btnAccionBuscarEmpleado_Click")
             End Try
         End If
 
@@ -588,7 +591,9 @@ Public Class GestionesAdministrador
                     FechaAltaClienteTimePicker.Value = cliente("FechaAlta")
                 End If
             Catch ex As Exception
-                MsgBox("Hubo un error con la busqueda del cliente, trate de introducir bien los datos : " & ex.Message)
+                MsgBox("Hubo un error con la busqueda del cliente, trate de introducir bien los datos")
+                Dim guardar As New Archivo
+                guardar.GuardarError(ex, "GestionesAdministrador, btnAccionBuscarCliente_Click")
             End Try
         End If
 
@@ -616,7 +621,9 @@ Public Class GestionesAdministrador
                     tbGamaProducto.Text = producto("Gama")
                 End If
             Catch ex As Exception
-                MsgBox("Hubo un error con la busqueda del producto, trate de introducir bien los datos : " & ex.Message)
+                MsgBox("Hubo un error con la busqueda del producto, trate de introducir bien los datos")
+                Dim guardar As New Archivo
+                guardar.GuardarError(ex, "GestionesAdministrador, btnAccionBuscarProducto_Click")
             End Try
         End If
     End Sub
@@ -644,7 +651,9 @@ Public Class GestionesAdministrador
                     tbCantidadGasolina.Text = gasolina("Cantidad")
                 End If
             Catch ex As Exception
-                MsgBox("Hubo un error en la busqueda de la gasolina, trate de introducir bien los datos: " & ex.Message)
+                MsgBox("Hubo un error con la busqueda de la gasolina, trate de introducir bien los datos")
+                Dim guardar As New Archivo
+                guardar.GuardarError(ex, "GestionesAdministrador, btnAccionBuscarGasolina_Click")
             End Try
         End If
     End Sub
@@ -668,7 +677,9 @@ Public Class GestionesAdministrador
                     tbNombreProveedor.Text = proveedor("Nombre")
                 End If
             Catch ex As Exception
-                MsgBox("Hubo un error en la busqueda del proveedor, trate de introducir bien los datos: " & ex.Message)
+                MsgBox("Hubo un error con la busqueda del proveedor, trate de introducir bien los datos")
+                Dim guardar As New Archivo
+                guardar.GuardarError(ex, "GestionesAdministrador, btnAccionBuscarProveedor_Click")
             End Try
         End If
     End Sub
@@ -855,7 +866,9 @@ Public Class GestionesAdministrador
             ' Llenar el DataSet con los datos de la tabla Clientes
             da.Fill(ds, "Clientes")
         Catch ex As OleDbException
-            MessageBox.Show("Hubo un error conectando con la base de datos: " & ex.Message)
+            MsgBox("Hubo un error con la busqueda del Cliente, trate de introducir bien los datos")
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "GestionesAdministrador, BuscarCliente()")
             Return Nothing
         End Try
 
@@ -887,10 +900,14 @@ Public Class GestionesAdministrador
             ' Llenar el DataSet con los datos de la tabla Empleados
             da.Fill(ds, "Empleados")
         Catch ex As OleDbException
-            MessageBox.Show("Hubo un error conectando con la base de datos: " & ex.Message)
+            MsgBox("Hubo un error con la conexion a la base de datos")
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "GestionesAdministrador, BuscarEmpleado()")
             Return Nothing
         Catch ex As InvalidOperationException
-            MessageBox.Show("Error introduzca bien los datos:" & ex.Message)
+            MsgBox("Hubo un error con la busqueda del Empleado, trate de introducir bien los datos")
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "GestionesAdministrador, BuscarEmpleado()")
             Inicio.Close()
             Return Nothing
         End Try
@@ -922,8 +939,10 @@ Public Class GestionesAdministrador
         Try
             ' Llenar el DataSet con los datos de la tabla Productos
             da.Fill(ds, "Productos")
-        Catch ex As OleDbException
-            MessageBox.Show("Hubo un error con la conexion de la base de datos: " & ex.Message)
+        Catch ex As Exception
+            MsgBox("Hubo un error con la busqueda del producto, trate de introducir bien los datos")
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "GestionesAdministrador, BuscarProducto()")
             Return Nothing
         End Try
 
@@ -955,8 +974,10 @@ Public Class GestionesAdministrador
         Try
             ' Llenar el DataSet con los datos de la tabla Gasolinas
             da.Fill(ds, "Gasolinas")
-        Catch ex As OleDbException
-            MessageBox.Show("Hubo un error con la base de datos: " & ex.Message)
+        Catch ex As Exception
+            MsgBox("Hubo un error con la busqueda de la gasolina, trate de introducir bien los datos")
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "GestionesAdministrador, BuscarGasolina()")
             Return Nothing
         End Try
 
@@ -988,8 +1009,10 @@ Public Class GestionesAdministrador
         Try
             ' Llenar el DataSet con los datos de la tabla Proveedores
             da.Fill(ds, "Proveedores")
-        Catch ex As OleDbException
-            MessageBox.Show("Hubo un error en la busqueda de la base de datos: " & ex.Message)
+        Catch ex As Exception
+            MsgBox("Hubo un error con la busqueda del proveedor, trate de introducir bien los datos")
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "GestionesAdministrador, BuscarProveedor()")
             Return Nothing
         End Try
 
@@ -1016,7 +1039,9 @@ Public Class GestionesAdministrador
             EmpleadosDataGridView.DataSource = dt
             EmpleadosDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         Catch ex As Exception
-            MsgBox("Hubo un error al tratar de mostrar la tabla de empleados: " & ex.Message)
+            MsgBox("Hubo un error con la muestra de todos los usuarios")
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "GestionesAdministrador, MostrarTodosEmpleados()")
         End Try
     End Sub
 
@@ -1029,7 +1054,9 @@ Public Class GestionesAdministrador
             ClientesDataGridView.DataSource = dt
             ClientesDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
         Catch ex As Exception
-            MsgBox("Hubo un error al tratar de mostrar la tabla de clientes: " & ex.Message)
+            MsgBox("Hubo un error con la muestra de los clientes")
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "GestionesAdministrador, MostrarTodosClientes()")
         End Try
     End Sub
 
@@ -1042,7 +1069,9 @@ Public Class GestionesAdministrador
             GasolinasDataGridView.DataSource = dt
             GasolinasDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         Catch ex As Exception
-            MsgBox("Hubo un error al tratar de mostrar la tabla de gasolinas: " & ex.Message)
+            MsgBox("Hubo un error con la muestra de las gasolinas")
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "GestionesAdministrador, MostrarTodasGasolinas()")
         End Try
     End Sub
 
@@ -1056,7 +1085,9 @@ Public Class GestionesAdministrador
             ProductosDataGridView.DataSource = dt
             ProductosDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         Catch ex As Exception
-            MsgBox("Hubo un error al tratar de mostrar la tabla de productos: " & ex.Message)
+            MsgBox("Hubo un error con la muestra de los productos")
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "GestionesAdministrador, MostrarTodosProductos()")
         End Try
     End Sub
 
@@ -1069,7 +1100,9 @@ Public Class GestionesAdministrador
             ProveedoresDataGridView.DataSource = dt
             ProveedoresDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         Catch ex As Exception
-            MsgBox("Hubo un error al tratar de mostrar la tabla de proveedores: " & ex.Message)
+            MsgBox("Hubo un error con la muestra de los proveedores")
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "GestionesAdministrador, MostrarTodosProveedores()")
         End Try
     End Sub
 
@@ -1099,7 +1132,9 @@ Public Class GestionesAdministrador
 
             End Using
         Catch ex As Exception
-            MsgBox("Hubo un error al agregar el empleado: " & ex.Message)
+            MsgBox("Hubo un error con la agregacion del empleado, trate de introducir bien los datos")
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "GestionesAdministrador, AgregarEmpleado()")
         Finally
             conn.Close()
         End Try
@@ -1127,7 +1162,9 @@ Public Class GestionesAdministrador
             End Using
 
         Catch ex As Exception
-            MsgBox("Hubo un error con la insercion del producto" & ex.Message)
+            MsgBox("Hubo un error con la agregacion del producto, trate de introducir bien los datos")
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "GestionesAdministrador, AgregarProducto()")
         Finally
             conn.Close()
         End Try
@@ -1152,7 +1189,9 @@ Public Class GestionesAdministrador
                 MsgBox("Se agrego el cliente: " & nombre)
             End Using
         Catch ex As Exception
-            MsgBox("Hubo un error a la hora de agregar el cliente: " & ex.Message)
+            MsgBox("Hubo un error con la agregacion del Cliente, trate de introducir bien los datos")
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "GestionesAdministrador, AgregarCliente()")
         Finally
             conn.Close()
         End Try
@@ -1176,7 +1215,9 @@ Public Class GestionesAdministrador
                 MsgBox("Se agrego correctamente la gasolina: " & nombre)
             End Using
         Catch ex As Exception
-            MsgBox("Hubo un error con la inserccion de la gasolina: " & ex.Message)
+            MsgBox("Hubo un error con la agregacion de la gasolina, trate de introducir bien los datos")
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "GestionesAdministrador, AgregarGasolina()")
         Finally
             conn.Close()
         End Try
@@ -1198,7 +1239,9 @@ Public Class GestionesAdministrador
                 MsgBox("Se agrego el proveedor: " & nombre)
             End Using
         Catch ex As Exception
-            MsgBox("Hubo un error en la agregacion del proveedor: " & ex.Message)
+            MsgBox("Hubo un error con la agregacion del proveedor, trate de introducir bien los datos")
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "GestionesAdministrador, AgregarProveedor()")
         Finally
             conn.Close()
         End Try
@@ -1255,7 +1298,9 @@ Public Class GestionesAdministrador
 
         Catch ex As Exception
 
-            MsgBox("Hubo un error con la actualizacion del usuario:" & ex.Message)
+            MsgBox("Hubo un error con la Modificacion del usuario, trate de introducir bien los datos")
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "GestionesAdministrador, ModificarUsuario()")
 
         Finally
 
@@ -1287,7 +1332,9 @@ Public Class GestionesAdministrador
 
         Catch ex As Exception
 
-            MsgBox("Hubo un problema a la hora de actualizar el cliente: " & ex.Message)
+            MsgBox("Hubo un error con la Modificacion del cliente, trate de introducir bien los datos")
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "GestionesAdministrador, ModificarCliente()")
 
         Finally
 
@@ -1350,7 +1397,9 @@ Public Class GestionesAdministrador
 
         Catch ex As Exception
 
-            MsgBox("Hubo un problema en la actualizacion del producto: " & ex.Message)
+            MsgBox("Hubo un error con la Modificacion del producto, trate de introducir bien los datos")
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "GestionesAdministrador, ModificarProducto()")
 
         Finally
             conn.Close()
@@ -1377,7 +1426,9 @@ Public Class GestionesAdministrador
                 MsgBox("La gasolina se actualizo correctamente")
             End Using
         Catch ex As Exception
-            MsgBox("Hubo un error a la hora de actualizar la gasolina:" & ex.Message)
+            MsgBox("Hubo un error con la Modificacion de la gasolina, trate de introducir bien los datos")
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "GestionesAdministrador, ModificarGasolina()")
         Finally
             conn.Close()
         End Try
@@ -1397,7 +1448,9 @@ Public Class GestionesAdministrador
                 MsgBox("El proveedor se actualizo con exito")
             End Using
         Catch ex As Exception
-            MsgBox("Hubo un problema al actualizar el proveedor: " & ex.Message)
+            MsgBox("Hubo un error con la Modificacion del proveedor, trate de introducir bien los datos")
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "GestionesAdministrador, ModificarProveedor()")
         Finally
             conn.Close()
         End Try
@@ -1431,8 +1484,10 @@ Public Class GestionesAdministrador
                 cmd.ExecuteNonQuery()
                 MessageBox.Show("Empleado eliminado correctamente")
             End If
-        Catch ex As OleDbException
-            MessageBox.Show("Hubo un error al eliminar al empleado: " & ex.Message)
+        Catch ex As Exception
+            MsgBox("Hubo un error con la Eliminacion del empleado, trate de introducir bien los datos")
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "GestionesAdministrador, EliminarEmpleado()")
         Finally
             conn.Close()
         End Try
@@ -1445,8 +1500,10 @@ Public Class GestionesAdministrador
             cmd.Parameters.AddWithValue("@id", id)
             cmd.ExecuteNonQuery()
             MessageBox.Show("Cliente eliminado correctamente")
-        Catch ex As OleDbException
-            MessageBox.Show("Hubo un al eliminar el Cliente: " & ex.Message)
+        Catch ex As Exception
+            MsgBox("Hubo un error con la Eliminacion del Cliente, trate de introducir bien los datos")
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "GestionesAdministrador, ElminarCliente()")
         Finally
             conn.Close()
         End Try
@@ -1461,7 +1518,9 @@ Public Class GestionesAdministrador
             cmd.ExecuteNonQuery()
             MessageBox.Show("Producto eliminado correctamente")
         Catch ex As OleDbException
-            MessageBox.Show("Hubo un error al eliminar el producto: " & ex.Message)
+            MsgBox("Hubo un error con la Eliminacion del producto, trate de introducir bien los datos")
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "GestionesAdministrador, EliminarProducto()")
         Finally
             conn.Close()
         End Try
@@ -1477,7 +1536,9 @@ Public Class GestionesAdministrador
             cmd.ExecuteNonQuery()
             MessageBox.Show("Gasolina eliminada correctamente")
         Catch ex As OleDbException
-            MessageBox.Show("Hubo un error al eliminar la gasolina: " & ex.Message)
+            MsgBox("Hubo un error con la Eliminacion de la gasolina, trate de introducir bien los datos")
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "GestionesAdministrador, EliminarGasolina()")
         Finally
             conn.Close()
         End Try
@@ -1498,7 +1559,9 @@ Public Class GestionesAdministrador
             cmd2.ExecuteNonQuery()
             MessageBox.Show("Proveedor eliminado correctamente")
         Catch ex As OleDbException
-            MessageBox.Show("Error con la eliminacion del proveedor: " & ex.Message)
+            MsgBox("Hubo un error con la Eliminacion del empleado, trate de introducir bien los datos")
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "GestionesAdministrador, EliminarProveedor()")
         Finally
             conn.Close()
         End Try
