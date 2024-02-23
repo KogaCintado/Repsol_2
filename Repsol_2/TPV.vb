@@ -133,7 +133,7 @@ Public Class TPV
                 Return
             End If
             If (lbNombreProductos.SelectedItem.ToString = "Gasolina") Then
-                MsgBox("No se puede eliminar la gasolina del pedido.")
+                MessageBox.Show("No se puede eliminar la gasolina del pedido.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Return
             End If
             Dim index As Integer = lbNombreProductos.SelectedIndex
@@ -159,7 +159,7 @@ Public Class TPV
         If (lblResultado.Text = "0,00") Then
             Return
         ElseIf (CSng(lblResultado.Text) >= 5000) Then
-            MsgBox("Para pedidos grandes, use la tarjeta.")
+            MessageBox.Show("No se puede eliminar la gasolina del pedido.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Return
         End If
 
@@ -254,7 +254,7 @@ Public Class TPV
                         panelSocioDesc.Visible = True
                     End If
                 Catch ex As Exception
-                    MsgBox("Hubo un error con la busqueda del cliente, trate de introducir bien los datos")
+                    MessageBox.Show("Hubo un error con la busqueda del cliente, trate de introducir bien los datos", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Dim guardar As New Archivo
                     guardar.GuardarError(ex, "TPV, btnAccionBuscarCliente_Click")
                 End Try
@@ -294,7 +294,7 @@ Public Class TPV
                         TarjetaRepsol.Imprimir()
 
                     Catch ex As Exception
-                        MsgBox("Hubo un error con la creación del cliente, trate de introducir bien los datos")
+                        MessageBox.Show("Hubo un error con la creación del cliente, trate de introducir bien los datos", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Dim guardar As New Archivo
                         guardar.GuardarError(ex, "TPV, btnAccionBuscarCliente_Click")
                     End Try
@@ -339,7 +339,7 @@ Public Class TPV
             lbPreciosTienda.DataSource = dt
             lbPreciosTienda.DisplayMember = "Precio"
         Catch ex As Exception
-            MsgBox("Hubo un error con la carga de los productos de la tienda" & ex.Message)
+            MessageBox.Show("Hubo un error con la carga de los productos de la tienda" & ex.Message, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "TPV, CargarBebidas")
         End Try
@@ -362,7 +362,7 @@ Public Class TPV
             lbPreciosTienda.DataSource = dt
             lbPreciosTienda.DisplayMember = "Precio"
         Catch ex As Exception
-            MsgBox("Hubo un error con la carga de los productos de la tienda" & ex.Message)
+            MessageBox.Show("Hubo un error con la carga de los productos de la tienda" & ex.Message, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "TPV, CargarConsumibles")
         End Try
@@ -382,7 +382,7 @@ Public Class TPV
             lbPreciosTienda.DataSource = dt
             lbPreciosTienda.DisplayMember = "Precio"
         Catch ex As Exception
-            MsgBox("Hubo un error con la carga de los productos de la tienda" & ex.Message)
+            MessageBox.Show("Hubo un error con la carga de los productos de la tienda" & ex.Message, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "TPV, CargarOtros")
         End Try
@@ -415,11 +415,11 @@ Public Class TPV
                 If cmd.ExecuteNonQuery() < 1 Then
                     Throw New Exception("Error en la conexión con la base de datos.")
                 End If
-                MsgBox("Se agrego el cliente: " & nombre)
+                MessageBox.Show("Se agregó el cliente: " & nombre, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Return id
             End Using
         Catch ex As Exception
-            MsgBox("Hubo un error a la hora de agregar el cliente: " & ex.Message)
+            MessageBox.Show("Hubo un error a la hora de agregar el cliente: " & ex.Message, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "TPV, Agregar Cliente")
             Return -1

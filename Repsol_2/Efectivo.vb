@@ -28,7 +28,7 @@ Public Class Efectivo
             Trabajar.Show()
             Close()
         Else
-            MsgBox("Ha de pagar el pedido completo.")
+            MessageBox.Show("Ha de pagar el pedido completo.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
 
     End Sub

@@ -172,6 +172,7 @@ Partial Class Gasolina
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.lblGasEchado)
         Me.Controls.Add(Me.btnGas95)
         Me.Controls.Add(Me.ProgressBar1)
@@ -184,7 +185,6 @@ Partial Class Gasolina
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.lblNombreGas)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.PictureBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Gasolina"
         Me.Text = "Gasolina"

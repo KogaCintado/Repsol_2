@@ -102,7 +102,7 @@ Public Class Gasolina
         End If
 
         If (ProgressBar1.Value = 0) Then
-            MsgBox("No hay suficiente gasolina en el depósito.")
+            MessageBox.Show("No hay suficiente gasolina en el depósito.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
             ProgressBar1.Value -= 1
             precioGasolinaAcumulado += precioGasolinaActual
@@ -160,7 +160,7 @@ Public Class Gasolina
 
             End Using
         Catch ex As Exception
-            MsgBox("Hubo un error a la hora de acceder al depósito. ")
+            MessageBox.Show("Hubo un error a la hora de acceder al depósito. ", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "Gasolina, ModificarGasolina")
             Return False
@@ -188,7 +188,9 @@ Public Class Gasolina
             ' Llenar el DataSet con los datos de la tabla Gasolinas
             da.Fill(ds, "Gasolinas")
         Catch ex As OleDbException
-            MessageBox.Show("Hubo un error con la base de datos: " & ex.Message)
+            MessageBox.Show("Hubo un error con la base de datos: " & ex.Message, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "Gasolina, BuscarGasolina")
             Return Nothing
         End Try
 
