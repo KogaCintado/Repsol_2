@@ -2138,7 +2138,7 @@ Partial Class GestionesAdministrador
         'tbNombreEmpleadoAgregar
         '
         Me.tbNombreEmpleadoAgregar.Location = New System.Drawing.Point(91, 54)
-        Me.tbNombreEmpleadoAgregar.MaxLength = 20
+        Me.tbNombreEmpleadoAgregar.MaxLength = 10
         Me.tbNombreEmpleadoAgregar.Name = "tbNombreEmpleadoAgregar"
         Me.tbNombreEmpleadoAgregar.Size = New System.Drawing.Size(100, 20)
         Me.tbNombreEmpleadoAgregar.TabIndex = 3
@@ -2146,7 +2146,7 @@ Partial Class GestionesAdministrador
         'tbApellido1EmpleadoAgregar
         '
         Me.tbApellido1EmpleadoAgregar.Location = New System.Drawing.Point(91, 80)
-        Me.tbApellido1EmpleadoAgregar.MaxLength = 20
+        Me.tbApellido1EmpleadoAgregar.MaxLength = 10
         Me.tbApellido1EmpleadoAgregar.Name = "tbApellido1EmpleadoAgregar"
         Me.tbApellido1EmpleadoAgregar.Size = New System.Drawing.Size(100, 20)
         Me.tbApellido1EmpleadoAgregar.TabIndex = 5
@@ -2154,7 +2154,7 @@ Partial Class GestionesAdministrador
         'tbApellido2EmpleadoAgregar
         '
         Me.tbApellido2EmpleadoAgregar.Location = New System.Drawing.Point(91, 106)
-        Me.tbApellido2EmpleadoAgregar.MaxLength = 20
+        Me.tbApellido2EmpleadoAgregar.MaxLength = 10
         Me.tbApellido2EmpleadoAgregar.Name = "tbApellido2EmpleadoAgregar"
         Me.tbApellido2EmpleadoAgregar.Size = New System.Drawing.Size(100, 20)
         Me.tbApellido2EmpleadoAgregar.TabIndex = 7
@@ -2166,11 +2166,12 @@ Partial Class GestionesAdministrador
         Me.tbTelefonoEmpleadoAgregar.Name = "tbTelefonoEmpleadoAgregar"
         Me.tbTelefonoEmpleadoAgregar.Size = New System.Drawing.Size(100, 20)
         Me.tbTelefonoEmpleadoAgregar.TabIndex = 9
+        Me.tbTelefonoEmpleadoAgregar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'tbCorreoEmpleadoAgregar
         '
         Me.tbCorreoEmpleadoAgregar.Location = New System.Drawing.Point(91, 158)
-        Me.tbCorreoEmpleadoAgregar.MaxLength = 35
+        Me.tbCorreoEmpleadoAgregar.MaxLength = 15
         Me.tbCorreoEmpleadoAgregar.Name = "tbCorreoEmpleadoAgregar"
         Me.tbCorreoEmpleadoAgregar.Size = New System.Drawing.Size(100, 20)
         Me.tbCorreoEmpleadoAgregar.TabIndex = 11
@@ -2276,7 +2277,7 @@ Partial Class GestionesAdministrador
         'tbCorreoClienteAgregar
         '
         Me.tbCorreoClienteAgregar.Location = New System.Drawing.Point(72, 161)
-        Me.tbCorreoClienteAgregar.MaxLength = 30
+        Me.tbCorreoClienteAgregar.MaxLength = 15
         Me.tbCorreoClienteAgregar.Name = "tbCorreoClienteAgregar"
         Me.tbCorreoClienteAgregar.Size = New System.Drawing.Size(200, 20)
         Me.tbCorreoClienteAgregar.TabIndex = 11
@@ -2503,7 +2504,7 @@ Partial Class GestionesAdministrador
         'tbNombreEmpleadoModificar
         '
         Me.tbNombreEmpleadoModificar.Location = New System.Drawing.Point(91, 54)
-        Me.tbNombreEmpleadoModificar.MaxLength = 20
+        Me.tbNombreEmpleadoModificar.MaxLength = 10
         Me.tbNombreEmpleadoModificar.Name = "tbNombreEmpleadoModificar"
         Me.tbNombreEmpleadoModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbNombreEmpleadoModificar.TabIndex = 3
@@ -2511,7 +2512,7 @@ Partial Class GestionesAdministrador
         'tbApellido1EmpleadoModificar
         '
         Me.tbApellido1EmpleadoModificar.Location = New System.Drawing.Point(91, 80)
-        Me.tbApellido1EmpleadoModificar.MaxLength = 20
+        Me.tbApellido1EmpleadoModificar.MaxLength = 10
         Me.tbApellido1EmpleadoModificar.Name = "tbApellido1EmpleadoModificar"
         Me.tbApellido1EmpleadoModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbApellido1EmpleadoModificar.TabIndex = 5
@@ -2519,7 +2520,7 @@ Partial Class GestionesAdministrador
         'tbApellido2EmpleadoModificar
         '
         Me.tbApellido2EmpleadoModificar.Location = New System.Drawing.Point(91, 106)
-        Me.tbApellido2EmpleadoModificar.MaxLength = 20
+        Me.tbApellido2EmpleadoModificar.MaxLength = 10
         Me.tbApellido2EmpleadoModificar.Name = "tbApellido2EmpleadoModificar"
         Me.tbApellido2EmpleadoModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbApellido2EmpleadoModificar.TabIndex = 7
@@ -2531,11 +2532,12 @@ Partial Class GestionesAdministrador
         Me.tbTelefonoEmpleadoModificar.Name = "tbTelefonoEmpleadoModificar"
         Me.tbTelefonoEmpleadoModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbTelefonoEmpleadoModificar.TabIndex = 9
+        Me.tbTelefonoEmpleadoModificar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'tbCorreoEmpleadoModificar
         '
         Me.tbCorreoEmpleadoModificar.Location = New System.Drawing.Point(91, 158)
-        Me.tbCorreoEmpleadoModificar.MaxLength = 35
+        Me.tbCorreoEmpleadoModificar.MaxLength = 15
         Me.tbCorreoEmpleadoModificar.Name = "tbCorreoEmpleadoModificar"
         Me.tbCorreoEmpleadoModificar.Size = New System.Drawing.Size(100, 20)
         Me.tbCorreoEmpleadoModificar.TabIndex = 11
@@ -2636,11 +2638,12 @@ Partial Class GestionesAdministrador
         Me.tbTelefonoClienteModificar.Name = "tbTelefonoClienteModificar"
         Me.tbTelefonoClienteModificar.Size = New System.Drawing.Size(200, 20)
         Me.tbTelefonoClienteModificar.TabIndex = 9
+        Me.tbTelefonoClienteModificar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'tbCorreoClienteModificar
         '
         Me.tbCorreoClienteModificar.Location = New System.Drawing.Point(72, 161)
-        Me.tbCorreoClienteModificar.MaxLength = 30
+        Me.tbCorreoClienteModificar.MaxLength = 15
         Me.tbCorreoClienteModificar.Name = "tbCorreoClienteModificar"
         Me.tbCorreoClienteModificar.Size = New System.Drawing.Size(200, 20)
         Me.tbCorreoClienteModificar.TabIndex = 11
@@ -2654,7 +2657,7 @@ Partial Class GestionesAdministrador
         '
         'tbAltaClienteModificar
         '
-        Me.tbAltaClienteModificar.Location = New System.Drawing.Point(72, 213)
+        Me.tbAltaClienteModificar.Location = New System.Drawing.Point(72, 216)
         Me.tbAltaClienteModificar.MaxLength = 1
         Me.tbAltaClienteModificar.Name = "tbAltaClienteModificar"
         Me.tbAltaClienteModificar.Size = New System.Drawing.Size(200, 20)
