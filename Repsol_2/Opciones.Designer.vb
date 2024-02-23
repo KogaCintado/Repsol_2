@@ -48,7 +48,7 @@ Partial Class Opciones
         '
         'btnCRUD
         '
-        Me.btnCRUD.Location = New System.Drawing.Point(195, 3)
+        Me.btnCRUD.Location = New System.Drawing.Point(3, 69)
         Me.btnCRUD.Name = "btnCRUD"
         Me.btnCRUD.Size = New System.Drawing.Size(90, 60)
         Me.btnCRUD.TabIndex = 2
@@ -97,8 +97,8 @@ Partial Class Opciones
         '
         Me.FlowLayoutPanel1.Controls.Add(Me.btnInformes)
         Me.FlowLayoutPanel1.Controls.Add(Me.btnTrabajar)
-        Me.FlowLayoutPanel1.Controls.Add(Me.btnCRUD)
         Me.FlowLayoutPanel1.Controls.Add(Me.Button1)
+        Me.FlowLayoutPanel1.Controls.Add(Me.btnCRUD)
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(512, 242)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
         Me.FlowLayoutPanel1.Size = New System.Drawing.Size(292, 144)
@@ -106,10 +106,10 @@ Partial Class Opciones
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(3, 69)
+        Me.Button1.Location = New System.Drawing.Point(195, 3)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(90, 60)
-        Me.Button1.TabIndex = 4
+        Me.Button1.TabIndex = 3
         Me.Button1.Text = "aaaa"
         Me.Button1.UseVisualStyleBackColor = True
         '

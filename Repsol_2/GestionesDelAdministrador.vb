@@ -1099,6 +1099,7 @@ Public Class GestionesDelAdministrador
             falseoProgressBar()
             AgregarEmpleado(tbIdEmpleado.Text, tbNombreEmpleado.Text, tbApellido1Empleado.Text, tbApellido2Empleado.Text,
                         tbTelefonoEmpleado.Text, tbCorreoEmpleado.Text, tbContraseñaEmpleado.Text, tbAdministradorEmpleado.Text, tbCargoEmpleado.Text)
+            limpiarEmpleado()
         End If
     End Sub
 
@@ -1115,6 +1116,7 @@ Public Class GestionesDelAdministrador
             falseoProgressBar()
             ModificarEmpleado(tbIdEmpleado.Text, tbNombreEmpleado.Text, tbApellido1Empleado.Text, tbApellido2Empleado.Text, tbTelefonoEmpleado.Text, tbCorreoEmpleado.Text,
                         tbContraseñaEmpleado.Text, tbCargoEmpleado.Text, tbAdministradorEmpleado.Text)
+            limpiarEmpleado()
         End If
     End Sub
 
@@ -1148,6 +1150,7 @@ Public Class GestionesDelAdministrador
         If validacion1 = False And validacion2 = False And validacion3 = False And validacion5 = False And validacion6 = False And validacion7 = False And validacion8 = False Then
             falseoProgressBar()
             AgregarCliente(tbIdCliente.Text, tbNombreCliente.Text, tbApellido1Cliente.Text, tbApellido2Cliente.Text, tbTelefonoCliente.Text, tbCorreoCliente.Text, FechaAltaClienteTimePicker.Value.Date, tbAltaCliente.Text)
+            limpiarCliente()
         End If
     End Sub
 
@@ -1163,6 +1166,7 @@ Public Class GestionesDelAdministrador
             falseoProgressBar()
             ModificarCliente(tbIdCliente.Text, tbNombreCliente.Text, tbApellido1Cliente.Text, tbApellido2Cliente.Text, tbTelefonoCliente.Text,
             tbCorreoCliente.Text, FechaAltaClienteTimePicker.Value.Date, tbAltaCliente.Text)
+            limpiarCliente()
         End If
     End Sub
 
@@ -1187,6 +1191,7 @@ Public Class GestionesDelAdministrador
         If validacion1 = False And validacion2 = False And validacion3 = False And validacion4 = False Then
             falseoProgressBar()
             AgregarProducto(tbIdProducto.Text, tbNombreProducto.Text, tbPrecioProducto.Text, tbProveedorProducto.Text, tbGamaProducto.Text)
+            limpiarProducto()
         End If
     End Sub
 
@@ -1197,6 +1202,7 @@ Public Class GestionesDelAdministrador
         If validacion1 = False And validacion2 = False And validacion3 = False Then
             falseoProgressBar()
             ModificarProductos(tbIdProducto.Text, tbNombreProducto.Text, tbPrecioProducto.Text, tbProveedorProducto.Text, tbGamaProducto.Text)
+            limpiarProducto()
         End If
     End Sub
 
@@ -1213,13 +1219,14 @@ Public Class GestionesDelAdministrador
         MostrarTodasGasolinas()
     End Sub
 
-    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+    Private Sub btnModificarGasolina_Click(sender As Object, e As EventArgs) Handles btnModificarGasolina.Click
         Dim validacion1 As Boolean = validarIDs(tbIdGasolina, tbIdGasolina.Text)
         Dim validacion2 As Boolean = validarCantidad(tbCantidadGasolina, tbCantidadGasolina.Text)
         Dim validacion3 As Boolean = validarPrecio(tbPrecioGasolina, tbPrecioGasolina.Text)
         If validacion1 = False And validacion2 = False And validacion3 = False Then
             falseoProgressBar()
             ModificarGasolina(tbIdGasolina.Text, tbNombreGasolina.Text, tbCantidadGasolina.Text, tbPrecioGasolina.Text)
+            limpiarGasolina()
         End If
     End Sub
 
@@ -1234,6 +1241,7 @@ Public Class GestionesDelAdministrador
         If validacion1 = False And validacion2 = False Then
             falseoProgressBar()
             AgregarProveedor(tbIdProveedor.Text, tbNombreProveedor.Text)
+            limpiarProveedor()
         End If
     End Sub
 
@@ -1243,6 +1251,7 @@ Public Class GestionesDelAdministrador
         If validacion1 = False And validacion2 = False Then
             falseoProgressBar()
             ModificarProveedores(tbIdProveedor.Text, tbNombreProveedor.Text)
+            limpiarProveedor()
         End If
     End Sub
 
@@ -1270,4 +1279,53 @@ Public Class GestionesDelAdministrador
         Opciones.Show()
         Me.Close()
     End Sub
+
+
+    'zona funciones de limpieza--------------
+    '----------------------------------------
+
+
+
+    Private Sub limpiarEmpleado()
+        tbIdEmpleado.Clear()
+        tbNombreEmpleado.Clear()
+        tbApellido1Empleado.Clear()
+        tbApellido2Empleado.Clear()
+        tbTelefonoEmpleado.Clear()
+        tbCorreoEmpleado.Clear()
+        tbAdministradorEmpleado.Clear()
+        tbCargoEmpleado.Clear()
+        tbContraseñaEmpleado.Clear()
+    End Sub
+
+    Private Sub limpiarCliente()
+        tbIdCliente.Clear()
+        tbNombreCliente.Clear()
+        tbApellido1Cliente.Clear()
+        tbApellido2Cliente.Clear()
+        tbTelefonoCliente.Clear()
+        tbCorreoCliente.Clear()
+        tbAltaCliente.Clear()
+    End Sub
+
+    Private Sub limpiarProducto()
+        tbIdProducto.Clear()
+        tbNombreProducto.Clear()
+        tbPrecioProducto.Clear()
+        tbGamaProducto.Clear()
+        tbProveedorProducto.Clear()
+    End Sub
+
+    Private Sub limpiarProveedor()
+        tbIdProveedor.Clear()
+        tbNombreProveedor.Clear()
+    End Sub
+
+    Private Sub limpiarGasolina()
+        tbIdGasolina.Clear()
+        tbNombreGasolina.Clear()
+        tbPrecioGasolina.Clear()
+        tbCantidadGasolina.Clear()
+    End Sub
+
 End Class

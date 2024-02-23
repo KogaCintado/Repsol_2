@@ -109,7 +109,7 @@ Partial Class GestionesDelAdministrador
         Me.tbCantidadGasolina = New System.Windows.Forms.TextBox()
         Me.tbPrecioGasolina = New System.Windows.Forms.TextBox()
         Me.GasolinasDatagrid = New System.Windows.Forms.DataGridView()
-        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.btnModificarGasolina = New System.Windows.Forms.Button()
         Me.panelProveedor = New System.Windows.Forms.Panel()
         Me.btnBuscarProveedor = New System.Windows.Forms.Button()
         Me.tbIdProveedor = New System.Windows.Forms.TextBox()
@@ -844,7 +844,7 @@ Partial Class GestionesDelAdministrador
         '
         'panelGasolina
         '
-        Me.panelGasolina.Controls.Add(Me.btnModificar)
+        Me.panelGasolina.Controls.Add(Me.btnModificarGasolina)
         Me.panelGasolina.Controls.Add(Me.GasolinasDatagrid)
         Me.panelGasolina.Controls.Add(Me.btnBuscarGasolina)
         Me.panelGasolina.Controls.Add(IdLabel3)
@@ -945,14 +945,14 @@ Partial Class GestionesDelAdministrador
         Me.GasolinasDatagrid.Size = New System.Drawing.Size(561, 150)
         Me.GasolinasDatagrid.TabIndex = 20
         '
-        'btnModificar
+        'btnModificarGasolina
         '
-        Me.btnModificar.Location = New System.Drawing.Point(98, 121)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(63, 23)
-        Me.btnModificar.TabIndex = 21
-        Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.UseVisualStyleBackColor = True
+        Me.btnModificarGasolina.Location = New System.Drawing.Point(98, 121)
+        Me.btnModificarGasolina.Name = "btnModificarGasolina"
+        Me.btnModificarGasolina.Size = New System.Drawing.Size(63, 23)
+        Me.btnModificarGasolina.TabIndex = 21
+        Me.btnModificarGasolina.Text = "Modificar"
+        Me.btnModificarGasolina.UseVisualStyleBackColor = True
         '
         'panelProveedor
         '
@@ -1180,7 +1180,7 @@ Partial Class GestionesDelAdministrador
     Friend WithEvents tbProveedorProducto As TextBox
     Friend WithEvents tbGamaProducto As TextBox
     Friend WithEvents panelGasolina As Panel
-    Friend WithEvents btnModificar As Button
+    Friend WithEvents btnModificarGasolina As Button
     Friend WithEvents GasolinasDatagrid As DataGridView
     Friend WithEvents btnBuscarGasolina As Button
     Friend WithEvents tbIdGasolina As TextBox
