@@ -144,6 +144,7 @@ Public Class Inicio
 
     Private Sub NotifyIconLogo_MouseClick(sender As Object, e As MouseEventArgs) Handles NotifyIconLogo.MouseClick
         Me.Show()
+
         Gasolina.Close()
         GestionesAdministrador.Close()
         Efectivo.Close()

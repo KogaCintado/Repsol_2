@@ -36,6 +36,7 @@ Partial Class TarjetaRepsol
         '
         'Panel1
         '
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.lblFechaAlta)
         Me.Panel1.Controls.Add(Me.Label1)
