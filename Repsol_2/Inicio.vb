@@ -25,7 +25,7 @@ Public Class Inicio
                 Opciones.Show()
                 ErrorProvider1.Clear()
                 ErrorProvider2.Clear()
-                archivo.GuardarDatosEnArchivo("config/logs.txt", "El usuario " & tbUsername.Text & " ha iniciado sesion")
+                archivo.GuardarDatosEnArchivo("config/logs.txt", "El usuario " & nombreEmp & " ha iniciado sesion")
 
             Else
                 archivo.GuardarDatosEnArchivo("config/logs.txt", "INTENTO inicio de sesión. " & " Usuario: " & tbUsername.Text & ", contraseña: " & tbPassword.Text)
