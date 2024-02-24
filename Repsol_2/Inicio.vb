@@ -16,13 +16,14 @@ Public Class Inicio
         'Ocultamos la password
         tbPassword.PasswordChar = "*"
         admin = False
+
     End Sub
 
     'en esta funcion validaremos si se entra o no dentro de la aplicacion. en caso de intentos o de entradas queda todo puesto dentro
     'de un fichero
     Private Sub btnStart_Click(sender As Object, e As EventArgs) Handles btnStart.Click
         Dim archivo As New Archivo
-
+        admin = False
         If (Not (String.IsNullOrEmpty(tbUsername.Text.Trim()))) And (Not (String.IsNullOrEmpty(tbPassword.Text.Trim()))) Then
 
             If loggin(tbUsername.Text.Trim(), tbPassword.Text.Trim()) = True Then
@@ -131,6 +132,8 @@ Public Class Inicio
 
         Catch ex As Exception
             MessageBox.Show("Hubo un error en el inicio de sesion", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Dim guardar As New Archivo
+            guardar.GuardarError(ex, "Inicio, Loggin")
             Return False
         Finally
             conn.Close()
