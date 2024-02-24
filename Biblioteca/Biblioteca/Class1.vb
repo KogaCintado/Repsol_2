@@ -491,6 +491,8 @@ Public Class validacionesCrud
         ElseIf str < 0 Then
             MessageBox.Show("La cantidad no puede ser menor que 0", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return True
+        ElseIf str > 10000 Then
+            MessageBox.Show("La cantidad no puede ser mayor que 10000", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
 
         For i As Integer = 0 To str.Length - 1
