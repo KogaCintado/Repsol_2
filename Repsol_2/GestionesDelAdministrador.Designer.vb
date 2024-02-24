@@ -868,7 +868,7 @@ Partial Class GestionesDelAdministrador
         'tbNombreProducto
         '
         Me.tbNombreProducto.Location = New System.Drawing.Point(73, 34)
-        Me.tbNombreProducto.MaxLength = 10
+        Me.tbNombreProducto.MaxLength = 20
         Me.tbNombreProducto.Name = "tbNombreProducto"
         Me.tbNombreProducto.Size = New System.Drawing.Size(100, 20)
         Me.tbNombreProducto.TabIndex = 3
