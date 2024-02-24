@@ -545,6 +545,10 @@ Public Class validacionesCrud
                 MessageBox.Show("No se puede meter dentro del campo un punto o una coma a la vez", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 tb.Clear()
                 Return True
+            ElseIf contadorPuntos > 0 Then
+                MessageBox.Show("No se puede meter dentro del campo un punto, solo comas", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                tb.Clear()
+                Return True
             Else
                 Return False
             End If
