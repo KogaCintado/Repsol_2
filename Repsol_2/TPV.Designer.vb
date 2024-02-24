@@ -69,6 +69,7 @@ Partial Class TPV
         Me.lblSocioEuro = New System.Windows.Forms.Label()
         Me.lblDescSocio = New System.Windows.Forms.Label()
         Me.panelSocioDesc = New System.Windows.Forms.Panel()
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         IdLabel1 = New System.Windows.Forms.Label()
         NombreLabel1 = New System.Windows.Forms.Label()
         Apellido_1Label1 = New System.Windows.Forms.Label()
@@ -611,4 +612,5 @@ Partial Class TPV
     Friend WithEvents lblSocioEuro As Label
     Friend WithEvents lblDescSocio As Label
     Friend WithEvents panelSocioDesc As Panel
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class

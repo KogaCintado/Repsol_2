@@ -63,6 +63,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\iconoRepsol.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="Biblioteca">
@@ -298,6 +301,7 @@
     <None Include="Repsol_dbDataSet.xss">
       <DependentUpon>Repsol_dbDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Resources\Documento de ayuda TPV Repsol.chm" />
     <None Include="Resources\eye.png" />
   </ItemGroup>
   <ItemGroup>

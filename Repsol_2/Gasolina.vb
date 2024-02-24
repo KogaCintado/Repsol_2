@@ -2,6 +2,7 @@
 Imports Biblioteca
 
 Public Class Gasolina
+    'Zona de variables.
     Dim contador As Integer = 0
     Dim listaDeImagenes As New List(Of Image)()
     Dim botones As New List(Of Button)()
@@ -9,10 +10,16 @@ Public Class Gasolina
     Dim flag As Boolean = True
 
     Dim precioGasolinaActual, precioGasolinaAcumulado As Single
+    Private selectedGas As Integer
 
+    'Carga el formulario
     Private Sub Gasolina_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Maximizamos la ventana
         Me.WindowState = FormWindowState.Maximized
+
+        HelpProvider1.HelpNamespace = "config/Documento de ayuda TPV Repsol.chm"
+        HelpProvider1.SetHelpNavigator(Me, HelpNavigator.Topic)
+        HelpProvider1.SetHelpKeyword(Me, "Gasolina.htm")
 
         ProgressBar1.Visible = False
         lblPrecioGasAcumulado.Visible = False
@@ -42,6 +49,7 @@ Public Class Gasolina
         Timer1.Start()
     End Sub
 
+    'Cada tick(1 segudno), ejecuta este procedimiento, cambiando las imágenes y, al final, habilitando los botones.
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         ' Cambia la imagen cada vez que se activa el Timer
         contador += 1
@@ -55,36 +63,33 @@ Public Class Gasolina
         PictureBox1.Image = listaDeImagenes(contador)
     End Sub
 
+    'Si el botón es pulsado, se deshabilita el resto de botones y se pide 100 litros de gasolina.
+    'Si la gasolina no está disponible, se muestra un mensaje de error.
+    'Relaciona el botón con el id de la gasolina en la base de datos.
     Private Sub btn_Click(sender As Object, e As EventArgs) Handles btnGas95.Click, btnGas98.Click, btnDieselE.Click, btnDieselE10.Click
 
-        'Si el botón es pulsado, se deshabilita el resto de botones y se pide 100 litros de gasolina.
-        'Si la gasolina no está disponible, se muestra un mensaje de error.
-        'Relaciona el botón con el id de la gasolina en la base de datos.
-        'Rellena los datos de la gasolina en el formulario de repostaje.
         If (flag) Then
             For Each boton In botones
                 If boton Is sender Then
                     boton.Enabled = True
                     flag = False
 
-                    Dim id As Integer
-
                     Select Case sender.Name
                         Case "btnGas95"
-                            id = 1
+                            selectedGas = 1
                         Case "btnGas98"
-                            id = 2
+                            selectedGas = 2
                         Case "btnDieselE"
-                            id = 3
+                            selectedGas = 3
                         Case "btnDieselE10"
-                            id = 4
+                            selectedGas = 4
                     End Select
 
-                    If (ModificarGasolina(id, 100)) Then
+                    If (ModificarGasolina(selectedGas, 100)) Then
                         ProgressBar1.Value = 100
                         ProgressBar1.Maximum = 100
                         ProgressBar1.Visible = True
-                        Dim gasolina As DataRow = BuscarGasolina(id)
+                        Dim gasolina As DataRow = BuscarGasolina(selectedGas)
                         precioGasolinaActual = gasolina("precio")
                         precioGasolinaAcumulado = 0
                         lblNombreGas.Text = gasolina("nombre")
@@ -112,6 +117,7 @@ Public Class Gasolina
 
     End Sub
 
+    'Habilita/deshabilita los botones
     Private Sub enableBotones(bool As Boolean)
 
         For Each boton In botones
@@ -119,6 +125,8 @@ Public Class Gasolina
         Next
 
     End Sub
+
+    'Aceptar la cantidad de gasolina apuntada.
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
         If (ProgressBar1.Visible = False) Then
             TPV.Show()
@@ -129,6 +137,7 @@ Public Class Gasolina
             TPV.lbNombreProductos.Items.Add("Gasolina")
             TPV.lbPrecios.Items.Add("€ " + precioGasolinaAcumulado.ToString("F"))
             TPV.actualizarPrecio()
+            ModificarGasolina(selectedGas, ProgressBar1.Value * -1)
             Trabajar.Close()
             Me.Close()
         End If
@@ -138,6 +147,7 @@ Public Class Gasolina
     '------------------------------------------------------------------------------------------------------------------------------------------
     '---------------------------------------------------Territorio base de datos---------------------------------------------------------------
     '------------------------------------------------------------------------------------------------------------------------------------------
+    'Comprueba que hay suficiente gasolina, y la extrae para el cliente(o la vuelve a introducir).
     Private Function ModificarGasolina(id As Integer, cantidad As Integer)
 
         Try
@@ -170,6 +180,8 @@ Public Class Gasolina
         Return True
 
     End Function
+
+    'Busca el tipo de gasolina en la base de datos.
     Public Function BuscarGasolina(id As Integer) As DataRow
 
         ' Crear una nueva instancia del comando SQL
@@ -203,6 +215,4 @@ Public Class Gasolina
             Return Nothing
         End If
     End Function
-
-
 End Class

@@ -4,12 +4,17 @@ Imports System.Drawing.Printing
 Imports Biblioteca
 
 Public Class TPV
-
+    'Variable encargada de la conexión con la base de datos.
     Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
 
+    'Carga el formulario
     Private Sub TPV_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Maximizamos la ventana
         Me.WindowState = FormWindowState.Maximized
+
+        HelpProvider1.HelpNamespace = "config/Documento de ayuda TPV Repsol.chm"
+        HelpProvider1.SetHelpNavigator(Me, HelpNavigator.Topic)
+        HelpProvider1.SetHelpKeyword(Me, "TPV.htm")
 
         'Cargamos el nombre del usuario
         lblUser.Text = Inicio.nombreEmp
@@ -20,6 +25,7 @@ Public Class TPV
 
     End Sub
 
+    'Limpia la lista de artículos que quiere el cliente, menos la gasolina.
     Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
         Try
             'Limpia los listbox lbNombreProductos y lbPrecios menos el primer elemento.
@@ -43,22 +49,23 @@ Public Class TPV
 
     End Sub
 
+    'Vuelve al formulario anterior.
     Private Sub VolverToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles VolverToolStripMenuItem1.Click
         Trabajar.Show()
         Me.Close()
     End Sub
+    'Cierra la sesión del usuario, volviendo al formulario Inicio.
     Private Sub CerrarSesiónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarSesiónToolStripMenuItem.Click
         Inicio.Show()
         Me.Close()
     End Sub
 
-    'Cerramos el programa.
+    'Cierra el programa.
     Private Sub CerrarElProgramaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarAplicaciónToolStripMenuItem.Click
         Inicio.Close()
     End Sub
 
-
-
+    'Cuando cambia el índice de las categorías, carga el contenido de la base de datos referente a este.
     Private Sub lbNombreCategorias_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbNombreCategorias.SelectedIndexChanged
 
         If lbNombreCategorias.SelectedIndex = 0 Then
@@ -74,7 +81,6 @@ Public Class TPV
         If lbNombreCategorias.SelectedIndex = 2 Then
             CargarOtros()
         End If
-
     End Sub
 
 
@@ -92,15 +98,10 @@ Public Class TPV
         lbPrecios.Items.RemoveAt(selectedIndex)
     End Sub
 
-    'hazme un sub para que, cuando se clickee un producto ya seleccionado en una listbox, añada el producto a otra listbox
-    'y que añada el precio del producto a otra listbox
-    'y que sume el precio del producto a un label que muestre el precio total de la compra
+    'Al hacer click en un producto, su nombre y precio se incluyen en la lista del cliente.
     Private Sub lbProductosTienda_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbProductosTienda.Click, lbPreciosTienda.Click
-        'sender.selectedIndex =
-
         If (sender.SelectedItem Is Nothing) Then
             Return
-            'Or TypeOf (sender.SelectedItem) Is DataRowView
         End If
         Dim a = sender.SelectedIndex
         lbPreciosTienda.SelectedIndex = a
@@ -111,6 +112,7 @@ Public Class TPV
 
         actualizarPrecio()
     End Sub
+
     'Actualiza el precio total del pedido.
     Public Sub actualizarPrecio()
         Dim box As Decimal = 0.00
@@ -189,8 +191,6 @@ Public Class TPV
         Else
             total = lblResultado.Text
         End If
-        'Dim caja As New Archivos.HacerCaja
-        'caja.CajaTemporal(Single.Parse(lblResultado.Text), Single.Parse("0,00"), lblUser.Text)
 
         Dim a As New Ticket
         a.ImprimirTicketTarjeta(lblUser.Text, tarjeta, total, lbNombreProductos, lbPrecios)
@@ -199,6 +199,7 @@ Public Class TPV
         Trabajar.Show()
     End Sub
 
+    'Activa el formulario buscar cliente.
     Private Sub btnEsCliente_Click(sender As Object, e As EventArgs) Handles btnEsCliente.Click
         PanelIsCliente.Visible = False
         tbIdCliente.Enabled = True
@@ -213,6 +214,7 @@ Public Class TPV
         panelCosasCliente.Visible = True
     End Sub
 
+    'Activa el formulario crear cliente.
     Private Sub btnCrearCliente_Click(sender As Object, e As EventArgs) Handles btnCrearCliente.Click
         FechaAltaClienteTimePicker.Value = Date.Now
         PanelIsCliente.Visible = False
@@ -305,13 +307,14 @@ Public Class TPV
         End If
     End Sub
 
-
+    'Al presionar clic en el LinkedLabel, te lleva a la dirección asociada.
     Private Sub LinkLabelRepsol_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabelRepsol.LinkClicked
         Dim urlRepsol As String = "https://www.repsol.com/"
         ' Abre el navegador web predeterminado con la URL
         Process.Start(urlRepsol)
     End Sub
 
+    'Al presionar clic en el LinkedLabel, te lleva a la dirección asociada.
     Private Sub LinkLblCondiciones_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLblCondiciones.LinkClicked
         Dim urlRepsol As String = "https://www.repsol.com/es/pie-de-pagina/politica-de-privacidad/index.cshtml"
         ' Abre el navegador web predeterminado con la URL
@@ -323,7 +326,7 @@ Public Class TPV
     '-----------------------------------------------------------------------------------------------------------------------------------------
 
 
-
+    'Carga las bebidas de la base de datos en memoria.
     Private Sub CargarBebidas()
 
         Dim cmd As New OleDbCommand("Select * from Productos where Gama = 1 order by id", conn)
@@ -348,6 +351,7 @@ Public Class TPV
 
     End Sub
 
+    'Carga los consumibles de la base de datos en memoria.
     Private Sub CargarConsumibles()
 
         Dim cmd As New OleDbCommand("Select * from Productos where Gama = 2 order by id", conn)
@@ -371,6 +375,7 @@ Public Class TPV
 
     End Sub
 
+    'Carga la categoría otros de la base de datos en memoria.
     Private Sub CargarOtros()
 
         Dim cmd As New OleDbCommand("Select * from Productos where Gama >= 3 order by id", conn)
@@ -391,6 +396,7 @@ Public Class TPV
 
     End Sub
 
+    'Agrega un cliente a la base de datos
     Private Function AgregarCliente(nombre As String, apellido1 As String, apellido2 As String, telefono As String, correo As String, fecha As Date) As Integer
         Dim id As Integer
         Try

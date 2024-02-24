@@ -37,6 +37,7 @@ Partial Class Trabajar
         Me.pbManguera3 = New System.Windows.Forms.PictureBox()
         Me.pbManguera4 = New System.Windows.Forms.PictureBox()
         Me.btnTienda = New System.Windows.Forms.Button()
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -211,4 +212,5 @@ Partial Class Trabajar
     Friend WithEvents pbManguera3 As PictureBox
     Friend WithEvents pbManguera4 As PictureBox
     Friend WithEvents btnTienda As Button
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class

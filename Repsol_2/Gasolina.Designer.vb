@@ -38,6 +38,7 @@ Partial Class Gasolina
         Me.btnGas95 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblGasEchado = New System.Windows.Forms.Label()
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -208,4 +209,5 @@ Partial Class Gasolina
     Friend WithEvents Timer1 As Timer
     Friend WithEvents btnGas95 As Button
     Friend WithEvents lblGasEchado As Label
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class

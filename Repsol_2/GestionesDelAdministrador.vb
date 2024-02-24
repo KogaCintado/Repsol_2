@@ -9,6 +9,10 @@ Public Class GestionesDelAdministrador
         'Maximize the window
         Me.WindowState = FormWindowState.Maximized
 
+        HelpProvider1.HelpNamespace = "config/Documento de ayuda TPV Repsol.chm"
+        HelpProvider1.SetHelpNavigator(Me, HelpNavigator.Topic)
+        HelpProvider1.SetHelpKeyword(Me, "CRUD.htm")
+
         ToolStripStatusLabel1.Text = Now.ToString("dd/MM/yy")
         invisibilizarTodos()
     End Sub
