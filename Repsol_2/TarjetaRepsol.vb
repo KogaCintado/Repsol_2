@@ -1,6 +1,7 @@
 ﻿
 Imports System.Drawing.Printing
 
+'Se encarga de los ajustes de la Tarjeta Repsol a imprimir.
 Public Class TarjetaRepsol
 
     Dim bmp As Bitmap
@@ -40,9 +41,5 @@ Public Class TarjetaRepsol
         For Each childControl As Control In control.Controls
             DibujarContenido(bmp, childControl)
         Next
-    End Sub
-
-    Private Sub TarjetaRepsol_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
     End Sub
 End Class
