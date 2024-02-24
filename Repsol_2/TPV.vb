@@ -12,6 +12,10 @@ Public Class TPV
         'Maximizamos la ventana
         Me.WindowState = FormWindowState.Maximized
 
+        HelpProvider1.HelpNamespace = "config/Documento de ayuda TPV Repsol.chm"
+        HelpProvider1.SetHelpNavigator(Me, HelpNavigator.Topic)
+        HelpProvider1.SetHelpKeyword(Me, "TPV.htm")
+
         'Cargamos el nombre del usuario
         lblUser.Text = Inicio.nombreEmp
 

@@ -31,6 +31,7 @@ Partial Class Opciones
         Me.CerrarElProgramaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.btnCRUD = New System.Windows.Forms.Button()
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.MenuStrip1.SuspendLayout()
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
@@ -40,7 +41,7 @@ Partial Class Opciones
         Me.btnInformes.Location = New System.Drawing.Point(3, 3)
         Me.btnInformes.Name = "btnInformes"
         Me.btnInformes.Size = New System.Drawing.Size(90, 60)
-        Me.btnInformes.TabIndex = 3
+        Me.btnInformes.TabIndex = 2
         Me.btnInformes.Text = "Informes"
         Me.btnInformes.UseVisualStyleBackColor = True
         Me.btnInformes.Visible = False
@@ -50,7 +51,7 @@ Partial Class Opciones
         Me.btnTrabajar.Location = New System.Drawing.Point(99, 3)
         Me.btnTrabajar.Name = "btnTrabajar"
         Me.btnTrabajar.Size = New System.Drawing.Size(90, 60)
-        Me.btnTrabajar.TabIndex = 1
+        Me.btnTrabajar.TabIndex = 0
         Me.btnTrabajar.Text = "Trabajar"
         Me.btnTrabajar.UseVisualStyleBackColor = True
         '
@@ -98,8 +99,8 @@ Partial Class Opciones
         Me.btnCRUD.Location = New System.Drawing.Point(195, 3)
         Me.btnCRUD.Name = "btnCRUD"
         Me.btnCRUD.Size = New System.Drawing.Size(90, 60)
-        Me.btnCRUD.TabIndex = 3
-        Me.btnCRUD.Text = "Crud"
+        Me.btnCRUD.TabIndex = 1
+        Me.btnCRUD.Text = "CRUD"
         Me.btnCRUD.UseVisualStyleBackColor = True
         '
         'Opciones
@@ -129,4 +130,5 @@ Partial Class Opciones
     Friend WithEvents CerrarElProgramaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents btnCRUD As Button
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class

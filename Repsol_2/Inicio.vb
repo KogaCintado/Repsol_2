@@ -8,6 +8,11 @@ Public Class Inicio
     Private Sub Inicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Maximizamos la ventana
         Me.WindowState = FormWindowState.Maximized
+
+        HelpProvider1.HelpNamespace = "config/Documento de ayuda TPV Repsol.chm"
+        HelpProvider1.SetHelpNavigator(Me, HelpNavigator.Topic)
+        HelpProvider1.SetHelpKeyword(Me, "Inicio.htm")
+
         'Ocultamos la password
         tbPassword.PasswordChar = "*"
         admin = False

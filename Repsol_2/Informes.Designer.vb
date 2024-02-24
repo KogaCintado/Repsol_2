@@ -35,6 +35,7 @@ Partial Class Informes
         Me.btnInformesGasolinas = New System.Windows.Forms.Button()
         Me.btnInformeProveedores = New System.Windows.Forms.Button()
         Me.btnInformeGamas = New System.Windows.Forms.Button()
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -172,4 +173,5 @@ Partial Class Informes
     Friend WithEvents btnInformesGasolinas As Button
     Friend WithEvents btnInformeProveedores As Button
     Friend WithEvents btnInformeGamas As Button
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class

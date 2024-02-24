@@ -5,6 +5,10 @@
         'Maximizamos la ventana
         Me.WindowState = FormWindowState.Maximized
         Me.lblUser.Text = Inicio.nombreEmp
+
+        HelpProvider1.HelpNamespace = "config/Documento de ayuda TPV Repsol.chm"
+        HelpProvider1.SetHelpNavigator(Me, HelpNavigator.Topic)
+        HelpProvider1.SetHelpKeyword(Me, "Trabajar.htm")
     End Sub
 
     'Vuelve al formulario anterior.

@@ -17,6 +17,10 @@ Public Class Gasolina
         'Maximizamos la ventana
         Me.WindowState = FormWindowState.Maximized
 
+        HelpProvider1.HelpNamespace = "config/Documento de ayuda TPV Repsol.chm"
+        HelpProvider1.SetHelpNavigator(Me, HelpNavigator.Topic)
+        HelpProvider1.SetHelpKeyword(Me, "Gasolina.htm")
+
         ProgressBar1.Visible = False
         lblPrecioGasAcumulado.Visible = False
         lblPrecioGas.Visible = False

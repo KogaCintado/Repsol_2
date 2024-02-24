@@ -125,6 +125,7 @@ Partial Class GestionesDelAdministrador
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.CerrarSesionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarProgramaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         IdLabel = New System.Windows.Forms.Label()
         NombreLabel = New System.Windows.Forms.Label()
         Apellido_1Label = New System.Windows.Forms.Label()
@@ -1203,4 +1204,5 @@ Partial Class GestionesDelAdministrador
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents CerrarSesionToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CerrarProgramaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class

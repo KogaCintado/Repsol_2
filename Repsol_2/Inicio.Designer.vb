@@ -35,6 +35,7 @@ Partial Class Inicio
         Me.NotifyIconLogo = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.showPassword = New System.Windows.Forms.PictureBox()
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -160,4 +161,5 @@ Partial Class Inicio
     Friend WithEvents ErrorProvider1 As ErrorProvider
     Friend WithEvents ErrorProvider2 As ErrorProvider
     Friend WithEvents NotifyIconLogo As NotifyIcon
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class

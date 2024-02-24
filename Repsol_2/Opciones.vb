@@ -3,6 +3,10 @@
     Private Sub Opciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Maximizamos la ventana
         Me.WindowState = FormWindowState.Maximized
+        HelpProvider1.HelpNamespace = "config/Documento de ayuda TPV Repsol.chm"
+        HelpProvider1.SetHelpNavigator(Me, HelpNavigator.Topic)
+        HelpProvider1.SetHelpKeyword(Me, "Opciones.htm")
+
         'Se carga el formulario. Es necesario saber si es administrador o no.
         If Inicio.admin = True Then
             btnCRUD.Visible = True
