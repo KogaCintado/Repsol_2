@@ -562,9 +562,9 @@ Public Class GestionesDelAdministrador
             Dim comprobar As Boolean = False
             Dim prov As DataRow = BuscarProveedor(proveedor)
             If Not prov Is Nothing Then
-                comprobar = False
-            Else
                 comprobar = True
+            Else
+                comprobar = False
             End If
 
             Dim comprobar2 As Boolean = False
