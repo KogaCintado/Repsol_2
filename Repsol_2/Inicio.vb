@@ -13,6 +13,8 @@ Public Class Inicio
         admin = False
     End Sub
 
+    'en esta funcion validaremos si se entra o no dentro de la aplicacion. en caso de intentos o de entradas queda todo puesto dentro
+    'de un fichero
     Private Sub btnStart_Click(sender As Object, e As EventArgs) Handles btnStart.Click
         Dim archivo As New Archivo
 
@@ -38,7 +40,7 @@ Public Class Inicio
 
         End If
     End Sub
-
+    'esta funcion se encarga de poder cambiar el tipo de caracteres de la contraseña entre asteriscos y caracteres normales
     Private Sub ShowPassword_Click(sender As Object, e As EventArgs) Handles showPassword.Click
         If (tbPassword.PasswordChar <> "*") Then
             tbPassword.PasswordChar = "*"
@@ -82,7 +84,7 @@ Public Class Inicio
         Return True
     End Function
 
-
+    'esta funcion permitira poder entrar al programa
     Private Function loggin(nombre As String, contraseña As String) As Boolean
 
         Try
@@ -97,7 +99,7 @@ Public Class Inicio
 
                 Dim reader As OleDbDataReader = cmd.ExecuteReader()
 
-                If reader.HasRows Then
+                If reader.HasRows Then 'en caso de que sea correcto se iniciara como empleado o administrador
                     While reader.Read()
                         If reader("Administrador").ToString() = 1 Or reader("Administrador").ToString() = 2 Then
                             admin = True
@@ -132,7 +134,7 @@ Public Class Inicio
 
     End Function
 
-
+    'funcion necesaria para librerar recursos y deslogearnos
     Private Sub NotifyIconLogo_MouseClick(sender As Object, e As MouseEventArgs) Handles NotifyIconLogo.MouseClick
         Me.Show()
 
