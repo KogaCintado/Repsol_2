@@ -14,8 +14,12 @@ Public Class GestionesDelAdministrador
     End Sub
     'zona de funciones varias-----------
     '-----------------------------------
+
+
+    'esta funcion se encarga de invisibilizar todos los paneles del formulario
     Private Sub invisibilizarTodos()
         Try
+            'lo que hacemos es meter todos los paneles en un array e ir iterando invisibilizandolos a todos
             Dim paneles = New List(Of Panel)({panelEmpleado, panelCliente, panelGasolina, panelProductos, panelProveedor})
             For Each p As Panel In paneles
                 p.Location = New Point(1920, 1080)
@@ -27,6 +31,7 @@ Public Class GestionesDelAdministrador
         End Try
     End Sub
 
+    'esta funcion invisibiliza todos los paneles excepto aquel que entra por argumento
     Private Sub invisibilizarTodosExcepto(pn As Panel)
         Try
             Dim paneles = New List(Of Panel)({panelEmpleado, panelCliente, panelGasolina, panelProductos, panelProveedor})
@@ -46,6 +51,7 @@ Public Class GestionesDelAdministrador
 
     End Sub
 
+    'esta funcion lo que se encarga sera en llamar al timer, habilitandolo para que falsee el progreso de la progress bar
     Private Sub falseoProgressBar()
         Try
             ToolStripProgressBar1.Value = 0
@@ -56,6 +62,8 @@ Public Class GestionesDelAdministrador
         End Try
     End Sub
 
+    'en esta funcion se falsea todo, para cada tiempo de reloj se rellena la mitad de la barra (hay que hacerlo rapido por que los ordenadores cargan rapido
+    'y de otra forma no colaria)
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
 
         Try
@@ -73,6 +81,7 @@ Public Class GestionesDelAdministrador
 
     'zona botones maestros---------------
     '------------------------------------
+    'En esta seccion los botones llaman a su panel relacionado y ocultan el resto(todos y cada uno de los botones de esta seccion hacen los mismo)
     Private Sub btnGestionesEmpleado_Click(sender As Object, e As EventArgs) Handles btnGestionesEmpleado.Click
         Try
             invisibilizarTodosExcepto(panelEmpleado)
@@ -121,6 +130,9 @@ Public Class GestionesDelAdministrador
     'zona busquedas-----------------------
     '-------------------------------------
 
+    'esta funcion devuelve un datarow, esto nos sirve  a la hora de validaciones como puede
+    'buscar la id o algo por el estilo, el  resto de funciones de este apartado tienen el mismo proposito
+    'Buscar si es null o no lo devuelto y que ha devuelto
     Public Function BuscarCliente(id As Integer) As DataRow
 
         ' Crear una nueva instancia del comando SQL
@@ -303,13 +315,17 @@ Public Class GestionesDelAdministrador
 
     'Zona datagrids-----------------------
     '-------------------------------------
+
+    'el proposito de esta seccion es basicamente que cuando se de al boton de buscar se rellene el
+    'DataGridView relacionado con este, permitiendo que se vea de manera rapida todo
+
     Private Sub MostrarTodosEmpleados()
         Try
-            Dim cmd As New OleDbCommand("SELECT * FROM Empleados", conn)
-            Dim da As New OleDbDataAdapter(cmd)
-            Dim dt As New DataTable()
+            Dim cmd As New OleDbCommand("SELECT * FROM Empleados", conn) 'Sentencia sql para la busqueda
+            Dim da As New OleDbDataAdapter(cmd) 'adaptador que permitira ejecutar la sentencia
+            Dim dt As New DataTable() 'tabla que sera rellenada con los datos del adaptador por la sentencia
             da.Fill(dt)
-            DatagridEmpleado.DataSource = dt
+            DatagridEmpleado.DataSource = dt 'aqui es donde se rellena
             DatagridEmpleado.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         Catch ex As Exception
             MessageBox.Show("Hubo un error con la muestra de los empleados", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -321,11 +337,11 @@ Public Class GestionesDelAdministrador
 
     Private Sub MostrarTodosClientes()
         Try
-            Dim cmd As New OleDbCommand("Select * from Clientes", conn)
-            Dim da As New OleDbDataAdapter(cmd)
-            Dim dt As New DataTable()
+            Dim cmd As New OleDbCommand("Select * from Clientes", conn) 'Sentencia sql para la busqueda
+            Dim da As New OleDbDataAdapter(cmd) 'adaptador que permitira ejecutar la sentencia
+            Dim dt As New DataTable() 'tabla que sera rellenada con los datos del adaptador por la sentencia
             da.Fill(dt)
-            ClientesDatagrid.DataSource = dt
+            ClientesDatagrid.DataSource = dt 'aqui es donde se rellena
             ClientesDatagrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
         Catch ex As Exception
             MessageBox.Show("Hubo un error con la muestra de los clientes", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -336,11 +352,11 @@ Public Class GestionesDelAdministrador
 
     Private Sub MostrarTodasGasolinas()
         Try
-            Dim cmd As New OleDbCommand("Select * from Gasolinas", conn)
-            Dim da As New OleDbDataAdapter(cmd)
-            Dim dt As New DataTable()
+            Dim cmd As New OleDbCommand("Select * from Gasolinas", conn) 'Sentencia sql para la busqueda
+            Dim da As New OleDbDataAdapter(cmd) 'adaptador que permitira ejecutar la sentencia
+            Dim dt As New DataTable() 'tabla que sera rellenada con los datos del adaptador por la sentencia
             da.Fill(dt)
-            GasolinasDatagrid.DataSource = dt
+            GasolinasDatagrid.DataSource = dt 'aqui es donde se rellena
             GasolinasDatagrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         Catch ex As Exception
             MessageBox.Show("Hubo un error con la muestra de las gasolinas", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -351,11 +367,11 @@ Public Class GestionesDelAdministrador
 
     Private Sub MostrarTodosProductos()
         Try
-            Dim cmd As New OleDbCommand("Select * from Productos", conn)
-            Dim da As New OleDbDataAdapter(cmd)
-            Dim dt As New DataTable()
+            Dim cmd As New OleDbCommand("Select * from Productos", conn) 'Sentencia sql para la busqueda
+            Dim da As New OleDbDataAdapter(cmd) 'adaptador que permitira ejecutar la sentencia
+            Dim dt As New DataTable() 'tabla que sera rellenada con los datos del adaptador por la sentencia
             da.Fill(dt)
-            ProductosDatagrid.DataSource = dt
+            ProductosDatagrid.DataSource = dt 'aqui es donde se rellena
             ProductosDatagrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         Catch ex As Exception
             MessageBox.Show("Hubo un error con la muestra de los productos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -366,11 +382,11 @@ Public Class GestionesDelAdministrador
 
     Private Sub MostrarTodosProveedores()
         Try
-            Dim cmd As New OleDbCommand("Select * from Proveedores", conn)
-            Dim da As New OleDbDataAdapter(cmd)
-            Dim dt As New DataTable()
+            Dim cmd As New OleDbCommand("Select * from Proveedores", conn) 'Sentencia sql para la busqueda
+            Dim da As New OleDbDataAdapter(cmd) 'adaptador que permitira ejecutar la sentencia
+            Dim dt As New DataTable() 'tabla que sera rellenada con los datos del adaptador por la sentencia
             da.Fill(dt)
-            ProveedorDataGrid.DataSource = dt
+            ProveedorDataGrid.DataSource = dt 'aqui es donde se rellena
             ProveedorDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         Catch ex As Exception
             MessageBox.Show("Hubo un error con la muestra de proveedores", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -381,12 +397,14 @@ Public Class GestionesDelAdministrador
 
     'zona agregaciones----------------------
     '---------------------------------------
+    'Dentro de esta zona nos dedicaremos a agregar filas dentro de la tabla determinada
+
     Public Sub AgregarEmpleado(id As Integer, nombre As String, apellido1 As String, apellido2 As String, telefono As String, correo As String, contraseña As String, administrador As Integer, cargo As String)
         Try
-            conn.Open()
+            conn.Open() 'se abre la conexion
             Using cmd As New OleDbCommand("Insert into Empleados([id], [Nombre], [Apellido 1], [Apellido 2], [Telefono], [Correo], [Contraseña], [Administrador], [Cargo]) 
-            values (?, ?, ?, ?, ?, ?, ?, ?, ?)", conn)
-                cmd.Parameters.Add(New OleDbParameter("id", id))
+            values (?, ?, ?, ?, ?, ?, ?, ?, ?)", conn) 'la consulta sql se hace con una busqueda parametrizada para evitar sql injections (y por que es mas facil)
+                cmd.Parameters.Add(New OleDbParameter("id", id)) 'a partir de aqui se van agregando uno a uno los parametros de las ? en orden con su clave para reconocerse
                 cmd.Parameters.Add(New OleDbParameter("nombre", nombre))
                 cmd.Parameters.Add(New OleDbParameter("apellido1", apellido1))
                 cmd.Parameters.Add(New OleDbParameter("apellido2", apellido2))
@@ -396,7 +414,7 @@ Public Class GestionesDelAdministrador
                 cmd.Parameters.Add(New OleDbParameter("administrador", administrador))
                 cmd.Parameters.Add(New OleDbParameter("cargo", cargo))
                 If Not administrador = 2 Then
-                    cmd.ExecuteNonQuery()
+                    cmd.ExecuteNonQuery() 'se ejecuta la sentencia en caso de que no sea administrador el que estamos apunto de crear
                     MessageBox.Show("El empleado se a creado correctamente", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Else
                     MessageBox.Show("No se permiten crear jefes, solamente administradores y trabajadores", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -407,7 +425,7 @@ Public Class GestionesDelAdministrador
             Dim guardar As New Archivo
             guardar.GuardarError(ex, "GestionesAdministrador, AgregarEmpleado()")
         Finally
-            conn.Close()
+            conn.Close() 'se cierra la conexion
         End Try
     End Sub
 
@@ -415,17 +433,17 @@ Public Class GestionesDelAdministrador
         Try
             conn.Open()
             Dim prov As DataRow = BuscarProveedor(proveedor)
-            If prov Is Nothing Then
+            If prov Is Nothing Then 'se verifica que el proveedor exista
                 MessageBox.Show("El proveedor del producto a agregar no existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Else
                 Using cmd As New OleDbCommand("Insert into Productos([id],[Nombre],[Precio],[Proveedor],[Gama])
-                values(?,?,?,?,?)", conn)
-                    cmd.Parameters.Add(New OleDbParameter("id", id))
+                values(?,?,?,?,?)", conn) 'la consulta sql se hace con una busqueda parametrizada para evitar sql injections (y por que es mas facil)
+                    cmd.Parameters.Add(New OleDbParameter("id", id)) 'a partir de aqui se van agregando uno a uno los parametros de las ? en orden con su clave para reconocerse
                     cmd.Parameters.Add(New OleDbParameter("nombre", nombre))
                     cmd.Parameters.Add(New OleDbParameter("precio", precio))
                     cmd.Parameters.Add(New OleDbParameter("proveedor", proveedor))
                     cmd.Parameters.Add(New OleDbParameter("gama", gama))
-                    cmd.ExecuteNonQuery()
+                    cmd.ExecuteNonQuery() 'se ejecuta la sentencia
                     MsgBox("Se agrego el producto " & nombre & " correctamente")
                 End Using
             End If
@@ -442,8 +460,8 @@ Public Class GestionesDelAdministrador
         Try
             conn.Open()
             Using cmd As New OleDbCommand("Insert into Clientes([id],[Nombre],[Apellido 1],[Apellido 2],[Telefono],[Correo],[FechaAlta],[Alta])
-                values(?, ?, ?, ?, ?, ?, ?, ?)", conn)
-                cmd.Parameters.Add(New OleDbParameter("id", id))
+                values(?, ?, ?, ?, ?, ?, ?, ?)", conn) 'la consulta sql se hace con una busqueda parametrizada para evitar sql injections (y por que es mas facil)
+                cmd.Parameters.Add(New OleDbParameter("id", id)) 'a partir de aqui se van agregando uno a uno los parametros de las ? en orden con su clave para reconocerse
                 cmd.Parameters.Add(New OleDbParameter("nombre", nombre))
                 cmd.Parameters.Add(New OleDbParameter("apellido1", apellido1))
                 cmd.Parameters.Add(New OleDbParameter("apellido2", apellido2))
@@ -451,7 +469,7 @@ Public Class GestionesDelAdministrador
                 cmd.Parameters.Add(New OleDbParameter("correo", correo))
                 cmd.Parameters.Add(New OleDbParameter("fechaAlta", fecha))
                 cmd.Parameters.Add(New OleDbParameter("alta", alta))
-                cmd.ExecuteNonQuery()
+                cmd.ExecuteNonQuery() 'se ejecuta la consulta
                 MsgBox("Se agrego el cliente: " & nombre)
             End Using
         Catch ex As Exception
@@ -466,10 +484,10 @@ Public Class GestionesDelAdministrador
     Private Sub AgregarProveedor(id As Integer, nombre As String)
         Try
             conn.Open()
-            Using cmd As New OleDbCommand("Insert into Proveedores([id], [Nombre]) Values(?, ?)", conn)
-                cmd.Parameters.Add(New OleDbParameter("id", id))
+            Using cmd As New OleDbCommand("Insert into Proveedores([id], [Nombre]) Values(?, ?)", conn) 'la consulta sql se hace con una busqueda parametrizada para evitar sql injections (y por que es mas facil)
+                cmd.Parameters.Add(New OleDbParameter("id", id)) 'a partir de aqui se van agregando uno a uno los parametros de las ? en orden con su clave para reconocerse
                 cmd.Parameters.Add(New OleDbParameter("nombre", nombre))
-                cmd.ExecuteNonQuery()
+                cmd.ExecuteNonQuery() 'se ejecuta la consulta
                 MsgBox("Se agrego el proveedor: " & nombre)
             End Using
         Catch ex As Exception
@@ -484,6 +502,9 @@ Public Class GestionesDelAdministrador
     'zona Modificaciones------------------------------
     '-------------------------------------------------
 
+    'en esta zona se realizan consultas de modificacion, para que se puedan actualizar los valores de cada uno de los
+    'campos de las tablas (altas, precios, cantidad, etc.)
+
     Private Sub ModificarEmpleado(id As Integer, nombre As String, apellido1 As String, apellido2 As String, telefono As String, correo As String, contraseña As String, cargo As String, administrador As Integer)
         Try
             Dim comprobar As Boolean = False
@@ -491,7 +512,7 @@ Public Class GestionesDelAdministrador
             Using cmd0 As New OleDbCommand("Select Administrador from Empleados where id = @id", conn)
                 cmd0.Parameters.AddWithValue("@id", id)
                 Dim reader As OleDbDataReader = cmd0.ExecuteReader()
-                If reader.HasRows() Then
+                If reader.HasRows() Then 'se ejecuta una validacion dentro del metodo para verificar si es jefe o no
                     While reader.Read()
                         If reader("Administrador").ToString() = 2 Then
                             comprobar = True
@@ -514,7 +535,7 @@ Public Class GestionesDelAdministrador
                 If comprobar = True Then
                     MessageBox.Show("No se pudo hacer la modificacion ya que el jefe no se puede modificar", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Else
-                    cmd.ExecuteNonQuery()
+                    cmd.ExecuteNonQuery() 'en caso de que todo este correcto se hara la actualizacion
                     MsgBox("Usuario actualizado con exito")
                 End If
             End Using
@@ -530,7 +551,7 @@ Public Class GestionesDelAdministrador
         Try
             conn.Open()
             Dim cl As DataRow = BuscarCliente(id)
-            If cl Is Nothing Then
+            If cl Is Nothing Then 'se hace una validacion para verificar que el cliente realmente exista, y no modifiquemos al aire
                 MessageBox.Show("El cliente a actualizar no existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Else
                 Using cmd As New OleDbCommand("Update Clientes set Nombre = ?, [Apellido 1] = ?, [Apellido 2]  = ?,
@@ -543,7 +564,7 @@ Public Class GestionesDelAdministrador
                     cmd.Parameters.Add(New OleDbParameter("fechaAlta", fechaAlta))
                     cmd.Parameters.Add(New OleDbParameter("alta", alta))
                     cmd.Parameters.Add(New OleDbParameter("id", id))
-                    cmd.ExecuteNonQuery()
+                    cmd.ExecuteNonQuery() 'si todo sale correcto se modifica el cliente
                     MessageBox.Show("El cliente se actualizo correctamente", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 End Using
             End If
@@ -560,7 +581,7 @@ Public Class GestionesDelAdministrador
         Try
             conn.Open()
             Dim comprobar As Boolean = False
-            Dim prov As DataRow = BuscarProveedor(proveedor)
+            Dim prov As DataRow = BuscarProveedor(proveedor) 'se valida que el proveedor exista a la hora de modificarlo
             If Not prov Is Nothing Then
                 comprobar = True
             Else
@@ -568,7 +589,7 @@ Public Class GestionesDelAdministrador
             End If
 
             Dim comprobar2 As Boolean = False
-            Using cmd1 As New OleDbCommand("Select id from Gamas where id = @id", conn)
+            Using cmd1 As New OleDbCommand("Select id from Gamas where id = @id", conn) 'se comprueba que exista la gama
                 cmd1.Parameters.AddWithValue("@id", gama)
 
                 Dim reader As OleDbDataReader = cmd1.ExecuteReader()
@@ -585,7 +606,7 @@ Public Class GestionesDelAdministrador
             End Using
 
             Dim comprobar3 As Boolean = False
-            Dim prod As DataRow = BuscarProducto(id)
+            Dim prod As DataRow = BuscarProducto(id) 'se comprueba que exista el producto
             If prod Is Nothing Then
                 comprobar3 = False
             Else
@@ -599,7 +620,7 @@ Public Class GestionesDelAdministrador
                 cmd.Parameters.AddWithValue("@gama", gama)
                 cmd.Parameters.AddWithValue("@id", id)
                 If comprobar = True And comprobar2 = True And comprobar3 = True Then
-                    cmd.ExecuteNonQuery()
+                    cmd.ExecuteNonQuery() 'en caso de que todo este correcto se actualizara
                     MessageBox.Show("El producto se actualizo correctamente", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Else
                     MessageBox.Show("No se pudo hacer la actualizacion del producto, verifique los datos introducidos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -623,7 +644,7 @@ Public Class GestionesDelAdministrador
             conn.Open()
 
             Dim gas As DataRow = BuscarGasolina(id)
-            If gas Is Nothing Then
+            If gas Is Nothing Then 'se valida que existe la gasolina
                 MessageBox.Show("La gasolina a modificar no existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Else
                 Using cmd As New OleDbCommand("Update Gasolinas set nombre = ?, cantidad = ?, precio = ? where id = ?", conn)
@@ -632,7 +653,7 @@ Public Class GestionesDelAdministrador
                     cmd.Parameters.Add(New OleDbParameter("cantidad", cantidad))
                     cmd.Parameters.Add(New OleDbParameter("precio", precio))
                     cmd.Parameters.Add(New OleDbParameter("id", id))
-                    cmd.ExecuteNonQuery()
+                    cmd.ExecuteNonQuery() ' en caso de que todo este bien se actualiza
                     MessageBox.Show("La gasolina se actualizo correctamente", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 End Using
             End If
@@ -653,14 +674,14 @@ Public Class GestionesDelAdministrador
 
             conn.Open()
             Dim prov As DataRow = BuscarProveedor(id)
-            If prov Is Nothing Then
+            If prov Is Nothing Then 'se verifica que el proveedor existe
                 MessageBox.Show("El proveedor a modificar no existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Else
                 Using cmd As New OleDbCommand("Update Proveedores set nombre = ? where id = ?", conn)
 
                     cmd.Parameters.Add(New OleDbParameter("nombre", nombre))
                     cmd.Parameters.Add(New OleDbParameter("id", id))
-                    cmd.ExecuteNonQuery()
+                    cmd.ExecuteNonQuery() 'en caso de que todo este bien se modifica
                     MessageBox.Show("El proveedor se actualizo con exito", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 End Using
             End If
@@ -675,11 +696,14 @@ Public Class GestionesDelAdministrador
 
     'zona eliminaciones--------------
     '--------------------------------
+    'en esta zona se hacen eliminaciones basadas en su identificado, es simple
+    'si no existe no se eliminara nada, haciendolo asi nos aseguramos de que no se
+    'borren mas de uno ya que el id es unico, inmutable e induplicable
 
     Public Sub EliminarEmpleado(id As Integer)
         Try
             conn.Open()
-            Dim empleado As DataRow = BuscarEmpleado(id)
+            Dim empleado As DataRow = BuscarEmpleado(id) 'verificamos que existe lo que vamos a eliminar
             If empleado Is Nothing Then
                 MessageBox.Show("El Empleado a eliminar no existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Else
@@ -690,7 +714,7 @@ Public Class GestionesDelAdministrador
                     Dim reader As OleDbDataReader = cmd0.ExecuteReader()
                     If reader.HasRows() Then
                         While reader.Read()
-                            If reader("Administrador").ToString() = 2 Then
+                            If reader("Administrador").ToString() = 2 Then 'verificamos que no sea el jefe ya que es inmutable
                                 comprobar = True
                             End If
                         End While
@@ -704,7 +728,7 @@ Public Class GestionesDelAdministrador
                 If comprobar = True Then
                     MsgBox("No se puede hacer la eliminacion ya que se trata del jefe")
                 Else
-                    cmd.ExecuteNonQuery()
+                    cmd.ExecuteNonQuery() 'se ejecuta en caso de que todo sea correcto
                     MessageBox.Show("Empleado eliminado correctamente")
                 End If
             End If
@@ -722,11 +746,11 @@ Public Class GestionesDelAdministrador
         Try
             conn.Open()
             Dim cliente As DataRow = BuscarCliente(id)
-            If cliente Is Nothing Then
+            If cliente Is Nothing Then 'verificamos que el cliente exista
                 MessageBox.Show("El cliente a eliminar no existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Else
                 cmd.Parameters.AddWithValue("@id", id)
-                cmd.ExecuteNonQuery()
+                cmd.ExecuteNonQuery() 'en caso de que todo este correcto se ejectuta la sentencia
                 MessageBox.Show("Cliente eliminado correctamente")
             End If
         Catch ex As Exception
@@ -743,12 +767,12 @@ Public Class GestionesDelAdministrador
         Dim cmd As New OleDbCommand("DELETE FROM Productos WHERE id = @id", conn)
         Try
             conn.Open()
-            Dim producto As DataRow = BuscarProducto(id)
+            Dim producto As DataRow = BuscarProducto(id) 'se verifica que el producto exista
             If producto Is Nothing Then
                 MessageBox.Show("El producto a eliminar no existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Else
                 cmd.Parameters.AddWithValue("@id", id)
-                cmd.ExecuteNonQuery()
+                cmd.ExecuteNonQuery() 'se la sentencia
                 MessageBox.Show("Producto eliminado correctamente")
             End If
         Catch ex As OleDbException
@@ -761,20 +785,20 @@ Public Class GestionesDelAdministrador
     End Sub
 
     Public Sub EliminarProveedor(id As Integer)
-        Dim cmd As New OleDbCommand("DELETE FROM Productos Where gama = @id", conn)
+        Dim cmd As New OleDbCommand("DELETE FROM Productos Where proveedor = @id", conn)
         Dim cmd2 As New OleDbCommand("DELETE FROM Proveedores WHERE id = @id", conn)
         Try
             conn.Open()
 
-            Dim proveedor As DataRow = BuscarProveedor(id)
+            Dim proveedor As DataRow = BuscarProveedor(id) 'se verifica que exista el proveedor
             If proveedor Is Nothing Then
                 MessageBox.Show("El proveedor a eliminar no existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Else
                 cmd.Parameters.AddWithValue("@id", id)
-                cmd.ExecuteNonQuery()
+                cmd.ExecuteNonQuery() 'se ejecuta la sentencia de eliminacion de los productos relacionados con ese proveedor(el id de este)
 
                 cmd2.Parameters.AddWithValue("@id", id)
-                cmd2.ExecuteNonQuery()
+                cmd2.ExecuteNonQuery() 'se ejecuta la sentencia de eliminacion del proveedor
                 MessageBox.Show("Proveedor eliminado correctamente", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             End If
 
@@ -792,6 +816,12 @@ Public Class GestionesDelAdministrador
 
     'zona botones de accion------------
     '----------------------------------
+
+    'esta es la zona donde se hacen todas y las operaciones (cuando pulsamos un boton)
+    'en funcion del tipo de boton que sea (busqueda, agregacion, etc) se ejecuta una funcion u otra
+    'de las vistas anteriormente. Todos y cada uno de los botones tienen validaciones para que en caso de que los 
+    'datos introducidos sean incorrectos se impida la operacion. Dichas validaciones vienen de la libreria de clases
+    ' "Biblioteca"
 
     Private Sub btnAgregarEmpleado_Click(sender As Object, e As EventArgs) Handles btnAgregarEmpleado.Click
         Try
@@ -1063,7 +1093,7 @@ Public Class GestionesDelAdministrador
 
     'zona menusStrip-------------
     '----------------------------
-
+    'aqui controlamos el salir del formulario, deslogearnos y cerrar el programa.
     Private Sub CerrarSesionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarSesionToolStripMenuItem.Click
         Inicio.Show()
         Me.Close()
@@ -1079,6 +1109,11 @@ Public Class GestionesDelAdministrador
     End Sub
     'zona funciones de limpieza--------------
     '----------------------------------------
+
+
+    'estas funciones se dedican a limpiar los campos de cada uno de las gestiones
+    '(productos, clientes, etc.) cada vez que se haga una agregacion o una eliminacion
+
     Private Sub limpiarEmpleado()
         Try
             tbIdEmpleado.Clear()
