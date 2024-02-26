@@ -488,8 +488,11 @@ Public Class validacionesCrud
             MessageBox.Show("Solo son permitidos caracteres numericos en la cantidad", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             tb.Clear()
             Return True
-        ElseIf str < 0 Then
+        ElseIf str <= 0 Then
             MessageBox.Show("La cantidad no puede ser menor que 0", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return True
+        ElseIf str>10000 then
+            MessageBox.Show("La cantidad no puede ser mayor que 10.000", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return True
         End If
 

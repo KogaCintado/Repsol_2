@@ -24,7 +24,8 @@ Public Class Efectivo
 
             ticket.ImprimirTicketEfectivo(TPV.lblUser.Text, TPV.lblResultado.Text, TPV.lbNombreProductos, TPV.lbPrecios, tbDinero.Text, lblDevolver.Text)
 
-
+            Gasolina.Close()
+            TPV.Close()
             Trabajar.Show()
             Close()
         Else
